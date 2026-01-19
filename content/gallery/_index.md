@@ -7,8 +7,8 @@ The gallery showcases binder spreads organized by theme and narrative flow.
 
 ## Volumes
 
-- **[Volume I](/gallery/volume-1/)** — Lived Experience: how Pokemon exist in the world
-- **[Slabs](/gallery/slabs/)** — Graded cards on display
+- **[Volume I](volume-1/)** — Lived Experience: how Pokemon exist in the world
+- **[Slabs](slabs/)** — Graded cards on display
 
 ---
 

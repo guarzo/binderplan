@@ -5,7 +5,7 @@
       <ul>
         {{ range .Site.Menus.main }}
         <li>
-          <a href="{{ .URL }}"{{ if $.IsMenuCurrent "main" . }} class="active"{{ end }}>
+          <a href="{{ .URL | relURL }}"{{ if $.IsMenuCurrent "main" . }} class="active"{{ end }}>
             {{ .Name }}
           </a>
         </li>

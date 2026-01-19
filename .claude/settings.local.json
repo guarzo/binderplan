@@ -5,7 +5,9 @@
       "Bash(hugo version:*)",
       "WebSearch",
       "WebFetch(domain:github.com)",
-      "Bash(hugo:*)"
+      "Bash(hugo:*)",
+      "Bash(git -C /home/tng/workspace/binderplan log --oneline -10)",
+      "Bash(git -C /home/tng/workspace/binderplan show --stat)"
     ]
   }
 }
