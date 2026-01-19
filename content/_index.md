@@ -26,6 +26,6 @@ Every card should either:
 
 ## Explore
 
-- **[Philosophy](/philosophy/)** — The framework behind the curation
-- **[Gallery](/gallery/)** — Browse the collection by theme and volume
-- **[Guides](/guides/)** — How to maintain and evolve the collection
+- **[Philosophy](philosophy/)** — The framework behind the curation
+- **[Gallery](gallery/)** — Browse the collection by theme and volume
+- **[Guides](guides/)** — How to maintain and evolve the collection
