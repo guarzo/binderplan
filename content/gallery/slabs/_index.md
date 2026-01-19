@@ -10,7 +10,7 @@ Graded cards are **anchors**, not clutter. They represent permanence, personal m
 
 <div class="gallery-grid">
   <figure class="gallery-item">
-    <img src="/images/slabs/crown-art-1.png" alt="Crown Art slab" loading="lazy">
+    <img src="../../images/slabs/crown-art-1.png" alt="Crown Art slab" loading="lazy">
     <figcaption>Crown Art</figcaption>
   </figure>
 </div>
@@ -19,7 +19,7 @@ Graded cards are **anchors**, not clutter. They represent permanence, personal m
 
 <div class="gallery-grid">
   <figure class="gallery-item">
-    <img src="/images/slabs/definitive-1.png" alt="Definitive Pokemon slab" loading="lazy">
+    <img src="../../images/slabs/definitive-1.png" alt="Definitive Pokemon slab" loading="lazy">
     <figcaption>Definitive</figcaption>
   </figure>
 </div>
@@ -28,7 +28,7 @@ Graded cards are **anchors**, not clutter. They represent permanence, personal m
 
 <div class="gallery-grid">
   <figure class="gallery-item">
-    <img src="/images/slabs/historical-1.png" alt="Historical slab" loading="lazy">
+    <img src="../../images/slabs/historical-1.png" alt="Historical slab" loading="lazy">
     <figcaption>Historical</figcaption>
   </figure>
 </div>
