@@ -7,9 +7,9 @@ This section explains the curatorial philosophy behind the collection. Cards are
 
 ## Sections
 
-- **[Core Themes](/philosophy/themes/)** — The 10 locked themes that form the backbone
-- **[Narrative Flow](/philosophy/narrative-flow/)** — How the binder reads like a book
-- **[Grading Philosophy](/philosophy/grading/)** — When and why to slab a card
+- **[Core Themes](themes/)** — The 10 locked themes that form the backbone
+- **[Narrative Flow](narrative-flow/)** — How the binder reads like a book
+- **[Grading Philosophy](grading/)** — When and why to slab a card
 
 ---
 
