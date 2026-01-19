@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3:*)",
+      "Bash(hugo version:*)",
+      "WebSearch",
+      "WebFetch(domain:github.com)",
+      "Bash(hugo:*)"
+    ]
+  }
+}
