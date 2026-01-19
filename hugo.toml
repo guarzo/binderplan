@@ -1,7 +1,6 @@
 baseURL = 'https://example.org/'
 languageCode = 'en-us'
 title = 'Pokemon Art Collection'
-theme = ''
 
 [params]
   description = 'A curated gallery of Pokemon cards organized by emotion, presence, and narrative'
