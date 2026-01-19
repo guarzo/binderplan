@@ -1,39 +1,55 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Guides on Pokemon Art Collection</title>
-    <link>http://localhost:1313/guides/</link>
-    <description>Recent content in Guides on Pokemon Art Collection</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <atom:link href="http://localhost:1313/guides/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Buying Checklist</title>
-      <link>http://localhost:1313/guides/buying/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/guides/buying/</guid>
-      <description>&lt;p&gt;This checklist exists to &lt;strong&gt;protect your taste&lt;/strong&gt; and prevent impulse drift.&lt;/p&gt;&#xA;&lt;p&gt;Before buying any card, walk through this list in order.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;step-1-emotional-signal&#34;&gt;Step 1: Emotional Signal&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;em&gt;What is this card actually showing me?&lt;/em&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Choose &lt;strong&gt;one&lt;/strong&gt;:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Calm&lt;/li&gt;&#xA;&lt;li&gt;Rest&lt;/li&gt;&#xA;&lt;li&gt;Thought&lt;/li&gt;&#xA;&lt;li&gt;Joyful motion&lt;/li&gt;&#xA;&lt;li&gt;Aggression&lt;/li&gt;&#xA;&lt;li&gt;Threat&lt;/li&gt;&#xA;&lt;li&gt;Power awakening&lt;/li&gt;&#xA;&lt;li&gt;Timeless presence&lt;/li&gt;&#xA;&lt;li&gt;Human coexistence&lt;/li&gt;&#xA;&lt;li&gt;Elemental isolation&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;If no clear signal appears → do not buy.&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;step-2-theme-fit&#34;&gt;Step 2: Theme Fit&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;em&gt;Which existing theme would this card strengthen?&lt;/em&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Rules:&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Holding Box System</title>
-      <link>http://localhost:1313/guides/holding-box/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/guides/holding-box/</guid>
-      <description>&lt;p&gt;This system exists to &lt;strong&gt;protect the Art Binder from overload&lt;/strong&gt; while preserving cards you genuinely enjoy.&lt;/p&gt;&#xA;&lt;p&gt;The holding box is not a failure state — it is an &lt;strong&gt;incubation space&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;core-rule&#34;&gt;Core Rule&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;A card enters the binder by clarity, not by effort.&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;If placement requires debate, justification, or compromise, the card belongs in a holding box.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;box-structure&#34;&gt;Box Structure&lt;/h2&gt;&#xA;&lt;p&gt;Use &lt;strong&gt;separate labeled sections&lt;/strong&gt; (physical dividers or envelopes). Do not mix categories.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Seasonal Curation</title>
-      <link>http://localhost:1313/guides/curation/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/guides/curation/</guid>
-      <description>&lt;p&gt;Performed &lt;strong&gt;2–4 times per year&lt;/strong&gt;, 60–90 minutes max.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;the-process&#34;&gt;The Process&lt;/h2&gt;&#xA;&lt;h3 id=&#34;1-flip-through-no-changes&#34;&gt;1. Flip Through (No Changes)&lt;/h3&gt;&#xA;&lt;p&gt;Just look. Notice what still resonates and what feels off.&lt;/p&gt;&#xA;&lt;h3 id=&#34;2-review-edge-pile&#34;&gt;2. Review EDGE Pile&lt;/h3&gt;&#xA;&lt;p&gt;Look for emerging themes. Do cards cluster around a feeling you can&amp;rsquo;t yet name?&lt;/p&gt;&#xA;&lt;h3 id=&#34;3-review-redundant-pile&#34;&gt;3. Review REDUNDANT Pile&lt;/h3&gt;&#xA;&lt;p&gt;Check for upgrades. Has a better card appeared that should replace something in the binder?&lt;/p&gt;&#xA;&lt;h3 id=&#34;4-remove-what-no-longer-earns-its-spot&#34;&gt;4. Remove What No Longer Earns Its Spot&lt;/h3&gt;&#xA;&lt;p&gt;Be honest. If a card evokes no emotional response, it should leave.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Theme Expansion</title>
-      <link>http://localhost:1313/guides/expansion/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/guides/expansion/</guid>
-      <description>&lt;p&gt;Not all themes should expand equally. Expansion should feel &lt;strong&gt;earned&lt;/strong&gt;, not indulgent.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;page-allocation-rules&#34;&gt;Page Allocation Rules&lt;/h2&gt;&#xA;&lt;h3 id=&#34;default-12-pages-per-theme&#34;&gt;Default: 1–2 Pages per Theme&lt;/h3&gt;&#xA;&lt;p&gt;This is your baseline. Most themes should live comfortably here.&lt;/p&gt;&#xA;&lt;h3 id=&#34;minimum-1-page&#34;&gt;Minimum: 1 Page&lt;/h3&gt;&#xA;&lt;p&gt;If a theme can&amp;rsquo;t fill one strong page, it&amp;rsquo;s not ready. Do not pad.&lt;/p&gt;&#xA;&lt;h3 id=&#34;expansion-34-pages-rare-earned&#34;&gt;Expansion: 3–4 Pages (Rare, Earned)&lt;/h3&gt;&#xA;&lt;p&gt;Only when a theme proves it has internal variety. Never jump from 2 → 4 pages at once.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Guides on Pokemon Art Collection</title><link>https://example.org/guides/</link><description>Recent content in Guides on Pokemon Art Collection</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://example.org/guides/index.xml" rel="self" type="application/rss+xml"/><item><title>Buying Checklist</title><link>https://example.org/guides/buying/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://example.org/guides/buying/</guid><description>&lt;p&gt;This checklist exists to &lt;strong&gt;protect your taste&lt;/strong&gt; and prevent impulse drift.&lt;/p&gt;
+&lt;p&gt;Before buying any card, walk through this list in order.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="step-1-emotional-signal"&gt;Step 1: Emotional Signal&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;What is this card actually showing me?&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Choose &lt;strong&gt;one&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Calm&lt;/li&gt;
+&lt;li&gt;Rest&lt;/li&gt;
+&lt;li&gt;Thought&lt;/li&gt;
+&lt;li&gt;Joyful motion&lt;/li&gt;
+&lt;li&gt;Aggression&lt;/li&gt;
+&lt;li&gt;Threat&lt;/li&gt;
+&lt;li&gt;Power awakening&lt;/li&gt;
+&lt;li&gt;Timeless presence&lt;/li&gt;
+&lt;li&gt;Human coexistence&lt;/li&gt;
+&lt;li&gt;Elemental isolation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;If no clear signal appears → do not buy.&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="step-2-theme-fit"&gt;Step 2: Theme Fit&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Which existing theme would this card strengthen?&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Rules:&lt;/p&gt;</description></item><item><title>Holding Box System</title><link>https://example.org/guides/holding-box/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://example.org/guides/holding-box/</guid><description>&lt;p&gt;This system exists to &lt;strong&gt;protect the Art Binder from overload&lt;/strong&gt; while preserving cards you genuinely enjoy.&lt;/p&gt;
+&lt;p&gt;The holding box is not a failure state — it is an &lt;strong&gt;incubation space&lt;/strong&gt;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="core-rule"&gt;Core Rule&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;A card enters the binder by clarity, not by effort.&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;If placement requires debate, justification, or compromise, the card belongs in a holding box.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="box-structure"&gt;Box Structure&lt;/h2&gt;
+&lt;p&gt;Use &lt;strong&gt;separate labeled sections&lt;/strong&gt; (physical dividers or envelopes). Do not mix categories.&lt;/p&gt;</description></item><item><title>Seasonal Curation</title><link>https://example.org/guides/curation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://example.org/guides/curation/</guid><description>&lt;p&gt;Performed &lt;strong&gt;2–4 times per year&lt;/strong&gt;, 60–90 minutes max.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="the-process"&gt;The Process&lt;/h2&gt;
+&lt;h3 id="1-flip-through-no-changes"&gt;1. Flip Through (No Changes)&lt;/h3&gt;
+&lt;p&gt;Just look. Notice what still resonates and what feels off.&lt;/p&gt;
+&lt;h3 id="2-review-edge-pile"&gt;2. Review EDGE Pile&lt;/h3&gt;
+&lt;p&gt;Look for emerging themes. Do cards cluster around a feeling you can&amp;rsquo;t yet name?&lt;/p&gt;
+&lt;h3 id="3-review-redundant-pile"&gt;3. Review REDUNDANT Pile&lt;/h3&gt;
+&lt;p&gt;Check for upgrades. Has a better card appeared that should replace something in the binder?&lt;/p&gt;
+&lt;h3 id="4-remove-what-no-longer-earns-its-spot"&gt;4. Remove What No Longer Earns Its Spot&lt;/h3&gt;
+&lt;p&gt;Be honest. If a card evokes no emotional response, it should leave.&lt;/p&gt;</description></item><item><title>Theme Expansion</title><link>https://example.org/guides/expansion/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://example.org/guides/expansion/</guid><description>&lt;p&gt;Not all themes should expand equally. Expansion should feel &lt;strong&gt;earned&lt;/strong&gt;, not indulgent.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="page-allocation-rules"&gt;Page Allocation Rules&lt;/h2&gt;
+&lt;h3 id="default-12-pages-per-theme"&gt;Default: 1–2 Pages per Theme&lt;/h3&gt;
+&lt;p&gt;This is your baseline. Most themes should live comfortably here.&lt;/p&gt;
+&lt;h3 id="minimum-1-page"&gt;Minimum: 1 Page&lt;/h3&gt;
+&lt;p&gt;If a theme can&amp;rsquo;t fill one strong page, it&amp;rsquo;s not ready. Do not pad.&lt;/p&gt;
+&lt;h3 id="expansion-34-pages-rare-earned"&gt;Expansion: 3–4 Pages (Rare, Earned)&lt;/h3&gt;
+&lt;p&gt;Only when a theme proves it has internal variety. Never jump from 2 → 4 pages at once.&lt;/p&gt;</description></item></channel></rss>
