@@ -1,0 +1,31 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'Pokemon Art Collection'
+theme = ''
+
+[params]
+  description = 'A curated gallery of Pokemon cards organized by emotion, presence, and narrative'
+  author = ''
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[menu]
+  [[menu.main]]
+    name = 'Home'
+    url = '/'
+    weight = 1
+  [[menu.main]]
+    name = 'Philosophy'
+    url = '/philosophy/'
+    weight = 2
+  [[menu.main]]
+    name = 'Gallery'
+    url = '/gallery/'
+    weight = 3
+  [[menu.main]]
+    name = 'Guides'
+    url = '/guides/'
+    weight = 4

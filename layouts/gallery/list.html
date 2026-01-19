@@ -1,0 +1,12 @@
+{{ define "main" }}
+<article class="gallery-page">
+  <header class="single-header">
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p class="description">{{ . }}</p>{{ end }}
+  </header>
+
+  <div class="gallery-content" style="max-width: var(--max-width);">
+    {{ .Content }}
+  </div>
+</article>
+{{ end }}
