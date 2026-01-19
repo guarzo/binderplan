@@ -18,7 +18,7 @@ Volume I focuses on how Pokemon move, rest, threaten, think, and belong in the w
     <figcaption>World of People</figcaption>
   </figure>
   <figure class="gallery-item">
-    <img src="../../images/binder/rest_1.jpg" alt="At Rest spread" loading="lazy">
+    <img src="../../images/binder/at_rest_1.jpg" alt="At Rest spread" loading="lazy">
     <figcaption>At Rest</figcaption>
   </figure>
 </div>
