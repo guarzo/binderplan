@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pokemon Art Collection</title>
+    <link>https://collection.dpao.la/</link>
+    <description>Recent content on Pokemon Art Collection</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://collection.dpao.la/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Buying Checklist</title>
+      <link>https://collection.dpao.la/guides/buying/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://collection.dpao.la/guides/buying/</guid>
+      <description>&lt;p&gt;This checklist exists to &lt;strong&gt;protect your taste&lt;/strong&gt; and prevent impulse drift.&lt;/p&gt;&#xA;&lt;p&gt;Before buying any card, walk through this list in order.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;step-1-emotional-signal&#34;&gt;Step 1: Emotional Signal&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;em&gt;What is this card actually showing me?&lt;/em&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Choose &lt;strong&gt;one&lt;/strong&gt;:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Calm&lt;/li&gt;&#xA;&lt;li&gt;Rest&lt;/li&gt;&#xA;&lt;li&gt;Thought&lt;/li&gt;&#xA;&lt;li&gt;Joyful motion&lt;/li&gt;&#xA;&lt;li&gt;Aggression&lt;/li&gt;&#xA;&lt;li&gt;Threat&lt;/li&gt;&#xA;&lt;li&gt;Power awakening&lt;/li&gt;&#xA;&lt;li&gt;Timeless presence&lt;/li&gt;&#xA;&lt;li&gt;Human coexistence&lt;/li&gt;&#xA;&lt;li&gt;Elemental isolation&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;If no clear signal appears → do not buy.&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;step-2-theme-fit&#34;&gt;Step 2: Theme Fit&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;em&gt;Which existing theme would this card strengthen?&lt;/em&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Rules:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Core Themes</title>
+      <link>https://collection.dpao.la/philosophy/themes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://collection.dpao.la/philosophy/themes/</guid>
+      <description>&lt;p&gt;These themes are &lt;strong&gt;canonical&lt;/strong&gt;. Every card either fits clearly into one of these themes or stays out of the binder.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;div class=&#34;theme-card&#34;&gt;&#xA;&lt;h3 id=&#34;elemental-solitude&#34;&gt;Elemental Solitude&lt;/h3&gt;&#xA;&lt;p&gt;Pokemon alone with their elemental power, defined by environment rather than action.&lt;/p&gt;&#xA;&lt;p class=&#34;signal&#34;&gt;Key signal: isolation + scale&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;theme-card&#34;&gt;&#xA;&lt;h3 id=&#34;calm-in-nature&#34;&gt;Calm in Nature&lt;/h3&gt;&#xA;&lt;p&gt;Pokemon at ease within a natural setting, present but untroubled.&lt;/p&gt;&#xA;&lt;p class=&#34;signal&#34;&gt;Key signal: harmony, not sleep&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;theme-card&#34;&gt;&#xA;&lt;h3 id=&#34;joyful-action&#34;&gt;Joyful Action&lt;/h3&gt;&#xA;&lt;p&gt;Pokemon actively moving or playing, where motion expresses happiness.&lt;/p&gt;&#xA;&lt;p class=&#34;signal&#34;&gt;Key signal: motion driven by joy&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Grading Philosophy</title>
+      <link>https://collection.dpao.la/philosophy/grading/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://collection.dpao.la/philosophy/grading/</guid>
+      <description>&lt;p&gt;Slabs are &lt;strong&gt;finished statements&lt;/strong&gt;, not flexible pieces.&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;Binders = gallery walls&lt;/strong&gt;&#xA;&lt;strong&gt;Slabs = framed originals&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;A card is graded when it is considered &lt;em&gt;final&lt;/em&gt;.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;slab-roles&#34;&gt;Slab Roles&lt;/h2&gt;&#xA;&lt;p&gt;Every graded card must have one clear role:&lt;/p&gt;&#xA;&lt;h3 id=&#34;crown_art&#34;&gt;CROWN_ART&lt;/h3&gt;&#xA;&lt;p&gt;Best art version of a card; grade supports presentation.&lt;/p&gt;&#xA;&lt;h3 id=&#34;definitive_pokemon&#34;&gt;DEFINITIVE_[POKEMON]&lt;/h3&gt;&#xA;&lt;p&gt;The canonical version of a Pokemon in the collection.&lt;/p&gt;&#xA;&lt;h3 id=&#34;historical&#34;&gt;HISTORICAL&lt;/h3&gt;&#xA;&lt;p&gt;Vintage, first appearances, culturally significant cards.&lt;/p&gt;&#xA;&lt;h3 id=&#34;liquid&#34;&gt;LIQUID&lt;/h3&gt;&#xA;&lt;p&gt;Investment or trade-focused slabs; no emotional attachment.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;physical-organization&#34;&gt;Physical Organization&lt;/h2&gt;&#xA;&lt;h3 id=&#34;tier-a--display&#34;&gt;Tier A — Display&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Crown art &amp;amp; historical icons&lt;/li&gt;&#xA;&lt;li&gt;Few at a time&lt;/li&gt;&#xA;&lt;li&gt;Rotated intentionally&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;tier-b--archive-cases&#34;&gt;Tier B — Archive Cases&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Pokemon-definitive slabs&lt;/li&gt;&#xA;&lt;li&gt;Sorted by Pokemon → Era → Grade&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;tier-c--slab-boxes&#34;&gt;Tier C — Slab Boxes&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Liquid / duplicate slabs&lt;/li&gt;&#xA;&lt;li&gt;Stored upright, labeled, replaceable&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;what-gets-graded&#34;&gt;What Gets Graded&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Grade if:&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Holding Box System</title>
+      <link>https://collection.dpao.la/guides/holding-box/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://collection.dpao.la/guides/holding-box/</guid>
+      <description>&lt;p&gt;This system exists to &lt;strong&gt;protect the Art Binder from overload&lt;/strong&gt; while preserving cards you genuinely enjoy.&lt;/p&gt;&#xA;&lt;p&gt;The holding box is not a failure state — it is an &lt;strong&gt;incubation space&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;core-rule&#34;&gt;Core Rule&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;A card enters the binder by clarity, not by effort.&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;If placement requires debate, justification, or compromise, the card belongs in a holding box.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;box-structure&#34;&gt;Box Structure&lt;/h2&gt;&#xA;&lt;p&gt;Use &lt;strong&gt;separate labeled sections&lt;/strong&gt; (physical dividers or envelopes). Do not mix categories.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Narrative Flow</title>
+      <link>https://collection.dpao.la/philosophy/narrative-flow/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://collection.dpao.la/philosophy/narrative-flow/</guid>
+      <description>&lt;p&gt;The binder is read like a book. Page order matters.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-emotional-arc&#34;&gt;The Emotional Arc&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Belonging → Motion → Power → Threat → Reflection&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;&#xA;&lt;h2 id=&#34;chapter-structure&#34;&gt;Chapter Structure&lt;/h2&gt;&#xA;&lt;h3 id=&#34;chapter-i--belonging--safety&#34;&gt;Chapter I — Belonging &amp;amp; Safety&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Calm in Nature&lt;/li&gt;&#xA;&lt;li&gt;World of People&lt;/li&gt;&#xA;&lt;li&gt;At Rest&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;em&gt;The opening establishes peace, connection, and groundedness.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h3 id=&#34;chapter-ii--motion--life&#34;&gt;Chapter II — Motion &amp;amp; Life&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Joyful Action&lt;/li&gt;&#xA;&lt;li&gt;Journey &lt;em&gt;(if/when it emerges)&lt;/em&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;em&gt;Energy builds. Pokemon are active, engaged, moving through the world.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h3 id=&#34;chapter-iii--power-awakening-binder-hinge&#34;&gt;Chapter III — Power Awakening (Binder Hinge)&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Awakened Power&lt;/li&gt;&#xA;&lt;li&gt;Legendary Bearing&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;em&gt;The midpoint pivot. Power emerges but remains contained.&lt;/em&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Seasonal Curation</title>
+      <link>https://collection.dpao.la/guides/curation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://collection.dpao.la/guides/curation/</guid>
+      <description>&lt;p&gt;Performed &lt;strong&gt;2–4 times per year&lt;/strong&gt;, 60–90 minutes max.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;the-process&#34;&gt;The Process&lt;/h2&gt;&#xA;&lt;h3 id=&#34;1-flip-through-no-changes&#34;&gt;1. Flip Through (No Changes)&lt;/h3&gt;&#xA;&lt;p&gt;Just look. Notice what still resonates and what feels off.&lt;/p&gt;&#xA;&lt;h3 id=&#34;2-review-edge-pile&#34;&gt;2. Review EDGE Pile&lt;/h3&gt;&#xA;&lt;p&gt;Look for emerging themes. Do cards cluster around a feeling you can&amp;rsquo;t yet name?&lt;/p&gt;&#xA;&lt;h3 id=&#34;3-review-redundant-pile&#34;&gt;3. Review REDUNDANT Pile&lt;/h3&gt;&#xA;&lt;p&gt;Check for upgrades. Has a better card appeared that should replace something in the binder?&lt;/p&gt;&#xA;&lt;h3 id=&#34;4-remove-what-no-longer-earns-its-spot&#34;&gt;4. Remove What No Longer Earns Its Spot&lt;/h3&gt;&#xA;&lt;p&gt;Be honest. If a card evokes no emotional response, it should leave.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Theme Expansion</title>
+      <link>https://collection.dpao.la/guides/expansion/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://collection.dpao.la/guides/expansion/</guid>
+      <description>&lt;p&gt;Not all themes should expand equally. Expansion should feel &lt;strong&gt;earned&lt;/strong&gt;, not indulgent.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;page-allocation-rules&#34;&gt;Page Allocation Rules&lt;/h2&gt;&#xA;&lt;h3 id=&#34;default-12-pages-per-theme&#34;&gt;Default: 1–2 Pages per Theme&lt;/h3&gt;&#xA;&lt;p&gt;This is your baseline. Most themes should live comfortably here.&lt;/p&gt;&#xA;&lt;h3 id=&#34;minimum-1-page&#34;&gt;Minimum: 1 Page&lt;/h3&gt;&#xA;&lt;p&gt;If a theme can&amp;rsquo;t fill one strong page, it&amp;rsquo;s not ready. Do not pad.&lt;/p&gt;&#xA;&lt;h3 id=&#34;expansion-34-pages-rare-earned&#34;&gt;Expansion: 3–4 Pages (Rare, Earned)&lt;/h3&gt;&#xA;&lt;p&gt;Only when a theme proves it has internal variety. Never jump from 2 → 4 pages at once.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

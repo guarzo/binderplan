@@ -8,6 +8,7 @@ The gallery showcases binder spreads organized by theme and narrative flow.
 ## Volumes
 
 - **[Volume I](volume-1/)** — Lived Experience: how Pokemon exist in the world
+- **[Volume II](volume-2/)** — Memory, Companionship, and the Shape of an Era
 - **[Slabs](slabs/)** — Graded cards on display
 
 ---

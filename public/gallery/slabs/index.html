@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Graded Cards | Pokemon Art Collection</title>
+  <meta name="description" content="Slabs on display — finished statements">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg-primary: #0d0d0d;
+  --bg-secondary: #1a1a1a;
+  --bg-tertiary: #252525;
+  --text-primary: #e5e5e5;
+  --text-muted: #888;
+  --accent: #c9a227;
+  --accent-hover: #ddb52f;
+  --border: #333;
+  --max-width: 1200px;
+  --content-width: 800px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.7;
+  min-height: 100vh;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
+
+h1, h2, h3, h4 {
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 0.75em;
+}
+
+h1 { font-size: 2.25rem; }
+h2 { font-size: 1.75rem; }
+h3 { font-size: 1.35rem; }
+
+p {
+  margin-bottom: 1.25em;
+}
+
+ul, ol {
+  margin-bottom: 1.25em;
+  padding-left: 1.5em;
+}
+
+li {
+  margin-bottom: 0.5em;
+}
+
+blockquote {
+  border-left: 3px solid var(--accent);
+  padding-left: 1.25em;
+  margin: 1.5em 0;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+code {
+  background: var(--bg-tertiary);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+pre {
+  background: var(--bg-secondary);
+  padding: 1.25em;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin-bottom: 1.5em;
+}
+
+pre code {
+  background: none;
+  padding: 0;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2.5em 0;
+}
+
+ 
+.site-header {
+  position: sticky;
+  top: 0;
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border);
+  z-index: 100;
+}
+
+.header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.site-title:hover {
+  color: var(--accent);
+}
+
+.site-nav ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-nav a {
+  color: var(--text-muted);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.site-nav a:hover,
+.site-nav a.active {
+  color: var(--accent);
+}
+
+ 
+.content {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+ 
+.single-header {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.single-header .description {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  margin-bottom: 0;
+}
+
+ 
+.list-header {
+  margin-bottom: 2.5rem;
+}
+
+.list-content {
+  margin-bottom: 3rem;
+}
+
+.list-items {
+  list-style: none;
+  padding: 0;
+}
+
+.list-item {
+  margin-bottom: 1rem;
+}
+
+.list-item a {
+  display: block;
+  padding: 1.25rem;
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.list-item a:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.list-item h2 {
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
+  color: var(--text-primary);
+}
+
+.list-item p {
+  color: var(--text-muted);
+  margin-bottom: 0;
+  font-size: 0.95rem;
+}
+
+ 
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.gallery-item figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background: linear-gradient(transparent, rgba(0,0,0,0.8));
+  color: var(--text-primary);
+  font-size: 0.9rem;
+}
+
+ 
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.95);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 100%;
+  max-height: 90vh;
+  object-fit: contain;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  color: var(--text-primary);
+  font-size: 2rem;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.lightbox-close:hover {
+  opacity: 1;
+}
+
+ 
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 2rem;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+ 
+@media (max-width: 768px) {
+  .header-inner {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .site-nav ul {
+    gap: 1.25rem;
+  }
+
+  h1 { font-size: 1.75rem; }
+  h2 { font-size: 1.35rem; }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+ 
+.theme-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.theme-card h3 {
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.theme-card .signal {
+  color: var(--text-muted);
+  font-style: italic;
+  font-size: 0.95rem;
+}
+</style>
+
+</head>
+<body>
+  <header class="site-header">
+  <div class="header-inner">
+    <a href="https://collection.dpao.la/" class="site-title">Pokemon Art Collection</a>
+    <nav class="site-nav">
+      <ul>
+        
+        <li>
+          <a href="/">
+            Home
+          </a>
+        </li>
+        
+        <li>
+          <a href="/philosophy/">
+            Philosophy
+          </a>
+        </li>
+        
+        <li>
+          <a href="/gallery/">
+            Gallery
+          </a>
+        </li>
+        
+        <li>
+          <a href="/guides/">
+            Guides
+          </a>
+        </li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+  <main class="content">
+    
+<article class="gallery-page">
+  <header class="single-header">
+    <h1>Graded Cards</h1>
+    <p class="description">Slabs on display — finished statements</p>
+  </header>
+
+  <div class="gallery-content" style="max-width: var(--max-width);">
+    <p>Graded cards are <strong>anchors</strong>, not clutter. They represent permanence, personal milestones, and cards too fragile or meaningful for binder handling.</p>
+<h2 id="crown-art">Crown Art</h2>
+<div class="gallery-grid">
+  <figure class="gallery-item">
+    <img src="../../images/slabs/crown_entei_gold_star.jpg" alt="Entei Gold Star slab" loading="lazy">
+    <figcaption>Entei Gold Star</figcaption>
+  </figure>
+  <figure class="gallery-item">
+    <img src="../../images/slabs/crown_registeel_gold_star.jpg" alt="Registeel Gold Star slab" loading="lazy">
+    <figcaption>Registeel Gold Star</figcaption>
+  </figure>
+  <figure class="gallery-item">
+    <img src="../../images/slabs/crown_mewtwo_gold_star.jpg" alt="Mewtwo Gold Star slab" loading="lazy">
+    <figcaption>Mewtwo Gold Star</figcaption>
+  </figure>
+  <figure class="gallery-item">
+    <img src="../../images/slabs/crown_golem_masaki.jpg" alt="Golem Masaki slab" loading="lazy">
+    <figcaption>Golem Masaki</figcaption>
+  </figure>
+  <figure class="gallery-item">
+    <img src="../../images/slabs/crown_mew_sv4a_jp.jpg" alt="Mew SV4a slab" loading="lazy">
+    <figcaption>Mew SV4a</figcaption>
+  </figure>
+  <figure class="gallery-item">
+    <img src="../../images/slabs/crown_maushold_ccic.jpg" alt="Maushold CCIC slab" loading="lazy">
+    <figcaption>Maushold CCIC</figcaption>
+  </figure>
+  <figure class="gallery-item">
+    <img src="../../images/slabs/crown_umbreon_tag_placeholder.jpg" alt="Umbreon Tag slab" loading="lazy">
+    <figcaption>Umbreon Tag</figcaption>
+  </figure>
+  <figure class="gallery-item">
+    <img src="../../images/slabs/crown_umbreon_gempack_placeholder.jpg" alt="Umbreon Gempack slab" loading="lazy">
+    <figcaption>Umbreon Gempack</figcaption>
+  </figure>
+  <figure class="gallery-item">
+    <img src="../../images/slabs/crown_leafeon_gempack_placeholder.jpg" alt="Leafeon Gempack slab" loading="lazy">
+    <figcaption>Leafeon Gempack</figcaption>
+  </figure>
+  <figure class="gallery-item">
+    <img src="../../images/slabs/crown_eevee_gempack_placeholder.jpg" alt="Eevee Gempack slab" loading="lazy">
+    <figcaption>Eevee Gempack</figcaption>
+  </figure>
+  <figure class="gallery-item">
+    <img src="../../images/slabs/crown_sylveon_gempack_placeholder.jpg" alt="Sylveon Gempack slab" loading="lazy">
+    <figcaption>Sylveon Gempack</figcaption>
+  </figure>
+</div>
+<h2 id="definitive-pokemon">Definitive Pokemon</h2>
+<div class="gallery-grid">
+  <figure class="gallery-item">
+    <img src="../../images/slabs/definitive_umbreon_aquapolis.jpg" alt="Umbreon Aquapolis slab" loading="lazy">
+    <figcaption>Umbreon Aquapolis</figcaption>
+  </figure>
+  <figure class="gallery-item">
+    <img src="../../images/slabs/definitive_mew_shining_darkness.jpg" alt="Mew Shining Darkness slab" loading="lazy">
+    <figcaption>Mew Shining Darkness</figcaption>
+  </figure>
+  <figure class="gallery-item">
+    <img src="../../images/slabs/definitive_charizard_base_2.jpg" alt="Charizard Base Set 2 slab" loading="lazy">
+    <figcaption>Charizard Base Set 2</figcaption>
+  </figure>
+  <figure class="gallery-item">
+    <img src="../../images/slabs/definitive_houndoom_aquapolis.jpg" alt="Houndoom Aquapolis slab" loading="lazy">
+    <figcaption>Houndoom Aquapolis</figcaption>
+  </figure>
+  <figure class="gallery-item">
+    <img src="../../images/slabs/definitive_charizard_151_jp.jpg" alt="Charizard 151 slab" loading="lazy">
+    <figcaption>Charizard 151</figcaption>
+  </figure>
+  <figure class="gallery-item">
+    <img src="../../images/slabs/definitive_kingdra_aquapolis.jpg" alt="Kingdra Aquapolis slab" loading="lazy">
+    <figcaption>Kingdra Aquapolis</figcaption>
+  </figure>
+  <figure class="gallery-item">
+    <img src="../../images/slabs/definitive_pikachu_blackstar_2000.jpg" alt="Pikachu Black Star 2000 slab" loading="lazy">
+    <figcaption>Pikachu Black Star 2000</figcaption>
+  </figure>
+  <figure class="gallery-item">
+    <img src="../../images/slabs/definitive_gengar_chinese_2025.jpg" alt="Gengar Chinese 2025 slab" loading="lazy">
+    <figcaption>Gengar Chinese 2025</figcaption>
+  </figure>
+  <figure class="gallery-item">
+    <img src="../../images/slabs/definitive_plusle_jp.jpg" alt="Plusle slab" loading="lazy">
+    <figcaption>Plusle</figcaption>
+  </figure>
+  <figure class="gallery-item">
+    <img src="../../images/slabs/definitive_minun_jp.jpg" alt="Minun slab" loading="lazy">
+    <figcaption>Minun</figcaption>
+  </figure>
+</div>
+<h2 id="historical">Historical</h2>
+<div class="gallery-grid">
+  <figure class="gallery-item">
+    <img src="../../images/slabs/historical_jolteon_pop.jpg" alt="Jolteon POP slab" loading="lazy">
+    <figcaption>Jolteon POP</figcaption>
+  </figure>
+</div>
+<h2 id="personal-significance">Personal Significance</h2>
+<div class="gallery-grid">
+  <figure class="gallery-item">
+    <img src="../../images/slabs/personal_mew_2nd.jpg" alt="Mew 2nd slab" loading="lazy">
+    <figcaption>Mew 2nd</figcaption>
+  </figure>
+  <figure class="gallery-item">
+    <img src="../../images/slabs/personal_kanga_mega_jp.jpg" alt="Mega Kangaskhan slab" loading="lazy">
+    <figcaption>Mega Kangaskhan</figcaption>
+  </figure>
+  <figure class="gallery-item">
+    <img src="../../images/slabs/personal_emolga_playing_3.jpg" alt="Emolga Playing slab" loading="lazy">
+    <figcaption>Emolga Playing</figcaption>
+  </figure>
+  <figure class="gallery-item">
+    <img src="../../images/slabs/personal_keckleon_jp.jpg" alt="Kecleon slab" loading="lazy">
+    <figcaption>Kecleon</figcaption>
+  </figure>
+</div>
+<!-- Lightbox container -->
+<div id="lightbox" class="lightbox">
+  <span class="lightbox-close">&times;</span>
+  <img id="lightbox-img" src="" alt="Full size image">
+</div>
+
+  </div>
+</article>
+
+  </main>
+
+  <footer class="site-footer">
+  <p>Art first. Favorites second. Value is a bonus, not the goal.</p>
+</footer>
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function() {
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxClose = document.querySelector('.lightbox-close');
+
+  galleryItems.forEach(item => {
+    item.addEventListener('click', function() {
+      const img = this.querySelector('img');
+      if (lightbox && lightboxImg && img) {
+        lightboxImg.src = img.src;
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    });
+  });
+
+  if (lightboxClose) {
+    lightboxClose.addEventListener('click', closeLightbox);
+  }
+
+  if (lightbox) {
+    lightbox.addEventListener('click', function(e) {
+      if (e.target === lightbox) {
+        closeLightbox();
+      }
+    });
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      closeLightbox();
+    }
+  });
+
+  function closeLightbox() {
+    if (lightbox) {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  }
+});
+</script>
+
+</body>
+</html>
