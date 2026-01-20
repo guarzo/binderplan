@@ -1,19 +1,20 @@
 ---
 title: "Volume II"
-description: "Memory, Companionship, and the Shape of an Era"
+description: "Memory, Presence, and Passage"
 layout: "gallery"
 ---
 
 Volume II shifts inward.
 
-This volume is not about what Pokemon do, but about how they are remembered, lived with, and understood across time.
+This volume is not about what Pokémon do, but about how they are remembered, lived with, and understood across time.
 
 Here you'll find:
 
-- Pokemon as companions rather than actors
+- Pokémon as companions rather than actors
 - Art shaped by cultural eras rather than narrative moments
 - Quiet scenes that imply belonging, routine, and continuity
-- Images that resist spectacle in favor of familiarity and identity
+- Timeless beings depicted as complete, self-contained forces
+- Liminal moments at borders, entrances, and passages
 
 Volume II is intentionally softer, slower, and more reflective. Its themes are narrower, but deeper — and demand stronger curation.
 
@@ -21,14 +22,14 @@ Volume II is intentionally softer, slower, and more reflective. Its themes are n
 
 ## Chapter I — Companions
 
-*Pokemon whose identity is shaped through shared presence*
+*Bond without spectacle*
 
-Pokemon defined by an ongoing relationship with a human or another Pokemon. The bond is mutual, enduring, and central to the image.
+Pokémon and humans (or other Pokémon) in relationships defined by trust, care, or shared stillness. The bond is mutual, enduring, and central to the image.
 
 **Key signals:**
 - Shared space or purpose
 - Emotional reciprocity
-- Pokemon is not complete alone
+- Pokémon is not complete alone
 
 <div class="gallery-grid">
   <figure class="gallery-item">
@@ -41,9 +42,9 @@ Pokemon defined by an ongoing relationship with a human or another Pokemon. The 
 
 ## Chapter II — Quiet Familiarity
 
-*Where Pokemon belong, without needing to act*
+*Domestic calm and lived-in worlds*
 
-Quiet scenes that evoke home, routine, or gentle belonging. Pokemon are neither active nor isolated — they are held by their environment.
+Pokémon adjacent to everyday life, invoking comfort, routine, or family without narrative emphasis. They are neither active nor isolated — they are held by their environment.
 
 **Key signals:**
 - Domestic scale
@@ -65,16 +66,16 @@ Quiet scenes that evoke home, routine, or gentle belonging. Pokemon are neither 
 
 ## Chapter III — Era Identity
 
-*Foundational visions of Pokemon across time*
+*Inherited visual language*
 
-Pokemon presented as emblematic of an era's visual language and worldview. These cards are not moments, stories, or emotions — they are statements.
+Pokémon as they were once framed — simple, centered, iconic, and culturally formative. These cards are not moments, stories, or emotions — they are statements about what Pokémon meant at a specific time.
 
 **Key signals:**
 - Iconic or instructional composition
 - Minimal narrative implication
-- Art that defines "what Pokemon are" at a specific time
+- Art that defines "what Pokémon are" at a specific time
 
-**Entry rule:** A card must meaningfully fail at least two other themes to qualify.
+**Hard cap recommended:** This section should be smaller than others to preserve its integrity. A card must meaningfully fail at least two other themes to qualify.
 
 <div class="gallery-grid">
   <figure class="gallery-item">
@@ -89,11 +90,71 @@ Pokemon presented as emblematic of an era's visual language and worldview. These
 
 ---
 
+## Chapter IV — Enduring Presence
+
+*Power that no longer needs to move*
+
+Pokémon depicted as complete, self-contained forces — not in action, not in transition, but already fully realized. Timeless beings whose power is contained, not expressed.
+
+**Key signals:**
+- The Pokémon feels finished, not becoming
+- Power is contained, not expressed
+- The pose suggests continuity, not motion
+- The viewer feels they arrived too late to see the beginning
+
+**What this is not:**
+- Not "legendary Pokémon only"
+- Not explosions, beams, or attacks
+- Not Awakening or transformation
+
+**Examples that fit:** Mew depicted calmly; Celebi framed as existing outside time; early Umbreon watchful and quiet; Dragonite as presence rather than flight.
+
+If Awakening Power is about energy gathering, Enduring Presence is about energy that no longer needs to gather. This theme gives Volume II gravity without noise.
+
+<div class="gallery-grid">
+  <!-- Enduring Presence spreads to be added -->
+</div>
+
+---
+
+## Chapter V — Threshold
+
+*The space between moments*
+
+Pokémon positioned at borders, entrances, or moments of passage — emotionally, spatially, or symbolically. Movement without action. Progression without chaos.
+
+**Key signals:**
+- Doorways, paths, bridges, city edges
+- Pokémon facing into or out of a space
+- A sense of "just before" or "just after"
+- Liminal light (dusk, dawn, fog, interior glow)
+
+**Cards that often belong here:**
+- Pokémon in streets, alleys, hallways
+- Figures half-turned away from the viewer
+- Scenes where the Pokémon is between roles (not resting, not attacking)
+
+Threshold is emotional architecture. It lets the binder breathe. This is where Volume II exhales.
+
+<div class="gallery-grid">
+  <!-- Threshold spreads to be added -->
+</div>
+
+---
+
 ## Curation Notes
 
 Volume II themes do not auto-expand. No theme grows beyond 2 pages without deliberate review.
 
 A card may be loved and still excluded. "Almost fits" means it doesn't fit yet.
+
+**Preventing drift:** The five-chapter structure solves the problem of Era Identity becoming a catch-all for old cards:
+- Cards that are old but emotionally active belong in Companions or Quiet Familiarity
+- Cards that are timeless move to Enduring Presence
+- Cards that imply movement without action move to Threshold
+- Era Identity remains small and strict — reserved only for cards that define an era's visual language
+
+Nothing is homeless — but nothing is allowed to drift.
 
 Volume II is not a home for leftovers. It is a second thesis.
 
