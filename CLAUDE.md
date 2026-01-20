@@ -39,14 +39,16 @@ Production builds use `hugo --gc --minify --baseURL <url>` via GitHub Actions.
 
 ## Adding Gallery Images
 
-Binder spreads: Add to `static/images/binder/`, reference in `content/gallery/volume-1/_index.md`
+Binder spreads are organized by volume:
+- Volume I: Add to `static/images/binder/volume-1/`, reference in `content/gallery/volume-1/_index.md`
+- Volume II: Add to `static/images/binder/volume-2/`, reference in `content/gallery/volume-2/_index.md`
 
 Slabs: Add to `static/images/slabs/`, reference in `content/gallery/slabs/_index.md`
 
 Image markup pattern:
 ```html
 <figure class="gallery-item">
-  <img src="../../images/binder/filename.png" alt="Description" loading="lazy">
+  <img src="../../images/binder/volume-1/filename.png" alt="Description" loading="lazy">
   <figcaption>Caption</figcaption>
 </figure>
 ```

@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Narrative Flow | Pokemon Art Collection</title>
+  <meta name="description" content="How the binder reads like a book">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg-primary: #0d0d0d;
+  --bg-secondary: #1a1a1a;
+  --bg-tertiary: #252525;
+  --text-primary: #e5e5e5;
+  --text-muted: #888;
+  --accent: #c9a227;
+  --accent-hover: #ddb52f;
+  --border: #333;
+  --max-width: 1200px;
+  --content-width: 800px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.7;
+  min-height: 100vh;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
+
+h1, h2, h3, h4 {
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 0.75em;
+}
+
+h1 { font-size: 2.25rem; }
+h2 { font-size: 1.75rem; }
+h3 { font-size: 1.35rem; }
+
+p {
+  margin-bottom: 1.25em;
+}
+
+ul, ol {
+  margin-bottom: 1.25em;
+  padding-left: 1.5em;
+}
+
+li {
+  margin-bottom: 0.5em;
+}
+
+blockquote {
+  border-left: 3px solid var(--accent);
+  padding-left: 1.25em;
+  margin: 1.5em 0;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+code {
+  background: var(--bg-tertiary);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+pre {
+  background: var(--bg-secondary);
+  padding: 1.25em;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin-bottom: 1.5em;
+}
+
+pre code {
+  background: none;
+  padding: 0;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2.5em 0;
+}
+
+ 
+.site-header {
+  position: sticky;
+  top: 0;
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border);
+  z-index: 100;
+}
+
+.header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.site-title:hover {
+  color: var(--accent);
+}
+
+.site-nav ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-nav a {
+  color: var(--text-muted);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.site-nav a:hover,
+.site-nav a.active {
+  color: var(--accent);
+}
+
+ 
+.content {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+ 
+.single-header {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.single-header .description {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  margin-bottom: 0;
+}
+
+ 
+.list-header {
+  margin-bottom: 2.5rem;
+}
+
+.list-content {
+  margin-bottom: 3rem;
+}
+
+.list-items {
+  list-style: none;
+  padding: 0;
+}
+
+.list-item {
+  margin-bottom: 1rem;
+}
+
+.list-item a {
+  display: block;
+  padding: 1.25rem;
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.list-item a:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.list-item h2 {
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
+  color: var(--text-primary);
+}
+
+.list-item p {
+  color: var(--text-muted);
+  margin-bottom: 0;
+  font-size: 0.95rem;
+}
+
+ 
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.gallery-item figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background: linear-gradient(transparent, rgba(0,0,0,0.8));
+  color: var(--text-primary);
+  font-size: 0.9rem;
+}
+
+ 
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.95);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 100%;
+  max-height: 90vh;
+  object-fit: contain;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  color: var(--text-primary);
+  font-size: 2rem;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.lightbox-close:hover {
+  opacity: 1;
+}
+
+ 
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 2rem;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+ 
+@media (max-width: 768px) {
+  .header-inner {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .site-nav ul {
+    gap: 1.25rem;
+  }
+
+  h1 { font-size: 1.75rem; }
+  h2 { font-size: 1.35rem; }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+ 
+.theme-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.theme-card h3 {
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.theme-card .signal {
+  color: var(--text-muted);
+  font-style: italic;
+  font-size: 0.95rem;
+}
+</style>
+
+</head>
+<body>
+  <header class="site-header">
+  <div class="header-inner">
+    <a href="https://collection.dpao.la/" class="site-title">Pokemon Art Collection</a>
+    <nav class="site-nav">
+      <ul>
+        
+        <li>
+          <a href="/">
+            Home
+          </a>
+        </li>
+        
+        <li>
+          <a href="/philosophy/">
+            Philosophy
+          </a>
+        </li>
+        
+        <li>
+          <a href="/gallery/">
+            Gallery
+          </a>
+        </li>
+        
+        <li>
+          <a href="/guides/">
+            Guides
+          </a>
+        </li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+  <main class="content">
+    
+<article class="single">
+  <header class="single-header">
+    <h1>Narrative Flow</h1>
+    <p class="description">How the binder reads like a book</p>
+  </header>
+
+  <div class="single-content">
+    <p>The binder is read like a book. Page order matters.</p>
+<h2 id="the-emotional-arc">The Emotional Arc</h2>
+<pre tabindex="0"><code>Belonging → Motion → Power → Threat → Reflection
+</code></pre><hr>
+<h2 id="chapter-structure">Chapter Structure</h2>
+<h3 id="chapter-i--belonging--safety">Chapter I — Belonging &amp; Safety</h3>
+<ul>
+<li>Calm in Nature</li>
+<li>World of People</li>
+<li>At Rest</li>
+</ul>
+<p><em>The opening establishes peace, connection, and groundedness.</em></p>
+<hr>
+<h3 id="chapter-ii--motion--life">Chapter II — Motion &amp; Life</h3>
+<ul>
+<li>Joyful Action</li>
+<li>Journey <em>(if/when it emerges)</em></li>
+</ul>
+<p><em>Energy builds. Pokemon are active, engaged, moving through the world.</em></p>
+<hr>
+<h3 id="chapter-iii--power-awakening-binder-hinge">Chapter III — Power Awakening (Binder Hinge)</h3>
+<ul>
+<li>Awakened Power</li>
+<li>Legendary Bearing</li>
+</ul>
+<p><em>The midpoint pivot. Power emerges but remains contained.</em></p>
+<hr>
+<h3 id="chapter-iv--threat--conflict">Chapter IV — Threat &amp; Conflict</h3>
+<ul>
+<li>Intimidation</li>
+<li>On the Attack</li>
+</ul>
+<p><em>Tension peaks. Pokemon are dangerous, committed, overwhelming.</em></p>
+<hr>
+<h3 id="chapter-v--isolation--reflection">Chapter V — Isolation &amp; Reflection</h3>
+<ul>
+<li>Elemental Solitude</li>
+<li>Contemplation</li>
+</ul>
+<p><em>The binder resolves in stillness and introspection.</em></p>
+<hr>
+<h2 id="volume-i-focus">Volume I Focus</h2>
+<p><strong>Volume I</strong> focuses on <em>lived experience</em>:</p>
+<ul>
+<li>How Pokemon exist in the world</li>
+<li>How they move, rest, threaten, think, and belong</li>
+</ul>
+<p>Large-scale mythic or overwhelming power is intentionally constrained so it does not dominate the narrative.</p>
+<hr>
+<h2 id="volume-ii-reserved">Volume II (Reserved)</h2>
+<p><strong>Volume II: Power &amp; Myth</strong> <em>(recommended future direction)</em></p>
+<p>Purpose:</p>
+<ul>
+<li>Absorb large-scale, iconic, cosmic, or ceremonial power</li>
+<li>Prevent Legendary and Awakened themes from overwhelming Volume I</li>
+</ul>
+<p>Volume II should feel <em>distinct</em>, not like &ldquo;more of the same.&rdquo;</p>
+
+  </div>
+</article>
+
+  </main>
+
+  <footer class="site-footer">
+  <p>Art first. Favorites second. Value is a bonus, not the goal.</p>
+</footer>
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function() {
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxClose = document.querySelector('.lightbox-close');
+
+  galleryItems.forEach(item => {
+    item.addEventListener('click', function() {
+      const img = this.querySelector('img');
+      if (lightbox && lightboxImg && img) {
+        lightboxImg.src = img.src;
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    });
+  });
+
+  if (lightboxClose) {
+    lightboxClose.addEventListener('click', closeLightbox);
+  }
+
+  if (lightbox) {
+    lightbox.addEventListener('click', function(e) {
+      if (e.target === lightbox) {
+        closeLightbox();
+      }
+    });
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      closeLightbox();
+    }
+  });
+
+  function closeLightbox() {
+    if (lightbox) {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  }
+});
+</script>
+
+</body>
+</html>
