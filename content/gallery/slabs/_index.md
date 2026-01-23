@@ -107,6 +107,14 @@ Graded cards are **anchors**, not clutter. They represent permanence, personal m
     <img src="../../images/slabs/historical_jolteon_pop.jpg" alt="Jolteon POP slab" loading="lazy">
     <figcaption>Jolteon POP</figcaption>
   </figure>
+  <figure class="gallery-item">
+    <img src="../../images/slabs/historical_dragonite_expedition.jpg" alt="Dragonite Expedition slab" loading="lazy">
+    <figcaption>Dragonite Expedition</figcaption>
+  </figure>
+  <figure class="gallery-item">
+    <img src="../../images/slabs/historical_squirtle_expedition.jpg" alt="Squirtle Expedition slab" loading="lazy">
+    <figcaption>Squirtle Expedition</figcaption>
+  </figure>
 </div>
 
 ## Personal Significance
@@ -127,6 +135,10 @@ Graded cards are **anchors**, not clutter. They represent permanence, personal m
   <figure class="gallery-item">
     <img src="../../images/slabs/personal_keckleon_jp.jpg" alt="Kecleon slab" loading="lazy">
     <figcaption>Kecleon</figcaption>
+  </figure>
+  <figure class="gallery-item">
+    <img src="../../images/slabs/emolga_radiant.jpg" alt="Emolga Radiant slab" loading="lazy">
+    <figcaption>Emolga Radiant</figcaption>
   </figure>
 </div>
 
