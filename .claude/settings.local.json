@@ -7,7 +7,9 @@
       "WebFetch(domain:github.com)",
       "Bash(hugo:*)",
       "Bash(git -C /home/tng/workspace/binderplan log --oneline -10)",
-      "Bash(git -C /home/tng/workspace/binderplan show --stat)"
+      "Bash(git -C /home/tng/workspace/binderplan show --stat)",
+      "Bash(ls:*)",
+      "Bash(git -C /home/tng/workspace/binderplan lfs status:*)"
     ]
   }
 }
