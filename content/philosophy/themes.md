@@ -1,9 +1,15 @@
 ---
 title: "Core Themes"
-description: "The 10 locked themes that form the collection's backbone"
+description: "The themes that form the collection's backbone"
 ---
 
 These themes are **canonical**. Every card either fits clearly into one of these themes or stays out of the binder.
+
+---
+
+## Volume I — Lived Experience
+
+Volume I focuses on how Pokémon move, rest, threaten, think, and belong in the world.
 
 ---
 
@@ -99,17 +105,122 @@ Pokemon in the moment of transformation or activation, power newly realized but 
 
 ---
 
+## Volume II — Memory, Presence, and Passage
+
+Volume II shifts inward — not about what Pokémon do, but about how they are remembered, lived with, and understood across time.
+
+<div class="theme-card">
+
+### Companions
+
+Pokémon and humans (or other Pokémon) in relationships defined by trust, care, or shared stillness. The bond is mutual, enduring, and central to the image.
+
+<p class="signal">Key signal: bond without spectacle</p>
+</div>
+
+<div class="theme-card">
+
+### Quiet Familiarity
+
+Pokémon adjacent to everyday life, invoking comfort, routine, or family without narrative emphasis. They are held by their environment.
+
+<p class="signal">Key signal: domestic calm</p>
+</div>
+
+<div class="theme-card">
+
+### Era Identity
+
+Pokémon as they were once framed — simple, centered, iconic, and culturally formative. These cards define "what Pokémon meant" at a specific time.
+
+<p class="signal">Key signal: inherited visual language</p>
+</div>
+
+<div class="theme-card">
+
+### Enduring Presence
+
+Pokémon depicted as complete, self-contained forces — not in action, not in transition, but already fully realized. Timeless beings whose power is contained, not expressed.
+
+<p class="signal">Key signal: power that no longer needs to move</p>
+</div>
+
+<div class="theme-card">
+
+### Threshold
+
+Pokémon positioned at borders, entrances, or moments of passage — emotionally, spatially, or symbolically. Movement without action. Progression without chaos.
+
+<p class="signal">Key signal: the space between moments</p>
+</div>
+
+---
+
+## Graded Card Categories
+
+Graded cards are **anchors**, not clutter. They represent permanence, personal milestones, and cards too fragile or meaningful for binder handling.
+
+<div class="theme-card">
+
+### Crown Art
+
+Pinnacle works — the highest artistic achievements in the collection.
+
+<p class="signal">Key signal: undeniable artistic mastery</p>
+</div>
+
+<div class="theme-card">
+
+### Definitive Pokémon
+
+The single best card for a species. The card that most fully captures what that Pokémon is.
+
+<p class="signal">Key signal: the definitive representation</p>
+</div>
+
+<div class="theme-card">
+
+### Historical
+
+Era-defining cards that shaped the hobby. Cards whose significance is primarily contextual and temporal.
+
+<p class="signal">Key signal: historical weight</p>
+</div>
+
+<div class="theme-card">
+
+### Personal Significance
+
+Cards with irreplaceable personal meaning. Milestones, gifts, or connections that transcend art.
+
+<p class="signal">Key signal: personal story</p>
+</div>
+
+---
+
 ## Conceptual Coverage
 
-Together, these ten themes cover the full emotional and narrative loop:
+Together, these themes cover the full emotional and narrative loop:
 
+**Volume I — Lived Experience:**
 - **Environment** — Elemental Solitude, Calm in Nature
 - **Motion** — Joyful Action, On the Attack
 - **Power** — Intimidation, Awakened Power, Legendary Bearing
 - **Stillness** — At Rest, Contemplation
 - **Society** — World of People
 
-You don't need more themes — but you *can* add more when the cards demand it.
+**Volume II — Memory & Presence:**
+- **Bond** — Companions
+- **Domestic** — Quiet Familiarity
+- **Historical** — Era Identity
+- **Timeless** — Enduring Presence
+- **Liminal** — Threshold
+
+**Graded Cards:**
+- **Pinnacle** — Crown Art
+- **Definitive** — Definitive Pokémon
+- **Era** — Historical
+- **Personal** — Personal Significance
 
 ---
 

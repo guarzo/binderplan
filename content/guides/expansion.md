@@ -125,32 +125,38 @@ These themes lose clarity when bloated:
 Once the binder is full:
 - Stop adding pages
 - Improve by replacement
-- Begin conceptualizing Volume II
+- Consider whether the card belongs in Volume II
+
+---
+
+## Volume II Themes
+
+Volume II now exists with five established themes. These themes are narrower and demand stronger curation:
+
+- **Companions** — Bond without spectacle
+- **Quiet Familiarity** — Domestic calm and lived-in worlds
+- **Era Identity** — Inherited visual language (hard cap recommended)
+- **Enduring Presence** — Power that no longer needs to move
+- **Threshold** — The space between moments
+
+Volume II themes do not auto-expand. No theme grows beyond 2 pages without deliberate review.
 
 ---
 
 ## Optional Expansion Themes (Future)
 
-Only introduce when **6–9 cards naturally accumulate**.
+Only introduce when **6–9 cards naturally accumulate** and the cards clearly fail to fit existing themes.
 
-### Vintage-Friendly
-- Quiet Menace
-- Innocence
-- Mythic Stillness
-- Lonely Smallness
-- Primitive Power
-
-### Emotional / Narrative
-- Melancholy
-- Curiosity
-- Unease
+### For Volume I
+- Journey
 - Defiance
 - Aftermath
-- Journey
+
+### For Volume II
+- Melancholy
+- Unease
+- Dreamlike
 
 ### Aesthetic / Art-Driven
-- Dreamlike
-- Graphic Icon
 - Monochrome Mood
 - Perspective Play
-- Timeworn
