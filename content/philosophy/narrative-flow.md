@@ -72,12 +72,52 @@ Large-scale mythic or overwhelming power is intentionally constrained so it does
 
 ---
 
-## Volume II (Reserved)
+## Volume II — Memory, Presence, and Passage
 
-**Volume II: Power & Myth** *(recommended future direction)*
+Volume II shifts inward. It is not about what Pokémon do, but about how they are remembered, lived with, and understood across time.
 
-Purpose:
-- Absorb large-scale, iconic, cosmic, or ceremonial power
-- Prevent Legendary and Awakened themes from overwhelming Volume I
+### Chapter I — Companions
 
-Volume II should feel *distinct*, not like "more of the same."
+*Bond without spectacle*
+
+Pokémon and humans (or other Pokémon) in relationships defined by trust, care, or shared stillness.
+
+---
+
+### Chapter II — Quiet Familiarity
+
+*Domestic calm and lived-in worlds*
+
+Pokémon adjacent to everyday life, invoking comfort, routine, or family without narrative emphasis.
+
+---
+
+### Chapter III — Era Identity
+
+*Inherited visual language*
+
+Pokémon as they were once framed — simple, centered, iconic, and culturally formative. These cards define "what Pokémon meant" at a specific time.
+
+**Hard cap recommended:** This section should be smaller than others.
+
+---
+
+### Chapter IV — Enduring Presence
+
+*Power that no longer needs to move*
+
+Pokémon depicted as complete, self-contained forces — not in action, not in transition, but already fully realized. Timeless beings whose power is contained, not expressed.
+
+---
+
+### Chapter V — Threshold
+
+*The space between moments*
+
+Pokémon positioned at borders, entrances, or moments of passage — emotionally, spatially, or symbolically.
+
+---
+
+Volume II is intentionally softer, slower, and more reflective. Its themes are narrower, but deeper — and demand stronger curation.
+
+*Volume II is not about collecting more — it is about understanding why certain images stay.*

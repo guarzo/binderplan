@@ -31,9 +31,11 @@ Cards that:
 - Almost fit an existing theme
 - Repeat a feeling you can't yet name
 - Feel important but homeless
+- May belong in Volume II rather than Volume I
 
 **Rules:**
 - Review every 1–2 months
+- Check against both Volume I and Volume II themes
 - A new theme only forms if 8–12 cards naturally accumulate
 
 ---
@@ -64,7 +66,8 @@ Cards that:
 
 **Rules:**
 - Never force into art themes
-- Can later anchor vintage-specific themes
+- Consider Volume II's Era Identity or Enduring Presence themes
+- May anchor graded card Historical category
 
 ---
 
