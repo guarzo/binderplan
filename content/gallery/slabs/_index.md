@@ -22,6 +22,10 @@ Graded cards are **anchors**, not clutter. They represent permanence, personal m
     <figcaption>Mewtwo Gold Star</figcaption>
   </figure>
   <figure class="gallery-item">
+    <img src="../../images/slabs/crown_celebi_gold_star.jpg" alt="Celebi Gold Star slab" loading="lazy">
+    <figcaption>Celebi Gold Star</figcaption>
+  </figure>
+  <figure class="gallery-item">
     <img src="../../images/slabs/crown_golem_masaki.jpg" alt="Golem Masaki slab" loading="lazy">
     <figcaption>Golem Masaki</figcaption>
   </figure>
