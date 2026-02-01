@@ -30,6 +30,14 @@ Graded cards are **anchors**, not clutter. They represent permanence, personal m
     <figcaption>Golem Masaki</figcaption>
   </figure>
   <figure class="gallery-item">
+    <img src="../../images/slabs/crown_alakazam_masaki.jpg" alt="Alakazam Masaki slab" loading="lazy">
+    <figcaption>Alakazam Masaki</figcaption>
+  </figure>
+  <figure class="gallery-item">
+    <img src="../../images/slabs/crown_gengar_masaki.jpg" alt="Gengar Masaki slab" loading="lazy">
+    <figcaption>Gengar Masaki</figcaption>
+  </figure>
+  <figure class="gallery-item">
     <img src="../../images/slabs/crown_mew_sv4a_jp.jpg" alt="Mew SV4a slab" loading="lazy">
     <figcaption>Mew SV4a</figcaption>
   </figure>
