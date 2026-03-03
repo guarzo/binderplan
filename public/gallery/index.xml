@@ -4,7 +4,7 @@
     <title>Gallery on Pokemon Art Collection</title>
     <link>https://collection.dpao.la/gallery/</link>
     <description>Recent content in Gallery on Pokemon Art Collection</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <atom:link href="https://collection.dpao.la/gallery/index.xml" rel="self" type="application/rss+xml" />
   </channel>
