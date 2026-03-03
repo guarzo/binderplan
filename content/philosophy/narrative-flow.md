@@ -76,48 +76,37 @@ Large-scale mythic or overwhelming power is intentionally constrained so it does
 
 Volume II shifts inward. It is not about what Pokémon do, but about how they are remembered, lived with, and understood across time.
 
-### Chapter I — Companions
+### Chapter I — Nearness
 
-*Bond without spectacle*
+*How Pokémon are held close*
 
-Pokémon and humans (or other Pokémon) in relationships defined by trust, care, or shared stillness.
+- Companions
+- Quiet Familiarity
 
----
-
-### Chapter II — Quiet Familiarity
-
-*Domestic calm and lived-in worlds*
-
-Pokémon adjacent to everyday life, invoking comfort, routine, or family without narrative emphasis.
+*The opening establishes warmth and closeness — Pokémon woven into daily life and relationship.*
 
 ---
 
-### Chapter III — Era Identity
+### Chapter II — Permanence
 
-*Inherited visual language*
+*How Pokémon endure*
 
-Pokémon as they were once framed — simple, centered, iconic, and culturally formative. These cards define "what Pokémon meant" at a specific time.
+- Enduring Presence
 
-**Hard cap recommended:** This section should be smaller than others.
-
----
-
-### Chapter IV — Enduring Presence
-
-*Power that no longer needs to move*
-
-Pokémon depicted as complete, self-contained forces — not in action, not in transition, but already fully realized. Timeless beings whose power is contained, not expressed.
+*The midpoint settles into gravity. Self-contained beings whose completeness needs no context.*
 
 ---
 
-### Chapter V — Threshold
+### Chapter III — Passage
 
-*The space between moments*
+*How Pokémon exist at edges*
 
-Pokémon positioned at borders, entrances, or moments of passage — emotionally, spatially, or symbolically.
+- Threshold
+
+*The binder resolves in liminality — borders, passages, the space between moments.*
 
 ---
 
-Volume II is intentionally softer, slower, and more reflective. Its themes are narrower, but deeper — and demand stronger curation.
+Volume II is intentionally softer, slower, and more reflective. Three chapters instead of five — fewer movements, but deeper.
 
 *Volume II is not about collecting more — it is about understanding why certain images stay.*

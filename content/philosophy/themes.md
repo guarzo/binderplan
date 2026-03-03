@@ -109,6 +109,10 @@ Pokemon in the moment of transformation or activation, power newly realized but 
 
 Volume II shifts inward — not about what Pokémon do, but about how they are remembered, lived with, and understood across time.
 
+### Chapter I — Nearness
+
+*How Pokémon are held close*
+
 <div class="theme-card">
 
 ### Companions
@@ -127,14 +131,9 @@ Pokémon adjacent to everyday life, invoking comfort, routine, or family without
 <p class="signal">Key signal: domestic calm</p>
 </div>
 
-<div class="theme-card">
+### Chapter II — Permanence
 
-### Era Identity
-
-Pokémon as they were once framed — simple, centered, iconic, and culturally formative. These cards define "what Pokémon meant" at a specific time.
-
-<p class="signal">Key signal: inherited visual language</p>
-</div>
+*How Pokémon endure*
 
 <div class="theme-card">
 
@@ -144,6 +143,10 @@ Pokémon depicted as complete, self-contained forces — not in action, not in t
 
 <p class="signal">Key signal: power that no longer needs to move</p>
 </div>
+
+### Chapter III — Passage
+
+*How Pokémon exist at edges*
 
 <div class="theme-card">
 
@@ -210,11 +213,9 @@ Together, these themes cover the full emotional and narrative loop:
 - **Society** — World of People
 
 **Volume II — Memory & Presence:**
-- **Bond** — Companions
-- **Domestic** — Quiet Familiarity
-- **Historical** — Era Identity
-- **Timeless** — Enduring Presence
-- **Liminal** — Threshold
+- **Nearness** — Companions, Quiet Familiarity
+- **Permanence** — Enduring Presence
+- **Passage** — Threshold
 
 **Graded Cards:**
 - **Pinnacle** — Crown Art
