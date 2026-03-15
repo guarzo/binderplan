@@ -30,6 +30,10 @@ The highest artistic achievements in the collection. These cards are here becaus
     <figcaption>Celebi Gold Star</figcaption>
   </figure>
   <figure class="gallery-item">
+    <img src="../../images/slabs/crown_groudon_gold_star.jpg" alt="Groudon Gold Star slab" loading="lazy">
+    <figcaption>Groudon Gold Star</figcaption>
+  </figure>
+  <figure class="gallery-item">
     <img src="../../images/slabs/crown_mew_sv4a_jp.jpg" alt="Mew SV4a slab" loading="lazy">
     <figcaption>Mew SV4a</figcaption>
   </figure>
@@ -38,16 +42,12 @@ The highest artistic achievements in the collection. These cards are here becaus
     <figcaption>Maushold CCIC</figcaption>
   </figure>
   <figure class="gallery-item">
-    <img src="../../images/slabs/crown_umbreon_tag_placeholder.jpg" alt="Umbreon Tag slab" loading="lazy">
+    <img src="../../images/slabs/crown_umbreon_tag.jpg" alt="Umbreon Tag slab" loading="lazy">
     <figcaption>Umbreon Tag</figcaption>
   </figure>
   <figure class="gallery-item">
     <img src="../../images/slabs/crown_charizard_151_jp.jpg" alt="Charizard 151 slab" loading="lazy">
     <figcaption>Charizard 151</figcaption>
-  </figure>
-  <figure class="gallery-item">
-    <img src="../../images/slabs/crown_groudon_gold_star.jpg" alt="Groudon Gold Star slab" loading="lazy">
-    <figcaption>Groudon Gold Star</figcaption>
   </figure>
 </div>
 
@@ -159,10 +159,6 @@ Cards with irreplaceable personal meaning. Milestones, gifts, and connections th
   <figure class="gallery-item">
     <img src="../../images/slabs/personal_keckleon_jp.jpg" alt="Kecleon slab" loading="lazy">
     <figcaption>Kecleon</figcaption>
-  </figure>
-  <figure class="gallery-item">
-    <img src="../../images/slabs/personal_emolga_radiant.jpg" alt="Emolga Radiant slab" loading="lazy">
-    <figcaption>Emolga Radiant</figcaption>
   </figure>
   <figure class="gallery-item">
     <img src="../../images/slabs/personal_emolga_carnival.jpg" alt="Emolga Summer Carnival slab" loading="lazy">
