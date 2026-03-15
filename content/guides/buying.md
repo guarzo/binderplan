@@ -3,9 +3,9 @@ title: "Buying Checklist"
 description: "Questions to ask before any purchase"
 ---
 
-This checklist exists to **protect your taste** and prevent impulse drift.
+I made this checklist to save myself from impulse buys. It works — most of the time.
 
-Before buying any card, walk through this list in order.
+Before buying any card, walk through this list in order. If you get stuck on a step, that's your answer.
 
 ---
 
@@ -34,7 +34,7 @@ Choose **one**:
 - Enduring presence (power that no longer needs to move)
 - Threshold (the space between moments)
 
-**If no clear signal appears → do not buy.**
+**If no clear signal appears — don't buy it.**
 
 ---
 
@@ -56,12 +56,9 @@ Choose **one**:
 - Enduring Presence
 - Threshold
 
-Rules:
-- Strengthen means **improve**, not just match
-- If it only duplicates a feeling, skip it
-- Volume II themes are narrower — "almost fits" means it doesn't fit
+The key word is **strengthen**, not match. If it only duplicates a feeling already in the binder, skip it. Volume II themes are narrower — "almost fits" genuinely means it doesn't fit.
 
-**If it doesn't strengthen a theme → EDGE box at most.**
+**If it doesn't strengthen a theme — EDGE box at most.**
 
 ---
 
@@ -69,9 +66,9 @@ Rules:
 
 > *Would removing one current binder card make room for this?*
 
-**If the answer is no → skip.**
+**If the answer is no — skip.**
 
-This keeps binder quality rising.
+This is how binder quality keeps rising. Every new card should be an upgrade, not an addition.
 
 ---
 
@@ -79,10 +76,10 @@ This keeps binder quality rising.
 
 > *Is this moment already represented in my collection?*
 
-- Same Pokemon ≠ same moment
-- Same rarity ≠ same impact
+- Same Pokemon doesn't mean same moment
+- Same rarity doesn't mean same impact
 
-**If it adds no new visual idea → skip.**
+**If it adds no new visual idea — skip.**
 
 ---
 
@@ -90,7 +87,7 @@ This keeps binder quality rising.
 
 > *If I saw this card again in six months, would I still want it?*
 
-**If unsure → wait.**
+**If unsure — wait.** The card will still exist later.
 
 ---
 
@@ -107,7 +104,7 @@ This keeps binder quality rising.
 - **Historical** — Era-defining cards that shaped the hobby
 - **Personal Significance** — Cards with irreplaceable personal meaning
 
-A card must clearly belong to one of these categories to justify grading. Do not grade impulsively.
+A card should clearly belong to one of these to justify grading. Don't slab on impulse.
 
 ---
 
@@ -118,7 +115,7 @@ A card may bypass steps if:
 - It completes a visual sequence
 - It emotionally replaces an existing card
 
-These should be uncommon.
+These should be uncommon. If your "automatic yes" list is long, your standards are slipping.
 
 ---
 

@@ -3,7 +3,7 @@ languageCode = 'en-us'
 title = 'Pokemon Art Collection'
 
 [params]
-  description = 'A curated gallery of Pokemon cards organized by emotion, presence, and narrative'
+  description = 'A Pokemon card collection built around art, emotion, and one very specific Emolga obsession.'
   author = ''
 
 [markup]

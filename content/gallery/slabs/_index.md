@@ -4,7 +4,7 @@ description: "Slabs on display — finished statements"
 layout: "gallery"
 ---
 
-Graded cards are **anchors**, not clutter. They represent permanence, personal milestones, and cards too fragile or meaningful for binder handling.
+These are the cards that earned their frames. Every slab here represents a finished statement — a card I've decided is *done*. No more upgrading, no more debating. Just permanence.
 
 ## Crown Art
 

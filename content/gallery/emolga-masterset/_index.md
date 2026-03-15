@@ -4,7 +4,9 @@ description: "A dedicated collection celebrating Emolga"
 layout: "gallery"
 ---
 
-A complete masterset dedicated to Emolga — the Sky Squirrel Pokemon. This binder exists outside the thematic structure of the main volumes, organized instead around a single subject across every era and style of card art.
+This one's personal.
+
+Every Emolga card ever printed — that's the goal. This binder exists completely outside the thematic structure of the main volumes. No themes, no narrative arcs. Just one Pokemon, across every era and style of card art, because Emolga is the best and I will not be taking questions.
 
 ---
 
@@ -53,7 +55,9 @@ A complete masterset dedicated to Emolga — the Sky Squirrel Pokemon. This bind
 
 ---
 
-## Missing Cards
+## Still Hunting
+
+These are the ones I haven't tracked down yet. If you've got a lead, I'm listening.
 
 <div class="gallery-grid">
   <figure class="gallery-item">

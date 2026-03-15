@@ -1,0 +1,25 @@
+{{ define "main" }}
+<section class="hero-intro">
+  <h1>{{ .Site.Title }}</h1>
+  <p class="tagline">{{ .Site.Params.description }}</p>
+</section>
+
+<div class="list-content">
+  {{ .Content }}
+</div>
+
+<div class="explore-cards">
+  <a href="{{ "philosophy/" | relURL }}" class="explore-card">
+    <h3>Philosophy</h3>
+    <p>Why art and emotion drive every decision in this binder.</p>
+  </a>
+  <a href="{{ "gallery/" | relURL }}" class="explore-card">
+    <h3>Gallery</h3>
+    <p>See the binder spreads, slabs, and the Emolga masterset.</p>
+  </a>
+  <a href="{{ "guides/" | relURL }}" class="explore-card">
+    <h3>Guides</h3>
+    <p>Practical habits for buying, curating, and letting go.</p>
+  </a>
+</div>
+{{ end }}

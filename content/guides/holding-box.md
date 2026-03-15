@@ -3,9 +3,7 @@ title: "Holding Box System"
 description: "Where cards live outside the binder"
 ---
 
-This system exists to **protect the Art Binder from overload** while preserving cards you genuinely enjoy.
-
-The holding box is not a failure state — it is an **incubation space**.
+The holding box protects the binder from overload while preserving cards you genuinely enjoy. It's not a failure state — it's an **incubation space**. Some of the best binder cards spent months in a holding box before their spot became obvious.
 
 ---
 
@@ -19,84 +17,39 @@ If placement requires debate, justification, or compromise, the card belongs in 
 
 ## Box Structure
 
-Use **separate labeled sections** (physical dividers or envelopes). Do not mix categories.
+Use **separate labeled sections** (physical dividers or envelopes). Don't mix categories — it defeats the purpose.
 
 ---
 
 ### 1. EDGE (Theme Candidates)
 
-**Label:** `EDGE – Possible Theme`
+Cards that almost fit an existing theme, repeat a feeling you can't name yet, or feel important but don't have a home. Some may belong in Volume II rather than Volume I.
 
-Cards that:
-- Almost fit an existing theme
-- Repeat a feeling you can't yet name
-- Feel important but homeless
-- May belong in Volume II rather than Volume I
-
-**Rules:**
-- Review every 1–2 months
-- Check against both Volume I and Volume II themes
-- A new theme only forms if 8–12 cards naturally accumulate
+**Review:** Every 1–2 months. Check against both volumes. A new theme only forms when 8–12 cards naturally accumulate.
 
 ---
 
 ### 2. REDUNDANT (Good but Surplus)
 
-**Label:** `REDUNDANT – Theme Overflow`
-
-Cards that:
-- Fit an existing theme
-- But do not improve a page
-- Are visually weaker than current binder cards
-
-**Rules:**
-- These cards protect you from regret
-- May replace binder cards later if taste changes
+Cards that fit an existing theme but don't improve a page. They're visually weaker than what's already in the binder — but they protect you from regret. Keep them around; they may replace binder cards later if your taste shifts.
 
 ---
 
 ### 3. HERITAGE (Respect Without Display)
 
-**Label:** `HERITAGE – Keep, Don't Display`
-
-Cards that:
-- Are nostalgic or historic
-- Feel meaningful but visually quiet
-- Are better respected than showcased
-
-**Rules:**
-- Never force into art themes
-- Consider Volume II's Era Identity or Enduring Presence themes
-- May anchor graded card Historical category
+Nostalgic or historic cards that feel meaningful but visually quiet. Better respected than showcased. Don't force these into art themes — but consider Volume II's Era Identity or Enduring Presence themes, or the graded Historical category.
 
 ---
 
 ### 4. FUTURE SELF
 
-**Label:** `FUTURE SELF – Revisit Later`
-
-Cards that:
-- You like but don't fully understand yet
-- May resonate differently in the future
-
-**Rules:**
-- Review annually
-- If nothing changes after a year, downgrade to storage or release
+Cards you like but don't fully understand yet. Give them time. They may resonate differently later — or they may not. Review annually. If nothing changes after a year, downgrade to storage or release.
 
 ---
 
 ### 5. RELEASE
 
-**Label:** `RELEASE – Trade / Sell / Gift`
-
-Cards that:
-- Evoke no strong feeling
-- Do not fit any theme
-- Are kept only out of habit or value
-
-**Rules:**
-- Do not revisit emotionally
-- Convert into funding, trades, or goodwill
+Cards that don't spark anything. No strong feeling, no theme fit, kept only out of habit or value. Let these go without guilt — convert into funding, trades, or goodwill.
 
 ---
 
