@@ -3,30 +3,28 @@ title: "Grading Philosophy"
 description: "When and why to slab a card"
 ---
 
-Slabs are **finished statements**, not flexible pieces.
+I think of slabs as framed originals. The binder is a gallery wall — things move, rotate, evolve. But a slab? A slab is a **finished statement**. You're saying: *this card is done. This is how I want it to exist.*
 
 > **Binders = gallery walls**
 > **Slabs = framed originals**
-
-A card is graded when it is considered *final*.
 
 ---
 
 ## Slab Roles
 
-Every graded card must have one clear role:
+Every graded card needs one clear reason to be in plastic:
 
 ### CROWN_ART
-Best art version of a card; grade supports presentation.
+The best art version of a card. The grade supports the presentation.
 
 ### DEFINITIVE_[POKEMON]
-The canonical version of a Pokemon in the collection.
+The canonical version of a Pokemon in the collection. *The* card.
 
 ### HISTORICAL
-Vintage, first appearances, culturally significant cards.
+Vintage, first appearances, culturally significant cards. These matter because of when they existed.
 
 ### LIQUID
-Investment or trade-focused slabs; no emotional attachment.
+Investment or trade-focused slabs. No emotional attachment — and that's fine.
 
 ---
 
@@ -34,31 +32,30 @@ Investment or trade-focused slabs; no emotional attachment.
 
 ### Tier A — Display
 - Crown art & historical icons
-- Few at a time
-- Rotated intentionally
+- A few at a time, rotated with intention
 
 ### Tier B — Archive Cases
 - Pokemon-definitive slabs
-- Sorted by Pokemon → Era → Grade
+- Sorted by Pokemon, then era, then grade
 
 ### Tier C — Slab Boxes
-- Liquid / duplicate slabs
-- Stored upright, labeled, replaceable
+- Liquid and duplicate slabs
+- Stored upright, labeled, easy to move along
 
 ---
 
 ## What Gets Graded
 
 **Grade if:**
-- It completes a Pokemon story
-- It is the best version you plan to own
-- It is vintage and condition-sensitive
-- You would be annoyed owning it raw
+- It completes a Pokemon's story in your collection
+- It's the best version you plan to own
+- It's vintage and condition matters
+- You'd be annoyed owning it raw
 
-**Do not grade if:**
-- You enjoy rearranging it
-- The card relies on binder flow
-- It is easily replaceable modern filler
+**Don't grade if:**
+- You enjoy rearranging it — slabs kill flexibility
+- The card relies on binder flow to shine
+- It's easily replaceable modern filler
 
 ---
 
@@ -67,7 +64,7 @@ Investment or trade-focused slabs; no emotional attachment.
 - Graded copy becomes canonical
 - Art-first cards favor binders
 - Pokemon completion may favor slabs
-- No duplication unless purpose-driven
+- No duplication unless it serves a clear purpose
 
 ---
 

@@ -1,39 +1,44 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Guides on Pokemon Art Collection</title>
-    <link>https://collection.dpao.la/guides/</link>
-    <description>Recent content in Guides on Pokemon Art Collection</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <atom:link href="https://collection.dpao.la/guides/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Buying Checklist</title>
-      <link>https://collection.dpao.la/guides/buying/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://collection.dpao.la/guides/buying/</guid>
-      <description>This checklist exists to protect your taste and prevent impulse drift.&#xA;Before buying any card, walk through this list in order.&#xA;Step 1: Emotional Signal What is this card actually showing me?&#xA;Choose one:&#xA;Volume I — Lived Experience:&#xA;Calm in nature At rest World of people (human coexistence) Joyful action Awakened power Legendary bearing Intimidation On the attack Elemental solitude Contemplation Volume II — Memory &amp;amp; Presence:&#xA;Companionship (bond without spectacle) Quiet familiarity (domestic calm) Era identity (inherited visual language) Enduring presence (power that no longer needs to move) Threshold (the space between moments) If no clear signal appears → do not buy.</description>
-    </item>
-    <item>
-      <title>Holding Box System</title>
-      <link>https://collection.dpao.la/guides/holding-box/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://collection.dpao.la/guides/holding-box/</guid>
-      <description>This system exists to protect the Art Binder from overload while preserving cards you genuinely enjoy.&#xA;The holding box is not a failure state — it is an incubation space.&#xA;Core Rule A card enters the binder by clarity, not by effort.&#xA;If placement requires debate, justification, or compromise, the card belongs in a holding box.&#xA;Box Structure Use separate labeled sections (physical dividers or envelopes). Do not mix categories.</description>
-    </item>
-    <item>
-      <title>Seasonal Curation</title>
-      <link>https://collection.dpao.la/guides/curation/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://collection.dpao.la/guides/curation/</guid>
-      <description>Performed 2–4 times per year, 60–90 minutes max.&#xA;The Process 1. Flip Through (No Changes) Just look. Notice what still resonates and what feels off.&#xA;2. Review EDGE Pile Look for emerging themes. Do cards cluster around a feeling you can&amp;rsquo;t yet name?&#xA;3. Review REDUNDANT Pile Check for upgrades. Has a better card appeared that should replace something in the binder?&#xA;4. Remove What No Longer Earns Its Spot Be honest.</description>
-    </item>
-    <item>
-      <title>Theme Expansion</title>
-      <link>https://collection.dpao.la/guides/expansion/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://collection.dpao.la/guides/expansion/</guid>
-      <description>Not all themes should expand equally. Expansion should feel earned, not indulgent.&#xA;Page Allocation Rules Default: 1–2 Pages per Theme This is your baseline. Most themes should live comfortably here.&#xA;Minimum: 1 Page If a theme can&amp;rsquo;t fill one strong page, it&amp;rsquo;s not ready. Do not pad.&#xA;Expansion: 3–4 Pages (Rare, Earned) Only when a theme proves it has internal variety. Never jump from 2 → 4 pages at once.</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Guides on Pokemon Art Collection</title><link>https://collection.dpao.la/guides/</link><description>Recent content in Guides on Pokemon Art Collection</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://collection.dpao.la/guides/index.xml" rel="self" type="application/rss+xml"/><item><title>Buying Checklist</title><link>https://collection.dpao.la/guides/buying/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://collection.dpao.la/guides/buying/</guid><description>&lt;p&gt;I made this checklist to save myself from impulse buys. It works — most of the time.&lt;/p&gt;
+&lt;p&gt;Before buying any card, walk through this list in order. If you get stuck on a step, that&amp;rsquo;s your answer.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="step-1-emotional-signal"&gt;Step 1: Emotional Signal&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;What is this card actually showing me?&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Choose &lt;strong&gt;one&lt;/strong&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Volume I — Lived Experience:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Calm in nature&lt;/li&gt;
+&lt;li&gt;At rest&lt;/li&gt;
+&lt;li&gt;World of people (human coexistence)&lt;/li&gt;
+&lt;li&gt;Joyful action&lt;/li&gt;
+&lt;li&gt;Awakened power&lt;/li&gt;
+&lt;li&gt;Legendary bearing&lt;/li&gt;
+&lt;li&gt;Intimidation&lt;/li&gt;
+&lt;li&gt;On the attack&lt;/li&gt;
+&lt;li&gt;Elemental solitude&lt;/li&gt;
+&lt;li&gt;Contemplation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Volume II — Memory &amp;amp; Presence:&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>Holding Box System</title><link>https://collection.dpao.la/guides/holding-box/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://collection.dpao.la/guides/holding-box/</guid><description>&lt;p&gt;The holding box protects the binder from overload while preserving cards you genuinely enjoy. It&amp;rsquo;s not a failure state — it&amp;rsquo;s an &lt;strong&gt;incubation space&lt;/strong&gt;. Some of the best binder cards spent months in a holding box before their spot became obvious.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="core-rule"&gt;Core Rule&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;A card enters the binder by clarity, not by effort.&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;If placement requires debate, justification, or compromise, the card belongs in a holding box.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="box-structure"&gt;Box Structure&lt;/h2&gt;
+&lt;p&gt;Use &lt;strong&gt;separate labeled sections&lt;/strong&gt; (physical dividers or envelopes). Don&amp;rsquo;t mix categories — it defeats the purpose.&lt;/p&gt;</description></item><item><title>Seasonal Curation</title><link>https://collection.dpao.la/guides/curation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://collection.dpao.la/guides/curation/</guid><description>&lt;p&gt;A few times a year, I sit down with the binder and just&amp;hellip; look. No agenda, no shopping list. Just flipping through and paying attention to what still hits and what doesn&amp;rsquo;t. That&amp;rsquo;s the whole foundation of this process.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Timing:&lt;/strong&gt; 2–4 times per year, 60–90 minutes max.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="the-process"&gt;The Process&lt;/h2&gt;
+&lt;h3 id="1-flip-through-no-changes"&gt;1. Flip Through (No Changes)&lt;/h3&gt;
+&lt;p&gt;Just look. Notice what still resonates and what feels off. Don&amp;rsquo;t touch anything yet — first impressions matter here.&lt;/p&gt;</description></item><item><title>Theme Expansion</title><link>https://collection.dpao.la/guides/expansion/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://collection.dpao.la/guides/expansion/</guid><description>&lt;p&gt;Restraint is what makes the binder work. Not every theme deserves more pages — expansion should feel &lt;strong&gt;earned&lt;/strong&gt;, not indulgent.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="page-allocation-rules"&gt;Page Allocation Rules&lt;/h2&gt;
+&lt;h3 id="default-12-pages-per-theme"&gt;Default: 1–2 Pages per Theme&lt;/h3&gt;
+&lt;p&gt;This is your baseline. Most themes should live comfortably here.&lt;/p&gt;
+&lt;h3 id="minimum-1-page"&gt;Minimum: 1 Page&lt;/h3&gt;
+&lt;p&gt;If a theme can&amp;rsquo;t fill one strong page, it&amp;rsquo;s not ready. Don&amp;rsquo;t pad it.&lt;/p&gt;
+&lt;h3 id="expansion-34-pages-rare-earned"&gt;Expansion: 3–4 Pages (Rare, Earned)&lt;/h3&gt;
+&lt;p&gt;Only when a theme proves it has internal variety. Never jump from 2 to 4 pages at once — grow gradually.&lt;/p&gt;</description></item></channel></rss>

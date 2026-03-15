@@ -3,7 +3,7 @@ title: "Guides"
 description: "How to maintain and evolve the collection"
 ---
 
-These guides explain the practical systems for maintaining the collection over time.
+The practical side of collecting. Habits and systems to keep things sharp without making it feel like work.
 
 ## Sections
 

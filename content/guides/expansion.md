@@ -3,7 +3,7 @@ title: "Theme Expansion"
 description: "When and how to add new themes or pages"
 ---
 
-Not all themes should expand equally. Expansion should feel **earned**, not indulgent.
+Restraint is what makes the binder work. Not every theme deserves more pages — expansion should feel **earned**, not indulgent.
 
 ---
 
@@ -15,11 +15,11 @@ This is your baseline. Most themes should live comfortably here.
 
 ### Minimum: 1 Page
 
-If a theme can't fill one strong page, it's not ready. Do not pad.
+If a theme can't fill one strong page, it's not ready. Don't pad it.
 
 ### Expansion: 3–4 Pages (Rare, Earned)
 
-Only when a theme proves it has internal variety. Never jump from 2 → 4 pages at once.
+Only when a theme proves it has internal variety. Never jump from 2 to 4 pages at once — grow gradually.
 
 ### Hard Cap: 5 Pages
 
@@ -31,13 +31,7 @@ If a theme exceeds this, **it must split**. Large themes become vague unless sub
 
 ## When a Theme May Grow
 
-A theme may grow beyond 2 pages only if:
-
-✅ New cards introduce a new visual or emotional sub-note
-
-❌ Not just "more of the same Pokemon"
-
-❌ Not just higher rarity
+A theme may grow beyond 2 pages only if new cards introduce a new visual or emotional sub-note — not just "more of the same Pokemon" or higher rarity.
 
 ### Good Reasons to Expand
 
@@ -46,11 +40,13 @@ A theme may grow beyond 2 pages only if:
 - Different scale (small Pokemon vs legendary)
 - Different compositional style (vintage vs modern)
 
-### Bad Reasons to Expand
+### Not Good Enough
 
 - "I have a lot of cards I like"
 - "This Pokemon appears a lot"
 - "This is a valuable theme"
+
+If the reason sounds like a justification, it probably is.
 
 ---
 
@@ -58,7 +54,7 @@ A theme may grow beyond 2 pages only if:
 
 ### Step 1: Pause at 2 Pages
 
-Let it live there for weeks or months.
+Let it live there for weeks or months. Resist the urge.
 
 ### Step 2: Add One Additional Page
 
@@ -70,7 +66,7 @@ Example:
 - Calm in Nature — Open Light
 - Calm in Nature — Under Canopy
 
-You don't need divider labels yet — just mental clarity.
+You don't need divider labels yet — just mental clarity about why the pages are distinct.
 
 ---
 
@@ -79,31 +75,30 @@ You don't need divider labels yet — just mental clarity.
 ### Highest Priority (2–3 pages over time)
 
 **Awakened Power**
-- Extremely rich concept
+- Extremely rich concept with a lot of visual range
 - Modern + vintage compatible
 - Naturally absorbs "hard to place" cards
-- *Most future-proof theme*
+- *The most future-proof theme in the binder*
 
 **Legendary Bearing**
-- Central pillar of the binder
-- Iconic, timeless cards
+- Central pillar of the collection
+- Iconic, timeless cards that demand space
 - Works beautifully with slabs as companions
-- *If any theme becomes a "monument hall," it's this*
+- *If any theme becomes a "monument hall," it's this one*
 
 ### Moderate Growth (2 pages max)
 
 **Calm in Nature**
-- Very expressive, but easy to dilute
-- Allow growth only if sub-moods are clear
+- Very expressive, but easy to dilute with too many serene landscapes
+- Grow only if sub-moods are genuinely distinct
 
 **Elemental Solitude**
-- Strong, heavy theme
-- Works best when sparse
+- Strong and heavy — works best when sparse
 - *Gains power from restraint*
 
 ### Should Stay Compact (1 page preferred)
 
-These themes lose clarity when bloated:
+These themes lose clarity when they get too big:
 
 - Joyful Action
 - On the Attack
@@ -112,7 +107,7 @@ These themes lose clarity when bloated:
 - At Rest
 - Contemplation
 
-*These are precision themes. If they grow, they should split, not expand.*
+*These are precision themes. If they need to grow, they should split, not expand.*
 
 ---
 
@@ -124,14 +119,14 @@ These themes lose clarity when bloated:
 
 Once the binder is full:
 - Stop adding pages
-- Improve by replacement
+- Improve by replacement only
 - Consider whether the card belongs in Volume II
 
 ---
 
 ## Volume II Themes
 
-Volume II now exists with five established themes. These themes are narrower and demand stronger curation:
+Volume II now has five established themes. These are narrower and demand stronger curation:
 
 - **Companions** — Bond without spectacle
 - **Quiet Familiarity** — Domestic calm and lived-in worlds
@@ -139,13 +134,13 @@ Volume II now exists with five established themes. These themes are narrower and
 - **Enduring Presence** — Power that no longer needs to move
 - **Threshold** — The space between moments
 
-Volume II themes do not auto-expand. No theme grows beyond 2 pages without deliberate review.
+Volume II themes don't auto-expand. No theme grows beyond 2 pages without a deliberate decision.
 
 ---
 
 ## Optional Expansion Themes (Future)
 
-Only introduce when **6–9 cards naturally accumulate** and the cards clearly fail to fit existing themes.
+Only introduce when **6–9 cards naturally accumulate** and genuinely fail to fit existing themes.
 
 ### For Volume I
 - Journey

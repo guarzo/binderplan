@@ -3,13 +3,13 @@ title: "Core Themes"
 description: "The themes that form the collection's backbone"
 ---
 
-These themes are **canonical**. Every card either fits clearly into one of these themes or stays out of the binder.
+These themes are **canonical**. Every card either fits clearly into one of these or stays out of the binder. No exceptions, no "close enough."
 
 ---
 
 ## Volume I — Lived Experience
 
-Volume I focuses on how Pokémon move, rest, threaten, think, and belong in the world.
+Volume I is about how Pokemon move, rest, threaten, think, and belong in the world. These themes cover the full range of what it looks like to *exist*.
 
 ---
 
@@ -17,144 +17,144 @@ Volume I focuses on how Pokémon move, rest, threaten, think, and belong in the 
 
 ### Elemental Solitude
 
-Pokemon alone with their elemental power, defined by environment rather than action.
+A Pokemon alone with its element — defined by the environment around it, not by what it's doing. Think a lone Vaporeon dissolving into rain, or a Magcargo pooling in volcanic heat.
 
-<p class="signal">Key signal: isolation + scale</p>
+<p class="signal">What I look for: isolation + scale</p>
 </div>
 
 <div class="theme-card">
 
 ### Calm in Nature
 
-Pokemon at ease within a natural setting, present but untroubled.
+Pokemon at ease in a natural setting. Not sleeping, not playing — just *present*. There's a warmth to these cards, a sense that nothing needs to happen next.
 
-<p class="signal">Key signal: harmony, not sleep</p>
+<p class="signal">What I look for: harmony, not sleep</p>
 </div>
 
 <div class="theme-card">
 
 ### Joyful Action
 
-Pokemon actively moving or playing, where motion expresses happiness.
+Motion that comes from happiness. Running, leaping, playing — the energy here is light and genuine. These cards always make me smile.
 
-<p class="signal">Key signal: motion driven by joy</p>
+<p class="signal">What I look for: motion driven by joy</p>
 </div>
 
 <div class="theme-card">
 
 ### On the Attack
 
-Pokemon caught mid-strike or charge, where the action itself is the subject.
+Mid-strike, mid-charge, fully committed. The action itself is the subject — no buildup, no aftermath, just the moment of impact.
 
-<p class="signal">Key signal: commitment to action</p>
+<p class="signal">What I look for: commitment to action</p>
 </div>
 
 <div class="theme-card">
 
 ### Intimidation
 
-Pokemon exerting dominance or threat through presence, posture, or atmosphere.
+Dominance through presence alone. These Pokemon don't need to attack — their posture, their eyes, the atmosphere around them says enough.
 
-<p class="signal">Key signal: fear before action</p>
+<p class="signal">What I look for: fear before action</p>
 </div>
 
 <div class="theme-card">
 
 ### World of People
 
-Pokemon shown meaningfully interacting with humans or human spaces.
+Pokemon sharing space with humans in a way that matters. Not just background humans — genuine coexistence, daily life, or partnership.
 
-<p class="signal">Key signal: social context matters</p>
+<p class="signal">What I look for: social context matters</p>
 </div>
 
 <div class="theme-card">
 
 ### At Rest
 
-Pokemon disengaged from the world, recovering, sleeping, or fully relaxed.
+Disengaged from everything. Sleeping, recovering, fully relaxed. There's a vulnerability here that's different from calm — these Pokemon have let their guard down completely.
 
-<p class="signal">Key signal: vulnerability or withdrawal</p>
+<p class="signal">What I look for: vulnerability or withdrawal</p>
 </div>
 
 <div class="theme-card">
 
 ### Contemplation
 
-Pokemon awake and still, engaged in awareness or thought rather than action.
+Awake and still. Not resting, not acting — *thinking*. These cards have a quiet intensity, like the Pokemon is aware of something we can't see.
 
-<p class="signal">Key signal: attention without movement</p>
+<p class="signal">What I look for: attention without movement</p>
 </div>
 
 <div class="theme-card">
 
 ### Legendary Bearing
 
-Pokemon depicted as complete, enduring forces — power contained and unquestioned.
+Complete, enduring, unquestioned. These Pokemon aren't becoming anything — they already are. Power contained, timeless, and still.
 
-<p class="signal">Key signal: timeless presence</p>
+<p class="signal">What I look for: timeless presence</p>
 </div>
 
 <div class="theme-card">
 
 ### Awakened Power
 
-Pokemon in the moment of transformation or activation, power newly realized but not yet released.
+The moment right before everything changes. Power gathering, transformation beginning, energy building — but not yet released. There's a tension in these cards that I find electric.
 
-<p class="signal">Key signal: transition, tension, energy gathering</p>
+<p class="signal">What I look for: transition, tension, energy gathering</p>
 </div>
 
 ---
 
 ## Volume II — Memory, Presence, and Passage
 
-Volume II shifts inward — not about what Pokémon do, but about how they are remembered, lived with, and understood across time.
+Volume II shifts inward. These themes aren't about what Pokemon *do* — they're about how they're remembered, lived with, and understood across time.
 
 ### Chapter I — Nearness
 
-*How Pokémon are held close*
+*How Pokemon are held close*
 
 <div class="theme-card">
 
 ### Companions
 
-Pokémon and humans (or other Pokémon) in relationships defined by trust, care, or shared stillness. The bond is mutual, enduring, and central to the image.
+Pokemon and humans (or other Pokemon) in relationships built on trust, care, or shared stillness. The bond is the point — mutual, enduring, and central to the image.
 
-<p class="signal">Key signal: bond without spectacle</p>
+<p class="signal">What I look for: bond without spectacle</p>
 </div>
 
 <div class="theme-card">
 
 ### Quiet Familiarity
 
-Pokémon adjacent to everyday life, invoking comfort, routine, or family without narrative emphasis. They are held by their environment.
+Pokemon woven into everyday life. Comfort, routine, family — no drama, no narrative. They're just *there*, held by a world that knows them.
 
-<p class="signal">Key signal: domestic calm</p>
+<p class="signal">What I look for: domestic calm</p>
 </div>
 
 ### Chapter II — Permanence
 
-*How Pokémon endure*
+*How Pokemon endure*
 
 <div class="theme-card">
 
 ### Enduring Presence
 
-Pokémon depicted as complete, self-contained forces — not in action, not in transition, but already fully realized. Timeless beings whose power is contained, not expressed.
+Complete, self-contained forces. Not in action, not in transition — already fully realized. These are timeless beings whose power is contained, not expressed.
 
-<p class="signal">Key signal: power that no longer needs to move</p>
+<p class="signal">What I look for: power that no longer needs to move</p>
 </div>
 
 ### Chapter III — Passage
 
-*How Pokémon exist at edges*
+*How Pokemon exist at edges*
 
 <div class="theme-card">
 
 ### Threshold
 
-Pokémon positioned at borders, entrances, or moments of passage — emotionally, spatially, or symbolically. Movement without action. Progression without chaos.
+Borders, entrances, moments of passage. Movement without action, progression without chaos. These cards let the binder breathe — they're the space between moments.
 
-<p class="signal">Key signal: the space between moments</p>
+<p class="signal">What I look for: the space between moments</p>
 </div>
 
 ---
@@ -167,36 +167,36 @@ Graded cards are **anchors**, not clutter. They represent permanence, personal m
 
 ### Crown Art
 
-Pinnacle works — the highest artistic achievements in the collection.
+The best of the best. These are the highest artistic achievements in the collection — cards where the art alone justifies the slab.
 
-<p class="signal">Key signal: undeniable artistic mastery</p>
+<p class="signal">What I look for: undeniable artistic mastery</p>
 </div>
 
 <div class="theme-card">
 
-### Definitive Pokémon
+### Definitive Pokemon
 
-The single best card for a species. The card that most fully captures what that Pokémon is.
+The single best card for a species. The one that most fully captures what that Pokemon *is*.
 
-<p class="signal">Key signal: the definitive representation</p>
+<p class="signal">What I look for: the definitive representation</p>
 </div>
 
 <div class="theme-card">
 
 ### Historical
 
-Era-defining cards that shaped the hobby. Cards whose significance is primarily contextual and temporal.
+Era-defining cards that shaped the hobby. Their significance is primarily contextual — they matter because of *when* they existed.
 
-<p class="signal">Key signal: historical weight</p>
+<p class="signal">What I look for: historical weight</p>
 </div>
 
 <div class="theme-card">
 
 ### Personal Significance
 
-Cards with irreplaceable personal meaning. Milestones, gifts, or connections that transcend art.
+Cards with irreplaceable personal meaning. Milestones, gifts, or connections that go beyond art.
 
-<p class="signal">Key signal: personal story</p>
+<p class="signal">What I look for: personal story</p>
 </div>
 
 ---
@@ -219,7 +219,7 @@ Together, these themes cover the full emotional and narrative loop:
 
 **Graded Cards:**
 - **Pinnacle** — Crown Art
-- **Definitive** — Definitive Pokémon
+- **Definitive** — Definitive Pokemon
 - **Era** — Historical
 - **Personal** — Personal Significance
 
@@ -232,4 +232,4 @@ A new theme only becomes *official* when:
 1. It holds **6–9 cards**, AND
 2. The cards clearly communicate the same emotional or narrative idea
 
-Until then, cards remain in a holding stack.
+Until then, cards remain in a holding stack. No rushing it.
