@@ -8,7 +8,7 @@ This is the actual collection. Everything you've read about themes and philosoph
 ## Volumes
 
 - **[Volume I](volume-1/)** — Lived Experience: how Pokemon exist in the world
-- **[Volume II](volume-2/)** — Memory, Companionship, and the Shape of an Era
+- **[Volume II](volume-2/)** — Memory, Presence, and Passage
 - **[Emolga Masterset](emolga-masterset/)** — Every Emolga card I can get my hands on. No regrets.
 - **[Slabs](slabs/)** — Graded cards on display
 

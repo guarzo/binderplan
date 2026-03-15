@@ -7,17 +7,21 @@ The binder is meant to be read like a book. Page order matters — not because t
 
 This is probably my favorite part of the whole system. When the arc works, turning pages feels like listening to a great album. Each theme is a track, and the sequence is the tracklist.
 
-## The Emotional Arc
+---
+
+## Volume I — Lived Experience
+
+Volume I focuses on how Pokemon exist in the world — how they move, rest, threaten, think, and belong. The arc builds from safety to intensity, then resolves in stillness.
 
 ```
 Belonging → Motion → Power → Threat → Reflection
 ```
 
----
-
-## Chapter Structure
+Large-scale mythic or overwhelming power is intentionally constrained so it doesn't dominate the narrative.
 
 ### Chapter I — Belonging & Safety
+
+*How Pokemon are held by the world*
 
 - Calm in Nature
 - World of People
@@ -29,6 +33,8 @@ Belonging → Motion → Power → Threat → Reflection
 
 ### Chapter II — Motion & Life
 
+*How Pokemon move through the world*
+
 - Joyful Action
 - Journey *(if/when it emerges)*
 
@@ -37,6 +43,8 @@ Belonging → Motion → Power → Threat → Reflection
 ---
 
 ### Chapter III — Power Awakening (Binder Hinge)
+
+*How Pokemon become*
 
 - Awakened Power
 - Legendary Bearing
@@ -47,6 +55,8 @@ Belonging → Motion → Power → Threat → Reflection
 
 ### Chapter IV — Threat & Conflict
 
+*How Pokemon overwhelm*
+
 - Intimidation
 - On the Attack
 
@@ -56,6 +66,8 @@ Belonging → Motion → Power → Threat → Reflection
 
 ### Chapter V — Isolation & Reflection
 
+*How Pokemon withdraw*
+
 - Elemental Solitude
 - Contemplation
 
@@ -63,20 +75,9 @@ Belonging → Motion → Power → Threat → Reflection
 
 ---
 
-## Volume I Focus
-
-**Volume I** focuses on *lived experience*:
-
-- How Pokemon exist in the world
-- How they move, rest, threaten, think, and belong
-
-Large-scale mythic or overwhelming power is intentionally constrained so it doesn't dominate the narrative.
-
----
-
 ## Volume II — Memory, Presence, and Passage
 
-Volume II is deliberately quieter. I wanted it that way — where Volume I is about *doing*, Volume II is about *being remembered*. Three chapters instead of five — fewer movements, but deeper.
+Volume II is deliberately quieter — three chapters instead of five, fewer movements, but deeper. Where Volume I is about *doing*, Volume II is about *being remembered*.
 
 ### Chapter I — Nearness
 
@@ -109,6 +110,6 @@ Volume II is deliberately quieter. I wanted it that way — where Volume I is ab
 
 ---
 
-Volume II is intentionally softer, slower, and more reflective. Three chapters instead of five — fewer movements, but deeper. Honestly, it's harder to build than Volume I. You can't just find cool-looking cards; they have to carry weight.
+Honestly, Volume II is harder to build than Volume I. You can't just find cool-looking cards; they have to carry weight.
 
 *Volume II is not about collecting more — it is about understanding why certain images stay.*

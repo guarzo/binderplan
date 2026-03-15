@@ -9,7 +9,9 @@
       "Bash(git -C /home/tng/workspace/binderplan log --oneline -10)",
       "Bash(git -C /home/tng/workspace/binderplan show --stat)",
       "Bash(ls:*)",
-      "Bash(git -C /home/tng/workspace/binderplan lfs status:*)"
+      "Bash(git -C /home/tng/workspace/binderplan lfs status:*)",
+      "Bash(grep:*)",
+      "Bash(cd:*)"
     ]
   }
 }
