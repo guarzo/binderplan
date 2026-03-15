@@ -74,26 +74,28 @@ Solitude and inner states.
 
 ## 4. Volume 2 — Canonical Themes
 
-### Chapter I — Companions
-Bond, trust, care, or shared stillness between Pokémon and humans (or other Pokémon).
+Volume 2 uses three chapters (fewer movements, but deeper than Volume 1).
+
+### Chapter I — Nearness
+*How Pokémon are held close*
+
+**Companions:** Bond, trust, care, or shared stillness between Pokémon and humans (or other Pokémon).
 - **Key signals:** Shared space or purpose, emotional reciprocity, Pokémon not complete alone
 
-### Chapter II — Quiet Familiarity
-Domestic calm, routine, or family-adjacent scenes.
+**Quiet Familiarity:** Domestic calm, routine, or family-adjacent scenes.
 - **Key signals:** Domestic scale, soft attention or ease, familiarity rather than narrative
 
-### Chapter III — Era Identity
-Pokémon framed through early or foundational visual language.
-- **Key signals:** Iconic/instructional composition, minimal narrative, defines "what Pokémon are" at a specific time
-- **Hard cap:** A card must meaningfully fail at least two other themes to qualify
+### Chapter II — Permanence
+*How Pokémon endure*
 
-### Chapter IV — Enduring Presence
-Pokémon depicted as complete, self-contained forces.
+**Enduring Presence:** Pokémon depicted as complete, self-contained forces.
 - **Key signals:** Pokémon feels finished (not becoming), power contained (not expressed), pose suggests continuity
 - **What this is not:** Not "legendary only," not explosions/attacks, not transformation
 
-### Chapter V — Threshold
-Pokémon positioned at borders, entrances, or moments of passage.
+### Chapter III — Passage
+*How Pokémon exist at edges*
+
+**Threshold:** Pokémon positioned at borders, entrances, or moments of passage.
 - **Key signals:** Doorways/paths/bridges, facing into or out of a space, "just before" or "just after," liminal light
 
 ---
@@ -119,15 +121,16 @@ These themes are easily confused.
 - Cards showing fully realized, static power → wrong for Awakened Power
 - Cards that are legendary by name only → insufficient for Legendary Bearing
 
-### B. Era Identity vs. "Old Cards"
-Era Identity is not a dumping ground for vintage cards.
+### B. Vintage Cards — Sorting Without Era Identity
+Era Identity was retired as a standalone chapter. Vintage cards must now earn placement through emotional signal, not age.
 
-**Audit question:** Does this card *define* an era, or is it merely *from* an era?
+**Audit question:** What is this card *showing*, independent of when it was printed?
 
-Cards that are old but emotionally active may belong in:
+Cards that are old but emotionally active should distribute to:
 - Companions (if showing bond)
-- Quiet Familiarity (if domestic)
-- Enduring Presence (if timeless)
+- Quiet Familiarity (if domestic or gentle)
+- Enduring Presence (if timeless or self-contained)
+- Threshold (if liminal or between-states)
 
 ---
 

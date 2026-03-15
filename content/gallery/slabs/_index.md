@@ -6,7 +6,11 @@ layout: "gallery"
 
 These are the cards that earned their frames. Every slab here represents a finished statement — a card I've decided is *done*. No more upgrading, no more debating. Just permanence.
 
+---
+
 ## Crown Art
+
+The highest artistic achievements in the collection. These cards are here because the art alone justifies the frame.
 
 <div class="gallery-grid">
   <figure class="gallery-item">
@@ -26,18 +30,6 @@ These are the cards that earned their frames. Every slab here represents a finis
     <figcaption>Celebi Gold Star</figcaption>
   </figure>
   <figure class="gallery-item">
-    <img src="../../images/slabs/crown_golem_masaki.jpg" alt="Golem Masaki slab" loading="lazy">
-    <figcaption>Golem Masaki</figcaption>
-  </figure>
-  <figure class="gallery-item">
-    <img src="../../images/slabs/crown_alakazam_masaki.jpg" alt="Alakazam Masaki slab" loading="lazy">
-    <figcaption>Alakazam Masaki</figcaption>
-  </figure>
-  <figure class="gallery-item">
-    <img src="../../images/slabs/crown_gengar_masaki.jpg" alt="Gengar Masaki slab" loading="lazy">
-    <figcaption>Gengar Masaki</figcaption>
-  </figure>
-  <figure class="gallery-item">
     <img src="../../images/slabs/crown_mew_sv4a_jp.jpg" alt="Mew SV4a slab" loading="lazy">
     <figcaption>Mew SV4a</figcaption>
   </figure>
@@ -50,24 +42,20 @@ These are the cards that earned their frames. Every slab here represents a finis
     <figcaption>Umbreon Tag</figcaption>
   </figure>
   <figure class="gallery-item">
-    <img src="../../images/slabs/crown_umbreon_gempack_placeholder.jpg" alt="Umbreon Gempack slab" loading="lazy">
-    <figcaption>Umbreon Gempack</figcaption>
+    <img src="../../images/slabs/crown_charizard_151_jp.jpg" alt="Charizard 151 slab" loading="lazy">
+    <figcaption>Charizard 151</figcaption>
   </figure>
   <figure class="gallery-item">
-    <img src="../../images/slabs/crown_leafeon_gempack_placeholder.jpg" alt="Leafeon Gempack slab" loading="lazy">
-    <figcaption>Leafeon Gempack</figcaption>
-  </figure>
-  <figure class="gallery-item">
-    <img src="../../images/slabs/crown_eevee_gempack_placeholder.jpg" alt="Eevee Gempack slab" loading="lazy">
-    <figcaption>Eevee Gempack</figcaption>
-  </figure>
-  <figure class="gallery-item">
-    <img src="../../images/slabs/crown_sylveon_gempack_placeholder.jpg" alt="Sylveon Gempack slab" loading="lazy">
-    <figcaption>Sylveon Gempack</figcaption>
+    <img src="../../images/slabs/crown_groudon_gold_star.jpg" alt="Groudon Gold Star slab" loading="lazy">
+    <figcaption>Groudon Gold Star</figcaption>
   </figure>
 </div>
 
+---
+
 ## Definitive Pokemon
+
+One species, one card. The single best version of each — the card that most fully captures what that Pokemon *is*.
 
 <div class="gallery-grid">
   <figure class="gallery-item">
@@ -87,16 +75,8 @@ These are the cards that earned their frames. Every slab here represents a finis
     <figcaption>Houndoom Aquapolis</figcaption>
   </figure>
   <figure class="gallery-item">
-    <img src="../../images/slabs/definitive_charizard_151_jp.jpg" alt="Charizard 151 slab" loading="lazy">
-    <figcaption>Charizard 151</figcaption>
-  </figure>
-  <figure class="gallery-item">
     <img src="../../images/slabs/definitive_kingdra_aquapolis.jpg" alt="Kingdra Aquapolis slab" loading="lazy">
     <figcaption>Kingdra Aquapolis</figcaption>
-  </figure>
-  <figure class="gallery-item">
-    <img src="../../images/slabs/definitive_pikachu_blackstar_2000.jpg" alt="Pikachu Black Star 2000 slab" loading="lazy">
-    <figcaption>Pikachu Black Star 2000</figcaption>
   </figure>
   <figure class="gallery-item">
     <img src="../../images/slabs/definitive_gengar_chinese_2025.jpg" alt="Gengar Chinese 2025 slab" loading="lazy">
@@ -112,9 +92,29 @@ These are the cards that earned their frames. Every slab here represents a finis
   </figure>
 </div>
 
+---
+
 ## Historical
 
+Era-defining cards and cultural artifacts. These matter because of *when* they existed and what they meant to the hobby.
+
 <div class="gallery-grid">
+  <figure class="gallery-item">
+    <img src="../../images/slabs/historical_golem_masaki.jpg" alt="Golem Masaki slab" loading="lazy">
+    <figcaption>Golem Masaki</figcaption>
+  </figure>
+  <figure class="gallery-item">
+    <img src="../../images/slabs/historical_alakazam_masaki.jpg" alt="Alakazam Masaki slab" loading="lazy">
+    <figcaption>Alakazam Masaki</figcaption>
+  </figure>
+  <figure class="gallery-item">
+    <img src="../../images/slabs/historical_gengar_masaki.jpg" alt="Gengar Masaki slab" loading="lazy">
+    <figcaption>Gengar Masaki</figcaption>
+  </figure>
+  <figure class="gallery-item">
+    <img src="../../images/slabs/historical_pikachu_blackstar_2000.jpg" alt="Pikachu Black Star 2000 slab" loading="lazy">
+    <figcaption>Pikachu Black Star 2000</figcaption>
+  </figure>
   <figure class="gallery-item">
     <img src="../../images/slabs/historical_jolteon_pop.jpg" alt="Jolteon POP slab" loading="lazy">
     <figcaption>Jolteon POP</figcaption>
@@ -127,9 +127,21 @@ These are the cards that earned their frames. Every slab here represents a finis
     <img src="../../images/slabs/historical_squirtle_expedition.jpg" alt="Squirtle Expedition slab" loading="lazy">
     <figcaption>Squirtle Expedition</figcaption>
   </figure>
+  <figure class="gallery-item">
+    <img src="../../images/slabs/historical_charizard_jp_basic.jpg" alt="Charizard JP Basic slab" loading="lazy">
+    <figcaption>Charizard JP Basic</figcaption>
+  </figure>
+  <figure class="gallery-item">
+    <img src="../../images/slabs/historical_omastar_masaki.jpg" alt="Omastar Masaki slab" loading="lazy">
+    <figcaption>Omastar Masaki</figcaption>
+  </figure>
 </div>
 
+---
+
 ## Personal Significance
+
+Cards with irreplaceable personal meaning. Milestones, gifts, and connections that go beyond art.
 
 <div class="gallery-grid">
   <figure class="gallery-item">
@@ -149,8 +161,12 @@ These are the cards that earned their frames. Every slab here represents a finis
     <figcaption>Kecleon</figcaption>
   </figure>
   <figure class="gallery-item">
-    <img src="../../images/slabs/emolga_radiant.jpg" alt="Emolga Radiant slab" loading="lazy">
+    <img src="../../images/slabs/personal_emolga_radiant.jpg" alt="Emolga Radiant slab" loading="lazy">
     <figcaption>Emolga Radiant</figcaption>
+  </figure>
+  <figure class="gallery-item">
+    <img src="../../images/slabs/personal_emolga_carnival.jpg" alt="Emolga Summer Carnival slab" loading="lazy">
+    <figcaption>Emolga Summer Carnival</figcaption>
   </figure>
 </div>
 

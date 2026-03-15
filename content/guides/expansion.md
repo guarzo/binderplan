@@ -126,13 +126,11 @@ Once the binder is full:
 
 ## Volume II Themes
 
-Volume II now has five established themes. These are narrower and demand stronger curation:
+Volume II has three chapters, each narrower and demanding stronger curation than Volume I:
 
-- **Companions** — Bond without spectacle
-- **Quiet Familiarity** — Domestic calm and lived-in worlds
-- **Era Identity** — Inherited visual language (hard cap recommended)
-- **Enduring Presence** — Power that no longer needs to move
-- **Threshold** — The space between moments
+- **Nearness** — Companions + Quiet Familiarity (bond and domestic calm)
+- **Permanence** — Enduring Presence (power that no longer needs to move)
+- **Passage** — Threshold (the space between moments)
 
 Volume II themes don't auto-expand. No theme grows beyond 2 pages without a deliberate decision.
 

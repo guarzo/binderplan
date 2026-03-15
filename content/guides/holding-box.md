@@ -37,7 +37,7 @@ Cards that fit an existing theme but don't improve a page. They're visually weak
 
 ### 3. HERITAGE (Respect Without Display)
 
-Nostalgic or historic cards that feel meaningful but visually quiet. Better respected than showcased. Don't force these into art themes — but consider Volume II's Era Identity or Enduring Presence themes, or the graded Historical category.
+Nostalgic or historic cards that feel meaningful but visually quiet. Better respected than showcased. Don't force these into art themes — but consider Volume II's Enduring Presence or Nearness themes, or the graded Historical category.
 
 ---
 

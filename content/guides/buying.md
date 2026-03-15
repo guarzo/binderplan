@@ -30,7 +30,6 @@ Choose **one**:
 **Volume II — Memory & Presence:**
 - Companionship (bond without spectacle)
 - Quiet familiarity (domestic calm)
-- Era identity (inherited visual language)
 - Enduring presence (power that no longer needs to move)
 - Threshold (the space between moments)
 
@@ -50,11 +49,9 @@ Choose **one**:
 - Isolation & Reflection
 
 **Volume II chapters:**
-- Companions
-- Quiet Familiarity
-- Era Identity
-- Enduring Presence
-- Threshold
+- Nearness (Companions + Quiet Familiarity)
+- Permanence (Enduring Presence)
+- Passage (Threshold)
 
 The key word is **strengthen**, not match. If it only duplicates a feeling already in the binder, skip it. Volume II themes are narrower — "almost fits" genuinely means it doesn't fit.
 
