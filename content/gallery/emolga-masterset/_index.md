@@ -51,6 +51,18 @@ Every Emolga card ever printed — that's the goal. This binder exists completel
     <img src="../../images/binder/emolga-masterset/emolga_10.jpg" alt="Emolga masterset spread 10" loading="lazy">
     <figcaption>Spread 10</figcaption>
   </figure>
+  <figure class="gallery-item">
+    <img src="../../images/binder/emolga-masterset/emolga_11.jpg" alt="Emolga masterset spread 11" loading="lazy">
+    <figcaption>Spread 11</figcaption>
+  </figure>
+  <figure class="gallery-item">
+    <img src="../../images/binder/emolga-masterset/emolga_12.jpg" alt="Emolga masterset spread 12" loading="lazy">
+    <figcaption>Spread 12</figcaption>
+  </figure>
+  <figure class="gallery-item">
+    <img src="../../images/binder/emolga-masterset/emolga_13.jpg" alt="Emolga masterset spread 13" loading="lazy">
+    <figcaption>Spread 13</figcaption>
+  </figure>
 </div>
 
 ---
@@ -63,18 +75,6 @@ These are the ones I haven't tracked down yet. If you've got a lead, I'm listeni
   <figure class="gallery-item">
     <img src="../../images/binder/emolga-masterset/Missing%20Emolga%20025%20BW-P.jpg" alt="Emolga 025 BW-P" loading="lazy">
     <figcaption>Emolga 025 BW-P</figcaption>
-  </figure>
-  <figure class="gallery-item">
-    <img src="../../images/binder/emolga-masterset/Missing%20Emolga%207%20Zekrom%20Battle%20Strength.jpg" alt="Emolga 7 Zekrom Battle Strength" loading="lazy">
-    <figcaption>Emolga 7 Zekrom Battle Strength</figcaption>
-  </figure>
-  <figure class="gallery-item">
-    <img src="../../images/binder/emolga-masterset/Missing%20Emolga%2023%20Shiny%20Collection.jpg" alt="Emolga 23 Shiny Collection" loading="lazy">
-    <figcaption>Emolga 23 Shiny Collection</figcaption>
-  </figure>
-  <figure class="gallery-item">
-    <img src="../../images/binder/emolga-masterset/Missing%20Emolga%2062%20Collection%20Y.jpg" alt="Emolga 62 Collection Y" loading="lazy">
-    <figcaption>Emolga 62 Collection Y</figcaption>
   </figure>
   <figure class="gallery-item">
     <img src="../../images/binder/emolga-masterset/Missing%20Emolga%20BW-9%2081.jpg" alt="Emolga BW-9 81" loading="lazy">
