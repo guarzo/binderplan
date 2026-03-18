@@ -12,7 +12,11 @@ Volume II shifts inward — not about what Pokemon do, but about how they are re
 
 <div class="gallery-grid">
   <figure class="gallery-item">
-    <img src="../../images/binder/volume-2/companions_1.jpg" alt="Companions spread" loading="lazy">
+    <img src="../../images/binder/volume-2/companions_1.jpg" alt="Companions spread 1" loading="lazy">
+    <figcaption>Companions</figcaption>
+  </figure>
+  <figure class="gallery-item">
+    <img src="../../images/binder/volume-2/companions_2.jpg" alt="Companions spread 2" loading="lazy">
     <figcaption>Companions</figcaption>
   </figure>
   <figure class="gallery-item">
@@ -28,13 +32,23 @@ Volume II shifts inward — not about what Pokemon do, but about how they are re
 ## Chapter II — Permanence
 
 <div class="gallery-grid">
-  <!-- Enduring Presence spreads to be added -->
+  <figure class="gallery-item">
+    <img src="../../images/binder/volume-2/enduring_presence_1.jpg" alt="Enduring Presence spread 1" loading="lazy">
+    <figcaption>Enduring Presence</figcaption>
+  </figure>
+  <figure class="gallery-item">
+    <img src="../../images/binder/volume-2/enduring_presence_2.jpg" alt="Enduring Presence spread 2" loading="lazy">
+    <figcaption>Enduring Presence</figcaption>
+  </figure>
 </div>
 
 ## Chapter III — Passage
 
 <div class="gallery-grid">
-  <!-- Threshold spreads to be added -->
+  <figure class="gallery-item">
+    <img src="../../images/binder/volume-2/threshold_1.jpg" alt="Threshold spread" loading="lazy">
+    <figcaption>Threshold</figcaption>
+  </figure>
 </div>
 
 <!-- Lightbox container -->

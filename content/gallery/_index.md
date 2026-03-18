@@ -11,6 +11,11 @@ This is the actual collection. Everything you've read about themes and philosoph
 - **[Volume II](volume-2/)** — Memory, Presence, and Passage
 - **[Emolga Masterset](emolga-masterset/)** — Every Emolga card I can get my hands on. No regrets.
 
+## Other Collections
+
+- **[Stamped Cards](stamped-cards/)** — Prerelease, league, and event-stamped cards
+- **[Waifu](waifu/)** — Full-art Japanese trainer cards, collected for the art
+
 ## Slabs
 
 - **[Gold Stars](gold-stars/)** — The gold star collection

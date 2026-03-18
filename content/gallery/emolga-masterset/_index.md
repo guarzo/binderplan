@@ -51,6 +51,18 @@ Every Emolga card ever printed — that's the goal. This binder exists completel
     <img src="../../images/binder/emolga-masterset/emolga_10.jpg" alt="Emolga masterset spread 10" loading="lazy">
     <figcaption>Spread 10</figcaption>
   </figure>
+  <figure class="gallery-item">
+    <img src="../../images/binder/emolga-masterset/emolga_11.jpg" alt="Emolga masterset spread 11" loading="lazy">
+    <figcaption>Spread 11</figcaption>
+  </figure>
+  <figure class="gallery-item">
+    <img src="../../images/binder/emolga-masterset/emolga_12.jpg" alt="Emolga masterset spread 12" loading="lazy">
+    <figcaption>Spread 12</figcaption>
+  </figure>
+  <figure class="gallery-item">
+    <img src="../../images/binder/emolga-masterset/emolga_13.jpg" alt="Emolga masterset spread 13" loading="lazy">
+    <figcaption>Spread 13</figcaption>
+  </figure>
 </div>
 
 ---

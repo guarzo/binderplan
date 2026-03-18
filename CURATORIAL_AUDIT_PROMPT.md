@@ -134,7 +134,27 @@ Cards that are old but emotionally active should distribute to:
 
 ---
 
-## 6. Audit Tasks
+## 6. Other Collections (Outside Thematic Structure)
+
+These binder sections exist **independently** of the Volume 1/2 thematic framework. They are not subject to the same curatorial gatekeeping — they follow their own organizing logic.
+
+### Emolga Masterset
+Every Emolga card ever printed. No themes, no narrative arcs — completionist by design. Audit for **coverage and organization**, not emotional signal.
+
+### Stamped Cards
+Prerelease, league, and event-stamped cards. Organized by the stamp/event itself, not by Pokémon or theme. These cards are collected as **proof of participation** — the stamp is the point.
+
+### Waifu
+Full-art Japanese trainer supporter cards, collected purely for illustration quality. No thematic sorting — curated by **art merit and visual composition**. Collection in progress.
+
+**Audit scope for other collections:**
+- Completeness (are there known gaps?)
+- Organization (is the ordering logical within the section's own terms?)
+- Condition/presentation (do any spreads need rebalancing?)
+
+---
+
+## 7. Audit Tasks
 
 ### A. Volume 1 Audit (Selective & Surgical)
 For each spread:
@@ -158,7 +178,13 @@ For each spread:
   - Density
   - Page pacing
 
-### C. Reserve Card Analysis
+### C. Other Collections Audit
+For each non-thematic binder section (Emolga Masterset, Stamped Cards, Waifu):
+- Assess completeness and known gaps
+- Evaluate spread organization within the section's own logic
+- Flag any presentation or balance issues
+
+### D. Reserve Card Analysis
 For cards not yet placed:
 1. Evaluate each card against **all themes**
 2. Identify the **strongest fit** (not just any fit)
@@ -173,7 +199,7 @@ For cards not yet placed:
 
 ---
 
-## 7. Investigating New Themes (Strict Gatekeeping)
+## 8. Investigating New Themes (Strict Gatekeeping)
 
 You may propose new themes ONLY if they:
 
@@ -192,7 +218,7 @@ You must state:
 
 ---
 
-## 8. Output Format (Required)
+## 9. Output Format (Required)
 
 Your response must be structured as:
 
@@ -209,18 +235,23 @@ Your response must be structured as:
 ### 3. Volume 2 Audit Findings
 - Theme clarity assessment
 - Structural suggestions
-- Empty section priorities
+- Spread density and pacing
 
-### 4. Reserve Card Pool Analysis
+### 4. Other Collections Assessment
+- Emolga Masterset: coverage and gaps
+- Stamped Cards: organization and completeness
+- Waifu: art quality and collection progress
+
+### 5. Reserve Card Pool Analysis
 - Cards fitting existing themes (with placement recommendations)
 - Notable patterns in the reserve pool
 - Themes under observation
 
-### 5. New Theme Analysis
+### 6. New Theme Analysis
 - Proposed themes (if any) with full justification
 - Rejected themes with reasons
 
-### 6. Final Curatorial Actions
+### 7. Final Curatorial Actions
 - What to lock (do not modify)
 - Immediate actions required
 - What to revisit later
@@ -228,7 +259,7 @@ Your response must be structured as:
 
 ---
 
-## 9. Tone & Standard
+## 10. Tone & Standard
 
 - Write as a curator, not a fan
 - Prefer subtraction to addition
@@ -241,7 +272,7 @@ The goal is not to grow the binder quickly —
 
 ---
 
-## 10. How to Use This Prompt
+## 11. How to Use This Prompt
 
 1. **Provide images of all current binder spreads** (both volumes)
 2. **Provide images of reserve/unplaced cards** for evaluation

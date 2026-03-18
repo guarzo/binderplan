@@ -8,23 +8,23 @@ The gold star collection. These cards defined what it meant to chase something r
 
 <div class="gallery-grid">
   <figure class="gallery-item">
-    <img src="../../images/slabs/crown_entei_gold_star.jpg" alt="Entei Gold Star slab" loading="lazy">
+    <img src="../../images/slabs/gold_star_entei.jpg" alt="Entei Gold Star slab" loading="lazy">
     <figcaption>Entei Gold Star</figcaption>
   </figure>
   <figure class="gallery-item">
-    <img src="../../images/slabs/crown_registeel_gold_star.jpg" alt="Registeel Gold Star slab" loading="lazy">
+    <img src="../../images/slabs/gold_star_registeel.jpg" alt="Registeel Gold Star slab" loading="lazy">
     <figcaption>Registeel Gold Star</figcaption>
   </figure>
   <figure class="gallery-item">
-    <img src="../../images/slabs/crown_mewtwo_gold_star.jpg" alt="Mewtwo Gold Star slab" loading="lazy">
+    <img src="../../images/slabs/gold_star_mewtwo.jpg" alt="Mewtwo Gold Star slab" loading="lazy">
     <figcaption>Mewtwo Gold Star</figcaption>
   </figure>
   <figure class="gallery-item">
-    <img src="../../images/slabs/crown_celebi_gold_star.jpg" alt="Celebi Gold Star slab" loading="lazy">
+    <img src="../../images/slabs/gold_star_celebi.jpg" alt="Celebi Gold Star slab" loading="lazy">
     <figcaption>Celebi Gold Star</figcaption>
   </figure>
   <figure class="gallery-item">
-    <img src="../../images/slabs/crown_groudon_gold_star.jpg" alt="Groudon Gold Star slab" loading="lazy">
+    <img src="../../images/slabs/gold_star_groudon.jpg" alt="Groudon Gold Star slab" loading="lazy">
     <figcaption>Groudon Gold Star</figcaption>
   </figure>
 </div>
