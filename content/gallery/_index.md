@@ -10,7 +10,14 @@ This is the actual collection. Everything you've read about themes and philosoph
 - **[Volume I](volume-1/)** — Lived Experience: how Pokemon exist in the world
 - **[Volume II](volume-2/)** — Memory, Presence, and Passage
 - **[Emolga Masterset](emolga-masterset/)** — Every Emolga card I can get my hands on. No regrets.
-- **[Slabs](slabs/)** — Graded cards on display
+
+## Slabs
+
+- **[Gold Stars](gold-stars/)** — The gold star collection
+- **[Masaki](masaki/)** — The iconic Japanese mail-in trade promos
+- **[Definitive Pokemon](definitive-pokemon/)** — The best versions, chosen with intent
+- **[Touchstones](touchstones/)** — Cards that capture a moment in the hobby
+- **[Personal Significance](personal-significance/)** — Cards with irreplaceable personal meaning
 
 ---
 
