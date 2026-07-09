@@ -13,19 +13,19 @@ Volume II shifts inward — not about what Pokemon do, but about how they are re
 <div class="gallery-grid">
   <figure class="gallery-item">
     <img src="../../images/binder/volume-2/companions_1.jpg" alt="Companions spread 1" loading="lazy">
-    <figcaption>Companions</figcaption>
+    <figcaption><strong>Companions — Chosen Bonds.</strong> Partnerships defined by loyalty, recognition, and shared history.</figcaption>
   </figure>
   <figure class="gallery-item">
     <img src="../../images/binder/volume-2/companions_2.jpg" alt="Companions spread 2" loading="lazy">
-    <figcaption>Companions</figcaption>
+    <figcaption><strong>Companions — Care in Practice.</strong> Affection expressed through teaching, protection, work, and ordinary attention.</figcaption>
   </figure>
   <figure class="gallery-item">
     <img src="../../images/binder/volume-2/quiet_familiarity_1.jpg" alt="Quiet Familiarity spread 1" loading="lazy">
-    <figcaption>Quiet Familiarity</figcaption>
+    <figcaption><strong>Quiet Familiarity — Gentle Company.</strong> Transitional page under review; calm is present, but stronger domestic routine and inhabited-space imagery is needed.</figcaption>
   </figure>
   <figure class="gallery-item">
     <img src="../../images/binder/volume-2/quiet_familiarity_2.jpg" alt="Quiet Familiarity spread 2" loading="lazy">
-    <figcaption>Quiet Familiarity</figcaption>
+    <figcaption><strong>Quiet Familiarity — Familiar Places.</strong> Transitional page under review; retain only cards that imply repeated daily life rather than generic serenity.</figcaption>
   </figure>
 </div>
 
@@ -34,11 +34,11 @@ Volume II shifts inward — not about what Pokemon do, but about how they are re
 <div class="gallery-grid">
   <figure class="gallery-item">
     <img src="../../images/binder/volume-2/enduring_presence_1.jpg" alt="Enduring Presence spread 1" loading="lazy">
-    <figcaption>Enduring Presence</figcaption>
+    <figcaption><strong>Enduring Presence — Relics and Survivors.</strong> Vintage forms, fossils, and presences that appear carried forward through time.</figcaption>
   </figure>
   <figure class="gallery-item">
     <img src="../../images/binder/volume-2/enduring_presence_2.jpg" alt="Enduring Presence spread 2" loading="lazy">
-    <figcaption>Enduring Presence</figcaption>
+    <figcaption><strong>Enduring Presence — Witnesses to History.</strong> A transitional page to refine toward age, memory, weathering, and worlds shaped around a lasting presence.</figcaption>
   </figure>
 </div>
 
@@ -47,7 +47,7 @@ Volume II shifts inward — not about what Pokemon do, but about how they are re
 <div class="gallery-grid">
   <figure class="gallery-item">
     <img src="../../images/binder/volume-2/threshold_1.jpg" alt="Threshold spread" loading="lazy">
-    <figcaption>Threshold</figcaption>
+    <figcaption><strong>Threshold — At the Edge.</strong> Transitional page to rebuild around visible crossings: paths, doors, shorelines, horizons, departures, and arrivals.</figcaption>
   </figure>
 </div>
 

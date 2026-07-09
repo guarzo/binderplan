@@ -30,8 +30,8 @@ Choose **one**:
 **Volume II — Memory & Presence:**
 - Companionship (bond without spectacle)
 - Quiet familiarity (domestic calm)
-- Enduring presence (power that no longer needs to move)
-- Threshold (the space between moments)
+- Enduring presence (survival through time)
+- Threshold (a visible boundary being crossed)
 
 **If no clear signal appears — don't buy it.**
 

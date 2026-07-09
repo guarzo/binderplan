@@ -49,7 +49,7 @@ Large-scale mythic or overwhelming power is intentionally constrained so it does
 - Awakened Power
 - Legendary Bearing
 
-*The midpoint pivot. Power emerges but stays contained — this is where the binder takes a breath before things get intense.*
+*The midpoint pivot. Power first gathers, then reveals itself as authority. Legendary Bearing is the moment a complete force is encountered and witnessed.*
 
 ---
 
@@ -96,7 +96,7 @@ Volume II is deliberately quieter — three chapters instead of five, fewer move
 
 - Enduring Presence
 
-*The midpoint settles into gravity. Self-contained beings whose completeness needs no context.*
+*The midpoint settles into historical gravity. These are not gods arriving; they are presences that have remained while the world accumulated around them.*
 
 ---
 
@@ -106,7 +106,7 @@ Volume II is deliberately quieter — three chapters instead of five, fewer move
 
 - Threshold
 
-*The binder resolves in liminality — borders, passages, the space between moments.*
+*The binder resolves at a visible edge — a path, doorway, shoreline, horizon, departure, or arrival. The final feeling is not action, but transition.*
 
 ---
 

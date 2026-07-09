@@ -82,7 +82,7 @@ You don't need divider labels yet — just mental clarity about why the pages ar
 
 **Legendary Bearing**
 - Central pillar of the collection
-- Iconic, timeless cards that demand space
+- Authority made visible through scale, posture, or ceremonial framing
 - Works beautifully with slabs as companions
 - *If any theme becomes a "monument hall," it's this one*
 
@@ -129,8 +129,8 @@ Once the binder is full:
 Volume II has three chapters, each narrower and demanding stronger curation than Volume I:
 
 - **Nearness** — Companions + Quiet Familiarity (bond and domestic calm)
-- **Permanence** — Enduring Presence (power that no longer needs to move)
-- **Passage** — Threshold (the space between moments)
+- **Permanence** — Enduring Presence (survival through time)
+- **Passage** — Threshold (a visible boundary being crossed)
 
 Volume II themes don't auto-expand. No theme grows beyond 2 pages without a deliberate decision.
 

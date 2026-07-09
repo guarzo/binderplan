@@ -15,17 +15,24 @@ Volume II is the active volume. These themes are still being built and benefit m
 
 The thinnest theme in the binder, and the hardest to shop for.
 
-Look for art where the *setting* does most of the work and the Pokemon is passing through. Doorways, paths, bridges, fog, liminal light. Pokemon facing into or out of a space. Edges of forests, cave mouths, shorelines at dusk. "Just before" or "just after" moments.
+Look for art where the *setting* does most of the work and the Pokemon is passing through. Doorways, paths, bridges, platforms, windows, gates, fog, liminal light. Pokemon facing into or out of a space. Edges of forests, cave mouths, shorelines at dusk. "Just before" or "just after" moments.
 
-Skip cards where the Pokemon is the clear subject doing something. This theme needs environmental framing, not character focus.
+The card must show a readable **before and after**: here and there, inside and outside, land and water, known and unknown, leaving and arriving.
 
-### Enduring Presence — Selective Growth
+Skip cards where the Pokemon is merely flying, running, or looking dramatic. Motion is not passage unless a boundary is present.
 
-Self-contained forces. Pokemon depicted as complete, timeless, still. Power that is *contained*, not expressed. Monumental poses, ancient atmosphere.
+### Enduring Presence — Rebuild Around Time
 
-Skip active attacks, transformations, energy release. Not "legendary by name only" — the art must convey permanence.
+Pokemon shown as survivors, relics, recurring witnesses, or parts of a world older than the current moment. Look for ruins, shrines, fossils, old machinery, weathered landscapes, archival framing, repeated generations, or communities built around a longstanding presence.
 
-**How this differs from Legendary Bearing (V1):** Enduring Presence lives in Volume II's quieter register — memory and weight, not spectacle. If it feels like a monument in a museum, it's Enduring Presence. If it feels like a god arriving, it's Legendary Bearing.
+Skip generic heroic poses, active attacks, transformations, and cards that only feel important because the species is legendary.
+
+**How this differs from Legendary Bearing (V1):**
+
+- **Legendary Bearing:** *You are witnessing its authority.* The scene feels immediate, vertical, confrontational, ceremonial, or awe-struck.
+- **Enduring Presence:** *You are noticing what has remained.* The scene feels historical, weathered, remembered, recurring, or embedded in place.
+
+If removing all signs of age, memory, or accumulated world leaves the card unchanged, it probably belongs in Legendary Bearing instead.
 
 ### Companions — Room for Upgrades
 
@@ -36,6 +43,8 @@ Skip Pokemon simply near a trainer with no emotional signal. The relationship mu
 ### Quiet Familiarity — Room for Upgrades
 
 Domestic calm. Pokemon in routines, kitchens, living rooms, gardens. Family-adjacent scenes. Soft attention, ease, comfort.
+
+Require evidence of a lived routine: furniture, tools, food, laundry, books, toys, a garden being tended, a familiar route, or repeated work. A peaceful outdoor portrait is Calm in Nature, not Quiet Familiarity.
 
 Skip anything with narrative tension or drama. This theme is *boring on purpose* — warmth without spectacle.
 
@@ -51,9 +60,9 @@ Volume I is structurally closed. No new pages. Only buy cards that are clear upg
 
 Skip fully realized power (that's Legendary Bearing) and active attacks already released (that's On the Attack).
 
-**Legendary Bearing** — The central pillar. Timeless presence. Complete, unquestioned power. Stillness with gravity. The Pokemon as an enduring force — not becoming, already *is*.
+**Legendary Bearing** — The central pillar. Complete, unquestioned authority made visible. Monumental scale, commanding posture, ceremonial framing, or the feeling that a god, ruler, or guardian has entered the scene.
 
-Skip cards showing active attack energy or transition. Legendary by Pokedex status alone isn't enough — the art must convey it.
+Skip cards showing active attack energy or transition. Also skip quiet relics and weathered survivors; those belong in Enduring Presence. Legendary by Pokedex status alone isn't enough — the artwork must make the viewer feel the encounter.
 
 ### Moderate Growth
 
@@ -109,10 +118,10 @@ Don't buy for these yet. But if cards start accumulating naturally (6–9 cards)
 Found a card with great art? Ask what signal it carries:
 
 - **Bond or domestic warmth** — Volume II: Companions or Quiet Familiarity
-- **Timeless, monumental** — Volume II: Enduring Presence
-- **Liminal, passage, edges** — Volume II: Threshold
+- **Weathered, remembered, historically embedded** — Volume II: Enduring Presence
+- **A visible edge, departure, or arrival** — Volume II: Threshold
 - **Power gathering, transition** — Volume I: Awakened Power (upgrade only)
-- **Contained legendary force** — Volume I: Legendary Bearing (upgrade only)
+- **Authority witnessed through scale or posture** — Volume I: Legendary Bearing (upgrade only)
 - **Fits a V1 theme but isn't an upgrade** — Pass
 - **No clear signal** — Pass
 - **Doesn't fit any theme** — Holding box. Revisit in 12 months.

@@ -76,9 +76,11 @@ The moment right before everything changes. Power gathering, transformation begi
 
 ### Legendary Bearing
 
-Complete, enduring, unquestioned. These Pokemon aren't becoming anything — they already are. Power contained, timeless, and still.
+Authority made visible. These Pokemon occupy the image like rulers, guardians, or gods. Their power is already complete, but the important signal is that it is being **witnessed now** — through scale, posture, confrontation, ceremony, or a dramatic arrival.
 
-<p class="signal">What I look for: timeless presence</p>
+The card should feel like an encounter with something greater than you.
+
+<p class="signal">What I look for: witnessed authority</p>
 </div>
 
 ---
@@ -167,9 +169,11 @@ Pokemon woven into everyday life. Comfort, routine, family — no drama, no narr
 
 ### Enduring Presence
 
-Complete, self-contained forces. Not in action, not in transition — already fully realized. These are timeless beings whose power is contained, not expressed.
+Beings, places, and presences that seem to have survived beyond the moment shown. The image carries evidence of time: ruins, old architecture, artifacts, weathering, memory, repetition, or a world shaped around the Pokemon.
 
-<p class="signal">What I look for: power that no longer needs to move</p>
+The Pokemon does not need to dominate the scene. Its importance comes from having **remained**.
+
+<p class="signal">What I look for: survival through time</p>
 </div>
 
 ---
@@ -182,9 +186,11 @@ Complete, self-contained forces. Not in action, not in transition — already fu
 
 ### Threshold
 
-Borders, entrances, moments of passage. Movement without action, progression without chaos. These cards let the binder breathe — they're the space between moments.
+Borders, entrances, departures, and moments of passage. The artwork must contain a visible edge between states: a doorway, path, bridge, shoreline, cave mouth, window, horizon, gate, platform, or change in weather or light.
 
-<p class="signal">What I look for: the space between moments</p>
+Movement alone is not enough. The Pokemon must be approaching, leaving, crossing, or pausing at a boundary.
+
+<p class="signal">What I look for: a visible boundary being crossed</p>
 </div>
 
 ---
