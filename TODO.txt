@@ -1,0 +1,83 @@
+BINDERPLAN DEFERRED TODO
+========================
+
+These ideas are intentionally saved for later. They are not current shopping
+priorities and should not interrupt the Volume II refinement work.
+
+
+1. RESEQUENCE THE COMPANIONS PAGES
+----------------------------------
+
+Goal:
+Give the two Companions pages distinct internal roles without creating a new
+canonical theme.
+
+Proposed structure:
+- Page 1 — Chosen Bonds: recognition, loyalty, and shared history
+- Page 2 — Care in Practice: teaching, protection, work, and ordinary attention
+
+When revisiting:
+- Test whether every card makes the relationship central to the image.
+- Separate human-Pokemon and Pokemon-Pokemon bonds only if doing so improves
+  the spreads naturally.
+- Reorder existing cards before shopping for replacements.
+- Preserve strong visual pairings even when they cross the proposed page roles.
+
+
+2. REORGANIZE THE STAMPED CARD BINDER
+-------------------------------------
+
+Goal:
+Replace the current sequence of numbered spreads with an organization based on
+why and where each stamp was issued.
+
+Proposed sections:
+- Prerelease and Build & Battle
+- League and tournament
+- Set-logo and era-specific reverse holos
+- Retail, event, and location exclusives
+- Crossovers and promotional campaigns
+
+Within each section:
+- Order chronologically.
+- Keep visually related stamp treatments together where practical.
+- Add section labels or divider cards.
+- Document unclear stamp provenance before assigning a permanent location.
+
+
+3. CREATE A COLLECTION INVENTORY AND LOCATION SYSTEM
+----------------------------------------------------
+
+Goal:
+Make every card findable and make binder changes traceable without turning the
+collection into a finance spreadsheet.
+
+Possible format:
+- Start with CSV, YAML, or JSON only when maintaining it feels worthwhile.
+
+Suggested fields:
+- Card name
+- Set and collector number
+- Language and variant
+- Collection, volume, theme, page, and pocket
+- Status: binder, slab, holding box, candidate, duplicate, or outgoing
+- Condition
+- Acquisition date and cost
+- Replacement target
+- Curatorial notes
+
+Possible location ID:
+- V2-NEAR-COMP-02-B2
+
+Before implementing:
+- Decide whether the website should read the inventory directly.
+- Decide how much purchase and condition data should remain private.
+- Test the system on one binder section before cataloging everything.
+
+
+REVISIT TRIGGER
+---------------
+
+Review these tasks after the Quiet Familiarity, Threshold, and Enduring Presence
+pages have been physically refined and re-photographed. Do not start all three
+deferred projects at once.
