@@ -1,5 +1,5 @@
 ---
-title: "Seasonal Curation"
+title: "Reviewing the Binder"
 description: "How to review and refine the binder"
 ---
 
@@ -51,8 +51,6 @@ Seriously, stop. Do not keep tweaking. Stability is a sign the system is working
 
 ---
 
-## Final Rule
+## When EDGE Has Had Enough Time
 
-> **If a card stays in EDGE for over 12 months, it is not a core card.**
-
-That's clarity, not loss.
+After about a year, an unresolved EDGE card moves to Future Self, storage, or release. It can still be a card I like without being part of the active binder.

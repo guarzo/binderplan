@@ -1,9 +1,10 @@
 ---
-title: "Volume II Refinement"
-description: "A practical audit and replacement plan for the active binder"
+title: "Volume II Notes — July 2026"
+description: "A dated audit of the Volume II pages currently being revised"
+date: 2026-07-10
 ---
 
-Volume II remains the active binder, but active does not mean permissive. This guide records what the current pages are trying to become and prevents attractive but off-theme cards from defining them by accident.
+This is a snapshot of the binder in July 2026, not a permanent set of rules. The stable theme definitions live in [Core Themes](../../philosophy/themes/); these notes record what the photographed Volume II pages need next.
 
 ---
 
@@ -11,7 +12,7 @@ Volume II remains the active binder, but active does not mean permissive. This g
 
 ### Legendary Bearing — Authority Witnessed
 
-The viewer is placed in front of power. The Pokemon appears as a ruler, guardian, god, or overwhelming presence **in the current moment**.
+The scene presents power in the current moment through scale, posture, confrontation, ceremony, or arrival.
 
 **Usually present:**
 - Monumental scale or low viewing angle
@@ -19,7 +20,7 @@ The viewer is placed in front of power. The Pokemon appears as a ruler, guardian
 - Ceremonial, confrontational, or awe-filled framing
 - A sense of arrival, revelation, or audience
 
-**Question:** *Does this feel like meeting the force?*
+**Question:** *Is the image primarily about encountering authority now?*
 
 ### Enduring Presence — Time Witnessed
 
@@ -31,7 +32,7 @@ The viewer is placed after, within, or alongside history. The Pokemon matters be
 - A landscape or community shaped around the Pokemon
 - Stillness that feels historical rather than merely powerful
 
-**Question:** *Does this feel like discovering what survived?*
+**Question:** *Does the image depend on what has remained over time?*
 
 ### Tie-Breaker
 
@@ -43,9 +44,9 @@ If the artwork would retain the same meaning after removing every sign of age, m
 
 The existing pages communicate gentleness, but too many cards are peaceful outdoor portraits. That signal belongs more naturally to Calm in Nature.
 
-### New Admission Test
+### What the Current Pages Need
 
-A Quiet Familiarity card must show at least one of these:
+The next useful additions should show at least one of these:
 
 - A repeated household or community routine
 - An inhabited interior or clearly tended exterior
@@ -53,13 +54,13 @@ A Quiet Familiarity card must show at least one of these:
 - Work, travel, meals, gardening, or rest embedded in daily life
 - Behavior possible only because the Pokemon belongs in that place
 
-Merely being cute, peaceful, or near flowers does not qualify.
+A peaceful outdoor scene without evidence of routine belongs more naturally in Calm in Nature.
 
 ### Current Page Plan
 
-**Gentle Company:** Treat the entire page as provisional. Extract cards whose complete signal is simply “Pokemon calmly outdoors.” Retain only images that imply belonging, repetition, or a known place.
+**Gentle Company:** Reconsider cards whose complete signal is simply “Pokemon calmly outdoors.” Keep images that imply belonging, repetition, or a known place.
 
-**Familiar Places:** Use as the seed page for the rebuild. Favor the few cards with interiors, cultivated spaces, objects, or environmental evidence of routine. Do not preserve the page's current color balance at the expense of theme clarity.
+**Familiar Places:** Use this as the starting point. Favor interiors, cultivated spaces, familiar objects, and other evidence of routine over preserving the current color balance.
 
 ### Desired End State
 
@@ -72,9 +73,9 @@ Merely being cute, peaceful, or near flowers does not qualify.
 
 The current page contains movement and atmospheric cards, but the theme now requires a readable boundary. Flying, running, or looking into the distance is insufficient by itself.
 
-### New Admission Test
+### What the Current Page Needs
 
-The card must answer all three questions:
+The strongest candidates answer all three questions:
 
 1. **What is the boundary?**
 2. **Which side is the Pokemon on?**
@@ -92,7 +93,7 @@ If any answer is unclear, hold the card rather than placing it.
 
 ### Current Page Plan
 
-Reassess every pocket. Lock only cards whose composition visibly divides one state from another. Move generic flight, battle, portrait, fossil, or underwater cards to better themes or the holding box.
+Reassess every pocket and keep cards whose composition visibly divides one state from another. Move generic flight, battle, portrait, fossil, or underwater cards to better themes or the holding box.
 
 ### Desired End State
 
@@ -110,7 +111,7 @@ The current pages contain strong vintage gravity, but some cards communicate imp
 
 ### Current Page Plan
 
-**Relics and Survivors:** Build around fossils, old printings, ancient forms, and beings visually connected to preservation. Vintage borders may support the idea, but age of the physical card cannot be the only evidence.
+**Relics and Survivors:** Build around fossils, ancient forms, and beings visually connected to preservation. Vintage borders can support the idea, but the age of the physical card is not enough by itself.
 
 **Witnesses to History:** Replace generic heroic poses with scenes containing ruins, artifacts, architecture, weathering, generations, or communities. A modern card can be stronger than a vintage card if the artwork carries more historical weight.
 
@@ -126,5 +127,5 @@ The current pages contain strong vintage gravity, but some cards communicate imp
 1. Pull obvious Calm in Nature cards from Quiet Familiarity.
 2. Pull motion-without-boundary cards from Threshold.
 3. Test every Enduring Presence card for evidence of time.
-4. Fill no empty pocket until a card passes the new admission test.
+4. Leave empty pockets open until a card clearly fits the revised page.
 5. Photograph and reassess the rebuilt spreads before buying replacements.
