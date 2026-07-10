@@ -1,0 +1,14 @@
+{{ define "main" }}
+<section class="list">
+  <header class="list-header">
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p class="description">{{ . }}</p>{{ end }}
+  </header>
+
+  {{ if .Content }}
+  <div class="list-content">
+    {{ .Content }}
+  </div>
+  {{ end }}
+</section>
+{{ end }}
