@@ -8,6 +8,14 @@
   {{ partial "head.html" . }}
 </head>
 <body>
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button class="lightbox-close" aria-label="Close viewer">&times;</button>
+    <button class="lightbox-nav lightbox-prev" aria-label="Previous">&#8249;</button>
+    <img id="lightbox-img" src="" alt="">
+    <div class="lightbox-caption"></div>
+    <button class="lightbox-nav lightbox-next" aria-label="Next">&#8250;</button>
+  </div>
+
   {{ partial "header.html" . }}
 
   <main class="content">
