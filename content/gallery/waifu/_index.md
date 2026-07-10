@@ -9,11 +9,11 @@ This smaller side collection focuses on Japanese trainer cards with expressive c
 ---
 
 <div class="gallery-grid">
-  <figure class="gallery-item">
+  <figure class="gallery-item span-half">
     <img src="../../images/binder/waifu/waifu_1.jpg" alt="Binder spread of Japanese full-art trainer cards" loading="lazy">
     <figcaption>Trainer Full Arts — page 1</figcaption>
   </figure>
-  <figure class="gallery-item">
+  <figure class="gallery-item span-half">
     <img src="../../images/binder/waifu/waifu_2.jpg" alt="Second binder spread of Japanese full-art trainer cards" loading="lazy">
     <figcaption>Trainer Full Arts — page 2</figcaption>
   </figure>

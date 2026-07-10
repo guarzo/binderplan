@@ -7,23 +7,23 @@ layout: "gallery"
 Gold Stars pair a distinctive rarity treatment with illustrations that place the Pokemon outside the usual frame. I collect them as a recognizable group from a particular period of the TCG.
 
 <div class="gallery-grid">
-  <figure class="gallery-item">
+  <figure class="gallery-item span-wide">
     <img src="../../images/slabs/gold_star_entei.jpg" alt="Entei Gold Star slab" loading="lazy">
     <figcaption>Entei Gold Star</figcaption>
   </figure>
-  <figure class="gallery-item">
+  <figure class="gallery-item span-narrow">
     <img src="../../images/slabs/gold_star_registeel.jpg" alt="Registeel Gold Star slab" loading="lazy">
     <figcaption>Registeel Gold Star</figcaption>
   </figure>
-  <figure class="gallery-item">
+  <figure class="gallery-item span-full">
     <img src="../../images/slabs/gold_star_mewtwo.jpg" alt="Mewtwo Gold Star slab" loading="lazy">
     <figcaption>Mewtwo Gold Star</figcaption>
   </figure>
-  <figure class="gallery-item">
+  <figure class="gallery-item span-half">
     <img src="../../images/slabs/gold_star_celebi.jpg" alt="Celebi Gold Star slab" loading="lazy">
     <figcaption>Celebi Gold Star</figcaption>
   </figure>
-  <figure class="gallery-item">
+  <figure class="gallery-item span-half">
     <img src="../../images/slabs/gold_star_groudon.jpg" alt="Groudon Gold Star slab" loading="lazy">
     <figcaption>Groudon Gold Star</figcaption>
   </figure>
