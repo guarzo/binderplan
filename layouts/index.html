@@ -1,25 +1,31 @@
 {{ define "main" }}
-<section class="hero-intro">
-  <h1>{{ .Site.Title }}</h1>
+<section class="home-hero">
+  <p class="eyebrow">A curated Pokemon card collection</p>
+  <h1 class="home-wordmark">Art first, <span class="foil">favorites</span> second.</h1>
   <p class="tagline">{{ .Site.Params.description }}</p>
 </section>
 
-<div class="list-content">
-  {{ .Content }}
+<div class="home-manifesto">
+  <div class="list-content">
+    {{ .Content }}
+  </div>
 </div>
 
-<div class="explore-cards">
-  <a href="{{ "philosophy/" | relURL }}" class="explore-card">
+<nav class="explore-index" aria-label="Explore the collection">
+  <a href="{{ "philosophy/" | relURL }}" class="explore-row">
     <h3>Philosophy</h3>
     <p>Why art and emotion drive every decision in this binder.</p>
+    <span class="go" aria-hidden="true">&rarr;</span>
   </a>
-  <a href="{{ "gallery/" | relURL }}" class="explore-card">
+  <a href="{{ "gallery/" | relURL }}" class="explore-row">
     <h3>Gallery</h3>
-    <p>See the binder spreads, slabs, and the Emolga masterset.</p>
+    <p>Binder spreads, slabs, and the Emolga masterset, read like an art book.</p>
+    <span class="go" aria-hidden="true">&rarr;</span>
   </a>
-  <a href="{{ "guides/" | relURL }}" class="explore-card">
+  <a href="{{ "guides/" | relURL }}" class="explore-row">
     <h3>Guides</h3>
     <p>Practical habits for buying, curating, and letting go.</p>
+    <span class="go" aria-hidden="true">&rarr;</span>
   </a>
-</div>
+</nav>
 {{ end }}
