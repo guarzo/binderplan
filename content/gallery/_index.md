@@ -3,7 +3,7 @@ title: "Gallery"
 description: "Browse the collection by volume and theme"
 ---
 
-This is the actual collection. Everything you've read about themes and philosophy — here's what it looks like in practice.
+This is the collection itself: binder pages, side collections, and graded cards. The themes make more sense once you can see the cards together.
 
 ## Volumes
 
@@ -28,6 +28,6 @@ This is the actual collection. Everything you've read about themes and philosoph
 
 ## About the Gallery
 
-Each spread is photographed as a complete visual composition — these are meant to be viewed as pages in an art book, not as individual card inventories.
+Each spread is photographed as a complete page rather than an individual card inventory.
 
 Click any image to view it full-screen.

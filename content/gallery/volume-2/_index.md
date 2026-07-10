@@ -4,7 +4,7 @@ description: "Memory, Presence, and Passage"
 layout: "gallery"
 ---
 
-Volume II shifts inward — not about what Pokemon do, but about how they are remembered, lived with, and understood across time. These themes are quieter, narrower, and harder to curate — but the pages that work really work.
+Volume II is less about action and more about memory, familiarity, and change over time. These themes are quieter and narrower, so some pages are still being revised.
 
 ---
 

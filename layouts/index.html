@@ -1,8 +1,14 @@
 {{ define "main" }}
 <section class="home-hero">
-  <p class="eyebrow">A curated Pokemon card collection</p>
-  <h1 class="home-wordmark">Art first, <span class="foil">favorites</span> second.</h1>
-  <p class="tagline">{{ .Site.Params.description }}</p>
+  <div class="home-hero-copy">
+    <p class="eyebrow">A personal Pokemon card collection</p>
+    <h1 class="home-wordmark">Pages built around how the art <span class="foil">feels.</span></h1>
+    <p class="tagline">{{ .Site.Params.description }}</p>
+  </div>
+  <a class="home-emolga" href="{{ "gallery/emolga-masterset/" | relURL }}" aria-label="Browse the Emolga masterset">
+    <img src="{{ "images/slabs/personal_emolga_carnival.jpg" | relURL }}" alt="Emolga Summer Carnival promotional card in a graded case">
+    <span>One particular favorite</span>
+  </a>
 </section>
 
 <div class="home-manifesto">
@@ -14,12 +20,12 @@
 <nav class="explore-index" aria-label="Explore the collection">
   <a href="{{ "philosophy/" | relURL }}" class="explore-row">
     <h3>Philosophy</h3>
-    <p>Why art and emotion drive every decision in this binder.</p>
+    <p>How mood, sequence, and page composition guide the binder.</p>
     <span class="go" aria-hidden="true">&rarr;</span>
   </a>
   <a href="{{ "gallery/" | relURL }}" class="explore-row">
     <h3>Gallery</h3>
-    <p>Binder spreads, slabs, and the Emolga masterset, read like an art book.</p>
+    <p>Binder spreads, slabs, and a steadily growing Emolga masterset.</p>
     <span class="go" aria-hidden="true">&rarr;</span>
   </a>
   <a href="{{ "guides/" | relURL }}" class="explore-row">

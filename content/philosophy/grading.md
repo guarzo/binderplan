@@ -3,10 +3,9 @@ title: "Grading Philosophy"
 description: "When and why to slab a card"
 ---
 
-I think of slabs as framed originals. The binder is a gallery wall — things move, rotate, evolve. But a slab? A slab is a **finished statement**. You're saying: *this card is done. This is how I want it to exist.*
+I think of slabs as the more settled part of the collection. Binder cards move and get compared with their neighbors; slabs are cards I am happy to treat as individual objects for a while.
 
-> **Binders = gallery walls**
-> **Slabs = framed originals**
+> **Binders are for relationships between cards. Slabs are for cards I want to view on their own.**
 
 ---
 
@@ -15,10 +14,10 @@ I think of slabs as framed originals. The binder is a gallery wall — things mo
 Every graded card needs one clear reason to be in plastic:
 
 ### CROWN_ART
-The best art version of a card. The grade supports the presentation.
+A favorite art version of a card, where the grade supports the presentation.
 
 ### DEFINITIVE_[POKEMON]
-The canonical version of a Pokemon in the collection. *The* card.
+The card that currently represents a Pokemon best in the collection.
 
 ### HISTORICAL
 Vintage, first appearances, culturally significant cards. These matter because of when they existed.
@@ -59,19 +58,19 @@ Investment or trade-focused slabs. No emotional attachment — and that's fine.
 
 ---
 
-## Authority Rules
+## Working Rules
 
-- Graded copy becomes canonical
+- Prefer one graded copy when it fills a clear role
 - Art-first cards favor binders
 - Pokemon completion may favor slabs
 - No duplication unless it serves a clear purpose
 
 ---
 
-## End-State Vision
+## General Direction
 
 - **Binders:** Evolving, expressive, personal
-- **Slabs:** Stable, intentional, declarative
-- **Storage:** Minimal emotional clutter
+- **Slabs:** Stable, intentional, easy to enjoy individually
+- **Storage:** Useful, organized, and limited
 
-> **Grading is not about plastic — it is about declaring a card *finished*.**
+Grading is useful when it gives a card a clearer role, not simply because the option exists.

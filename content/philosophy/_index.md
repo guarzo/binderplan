@@ -5,11 +5,11 @@ description: "The framework for art-first Pokemon card curation"
 
 Most people sort their cards by set, by type, or by value. That never felt right to me. I kept gravitating toward *how cards looked together* — the mood of a page, the way two illustrations next to each other could tell a story neither told alone.
 
-So I built a system around that instinct. Cards are organized by **mood, narrative, and visual intent** rather than set, rarity, or Pokemon type.
+So I built a loose system around that instinct. Cards are organized by **mood, narrative, and visual intent** rather than set, rarity, or Pokemon type.
 
 ## Sections
 
-- **[Core Themes](themes/)** — The locked themes that form the backbone
+- **[Core Themes](themes/)** — The themes that currently hold the binder together
 - **[Narrative Flow](narrative-flow/)** — How the binder reads like a book
 - **[Grading Philosophy](grading/)** — When and why to slab a card
 
@@ -17,9 +17,9 @@ So I built a system around that instinct. Cards are organized by **mood, narrati
 
 ## The Guiding Principle
 
-> **A card belongs where its artwork emotionally belongs, not where its mechanics or category suggest.**
+> **A card belongs with the artwork it feels at home beside.**
 
-If two cards feel right together when viewed side-by-side, they belong together. That's the whole test.
+If two cards feel right together side by side, that matters more here than their set, type, or rarity.
 
 ### Theme First, Pokemon Second
 

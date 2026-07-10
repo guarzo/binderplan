@@ -3,7 +3,7 @@ title: "Theme Expansion"
 description: "When and how to add new themes or pages"
 ---
 
-Restraint is what makes the binder work. Not every theme deserves more pages — expansion should feel **earned**, not indulgent.
+These are the rules I use when deciding whether the binder needs more room. The current Volume I is closed to new pages; Volume II can still change, but only deliberately.
 
 ---
 
@@ -17,7 +17,7 @@ This is your baseline. Most themes should live comfortably here.
 
 If a theme can't fill one strong page, it's not ready. Don't pad it.
 
-### Expansion: 3–4 Pages (Rare, Earned)
+### Expansion: 3–4 Pages (Rare)
 
 Only when a theme proves it has internal variety. Never jump from 2 to 4 pages at once — grow gradually.
 
@@ -70,23 +70,23 @@ You don't need divider labels yet — just mental clarity about why the pages ar
 
 ---
 
-## Themes That Deserve Growth
+## Themes With Room to Grow
 
-### Highest Priority (2–3 pages over time)
+### Strongest Candidates (2–3 pages over time)
 
-**Awakened Power**
+**Awakened Power** *(if Volume I is reopened)*
 - Extremely rich concept with a lot of visual range
 - Modern + vintage compatible
 - Naturally absorbs "hard to place" cards
-- *The most future-proof theme in the binder*
+- Broad enough to support more than one visual approach
 
-**Legendary Bearing**
+**Legendary Bearing** *(if Volume I is reopened)*
 - Central pillar of the collection
 - Authority made visible through scale, posture, or ceremonial framing
 - Works beautifully with slabs as companions
-- *If any theme becomes a "monument hall," it's this one*
+- Could support another page without repeating the same composition
 
-### Moderate Growth (2 pages max)
+### Limited Growth (2 pages max)
 
 **Calm in Nature**
 - Very expressive, but easy to dilute with too many serene landscapes

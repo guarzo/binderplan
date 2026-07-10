@@ -387,18 +387,20 @@ hr {
 /* --- Home --- */
 .home-hero {
   min-height: min(78vh, 720px);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 340px);
+  gap: clamp(2.5rem, 7vw, 7rem);
+  align-items: center;
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 2rem 2rem 4rem;
 }
 .home-hero .eyebrow { margin-bottom: 1.6rem; }
+.home-hero-copy { min-width: 0; }
 .home-wordmark {
-  font-size: clamp(3rem, 9vw, 7rem);
+  font-size: clamp(3rem, 7.5vw, 6.5rem);
   line-height: 0.98;
-  max-width: 14ch;
+  max-width: 12ch;
   margin-bottom: 1.4rem;
 }
 .home-wordmark .foil {
@@ -415,6 +417,28 @@ hr {
   color: var(--text-muted);
   max-width: 46ch;
   line-height: 1.5;
+}
+.home-emolga {
+  display: block;
+  color: var(--text-faint);
+  transform: rotate(1.5deg);
+  transition: color 0.3s var(--ease-out-quart), transform 0.5s var(--ease-out-expo);
+}
+.home-emolga:hover { color: var(--foil-cyan); transform: rotate(0deg) translateY(-6px); }
+.home-emolga img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 479 / 810;
+  object-fit: cover;
+  border-radius: 0.45rem;
+  box-shadow: 0 1.8rem 4.5rem oklch(0.08 0.02 285 / 0.55);
+}
+.home-emolga span {
+  display: block;
+  margin-top: 0.9rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
 }
 
 .home-manifesto {
@@ -478,6 +502,7 @@ hr {
 
 /* --- Responsive --- */
 @media (max-width: 860px) {
+  .home-hero { grid-template-columns: minmax(0, 1fr) minmax(180px, 240px); gap: 2.5rem; }
   .gallery-grid { grid-template-columns: 1fr 1fr; }
   .gallery-item,
   .gallery-item:nth-child(3n+1),
@@ -498,6 +523,9 @@ hr {
   .explore-row .go { display: none; }
   .list-item a { grid-template-columns: 2.4rem 1fr; }
   .list-item a::after { display: none; }
+  .home-hero { min-height: auto; grid-template-columns: 1fr; padding: 4.5rem 1.3rem 3rem; }
+  .home-wordmark { font-size: clamp(3rem, 16vw, 4.7rem); }
+  .home-emolga { width: min(72vw, 280px); margin: 0 auto; }
   .home-manifesto, .explore-index { padding-left: 1.3rem; padding-right: 1.3rem; }
 }
 
