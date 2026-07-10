@@ -1,11 +1,9 @@
 ---
-title: "Narrative Flow"
-description: "How the binder reads like a book"
+title: "Page Order"
+description: "Why the binder moves from safety to solitude, then memory to passage"
 ---
 
-The binder is meant to be read like a book. Page order matters — not because there's a plot, but because the *feeling* should build, shift, and resolve as you flip through.
-
-This is probably my favorite part of the whole system. When the arc works, turning pages feels like listening to a great album. Each theme is a track, and the sequence is the tracklist.
+The order matters to me as much as the individual themes. Volume I moves from safety through energy and conflict, then settles into solitude. Volume II starts with closeness, looks backward through time, and ends at a point of departure.
 
 ---
 
@@ -27,7 +25,7 @@ Large-scale mythic or overwhelming power is intentionally constrained so it does
 - World of People
 - At Rest
 
-*The opening establishes peace, connection, and groundedness. You start in a place that feels safe.*
+*The binder opens with ease and familiarity before anything more intense appears.*
 
 ---
 
@@ -38,7 +36,7 @@ Large-scale mythic or overwhelming power is intentionally constrained so it does
 - Joyful Action
 - Journey *(if/when it emerges)*
 
-*Energy builds. Pokemon are active, engaged, moving through the world. It feels alive.*
+*The pace picks up and the images become more active.*
 
 ---
 
@@ -49,7 +47,7 @@ Large-scale mythic or overwhelming power is intentionally constrained so it does
 - Awakened Power
 - Legendary Bearing
 
-*The midpoint pivot. Power first gathers, then reveals itself as authority. Legendary Bearing is the moment a complete force is encountered and witnessed.*
+*At the midpoint, gathered energy gives way to confidence and scale.*
 
 ---
 
@@ -60,7 +58,7 @@ Large-scale mythic or overwhelming power is intentionally constrained so it does
 - Intimidation
 - On the Attack
 
-*Tension peaks. Pokemon are dangerous, committed, overwhelming. This is the climax.*
+*The most confrontational pages sit together before the binder begins to quiet down.*
 
 ---
 
@@ -71,13 +69,13 @@ Large-scale mythic or overwhelming power is intentionally constrained so it does
 - Elemental Solitude
 - Contemplation
 
-*The binder resolves in stillness and introspection. After all that energy, you end somewhere quiet.*
+*Volume I ends in stillness after its most active chapters.*
 
 ---
 
 ## Volume II — Memory, Presence, and Passage
 
-Volume II is deliberately quieter — three chapters instead of five, fewer movements, but deeper. Where Volume I is about *doing*, Volume II is about *being remembered*.
+Volume II is quieter and more compact. Where Volume I mostly follows action and posture, Volume II pays more attention to relationship, memory, and transition.
 
 ### Chapter I — Nearness
 
@@ -96,7 +94,7 @@ Volume II is deliberately quieter — three chapters instead of five, fewer move
 
 - Enduring Presence
 
-*The midpoint settles into historical gravity. These are not gods arriving; they are presences that have remained while the world accumulated around them.*
+*The midpoint slows down around images that carry visible age, repetition, or memory.*
 
 ---
 
@@ -110,6 +108,4 @@ Volume II is deliberately quieter — three chapters instead of five, fewer move
 
 ---
 
-Honestly, Volume II is harder to build than Volume I. You can't just find cool-looking cards; they have to carry weight.
-
-*Volume II is not about collecting more — it is about understanding why certain images stay.*
+Volume II has been harder for me to build because its themes depend on specific visual evidence, not atmosphere alone. That constraint is also what makes the sequence useful.

@@ -4,7 +4,7 @@ description: "Memory, Presence, and Passage"
 layout: "gallery"
 ---
 
-Volume II is less about action and more about memory, familiarity, and change over time. These themes are quieter and narrower, so some pages are still being revised.
+Volume II is less about action and more about memory, familiarity, and change over time. These photographed pages capture the volume as it currently stands; the collection will continue to change around them.
 
 ---
 
@@ -21,11 +21,11 @@ Volume II is less about action and more about memory, familiarity, and change ov
   </figure>
   <figure class="gallery-item">
     <img src="../../images/binder/volume-2/quiet_familiarity_1.jpg" alt="Quiet Familiarity spread 1" loading="lazy">
-    <figcaption><strong>Quiet Familiarity — Gentle Company.</strong> Transitional page under review; calm is present, but stronger domestic routine and inhabited-space imagery is needed.</figcaption>
+    <figcaption><strong>Quiet Familiarity — Gentle Company.</strong> Calm companionship across gardens, paths, and shared outdoor spaces.</figcaption>
   </figure>
   <figure class="gallery-item">
     <img src="../../images/binder/volume-2/quiet_familiarity_2.jpg" alt="Quiet Familiarity spread 2" loading="lazy">
-    <figcaption><strong>Quiet Familiarity — Familiar Places.</strong> Transitional page under review; retain only cards that imply repeated daily life rather than generic serenity.</figcaption>
+    <figcaption><strong>Quiet Familiarity — Familiar Places.</strong> Pokemon settled into places that feel known, tended, and returned to.</figcaption>
   </figure>
 </div>
 
@@ -38,7 +38,7 @@ Volume II is less about action and more about memory, familiarity, and change ov
   </figure>
   <figure class="gallery-item">
     <img src="../../images/binder/volume-2/enduring_presence_2.jpg" alt="Enduring Presence spread 2" loading="lazy">
-    <figcaption><strong>Enduring Presence — Witnesses to History.</strong> A transitional page to refine toward age, memory, weathering, and worlds shaped around a lasting presence.</figcaption>
+    <figcaption><strong>Enduring Presence — Witnesses to History.</strong> Old places, recurring figures, and signs of a world carrying memory forward.</figcaption>
   </figure>
 </div>
 
@@ -47,7 +47,7 @@ Volume II is less about action and more about memory, familiarity, and change ov
 <div class="gallery-grid">
   <figure class="gallery-item">
     <img src="../../images/binder/volume-2/threshold_1.jpg" alt="Threshold spread" loading="lazy">
-    <figcaption><strong>Threshold — At the Edge.</strong> Transitional page to rebuild around visible crossings: paths, doors, shorelines, horizons, departures, and arrivals.</figcaption>
+    <figcaption><strong>Threshold — At the Edge.</strong> Paths, shorelines, horizons, and the pause before crossing from one place into another.</figcaption>
   </figure>
 </div>
 

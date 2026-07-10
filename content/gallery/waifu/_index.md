@@ -1,21 +1,21 @@
 ---
-title: "Waifu"
-description: "Full-art trainer cards — the Pokemon TCG's finest character illustration"
+title: "Trainer Full Arts"
+description: "Japanese trainer cards collected for character illustration, color, and composition"
 layout: "gallery"
 ---
 
-Full-art Japanese trainer cards, collected for their character illustration, color, and composition. This is a smaller side collection and still a work in progress.
+This smaller side collection focuses on Japanese trainer cards with expressive character art, strong color, and compositions that hold up beyond the game text.
 
 ---
 
 <div class="gallery-grid">
   <figure class="gallery-item">
-    <img src="../../images/binder/waifu/waifu_1.jpg" alt="Waifu collection spread 1" loading="lazy">
-    <figcaption>Spread 1</figcaption>
+    <img src="../../images/binder/waifu/waifu_1.jpg" alt="Binder spread of Japanese full-art trainer cards" loading="lazy">
+    <figcaption>Trainer Full Arts — page 1</figcaption>
   </figure>
   <figure class="gallery-item">
-    <img src="../../images/binder/waifu/waifu_2.jpg" alt="Waifu collection spread 2" loading="lazy">
-    <figcaption>Spread 2</figcaption>
+    <img src="../../images/binder/waifu/waifu_2.jpg" alt="Second binder spread of Japanese full-art trainer cards" loading="lazy">
+    <figcaption>Trainer Full Arts — page 2</figcaption>
   </figure>
 </div>
 

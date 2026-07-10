@@ -37,13 +37,13 @@ Cards that fit an existing theme but don't improve a page. They're visually weak
 
 ### 3. HERITAGE (Respect Without Display)
 
-Nostalgic or historic cards that feel meaningful but visually quiet. Better respected than showcased. Don't force these into art themes — but consider Volume II's Enduring Presence or Nearness themes, or the graded Historical category.
+Nostalgic or historic cards that feel meaningful but visually quiet. I do not force these into art themes, though some may fit Enduring Presence, Nearness, or the Historical / Touchstone slab role.
 
 ---
 
 ### 4. FUTURE SELF
 
-Cards you like but don't fully understand yet. Give them time. They may resonate differently later — or they may not. Review annually. If nothing changes after a year, downgrade to storage or release.
+Cards I like but do not fully understand yet. EDGE cards move here after roughly a year if no theme has emerged. I review this section annually; cards that still feel unresolved move to storage or release.
 
 ---
 
@@ -65,7 +65,7 @@ Cards that don't spark anything. No strong feeling, no theme fit, kept only out 
 
 ---
 
-## Final Rule
+## What the Box Is For
 
 > **Liking a card is not enough for binder inclusion.**
 

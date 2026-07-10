@@ -17,7 +17,7 @@ title = 'Pokemon Art Collection'
     url = '/'
     weight = 1
   [[menu.main]]
-    name = 'Philosophy'
+    name = 'Approach'
     url = '/philosophy/'
     weight = 2
   [[menu.main]]

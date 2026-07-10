@@ -3,7 +3,7 @@ title: "Theme Expansion"
 description: "When and how to add new themes or pages"
 ---
 
-These are the rules I use when deciding whether the binder needs more room. The current Volume I is closed to new pages; Volume II can still change, but only deliberately.
+This is how I decide whether the binder needs more room. Volume I is currently closed to new pages; Volume II can still change, but deliberately.
 
 ---
 
@@ -11,19 +11,19 @@ These are the rules I use when deciding whether the binder needs more room. The 
 
 ### Default: 1–2 Pages per Theme
 
-This is your baseline. Most themes should live comfortably here.
+This is my baseline. Most themes should live comfortably here.
 
 ### Minimum: 1 Page
 
-If a theme can't fill one strong page, it's not ready. Don't pad it.
+If a theme cannot fill one strong page, I leave it in reserve rather than padding it.
 
 ### Expansion: 3–4 Pages (Rare)
 
-Only when a theme proves it has internal variety. Never jump from 2 to 4 pages at once — grow gradually.
+I use this only when a theme shows clear internal variety, adding one page at a time.
 
 ### Hard Cap: 5 Pages
 
-If a theme exceeds this, **it must split**. Large themes become vague unless subdivided.
+Beyond this point, I would split the theme rather than let it become vague.
 
 > A theme that grows too large is telling you it actually contains multiple ideas.
 
@@ -31,7 +31,7 @@ If a theme exceeds this, **it must split**. Large themes become vague unless sub
 
 ## When a Theme May Grow
 
-A theme may grow beyond 2 pages only if new cards introduce a new visual or emotional sub-note — not just "more of the same Pokemon" or higher rarity.
+A theme may grow beyond two pages when new cards introduce a distinct visual or emotional sub-note—not simply more of the same Pokemon or a higher rarity.
 
 ### Good Reasons to Expand
 
@@ -46,7 +46,7 @@ A theme may grow beyond 2 pages only if new cards introduce a new visual or emot
 - "This Pokemon appears a lot"
 - "This is a valuable theme"
 
-If the reason sounds like a justification, it probably is.
+If I cannot name what the additional page contributes, I do not add it.
 
 ---
 
@@ -54,7 +54,7 @@ If the reason sounds like a justification, it probably is.
 
 ### Step 1: Pause at 2 Pages
 
-Let it live there for weeks or months. Resist the urge.
+I let it live there for weeks or months before changing the allocation.
 
 ### Step 2: Add One Additional Page
 
@@ -66,48 +66,13 @@ Example:
 - Calm in Nature — Open Light
 - Calm in Nature — Under Canopy
 
-You don't need divider labels yet — just mental clarity about why the pages are distinct.
+The labels can remain informal; what matters is knowing why the pages are distinct.
 
 ---
 
-## Themes With Room to Grow
+## Apply the Rule to the Current Binder
 
-### Strongest Candidates (2–3 pages over time)
-
-**Awakened Power** *(if Volume I is reopened)*
-- Extremely rich concept with a lot of visual range
-- Modern + vintage compatible
-- Naturally absorbs "hard to place" cards
-- Broad enough to support more than one visual approach
-
-**Legendary Bearing** *(if Volume I is reopened)*
-- Central pillar of the collection
-- Authority made visible through scale, posture, or ceremonial framing
-- Works beautifully with slabs as companions
-- Could support another page without repeating the same composition
-
-### Limited Growth (2 pages max)
-
-**Calm in Nature**
-- Very expressive, but easy to dilute with too many serene landscapes
-- Grow only if sub-moods are genuinely distinct
-
-**Elemental Solitude**
-- Strong and heavy — works best when sparse
-- *Gains power from restraint*
-
-### Should Stay Compact (1 page preferred)
-
-These themes lose clarity when they get too big:
-
-- Joyful Action
-- On the Attack
-- Intimidation
-- World of People
-- At Rest
-- Contemplation
-
-*These are precision themes. If they need to grow, they should split, not expand.*
+Volume I is closed to new pages for now, so its themes improve through replacement. Volume II can still grow, but no theme expands automatically. Current targets belong in the [Current Watchlist](../shopping/) rather than in this evergreen guide.
 
 ---
 
@@ -117,10 +82,7 @@ These themes lose clarity when they get too big:
 
 **Hard maximum:** ~40–45 pages (~350–400 cards)
 
-Once the binder is full:
-- Stop adding pages
-- Improve by replacement only
-- Consider whether the card belongs in Volume II
+Once the binder is full, I stop adding pages and improve it by replacement until there is a clear reason to reconsider the overall structure.
 
 ---
 
@@ -136,20 +98,6 @@ Volume II themes don't auto-expand. No theme grows beyond 2 pages without a deli
 
 ---
 
-## Optional Expansion Themes (Future)
+## New Themes
 
-Only introduce when **6–9 cards naturally accumulate** and genuinely fail to fit existing themes.
-
-### For Volume I
-- Journey
-- Defiance
-- Aftermath
-
-### For Volume II
-- Melancholy
-- Unease
-- Dreamlike
-
-### Aesthetic / Art-Driven
-- Monochrome Mood
-- Perspective Play
+A new theme starts with the reserve cards, not a shopping mission. I consider one only when **6–9 cards naturally accumulate**, clearly share an idea, and genuinely fail to fit an existing theme. Current possibilities are tracked in the [Current Watchlist](../shopping/).

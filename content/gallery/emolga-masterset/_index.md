@@ -6,62 +6,62 @@ layout: "gallery"
 
 This one's personal.
 
-Every Emolga card ever printed — that's the goal. This binder exists completely outside the thematic structure of the main volumes. No themes, no narrative arcs. Just one Pokemon, across every era and style of card art, because Emolga is the best and I will not be taking questions.
+I'm working toward every Emolga printing I can track down. This binder sits completely outside the thematic structure of the main volumes: one Pokemon across languages, eras, and illustration styles, because Emolga is the best and I will not be taking questions.
 
 ---
 
 <div class="gallery-grid">
   <figure class="gallery-item">
-    <img src="../../images/binder/emolga-masterset/emolga_1.jpg" alt="Emolga masterset spread 1" loading="lazy">
-    <figcaption>Spread 1</figcaption>
+    <img src="../../images/binder/emolga-masterset/emolga_1.jpg" alt="Four-pocket binder page of early Emolga cards in English and Japanese" loading="lazy">
+    <figcaption>Early Emolga printings — page 1</figcaption>
   </figure>
   <figure class="gallery-item">
-    <img src="../../images/binder/emolga-masterset/emolga_2.jpg" alt="Emolga masterset spread 2" loading="lazy">
-    <figcaption>Spread 2</figcaption>
+    <img src="../../images/binder/emolga-masterset/emolga_2.jpg" alt="Four-pocket binder page of Emolga cards in several languages" loading="lazy">
+    <figcaption>Early Emolga printings — page 2</figcaption>
   </figure>
   <figure class="gallery-item">
-    <img src="../../images/binder/emolga-masterset/emolga_3.jpg" alt="Emolga masterset spread 3" loading="lazy">
-    <figcaption>Spread 3</figcaption>
+    <img src="../../images/binder/emolga-masterset/emolga_3.jpg" alt="Four-pocket binder page showing regional Emolga variants" loading="lazy">
+    <figcaption>Regional variants — page 3</figcaption>
   </figure>
   <figure class="gallery-item">
-    <img src="../../images/binder/emolga-masterset/emolga_4.jpg" alt="Emolga masterset spread 4" loading="lazy">
-    <figcaption>Spread 4</figcaption>
+    <img src="../../images/binder/emolga-masterset/emolga_4.jpg" alt="Four-pocket binder page of matching Emolga printings" loading="lazy">
+    <figcaption>Matching printings — page 4</figcaption>
   </figure>
   <figure class="gallery-item">
-    <img src="../../images/binder/emolga-masterset/emolga_5.jpg" alt="Emolga masterset spread 5" loading="lazy">
-    <figcaption>Spread 5</figcaption>
+    <img src="../../images/binder/emolga-masterset/emolga_5.jpg" alt="Four-pocket binder page of Emolga cards with alternate language printings" loading="lazy">
+    <figcaption>Language variants — page 5</figcaption>
   </figure>
   <figure class="gallery-item">
-    <img src="../../images/binder/emolga-masterset/emolga_6.jpg" alt="Emolga masterset spread 6" loading="lazy">
-    <figcaption>Spread 6</figcaption>
+    <img src="../../images/binder/emolga-masterset/emolga_6.jpg" alt="Four-pocket binder page of Emolga cards with repeated artwork" loading="lazy">
+    <figcaption>Repeated artwork across printings — page 6</figcaption>
   </figure>
   <figure class="gallery-item">
-    <img src="../../images/binder/emolga-masterset/emolga_7.jpg" alt="Emolga masterset spread 7" loading="lazy">
-    <figcaption>Spread 7</figcaption>
+    <img src="../../images/binder/emolga-masterset/emolga_7.jpg" alt="Partially filled binder page of Emolga cards and a handwritten placeholder" loading="lazy">
+    <figcaption>A waiting spot in the masterset — page 7</figcaption>
   </figure>
   <figure class="gallery-item">
-    <img src="../../images/binder/emolga-masterset/emolga_8.jpg" alt="Emolga masterset spread 8" loading="lazy">
-    <figcaption>Spread 8</figcaption>
+    <img src="../../images/binder/emolga-masterset/emolga_8.jpg" alt="Four-pocket binder page of Emolga cards from later sets" loading="lazy">
+    <figcaption>Later set printings — page 8</figcaption>
   </figure>
   <figure class="gallery-item">
-    <img src="../../images/binder/emolga-masterset/emolga_9.jpg" alt="Emolga masterset spread 9" loading="lazy">
-    <figcaption>Spread 9</figcaption>
+    <img src="../../images/binder/emolga-masterset/emolga_9.jpg" alt="Four-pocket binder page including full-art Emolga cards" loading="lazy">
+    <figcaption>Full-art and special treatments — page 9</figcaption>
   </figure>
   <figure class="gallery-item">
-    <img src="../../images/binder/emolga-masterset/emolga_10.jpg" alt="Emolga masterset spread 10" loading="lazy">
-    <figcaption>Spread 10</figcaption>
+    <img src="../../images/binder/emolga-masterset/emolga_10.jpg" alt="Four-pocket binder page of Emolga EX cards in English and Japanese" loading="lazy">
+    <figcaption>Emolga EX variants — page 10</figcaption>
   </figure>
   <figure class="gallery-item">
-    <img src="../../images/binder/emolga-masterset/emolga_11.jpg" alt="Emolga masterset spread 11" loading="lazy">
-    <figcaption>Spread 11</figcaption>
+    <img src="../../images/binder/emolga-masterset/emolga_11.jpg" alt="Four-pocket binder page mixing modern and earlier Emolga printings" loading="lazy">
+    <figcaption>Modern and earlier printings — page 11</figcaption>
   </figure>
   <figure class="gallery-item">
-    <img src="../../images/binder/emolga-masterset/emolga_12.jpg" alt="Emolga masterset spread 12" loading="lazy">
-    <figcaption>Spread 12</figcaption>
+    <img src="../../images/binder/emolga-masterset/emolga_12.jpg" alt="Four-pocket binder page of additional Emolga language variants" loading="lazy">
+    <figcaption>Additional language variants — page 12</figcaption>
   </figure>
   <figure class="gallery-item">
-    <img src="../../images/binder/emolga-masterset/emolga_13.jpg" alt="Emolga masterset spread 13" loading="lazy">
-    <figcaption>Spread 13</figcaption>
+    <img src="../../images/binder/emolga-masterset/emolga_13.jpg" alt="Partially filled final binder page of Emolga cards" loading="lazy">
+    <figcaption>The current end of the binder — page 13</figcaption>
   </figure>
 </div>
 
