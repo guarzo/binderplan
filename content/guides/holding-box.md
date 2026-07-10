@@ -3,7 +3,7 @@ title: "Holding Box System"
 description: "Where cards live outside the binder"
 ---
 
-The holding box protects the binder from overload while preserving cards you genuinely enjoy. It's not a failure state — it's an **incubation space**. Some of the best binder cards spent months in a holding box before their spot became obvious.
+The holding box keeps the binder from getting crowded while preserving cards you genuinely enjoy. It is a place to wait, compare, and change your mind. Some of my favorite binder cards spent months there before their spot became obvious.
 
 ---
 
@@ -25,7 +25,7 @@ Use **separate labeled sections** (physical dividers or envelopes). Don't mix ca
 
 Cards that almost fit an existing theme, repeat a feeling you can't name yet, or feel important but don't have a home. Some may belong in Volume II rather than Volume I.
 
-**Review:** Every 1–2 months. Check against both volumes. A new theme only forms when 8–12 cards naturally accumulate.
+**Review:** Every 1–2 months. Check against both volumes. A new theme only forms when 6–9 cards naturally accumulate and clearly share an idea.
 
 ---
 

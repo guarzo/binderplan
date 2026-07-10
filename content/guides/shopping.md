@@ -50,11 +50,11 @@ Skip anything with narrative tension or drama. This theme is *boring on purpose*
 
 ---
 
-## Volume I — Upgrades Only
+## Volume I — Replacements Only
 
-Volume I is structurally closed. No new pages. Only buy cards that are clear upgrades to what's already placed.
+Volume I is currently closed to new pages. Buy for it only when a card could clearly replace something already placed.
 
-### High Growth Potential
+### Strongest Upgrade Pools
 
 **Awakened Power** — The most future-proof theme in the binder. Energy gathering, transformation beginning, the moment *before* inevitability. Tension, transition, power not yet released. Glowing auras, charging attacks, evolution mid-flash. Modern and vintage compatible. If you're unsure where a powerful card goes, test it here first.
 
@@ -64,9 +64,9 @@ Skip fully realized power (that's Legendary Bearing) and active attacks already 
 
 Skip cards showing active attack energy or transition. Also skip quiet relics and weathered survivors; those belong in Enduring Presence. Legendary by Pokedex status alone isn't enough — the artwork must make the viewer feel the encounter.
 
-### Moderate Growth
+### Selective Upgrades
 
-**Calm in Nature** — Pokemon at ease in natural settings. Harmony, presence, warmth. Sunlit clearings, gentle water, quiet forests. Not sleeping (that's At Rest), not playing (that's Joyful Action). Only expand if the new card introduces a genuinely different sub-mood — day vs. night, canopy vs. open sky.
+**Calm in Nature** — Pokemon at ease in natural settings. Harmony, presence, warmth. Sunlit clearings, gentle water, quiet forests. Not sleeping (that's At Rest), not playing (that's Joyful Action). Consider a replacement only if the new card introduces a genuinely different sub-mood — day vs. night, canopy vs. open sky.
 
 **Elemental Solitude** — A single Pokemon alone with its element at scale. Vaporeon dissolving into rain. Magcargo pooling in volcanic heat. The environment defines the Pokemon. Skip if it's just a Pokemon standing somewhere — the element must feel inseparable from the creature. This theme gains power from restraint.
 
@@ -89,7 +89,7 @@ These themes lose clarity if they grow. Only buy strict upgrades to existing car
 
 Don't buy for these yet. But if cards start accumulating naturally (6–9 cards), a new theme may be emerging. Worth keeping in the back of your mind.
 
-**Volume I candidates:**
+**Volume I candidates, only if the volume is deliberately reopened:**
 - **Journey** — Pokemon mid-travel, paths stretching ahead, a sense of going somewhere
 - **Defiance** — Refusal, standing ground, resistance without aggression
 - **Aftermath** — The moment after conflict, exhaustion, settling dust

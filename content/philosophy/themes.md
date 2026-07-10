@@ -3,7 +3,7 @@ title: "Core Themes"
 description: "The themes that form the collection's backbone"
 ---
 
-These themes are **canonical**. Every card either fits clearly into one of these or stays out of the binder. No exceptions, no "close enough."
+These are the themes I use now. A card needs a clear fit before it enters the binder; otherwise it waits in the holding box until a better answer appears.
 
 ---
 
@@ -239,7 +239,7 @@ Cards with irreplaceable personal meaning. Milestones, gifts, or connections tha
 
 ## Conceptual Coverage
 
-Together, these themes cover the full emotional and narrative loop:
+Together, these themes give the collection a useful range without trying to account for every possible kind of artwork:
 
 **Volume I — Lived Experience:**
 - **Environment** — Elemental Solitude, Calm in Nature
@@ -263,9 +263,9 @@ Together, these themes cover the full emotional and narrative loop:
 
 ## Theme Admission Rule
 
-A new theme only becomes *official* when:
+A new theme joins the binder when:
 
 1. It holds **6–9 cards**, AND
 2. The cards clearly communicate the same emotional or narrative idea
 
-Until then, cards remain in a holding stack. No rushing it.
+Until then, the cards stay in the holding box.

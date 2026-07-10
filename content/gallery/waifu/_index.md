@@ -4,7 +4,7 @@ description: "Full-art trainer cards — the Pokemon TCG's finest character illu
 layout: "gallery"
 ---
 
-Full-art Japanese trainer cards, collected purely for the art. These supporter cards pushed the TCG into genuine illustration territory — detailed, expressive, and beautifully composed portraits of the women who define the Pokemon world. A collection in progress.
+Full-art Japanese trainer cards, collected for their character illustration, color, and composition. This is a smaller side collection and still a work in progress.
 
 ---
 
