@@ -1,9 +1,13 @@
 ---
-title: "Shopping Cheat Sheet"
-description: "What to actively look for when browsing cards"
+title: "Current Watchlist"
+description: "Current page needs and visual targets, updated July 2026"
+aliases:
+  - "/guides/watchlist/"
 ---
 
-The [Buying Checklist](../buying/) tells you whether to buy a card. This page tells you what to *look for* in the first place — organized by where the binder actually needs help.
+*Updated July 2026.*
+
+The [Buying Checklist](../buying/) is the permanent decision process. This page is the changing part: the images and page needs I am actively watching for now. The more detailed reasoning behind the current Volume II work lives in the [July 2026 collection notes](../volume-2-refinement/).
 
 ---
 
@@ -11,17 +15,15 @@ The [Buying Checklist](../buying/) tells you whether to buy a card. This page te
 
 Volume II is the active volume. These themes are still being built and benefit most from targeted pickups.
 
-### Threshold — Needs Depth
+### Threshold
 
-The thinnest theme in the binder, and the hardest to shop for.
+I am looking for clearer boundaries and a stronger sense of arrival, departure, or hesitation.
 
-Look for art where the *setting* does most of the work and the Pokemon is passing through. Doorways, paths, bridges, platforms, windows, gates, fog, liminal light. Pokemon facing into or out of a space. Edges of forests, cave mouths, shorelines at dusk. "Just before" or "just after" moments.
-
-The card must show a readable **before and after**: here and there, inside and outside, land and water, known and unknown, leaving and arriving.
+Look for art where the *setting* does most of the work and the Pokemon is passing through: doorways, paths, bridges, platforms, windows, gates, forest edges, cave mouths, shorelines, and changes in weather or light.
 
 Skip cards where the Pokemon is merely flying, running, or looking dramatic. Motion is not passage unless a boundary is present.
 
-### Enduring Presence — Rebuild Around Time
+### Enduring Presence
 
 Pokemon shown as survivors, relics, recurring witnesses, or parts of a world older than the current moment. Look for ruins, shrines, fossils, old machinery, weathered landscapes, archival framing, repeated generations, or communities built around a longstanding presence.
 
@@ -29,24 +31,24 @@ Skip generic heroic poses, active attacks, transformations, and cards that only 
 
 **How this differs from Legendary Bearing (V1):**
 
-- **Legendary Bearing:** *You are witnessing its authority.* The scene feels immediate, vertical, confrontational, ceremonial, or awe-struck.
-- **Enduring Presence:** *You are noticing what has remained.* The scene feels historical, weathered, remembered, recurring, or embedded in place.
+- **Legendary Bearing:** The scene feels immediate, vertical, confrontational, ceremonial, or built around scale and posture.
+- **Enduring Presence:** The scene feels historical, weathered, remembered, recurring, or embedded in place.
 
 If removing all signs of age, memory, or accumulated world leaves the card unchanged, it probably belongs in Legendary Bearing instead.
 
-### Companions — Room for Upgrades
+### Companions
 
-Bond between Pokemon and humans (or other Pokemon). Trust, care, shared stillness. Emotional reciprocity — the Pokemon isn't complete alone in the image.
+Look for trust, care, shared attention, or a relationship that changes the meaning of the scene.
 
-Skip Pokemon simply near a trainer with no emotional signal. The relationship must be the point.
+I skip cards where a trainer is merely nearby and the relationship does not affect the image.
 
-### Quiet Familiarity — Room for Upgrades
+### Quiet Familiarity
 
-Domestic calm. Pokemon in routines, kitchens, living rooms, gardens. Family-adjacent scenes. Soft attention, ease, comfort.
+Look for Pokemon in routines, kitchens, living rooms, gardens, workplaces, or familiar routes.
 
-Require evidence of a lived routine: furniture, tools, food, laundry, books, toys, a garden being tended, a familiar route, or repeated work. A peaceful outdoor portrait is Calm in Nature, not Quiet Familiarity.
+Useful evidence includes furniture, tools, food, laundry, books, toys, a tended garden, a familiar route, or repeated work. A peaceful outdoor portrait usually fits Calm in Nature instead.
 
-Skip anything with narrative tension or drama. This theme is *boring on purpose* — warmth without spectacle.
+The theme works best when the warmth comes from familiarity rather than spectacle.
 
 ---
 
@@ -56,13 +58,13 @@ Volume I is currently closed to new pages. Buy for it only when a card could cle
 
 ### Strongest Upgrade Pools
 
-**Awakened Power** — The most future-proof theme in the binder. Energy gathering, transformation beginning, the moment *before* inevitability. Tension, transition, power not yet released. Glowing auras, charging attacks, evolution mid-flash. Modern and vintage compatible. If you're unsure where a powerful card goes, test it here first.
+**Awakened Power** — Energy gathering, transformation beginning, or tension before release. It has room for different eras and visual approaches, but a replacement still needs to improve the existing page.
 
 Skip fully realized power (that's Legendary Bearing) and active attacks already released (that's On the Attack).
 
-**Legendary Bearing** — The central pillar. Complete, unquestioned authority made visible. Monumental scale, commanding posture, ceremonial framing, or the feeling that a god, ruler, or guardian has entered the scene.
+**Legendary Bearing** — Complete authority made visible through scale, posture, ceremonial framing, or a strong sense of arrival.
 
-Skip cards showing active attack energy or transition. Also skip quiet relics and weathered survivors; those belong in Enduring Presence. Legendary by Pokedex status alone isn't enough — the artwork must make the viewer feel the encounter.
+I skip active attacks and transformations here. Quiet relics and weathered survivors fit Enduring Presence better, and legendary status alone does not determine the theme.
 
 ### Selective Upgrades
 
@@ -85,9 +87,9 @@ These themes lose clarity if they grow. Only buy strict upgrades to existing car
 
 ---
 
-## Future Themes — Watch List
+## Future Theme Candidates
 
-Don't buy for these yet. But if cards start accumulating naturally (6–9 cards), a new theme may be emerging. Worth keeping in the back of your mind.
+I do not shop directly for these. They become real themes only if 6–9 convincing cards accumulate without forcing the idea.
 
 **Volume I candidates, only if the volume is deliberately reopened:**
 - **Journey** — Pokemon mid-travel, paths stretching ahead, a sense of going somewhere
@@ -105,11 +107,11 @@ Don't buy for these yet. But if cards start accumulating naturally (6–9 cards)
 
 ---
 
-## Other Collections — Known Gaps
+## Side Collections
 
-**Emolga Masterset** — Missing BW-P and BW-9 variants. Two cards from completion.
+**Emolga Masterset** — I keep a separate missing-card list on the [Emolga gallery page](../../gallery/emolga-masterset/) so the status is maintained in one place.
 
-**Waifu (Full-Art JP Trainer Supporters)** — Collection in progress. Buy for illustration quality and visual composition, not character popularity.
+**Trainer Full Arts** — Collection in progress. I look for illustration quality and visual composition rather than character popularity.
 
 ---
 
@@ -124,14 +126,13 @@ Found a card with great art? Ask what signal it carries:
 - **Authority witnessed through scale or posture** — Volume I: Legendary Bearing (upgrade only)
 - **Fits a V1 theme but isn't an upgrade** — Pass
 - **No clear signal** — Pass
-- **Doesn't fit any theme** — Holding box. Revisit in 12 months.
+- **Doesn't fit any theme** — Holding box. Review it with EDGE, then move it to Future Self after about a year if it remains unresolved.
 
 ---
 
-## The Rules
+## Working Reminders
 
-1. **Visual signal over species reputation.** A common card with perfect art beats a chase card with generic art.
-2. **Subtraction over forced inclusion.** An empty slot is better than a wrong card.
-3. **Volume II gets new cards. Volume I gets upgrades only.**
-4. **If it's been in the maybe pile for 12+ months, it's not a core card.**
-5. **Shop with your eyes, not the price guide.**
+1. I start with the image, not the species or price.
+2. An empty slot is more useful than a forced placement.
+3. Volume II can accept deliberate additions; Volume I currently gets replacements only.
+4. After about a year, unresolved EDGE cards move to Future Self, storage, or release.

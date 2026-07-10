@@ -1,10 +1,10 @@
 ---
 title: "Gold Stars"
-description: "The gold star collection — chase cards that defined an era of rarity"
+description: "A focused collection from one of the TCG's most recognizable rarity eras"
 layout: "gallery"
 ---
 
-The gold star collection. These cards defined what it meant to chase something rare — each one a statement piece built around artwork that broke every convention the TCG had established.
+Gold Stars pair a distinctive rarity treatment with illustrations that place the Pokemon outside the usual frame. I collect them as a recognizable group from a particular period of the TCG.
 
 <div class="gallery-grid">
   <figure class="gallery-item">

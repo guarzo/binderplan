@@ -28,7 +28,7 @@ Choose **one**:
 - Contemplation
 
 **Volume II — Memory & Presence:**
-- Companionship (bond without spectacle)
+- Companions (bond without spectacle)
 - Quiet familiarity (domestic calm)
 - Enduring presence (survival through time)
 - Threshold (a visible boundary being crossed)
@@ -59,13 +59,13 @@ The key word is **strengthen**, not match. If it only duplicates a feeling alrea
 
 ---
 
-## Step 3: Visual Necessity
+## Step 3: Visual Need
 
-> *Would removing one current binder card make room for this?*
+> *Does this fill a known opening or clearly replace a current card?*
 
-**If the answer is no — skip.**
+For Volume I, I expect a clear replacement. Volume II can also accept a card that fills a deliberate opening in an active page plan.
 
-This is how binder quality keeps rising. Every new card should be an upgrade, not an addition.
+If the card does neither, I wait rather than inventing a need for it.
 
 ---
 
@@ -96,9 +96,9 @@ This is how binder quality keeps rising. Every new card should be an upgrade, no
 - Monument → Consider grading
 
 **Graded card categories:**
-- **Crown Art** — Pinnacle works; the highest artistic achievements
-- **Definitive Pokemon** — The single best card for a species
-- **Historical** — Era-defining cards that shaped the hobby
+- **Crown Art** — A favorite illustration that works well on its own
+- **Definitive Pokemon** — The card that currently represents a species best
+- **Historical / Touchstone** — A card tied to an era or moment in the hobby
 - **Personal Significance** — Cards with irreplaceable personal meaning
 
 A card should clearly belong to one of these to justify grading. Don't slab on impulse.
@@ -112,12 +112,10 @@ A card may bypass steps if:
 - It completes a visual sequence
 - It emotionally replaces an existing card
 
-These should be uncommon. If your "automatic yes" list is long, your standards are slipping.
+These are uncommon for me. If too many cards seem to qualify, I return to the checklist.
 
 ---
 
-## Final Rule
+## Last Check
 
-> **If you need to justify the purchase, it's not right.**
-
-Great cards explain themselves instantly.
+If I am doing more work to defend the purchase than to enjoy the card, I wait.

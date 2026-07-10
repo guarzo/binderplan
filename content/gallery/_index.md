@@ -14,12 +14,15 @@ This is the collection itself: binder pages, side collections, and graded cards.
 ## Other Collections
 
 - **[Stamped Cards](stamped-cards/)** — Prerelease, league, and event-stamped cards
-- **[Waifu](waifu/)** — Full-art Japanese trainer cards, collected for the art
+- **[Trainer Full Arts](waifu/)** — Japanese trainer cards collected for character illustration
 
-## Slabs
+## Special Collections
 
 - **[Gold Stars](gold-stars/)** — The gold star collection
-- **[Masaki](masaki/)** — The iconic Japanese mail-in trade promos
+- **[Masaki](masaki/)** — Japanese mail-in trade promos from the Communication Evolution campaign
+
+## Personal Slabs
+
 - **[Definitive Pokemon](definitive-pokemon/)** — The best versions, chosen with intent
 - **[Touchstones](touchstones/)** — Cards that capture a moment in the hobby
 - **[Personal Significance](personal-significance/)** — Cards with irreplaceable personal meaning

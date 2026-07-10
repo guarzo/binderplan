@@ -1,6 +1,6 @@
 ---
-title: "Grading Philosophy"
-description: "When and why to slab a card"
+title: "Graded Cards"
+description: "The roles graded cards play in the collection"
 ---
 
 I think of slabs as the more settled part of the collection. Binder cards move and get compared with their neighbors; slabs are cards I am happy to treat as individual objects for a while.
@@ -9,36 +9,38 @@ I think of slabs as the more settled part of the collection. Binder cards move a
 
 ---
 
-## Slab Roles
+## Public Roles
 
 Every graded card needs one clear reason to be in plastic:
 
-### CROWN_ART
+### Crown Art
 A favorite art version of a card, where the grade supports the presentation.
 
-### DEFINITIVE_[POKEMON]
+### Definitive Pokemon
 The card that currently represents a Pokemon best in the collection.
 
-### HISTORICAL
-Vintage, first appearances, culturally significant cards. These matter because of when they existed.
+### Historical / Touchstone
+Cards tied to a particular era, release style, or moment in the hobby. Gold Stars and Masaki promos sit here alongside more personal reference points.
 
-### LIQUID
-Investment or trade-focused slabs. No emotional attachment — and that's fine.
+### Personal Significance
+Cards whose meaning comes from a memory, milestone, gift, or personal connection rather than a broader collecting category.
+
+Cards held mainly for trade or resale may still be stored with the collection, but I do not treat that as a public curatorial role.
 
 ---
 
 ## Physical Organization
 
 ### Tier A — Display
-- Crown art & historical icons
+- Crown Art and selected Historical / Touchstone cards
 - A few at a time, rotated with intention
 
 ### Tier B — Archive Cases
-- Pokemon-definitive slabs
+- Definitive Pokemon and Personal Significance slabs
 - Sorted by Pokemon, then era, then grade
 
 ### Tier C — Slab Boxes
-- Liquid and duplicate slabs
+- Trade-focused and duplicate slabs
 - Stored upright, labeled, easy to move along
 
 ---

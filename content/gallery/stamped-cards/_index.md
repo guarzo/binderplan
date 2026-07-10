@@ -1,41 +1,41 @@
 ---
 title: "Stamped Cards"
-description: "Prerelease, league, and event-stamped cards — the ones that prove you were there"
+description: "Prerelease, league, crossover, and event-stamped printings"
 layout: "gallery"
 ---
 
-Prerelease stamps, league promos, Pokemon GO crossovers, and event-exclusive printings. These aren't just variants — each stamp marks a specific time and place in the hobby. A card you could only get by showing up.
+Prerelease stamps, league promos, Pokemon GO crossovers, and event printings. I like the way a small mark can connect an otherwise familiar card to a particular release, program, or place.
 
 ---
 
 <div class="gallery-grid">
   <figure class="gallery-item">
-    <img src="../../images/binder/stamped-cards/stamp_1.jpg" alt="Stamped cards spread 1" loading="lazy">
-    <figcaption>Spread 1</figcaption>
+    <img src="../../images/binder/stamped-cards/stamp_1.jpg" alt="Nine-pocket binder page of stamped Pokemon cards with varied eras and colors" loading="lazy">
+    <figcaption>Stamped cards — page 1</figcaption>
   </figure>
   <figure class="gallery-item">
-    <img src="../../images/binder/stamped-cards/stamp_2.jpg" alt="Stamped cards spread 2" loading="lazy">
-    <figcaption>Spread 2</figcaption>
+    <img src="../../images/binder/stamped-cards/stamp_2.jpg" alt="Nine-pocket binder page of event and promotional stamped Pokemon cards" loading="lazy">
+    <figcaption>Stamped cards — page 2</figcaption>
   </figure>
   <figure class="gallery-item">
-    <img src="../../images/binder/stamped-cards/stamp_3.jpg" alt="Stamped cards spread 3" loading="lazy">
-    <figcaption>Spread 3</figcaption>
+    <img src="../../images/binder/stamped-cards/stamp_3.jpg" alt="Nine-pocket binder page mixing modern stamped Pokemon cards" loading="lazy">
+    <figcaption>Stamped cards — page 3</figcaption>
   </figure>
   <figure class="gallery-item">
-    <img src="../../images/binder/stamped-cards/stamp_4.jpg" alt="Stamped cards spread 4" loading="lazy">
-    <figcaption>Spread 4</figcaption>
+    <img src="../../images/binder/stamped-cards/stamp_4.jpg" alt="Nine-pocket binder page of mostly grass- and fire-colored stamped Pokemon cards" loading="lazy">
+    <figcaption>Stamped cards — page 4</figcaption>
   </figure>
   <figure class="gallery-item">
-    <img src="../../images/binder/stamped-cards/stamp_5.jpg" alt="Stamped cards spread 5" loading="lazy">
-    <figcaption>Spread 5</figcaption>
+    <img src="../../images/binder/stamped-cards/stamp_5.jpg" alt="Nine-pocket binder page of stamped Pokemon cards from several sets" loading="lazy">
+    <figcaption>Stamped cards — page 5</figcaption>
   </figure>
   <figure class="gallery-item">
-    <img src="../../images/binder/stamped-cards/stamp_6.jpg" alt="Stamped cards spread 6" loading="lazy">
-    <figcaption>Spread 6</figcaption>
+    <img src="../../images/binder/stamped-cards/stamp_6.jpg" alt="Nine-pocket binder page of foil and stamped Pokemon cards" loading="lazy">
+    <figcaption>Stamped cards — page 6</figcaption>
   </figure>
   <figure class="gallery-item">
-    <img src="../../images/binder/stamped-cards/stamp_7.jpg" alt="Stamped cards spread 7" loading="lazy">
-    <figcaption>Spread 7</figcaption>
+    <img src="../../images/binder/stamped-cards/stamp_7.jpg" alt="Partially filled nine-pocket binder page of stamped Pokemon cards" loading="lazy">
+    <figcaption>The current end of the stamped-card binder — page 7</figcaption>
   </figure>
 </div>
 

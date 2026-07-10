@@ -52,7 +52,7 @@ Disengaged from everything. Sleeping, recovering, fully relaxed. There's a vulne
 
 ### Joyful Action
 
-Motion that comes from happiness. Running, leaping, playing — the energy here is light and genuine. These cards always make me smile.
+Motion that comes from happiness. Running, leaping, and playing give these cards a light, open energy.
 
 <p class="signal">What I look for: motion driven by joy</p>
 </div>
@@ -76,9 +76,9 @@ The moment right before everything changes. Power gathering, transformation begi
 
 ### Legendary Bearing
 
-Authority made visible. These Pokemon occupy the image like rulers, guardians, or gods. Their power is already complete, but the important signal is that it is being **witnessed now** — through scale, posture, confrontation, ceremony, or a dramatic arrival.
+Authority made visible through scale, posture, confrontation, ceremony, or a dramatic arrival. The power is already complete; the scene is about encountering it.
 
-The card should feel like an encounter with something greater than you.
+The card should make the Pokemon's presence shape the whole composition.
 
 <p class="signal">What I look for: witnessed authority</p>
 </div>
@@ -135,7 +135,7 @@ Awake and still. Not resting, not acting — *thinking*. These cards have a quie
 
 ## Volume II — Memory, Presence, and Passage
 
-Volume II shifts inward. These themes aren't about what Pokemon *do* — they're about how they're remembered, lived with, and understood across time. Three chapters instead of five — fewer movements, but deeper.
+Volume II is less concerned with action. Its themes focus on relationship, familiar places, accumulated time, and moments of passage.
 
 ### Chapter I — Nearness
 
@@ -145,7 +145,7 @@ Volume II shifts inward. These themes aren't about what Pokemon *do* — they're
 
 ### Companions
 
-Pokemon and humans (or other Pokemon) in relationships built on trust, care, or shared stillness. The bond is the point — mutual, enduring, and central to the image.
+Pokemon and humans, or groups of Pokemon, in relationships built on trust, care, or shared attention. The connection needs to shape the image rather than simply appear in it.
 
 <p class="signal">What I look for: bond without spectacle</p>
 </div>
@@ -154,7 +154,7 @@ Pokemon and humans (or other Pokemon) in relationships built on trust, care, or 
 
 ### Quiet Familiarity
 
-Pokemon woven into everyday life. Comfort, routine, family — no drama, no narrative. They're just *there*, held by a world that knows them.
+Pokemon woven into everyday life through routines, familiar objects, work, meals, travel, or rest. The scene should feel inhabited rather than merely peaceful.
 
 <p class="signal">What I look for: domestic calm</p>
 </div>
@@ -186,9 +186,9 @@ The Pokemon does not need to dominate the scene. Its importance comes from havin
 
 ### Threshold
 
-Borders, entrances, departures, and moments of passage. The artwork must contain a visible edge between states: a doorway, path, bridge, shoreline, cave mouth, window, horizon, gate, platform, or change in weather or light.
+Borders, entrances, departures, and moments of passage. I look for a visible edge between states: a doorway, path, bridge, shoreline, cave mouth, window, horizon, gate, platform, or change in weather or light.
 
-Movement alone is not enough. The Pokemon must be approaching, leaving, crossing, or pausing at a boundary.
+Movement alone is not enough for this theme. The Pokemon should be approaching, leaving, crossing, or pausing at a boundary.
 
 <p class="signal">What I look for: a visible boundary being crossed</p>
 </div>
@@ -197,33 +197,33 @@ Movement alone is not enough. The Pokemon must be approaching, leaving, crossing
 
 ## Graded Card Categories
 
-Graded cards are **anchors**, not clutter. They represent permanence, personal milestones, and cards too fragile or meaningful for binder handling.
+Graded cards let me enjoy certain cards as individual objects rather than parts of a binder page. I use four public roles:
 
 <div class="theme-card">
 
 ### Crown Art
 
-The best of the best. These are the highest artistic achievements in the collection — cards where the art alone justifies the slab.
+A favorite art version, chosen because the illustration and presentation work especially well on their own.
 
-<p class="signal">What I look for: undeniable artistic mastery</p>
+<p class="signal">What I look for: artwork I want to return to on its own</p>
 </div>
 
 <div class="theme-card">
 
 ### Definitive Pokemon
 
-The single best card for a species. The one that most fully captures what that Pokemon *is*.
+The card that currently represents a species best in my collection. This can change as the collection changes.
 
-<p class="signal">What I look for: the definitive representation</p>
+<p class="signal">What I look for: a convincing personal favorite</p>
 </div>
 
 <div class="theme-card">
 
-### Historical
+### Historical / Touchstone
 
-Era-defining cards that shaped the hobby. Their significance is primarily contextual — they matter because of *when* they existed.
+Cards tied to a particular era, release style, or moment in the hobby. Their context is part of why I keep them.
 
-<p class="signal">What I look for: historical weight</p>
+<p class="signal">What I look for: a useful connection to the hobby's past</p>
 </div>
 
 <div class="theme-card">
@@ -254,9 +254,9 @@ Together, these themes give the collection a useful range without trying to acco
 - **Passage** — Threshold
 
 **Graded Cards:**
-- **Pinnacle** — Crown Art
+- **Art** — Crown Art
 - **Definitive** — Definitive Pokemon
-- **Era** — Historical
+- **Context** — Historical / Touchstone
 - **Personal** — Personal Significance
 
 ---
