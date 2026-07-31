@@ -69,7 +69,13 @@
       "Bash(git reflog:*)",
       "Bash(git gc:*)",
       "Bash(git add:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(command -v chromium chromium-browser google-chrome)",
+      "Bash(google-chrome --headless=new --disable-gpu --hide-scrollbars --window-size=1440,2600 --screenshot=/tmp/shot_home.png \"http://127.0.0.1:1319/\")",
+      "Bash(google-chrome --headless=new --disable-gpu --hide-scrollbars --window-size=1440,3200 --screenshot=/tmp/shot_gallery.png \"http://127.0.0.1:1319/gallery/volume-1/\")",
+      "Bash(google-chrome --headless=new --disable-gpu --hide-scrollbars --window-size=1440,2400 --screenshot=/tmp/shot_philo.png \"http://127.0.0.1:1319/philosophy/\")",
+      "Bash(google-chrome --headless=new --disable-gpu --hide-scrollbars --window-size=1440,3400 --screenshot=/tmp/g_index.png \"http://127.0.0.1:1319/guides/\")",
+      "Bash(google-chrome --headless=new --disable-gpu --hide-scrollbars --window-size=1440,4000 --screenshot=/tmp/g_buying.png \"http://127.0.0.1:1319/guides/buying/\")"
     ]
   }
 }
