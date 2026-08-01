@@ -197,16 +197,9 @@ Movement alone is not enough for this theme. The Pokemon should be approaching, 
 
 ## Graded Card Categories
 
-Graded cards let me enjoy certain cards as individual objects rather than parts of a binder page. I use four public roles:
+Graded cards let me enjoy certain cards as individual objects rather than parts of a binder page. They group two ways, and the difference is whether the group has an outside.
 
-<div class="theme-card">
-
-### Crown Art
-
-A favorite art version, chosen because the illustration and presentation work especially well on their own.
-
-<p class="signal">What I look for: artwork I want to return to on its own</p>
-</div>
+**Themes** are defined by judgment — there's no such thing as a card missing from one:
 
 <div class="theme-card">
 
@@ -219,7 +212,7 @@ The card that currently represents a species best in my collection. This can cha
 
 <div class="theme-card">
 
-### Historical / Touchstone
+### Touchstones
 
 Cards tied to a particular era, release style, or moment in the hobby. Their context is part of why I keep them.
 
@@ -234,6 +227,8 @@ Cards with irreplaceable personal meaning. Milestones, gifts, or connections tha
 
 <p class="signal">What I look for: personal story</p>
 </div>
+
+**Runs** are defined by the cards themselves. Membership is a fact rather than an opinion, so a run can be genuinely incomplete — and naming what's still missing is part of the point. Masaki, Chinese Exclusives, and the Emolga Masterset work this way.
 
 ---
 
@@ -253,11 +248,15 @@ Together, these themes give the collection a useful range without trying to acco
 - **Permanence** — Enduring Presence
 - **Passage** — Threshold
 
-**Graded Cards:**
-- **Art** — Crown Art
+**Graded Cards — Themes:**
 - **Definitive** — Definitive Pokemon
-- **Context** — Historical / Touchstone
+- **Context** — Touchstones
 - **Personal** — Personal Significance
+
+**Graded Cards — Runs:**
+- **Set** — Masaki
+- **Market** — Chinese Exclusives
+- **Pokemon** — Emolga Masterset
 
 ---
 
