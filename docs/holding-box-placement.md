@@ -1,7 +1,13 @@
 # Holding-box placement plan
 
-Source: `tmp/converted/54_IMG_6817.webp` – `60_IMG_6823.webp` (7 photos, 84 loose cards).
-Incumbents read from `static/images/binder/volume-1/*.jpg` and `volume-2/*.jpg` (17 spreads).
+**Source photographs (holding box):** camera originals **IMG_6817 – IMG_6823** (7 photos, 84 loose
+cards). These are the immutable identifiers; they were read from working copies at
+`tmp/converted/54_IMG_6817.webp` – `60_IMG_6823.webp`, a path that is **gitignored and therefore
+not reproducible from this repository**. Camera originals IMG_6764 – IMG_6816 photograph the
+binder pages and are out of scope here.
+
+**Incumbents** were read from tracked images: `static/images/binder/volume-1/*.jpg` and
+`static/images/binder/volume-2/*.jpg` (17 spreads). Those are reproducible.
 
 > **Revision note.** The first version of this document (2026-07-31) recommended 75 additive
 > placements. That was wrong: **Volume 1 is full, and Volume 2's existing themes are full save for
@@ -112,19 +118,35 @@ Previously parked pending more candidates. Now **rejected outright**, on two §8
 - **Cannibalization** would run the wrong way: a Concealment page would have to strip working cards
   out of Quiet Familiarity and Threshold to reach viability.
 
-Do not revisit unless a genuinely unhoused cluster of six or more appears.
+Do not revisit unless a genuinely unhoused cluster of at least six appears. Six is the floor drawn
+from `content/guides/holding-box.md` ("a new theme only forms when 6–9 cards naturally accumulate
+and clearly share an idea"); the guide's 6–9 describes the size at which a theme forms naturally,
+not a ceiling that disqualifies a larger cluster.
 
-## 5. Everything else — REDUNDANT
+## 5. Everything else — REDUNDANT (41 cards)
 
-Roughly 41 cards fit a theme but beat nothing on it today. They are kept, per
-`content/guides/holding-box.md`, as protection against a shift in taste: Mareep, Butler's Kirlia,
-Lt. Surge's Pikachu, Pikachu "Pika Dash", Pikachu "Pika Ball", Pikachu "Tail Slap", Pikachu GO,
-Pikachu McDonald's, group-art Pikachu, vintage Pikachu, Litleo AR, Ampharos ex, Bulbasaur AR,
-Erika's Bulbasaur, Sandshrew, Dark Primeape, Team Magma's Houndour, the three remaining Houndour,
-Houndoom G ×2, Genesect, Golem 4, Gengar Lv.39, Gengar EX, Gengar Legend Maker, Gastly's
-alternates, Darkrai, Swampert, Charizard VSTAR, Blastoise VMAX, Aerodactyl, Venusaur ex,
-Galarian Obstagoon, Rocket's Zapdos ex, Dark Primeape, Pelipper, Dragonite WB, Yveltal XY,
-Sneasel, Dedenne's alternates, and the rest.
+These fit a theme but beat nothing on it today. Kept per `content/guides/holding-box.md` as
+protection against a shift in taste. Enumerated in full and grouped by source photo; the six
+outcomes in this document are mutually exclusive, so no card appears twice.
+
+| img | Cards | n |
+|---|---|---|
+| 54 | Mareep · Yveltal (XY holo) · Ampharos ex | 3 |
+| 55 | Dark Primeape · Genesect · Butler's Kirlia · Houndoom G Lv.45 *(first copy)* · Team Magma's Houndour · Gengar Lv.39 | 6 |
+| 56 | Gengar EX · Shaymin (EN 013/065) · Houndour Lv.13 (HGSS) · Houndour (JP Neo No.228) · Houndoom EX (JP full art) † | 5 |
+| 57 | Houndour (JP Neo Discovery) · Houndour (Skyridge) · Pikachu "Pika Ball" · Lt. Surge's Pikachu · Pikachu "Pika Dash" · Pikachu Lv.15 (DP19) · Pikachu (group art) · Pikachu (McDonald's) · Pikachu "Tail Slap" | 9 |
+| 58 | Sandshrew · Aerodactyl · Golem 4 Lv.52 · Galarian Obstagoon · Dragonite (WB Presents) · Gengar (Legend Maker) · Swampert Lv.53 · Charizard VSTAR | 8 |
+| 59 | Pikachu (vintage "Growl") · Pikachu (Pokemon GO) · Rocket's Zapdos ex · Darkrai Lv.50 · Pelipper | 5 |
+| 60 | Venusaur ex · Erika's Bulbasaur · Litleo AR · Blastoise VMAX · Bulbasaur AR | 5 |
+| | **Total** | **41** |
+
+† **Provisional.** Houndoom EX (JP full art) is the card pending a physical check against the dark
+full-art in the On the Attack spread. If it matches, it moves to RETIRE and this partition becomes
+40 cards with retires at 29.
+
+**Duplicate handling.** *Duplicate* is an outcome in its own right, not a reason within REDUNDANT,
+and it applies only to surplus copies. Of the two Houndoom G Lv.45: the first copy is REDUNDANT
+above, the second is the duplicate in §6. Neither is counted twice.
 
 Two notes on this group. **Litleo AR and Pikachu McDonald's are the painful ones** — both are
 excellent cards that lose only because World of People already holds two street scenes and nine
@@ -135,7 +157,10 @@ revision, are redundant there too; that move is void.
 
 - **Emolga EX — エモンガEX, JP XY-P promo** → Emolga Masterset. Unchanged; the masterset is
   completionist and outside the thematic structure.
-- **Houndoom G Lv.45 — EN Rising Rivals** — duplicate. Both copies redundant; keep one as a spare.
+- **Houndoom G Lv.45 — EN Rising Rivals 50/111** (img 56) — **duplicate**: the surplus second
+  copy. The first copy (img 55) is counted under REDUNDANT in §5, so the pair occupies exactly two
+  outcome slots and neither is double-counted. Keep the spare or release it; it changes no
+  placement either way.
 
 ## 7. Carried forward
 
