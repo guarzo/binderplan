@@ -165,3 +165,12 @@ This is not an inventory. It records what a card **is**, never where it sits. A 
 | joltik-02 | Joltik | Joltik | EN | | 150/142 | uncertain | enduring_presence_2.webp 2026-08-01 | Jolting Charge attack, distinct from joltik-01, set not readable as text |
 | gengar-06 | Gengar | わるいゲンガー | JP | | | uncertain | enduring_presence_2.webp 2026-08-01 | Dark Gengar, HP70, distinct from gengar-01..05, footer illegible after crop attempt |
 | bulbasaur-03 | Bulbasaur | Bulbasaur | EN | | | uncertain | enduring_presence_2.webp 2026-08-01 | Sleep Seed ability, Vine Whip attack, distinct from bulbasaur-01/02, footer illegible after crop attempt |
+| charmander-03 | Charmander | Charmander | EN | | | uncertain | quiet_familiarity_1.webp 2026-08-01 | Gnaw/Searing Flame attacks, distinct from charmander-01/02, footer obscured by sleeve tab |
+| mew-04 | Mew | ミュウ | JP | | | uncertain | quiet_familiarity_1.webp 2026-08-01 | Pokepower type-change, Link Blast attack, distinct from mew-01..03, footer illegible after crop attempt |
+| snivy-03 | Snivy | Snivy | EN | | 6/113 | uncertain | quiet_familiarity_1.webp 2026-08-01 | Leaf Blade attack, distinct from snivy-01/02, set not readable as text |
+| pikachu-05 | Pikachu | Pikachu | EN | | 84/144 | uncertain | quiet_familiarity_1.webp 2026-08-01 | Max Voltage attack, e-Card era, distinct from pikachu-01..04, set not readable as text |
+| numel-01 | Numel | Numel | EN | | 49/97 | uncertain | quiet_familiarity_1.webp 2026-08-01 | Firebreathing/Tackle attacks, e-Card era, set not readable as text |
+| dratini-02 | Dratini | Dratini | EN | | 26/102 | uncertain | quiet_familiarity_1.webp 2026-08-01 | Pound attack, Wizards era, distinct from dratini-01, set not readable as text |
+| piplup-01 | Piplup | Piplup | EN | | | uncertain | quiet_familiarity_1.webp 2026-08-01 | Lv.9, Peck/Water Splash attacks, footer illegible after crop attempt |
+| shaymin-03 | Shaymin | Shaymin | EN | | 185/142 | uncertain | quiet_familiarity_1.webp 2026-08-01 | Ability Flower Curtain, Smash Kick attack, distinct from shaymin-01/02, set not readable as text |
+| squirtle-02 | Squirtle | Squirtle | EN | | | uncertain | quiet_familiarity_1.webp 2026-08-01 | Wave Splash/Doubleslap attacks, distinct from squirtle-01, footer illegible after crop attempt |
