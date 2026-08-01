@@ -103,7 +103,7 @@ def confirmation_queue(rows):
     for row in rows:
         if row["confidence"] == "confirmed":
             continue
-        if row["set"] and row["number"]:
+        if row["confidence"] != "uncertain" and row["set"] and row["number"]:
             continue
         buckets.setdefault(species_slug(row["id"]), []).append(row)
     return sorted(buckets.items(), key=lambda kv: (-len(kv[1]), kv[0]))

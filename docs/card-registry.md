@@ -80,7 +80,7 @@ This is not an inventory. It records what a card **is**, never where it sits. A 
 | sabrinas-gaze-01 | Sabrina's Gaze | ナツメの眼 | JP | | | uncertain | intimidation_1.webp 2026-08-01 | trainer card, number illegible |
 | typhlosion-01 | Typhlosion | バクフーン | JP | | No.157 | uncertain | intimidation_1.webp 2026-08-01 | vintage Pokedex-number print, era not identifiable |
 | misdreavus-01 | Misdreavus | ムウマ | JP | | | uncertain | intimidation_1.webp 2026-08-01 | number illegible |
-| lucario-01 | Lucario | ルカリオVSTAR | JP | s12a | 226/172 | photo | intimidation_1.webp 2026-08-01 | VSTAR, SAR rarity mark |
+| lucario-01 | Lucario | ルカリオVSTAR | JP | s12a | 226/172 | uncertain | intimidation_1.webp 2026-08-01 | VSTAR, SAR rarity mark; third digit of number ambiguous 5-vs-6 at source resolution |
 | houndour-01 | Houndour | Houndour | EN | | 113/165 | uncertain | intimidation_1.webp 2026-08-01 | illustrator Mitsuhiro Arita credited, set code not textual |
 | bewear-01 | Bewear | キテルグマ | JP | | | uncertain | intimidation_1.webp 2026-08-01 | number illegible after crop attempt |
 | marowak-02 | Marowak | ガラガラ | JP | | | uncertain | intimidation_1.webp 2026-08-01 | delta species print, distinct from marowak-01, number illegible after crop attempt |

@@ -132,3 +132,36 @@ def test_confidence_confirmed_rows_are_not_queued():
         row("umbreon-01", "Umbreon", conf="confirmed"),
     )))
     assert queue == []
+
+
+def test_confidence_confirmed_rows_are_not_queued_even_if_blank():
+    # A confirmed row is never queued, populated or blank.
+    queue = confirmation_queue(parse_registry(table(
+        row("umbreon-01", "Umbreon", conf="confirmed", set_="", num=""),
+    )))
+    assert queue == []
+
+
+def test_uncertain_row_with_set_and_number_populated_is_queued():
+    # This is the bug: uncertain means inferred/obscured, so a fully
+    # populated uncertain row still needs a physical check.
+    queue = confirmation_queue(parse_registry(table(
+        row("lucario-01", "Lucario", conf="uncertain", set_="s12a", num="226/172"),
+    )))
+    assert len(queue) == 1
+    assert queue[0][0] == "lucario"
+
+
+def test_photo_row_with_set_and_number_populated_is_not_queued():
+    queue = confirmation_queue(parse_registry(table(
+        row("lugia-02", "Lugia", conf="photo", set_="s12", num="079/098"),
+    )))
+    assert queue == []
+
+
+def test_photo_row_with_blank_number_is_queued():
+    queue = confirmation_queue(parse_registry(table(
+        row("lugia-03", "Lugia", conf="photo", set_="", num="28/64"),
+    )))
+    assert len(queue) == 1
+    assert queue[0][0] == "lugia"
