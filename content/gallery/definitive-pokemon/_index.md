@@ -8,36 +8,16 @@ These are the cards that currently represent their Pokemon best in my collection
 
 <div class="gallery-grid">
   <figure class="gallery-item span-wide">
-    <img src="../../images/slabs/definitive_umbreon_aquapolis.jpg" alt="Graded Umbreon card from Aquapolis" loading="lazy">
-    <figcaption>Umbreon Aquapolis</figcaption>
+    <img src="../../images/slabs/definitive_charizard_base_shadowless.jpg" alt="Graded Shadowless Base Set Charizard card" loading="lazy">
+    <figcaption>Charizard Base Shadowless</figcaption>
   </figure>
   <figure class="gallery-item span-narrow">
-    <img src="../../images/slabs/definitive_mew_shining_darkness.jpg" alt="Graded Mew card from Shining Darkness" loading="lazy">
-    <figcaption>Mew Shining Darkness</figcaption>
+    <img src="../../images/slabs/definitive_kyogre_primal.jpg" alt="Graded full-art Primal Kyogre EX card" loading="lazy">
+    <figcaption>Primal Kyogre EX</figcaption>
   </figure>
   <figure class="gallery-item span-full">
-    <img src="../../images/slabs/definitive_charizard_base_2.jpg" alt="Graded Charizard card from Base Set 2" loading="lazy">
-    <figcaption>Charizard Base Set 2</figcaption>
-  </figure>
-  <figure class="gallery-item span-wide">
-    <img src="../../images/slabs/definitive_houndoom_aquapolis.jpg" alt="Graded Houndoom card from Aquapolis" loading="lazy">
-    <figcaption>Houndoom Aquapolis</figcaption>
-  </figure>
-  <figure class="gallery-item span-narrow">
-    <img src="../../images/slabs/definitive_kingdra_aquapolis.jpg" alt="Graded Kingdra card from Aquapolis" loading="lazy">
-    <figcaption>Kingdra Aquapolis</figcaption>
-  </figure>
-  <figure class="gallery-item span-full">
-    <img src="../../images/slabs/definitive_gengar_chinese_2025.jpg" alt="Graded 2025 Chinese Gengar card" loading="lazy">
-    <figcaption>Gengar Chinese 2025</figcaption>
-  </figure>
-  <figure class="gallery-item span-half">
-    <img src="../../images/slabs/definitive_plusle_jp.jpg" alt="Graded Japanese Plusle card" loading="lazy">
-    <figcaption>Plusle</figcaption>
-  </figure>
-  <figure class="gallery-item span-half">
-    <img src="../../images/slabs/definitive_minun_jp.jpg" alt="Graded Japanese Minun card" loading="lazy">
-    <figcaption>Minun</figcaption>
+    <img src="../../images/slabs/definitive_umbreon_gx_rainbow.jpg" alt="Graded rainbow rare Umbreon GX card" loading="lazy">
+    <figcaption>Umbreon GX Rainbow</figcaption>
   </figure>
 </div>
 
