@@ -6,7 +6,7 @@ layout: "gallery"
 
 This one's personal.
 
-I'm working toward every Emolga printing I can track down. This binder sits completely outside the thematic structure of the main volumes: one Pokemon across languages, eras, and illustration styles, because Emolga is the best and I will not be taking questions.
+I'm working toward every Emolga printing I can track down. It's the longest-running of the runs and the only one that will never actually end: one Pokemon across languages, eras, and illustration styles, because Emolga is the best and I will not be taking questions.
 
 ---
 

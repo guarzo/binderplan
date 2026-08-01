@@ -11,19 +11,27 @@ I think of slabs as the more settled part of the collection. Binder cards move a
 
 ## Public Roles
 
-Every graded card needs one clear reason to be in plastic:
+Every graded card needs one clear reason to be in plastic, and each card takes exactly one. The reasons come in two kinds, and the difference is whether the group has an outside.
 
-### Crown Art
-A favorite art version of a card, where the grade supports the presentation.
+### Themes
 
-### Definitive Pokemon
-The card that currently represents a Pokemon best in the collection.
+Membership is a judgment call. There is no such thing as a card missing from a theme, because the theme is defined by what's in it.
 
-### Historical / Touchstone
-Cards tied to a particular era, release style, or moment in the hobby. Masaki promos sit here alongside more personal reference points.
+**Definitive Pokemon** — the card that currently represents a Pokemon best in the collection.
 
-### Personal Significance
-Cards whose meaning comes from a memory, milestone, gift, or personal connection rather than a broader collecting category.
+**Touchstones** — cards tied to a particular era, release style, or moment in the hobby.
+
+**Personal Significance** — cards whose meaning comes from a memory, milestone, gift, or personal connection rather than a broader collecting category.
+
+### Runs
+
+Membership is a fact about the card rather than an opinion, so a run can be incomplete — and saying which cards are still missing is part of the point.
+
+**Masaki** — the Communication Evolution mail-in promos, collected as a set I intend to finish.
+
+**Chinese Exclusives** — Chinese-market releases, collected as an ongoing interest rather than a defined set.
+
+**Emolga Masterset** — every Emolga printing I can track down.
 
 Cards held mainly for trade or resale may still be stored with the collection, but I do not treat that as a public curatorial role.
 
@@ -32,7 +40,7 @@ Cards held mainly for trade or resale may still be stored with the collection, b
 ## Physical Organization
 
 ### Tier A — Display
-- Crown Art and selected Historical / Touchstone cards
+- Selected Touchstones and standout cards from the runs
 - A few at a time, rotated with intention
 
 ### Tier B — Archive Cases
