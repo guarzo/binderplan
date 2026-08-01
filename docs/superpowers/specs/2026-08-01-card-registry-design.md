@@ -59,6 +59,7 @@ them.
 | Same printing, two physical copies | Different IDs — the scheme models them as distinct cards. Note that both being *in the binders* is a rule violation; see Duplicate detection. |
 | Set/number unreadable | ID assigned from species alone. `set`/`number` blank, `confidence: uncertain`. |
 | Species unreadable | Held out of the registry during seeding (see below). After seeding, assigned from best guess. |
+| One card printing two species (TAG TEAM and similar) | Both names, hyphen-joined, in printed order: `gengar-mimikyu-01`. One physical card, one ID. Consistent with the rule that non-Pokémon cards use the printed name slugified. |
 | Unsure whether it is a new copy or an existing entry | **Assign a new ID.** |
 
 The last rule is deliberately asymmetric. A phantom entry — two IDs, one physical card — is
