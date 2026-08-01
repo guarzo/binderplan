@@ -76,3 +76,12 @@ This is not an inventory. It records what a card **is**, never where it sits. A 
 | salamence-01 | Salamence | ボーマンダex | JP | | 119/100 | uncertain | awakened_power_2.webp 2026-08-01 | set code not textual |
 | shaymin-02 | Shaymin | シェイミLv.X | JP | | | uncertain | awakened_power_2.webp 2026-08-01 | distinct printing from shaymin-01, glare obscured number after crop attempt |
 | golem-01 | Golem | Golem EX | EN | | 189/165 | uncertain | awakened_power_2.webp 2026-08-01 | set code not textual |
+| mewtwo-02 | Mewtwo | Mewtwo EX | EN | | 164/162 | uncertain | intimidation_1.webp 2026-08-01 | Shatter Shot/Damage Change EX card, distinct from mewtwo-01, set code not textual |
+| sabrinas-gaze-01 | Sabrina's Gaze | ナツメの眼 | JP | | | uncertain | intimidation_1.webp 2026-08-01 | trainer card, number illegible |
+| typhlosion-01 | Typhlosion | バクフーン | JP | | No.157 | uncertain | intimidation_1.webp 2026-08-01 | vintage Pokedex-number print, era not identifiable |
+| misdreavus-01 | Misdreavus | ムウマ | JP | | | uncertain | intimidation_1.webp 2026-08-01 | number illegible |
+| lucario-01 | Lucario | ルカリオVSTAR | JP | s12a | 226/172 | photo | intimidation_1.webp 2026-08-01 | VSTAR, SAR rarity mark |
+| houndour-01 | Houndour | Houndour | EN | | 113/165 | uncertain | intimidation_1.webp 2026-08-01 | illustrator Mitsuhiro Arita credited, set code not textual |
+| bewear-01 | Bewear | キテルグマ | JP | | | uncertain | intimidation_1.webp 2026-08-01 | number illegible after crop attempt |
+| marowak-02 | Marowak | ガラガラ | JP | | | uncertain | intimidation_1.webp 2026-08-01 | delta species print, distinct from marowak-01, number illegible after crop attempt |
+| gengar-02 | Gengar | ゲンガー | JP | | | uncertain | intimidation_1.webp 2026-08-01 | Lv.38 print, distinct from gengar-01 and gengar-mimikyu-01, number illegible |
