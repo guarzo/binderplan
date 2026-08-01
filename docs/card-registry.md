@@ -25,6 +25,7 @@ This is not an inventory. It records what a card **is**, never where it sits. A 
 | id | species | card_name | language | set | number | confidence | first_seen | notes |
 |---|---|---|---|---|---|---|---|---|
 | absol-01 | Absol | Absol | EN | | XY178 | uncertain | elemental_solitude_1.webp 2026-08-01 | promo-style number, set code not textual |
+| ampharos-01 | Ampharos | ミカンのデンリュウ | JP | | 021/141 | uncertain | IMG_6853.HEIC 2026-08-01 | Jasmine's Ampharos, VS-series print, set code not textual |
 | arcanine-01 | Arcanine | Light Arcanine | EN | Neo Destiny | 12/105 | photo | enduring_presence_1.webp 2026-08-01 | Light card, Drive Off ability, Gentle Flames attack |
 | audino-01 | Audino | タブンネ | JP | sv1b | 156/086 | photo | calm_nature_1.webp 2026-08-01 | |
 | beldum-01 | Beldum | Beldum | EN | | | uncertain | companions_1.webp 2026-08-01 | Steven's Beldum, Ram attack, number illegible after crop attempt |
@@ -40,12 +41,15 @@ This is not an inventory. It records what a card **is**, never where it sits. A 
 | charmander-01 | Charmander | Charmander | EN | | | uncertain | world_people_1.webp 2026-08-01 | number illegible |
 | charmander-02 | Charmander | Charmander | EN | | 023/185 | uncertain | joyful_action_1.webp 2026-08-01 | distinct printing from charmander-01, set code not textual |
 | charmander-03 | Charmander | Charmander | EN | | | uncertain | quiet_familiarity_1.webp 2026-08-01 | Gnaw/Searing Flame attacks, distinct from charmander-01/02, footer obscured by sleeve tab |
+| cinccino-01 | Cinccino | チラチーノ | JP | | 083/071 AR | uncertain | IMG_6860.HEIC 2026-08-01 | AR rarity mark, third digit of number ambiguous under magnification, set code not textual |
 | cubone-01 | Cubone | 卡拉卡拉 | ZH | | | uncertain | world_people_1.webp 2026-08-01 | number illegible |
 | cyndaquil-01 | Cyndaquil | Cyndaquil | EN | | | uncertain | calm_nature_1.webp 2026-08-01 | number illegible |
 | cyndaquil-02 | Cyndaquil | Cyndaquil | EN | | 54/115 | uncertain | elemental_solitude_1.webp 2026-08-01 | distinct from cyndaquil-01, set code not textual |
 | darkrai-01 | Darkrai | Darkrai EX | EN | | 37/122 | uncertain | awakened_power_1.webp 2026-08-01 | set code not textual |
 | darkrai-02 | Darkrai | ダークライVSTAR | JP | | 228/172 | uncertain | elemental_solitude_1.webp 2026-08-01 | VSTAR, SAR rarity mark, distinct from darkrai-01, set code not textual |
 | darkrai-03 | Darkrai | Darkrai | EN | | | uncertain | legendary_bearing_1.webp 2026-08-01 | Dark Cutter/Abyssal Sleep, distinct from darkrai-01/02, number illegible |
+| dawns-stadium-01 | Dawn's Stadium | 夜明けのスタジアム | JP | | | uncertain | IMG_6865.HEIC 2026-08-01 | Stadium trainer card, number illegible after crop attempt |
+| deoxys-01 | Deoxys | Deoxys | EN | | | uncertain | IMG_6865.HEIC 2026-08-01 | Cell Storm attack, number illegible after crop attempt |
 | dialga-01 | Dialga | ディアルガ | JP | | | uncertain | legendary_bearing_1.webp 2026-08-01 | Lv.69, No.483 dex entry, card number partially visible ("006/...") but remainder illegible, left blank rather than guessed |
 | ditto-01 | Ditto | Ditto | EN | | XY40 | uncertain | enduring_presence_1.webp 2026-08-01 | Metamorphosis Gene ability, Stick On attack, promo number, set not readable as text |
 | dragonair-01 | Dragonair | エリカのハクリュー | JP | | No.148 | uncertain | enduring_presence_1.webp 2026-08-01 | Erika's Dragonair, Lv.32, vintage Pokedex-number print, era not identifiable |
@@ -78,6 +82,7 @@ This is not an inventory. It records what a card **is**, never where it sits. A 
 | groudon-03 | Groudon | Groudon | EN | | 84/100 | uncertain | enduring_presence_2.webp 2026-08-01 | Rock Smash/Break Ground attacks, AR rarity mark, set not readable as text |
 | gyarados-01 | Gyarados | Dark Gyarados | EN | | | uncertain | awakened_power_1.webp 2026-08-01 | Team Rocket-era print with PRERELEASE stamp, number illegible |
 | hoopa-01 | Hoopa | フーパ | JP | | | uncertain | threshold_1.webp 2026-08-01 | full-art secret rare, footer illegible after crop attempt |
+| hoopa-02 | Hoopa | Hoopa EX | EN | | 56/34 | uncertain | IMG_6865.HEIC 2026-08-01 | Scoundrel Ring ability, Hyperspace Fury attack, distinct from hoopa-01, number partially obscured by holo glare |
 | horsea-01 | Horsea | Horsea | EN | | | uncertain | calm_nature_1.webp 2026-08-01 | e-card era border, number illegible |
 | houndoom-01 | Houndoom | Houndoom | EN | | | uncertain | awakened_power_1.webp 2026-08-01 | Single Strike era print, number illegible |
 | houndoom-02 | Houndoom | ヘルガー | JP | sv6a | 066/064 | photo | on_attack_1.webp 2026-08-01 | AR rarity, distinct from houndoom-01 |
@@ -89,8 +94,12 @@ This is not an inventory. It records what a card **is**, never where it sits. A 
 | jirachi-01 | Jirachi | Jirachi | EN | | | uncertain | joyful_action_1.webp 2026-08-01 | number illegible |
 | jirachi-02 | Jirachi | 基拉祈V | ZH | | | uncertain | awakened_power_1.webp 2026-08-01 | distinct printing from jirachi-01, number illegible |
 | jirachi-03 | Jirachi | ジラーチex | JP | | 022/PLAY | uncertain | enduring_presence_2.webp 2026-08-01 | ex card, promo Play number, set not readable as text |
+| jirachi-04 | Jirachi | 七夜のジラーチ | JP | | | uncertain | IMG_6865.HEIC 2026-08-01 | みらいよち/はめつのねがい attacks, distinct from jirachi-01..03, number illegible after crop attempt |
 | joltik-01 | Joltik | 电电虫 | ZH | | | uncertain | companions_2.webp 2026-08-01 | holo print, number illegible after crop attempt |
 | joltik-02 | Joltik | Joltik | EN | | 150/142 | uncertain | enduring_presence_2.webp 2026-08-01 | Jolting Charge attack, distinct from joltik-01, set not readable as text |
+| kabuto-01 | Kabuto | Kabuto | EN | | 50/62 | uncertain | IMG_6865.HEIC 2026-08-01 | Kabuto Armor ability, Scratch attack, set code not textual |
+| kangaskhan-01 | Kangaskhan | ガルーラ | JP | | No.115 | uncertain | IMG_6858.HEIC 2026-08-01 | vintage Pokedex-number print, era not identifiable |
+| kasumis-tears-01 | Kasumi's Tears | カスミのなみだ | JP | | | uncertain | IMG_6865.HEIC 2026-08-01 | Trainer card, number illegible |
 | kingdra-01 | Kingdra | キングドラ | JP | | No.230 | uncertain | on_attack_1.webp 2026-08-01 | Lv.47, vintage Pokedex-number print, illustrator Mitsuhiro Arita, era not identifiable |
 | kyogre-01 | Kyogre | Kyogre ex | EN | | | uncertain | elemental_solitude_1.webp 2026-08-01 | number illegible, below visible border |
 | latias-01 | Latias | Latias | EN | | 35/30 | uncertain | joyful_action_1.webp 2026-08-01 | secret rare numbering, set name not identifiable |
@@ -130,6 +139,8 @@ This is not an inventory. It records what a card **is**, never where it sits. A 
 | pikachu-03 | Pikachu | 皮卡丘 | ZH | | 153/150 | uncertain | companions_1.webp 2026-08-01 | CHR rarity mark, Ash-style artwork, set not readable as text |
 | pikachu-04 | Pikachu | Pikachu | EN | Pokémon GO | 027/078 | photo | companions_2.webp 2026-08-01 | Buddy Bolt attack, distinct from pikachu-01/02/03 |
 | pikachu-05 | Pikachu | Pikachu | EN | | 84/144 | uncertain | quiet_familiarity_1.webp 2026-08-01 | Max Voltage attack, e-Card era, distinct from pikachu-01..04, set not readable as text |
+| pikachu-06 | Pikachu | ピカチュウ | JP | SVP | 242 | photo | IMG_6842.HEIC 2026-08-01 | Pokémon Illustration Contest 2024 promo stamp |
+| pikachu-07 | Pikachu | Pikachu | EN | | 12/17 | uncertain | IMG_6865.HEIC 2026-08-01 | Lightning Ball/Thunderbolt attacks, distinct from pikachu-01..06, set code not textual |
 | piplup-01 | Piplup | Piplup | EN | | | uncertain | quiet_familiarity_1.webp 2026-08-01 | Lv.9, Peck/Water Splash attacks, footer illegible after crop attempt |
 | plusle-01 | Plusle | プラスル | JP | | | uncertain | calm_nature_1.webp 2026-08-01 | |
 | professor-elm-01 | Professor Elm | Professor Elm | EN | Neo Genesis | 94/111 | photo | companions_2.webp 2026-08-01 | |
@@ -137,6 +148,7 @@ This is not an inventory. It records what a card **is**, never where it sits. A 
 | quaxly-01 | Quaxly | Quaxly | EN | | | uncertain | world_people_1.webp 2026-08-01 | number illegible |
 | ralts-01 | Ralts | ラルトス | JP | sv1S | 093/078 | photo | world_people_1.webp 2026-08-01 | AR rarity |
 | rayquaza-01 | Rayquaza | Rayquaza | EN | | 138/185 | uncertain | awakened_power_2.webp 2026-08-01 | set code not textual |
+| rayquaza-02 | Rayquaza | Rayquaza ex | EN | | | uncertain | IMG_6865.HEIC 2026-08-01 | Frenzy/Dragon Bind/Twister, distinct from rayquaza-01, number partially visible but illegible, left blank rather than guessed |
 | reshiram-01 | Reshiram | レシラム | JP | | 109/100 | uncertain | companions_1.webp 2026-08-01 | AR rarity mark, set not readable as text |
 | reshiram-02 | Reshiram | Reshiram | EN | | 112/114 | uncertain | threshold_1.webp 2026-08-01 | Outrage/Blue Flare attacks, distinct from reshiram-01, set not readable as text |
 | rockets-trap-01 | Rocket's Trap | ロケット団のワナ | JP | | | uncertain | companions_2.webp 2026-08-01 | Trainer card, vintage print, number illegible after crop attempt |
@@ -162,6 +174,7 @@ This is not an inventory. It records what a card **is**, never where it sits. A 
 | sprigatito-01 | Sprigatito | Sprigatito | EN | | | uncertain | at_rest_1.webp 2026-08-01 | number illegible |
 | squirtle-01 | Squirtle | Squirtle | EN | | 148/142 | uncertain | world_people_1.webp 2026-08-01 | set code ambiguous under magnification |
 | squirtle-02 | Squirtle | Squirtle | EN | | | uncertain | quiet_familiarity_1.webp 2026-08-01 | Wave Splash/Doubleslap attacks, distinct from squirtle-01, footer illegible after crop attempt |
+| squirtle-03 | Squirtle | Squirtle | EN | | 170/165 | uncertain | IMG_6865.HEIC 2026-08-01 | Withdraw/Skull Bash attacks, distinct from squirtle-01/02, set code not textual |
 | steelix-01 | Steelix | ハガネール | JP | | No.205 | uncertain | enduring_presence_2.webp 2026-08-01 | vintage Pokedex-number print, era not identifiable |
 | stufful-01 | Stufful | ヌイコグマ | JP | s10 | 073/067 | photo | at_rest_1.webp 2026-08-01 | |
 | togedemaru-01 | Togedemaru | Togedemaru | EN | Cosmic Eclipse | 104/236 | photo | companions_2.webp 2026-08-01 | |
@@ -183,19 +196,6 @@ This is not an inventory. It records what a card **is**, never where it sits. A 
 | woobat-01 | Woobat | オンバット | JP | | | uncertain | calm_nature_1.webp 2026-08-01 | set/number code visible but digits ambiguous under magnification, left blank rather than guess |
 | yveltal-01 | Yveltal | Yveltal EX | EN | | 79/146 | uncertain | on_attack_1.webp 2026-08-01 | set code not textual |
 | yveltal-02 | Yveltal | 伊裴尔塔尔 | ZH | | | uncertain | legendary_bearing_1.webp 2026-08-01 | distinct from yveltal-01, number illegible |
+| zapdos-01 | Zapdos | サンダー | JP | | No.143 | uncertain | IMG_6847.HEIC 2026-08-01 | vintage Pokedex-number print, era not identifiable |
 | zekrom-01 | Zekrom | Zekrom EX | EN | | 158/046 | uncertain | legendary_bearing_2.webp 2026-08-01 | Slash/Voltage Burst, set code not textual |
 | zygarde-01 | Zygarde | ジガルデ | JP | | 040/078U | uncertain | threshold_1.webp 2026-08-01 | Aura Break attack, set not readable as text |
-| pikachu-06 | Pikachu | ピカチュウ | JP | SVP | 242 | photo | IMG_6842.HEIC 2026-08-01 | Pokémon Illustration Contest 2024 promo stamp |
-| zapdos-01 | Zapdos | サンダー | JP | | No.143 | uncertain | IMG_6847.HEIC 2026-08-01 | vintage Pokedex-number print, era not identifiable |
-| ampharos-01 | Ampharos | ミカンのデンリュウ | JP | | 021/141 | uncertain | IMG_6853.HEIC 2026-08-01 | Jasmine's Ampharos, VS-series print, set code not textual |
-| kangaskhan-01 | Kangaskhan | ガルーラ | JP | | No.115 | uncertain | IMG_6858.HEIC 2026-08-01 | vintage Pokedex-number print, era not identifiable |
-| cinccino-01 | Cinccino | チラチーノ | JP | | 083/071 AR | uncertain | IMG_6860.HEIC 2026-08-01 | AR rarity mark, third digit of number ambiguous under magnification, set code not textual |
-| dawns-stadium-01 | Dawn's Stadium | 夜明けのスタジアム | JP | | | uncertain | IMG_6865.HEIC 2026-08-01 | Stadium trainer card, number illegible after crop attempt |
-| pikachu-07 | Pikachu | Pikachu | EN | | 12/17 | uncertain | IMG_6865.HEIC 2026-08-01 | Lightning Ball/Thunderbolt attacks, distinct from pikachu-01..06, set code not textual |
-| squirtle-03 | Squirtle | Squirtle | EN | | 170/165 | uncertain | IMG_6865.HEIC 2026-08-01 | Withdraw/Skull Bash attacks, distinct from squirtle-01/02, set code not textual |
-| rayquaza-02 | Rayquaza | Rayquaza ex | EN | | | uncertain | IMG_6865.HEIC 2026-08-01 | Frenzy/Dragon Bind/Twister, distinct from rayquaza-01, number partially visible but illegible, left blank rather than guessed |
-| deoxys-01 | Deoxys | Deoxys | EN | | | uncertain | IMG_6865.HEIC 2026-08-01 | Cell Storm attack, number illegible after crop attempt |
-| jirachi-04 | Jirachi | 七夜のジラーチ | JP | | | uncertain | IMG_6865.HEIC 2026-08-01 | みらいよち/はめつのねがい attacks, distinct from jirachi-01..03, number illegible after crop attempt |
-| kasumis-tears-01 | Kasumi's Tears | カスミのなみだ | JP | | | uncertain | IMG_6865.HEIC 2026-08-01 | Trainer card, number illegible |
-| kabuto-01 | Kabuto | Kabuto | EN | | 50/62 | uncertain | IMG_6865.HEIC 2026-08-01 | Kabuto Armor ability, Scratch attack, set code not textual |
-| hoopa-02 | Hoopa | Hoopa EX | EN | | 56/34 | uncertain | IMG_6865.HEIC 2026-08-01 | Scoundrel Ring ability, Hyperspace Fury attack, distinct from hoopa-01, number partially obscured by holo glare |
