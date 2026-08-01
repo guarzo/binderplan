@@ -4,8 +4,9 @@ Source: `tmp/converted/54_IMG_6817.webp` – `60_IMG_6823.webp` (7 photos, 84 lo
 Incumbents read from `static/images/binder/volume-1/*.jpg` and `volume-2/*.jpg` (17 spreads).
 
 > **Revision note.** The first version of this document (2026-07-31) recommended 75 additive
-> placements. That was wrong: **Volume 1 is full and Volume 2's existing themes are full**, so a
-> placement is not an addition but a *challenge* — the card must displace an incumbent. §2 of
+> placements. That was wrong: **Volume 1 is full, and Volume 2's existing themes are full save for
+> a single empty pocket in Quiet Familiarity p2** (taken by Cinccino below). Every other placement
+> is therefore not an addition but a *challenge* — the card must displace an incumbent. §2 of
 > `CURATORIAL_AUDIT_PROMPT.md` said as much ("Volume 1 is structurally closed... extracted cards
 > must be replaced with a stronger candidate from the same theme") and the first pass did not
 > apply it. This version replaces that analysis entirely. The reversal is recorded in
@@ -142,11 +143,29 @@ revision, are redundant there too; that move is void.
   It is the only free capacity found in either volume.
 - **The reserve pool skews hard to Volume 1**, which is the closed volume. Future buying should
   target Volume 2's signals: domestic interiors, bonds, liminal edges, self-contained stillness.
-- **The Trainer Full Arts rule (female Japanese trainers) is documented nowhere** — not in
-  `content/gallery/waifu/_index.md`, not in §6. It should be written into §6.
-- **Species duplication across themes is common** — Umbreon ×3, Mewtwo ×4, Charmander ×3,
-  Lugia ×2, Latios ×2, Groudon ×2, Yveltal EX ×2, Spheal ×2, Ursaring ×2, Typhlosion ×2. Most of
-  the evictions above exploit this. A dedicated audit pass on duplication would likely free more
-  pockets than this entire holding box did.
+- **FOLLOW-UP (owner: curator) — write the Trainer Full Arts restriction into §6.** The rule that
+  the section is female Japanese trainers only is recorded in neither
+  `content/gallery/waifu/_index.md` ("Japanese trainer cards with expressive character art") nor
+  §6 of `CURATORIAL_AUDIT_PROMPT.md` ("Full-art Japanese trainer supporter cards, collected purely
+  for illustration quality"). It decided two cards in this sort and will decide more. Only the
+  curator can state the rule authoritatively, so this is not actionable here. **No future sort
+  should apply the restriction until it is written into §6.**
+- **Species duplication across themes is common**, and **seven of the ten evictions above exploit
+  it.** Card-level mapping:
+
+  | Evicted | Duplicated by |
+  |---|---|
+  | Typhlosion — Legendary Bearing p1 | Typhlosion in Intimidation |
+  | Charizard VMAX — Intimidation | Charizard Lv.X in On the Attack |
+  | Spheal — On the Attack | Spheal in Joyful Action |
+  | Ursaring — At Rest | Ursaring in On the Attack |
+  | Umbreon — Elemental Solitude | Umbreon in Contemplation and Legendary Bearing p2 |
+  | Charmander — Joyful Action | Charmander in World of People and Quiet Familiarity p1 |
+  | Groudon — Awakened Power p1 | Groudon in Legendary Bearing p1 |
+
+  The remaining three — **Plusle** (Calm in Nature), **Kecleon** (Threshold) and **Electrode**
+  (Companions) — are single copies, evicted on weak signal rather than duplication. Wider
+  duplication not exploited here: Mewtwo ×4, Lugia ×2, Latios ×2, Yveltal EX ×2. A dedicated audit
+  pass on cross-theme duplication would likely free more pockets than this entire holding box did.
 - **Set attributions are photograph-derived.** Names and languages are reliable; set and number
   attributions should be confirmed against the physical cards before anything is published.

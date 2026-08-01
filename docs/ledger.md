@@ -192,11 +192,13 @@ Ampharos, Houndour Aquapolis, Dark Dragonair.
 Yveltal EX · M Gengar EX · Mewtwo Lv.42 · Mewtwo EX · Latios · Lugia · Misdreavus · Cyndaquil ·
 Rayquaza ex · Torterra Lv.X · Groudon ex · Shaymin EX floral · Shaymin EX sky · Shaymin JP promo ·
 Eevee IR · Dark Houndoom · Houndour JP fountain · Charmander TR · Numel · Piplup JP · Piplup DP ·
-Kecleon · Ditto SV · Ditto e-Card · Mudkip ×3 · Pokemon Communication.
+Kecleon · Ditto SV · Ditto e-Card · Mudkip JP dock · Mudkip JP underwater · Mudkip EN e-Card ·
+Pokemon Communication.
 
-Every one duplicates a card already in the binder, except Pokemon Communication (art is a device,
-never placeable). Houndoom EX JP is a probable twenty-fifth, pending a physical check against the
-dark full-art in the On the Attack spread.
+Counted in physical cards, not list entries — the three Mudkip are named separately for that
+reason. Every one duplicates a card already in the binder, except Pokemon Communication (art is a
+device, never placeable). Houndoom EX JP would be a **twenty-ninth**, pending a physical check
+against the dark full-art in the On the Attack spread.
 
 ### Reversals of specific entries above
 
@@ -225,7 +227,12 @@ unhoused cluster of six or more.
 
 ### New observation — species duplication is the real source of free pockets
 
-Umbreon ×3, Mewtwo ×4, Charmander ×3, Lugia ×2, Latios ×2, Groudon ×2, Yveltal EX ×2, Spheal ×2,
-Ursaring ×2, Typhlosion ×2. Eight of the eleven evictions above exploit a duplicate. A dedicated
-audit pass on cross-theme duplication would likely free more pockets than this entire holding box
-produced, and is worth scheduling ahead of the next buying trip.
+**Seven of the ten evictions above exploit a duplicate** — Typhlosion (also Intimidation),
+Charizard VMAX (Charizard Lv.X in On the Attack), Spheal (Joyful Action), Ursaring (On the
+Attack), Umbreon (Contemplation, Legendary Bearing p2), Charmander (World of People, Quiet
+Familiarity p1), Groudon (Legendary Bearing p1). Plusle, Kecleon and Electrode are single copies
+evicted on weak signal instead. Ten swaps, not eleven, because Cinccino took an empty pocket.
+
+Duplication left untouched: Mewtwo ×4, Lugia ×2, Latios ×2, Yveltal EX ×2. A dedicated audit pass
+on cross-theme duplication would likely free more pockets than this entire holding box produced,
+and is worth scheduling ahead of the next buying trip.
