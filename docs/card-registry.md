@@ -20,3 +20,12 @@ This is not an inventory. It records what a card **is**, never where it sits. A 
 
 | id | species | card_name | language | set | number | confidence | first_seen | notes |
 |---|---|---|---|---|---|---|---|---|
+| sandshrew-01 | Sandshrew | Sandshrew | EN | | | uncertain | calm_nature_1.webp 2026-08-01 | pocket 1; small logo bottom-right, number illegible |
+| woobat-01 | Woobat | オンバット | JP | | | uncertain | calm_nature_1.webp 2026-08-01 | pocket 2; set/number code visible but digits ambiguous under magnification, left blank rather than guess |
+| audino-01 | Audino | タブンネ | JP | sv1b | 156/086 | photo | calm_nature_1.webp 2026-08-01 | pocket 3 |
+| horsea-01 | Horsea | Horsea | EN | | | uncertain | calm_nature_1.webp 2026-08-01 | pocket 4; e-card era border, number illegible |
+| bulbasaur-01 | Bulbasaur | Bulbasaur | EN | | 45/100 | uncertain | calm_nature_1.webp 2026-08-01 | pocket 5; number legible, set name not printed on visible area |
+| plusle-01 | Plusle | プラスル | JP | | | uncertain | calm_nature_1.webp 2026-08-01 | pocket 6 |
+| pikachu-01 | Pikachu | Pikachu | EN | | | uncertain | calm_nature_1.webp 2026-08-01 | pocket 7; classic border, corner number illegible |
+| snivy-01 | Snivy | Snivy | EN | | | uncertain | calm_nature_1.webp 2026-08-01 | pocket 8; number illegible |
+| cyndaquil-01 | Cyndaquil | Cyndaquil | EN | | | uncertain | calm_nature_1.webp 2026-08-01 | pocket 9; number illegible |
