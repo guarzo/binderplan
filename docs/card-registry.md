@@ -14,6 +14,8 @@ This is not an inventory. It records what a card **is**, never where it sits. A 
 
 **When in doubt, split.** If you cannot tell whether a card is a new copy or one already listed, assign a new ID. Two IDs for one card is recoverable — note `superseded-by: <id>`. One ID for two cards is not.
 
+**Reshoot provenance.** Rows whose `first_seen` names an `IMG_####.HEIC` file come from the 2026-08-01 whole-binder reshoot. Those originals are the owner's camera files and are not stored in this repository.
+
 **Design note:** `superpowers/specs/2026-08-01-card-registry-design.md`.
 
 **Validate with:** `python scripts/check-registry.py docs/card-registry.md`
@@ -183,3 +185,8 @@ This is not an inventory. It records what a card **is**, never where it sits. A 
 | yveltal-02 | Yveltal | 伊裴尔塔尔 | ZH | | | uncertain | legendary_bearing_1.webp 2026-08-01 | distinct from yveltal-01, number illegible |
 | zekrom-01 | Zekrom | Zekrom EX | EN | | 158/046 | uncertain | legendary_bearing_2.webp 2026-08-01 | Slash/Voltage Burst, set code not textual |
 | zygarde-01 | Zygarde | ジガルデ | JP | | 040/078U | uncertain | threshold_1.webp 2026-08-01 | Aura Break attack, set not readable as text |
+| pikachu-06 | Pikachu | ピカチュウ | JP | SVP | 242 | photo | IMG_6842.HEIC 2026-08-01 | Pokémon Illustration Contest 2024 promo stamp |
+| zapdos-01 | Zapdos | サンダー | JP | | No.143 | uncertain | IMG_6847.HEIC 2026-08-01 | vintage Pokedex-number print, era not identifiable |
+| ampharos-01 | Ampharos | ミカンのデンリュウ | JP | | 021/141 | uncertain | IMG_6853.HEIC 2026-08-01 | Jasmine's Ampharos, VS-series print, set code not textual |
+| kangaskhan-01 | Kangaskhan | ガルーラ | JP | | No.115 | uncertain | IMG_6858.HEIC 2026-08-01 | vintage Pokedex-number print, era not identifiable |
+| cinccino-01 | Cinccino | チラチーノ | JP | | 083/071 AR | uncertain | IMG_6860.HEIC 2026-08-01 | AR rarity mark, third digit of number ambiguous under magnification, set code not textual |
