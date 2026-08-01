@@ -56,3 +56,12 @@ This is not an inventory. It records what a card **is**, never where it sits. A 
 | victini-01 | Victini | Victini | EN | | | uncertain | joyful_action_1.webp 2026-08-01 | pocket 7; number illegible |
 | pikachu-02 | Pikachu | Surfing Pikachu | EN | | 111/108 | uncertain | joyful_action_1.webp 2026-08-01 | pocket 8; vintage-style print, distinct from pikachu-01 |
 | latias-01 | Latias | Latias | EN | | 35/30 | uncertain | joyful_action_1.webp 2026-08-01 | pocket 9; secret rare numbering, set name not identifiable |
+| walrein-01 | Walrein | トドゼルガex | JP | | | uncertain | awakened_power_1.webp 2026-08-01 | pocket 1; number illegible |
+| umbreon-01 | Umbreon | 月亮伊布VMAX | ZH | s6c | 053/032 | photo | awakened_power_1.webp 2026-08-01 | pocket 2; alt-art VMAX, art matches the well-known "Moonbreon" print; 月亮伊布 is Umbreon's Chinese localized name |
+| lugia-01 | Lugia | ルギア | JP | Neo Genesis | No.249 | uncertain | awakened_power_1.webp 2026-08-01 | pocket 3; vintage Pokedex-number print, era inferred from card style/border, not printed text |
+| houndoom-01 | Houndoom | Houndoom | EN | | | uncertain | awakened_power_1.webp 2026-08-01 | pocket 4; Single Strike era print, number illegible |
+| gengar-mimikyu-01 | Gengar & Mimikyu | 耿鬼＆谜拟丘GX | ZH | | | uncertain | awakened_power_1.webp 2026-08-01 | pocket 5; TAG TEAM card featuring two species, printed name kept whole rather than split; number illegible |
+| darkrai-01 | Darkrai | Darkrai EX | EN | | 37/122 | uncertain | awakened_power_1.webp 2026-08-01 | pocket 6; set code not textual |
+| gyarados-01 | Gyarados | Dark Gyarados | EN | | | uncertain | awakened_power_1.webp 2026-08-01 | pocket 7; Team Rocket-era print with PRERELEASE stamp, number illegible |
+| jirachi-02 | Jirachi | 基拉祈V | ZH | | | uncertain | awakened_power_1.webp 2026-08-01 | pocket 8; distinct printing from jirachi-01, number illegible |
+| groudon-01 | Groudon | Groudon | EN | | | uncertain | awakened_power_1.webp 2026-08-01 | pocket 9; number illegible |
