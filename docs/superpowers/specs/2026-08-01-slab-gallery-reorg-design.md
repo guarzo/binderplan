@@ -106,7 +106,7 @@ was deleted; the card is kept as an era/rarity marker.
 | `GengarTopps.jpg` | 2000 Topps TV Animation Series 2 #94 Gengar Foil | PSA 8 | `personal_gengar_topps.jpg` |
 | `Lickitung-Personal.jpg` | 2006 EX Dragon Frontiers #19 Lickitung Reverse Foil | PSA 8 | `personal_lickitung_dragon_frontiers.jpg` |
 | `Mew2nd.jpg` | 2016 XY Evolutions #53 Mew, League Challenge 2nd Place | PSA 8 | `personal_mew_2nd.jpg` |
-| `Keckleon.jpg` | 2024 JP Super Electric Breaker 118/106 Kecleon AR | CGC Pristine 10 | `personal_keckleon_jp.jpg` |
+| `Keckleon.jpg` | 2024 JP Super Electric Breaker 118/106 Kecleon AR | CGC Pristine 10 | `personal_kecleon_jp.jpg` |
 | `EmolgaCard.jpg` | 2012 JP Pokémon Playing Cards, White 2 Deck, 3♥ Emolga | CGC Pristine 10 | `personal_emolga_playing_3.jpg` |
 | `EmolgaSummer.jpg` | 2011 JP B&W Promo #81 Emolga, Summer Carnival | PSA 9 | `personal_emolga_carnival.jpg` |
 | `ShinyEmolga.jpg` | 2013 JP B&W Shiny Collection 1st Ed #023 FA Emolga | PSA 7 | `personal_emolga_shiny_fa.jpg` |
@@ -194,7 +194,7 @@ is either sold, orphaned, or superseded by a full-resolution version of the same
 **Superseded — same card, replaced by the full-size photo under a new name (9):**
 
 `definitive_houndoom_aquapolis` · `masaki_alakazam` · `masaki_gengar` ·
-`personal_emolga_carnival` · `personal_emolga_playing_3` · `personal_keckleon_jp` ·
+`personal_emolga_carnival` · `personal_emolga_playing_3` · `personal_kecleon_jp` ·
 `personal_mew_2nd` · `touchstone_pikachu_blackstar_2000` · `touchstone_maushold_ccic`
 
 Two near-misses recorded deliberately, because they look like re-photographs and are

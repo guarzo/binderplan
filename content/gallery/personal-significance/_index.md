@@ -44,7 +44,7 @@ These cards are here because of private memories, milestones, or associations ra
     <figcaption><strong>Mew 2nd.</strong> Kept for its personal association rather than a collection-wide role.</figcaption>
   </figure>
   <figure class="gallery-item span-wide">
-    <img src="../../images/slabs/personal_keckleon_jp.jpg" alt="Graded Japanese Kecleon art rare card" loading="lazy">
+    <img src="../../images/slabs/personal_kecleon_jp.jpg" alt="Graded Japanese Kecleon art rare card" loading="lazy">
     <figcaption><strong>Kecleon.</strong> A card whose place in the collection is personal rather than thematic.</figcaption>
   </figure>
   <figure class="gallery-item span-narrow">

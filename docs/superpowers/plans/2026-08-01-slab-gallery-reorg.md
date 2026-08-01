@@ -191,7 +191,7 @@ MAPPING = {
     "GengarTopps.jpg": "personal_gengar_topps.jpg",
     "Lickitung-Personal.jpg": "personal_lickitung_dragon_frontiers.jpg",
     "Mew2nd.jpg": "personal_mew_2nd.jpg",
-    "Keckleon.jpg": "personal_keckleon_jp.jpg",
+    "Keckleon.jpg": "personal_kecleon_jp.jpg",
     "EmolgaCard.jpg": "personal_emolga_playing_3.jpg",
     "EmolgaSummer.jpg": "personal_emolga_carnival.jpg",
     "ShinyEmolga.jpg": "personal_emolga_shiny_fa.jpg",
@@ -224,7 +224,7 @@ print(f"staged {len(MAPPING)} images")
 EOF
 ```
 
-Note: `personal_mew_2nd.jpg`, `personal_keckleon_jp.jpg`, `personal_emolga_playing_3.jpg`, `personal_emolga_carnival.jpg`, `masaki_alakazam.jpg`, `masaki_gengar.jpg` and `touchstone_pikachu_blackstar_2000.jpg` intentionally overwrite existing files — same card, full-resolution replacement.
+Note: `personal_mew_2nd.jpg`, `personal_kecleon_jp.jpg`, `personal_emolga_playing_3.jpg`, `personal_emolga_carnival.jpg`, `masaki_alakazam.jpg`, `masaki_gengar.jpg` and `touchstone_pikachu_blackstar_2000.jpg` intentionally overwrite existing files — same card, full-resolution replacement.
 
 - [ ] **Step 2: Verify all 36 landed and are full-size**
 
@@ -240,7 +240,7 @@ print("under 700px:", small)
 EOF
 ```
 
-Expected: **55** files on disk. Seven of the 36 target names already existed and were overwritten in place (`personal_mew_2nd`, `personal_keckleon_jp`, `personal_emolga_playing_3`, `personal_emolga_carnival`, `masaki_alakazam`, `masaki_gengar`, `touchstone_pikachu_blackstar_2000`), so 26 old + 29 net-new = 55. Task 9 removes 19 of them, landing at the final 36.
+Expected: **55** files on disk. Seven of the 36 target names already existed and were overwritten in place (`personal_mew_2nd`, `personal_kecleon_jp`, `personal_emolga_playing_3`, `personal_emolga_carnival`, `masaki_alakazam`, `masaki_gengar`, `touchstone_pikachu_blackstar_2000`), so 26 old + 29 net-new = 55. Task 9 removes 19 of them, landing at the final 36.
 
 Under 700px should list **only** the three Masaki want-scans (`masaki_golem_wanted.webp`, `masaki_omastar_wanted.webp`, `masaki_machamp_wanted.webp`) — these are accepted per the design doc.
 
@@ -433,7 +433,7 @@ These cards are here because of private memories, milestones, or associations ra
     <figcaption><strong>Mew 2nd.</strong> Kept for its personal association rather than a collection-wide role.</figcaption>
   </figure>
   <figure class="gallery-item span-wide">
-    <img src="../../images/slabs/personal_keckleon_jp.jpg" alt="Graded Japanese Kecleon art rare card" loading="lazy">
+    <img src="../../images/slabs/personal_kecleon_jp.jpg" alt="Graded Japanese Kecleon art rare card" loading="lazy">
     <figcaption><strong>Kecleon.</strong> A card whose place in the collection is personal rather than thematic.</figcaption>
   </figure>
   <figure class="gallery-item span-narrow">
