@@ -150,3 +150,82 @@ These went to their destination over a real competitor. Recorded so the alternat
 - **The reserve pool skews heavily to Volume 1.** Of 84 cards, 71 landed in Volume 1 and 4 in Volume 2. §2 makes Volume 1 structurally closed and Volume 2 the active curation area, so a pool this lopsided does not help where the work is. Volume 2 needs domestic scale, bonds, liminal edges, and self-contained stillness.
 - **On the Attack sits at 10** after the §5A corrections moved three cards into it. That is the rule working as intended, but the resulting spread should be checked for undifferentiated impact.
 - **Set attributions are photograph-derived.** Several cards in this session were identified through sleeves, price tags, and glare. Names and languages are reliable; set and number attributions marked *(uncertain)* in the placement plan need confirmation against the physical cards.
+
+---
+
+## 2026-08-01 (second session) — Full binder constraint; supersedes the 2026-08-01 entry above
+
+Governing doc: `CURATORIAL_AUDIT_PROMPT.md` §2 (Volume 1 structurally closed).
+Full analysis: [`holding-box-placement.md`](holding-box-placement.md), rewritten.
+
+**This session reverses most of the session above it.** That entry recorded destinations as if the
+binder had free pockets. It does not: Volume 1 is full, and Volume 2's existing themes are full
+except for a single empty pocket in Quiet Familiarity page 2. §2 states this plainly — "Volume 1
+is structurally closed... extracted cards must be replaced with a stronger candidate from the same
+theme, or permanently retired" — and the first pass quoted §2 for an unrelated rule while ignoring
+its central constraint.
+
+Under a full binder a placement is a **challenge**, not an addition. All 75 placements recorded
+above are void as instructions. Re-run against the actual spreads: 28 challengers tested, 11 won.
+
+### Method change
+
+Outcomes are now Swap / Redundant / Retire, using `content/guides/holding-box.md` vocabulary.
+The Retire criterion is new and was added at the curator's direction: a card the binder already
+owns in better form has no path to inclusion, so filing it as REDUNDANT ("keep in case taste
+shifts") is self-deception. It goes to RELEASE.
+
+### Accepted — 11 swaps
+
+Zapdos JP → Legendary Bearing (out: Typhlosion) · Gastly Base Set → Intimidation (out: Charizard
+VMAX) · Lucario Lv.X → On the Attack (out: Spheal) · Dedenne → Calm in Nature (out: Plusle) ·
+Pikachu Illustration Contest 2024 → At Rest (out: Ursaring) · Jasmine's Ampharos → Elemental
+Solitude (out: Umbreon) · Houndour Aquapolis → Joyful Action (out: Charmander) · Dark Dragonair →
+Awakened Power (out: Groudon) · Hoopa EX → Threshold (out: Kecleon) · Cinccino AR → Quiet
+Familiarity (no eviction; empty pocket) · Kangaskhan → Companions (out: Electrode).
+
+Reasoning per swap is in the rewritten placement plan. Four are marginal: Dedenne, Jasmine's
+Ampharos, Houndour Aquapolis, Dark Dragonair.
+
+### Released — 24 cards
+
+Yveltal EX · M Gengar EX · Mewtwo Lv.42 · Mewtwo EX · Latios · Lugia · Misdreavus · Cyndaquil ·
+Rayquaza ex · Torterra Lv.X · Groudon ex · Shaymin EX floral · Shaymin EX sky · Shaymin JP promo ·
+Eevee IR · Dark Houndoom · Houndour JP fountain · Charmander TR · Numel · Piplup JP · Piplup DP ·
+Kecleon · Ditto SV · Ditto e-Card · Mudkip ×3 · Pokemon Communication.
+
+Every one duplicates a card already in the binder, except Pokemon Communication (art is a device,
+never placeable). Houndoom EX JP is a probable twenty-fifth, pending a physical check against the
+dark full-art in the On the Attack spread.
+
+### Reversals of specific entries above
+
+- **Kecleon and Ditto SV** — recorded above as EDGE holds pending a Concealment theme. Both are
+  duplicates of incumbents (Kecleon in Threshold, a Ditto-as-Pikachu in Quiet Familiarity p2).
+  Now released.
+- **Genesect and Houndour Lv.13 HGSS** — recorded above as moves into Contemplation to relieve
+  Intimidation overload. Contemplation is full of stronger stillness-and-attention cards; both are
+  redundant there. The move is void. The overload it addressed was also an artefact of the
+  additive framing — there was never room for eleven cards in Intimidation.
+- **The N full arts** — recorded above as having no home because Trainer Full Arts is
+  female-Japanese-only. Half wrong: Legendary Bearing p2 contains **N's Plan**, and trainer cards
+  appear throughout both volumes. They are volume-eligible and need assessing on artwork. Still
+  held.
+- **Aerodactyl → Legendary Bearing** and the other §5A/§5B corrections above stand as *reasoning*,
+  but none of them are executable placements; all those cards are now redundant or retired.
+
+### Theme decision — Concealment: rejected outright
+
+Previously parked at "revisit when EDGE holds six candidates." Now rejected on §8 test 4 as well
+as test 5. The binder already absorbs concealment cards into existing themes, so there is no
+unhoused population to serve; and both candidate cards turned out to be duplicates of those very
+incumbents, taking the candidate count to zero. A Concealment page could only reach viability by
+stripping working cards out of Quiet Familiarity and Threshold. Do not revisit without a genuinely
+unhoused cluster of six or more.
+
+### New observation — species duplication is the real source of free pockets
+
+Umbreon ×3, Mewtwo ×4, Charmander ×3, Lugia ×2, Latios ×2, Groudon ×2, Yveltal EX ×2, Spheal ×2,
+Ursaring ×2, Typhlosion ×2. Eight of the eleven evictions above exploit a duplicate. A dedicated
+audit pass on cross-theme duplication would likely free more pockets than this entire holding box
+produced, and is worth scheduling ahead of the next buying trip.
