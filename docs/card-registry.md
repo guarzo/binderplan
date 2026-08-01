@@ -156,3 +156,12 @@ This is not an inventory. It records what a card **is**, never where it sits. A 
 | celebi-01 | Celebi | Celebi | EN | Neo Revelation | 16/64 | photo | enduring_presence_1.webp 2026-08-01 | Psychic Leaf attack |
 | togepi-01 | Togepi | トゲピー | JP | | | uncertain | enduring_presence_1.webp 2026-08-01 | number illegible after crop attempt |
 | mudkip-01 | Mudkip | Mudkip | EN | | | uncertain | enduring_presence_1.webp 2026-08-01 | Nap/Waterfall attacks, number illegible after crop attempt |
+| muk-01 | Muk | ベトベトン | JP | | No.089 | uncertain | enduring_presence_2.webp 2026-08-01 | Grimer evolution Lv.34, HP70, vintage Pokedex-number print, era not identifiable |
+| vulpix-01 | Vulpix | Vulpix | EN | | 119/147 | uncertain | enduring_presence_2.webp 2026-08-01 | Collect Fire attack, e-Card era stamp, number ambiguous (119 or 116)/147, set not readable as text |
+| groudon-03 | Groudon | Groudon | EN | | 84/100 | uncertain | enduring_presence_2.webp 2026-08-01 | Rock Smash/Break Ground attacks, AR rarity mark, set not readable as text |
+| steelix-01 | Steelix | ハガネール | JP | | No.205 | uncertain | enduring_presence_2.webp 2026-08-01 | vintage Pokedex-number print, era not identifiable |
+| blastoise-01 | Blastoise | カメックス | JP | | No.009 | uncertain | enduring_presence_2.webp 2026-08-01 | Lv.52 HP100, vintage Pokedex-number print, era not identifiable |
+| jirachi-03 | Jirachi | ジラーチex | JP | | 022/PLAY | uncertain | enduring_presence_2.webp 2026-08-01 | ex card, promo Play number, set not readable as text |
+| joltik-02 | Joltik | Joltik | EN | | 150/142 | uncertain | enduring_presence_2.webp 2026-08-01 | Jolting Charge attack, distinct from joltik-01, set not readable as text |
+| gengar-06 | Gengar | わるいゲンガー | JP | | | uncertain | enduring_presence_2.webp 2026-08-01 | Dark Gengar, HP70, distinct from gengar-01..05, footer illegible after crop attempt |
+| bulbasaur-03 | Bulbasaur | Bulbasaur | EN | | | uncertain | enduring_presence_2.webp 2026-08-01 | Sleep Seed ability, Vine Whip attack, distinct from bulbasaur-01/02, footer illegible after crop attempt |
