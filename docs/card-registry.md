@@ -190,3 +190,12 @@ This is not an inventory. It records what a card **is**, never where it sits. A 
 | ampharos-01 | Ampharos | ミカンのデンリュウ | JP | | 021/141 | uncertain | IMG_6853.HEIC 2026-08-01 | Jasmine's Ampharos, VS-series print, set code not textual |
 | kangaskhan-01 | Kangaskhan | ガルーラ | JP | | No.115 | uncertain | IMG_6858.HEIC 2026-08-01 | vintage Pokedex-number print, era not identifiable |
 | cinccino-01 | Cinccino | チラチーノ | JP | | 083/071 AR | uncertain | IMG_6860.HEIC 2026-08-01 | AR rarity mark, third digit of number ambiguous under magnification, set code not textual |
+| dawns-stadium-01 | Dawn's Stadium | 夜明けのスタジアム | JP | | | uncertain | IMG_6865.HEIC 2026-08-01 | Stadium trainer card, number illegible after crop attempt |
+| pikachu-07 | Pikachu | Pikachu | EN | | 12/17 | uncertain | IMG_6865.HEIC 2026-08-01 | Lightning Ball/Thunderbolt attacks, distinct from pikachu-01..06, set code not textual |
+| squirtle-03 | Squirtle | Squirtle | EN | | 170/165 | uncertain | IMG_6865.HEIC 2026-08-01 | Withdraw/Skull Bash attacks, distinct from squirtle-01/02, set code not textual |
+| rayquaza-02 | Rayquaza | Rayquaza ex | EN | | | uncertain | IMG_6865.HEIC 2026-08-01 | Frenzy/Dragon Bind/Twister, distinct from rayquaza-01, number partially visible but illegible, left blank rather than guessed |
+| deoxys-01 | Deoxys | Deoxys | EN | | | uncertain | IMG_6865.HEIC 2026-08-01 | Cell Storm attack, number illegible after crop attempt |
+| jirachi-04 | Jirachi | 七夜のジラーチ | JP | | | uncertain | IMG_6865.HEIC 2026-08-01 | みらいよち/はめつのねがい attacks, distinct from jirachi-01..03, number illegible after crop attempt |
+| kasumis-tears-01 | Kasumi's Tears | カスミのなみだ | JP | | | uncertain | IMG_6865.HEIC 2026-08-01 | Trainer card, number illegible |
+| kabuto-01 | Kabuto | Kabuto | EN | | 50/62 | uncertain | IMG_6865.HEIC 2026-08-01 | Kabuto Armor ability, Scratch attack, set code not textual |
+| hoopa-02 | Hoopa | Hoopa EX | EN | | 56/34 | uncertain | IMG_6865.HEIC 2026-08-01 | Scoundrel Ring ability, Hyperspace Fury attack, distinct from hoopa-01, number partially obscured by holo glare |
