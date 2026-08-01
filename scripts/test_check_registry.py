@@ -1,0 +1,134 @@
+"""Tests for the card registry validator."""
+import importlib.util
+from pathlib import Path
+
+spec = importlib.util.spec_from_file_location(
+    "check_registry", Path(__file__).parent / "check-registry.py"
+)
+check_registry = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(check_registry)
+
+parse_registry = check_registry.parse_registry
+validate = check_registry.validate
+duplicate_printings = check_registry.duplicate_printings
+confirmation_queue = check_registry.confirmation_queue
+
+HEADER = (
+    "| id | species | card_name | language | set | number | confidence | first_seen | notes |\n"
+    "|---|---|---|---|---|---|---|---|---|\n"
+)
+
+
+def table(*rows):
+    return "# Card registry\n\n## Registry\n\n" + HEADER + "".join(rows)
+
+
+def row(id_, species, name="X", lang="EN", set_="Base", num="1/10",
+        conf="photo", seen="img.webp 2026-08-01", notes=""):
+    return f"| {id_} | {species} | {name} | {lang} | {set_} | {num} | {conf} | {seen} | {notes} |\n"
+
+
+def test_parses_a_row_into_a_dict():
+    rows = parse_registry(table(row("umbreon-01", "Umbreon")))
+    assert len(rows) == 1
+    assert rows[0]["id"] == "umbreon-01"
+    assert rows[0]["species"] == "Umbreon"
+    assert rows[0]["language"] == "EN"
+
+
+def test_blank_cells_become_empty_strings():
+    rows = parse_registry(table(row("umbreon-01", "Umbreon", set_="", num="")))
+    assert rows[0]["set"] == ""
+    assert rows[0]["number"] == ""
+
+
+def test_valid_table_has_no_errors():
+    assert validate(parse_registry(table(row("umbreon-01", "Umbreon")))) == []
+
+
+def test_rejects_unpadded_counter():
+    errors = validate(parse_registry(table(row("umbreon-1", "Umbreon"))))
+    assert any("umbreon-1" in e for e in errors)
+
+
+def test_rejects_uppercase_id():
+    errors = validate(parse_registry(table(row("Umbreon-01", "Umbreon"))))
+    assert any("Umbreon-01" in e for e in errors)
+
+
+def test_rejects_duplicate_ids():
+    errors = validate(parse_registry(
+        table(row("umbreon-01", "Umbreon"), row("umbreon-01", "Umbreon"))
+    ))
+    assert any("duplicate id" in e.lower() for e in errors)
+
+
+def test_rejects_unknown_language():
+    errors = validate(parse_registry(table(row("umbreon-01", "Umbreon", lang="FR"))))
+    assert any("FR" in e for e in errors)
+
+
+def test_rejects_unknown_confidence():
+    errors = validate(parse_registry(table(row("umbreon-01", "Umbreon", conf="maybe"))))
+    assert any("maybe" in e for e in errors)
+
+
+def test_requires_first_seen():
+    errors = validate(parse_registry(table(row("umbreon-01", "Umbreon", seen=""))))
+    assert any("first_seen" in e for e in errors)
+
+
+def test_species_drift_is_a_warning_not_an_error():
+    # The never-rewrite rule permits an ID whose slug no longer matches species.
+    errors = validate(parse_registry(table(row("houndour-03", "Houndoom"))))
+    assert errors == []
+
+
+def test_finds_duplicate_printings():
+    pairs = duplicate_printings(parse_registry(table(
+        row("houndoom-01", "Houndoom", set_="Rising Rivals", num="50/111"),
+        row("houndoom-02", "Houndoom", set_="Rising Rivals", num="50/111"),
+    )))
+    assert len(pairs) == 1
+
+
+def test_different_numbers_are_not_duplicates():
+    pairs = duplicate_printings(parse_registry(table(
+        row("umbreon-01", "Umbreon", set_="Neo Discovery", num="32/75"),
+        row("umbreon-02", "Umbreon", set_="Neo Discovery", num="13/75"),
+    )))
+    assert pairs == []
+
+
+def test_different_languages_are_not_duplicates():
+    pairs = duplicate_printings(parse_registry(table(
+        row("umbreon-01", "Umbreon", lang="EN", set_="S", num="1/10"),
+        row("umbreon-02", "Umbreon", lang="JP", set_="S", num="1/10"),
+    )))
+    assert pairs == []
+
+
+def test_unread_numbers_never_report_as_duplicates():
+    # Cannot confirm a violation without the number. Must not guess.
+    pairs = duplicate_printings(parse_registry(table(
+        row("umbreon-01", "Umbreon", set_="", num=""),
+        row("umbreon-02", "Umbreon", set_="", num=""),
+    )))
+    assert pairs == []
+
+
+def test_confirmation_queue_leads_with_species_clusters():
+    queue = confirmation_queue(parse_registry(table(
+        row("cinccino-01", "Cinccino", num="", conf="uncertain"),
+        row("umbreon-01", "Umbreon", num="", conf="uncertain"),
+        row("umbreon-02", "Umbreon", num="", conf="uncertain"),
+    )))
+    assert queue[0][0] == "umbreon"
+    assert len(queue[0][1]) == 2
+
+
+def test_confidence_confirmed_rows_are_not_queued():
+    queue = confirmation_queue(parse_registry(table(
+        row("umbreon-01", "Umbreon", conf="confirmed"),
+    )))
+    assert queue == []
