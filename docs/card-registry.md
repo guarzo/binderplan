@@ -103,3 +103,12 @@ This is not an inventory. It records what a card **is**, never where it sits. A 
 | spheal-03 | Spheal | Spheal | EN | | | uncertain | contemplation_1.webp 2026-08-01 | Lv.17 print, distinct from spheal-01/02, number illegible |
 | snivy-02 | Snivy | ツタージャ | JP | | 037/078 | uncertain | contemplation_1.webp 2026-08-01 | distinct from snivy-01, set code not textual, number read with low confidence |
 | dratini-01 | Dratini | Dratini | EN | | 33/62 | uncertain | contemplation_1.webp 2026-08-01 | set code not textual |
+| absol-01 | Absol | Absol | EN | | XY178 | uncertain | elemental_solitude_1.webp 2026-08-01 | promo-style number, set code not textual |
+| espeon-01 | Espeon | わるいエーフィ | JP | | | uncertain | elemental_solitude_1.webp 2026-08-01 | Dark Espeon, vintage-style print, number illegible |
+| houndoom-03 | Houndoom | Houndoom | EN | | 8/64 | uncertain | elemental_solitude_1.webp 2026-08-01 | Dark Flame/Black Fang, Lv.35 #219 dex entry in flavor text, distinct from houndoom-01/02, set code not textual |
+| kyogre-01 | Kyogre | Kyogre ex | EN | | | uncertain | elemental_solitude_1.webp 2026-08-01 | number illegible, below visible border |
+| cyndaquil-02 | Cyndaquil | Cyndaquil | EN | | 54/115 | uncertain | elemental_solitude_1.webp 2026-08-01 | distinct from cyndaquil-01, set code not textual |
+| umbreon-03 | Umbreon | Umbreon | EN | | 61/108 | uncertain | elemental_solitude_1.webp 2026-08-01 | Confuse Ray/Shadow Shutdown, distinct from umbreon-01/02, set code not textual |
+| darkrai-02 | Darkrai | ダークライVSTAR | JP | | 228/172 | uncertain | elemental_solitude_1.webp 2026-08-01 | VSTAR, SAR rarity mark, distinct from darkrai-01, set code not textual |
+| glaceon-01 | Glaceon | Glaceon | EN | | | uncertain | elemental_solitude_1.webp 2026-08-01 | Lv.46 print, number illegible after crop attempt |
+| latios-02 | Latios | ラティオス | JP | | | uncertain | elemental_solitude_1.webp 2026-08-01 | distinct from latios-01, number illegible |
