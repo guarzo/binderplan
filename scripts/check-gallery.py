@@ -1,0 +1,90 @@
+#!/usr/bin/env python3
+"""Verify gallery content: image refs resolve, and each slab is used exactly once."""
+import re
+import sys
+import urllib.parse
+from collections import Counter
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+CONTENT = ROOT / "content"
+STATIC = ROOT / "static"
+SLABS = STATIC / "images" / "slabs"
+
+EXPECTED_COUNTS = {
+    "definitive-pokemon": 3,
+    "touchstones": 7,
+    "personal-significance": 15,
+    "chinese-exclusives": 6,
+    "masaki": 5,
+}
+
+SRC_RE = re.compile(r'<img[^>]*\ssrc="([^"]+)"')
+
+
+def collect():
+    """Return {md_path: [resolved static paths]} for every img src in content/."""
+    refs = {}
+    for md in sorted(CONTENT.rglob("*.md")):
+        found = []
+        for raw in SRC_RE.findall(md.read_text(encoding="utf-8")):
+            src = urllib.parse.unquote(raw)
+            if "images/" not in src:
+                continue
+            found.append(STATIC / src[src.index("images/"):])
+        refs[md] = found
+    return refs
+
+
+def main():
+    failures = []
+    refs = collect()
+
+    # 1. Every referenced image exists on disk.
+    for md, paths in refs.items():
+        for p in paths:
+            if not p.is_file():
+                failures.append(f"missing image: {p.relative_to(ROOT)} (referenced by {md.relative_to(ROOT)})")
+
+    # 2. Every slab image is referenced exactly once across all content.
+    used = Counter()
+    for paths in refs.values():
+        for p in paths:
+            if SLABS in p.parents:
+                used[p.name] += 1
+    on_disk = {p.name for p in SLABS.iterdir() if p.is_file()}
+    for name in sorted(on_disk - set(used)):
+        failures.append(f"orphan slab image, referenced by no page: {name}")
+    for name, n in sorted(used.items()):
+        if name not in on_disk:
+            continue
+        if n > 1:
+            failures.append(f"slab image referenced {n} times, must be exactly 1: {name}")
+
+    # 3. No lingering references to removed sections.
+    for md in sorted(CONTENT.rglob("*.md")):
+        if "gold-stars" in md.read_text(encoding="utf-8"):
+            failures.append(f"reference to removed gold-stars section: {md.relative_to(ROOT)}")
+
+    # 4. Section card counts match the design doc.
+    for section, expected in EXPECTED_COUNTS.items():
+        md = CONTENT / "gallery" / section / "_index.md"
+        if not md.is_file():
+            failures.append(f"missing section page: {md.relative_to(ROOT)}")
+            continue
+        actual = len([p for p in refs[md] if SLABS in p.parents])
+        if actual != expected:
+            failures.append(f"{section}: {actual} slab images, expected {expected}")
+
+    if failures:
+        print(f"FAIL ({len(failures)} problem(s)):")
+        for f in failures:
+            print("  -", f)
+        return 1
+    total = sum(EXPECTED_COUNTS.values())
+    print(f"PASS: {total} slab images, each referenced exactly once")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
