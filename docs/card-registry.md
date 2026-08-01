@@ -29,3 +29,12 @@ This is not an inventory. It records what a card **is**, never where it sits. A 
 | pikachu-01 | Pikachu | Pikachu | EN | | | uncertain | calm_nature_1.webp 2026-08-01 | pocket 7; classic border, corner number illegible |
 | snivy-01 | Snivy | Snivy | EN | | | uncertain | calm_nature_1.webp 2026-08-01 | pocket 8; number illegible |
 | cyndaquil-01 | Cyndaquil | Cyndaquil | EN | | | uncertain | calm_nature_1.webp 2026-08-01 | pocket 9; number illegible |
+| mew-01 | Mew | Mew ex | EN | SVP | 053 | photo | world_people_1.webp 2026-08-01 | pocket 1; promo stamp |
+| ralts-01 | Ralts | ラルトス | JP | sv1S | 093/078 | photo | world_people_1.webp 2026-08-01 | pocket 2; AR rarity |
+| greavard-01 | Greavard | Greavard | EN | sv1w | 274/190 | photo | world_people_1.webp 2026-08-01 | pocket 3; secret rare |
+| chansey-01 | Chansey | ラッキー | JP | | 113/101 | uncertain | world_people_1.webp 2026-08-01 | pocket 4; set code truncated/illegible |
+| squirtle-01 | Squirtle | Squirtle | EN | | 148/142 | uncertain | world_people_1.webp 2026-08-01 | pocket 5; set code ambiguous under magnification |
+| slowpoke-01 | Slowpoke | ヤドン | JP | sv1V | 082/078 | photo | world_people_1.webp 2026-08-01 | pocket 6; AR rarity |
+| quaxly-01 | Quaxly | Quaxly | EN | | | uncertain | world_people_1.webp 2026-08-01 | pocket 7; number illegible |
+| charmander-01 | Charmander | Charmander | EN | | | uncertain | world_people_1.webp 2026-08-01 | pocket 8; number illegible |
+| cubone-01 | Cubone | 卡拉卡拉 | ZH | | | uncertain | world_people_1.webp 2026-08-01 | pocket 9; number illegible |
