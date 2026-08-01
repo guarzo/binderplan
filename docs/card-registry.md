@@ -8,6 +8,8 @@ This is not an inventory. It records what a card **is**, never where it sits. A 
 
 **IDs are permanent.** `<species>-<NN>`, using the English Pokédex species name for cards of every language, plus a counter that means nothing. If an ID later proves inaccurate — the card is a Houndoom, not the Houndour its ID says — correct the `species` column and leave the `id` alone. A rewritten ID breaks every reference already written against it.
 
+**Frozen 2026-08-01.** The curator signed off on the initial 175 rows. Before that date IDs were provisional and were renumbered when errors surfaced; from it, the never-rewrite rule is absolute. Every other column stays correctable forever — filling in a `set`, correcting a `species`, upgrading a `confidence` are all normal and expected.
+
 **The ID carries no qualifiers.** `Houndoom G Lv.45` is `houndoom-NN`; `ドダイトス Lv.X` is `torterra-NN`; `M Gengar EX` is `gengar-NN`. Printed names live in `card_name`.
 
 **Two species on one card.** A card printing two species — a TAG TEAM, or similar — uses both names hyphen-joined in printed order: `gengar-mimikyu-01`. One physical card, one ID.
