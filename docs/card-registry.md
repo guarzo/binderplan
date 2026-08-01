@@ -47,3 +47,12 @@ This is not an inventory. It records what a card **is**, never where it sits. A 
 | sprigatito-01 | Sprigatito | Sprigatito | EN | | | uncertain | at_rest_1.webp 2026-08-01 | pocket 7; number illegible |
 | oshawott-01 | Oshawott | Oshawott | EN | | | uncertain | at_rest_1.webp 2026-08-01 | pocket 8; number illegible |
 | marowak-01 | Marowak | カラカラ | JP | | 067/072 | uncertain | at_rest_1.webp 2026-08-01 | pocket 9; vintage-style print, set name not identifiable |
+| emolga-01 | Emolga | エモンガ | JP | sv11B | 174/086 | photo | joyful_action_1.webp 2026-08-01 | pocket 1 |
+| marill-01 | Marill | Marill | EN | | 44/111 | uncertain | joyful_action_1.webp 2026-08-01 | pocket 2; vintage-style print, number legible, set name not shown |
+| bulbasaur-02 | Bulbasaur | フシギダネ | JP | | No.001 | uncertain | joyful_action_1.webp 2026-08-01 | pocket 3; vintage Pokedex-number print, distinct from bulbasaur-01; era not identifiable |
+| jirachi-01 | Jirachi | Jirachi | EN | | | uncertain | joyful_action_1.webp 2026-08-01 | pocket 4; number illegible |
+| charmander-02 | Charmander | Charmander | EN | | 023/185 | uncertain | joyful_action_1.webp 2026-08-01 | pocket 5; distinct printing from charmander-01, set code not textual |
+| spheal-01 | Spheal | タマザラシ | JP | sv8 | 133/106 | photo | joyful_action_1.webp 2026-08-01 | pocket 6; AR rarity |
+| victini-01 | Victini | Victini | EN | | | uncertain | joyful_action_1.webp 2026-08-01 | pocket 7; number illegible |
+| pikachu-02 | Pikachu | Surfing Pikachu | EN | | 111/108 | uncertain | joyful_action_1.webp 2026-08-01 | pocket 8; vintage-style print, distinct from pikachu-01 |
+| latias-01 | Latias | Latias | EN | | 35/30 | uncertain | joyful_action_1.webp 2026-08-01 | pocket 9; secret rare numbering, set name not identifiable |
