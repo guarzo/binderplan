@@ -165,3 +165,38 @@ def test_photo_row_with_blank_number_is_queued():
     )))
     assert len(queue) == 1
     assert queue[0][0] == "lugia"
+
+
+def test_photo_row_with_blank_set_is_an_error():
+    errors = validate(parse_registry(table(
+        row("reshiram-01", "Reshiram", conf="photo", set_="", num="109/100"),
+    )))
+    assert any("reshiram-01" in e and "set" in e for e in errors)
+
+
+def test_photo_row_with_blank_number_is_an_error():
+    errors = validate(parse_registry(table(
+        row("lugia-03", "Lugia", conf="photo", set_="Base", num=""),
+    )))
+    assert any("lugia-03" in e and "number" in e for e in errors)
+
+
+def test_photo_row_with_set_and_number_has_no_error():
+    errors = validate(parse_registry(table(
+        row("lugia-02", "Lugia", conf="photo", set_="s12", num="079/098"),
+    )))
+    assert errors == []
+
+
+def test_uncertain_row_with_blanks_has_no_confidence_error():
+    errors = validate(parse_registry(table(
+        row("umbreon-01", "Umbreon", conf="uncertain", set_="", num=""),
+    )))
+    assert errors == []
+
+
+def test_confirmed_row_with_blanks_has_no_confidence_error():
+    errors = validate(parse_registry(table(
+        row("umbreon-01", "Umbreon", conf="confirmed", set_="", num=""),
+    )))
+    assert errors == []

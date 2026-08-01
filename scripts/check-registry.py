@@ -61,6 +61,11 @@ def validate(rows):
             errors.append(f"{rid}: bad language {row['language']!r} (want one of {sorted(LANGUAGES)})")
         if row["confidence"] not in CONFIDENCES:
             errors.append(f"{rid}: bad confidence {row['confidence']!r} (want one of {sorted(CONFIDENCES)})")
+        if row["confidence"] == "photo":
+            if not row["set"]:
+                errors.append(f"{rid}: confidence is 'photo' but set is blank")
+            if not row["number"]:
+                errors.append(f"{rid}: confidence is 'photo' but number is blank")
         if not row["first_seen"]:
             errors.append(f"{rid}: first_seen is required")
         if not row["species"]:
