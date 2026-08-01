@@ -19,44 +19,55 @@ EXPECTED_COUNTS = {
     "masaki": 5,
 }
 
-SRC_RE = re.compile(r'<img[^>]*\ssrc="([^"]+)"')
+IMG_RE = re.compile(r"<img\s[^>]*>")
+SRC_RE = re.compile(r'\ssrc="([^"]*)"')
+LAZY_RE = re.compile(r'\sloading="lazy"')
 
 
 def collect():
     """Return {md_path: [resolved static paths]} for every img src in content/, plus a
-    separate list of relative-depth failures (paths that resolve on disk only because
-    Path() discards the ../ prefix, but a browser would 404 on)."""
+    list of per-tag failures: relative-depth problems (paths that resolve on disk only
+    because Path() discards the ../ prefix, but a browser would 404 on) and gallery
+    images missing the required loading="lazy" attribute."""
     refs = {}
-    depth_failures = []
+    tag_failures = []
     for md in sorted(CONTENT.rglob("*.md")):
         found = []
         expected_prefix = "../../images/" if md.parent.parent == CONTENT / "gallery" else None
-        for raw in SRC_RE.findall(md.read_text(encoding="utf-8")):
-            src = urllib.parse.unquote(raw)
+        for tag in IMG_RE.findall(md.read_text(encoding="utf-8")):
+            raw = SRC_RE.search(tag)
+            if not raw:
+                continue
+            src = urllib.parse.unquote(raw.group(1))
             if "images/" not in src:
                 continue
             if expected_prefix and not src.startswith(expected_prefix):
-                depth_failures.append(
+                tag_failures.append(
                     f"wrong relative depth: {src} in {md.relative_to(ROOT)} (expected ../../images/...)"
                 )
                 continue
+            if expected_prefix and not LAZY_RE.search(tag):
+                tag_failures.append(
+                    f'missing loading="lazy": {src} in {md.relative_to(ROOT)}'
+                )
             found.append(STATIC / src[src.index("images/"):])
         refs[md] = found
-    return refs, depth_failures
+    return refs, tag_failures
 
 
-def main():
+def check_images_exist(refs):
+    """Every referenced image exists on disk."""
     failures = []
-    refs, depth_failures = collect()
-    failures.extend(depth_failures)
-
-    # 1. Every referenced image exists on disk.
     for md, paths in refs.items():
         for p in paths:
             if not p.is_file():
                 failures.append(f"missing image: {p.relative_to(ROOT)} (referenced by {md.relative_to(ROOT)})")
+    return failures
 
-    # 2. Every slab image is referenced exactly once across all content.
+
+def check_slab_usage(refs):
+    """Every slab image is referenced exactly once across all content."""
+    failures = []
     used = Counter()
     for paths in refs.values():
         for p in paths:
@@ -70,13 +81,21 @@ def main():
             continue
         if n > 1:
             failures.append(f"slab image referenced {n} times, must be exactly 1: {name}")
+    return failures
 
-    # 3. No lingering references to removed sections.
+
+def check_removed_sections():
+    """No lingering references to removed sections."""
+    failures = []
     for md in sorted(CONTENT.rglob("*.md")):
         if "gold-stars" in md.read_text(encoding="utf-8"):
             failures.append(f"reference to removed gold-stars section: {md.relative_to(ROOT)}")
+    return failures
 
-    # 4. Section card counts match the design doc.
+
+def check_section_counts(refs):
+    """Section card counts match the design doc."""
+    failures = []
     for section, expected in EXPECTED_COUNTS.items():
         md = CONTENT / "gallery" / section / "_index.md"
         if not md.is_file():
@@ -85,6 +104,18 @@ def main():
         actual = len([p for p in refs[md] if SLABS in p.parents])
         if actual != expected:
             failures.append(f"{section}: {actual} slab images, expected {expected}")
+    return failures
+
+
+def main():
+    refs, tag_failures = collect()
+    failures = [
+        *tag_failures,
+        *check_images_exist(refs),
+        *check_slab_usage(refs),
+        *check_removed_sections(),
+        *check_section_counts(refs),
+    ]
 
     if failures:
         print(f"FAIL ({len(failures)} problem(s)):")
