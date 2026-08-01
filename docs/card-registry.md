@@ -65,3 +65,12 @@ This is not an inventory. It records what a card **is**, never where it sits. A 
 | gyarados-01 | Gyarados | Dark Gyarados | EN | | | uncertain | awakened_power_1.webp 2026-08-01 | pocket 7; Team Rocket-era print with PRERELEASE stamp, number illegible |
 | jirachi-02 | Jirachi | 基拉祈V | ZH | | | uncertain | awakened_power_1.webp 2026-08-01 | pocket 8; distinct printing from jirachi-01, number illegible |
 | groudon-01 | Groudon | Groudon | EN | | | uncertain | awakened_power_1.webp 2026-08-01 | pocket 9; number illegible |
+| gengar-01 | Gengar | 耿鬼VMAX | ZH | s6c | 072/172 | photo | awakened_power_2.webp 2026-08-01 | pocket 1; Single Strike era, distinct from gengar-mimikyu-01 TAG TEAM |
+| torterra-01 | Torterra | Torterra | EN | | 10/95 | uncertain | awakened_power_2.webp 2026-08-01 | pocket 2; set code not textual |
+| rayquaza-01 | Rayquaza | Rayquaza | EN | | 138/185 | uncertain | awakened_power_2.webp 2026-08-01 | pocket 3; set code not textual |
+| scyther-01 | Scyther | ストライク | JP | | No.123 | uncertain | awakened_power_2.webp 2026-08-01 | pocket 4; vintage Pokedex-number print, era not identifiable |
+| palkia-01 | Palkia | Palkia | EN | Platinum | 26/106 | photo | awakened_power_2.webp 2026-08-01 | pocket 5; Lv.67, "PLATINUM" printed on card face |
+| mewtwo-01 | Mewtwo | Mewtwo | EN | | | uncertain | awakened_power_2.webp 2026-08-01 | pocket 6; heavy holo glare, number illegible after crop attempt |
+| salamence-01 | Salamence | ボーマンダex | JP | | 119/100 | uncertain | awakened_power_2.webp 2026-08-01 | pocket 7; set code not textual |
+| shaymin-02 | Shaymin | シェイミLv.X | JP | | | uncertain | awakened_power_2.webp 2026-08-01 | pocket 8; distinct printing from shaymin-01, glare obscured number after crop attempt |
+| golem-01 | Golem | Golem EX | EN | | 189/165 | uncertain | awakened_power_2.webp 2026-08-01 | pocket 9; set code not textual |
