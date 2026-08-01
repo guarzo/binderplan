@@ -20,6 +20,7 @@
 - **Scope is Volumes 1 and 2 only** — the 18 page images listed in Task 2. Emolga masterset, stamped cards, trainer full arts, and slabs are out of scope.
 - **`language` is one of:** `EN`, `JP`, `ZH`
 - **`confidence` is one of:** `confirmed` (read from the physical card), `photo` (legible in the image), `uncertain` (inferred or obscured)
+- **Seeding tasks (2, 3, 4) commit after every page, not once at the end.** Read a page, append its rows, run the validator, commit that page, move to the next. Reading a page is expensive — roughly 20 minutes of image work — and batching six pages behind one commit means any interruption loses all of it. This is not a style preference: attempt 1 at Task 2 read all six pages, hit a session limit before its single commit, and lost every row. Commit subject per page: `Seed registry from <image basename>`.
 - **Commit after every task.** Match the existing message style — imperative mood, no `feat:`/`fix:` prefixes (the repo does not use them). End every commit message with these two trailers, matching the branch's existing commits:
 
   ```
