@@ -18,7 +18,6 @@ This is the collection itself: binder pages, side collections, and graded cards.
 
 ## Special Collections
 
-- **[Gold Stars](gold-stars/)** — The gold star collection
 - **[Masaki](masaki/)** — Japanese mail-in trade promos from the Communication Evolution campaign
 
 ## Personal Slabs

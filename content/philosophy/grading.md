@@ -20,7 +20,7 @@ A favorite art version of a card, where the grade supports the presentation.
 The card that currently represents a Pokemon best in the collection.
 
 ### Historical / Touchstone
-Cards tied to a particular era, release style, or moment in the hobby. Gold Stars and Masaki promos sit here alongside more personal reference points.
+Cards tied to a particular era, release style, or moment in the hobby. Masaki promos sit here alongside more personal reference points.
 
 ### Personal Significance
 Cards whose meaning comes from a memory, milestone, gift, or personal connection rather than a broader collecting category.
