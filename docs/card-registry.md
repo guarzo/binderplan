@@ -112,3 +112,12 @@ This is not an inventory. It records what a card **is**, never where it sits. A 
 | darkrai-02 | Darkrai | ダークライVSTAR | JP | | 228/172 | uncertain | elemental_solitude_1.webp 2026-08-01 | VSTAR, SAR rarity mark, distinct from darkrai-01, set code not textual |
 | glaceon-01 | Glaceon | Glaceon | EN | | | uncertain | elemental_solitude_1.webp 2026-08-01 | Lv.46 print, number illegible after crop attempt |
 | latios-02 | Latios | ラティオス | JP | | | uncertain | elemental_solitude_1.webp 2026-08-01 | distinct from latios-01, number illegible |
+| mewtwo-04 | Mewtwo | Mewtwo | EN | | 12/113 | uncertain | legendary_bearing_1.webp 2026-08-01 | delta species, Delta Switch/Energy Burst, distinct from mewtwo-01/02/03, set code not textual |
+| groudon-02 | Groudon | Groudon | EN | | 049/131 | uncertain | legendary_bearing_1.webp 2026-08-01 | Swelling Power/Magma Purge, distinct from groudon-01, set code not textual |
+| yveltal-02 | Yveltal | 伊裴尔塔尔 | ZH | | | uncertain | legendary_bearing_1.webp 2026-08-01 | distinct from yveltal-01, number illegible |
+| latios-03 | Latios | Latios | EN | Dragon Vault | 10/20 | photo | legendary_bearing_1.webp 2026-08-01 | Sky Blade/Speed Wing, distinct from latios-01/02, "DRAGON VAULT" printed on card face |
+| lugia-03 | Lugia | Lugia | EN | | 28/64 | uncertain | legendary_bearing_1.webp 2026-08-01 | Aerowing attack, No.249 dex entry, vintage print, distinct from lugia-01/02, era not identifiable |
+| entei-01 | Entei | 結晶塔のエンテイ | JP | | | uncertain | legendary_bearing_1.webp 2026-08-01 | No.244 dex entry, number illegible |
+| darkrai-03 | Darkrai | Darkrai | EN | | | uncertain | legendary_bearing_1.webp 2026-08-01 | Dark Cutter/Abyssal Sleep, distinct from darkrai-01/02, number illegible |
+| dialga-01 | Dialga | ディアルガ | JP | | | uncertain | legendary_bearing_1.webp 2026-08-01 | Lv.69, No.483 dex entry, card number partially visible ("006/...") but remainder illegible, left blank rather than guessed |
+| typhlosion-02 | Typhlosion | バクフーン | JP | | No.157 | uncertain | legendary_bearing_1.webp 2026-08-01 | Lv.46 print, distinct from typhlosion-01, vintage Pokedex-number print, era not identifiable |
