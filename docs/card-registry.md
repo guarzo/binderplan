@@ -130,3 +130,12 @@ This is not an inventory. It records what a card **is**, never where it sits. A 
 | zekrom-01 | Zekrom | Zekrom EX | EN | | 158/046 | uncertain | legendary_bearing_2.webp 2026-08-01 | Slash/Voltage Burst, set code not textual |
 | ninetales-01 | Ninetales | キュウコン | JP | | No.038 | uncertain | legendary_bearing_2.webp 2026-08-01 | Lv.32, vintage Pokedex-number print, era not identifiable |
 | espeon-02 | Espeon | 太阳伊布GX | ZH | | 195/151 | uncertain | legendary_bearing_2.webp 2026-08-01 | GX card, SSR rarity mark, distinct from espeon-01; 太阳伊布 is Espeon's Chinese localized name, set code not textual |
+| mimikyu-01 | Mimikyu | 谜拟丘 | ZH | | | uncertain | companions_1.webp 2026-08-01 | Ability 假扮 (Disguise), number illegible |
+| grotle-01 | Grotle | ハヤシガメ | JP | A2 | 022/071 | photo | companions_1.webp 2026-08-01 | |
+| imposter-professor-oaks-revenge-01 | Imposter Professor Oak's Revenge | にせオーキドの逆襲 | JP | | | uncertain | companions_1.webp 2026-08-01 | Trainer card, vintage Team Rocket-era print, "R" rarity mark visible, number illegible |
+| beldum-01 | Beldum | Beldum | EN | | | uncertain | companions_1.webp 2026-08-01 | Steven's Beldum, Ram attack, number illegible after crop attempt |
+| reshiram-01 | Reshiram | レシラム | JP | | 109/100 | photo | companions_1.webp 2026-08-01 | AR rarity mark |
+| pikachu-03 | Pikachu | 皮卡丘 | ZH | | 153/150 | photo | companions_1.webp 2026-08-01 | CHR rarity mark, Ash-style artwork |
+| gardevoir-02 | Gardevoir | Gardevoir | EN | | | uncertain | companions_1.webp 2026-08-01 | Ability Shining Arcana, Prainwave attack, distinct from gardevoir-01, number illegible after crop attempt |
+| charizard-02 | Charizard | リザードン | JP | | | uncertain | companions_1.webp 2026-08-01 | Ability バトルセンス, キングブレイズ attack, distinct from charizard-01, number illegible after crop attempt |
+| gengar-05 | Gengar | ゲンガー | JP | | | uncertain | companions_1.webp 2026-08-01 | Ability たくらみのうごう, スクリームサークル attack, distinct from gengar-01..04, number illegible after crop attempt |
