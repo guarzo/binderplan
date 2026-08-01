@@ -359,9 +359,10 @@ possibilities, both real:
 The curator needs to say which. Neither is assumed here.
 
 **The one empty pocket is on a different page than expected.** Across both volumes, the only empty
-pocket found is on `enduring_presence_1.webp` — 8 occupied, 1 empty, bottom-right. A superseded
-curatorial ledger (`docs/ledger.md`, entries removed but preserved at git commit `a254855`) had
-recorded the binder's single free pocket as being in Quiet Familiarity p2, with a pending card swap
+pocket found is on `enduring_presence_1.webp` — 8 occupied, 1 empty, bottom-right. A current
+curatorial ledger entry (`docs/ledger.md`, scheduled to be wiped and restarted under the ID scheme;
+the entries remain in place until then, and will stay recoverable at git commit `a254855` afterward)
+records the binder's single free pocket as being in Quiet Familiarity p2, with a pending card swap
 planned into it (`docs/holding-box-placement.md` lines 14, 52, 167 — Cinccino AR into that slot).
 
 If Quiet Familiarity p2 does not exist, that planned swap has no destination. If it does exist and
