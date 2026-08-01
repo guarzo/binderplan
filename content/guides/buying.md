@@ -96,12 +96,18 @@ If the card does neither, I wait rather than inventing a need for it.
 - Monument → Consider grading
 
 **Graded card categories:**
-- **Crown Art** — A favorite illustration that works well on its own
+
+*Themes* — defined by judgment:
 - **Definitive Pokemon** — The card that currently represents a species best
-- **Historical / Touchstone** — A card tied to an era or moment in the hobby
+- **Touchstones** — A card tied to an era or moment in the hobby
 - **Personal Significance** — Cards with irreplaceable personal meaning
 
-A card should clearly belong to one of these to justify grading. Don't slab on impulse.
+*Runs* — defined by the set, where a card can be genuinely missing:
+- **Masaki** — The Communication Evolution mail-in promos
+- **Chinese Exclusives** — Chinese-market releases with no international printing
+- **Emolga Masterset** — Every Emolga printing I can track down
+
+A card should clearly belong to exactly one of these to justify grading. Don't slab on impulse.
 
 ---
 

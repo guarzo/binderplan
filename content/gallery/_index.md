@@ -9,23 +9,27 @@ This is the collection itself: binder pages, side collections, and graded cards.
 
 - **[Volume I](volume-1/)** — Lived Experience: how Pokemon exist in the world
 - **[Volume II](volume-2/)** — Memory, Presence, and Passage
-- **[Emolga Masterset](emolga-masterset/)** — Every Emolga card I can get my hands on. No regrets.
 
 ## Other Collections
 
 - **[Stamped Cards](stamped-cards/)** — Prerelease, league, and event-stamped cards
 - **[Trainer Full Arts](waifu/)** — Japanese trainer cards collected for character illustration
 
-## Special Collections
+## Themes
 
-- **[Gold Stars](gold-stars/)** — The gold star collection
-- **[Masaki](masaki/)** — Japanese mail-in trade promos from the Communication Evolution campaign
-
-## Personal Slabs
+Groups defined by judgment. There's no such thing as a card missing from a theme.
 
 - **[Definitive Pokemon](definitive-pokemon/)** — The best versions, chosen with intent
 - **[Touchstones](touchstones/)** — Cards that capture a moment in the hobby
 - **[Personal Significance](personal-significance/)** — Cards with irreplaceable personal meaning
+
+## Runs
+
+Groups with a defined outside, where a card can be genuinely missing — even when the outside is an ongoing interest rather than a finished set.
+
+- **[Masaki](masaki/)** — Japanese mail-in trade promos from the Communication Evolution campaign
+- **[Chinese Exclusives](chinese-exclusives/)** — Chinese-market releases with no international printing
+- **[Emolga Masterset](emolga-masterset/)** — Every Emolga card I can get my hands on. No regrets.
 
 ---
 

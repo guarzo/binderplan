@@ -7,11 +7,7 @@ layout: "gallery"
 These cards were distributed through Japan's 1998–1999 Communication Evolution campaign, which asked participants to mail in designated cards for evolved promotional versions. I like them as a compact set with an unusual release story and a consistent visual identity.
 
 <div class="gallery-grid">
-  <figure class="gallery-item span-wide">
-    <img src="../../images/slabs/masaki_golem.jpg" alt="Graded Japanese Masaki Golem promotional card" loading="lazy">
-    <figcaption>Golem Masaki</figcaption>
-  </figure>
-  <figure class="gallery-item span-narrow">
+  <figure class="gallery-item span-half">
     <img src="../../images/slabs/masaki_alakazam.jpg" alt="Graded Japanese Masaki Alakazam promotional card" loading="lazy">
     <figcaption>Alakazam Masaki</figcaption>
   </figure>
@@ -19,9 +15,26 @@ These cards were distributed through Japan's 1998–1999 Communication Evolution
     <img src="../../images/slabs/masaki_gengar.jpg" alt="Graded Japanese Masaki Gengar promotional card" loading="lazy">
     <figcaption>Gengar Masaki</figcaption>
   </figure>
-  <figure class="gallery-item span-half">
-    <img src="../../images/slabs/masaki_omastar.jpg" alt="Graded Japanese Masaki Omastar promotional card" loading="lazy">
+</div>
+
+---
+
+## Still Hunting
+
+These are the ones I haven't tracked down yet. If you've got a lead, I'm listening.
+
+<div class="gallery-grid">
+  <figure class="gallery-item span-narrow">
+    <img src="../../images/slabs/masaki_golem_wanted.webp" alt="Japanese Masaki Golem promotional card" loading="lazy">
+    <figcaption>Golem Masaki</figcaption>
+  </figure>
+  <figure class="gallery-item span-narrow">
+    <img src="../../images/slabs/masaki_omastar_wanted.webp" alt="Japanese Masaki Omastar promotional card" loading="lazy">
     <figcaption>Omastar Masaki</figcaption>
+  </figure>
+  <figure class="gallery-item span-narrow">
+    <img src="../../images/slabs/masaki_machamp_wanted.webp" alt="Japanese Masaki Machamp promotional card" loading="lazy">
+    <figcaption>Machamp Masaki</figcaption>
   </figure>
 </div>
 

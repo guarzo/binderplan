@@ -12,36 +12,28 @@ These are reference points for eras and release styles I want represented in the
     <figcaption><strong>Pikachu Black Star 2000.</strong> A turn-of-the-millennium Black Star promo.</figcaption>
   </figure>
   <figure class="gallery-item span-narrow">
-    <img src="../../images/slabs/touchstone_jolteon_pop.jpg" alt="Jolteon POP slab" loading="lazy">
-    <figcaption><strong>Jolteon POP.</strong> A reminder of the organized-play POP Series era.</figcaption>
+    <img src="../../images/slabs/touchstone_celebi_gold_star.jpg" alt="Graded Celebi Gold Star card from EX Crystal Guardians" loading="lazy">
+    <figcaption><strong>Celebi Gold Star.</strong> The Gold Star treatment at the height of its scarcity.</figcaption>
   </figure>
-  <figure class="gallery-item span-full">
-    <img src="../../images/slabs/touchstone_dragonite_expedition.jpg" alt="Dragonite Expedition slab" loading="lazy">
-    <figcaption><strong>Dragonite Expedition.</strong> Expedition's e-Reader layout and early-2000s visual language.</figcaption>
+  <figure class="gallery-item span-half">
+    <img src="../../images/slabs/touchstone_professor_program_energy.jpg" alt="Graded Professor Program Psychic Energy card" loading="lazy">
+    <figcaption><strong>Professor Program Energy.</strong> An organized-play reward that never reached retail.</figcaption>
   </figure>
-  <figure class="gallery-item span-wide">
-    <img src="../../images/slabs/touchstone_squirtle_expedition.jpg" alt="Squirtle Expedition slab" loading="lazy">
-    <figcaption><strong>Squirtle Expedition.</strong> A quieter view of the same e-Reader period.</figcaption>
-  </figure>
-  <figure class="gallery-item span-narrow">
-    <img src="../../images/slabs/touchstone_charizard_jp_basic.jpg" alt="Charizard JP Basic slab" loading="lazy">
-    <figcaption><strong>Charizard JP Basic.</strong> An early Japanese treatment of the hobby's most familiar Pokemon.</figcaption>
-  </figure>
-  <figure class="gallery-item span-full">
-    <img src="../../images/slabs/touchstone_umbreon_tag.jpg" alt="Umbreon Tag slab" loading="lazy">
-    <figcaption><strong>Umbreon Tag.</strong> The scale and spectacle of the Tag Team era.</figcaption>
+  <figure class="gallery-item span-half">
+    <img src="../../images/slabs/touchstone_typhlosion_vs_1st_ed.jpg" alt="Graded Japanese Blaine's Typhlosion card from the VS series" loading="lazy">
+    <figcaption><strong>Blaine's Typhlosion.</strong> The VS series, where Gym leaders got their own deck identity.</figcaption>
   </figure>
   <figure class="gallery-item span-wide">
-    <img src="../../images/slabs/touchstone_charizard_151_jp.jpg" alt="Charizard 151 slab" loading="lazy">
-    <figcaption><strong>Charizard 151.</strong> A modern return to the original Kanto cast.</figcaption>
+    <img src="../../images/slabs/touchstone_pikachu_ex_sar.jpg" alt="Graded Japanese Pikachu ex special art rare card" loading="lazy">
+    <figcaption><strong>Pikachu ex SAR.</strong> The modern special-art treatment at full volume.</figcaption>
   </figure>
   <figure class="gallery-item span-narrow">
-    <img src="../../images/slabs/touchstone_mew_sv4a_jp.jpg" alt="Mew SV4a slab" loading="lazy">
-    <figcaption><strong>Mew SV4a.</strong> Modern Japanese illustration at its most playful and polished.</figcaption>
+    <img src="../../images/slabs/touchstone_shaymin_leafeon_deck.jpg" alt="Graded Japanese Shaymin card from the Leafeon expert deck" loading="lazy">
+    <figcaption><strong>Shaymin Leafeon Deck.</strong> A promo tied to a Japanese expert deck release.</figcaption>
   </figure>
   <figure class="gallery-item span-full">
-    <img src="../../images/slabs/touchstone_maushold_ccic.jpg" alt="Maushold CCIC slab" loading="lazy">
-    <figcaption><strong>Maushold CCIC.</strong> A newer release that marks another branch of the international hobby.</figcaption>
+    <img src="../../images/slabs/touchstone_dragonite_mega_ex.jpg" alt="Graded Japanese Mega Dragonite ex card" loading="lazy">
+    <figcaption><strong>Mega Dragonite ex.</strong> Mega Evolution's return, rendered as spectacle.</figcaption>
   </figure>
 </div>
 

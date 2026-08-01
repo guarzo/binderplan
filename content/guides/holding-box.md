@@ -37,7 +37,7 @@ Cards that fit an existing theme but don't improve a page. They're visually weak
 
 ### 3. HERITAGE (Respect Without Display)
 
-Nostalgic or historic cards that feel meaningful but visually quiet. I do not force these into art themes, though some may fit Enduring Presence, Nearness, or the Historical / Touchstone slab role.
+Nostalgic or historic cards that feel meaningful but visually quiet. I do not force these into art themes, though some may fit Enduring Presence, Nearness, or the Touchstones slab role.
 
 ---
 
