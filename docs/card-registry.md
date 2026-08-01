@@ -139,3 +139,12 @@ This is not an inventory. It records what a card **is**, never where it sits. A 
 | gardevoir-02 | Gardevoir | Gardevoir | EN | | | uncertain | companions_1.webp 2026-08-01 | Ability Shining Arcana, Prainwave attack, distinct from gardevoir-01, number illegible after crop attempt |
 | charizard-02 | Charizard | リザードン | JP | | | uncertain | companions_1.webp 2026-08-01 | Ability バトルセンス, キングブレイズ attack, distinct from charizard-01, number illegible after crop attempt |
 | gengar-05 | Gengar | ゲンガー | JP | | | uncertain | companions_1.webp 2026-08-01 | Ability たくらみのうごう, スクリームサークル attack, distinct from gengar-01..04, number illegible after crop attempt |
+| professor-elm-01 | Professor Elm | Professor Elm | EN | Neo Genesis | 94/111 | photo | companions_2.webp 2026-08-01 | |
+| pikachu-04 | Pikachu | Pikachu | EN | Pokémon GO | 027/078 | photo | companions_2.webp 2026-08-01 | Buddy Bolt attack, distinct from pikachu-01/02/03 |
+| togedemaru-01 | Togedemaru | Togedemaru | EN | Cosmic Eclipse | 104/236 | photo | companions_2.webp 2026-08-01 | |
+| flareon-01 | Flareon | Flareon EX | EN | Radiant Collection | RC28/RC32 | photo | companions_2.webp 2026-08-01 | |
+| electrode-01 | Electrode | マルマイン | JP | sm1 | 037/095 | photo | companions_2.webp 2026-08-01 | |
+| professors-research-01 | Professor's Research | 博士の研究 | JP | | 224/S-P | photo | companions_2.webp 2026-08-01 | Supporter trainer, promo S-P number, featuring Professor Willow |
+| rockets-trap-01 | Rocket's Trap | ロケット団のワナ | JP | | | uncertain | companions_2.webp 2026-08-01 | Trainer card, vintage print, number illegible after crop attempt |
+| houndour-02 | Houndour | デルビル | JP | | | uncertain | companions_2.webp 2026-08-01 | distinct from houndour-01, number illegible after crop attempt |
+| joltik-01 | Joltik | 电电虫 | ZH | | | uncertain | companions_2.webp 2026-08-01 | holo print, number illegible after crop attempt |
