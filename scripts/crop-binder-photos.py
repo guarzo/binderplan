@@ -49,8 +49,10 @@ def box_blur(a, r):
 
 def dilate(m):
     out = m.copy()
-    out[1:] |= m[:-1]; out[:-1] |= m[1:]
-    out[:, 1:] |= m[:, :-1]; out[:, :-1] |= m[:, 1:]
+    out[1:] |= m[:-1]
+    out[:-1] |= m[1:]
+    out[:, 1:] |= m[:, :-1]
+    out[:, :-1] |= m[:, 1:]
     return out
 
 
@@ -130,6 +132,9 @@ def best_region(content, seed):
         if best is None or rank > best[0]:
             best = (rank, cells)
 
+    if best is None:  # nothing detected at all; span() falls back to the full frame
+        return np.zeros_like(content)
+
     keep = np.zeros_like(content)
     for y, x in best[1]:
         keep[y, x] = True
@@ -177,4 +182,6 @@ def main(outdir, paths):
 
 
 if __name__ == "__main__":
+    if len(sys.argv) < 3:
+        sys.exit("usage: crop-binder-photos.py OUTDIR photo.webp [photo2.webp ...]")
     main(sys.argv[1], sys.argv[2:])

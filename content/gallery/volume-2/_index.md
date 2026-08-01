@@ -8,7 +8,7 @@ Volume II is less about action and more about memory, familiarity, and change ov
 
 <div class="gallery-grid">
   <figure class="gallery-item span-half">
-    <img src="../../images/binder/volume-2/vol2_contents.webp" alt="Printed contents card for Volume II: Memory, Presence, and Passage" loading="lazy">
+    <img src="../../images/binder/volume-2/vol2_contents.webp" alt="Printed contents card for Volume II listing the chapters Nearness, Permanence, and Passage" loading="lazy">
     <figcaption><strong>Contents.</strong> Three chapters — Nearness, Permanence, Passage.</figcaption>
   </figure>
 </div>
