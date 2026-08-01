@@ -20,7 +20,12 @@
 - **Scope is Volumes 1 and 2 only** — the 18 page images listed in Task 2. Emolga masterset, stamped cards, trainer full arts, and slabs are out of scope.
 - **`language` is one of:** `EN`, `JP`, `ZH`
 - **`confidence` is one of:** `confirmed` (read from the physical card), `photo` (legible in the image), `uncertain` (inferred or obscured)
-- **Commit after every task.** Repo convention: no Co-Authored-By trailer is required for docs commits on this branch, but match the existing message style — imperative mood, lowercase after the colon-free subject.
+- **Commit after every task.** Match the existing message style — imperative mood, no `feat:`/`fix:` prefixes (the repo does not use them). End every commit message with these two trailers, matching the branch's existing commits:
+
+  ```
+  Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>
+  Claude-Session: https://claude.ai/code/session_01WUw2d7Bii9F3xngLgxJQov
+  ```
 
 ## Working Context
 
