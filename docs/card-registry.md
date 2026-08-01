@@ -38,3 +38,12 @@ This is not an inventory. It records what a card **is**, never where it sits. A 
 | quaxly-01 | Quaxly | Quaxly | EN | | | uncertain | world_people_1.webp 2026-08-01 | pocket 7; number illegible |
 | charmander-01 | Charmander | Charmander | EN | | | uncertain | world_people_1.webp 2026-08-01 | pocket 8; number illegible |
 | cubone-01 | Cubone | 卡拉卡拉 | ZH | | | uncertain | world_people_1.webp 2026-08-01 | pocket 9; number illegible |
+| mew-02 | Mew | ミュウ | JP | s12a | 187/172 | photo | at_rest_1.webp 2026-08-01 | pocket 1; distinct printing from mew-01 |
+| stufful-01 | Stufful | ヌイコグマ | JP | s10 | 073/067 | photo | at_rest_1.webp 2026-08-01 | pocket 2 |
+| shaymin-01 | Shaymin | Shaymin EX | EN | XY | 148 | photo | at_rest_1.webp 2026-08-01 | pocket 3; XY Black Star Promo, artist Kouki Saito |
+| eevee-01 | Eevee | Eevee | EN | | | uncertain | at_rest_1.webp 2026-08-01 | pocket 4; number illegible |
+| snorlax-01 | Snorlax | カビゴン | JP | | | uncertain | at_rest_1.webp 2026-08-01 | pocket 5; number illegible |
+| ursaring-01 | Ursaring | Ursaring | EN | Radiant Collection | RC16/RC25 | photo | at_rest_1.webp 2026-08-01 | pocket 6; artist Sonosuke Sakuma |
+| sprigatito-01 | Sprigatito | Sprigatito | EN | | | uncertain | at_rest_1.webp 2026-08-01 | pocket 7; number illegible |
+| oshawott-01 | Oshawott | Oshawott | EN | | | uncertain | at_rest_1.webp 2026-08-01 | pocket 8; number illegible |
+| marowak-01 | Marowak | カラカラ | JP | | 067/072 | uncertain | at_rest_1.webp 2026-08-01 | pocket 9; vintage-style print, set name not identifiable |
