@@ -85,3 +85,12 @@ This is not an inventory. It records what a card **is**, never where it sits. A 
 | bewear-01 | Bewear | キテルグマ | JP | | | uncertain | intimidation_1.webp 2026-08-01 | number illegible after crop attempt |
 | marowak-02 | Marowak | ガラガラ | JP | | | uncertain | intimidation_1.webp 2026-08-01 | delta species print, distinct from marowak-01, number illegible after crop attempt |
 | gengar-02 | Gengar | ゲンガー | JP | | | uncertain | intimidation_1.webp 2026-08-01 | Lv.38 print, distinct from gengar-01 and gengar-mimikyu-01, number illegible |
+| gengar-03 | Gengar | M Gengar EX | JP | | | uncertain | on_attack_1.webp 2026-08-01 | Mega Evolution EX, "ファントムゲート"/Phantom Gate, distinct from gengar-01/02 and gengar-mimikyu-01, number illegible |
+| lugia-02 | Lugia | ルギアV | JP | s12 | 079/098 | photo | on_attack_1.webp 2026-08-01 | V card, distinct from lugia-01 |
+| spheal-02 | Spheal | タマザラシ | JP | | 016/086 | uncertain | on_attack_1.webp 2026-08-01 | Lv.18 print, distinct from spheal-01, set code not textual |
+| kingdra-01 | Kingdra | キングドラ | JP | | No.230 | uncertain | on_attack_1.webp 2026-08-01 | Lv.47, vintage Pokedex-number print, illustrator Mitsuhiro Arita, era not identifiable |
+| snorlax-02 | Snorlax | カビゴンVMAX | JP | s1H | 046/060 | photo | on_attack_1.webp 2026-08-01 | VMAX, distinct from snorlax-01 |
+| yveltal-01 | Yveltal | Yveltal EX | EN | | 79/146 | uncertain | on_attack_1.webp 2026-08-01 | set code not textual |
+| charizard-01 | Charizard | リザードンG | JP | | 007/016 | uncertain | on_attack_1.webp 2026-08-01 | Lv.X print, set code not textual, number read with low confidence |
+| ursaring-02 | Ursaring | リングマ | JP | | No.217 | uncertain | on_attack_1.webp 2026-08-01 | Lv.43 print, distinct from ursaring-01, vintage Pokedex-number print, era not identifiable |
+| houndoom-02 | Houndoom | ヘルガー | JP | sv6a | 066/064 | photo | on_attack_1.webp 2026-08-01 | AR rarity, distinct from houndoom-01 |
