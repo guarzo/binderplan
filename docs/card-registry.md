@@ -174,3 +174,12 @@ This is not an inventory. It records what a card **is**, never where it sits. A 
 | piplup-01 | Piplup | Piplup | EN | | | uncertain | quiet_familiarity_1.webp 2026-08-01 | Lv.9, Peck/Water Splash attacks, footer illegible after crop attempt |
 | shaymin-03 | Shaymin | Shaymin | EN | | 185/142 | uncertain | quiet_familiarity_1.webp 2026-08-01 | Ability Flower Curtain, Smash Kick attack, distinct from shaymin-01/02, set not readable as text |
 | squirtle-02 | Squirtle | Squirtle | EN | | | uncertain | quiet_familiarity_1.webp 2026-08-01 | Wave Splash/Doubleslap attacks, distinct from squirtle-01, footer illegible after crop attempt |
+| machop-01 | Machop | Machop | EN | | 086/136 | uncertain | threshold_1.webp 2026-08-01 | Punch attack, set not readable as text |
+| mew-05 | Mew | ミュウ | JP | | | uncertain | threshold_1.webp 2026-08-01 | Psywave/Recover-Beam attacks, distinct from mew-01..04, footer illegible after crop attempt |
+| zygarde-01 | Zygarde | ジガルデ | JP | | 040/078U | uncertain | threshold_1.webp 2026-08-01 | Aura Break attack, set not readable as text |
+| reshiram-02 | Reshiram | Reshiram | EN | | 112/114 | uncertain | threshold_1.webp 2026-08-01 | Outrage/Blue Flare attacks, distinct from reshiram-01, set not readable as text |
+| hoopa-01 | Hoopa | フーパ | JP | | | uncertain | threshold_1.webp 2026-08-01 | full-art secret rare, footer illegible after crop attempt |
+| master-ball-01 | Master Ball | マスターボール | JP | | | uncertain | threshold_1.webp 2026-08-01 | Trainer item card, no number field visible after crop attempt |
+| sandshrew-02 | Sandshrew | Sandshrew | EN | | | uncertain | threshold_1.webp 2026-08-01 | Dig Under/Scratch attacks, distinct from sandshrew-01, footer illegible after crop attempt |
+| houndoom-04 | Houndoom | Houndoom | EN | | 11/75 | uncertain | threshold_1.webp 2026-08-01 | Crunch/Flamethrower attacks, distinct from houndoom-01..03, set not readable as text |
+| shaymin-04 | Shaymin | Shaymin | EN | | | uncertain | threshold_1.webp 2026-08-01 | Ability Celebration Wind, Energy Bloom attack, distinct from shaymin-01..03, footer illegible after crop attempt |
