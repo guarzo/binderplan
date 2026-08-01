@@ -22,7 +22,7 @@ targets. Three outcomes, using the vocabulary already defined in `content/guides
 | **REDUNDANT** | Fits the theme, doesn't improve the page. Kept — a genuine future replacement if taste shifts. |
 | **RETIRE** | The binder already holds this idea, executed better. It has no path in, so keeping it is self-deception. → RELEASE. |
 
-**Result: 84 cards → 11 swaps, 24 retires, 1 masterset, 2 re-evaluations, 1 duplicate, ~45 redundant.**
+**Result: 84 cards → 11 swaps, 28 retires, 1 masterset, 2 re-evaluations, 1 duplicate, 41 redundant.**
 
 ---
 
@@ -33,17 +33,17 @@ which needs no eviction.
 
 | In | Theme | Out | Why the incumbent loses |
 |---|---|---|---|
-| **Zapdos** — JP No.145 | V1 · Legendary Bearing | **Typhlosion** (バクフーン, p1) | Nineteen slots across two pages and no bird of the trio. Typhlosion is a starter evolution rather than a complete enduring force, and the species already appears in Intimidation. |
-| **Gastly** — EN Base Set | V1 · Intimidation | **Charizard VMAX** | Nothing on the page is a face resolving out of pure black. Charizard VMAX reads as active fire — closer to On the Attack than to §3's "menace without active combat". |
-| **Lucario Lv.X** — EN DP | V1 · On the Attack | **Spheal** (タマザラシ) | Page has a Charizard Lv.X but no aura-strike. Spheal is playful rather than committed force, and the species also sits in Joyful Action. |
-| **Dedenne** — JP autumn promo | V1 · Calm in Nature | **Plusle** (プラスル) | Like-for-like upgrade: same small-rodent-in-foliage niche, but the page is entirely spring and summer greens and this brings autumn. Pikachu already covers the electric-rodent slot. |
-| **Pikachu** — JP Illustration Contest 2024 | V1 · At Rest | **Ursaring** ("Picnic Weather") | Every incumbent is curled asleep; a Pokemon lounging *awake* is a note the page lacks. Ursaring is the plainest art among nine illustration rares and the species also sits in On the Attack. |
-| **Jasmine's Ampharos** — JP VS | V1 · Elemental Solitude | **Umbreon** | Nothing on the page is lit by its own light; every incumbent is lit by moon, water, or ambient dark. Umbreon appears three times in the binder, and Contemplation holds the better moon-Umbreon. |
-| **Houndour** — EN Aquapolis 87/147 | V1 · Joyful Action | **Charmander** ("Collect/Flare") | A dark-type bounding through open daylight is a surprising image. Charmander is plain common art and the species appears three times across the binder. |
-| **Dark Dragonair** — EN TRR 21/109 | V1 · Awakened Power (p1) | **Groudon** | Purest "energy collecting before release" in the box, and it pairs with the incumbent Dark Gyarados. Groudon is weak art and the species also sits in Legendary Bearing. |
-| **Hoopa EX** — EN XY | V2 · Threshold | **Kecleon** (カクレオン) | Strongest challenger in the whole box. The page is dawn, shoreline, space, fossil — all *natural* edges; Hoopa's rings are a made portal. Kecleon is about camouflage, not passage, and is the least on-theme card there. *(Alternative eviction: Rayquaza ex, which duplicates Awakened Power.)* |
-| **Cinccino AR** — JP SV5a 093/071 | V2 · Quiet Familiarity (p2) | *(none — empty pocket)* | Both pages are near-entirely vintage outdoor art with no interiors, and §4 names "domestic scale" as a key signal the theme lacks. Fills the open slot. |
-| **Kangaskhan** — JP No.115 | V2 · Companions (p2) | **Electrode** (マルマイン) | Marginal. The page has group bonds but no actual parenthood. Electrode-with-Voltorb is the plainest card there and its "bond" is only two of a species standing together. |
+| **Zapdos** — JP No.145 · img 55 | V1 · Legendary Bearing | **Typhlosion** (バクフーン, p1) | Nineteen slots across two pages and no bird of the trio. Typhlosion is a starter evolution rather than a complete enduring force, and the species already appears in Intimidation. |
+| **Gastly** — EN Base Set · img 54 | V1 · Intimidation | **Charizard VMAX** | Nothing on the page is a face resolving out of pure black. Charizard VMAX reads as active fire — closer to On the Attack than to §3's "menace without active combat". |
+| **Lucario Lv.X** — EN DP · img 59 | V1 · On the Attack | **Spheal** (タマザラシ) | Page has a Charizard Lv.X but no aura-strike. Spheal is playful rather than committed force, and the species also sits in Joyful Action. |
+| **Dedenne** — JP autumn promo · img 54 | V1 · Calm in Nature | **Plusle** (プラスル) | Like-for-like upgrade: same small-rodent-in-foliage niche, but the page is entirely spring and summer greens and this brings autumn. Pikachu already covers the electric-rodent slot. |
+| **Pikachu** — JP Illustration Contest 2024 · img 59 | V1 · At Rest | **Ursaring** ("Picnic Weather") | Every incumbent is curled asleep; a Pokemon lounging *awake* is a note the page lacks. Ursaring is the plainest art among nine illustration rares and the species also sits in On the Attack. |
+| **Jasmine's Ampharos** — JP VS · img 54 | V1 · Elemental Solitude | **Umbreon** | Nothing on the page is lit by its own light; every incumbent is lit by moon, water, or ambient dark. Umbreon appears three times in the binder, and Contemplation holds the better moon-Umbreon. |
+| **Houndour** — EN Aquapolis 87/147 · img 56 | V1 · Joyful Action | **Charmander** ("Collect/Flare") | A dark-type bounding through open daylight is a surprising image. Charmander is plain common art and the species appears three times across the binder. |
+| **Dark Dragonair** — EN TRR 21/109 · img 55 | V1 · Awakened Power (p1) | **Groudon** | Purest "energy collecting before release" in the box, and it pairs with the incumbent Dark Gyarados. Groudon is weak art and the species also sits in Legendary Bearing. |
+| **Hoopa EX** — EN XY · img 58 | V2 · Threshold | **Kecleon** (カクレオン) | Strongest challenger in the whole box. The page is dawn, shoreline, space, fossil — all *natural* edges; Hoopa's rings are a made portal. Kecleon is about camouflage, not passage, and is the least on-theme card there. *(Alternative eviction: Rayquaza ex, which duplicates Awakened Power.)* |
+| **Cinccino AR** — JP SV5a 093/071 · img 60 | V2 · Quiet Familiarity (p2) | *(none — empty pocket)* | Both pages are near-entirely vintage outdoor art with no interiors, and §4 names "domestic scale" as a key signal the theme lacks. Fills the open slot. |
+| **Kangaskhan** — JP No.115 · img 59 | V2 · Companions (p2) | **Electrode** (マルマイン) | Marginal. The page has group bonds but no actual parenthood. Electrode-with-Voltorb is the plainest card there and its "bond" is only two of a species standing together. |
 
 Four of the Volume 1 swaps are marginal — Dedenne, Jasmine's Ampharos, Houndour Aquapolis, Dark
 Dragonair. Each is defensible, none is urgent. Zapdos, Gastly, Lucario and Hoopa are the four that
@@ -57,32 +57,32 @@ self-deception. → RELEASE.
 
 | Card | Already in the binder as |
 |---|---|
-| Yveltal EX — JP full art | Yveltal EX in Legendary Bearing p1 **and** On the Attack |
-| M Gengar EX — ファントムゲート, JP | The same card, in On the Attack. Plus Gengar GX and Gengar VMAX in Awakened Power |
-| Mewtwo Lv.42 — JP | Mewtwo in Contemplation (plus Awakened Power p2, Legendary Bearing p1, Intimidation) |
-| Mewtwo EX — EN full art | as above |
-| Latios — EN | Latios in Elemental Solitude **and** Legendary Bearing p1 |
-| Lugia — EN | Lugia in Awakened Power p1 **and** Legendary Bearing p1 |
-| Misdreavus — ムウマ, JP | Misdreavus in Intimidation |
-| Cyndaquil — ヒノアラシ, JP | Cyndaquil in Elemental Solitude **and** Calm in Nature |
-| Rayquaza ex — レックウザex, JP | Rayquaza in Awakened Power p2 and Threshold |
-| Torterra Lv.X — JP promo | Torterra in Awakened Power p2 |
-| Groudon ex — グラードンex, JP | Groudon in Legendary Bearing p1 and Awakened Power p1 |
-| Shaymin EX — JP full art, floral | Shaymin EX in At Rest |
-| Shaymin EX — EN sky forme | Shaymin Sky Forme in Awakened Power p2 |
-| Shaymin — JP promo 225/SM-P | Shaymin in Quiet Familiarity p1 — a third flowered Shaymin |
-| Eevee — illustration rare | A sleeping Eevee in At Rest |
-| Dark Houndoom — EN TRR 27/109 | Howling Houndoom in Elemental Solitude; moon-gazing Umbreon in Contemplation |
-| Houndour — JP BW, fountain plaza | Houndour on a lamp-lit street in World of People |
-| Charmander — EN Team Rocket | Charmander in Joyful Action, World of People, Quiet Familiarity p1 |
-| Numel — EN | Numel in Quiet Familiarity p1 |
-| Piplup — JP "Friend Call" | Piplup in Quiet Familiarity p1 |
-| Piplup Lv.9 — EN DP | as above, and the weakest art in the box |
-| Kecleon — カクレオン, JP promo | Kecleon in Threshold |
-| Ditto — メタモン, JP SV 122/165 | Ditto-disguised-as-Pikachu in Quiet Familiarity p2 |
-| Ditto — EN e-Card era | as above |
-| Mudkip ×3 — JP dock, JP underwater, EN e-Card | Mudkip in Quiet Familiarity p2 |
-| Pokemon Communication — EN trainer | Never placeable: the art is a device |
+| Yveltal EX — JP full art · img 56 | Yveltal EX in Legendary Bearing p1 **and** On the Attack |
+| M Gengar EX — ファントムゲート, JP · img 57 | The same card, in On the Attack. Plus Gengar GX and Gengar VMAX in Awakened Power |
+| Mewtwo Lv.42 — JP · img 54 | Mewtwo in Contemplation (plus Awakened Power p2, Legendary Bearing p1, Intimidation) |
+| Mewtwo EX — EN full art · img 59 | as above |
+| Latios — EN · img 60 | Latios in Elemental Solitude **and** Legendary Bearing p1 |
+| Lugia — EN · img 56 | Lugia in Awakened Power p1 **and** Legendary Bearing p1 |
+| Misdreavus — ムウマ, JP · img 60 | Misdreavus in Intimidation |
+| Cyndaquil — ヒノアラシ, JP · img 55 | Cyndaquil in Elemental Solitude **and** Calm in Nature |
+| Rayquaza ex — レックウザex, JP · img 57 | Rayquaza in Awakened Power p2 and Threshold |
+| Torterra Lv.X — JP promo · img 56 | Torterra in Awakened Power p2 |
+| Groudon ex — グラードンex, JP · img 59 | Groudon in Legendary Bearing p1 and Awakened Power p1 |
+| Shaymin EX — JP full art, floral · img 56 | Shaymin EX in At Rest |
+| Shaymin EX — EN sky forme · img 57 | Shaymin Sky Forme in Awakened Power p2 |
+| Shaymin — JP promo 225/SM-P · img 54 | Shaymin in Quiet Familiarity p1 — a third flowered Shaymin |
+| Eevee — illustration rare · img 59 | A sleeping Eevee in At Rest |
+| Dark Houndoom — EN TRR 27/109 · img 55 | Howling Houndoom in Elemental Solitude; moon-gazing Umbreon in Contemplation |
+| Houndour — JP BW, fountain plaza · img 55 | Houndour on a lamp-lit street in World of People |
+| Charmander — EN Team Rocket · img 58 | Charmander in Joyful Action, World of People, Quiet Familiarity p1 |
+| Numel — EN · img 60 | Numel in Quiet Familiarity p1 |
+| Piplup — JP "Friend Call" · img 60 | Piplup in Quiet Familiarity p1 |
+| Piplup Lv.9 — EN DP · img 60 | as above, and the weakest art in the box |
+| Kecleon — カクレオン, JP promo · img 54 | Kecleon in Threshold |
+| Ditto — メタモン, JP SV 122/165 · img 60 | Ditto-disguised-as-Pikachu in Quiet Familiarity p2 |
+| Ditto — EN e-Card era · img 58 | as above |
+| Mudkip ×3 — JP dock, JP underwater, EN e-Card · img 54, 55, 58 | Mudkip in Quiet Familiarity p2 |
+| Pokemon Communication — EN trainer · img 54 | Never placeable: the art is a device |
 
 **Pending physical check:** **Houndoom EX — ヘルガーEX, JP full art.** The bottom-right card in the
 On the Attack spread appears to be this exact card, but the sleeve and angle make it unreadable in
@@ -115,7 +115,7 @@ Do not revisit unless a genuinely unhoused cluster of six or more appears.
 
 ## 5. Everything else — REDUNDANT
 
-Roughly 45 cards fit a theme but beat nothing on it today. They are kept, per
+Roughly 41 cards fit a theme but beat nothing on it today. They are kept, per
 `content/guides/holding-box.md`, as protection against a shift in taste: Mareep, Butler's Kirlia,
 Lt. Surge's Pikachu, Pikachu "Pika Dash", Pikachu "Pika Ball", Pikachu "Tail Slap", Pikachu GO,
 Pikachu McDonald's, group-art Pikachu, vintage Pikachu, Litleo AR, Ampharos ex, Bulbasaur AR,

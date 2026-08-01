@@ -187,7 +187,7 @@ Familiarity (no eviction; empty pocket) · Kangaskhan → Companions (out: Elect
 Reasoning per swap is in the rewritten placement plan. Four are marginal: Dedenne, Jasmine's
 Ampharos, Houndour Aquapolis, Dark Dragonair.
 
-### Released — 24 cards
+### Released — 28 cards
 
 Yveltal EX · M Gengar EX · Mewtwo Lv.42 · Mewtwo EX · Latios · Lugia · Misdreavus · Cyndaquil ·
 Rayquaza ex · Torterra Lv.X · Groudon ex · Shaymin EX floral · Shaymin EX sky · Shaymin JP promo ·
