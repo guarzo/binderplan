@@ -56,7 +56,7 @@ them.
 | Situation | Resolution |
 |---|---|
 | Same species, different language | Different IDs. Language is a metadata column. |
-| Same printing, two physical copies | Different IDs. The two Houndoom G Lv.45 get separate `houndoom-NN` entries distinguished only by counter. |
+| Same printing, two physical copies | Different IDs — the scheme models them as distinct cards. Note that both being *in the binders* is a rule violation; see Duplicate detection. |
 | Set/number unreadable | ID assigned from species alone. `set`/`number` blank, `confidence: uncertain`. |
 | Species unreadable | Held out of the registry during seeding (see below). After seeding, assigned from best guess. |
 | Unsure whether it is a new copy or an existing entry | **Assign a new ID.** |
@@ -145,9 +145,32 @@ file is finalised, split by what is actually blocked:
 - **Species clear, set/number unreadable** → ID assigned (species is sufficient), row flagged
   `uncertain`, listed for physical confirmation. Reviewed, but not blocking.
 
+The physical-confirmation list is ordered by **species cluster first**: any species holding two or
+more `uncertain` rows leads the list, because that is where an undetected duplicate printing could be
+hiding. Isolated `uncertain` rows are cosmetic by comparison — a single Cinccino with an unread
+number breaks nothing.
+
 **IDs are provisional until the curator signs off on pass 2.** This is a one-time carve-out from the
 never-rewrite rule, and it is safe only because nothing has cited these IDs yet. Once signed off, the
 registry is frozen and every subsequent ID is permanent from the moment it is written.
+
+## Duplicate detection
+
+Volumes 1 and 2 must not hold the same printing twice — same card, same set, same collector number,
+same language. Different illustrations of one species in different themes are not duplicates and are
+permitted. This rule was undocumented; it is added to `CURATORIAL_AUDIT_PROMPT.md` §2 as part of this
+work.
+
+Seeding therefore produces a second output alongside the registry: a **duplicate report**, listing
+any two rows matching on all four fields. Sorting by ID makes this near-free, since the species slug
+groups every candidate cluster together — a payoff of building the ID from species rather than from
+an opaque counter.
+
+The report is a finding, not an action. It names candidate violations for the curator to confirm and
+resolve; the registry itself records no verdict, because "which copy leaves" is a placement decision
+and belongs in the ledger.
+
+The detection is only as good as the rows it runs on. See the first item below.
 
 ## What photographs cannot establish
 
@@ -157,10 +180,12 @@ sleeves in nine-pocket pages, with price tags and glare.
 - **Set and collector number**, whenever the bottom-corner strip is under a price tag, glare band,
   sleeve seam, or pocket edge. This is the common case, not the exception — that corner is the
   worst-lit and most-occluded part of a sleeved card.
-- **Which physical copy is which**, for true duplicates. The two Houndoom G Lv.45 are visually
-  identical, so which of the two gets the lower counter is an *arbitrary* assignment. The registry can
-  establish that two cards exist; it cannot say which one is in hand. Adequate while they are
-  interchangeable; inadequate the moment one is graded, damaged, or sold.
+- **Whether two same-species rows are true duplicates**, when either number is unread. Detection
+  requires matching species *and* set *and* number *and* language, and set/number is exactly what the
+  photographs most often withhold. Such a pair can be neither confirmed as a violation nor cleared.
+- **Which physical copy is which**, for true duplicates held outside the binder. Two identical
+  printings are visually indistinguishable, so which gets the lower counter is arbitrary. Adequate
+  while they are interchangeable; inadequate the moment one is graded, damaged, or sold.
 - **Edition and print-run markers** — 1st edition vs unlimited, shadowless, and holo vs reverse-holo
   under strong glare.
 - **Reprints sharing artwork.** Identical illustration across two sets is indistinguishable without
@@ -189,9 +214,39 @@ No ID-retrofit rule is needed: with the entries removed there is nothing to retr
 `docs/holding-box-placement.md` is retained as a seeding source for pass 1 and deleted once the
 registry stands on its own.
 
+## Changes to `CURATORIAL_AUDIT_PROMPT.md`
+
+Two blocks added to §2. Both record rules that are already in force but were never written down —
+the same class of gap the old ledger flagged around the Trainer Full Arts restriction. A grep of the
+document confirms it currently says nothing about capacity or duplication.
+
+> ### Binder Capacity
+> - **Assume every existing theme in both volumes is full unless a specific empty pocket has been
+>   verified.** As of 2026-08-01 they are.
+> - Placing into an existing theme is therefore a **challenge, not an addition**: a card enters only
+>   by displacing a named incumbent, which then leaves the binder.
+> - Any analysis recommending placements into existing themes without naming the card each one
+>   evicts has not applied this rule.
+> - **Volume 2 has room for additional themes.** A new theme that passes §8 adds pages rather than
+>   displacing cards, so its cards evict nothing. This is the only additive path into the binder.
+>
+> ### No Duplicate Printings
+> - The same printing — same card, same set, same collector number, same language — must not appear
+>   twice across Volumes 1 and 2.
+> - A second copy goes to the holding pool or is released.
+> - Different illustrations of the same species in different themes are **not** duplicates and are
+>   permitted.
+
+Capacity is written as a default assumption with a verification escape rather than a flat statement
+of fact, so the rule does not itself go stale the way a stored location index would.
+
+The last capacity bullet matters for triage: a card that fits no existing theme is not thereby a
+release. It may be evidence for a new Volume 2 theme, subject to §8's tests.
+
 ## Out of scope
 
 - Retrofitting IDs onto historical analysis.
 - Registering the Emolga masterset, stamped cards, trainer full arts, or slabs.
 - Any current-location or inventory tracking.
-- Changes to `CURATORIAL_AUDIT_PROMPT.md` or to site content under `content/`.
+- Resolving the duplicates the report finds — it names candidates; the curator decides.
+- Site content under `content/`, and any §2 change beyond the two blocks above.
