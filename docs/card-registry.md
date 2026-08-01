@@ -148,3 +148,11 @@ This is not an inventory. It records what a card **is**, never where it sits. A 
 | rockets-trap-01 | Rocket's Trap | ロケット団のワナ | JP | | | uncertain | companions_2.webp 2026-08-01 | Trainer card, vintage print, number illegible after crop attempt |
 | houndour-02 | Houndour | デルビル | JP | | | uncertain | companions_2.webp 2026-08-01 | distinct from houndour-01, number illegible after crop attempt |
 | joltik-01 | Joltik | 电电虫 | ZH | | | uncertain | companions_2.webp 2026-08-01 | holo print, number illegible after crop attempt |
+| umbreon-05 | Umbreon | ブラッキー | JP | | 062/080 | photo | enduring_presence_1.webp 2026-08-01 | distinct from umbreon-01..04 |
+| ditto-01 | Ditto | Ditto | EN | | XY40 | photo | enduring_presence_1.webp 2026-08-01 | Metamorphosis Gene ability, Stick On attack, promo number |
+| snorlax-03 | Snorlax | Snorlax | EN | | | uncertain | enduring_presence_1.webp 2026-08-01 | Rest Up ability, Collapse/Toss and Turn attacks, distinct from snorlax-01/02, number illegible after crop attempt |
+| arcanine-01 | Arcanine | Light Arcanine | EN | Neo Destiny | 12/105 | photo | enduring_presence_1.webp 2026-08-01 | Light card, Drive Off ability, Gentle Flames attack |
+| dragonair-01 | Dragonair | エリカのハクリュー | JP | | No.148 | uncertain | enduring_presence_1.webp 2026-08-01 | Erika's Dragonair, Lv.32, vintage Pokedex-number print, era not identifiable |
+| celebi-01 | Celebi | Celebi | EN | Neo Revelation | 16/64 | photo | enduring_presence_1.webp 2026-08-01 | Psychic Leaf attack |
+| togepi-01 | Togepi | トゲピー | JP | | | uncertain | enduring_presence_1.webp 2026-08-01 | number illegible after crop attempt |
+| mudkip-01 | Mudkip | Mudkip | EN | | | uncertain | enduring_presence_1.webp 2026-08-01 | Nap/Waterfall attacks, number illegible after crop attempt |
