@@ -80,7 +80,12 @@ def test_requires_first_seen():
 
 def test_species_drift_is_a_warning_not_an_error():
     # The never-rewrite rule permits an ID whose slug no longer matches species.
-    errors = validate(parse_registry(table(row("houndour-03", "Houndoom"))))
+    # houndour-01/02 included so the counter run stays contiguous from 01.
+    errors = validate(parse_registry(table(
+        row("houndour-01", "Houndour"),
+        row("houndour-02", "Houndour"),
+        row("houndour-03", "Houndoom"),
+    )))
     assert errors == []
 
 
@@ -183,6 +188,8 @@ def test_photo_row_with_blank_number_is_an_error():
 
 def test_photo_row_with_set_and_number_has_no_error():
     errors = validate(parse_registry(table(
+        # lugia-01 included so the counter run stays contiguous from 01.
+        row("lugia-01", "Lugia", conf="photo", set_="s11", num="078/098"),
         row("lugia-02", "Lugia", conf="photo", set_="s12", num="079/098"),
     )))
     assert errors == []
@@ -198,5 +205,44 @@ def test_uncertain_row_with_blanks_has_no_confidence_error():
 def test_confirmed_row_with_blanks_has_no_confidence_error():
     errors = validate(parse_registry(table(
         row("umbreon-01", "Umbreon", conf="confirmed", set_="", num=""),
+    )))
+    assert errors == []
+
+
+def test_contiguous_counters_starting_at_01_have_no_error():
+    errors = validate(parse_registry(table(
+        row("gengar-01", "Gengar"),
+        row("gengar-02", "Gengar"),
+        row("gengar-03", "Gengar"),
+    )))
+    assert errors == []
+
+
+def test_gap_in_counters_is_an_error_naming_the_missing_number():
+    errors = validate(parse_registry(table(
+        row("gengar-01", "Gengar"),
+        row("gengar-02", "Gengar"),
+        row("gengar-04", "Gengar"),
+    )))
+    assert any("gengar" in e and "03" in e for e in errors)
+
+
+def test_counters_not_starting_at_01_is_an_error():
+    errors = validate(parse_registry(table(
+        row("gengar-02", "Gengar"),
+        row("gengar-03", "Gengar"),
+    )))
+    assert any("gengar" in e and "01" in e for e in errors)
+
+
+def test_compound_slug_does_not_count_toward_prefix_species():
+    # gengar-mimikyu-01 must never be treated as a fourth Gengar counter --
+    # species_slug() splits on the last hyphen only, so this must group
+    # separately from gengar-01..03 and neither sequence should error.
+    errors = validate(parse_registry(table(
+        row("gengar-01", "Gengar"),
+        row("gengar-02", "Gengar"),
+        row("gengar-03", "Gengar"),
+        row("gengar-mimikyu-01", "Gengar & Mimikyu"),
     )))
     assert errors == []

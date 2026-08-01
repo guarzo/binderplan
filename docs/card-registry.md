@@ -63,8 +63,8 @@ This is not an inventory. It records what a card **is**, never where it sits. A 
 | gengar-01 | Gengar | 耿鬼VMAX | ZH | s6c | 072/172 | photo | awakened_power_2.webp 2026-08-01 | Single Strike era, distinct from gengar-mimikyu-01 TAG TEAM |
 | gengar-02 | Gengar | ゲンガー | JP | | | uncertain | intimidation_1.webp 2026-08-01 | Lv.38 print, distinct from gengar-01 and gengar-mimikyu-01, number illegible |
 | gengar-03 | Gengar | M Gengar EX | JP | | | uncertain | on_attack_1.webp 2026-08-01 | Mega Evolution EX, "ファントムゲート"/Phantom Gate, distinct from gengar-01/02 and gengar-mimikyu-01, number illegible |
-| gengar-05 | Gengar | ゲンガー | JP | | | uncertain | companions_1.webp 2026-08-01 | Ability たくらみのうごう, スクリームサークル attack, distinct from gengar-01..04, number illegible after crop attempt |
-| gengar-06 | Gengar | わるいゲンガー | JP | | | uncertain | enduring_presence_2.webp 2026-08-01 | Dark Gengar, HP70, distinct from gengar-01..05, footer illegible after crop attempt |
+| gengar-04 | Gengar | ゲンガー | JP | | | uncertain | companions_1.webp 2026-08-01 | Ability たくらみのうごう, スクリームサークル attack, distinct from gengar-01..03, number illegible after crop attempt |
+| gengar-05 | Gengar | わるいゲンガー | JP | | | uncertain | enduring_presence_2.webp 2026-08-01 | Dark Gengar, HP70, distinct from gengar-01..04, footer illegible after crop attempt |
 | gengar-mimikyu-01 | Gengar & Mimikyu | 耿鬼＆谜拟丘GX | ZH | | | uncertain | awakened_power_1.webp 2026-08-01 | TAG TEAM card featuring two species, printed name kept whole rather than split; number illegible |
 | glaceon-01 | Glaceon | Glaceon | EN | | | uncertain | elemental_solitude_1.webp 2026-08-01 | Lv.46 print, number illegible after crop attempt |
 | golem-01 | Golem | Golem EX | EN | | 189/165 | uncertain | awakened_power_2.webp 2026-08-01 | set code not textual |

@@ -72,6 +72,31 @@ def validate(rows):
             errors.append(f"{rid}: species is required")
     # Species drift is deliberately NOT an error. The never-rewrite rule means a
     # corrected species column can legitimately disagree with a frozen ID slug.
+    errors.extend(counter_gap_errors(rows))
+    return errors
+
+
+def counter_gap_errors(rows):
+    """Every species' counters must run contiguously from 01 with no gaps.
+
+    Grouped by species_slug(), which splits on the last hyphen only -- so a
+    compound slug like gengar-mimikyu-01 groups under "gengar-mimikyu", never
+    under "gengar", and never inflates another species' sequence.
+    """
+    errors = []
+    counters = {}
+    for row in rows:
+        rid = row["id"]
+        if not ID_RE.match(rid):
+            continue  # already reported as a bad id format above
+        slug = species_slug(rid)
+        n = int(rid.rsplit("-", 1)[1])
+        counters.setdefault(slug, set()).add(n)
+    for slug, numbers in sorted(counters.items()):
+        missing = [n for n in range(1, max(numbers) + 1) if n not in numbers]
+        if missing:
+            missing_str = ", ".join(f"{n:02d}" for n in missing)
+            errors.append(f"{slug}: counters are not contiguous from 01, missing {missing_str}")
     return errors
 
 
