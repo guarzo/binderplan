@@ -94,3 +94,12 @@ This is not an inventory. It records what a card **is**, never where it sits. A 
 | charizard-01 | Charizard | リザードンG | JP | | 007/016 | uncertain | on_attack_1.webp 2026-08-01 | Lv.X print, set code not textual, number read with low confidence |
 | ursaring-02 | Ursaring | リングマ | JP | | No.217 | uncertain | on_attack_1.webp 2026-08-01 | Lv.43 print, distinct from ursaring-01, vintage Pokedex-number print, era not identifiable |
 | houndoom-02 | Houndoom | ヘルガー | JP | sv6a | 066/064 | photo | on_attack_1.webp 2026-08-01 | AR rarity, distinct from houndoom-01 |
+| dragonite-01 | Dragonite | カイリュー | JP | | No.149 | uncertain | contemplation_1.webp 2026-08-01 | Lv.45 print, vintage Pokedex-number print, era not identifiable |
+| latios-02 | Latios | ラティオス | JP | | 070/064 | uncertain | contemplation_1.webp 2026-08-01 | AR rarity, distinct from latias-01, set code not textual |
+| mewtwo-03 | Mewtwo | Mewtwo | EN | SVP | 052 | photo | contemplation_1.webp 2026-08-01 | Scarlet & Violet promo, Reflective Barrier/Psyslash, distinct from mewtwo-01/02 |
+| pachirisu-01 | Pachirisu | バチュル | JP | | 117/086 | uncertain | contemplation_1.webp 2026-08-01 | AR rarity, set code not textual, number read with low confidence |
+| victini-02 | Victini | Victini | EN | SVP | 208 | photo | contemplation_1.webp 2026-08-01 | Scarlet & Violet promo, V-Force attack, distinct from victini-01 |
+| umbreon-02 | Umbreon | ブラッキー | JP | | No.197 | uncertain | contemplation_1.webp 2026-08-01 | vintage Pokedex-number print, distinct from umbreon-01, era not identifiable |
+| spheal-03 | Spheal | Spheal | EN | | | uncertain | contemplation_1.webp 2026-08-01 | Lv.17 print, distinct from spheal-01/02, number illegible |
+| snivy-02 | Snivy | ツタージャ | JP | | 037/078 | uncertain | contemplation_1.webp 2026-08-01 | distinct from snivy-01, set code not textual, number read with low confidence |
+| dratini-01 | Dratini | Dratini | EN | | 33/62 | uncertain | contemplation_1.webp 2026-08-01 | set code not textual |
