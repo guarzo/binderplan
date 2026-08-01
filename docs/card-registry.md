@@ -121,3 +121,12 @@ This is not an inventory. It records what a card **is**, never where it sits. A 
 | darkrai-03 | Darkrai | Darkrai | EN | | | uncertain | legendary_bearing_1.webp 2026-08-01 | Dark Cutter/Abyssal Sleep, distinct from darkrai-01/02, number illegible |
 | dialga-01 | Dialga | ディアルガ | JP | | | uncertain | legendary_bearing_1.webp 2026-08-01 | Lv.69, No.483 dex entry, card number partially visible ("006/...") but remainder illegible, left blank rather than guessed |
 | typhlosion-02 | Typhlosion | バクフーン | JP | | No.157 | uncertain | legendary_bearing_1.webp 2026-08-01 | Lv.46 print, distinct from typhlosion-01, vintage Pokedex-number print, era not identifiable |
+| umbreon-04 | Umbreon | Umbreon | EN | | 13/90 | uncertain | legendary_bearing_2.webp 2026-08-01 | Moonlight Fang/Quick Blow, RH holo mark, distinct from umbreon-01/02/03, set code not textual |
+| ns-plan-01 | N's Plan | N's Plan | EN | | 163/086 | uncertain | legendary_bearing_2.webp 2026-08-01 | Supporter trainer, double-star SR rarity mark, set code not textual |
+| mew-03 | Mew | Mew GX | JP | | 137/165 | uncertain | legendary_bearing_2.webp 2026-08-01 | double-star SR rarity mark, distinct from mew-01/02, set code not textual |
+| gardevoir-01 | Gardevoir | ザーナイトex | JP | | | uncertain | legendary_bearing_2.webp 2026-08-01 | ex card, Breakdown/Psycho Storm, number illegible after crop attempt |
+| dragonite-02 | Dragonite | カイリューex | JP | | 038/054 | uncertain | legendary_bearing_2.webp 2026-08-01 | ex card, distinct from dragonite-01, set code not textual |
+| golem-02 | Golem | ゴローニャex | JP | | | uncertain | legendary_bearing_2.webp 2026-08-01 | ex card, distinct from golem-01, number illegible after crop attempt |
+| zekrom-01 | Zekrom | Zekrom EX | EN | | 158/046 | uncertain | legendary_bearing_2.webp 2026-08-01 | Slash/Voltage Burst, set code not textual |
+| ninetales-01 | Ninetales | キュウコン | JP | | No.038 | uncertain | legendary_bearing_2.webp 2026-08-01 | Lv.32, vintage Pokedex-number print, era not identifiable |
+| espeon-02 | Espeon | 太阳伊布GX | ZH | | 195/151 | uncertain | legendary_bearing_2.webp 2026-08-01 | GX card, SSR rarity mark, distinct from espeon-01; 太阳伊布 is Espeon's Chinese localized name, set code not textual |
