@@ -25,7 +25,7 @@ Groups defined by judgment. There's no such thing as a card missing from a theme
 
 ## Runs
 
-Groups with a defined outside, where a card can be genuinely missing.
+Groups with a defined outside, where a card can be genuinely missing — even when the outside is an ongoing interest rather than a finished set.
 
 - **[Masaki](masaki/)** — Japanese mail-in trade promos from the Communication Evolution campaign
 - **[Chinese Exclusives](chinese-exclusives/)** — Chinese-market releases with no international printing

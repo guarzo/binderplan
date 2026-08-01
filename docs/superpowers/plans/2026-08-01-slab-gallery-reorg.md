@@ -812,8 +812,10 @@ import re
 from pathlib import Path
 out = Path("/tmp/hugocheck")
 bad = []
+SRC_RE = re.compile(r'<img[^>]*\ssrc=(?:"([^"]+)"|\'([^\']+)\'|([^\s>]+))')
 for html in out.rglob("*.html"):
-    for src in re.findall(r'<img[^>]*\ssrc="([^"]+)"', html.read_text(encoding="utf-8")):
+    for m in SRC_RE.finditer(html.read_text(encoding="utf-8")):
+        src = next(g for g in m.groups() if g)
         if not src.startswith("/") and "images/" not in src:
             continue
         import urllib.parse

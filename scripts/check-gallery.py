@@ -23,22 +23,32 @@ SRC_RE = re.compile(r'<img[^>]*\ssrc="([^"]+)"')
 
 
 def collect():
-    """Return {md_path: [resolved static paths]} for every img src in content/."""
+    """Return {md_path: [resolved static paths]} for every img src in content/, plus a
+    separate list of relative-depth failures (paths that resolve on disk only because
+    Path() discards the ../ prefix, but a browser would 404 on)."""
     refs = {}
+    depth_failures = []
     for md in sorted(CONTENT.rglob("*.md")):
         found = []
+        expected_prefix = "../../images/" if md.parent.parent == CONTENT / "gallery" else None
         for raw in SRC_RE.findall(md.read_text(encoding="utf-8")):
             src = urllib.parse.unquote(raw)
             if "images/" not in src:
                 continue
+            if expected_prefix and not src.startswith(expected_prefix):
+                depth_failures.append(
+                    f"wrong relative depth: {src} in {md.relative_to(ROOT)} (expected ../../images/...)"
+                )
+                continue
             found.append(STATIC / src[src.index("images/"):])
         refs[md] = found
-    return refs
+    return refs, depth_failures
 
 
 def main():
     failures = []
-    refs = collect()
+    refs, depth_failures = collect()
+    failures.extend(depth_failures)
 
     # 1. Every referenced image exists on disk.
     for md, paths in refs.items():
