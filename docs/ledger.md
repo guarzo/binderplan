@@ -19,7 +19,7 @@ A card that obviously belonged where it went gets no entry.
 
 **Vocabulary.** Destinations use names that already exist — Volume 1 and Volume 2 sub-themes, and the holding-box sections from `content/guides/holding-box.md`: EDGE, REDUNDANT, HERITAGE, FUTURE SELF, RELEASE. No parallel naming scheme.
 
-**Card IDs.** Entries cite cards by registry ID from [`card-registry.md`](card-registry.md), written as `Umbreon (umbreon-02)` — species alongside the ID for readability, neither alone. Species names by themselves are ambiguous: Umbreon appears five times across the binder, Mewtwo four, Pikachu seven. A card with no ID gets one at the moment it is first cited here.
+**Card IDs.** Entries cite cards by registry ID from [`card-registry.md`](card-registry.md), written as `Umbreon (umbreon-02)` — species alongside the ID for readability, neither alone. Species names by themselves are ambiguous: Umbreon appears five times across the binder, Mewtwo four, Pikachu seven. A card with no ID gets one at the moment it is first cited here — **except** a card that left the collection before the registry began on 2026-08-01. Those are named in prose without an ID and never receive one; registering a card nobody can produce would be the backfill this file forbids.
 
 **Citations.** `§` references are to `CURATORIAL_AUDIT_PROMPT.md`.
 
@@ -63,9 +63,9 @@ page and no Kecleon exists anywhere in the registry, both consistent with that s
 carried out.
 
 **It is recorded as unverified** because the Threshold page was never photographed before the
-2026-08-01 reshoot, so there is no before state to compare. The displaced Kecleon has no ID and
-never will — it left before the registry existed, and inventing one now would be the backfill this
-file forbids.
+2026-08-01 reshoot, so there is no before state to compare. The displaced Kecleon is named here in
+prose only: it left before the registry began, so it falls under the exception in **Card IDs**
+above and carries no identifier. It is a historical card, not a registry entry.
 
 ### Note on the seven remaining swaps
 

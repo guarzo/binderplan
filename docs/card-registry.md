@@ -116,7 +116,7 @@ This is not an inventory. It records what a card **is**, never where it sits. A 
 | lugia-03 | Lugia | Lugia | EN | | 28/64 | uncertain | legendary_bearing_1.webp 2026-08-01 | Aerowing attack, No.249 dex entry, vintage print, distinct from lugia-01/02, era not identifiable |
 | machop-01 | Machop | Machop | EN | | 086/136 | uncertain | threshold_1.webp 2026-08-01 | Punch attack, set not readable as text |
 | marill-01 | Marill | Marill | EN | | 44/111 | uncertain | joyful_action_1.webp 2026-08-01 | vintage-style print, number legible, set name not shown |
-| marowak-01 | Marowak | カラカラ | JP | | 067/072 | uncertain | at_rest_1.webp 2026-08-01 | vintage-style print, set name not identifiable |
+| marowak-01 | Cubone | カラカラ | JP |  | 067/072 | uncertain | at_rest_1.webp 2026-08-01 | vintage-style print, set name not identifiable; カラカラ is Cubone, not Marowak (ガラガラ); ID frozen before the error was found, species corrected per the never-rewrite rule |
 | marowak-02 | Marowak | ガラガラ | JP | | | uncertain | intimidation_1.webp 2026-08-01 | delta species print, distinct from marowak-01, number illegible after crop attempt |
 | master-ball-01 | Master Ball | マスターボール | JP | | | uncertain | threshold_1.webp 2026-08-01 | Trainer item card, no number field visible after crop attempt |
 | mew-01 | Mew | Mew ex | EN | SVP | 053 | photo | world_people_1.webp 2026-08-01 | promo stamp |
@@ -136,7 +136,7 @@ This is not an inventory. It records what a card **is**, never where it sits. A 
 | ns-plan-01 | N's Plan | N's Plan | EN | | 163/086 | uncertain | legendary_bearing_2.webp 2026-08-01 | Supporter trainer, double-star SR rarity mark, set code not textual |
 | numel-01 | Numel | Numel | EN | | 49/97 | uncertain | quiet_familiarity_1.webp 2026-08-01 | Firebreathing/Tackle attacks, e-Card era, set not readable as text |
 | oshawott-01 | Oshawott | Oshawott | EN | | | uncertain | at_rest_1.webp 2026-08-01 | number illegible |
-| pachirisu-01 | Pachirisu | バチュル | JP | | 117/086 | uncertain | contemplation_1.webp 2026-08-01 | AR rarity, set code not textual, number read with low confidence |
+| pachirisu-01 | Joltik | バチュル | JP |  | 117/086 | uncertain | contemplation_1.webp 2026-08-01 | AR rarity, set code not textual, number read with low confidence; バチュル is Joltik, not Pachirisu (パチリス); ID frozen before the error was found, species corrected per the never-rewrite rule |
 | palkia-01 | Palkia | Palkia | EN | Platinum | 26/106 | photo | awakened_power_2.webp 2026-08-01 | Lv.67, "PLATINUM" printed on card face |
 | pikachu-01 | Pikachu | Pikachu | EN | | | uncertain | calm_nature_1.webp 2026-08-01 | classic border, corner number illegible |
 | pikachu-02 | Pikachu | Surfing Pikachu | EN | | 111/108 | uncertain | joyful_action_1.webp 2026-08-01 | vintage-style print, distinct from pikachu-01 |
@@ -197,7 +197,7 @@ This is not an inventory. It records what a card **is**, never where it sits. A 
 | victini-02 | Victini | Victini | EN | SVP | 208 | photo | contemplation_1.webp 2026-08-01 | Scarlet & Violet promo, V-Force attack, distinct from victini-01 |
 | vulpix-01 | Vulpix | Vulpix | EN | | 119/147 | uncertain | enduring_presence_2.webp 2026-08-01 | Collect Fire attack, e-Card era stamp, number ambiguous (119 or 116)/147, set not readable as text |
 | walrein-01 | Walrein | トドゼルガex | JP | | | uncertain | awakened_power_1.webp 2026-08-01 | number illegible |
-| woobat-01 | Woobat | オンバット | JP | | | uncertain | calm_nature_1.webp 2026-08-01 | set/number code visible but digits ambiguous under magnification, left blank rather than guess |
+| woobat-01 | Noibat | オンバット | JP |  |  | uncertain | calm_nature_1.webp 2026-08-01 | set/number code visible but digits ambiguous under magnification, left blank rather than guess; オンバット is Noibat, not Woobat (コロモリ); ID frozen before the error was found, species corrected per the never-rewrite rule |
 | yveltal-01 | Yveltal | Yveltal EX | EN | | 79/146 | uncertain | on_attack_1.webp 2026-08-01 | set code not textual |
 | yveltal-02 | Yveltal | 伊裴尔塔尔 | ZH | | | uncertain | legendary_bearing_1.webp 2026-08-01 | distinct from yveltal-01, number illegible |
 | zapdos-01 | Zapdos | サンダー | JP | | No.143 | uncertain | IMG_6847.HEIC 2026-08-01 | vintage Pokedex-number print, era not identifiable |

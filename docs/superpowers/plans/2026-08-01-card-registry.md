@@ -578,6 +578,8 @@ git commit -m "Seed registry from Volume 1 chapters IV-V"
 
 **Note:** the design references a *Quiet Familiarity p2* holding the binder's one empty pocket, but no `quiet_familiarity_2.webp` exists in `static/images/binder/volume-2/`. Record this in Task 5's report as a gap — a binder page with no photograph is a hole in the registry, and the curator needs to know rather than have it silently omitted. Do not fabricate rows for it.
 
+> **Superseded — do not act on the note above.** Quiet Familiarity p2 does exist; it was stored under the filename `enduring_presence_1.webp`, part of a systematic off-by-one across Volume II's image names. Its nine cards are in the registry. The corrected image mapping is in `docs/registry-confirmation.md` §4. This paragraph is left in place because the plan is a record of what was believed at planning time.
+
 - [ ] **Step 1: Convert to PNG**
 
 ```bash

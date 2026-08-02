@@ -93,6 +93,13 @@ def counter_gap_errors(rows):
         n = int(rid.rsplit("-", 1)[1])
         counters.setdefault(slug, set()).add(n)
     for slug, numbers in sorted(counters.items()):
+        # Counters run from 01. A 00 matches ID_RE but breaks that invariant, and the
+        # contiguity check below cannot see it -- range(1, 0 + 1) is empty.
+        if 0 in numbers:
+            errors.append(f"{slug}-00: counters start at 01, not 00")
+            numbers = numbers - {0}
+            if not numbers:
+                continue
         missing = [n for n in range(1, max(numbers) + 1) if n not in numbers]
         if missing:
             missing_str = ", ".join(f"{n:02d}" for n in missing)
@@ -152,7 +159,7 @@ def render_worklist(rows):
     """The full confirmation-worklist document, as Markdown text.
 
     Reproduces the structure of the hand-written docs/registry-confirmation.md
-    (sections 1-3 and a departed-cards closing section) purely from the rows
+    (sections 1-3) purely from the rows
     passed in, so it can be regenerated on demand instead of drifting out of
     date. Section 4, "Gaps and known issues", is hand-written narrative the
     registry cannot reconstruct -- a placeholder is emitted in its place.
@@ -174,8 +181,6 @@ def render_worklist(rows):
     clusters = [(slug, g) for slug, g in queue if len(g) > 1]
     singletons = [(slug, g) for slug, g in queue if len(g) == 1]
     cluster_rows = sum(len(g) for _, g in clusters)
-
-    departed = [r for r in rows if "NOT IN THE BINDER" in r["notes"]]
 
     lines = []
     lines.append("# Registry confirmation worklist")
@@ -278,16 +283,16 @@ def render_worklist(rows):
         "     copy it forward from the previous version. -->"
     )
     lines.append("")
-    if departed:
-        lines.append("## 5. Cards no longer in the binder")
-        lines.append("")
-        lines.append("Rows whose `notes` record that the card has left the binder:")
-        lines.append("")
-        lines.append("| ID | Card name | Notes |")
-        lines.append("|---|---|---|")
-        for r in departed:
-            lines.append(f"| {r['id']} | {r['card_name']} ({r['language']}) | {r['notes']} |")
-        lines.append("")
+    lines.append("## 5. Cards no longer in the binder")
+    lines.append("")
+    lines.append(
+        "Not derivable here. The registry records what a card **is**, never where it sits, "
+        "so a row gives no sign that its card has left the binder. Movement lives in "
+        "`ledger.md`: grep it for an ID to see whether that card was swapped out. Any list "
+        "of departed cards in this document is hand-written and must be carried forward "
+        "when it is regenerated."
+    )
+    lines.append("")
     return "\n".join(lines)
 
 

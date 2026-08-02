@@ -12,8 +12,11 @@ frozen.
 have `set` only, 69 have neither field. The confirmation queue (section 3) holds 146 rows across 93
 species: 34 clusters (87 rows) and 59 singletons.
 
-IDs below are provisional until sign-off, per the design note's one-time carve-out from the
-never-rewrite rule.
+**The registry is frozen.** The curator signed off on 2026-08-01; the IDs below are permanent and
+the one-time carve-out from the never-rewrite rule has closed. Every other column stays correctable
+— filling in a `set`, correcting a `species`, upgrading a `confidence` are all normal. Three species
+have already been corrected this way (`marowak-01` is a Cubone, `pachirisu-01` a Joltik,
+`woobat-01` a Noibat); their IDs stayed, as the rule requires.
 
 ## 1. Blocked — species unreadable
 

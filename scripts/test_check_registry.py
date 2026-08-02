@@ -278,20 +278,23 @@ def test_worklist_header_totals_match_fixture():
     assert "2 rows across 2 species: 0 clusters (0 rows) and 2 singletons" in doc
 
 
-def test_worklist_departed_section_appears_when_notes_flag_present():
+def test_worklist_does_not_derive_departed_cards_from_notes():
+    # The registry records what a card IS, never where it sits. A notes marker
+    # claiming a card has left must not be promoted into generated output --
+    # that would make the registry a location index, which the design forbids.
     doc = render_worklist(parse_registry(table(
         row("umbreon-01", "Umbreon", conf="confirmed", set_="A", num="1",
             notes="**NOT IN THE BINDER** — swapped out; check the holding box."),
     )))
-    assert "NOT IN THE BINDER" in doc
-    assert "no longer in the binder" in doc.lower()
+    assert "NOT IN THE BINDER" not in doc
 
 
-def test_worklist_departed_section_absent_when_no_departed_rows():
+def test_worklist_points_at_the_ledger_for_movement():
     doc = render_worklist(parse_registry(table(
         row("umbreon-01", "Umbreon", conf="confirmed", set_="A", num="1"),
     )))
-    assert "no longer in the binder" not in doc.lower()
+    assert "ledger.md" in doc
+    assert "not derivable here" in doc.lower()
 
 
 def test_worklist_has_handwritten_placeholder():
@@ -313,3 +316,19 @@ def test_compound_slug_does_not_count_toward_prefix_species():
         row("gengar-mimikyu-01", "Gengar & Mimikyu"),
     )))
     assert errors == []
+
+
+def test_zero_counter_is_an_error():
+    # Counters run from 01. A 00 counter matches ID_RE but breaks that invariant,
+    # and the contiguity check alone does not catch it (range(1, 0+1) is empty).
+    errors = validate(parse_registry(table(row("foo-00", "Foo"))))
+    assert any("foo-00" in e for e in errors)
+
+
+def test_zero_counter_is_an_error_alongside_valid_counters():
+    errors = validate(parse_registry(table(row("foo-00", "Foo"), row("foo-01", "Foo"))))
+    assert any("foo-00" in e for e in errors)
+
+
+def test_valid_counters_starting_at_01_still_pass():
+    assert validate(parse_registry(table(row("foo-01", "Foo"), row("foo-02", "Foo")))) == []
