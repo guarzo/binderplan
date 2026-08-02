@@ -345,9 +345,11 @@ def test_confirmation_queue_groups_by_species_not_id_slug():
         row("marowak-02", "Marowak", num="", conf="uncertain"),
     )))
     groups = dict(queue)
-    assert "cubone" in groups and len(groups["cubone"]) == 2
+    assert "cubone" in groups
+    assert len(groups["cubone"]) == 2
     assert {r["id"] for r in groups["cubone"]} == {"marowak-01", "cubone-01"}
-    assert "marowak" in groups and {r["id"] for r in groups["marowak"]} == {"marowak-02"}
+    assert "marowak" in groups
+    assert {r["id"] for r in groups["marowak"]} == {"marowak-02"}
 
 
 def test_counter_validation_still_uses_the_id_slug():
