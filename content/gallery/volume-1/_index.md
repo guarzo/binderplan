@@ -21,15 +21,15 @@ Volume I is where it all started. These pages cover how Pokemon move, rest, thre
     <figcaption><strong>Belonging &amp; Safety.</strong> The divider that opens the chapter.</figcaption>
   </figure>
   <figure class="gallery-item span-half">
-    <img src="../../images/binder/volume-1/calm_nature_1.webp" alt="Calm in Nature spread" loading="lazy">
+    <img src="../../images/binder/volume-1/calm_nature_1.webp" alt="Nine-pocket binder page holding Audino, Bulbasaur, Cyndaquil, Horsea, Pikachu, Plusle, Sandshrew, Snivy, Woobat" loading="lazy">
     <figcaption><strong>Calm in Nature — Ease in the Wild.</strong> Pokemon held comfortably by landscape, weather, and open space.</figcaption>
   </figure>
   <figure class="gallery-item span-wide">
-    <img src="../../images/binder/volume-1/world_people_1.webp" alt="World of People spread" loading="lazy">
+    <img src="../../images/binder/volume-1/world_people_1.webp" alt="Nine-pocket binder page holding Chansey, Charmander, Cubone, Greavard, Mew, Quaxly, Ralts, Slowpoke, Squirtle" loading="lazy">
     <figcaption><strong>World of People — Shared Worlds.</strong> Daily human spaces made fuller by Pokemon participation and coexistence.</figcaption>
   </figure>
   <figure class="gallery-item span-narrow">
-    <img src="../../images/binder/volume-1/at_rest_1.webp" alt="At Rest spread" loading="lazy">
+    <img src="../../images/binder/volume-1/at_rest_1.webp" alt="Nine-pocket binder page holding Eevee, Marowak, Mew, Oshawott, Pikachu, Shaymin, Snorlax, Sprigatito, Stufful" loading="lazy">
     <figcaption><strong>At Rest — Guard Lowered.</strong> Sleep, recovery, and the vulnerability of complete disengagement.</figcaption>
   </figure>
 </div>
@@ -42,7 +42,7 @@ Volume I is where it all started. These pages cover how Pokemon move, rest, thre
     <figcaption><strong>Motion &amp; Life.</strong> Energy with nothing dangerous attached to it.</figcaption>
   </figure>
   <figure class="gallery-item span-half">
-    <img src="../../images/binder/volume-1/joyful_action_1.webp" alt="Joyful Action spread" loading="lazy">
+    <img src="../../images/binder/volume-1/joyful_action_1.webp" alt="Nine-pocket binder page holding Bulbasaur, Charmander, Emolga, Jirachi, Latias, Marill, Pikachu, Spheal, Victini" loading="lazy">
     <figcaption><strong>Joyful Action — Play in Motion.</strong> Movement powered by delight rather than urgency, threat, or force.</figcaption>
   </figure>
 </div>
@@ -55,19 +55,19 @@ Volume I is where it all started. These pages cover how Pokemon move, rest, thre
     <figcaption><strong>Power Awakening.</strong> The moment before release.</figcaption>
   </figure>
   <figure class="gallery-item span-half">
-    <img src="../../images/binder/volume-1/awakened_power_1.webp" alt="Awakened Power spread 1" loading="lazy">
+    <img src="../../images/binder/volume-1/awakened_power_1.webp" alt="Nine-pocket binder page holding Darkrai, Gengar & Mimikyu, Groudon, Gyarados, Houndoom, Jirachi, Lugia, Umbreon, Walrein" loading="lazy">
     <figcaption><strong>Awakened Power — Gathering.</strong> Energy collecting around Pokemon at the moment before release.</figcaption>
   </figure>
   <figure class="gallery-item span-wide">
-    <img src="../../images/binder/volume-1/awakened_power_2.webp" alt="Awakened Power spread 2" loading="lazy">
+    <img src="../../images/binder/volume-1/awakened_power_2.webp" alt="Nine-pocket binder page holding Gengar, Golem, Mewtwo, Palkia, Rayquaza, Salamence, Scyther, Shaymin, Torterra" loading="lazy">
     <figcaption><strong>Awakened Power — Becoming.</strong> Transformation, escalation, and power crossing toward inevitability.</figcaption>
   </figure>
   <figure class="gallery-item span-narrow">
-    <img src="../../images/binder/volume-1/legendary_bearing_1.webp" alt="Legendary Bearing spread 1" loading="lazy">
+    <img src="../../images/binder/volume-1/legendary_bearing_1.webp" alt="Nine-pocket binder page holding Darkrai, Dialga, Entei, Groudon, Latios, Lugia, Mewtwo, Yveltal, Zapdos" loading="lazy">
     <figcaption><strong>Legendary Bearing — Mythic Authority.</strong> Complete forces presented as rulers, guardians, and objects of awe.</figcaption>
   </figure>
   <figure class="gallery-item span-full">
-    <img src="../../images/binder/volume-1/legendary_bearing_2.webp" alt="Legendary Bearing spread 2" loading="lazy">
+    <img src="../../images/binder/volume-1/legendary_bearing_2.webp" alt="Nine-pocket binder page holding Dragonite, Espeon, Gardevoir, Golem, Mew, N's Plan, Ninetales, Umbreon, Zekrom" loading="lazy">
     <figcaption><strong>Legendary Bearing — The Encounter.</strong> Power made immediate through commanding posture, scale, and revelation.</figcaption>
   </figure>
 </div>
@@ -80,11 +80,11 @@ Volume I is where it all started. These pages cover how Pokemon move, rest, thre
     <figcaption><strong>Threat &amp; Conflict.</strong> Pressure, then action.</figcaption>
   </figure>
   <figure class="gallery-item span-half">
-    <img src="../../images/binder/volume-1/intimidation_1.webp" alt="Intimidation spread" loading="lazy">
+    <img src="../../images/binder/volume-1/intimidation_1.webp" alt="Nine-pocket binder page holding Bewear, Gengar, Houndour, Lucario, Marowak, Mewtwo, Misdreavus, Sabrina's Gaze, Typhlosion" loading="lazy">
     <figcaption><strong>Intimidation — Before the Strike.</strong> Menace communicated through presence, gaze, and restraint alone.</figcaption>
   </figure>
   <figure class="gallery-item span-full">
-    <img src="../../images/binder/volume-1/on_attack_1.webp" alt="On the Attack spread" loading="lazy">
+    <img src="../../images/binder/volume-1/on_attack_1.webp" alt="Nine-pocket binder page holding Charizard, Gengar, Houndoom, Kingdra, Lugia, Snorlax, Spheal, Ursaring, Yveltal" loading="lazy">
     <figcaption><strong>On the Attack — Commitment to Force.</strong> The instant hesitation ends and action becomes irreversible.</figcaption>
   </figure>
 </div>
@@ -97,11 +97,11 @@ Volume I is where it all started. These pages cover how Pokemon move, rest, thre
     <figcaption><strong>Isolation &amp; Reflection.</strong> Scale, silence, and awareness.</figcaption>
   </figure>
   <figure class="gallery-item span-half">
-    <img src="../../images/binder/volume-1/elemental_solitude_1.webp" alt="Elemental Solitude spread" loading="lazy">
+    <img src="../../images/binder/volume-1/elemental_solitude_1.webp" alt="Nine-pocket binder page holding Absol, Ampharos, Cyndaquil, Darkrai, Espeon, Glaceon, Houndoom, Kyogre, Latios" loading="lazy">
     <figcaption><strong>Elemental Solitude — Alone with the Element.</strong> Solitary Pokemon defined by water, fire, weather, and environmental scale.</figcaption>
   </figure>
   <figure class="gallery-item span-wide">
-    <img src="../../images/binder/volume-1/contemplation_1.webp" alt="Contemplation spread" loading="lazy">
+    <img src="../../images/binder/volume-1/contemplation_1.webp" alt="Nine-pocket binder page holding Dragonite, Dratini, Latios, Mewtwo, Pachirisu, Snivy, Spheal, Umbreon, Victini" loading="lazy">
     <figcaption><strong>Contemplation — Inner Weather.</strong> Awake, motionless attention directed toward something beyond the frame.</figcaption>
   </figure>
   <figure class="gallery-item span-narrow">

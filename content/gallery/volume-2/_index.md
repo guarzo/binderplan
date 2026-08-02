@@ -4,7 +4,7 @@ description: "Memory, Presence, and Passage"
 layout: "gallery"
 ---
 
-Volume II is less about action and more about memory, familiarity, and change over time. These photographed pages capture the volume as it currently stands; the collection will continue to change around them.
+Volume II is less about action and more about memory, familiarity, and change over time. These pages were photographed on 1 August 2026 and capture the volume as it stood that day; the collection will continue to change around them.
 
 <div class="gallery-grid">
   <figure class="gallery-item span-half">
@@ -29,8 +29,12 @@ Volume II is less about action and more about memory, familiarity, and change ov
     <figcaption><strong>Companions — Care in Practice.</strong> Affection expressed through teaching, protection, work, and ordinary attention.</figcaption>
   </figure>
   <figure class="gallery-item span-narrow">
-    <img src="../../images/binder/volume-2/quiet_familiarity_1.webp" alt="Quiet Familiarity spread" loading="lazy">
+    <img src="../../images/binder/volume-2/quiet_familiarity_1.webp" alt="Nine-pocket page of mostly vintage cards — Charmander, Mew, Snivy, Pikachu, Numel, Dratini, Piplup, Shaymin and Squirtle in open outdoor settings" loading="lazy">
     <figcaption><strong>Quiet Familiarity — Gentle Company.</strong> Calm companionship across gardens, paths, and shared outdoor spaces.</figcaption>
+  </figure>
+  <figure class="gallery-item span-narrow">
+    <img src="../../images/binder/volume-2/quiet_familiarity_2.webp" alt="Nine-pocket page including Umbreon, Ditto, a sleeping Snorlax, Light Arcanine, Erika's Dragonair, Celebi, Togepi, Mudkip and a Cinccino illustration rare" loading="lazy">
+    <figcaption><strong>Quiet Familiarity — Domestic Scale.</strong> Rest, small routines, and the ease of a familiar room.</figcaption>
   </figure>
 </div>
 
@@ -38,21 +42,29 @@ Volume II is less about action and more about memory, familiarity, and change ov
 
 <div class="gallery-grid">
   <figure class="gallery-item span-half">
-    <img src="../../images/binder/volume-2/enduring_presence_1.webp" alt="Enduring Presence spread 1" loading="lazy">
-    <figcaption><strong>Enduring Presence — Relics and Survivors.</strong> Vintage forms, fossils, and presences that appear carried forward through time.</figcaption>
+    <img src="../../images/binder/volume-2/ch2_permanence.webp" alt="Handwritten Permanence divider card seated in a binder pocket" loading="lazy">
+    <figcaption><strong>Permanence.</strong> The divider that opens the chapter.</figcaption>
   </figure>
   <figure class="gallery-item span-half">
-    <img src="../../images/binder/volume-2/enduring_presence_2.webp" alt="Enduring Presence spread 2" loading="lazy">
-    <figcaption><strong>Enduring Presence — Witnesses to History.</strong> Old places, recurring figures, and signs of a world carrying memory forward.</figcaption>
+    <img src="../../images/binder/volume-2/enduring_presence_1.webp" alt="Nine-pocket page of mostly vintage Japanese holos — Muk, Vulpix, Groudon, Steelix, Blastoise, Jirachi, Pikachu, Dark Gengar and Bulbasaur" loading="lazy">
+    <figcaption><strong>Enduring Presence — Relics and Survivors.</strong> Vintage forms and long-lived holos, presented complete rather than mid-action.</figcaption>
+  </figure>
+  <figure class="gallery-item span-wide">
+    <img src="../../images/binder/volume-2/enduring_presence_2.webp" alt="Nine-pocket page including Machop, Mew, Zygarde, Reshiram, Hoopa, a Master Ball, Sandshrew, Houndoom and Shaymin" loading="lazy">
+    <figcaption><strong>Enduring Presence — Contained Power.</strong> Force held rather than spent — sealed in a Master Ball, ringed by Hoopa, or simply standing whole.</figcaption>
   </figure>
 </div>
 
 ## Chapter III — Passage
 
 <div class="gallery-grid">
-  <figure class="gallery-item span-full">
-    <img src="../../images/binder/volume-2/threshold_1.webp" alt="Threshold spread" loading="lazy">
-    <figcaption><strong>Threshold — At the Edge.</strong> Paths, shorelines, horizons, and the pause before crossing from one place into another.</figcaption>
+  <figure class="gallery-item span-half">
+    <img src="../../images/binder/volume-2/ch3_passage.webp" alt="Threshold divider card reading &quot;Space between moments&quot;" loading="lazy">
+    <figcaption><strong>Threshold.</strong> Space between moments.</figcaption>
+  </figure>
+  <figure class="gallery-item span-half">
+    <img src="../../images/binder/volume-2/threshold_1.webp" alt="Nine-pocket page of edges and crossings — a sunrise stadium, Squirtle at a shoreline, Deoxys and Rayquaza in open space, a revived Kabuto fossil, and Hoopa's portal rings" loading="lazy">
+    <figcaption><strong>Threshold — At the Edge.</strong> Dawn, shoreline, deep space, and the fossil carried out of one age into another.</figcaption>
   </figure>
 </div>
 

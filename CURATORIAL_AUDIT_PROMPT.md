@@ -41,6 +41,17 @@ Your responsibility is to **audit all volumes**, evaluate reserve cards for plac
 - Volume 2 is where refinement, evolution, and expansion occur.
 - New themes, if justified, must live here.
 
+### Binder Capacity
+- **Assume every existing theme in both volumes is full unless a specific empty pocket has been verified.** As of 2026-08-01 they are: 19 pages, 171 cards, no empty pockets.
+- Placing into an existing theme is therefore a **challenge, not an addition**: a card enters only by displacing a named incumbent, which then leaves the binder.
+- Any analysis recommending placements into existing themes without naming the card each one evicts has not applied this rule.
+- **Volume 2 has room for additional themes.** A new theme that passes §8 adds pages rather than displacing cards, so its cards evict nothing. This is the only additive path into the binder.
+
+### No Duplicate Printings
+- The same printing — same card, same set, same collector number, same language — must not appear twice across Volumes 1 and 2.
+- A second copy goes to the holding pool or is released.
+- Different illustrations of the same species in different themes are **not** duplicates and are permitted.
+
 ---
 
 ## 3. Volume 1 — Canonical Themes
