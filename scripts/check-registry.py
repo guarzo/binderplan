@@ -139,15 +139,177 @@ def confirmation_queue(rows):
     return sorted(buckets.items(), key=lambda kv: (-len(kv[1]), kv[0]))
 
 
+def _pct(count, total):
+    return (count / total * 100) if total else 0.0
+
+
+def _source_image(first_seen):
+    """The filename portion of first_seen, which is 'filename date'."""
+    return first_seen.split()[0] if first_seen else first_seen
+
+
+def render_worklist(rows):
+    """The full confirmation-worklist document, as Markdown text.
+
+    Reproduces the structure of the hand-written docs/registry-confirmation.md
+    (sections 1-3 and a departed-cards closing section) purely from the rows
+    passed in, so it can be regenerated on demand instead of drifting out of
+    date. Section 4, "Gaps and known issues", is hand-written narrative the
+    registry cannot reconstruct -- a placeholder is emitted in its place.
+    """
+    total = len(rows)
+    photo = sum(1 for r in rows if r["confidence"] == "photo")
+    uncertain = sum(1 for r in rows if r["confidence"] == "uncertain")
+    both = sum(1 for r in rows if r["set"] and r["number"])
+    number_only = sum(1 for r in rows if r["number"] and not r["set"])
+    set_only = sum(1 for r in rows if r["set"] and not r["number"])
+    neither = sum(1 for r in rows if not r["set"] and not r["number"])
+    missing = total - both
+
+    pairs = duplicate_printings(rows)
+
+    queue = confirmation_queue(rows)
+    queue_total = sum(len(g) for _, g in queue)
+    queue_species = len(queue)
+    clusters = [(slug, g) for slug, g in queue if len(g) > 1]
+    singletons = [(slug, g) for slug, g in queue if len(g) == 1]
+    cluster_rows = sum(len(g) for _, g in clusters)
+
+    departed = [r for r in rows if "NOT IN THE BINDER" in r["notes"]]
+
+    lines = []
+    lines.append("# Registry confirmation worklist")
+    lines.append("")
+    lines.append(
+        "Generated from `docs/card-registry.md` by `python3 scripts/check-registry.py "
+        "docs/card-registry.md --worklist`. Every section below is recomputed from the "
+        "registry except \"4. Gaps and known issues\", which is hand-written and must be "
+        "carried forward manually when this document is regenerated."
+    )
+    lines.append("")
+    lines.append(
+        f"**Honest numbers, recomputed from the current file.** {total} rows total. "
+        f"{photo} `photo` ({_pct(photo, total):.1f}%), {uncertain} `uncertain` "
+        f"({_pct(uncertain, total):.1f}%). {both} rows have both `set` and `number` read "
+        f"({_pct(both, total):.1f}%) — {number_only} have `number` only, {set_only} have `set` "
+        f"only, {neither} have neither field. The confirmation queue (section 3) holds "
+        f"{queue_total} rows across {queue_species} species: {len(clusters)} clusters "
+        f"({cluster_rows} rows) and {len(singletons)} singletons."
+    )
+    lines.append("")
+    lines.append("## 1. Blocked — species unreadable")
+    lines.append("")
+    lines.append(
+        "None. The registry has no state for a card that was seen but never identified to "
+        "species -- every row that exists already carries one -- so this section is always "
+        "empty."
+    )
+    lines.append("")
+    lines.append("## 2. Duplicate printing candidates")
+    lines.append("")
+    if pairs:
+        lines.append(f"**{len(pairs)} found:**")
+        lines.append("")
+        for a, b in pairs:
+            lines.append(
+                f"- {a['id']} / {b['id']}: {a['species']} {a['set']} {a['number']} {a['language']}"
+            )
+        lines.append("")
+    else:
+        lines.append(
+            "**None found** — `python3 scripts/check-registry.py docs/card-registry.md` "
+            "reports `duplicate printings: 0`."
+        )
+        lines.append("")
+    lines.append(
+        "Take that as a weak result, not a clean bill of health. The check requires all four "
+        "fields — `species`, `set`, `number`, `language` — to match on two rows, and only "
+        f"**{both} of {total} rows ({_pct(both, total):.1f}%)** have both `set` and `number` "
+        f"read. The remaining {missing} rows ({_pct(missing, total):.1f}%) are missing one or "
+        "both fields and are structurally invisible to this check: two physical duplicates "
+        "sitting in the registry right now would not be flagged unless both happened to land "
+        f"among that same {both}-row minority."
+    )
+    lines.append("")
+    lines.append("## 3. Confirmation queue — clusters first")
+    lines.append("")
+    lines.append(
+        f"{queue_total} rows, {queue_species} species. **{len(clusters)} species "
+        f"({cluster_rows} rows) hold two or more unresolved rows** and lead the list, because "
+        f"that is where an undetected duplicate printing could hide. The remaining "
+        f"{len(singletons)} species have a single unresolved row each."
+    )
+    lines.append("")
+    lines.append(
+        "The \"Unreadable\" column is the row's own `notes` field: what specifically blocked "
+        "the read."
+    )
+    lines.append("")
+    if clusters:
+        lines.append("### Clusters (species with 2+ unresolved rows)")
+        lines.append("")
+        for slug, group in clusters:
+            lines.append(f"**{slug}** ({len(group)})")
+            lines.append("")
+            lines.append("| ID | Card name | Source image | Unreadable |")
+            lines.append("|---|---|---|---|")
+            for r in group:
+                lines.append(
+                    f"| {r['id']} | {r['card_name']} ({r['language']}) | "
+                    f"{_source_image(r['first_seen'])} | {r['notes']} |"
+                )
+            lines.append("")
+    if singletons:
+        lines.append(f"### Singletons ({len(singletons)} species, one unresolved row each)")
+        lines.append("")
+        lines.append("| ID | Card name | Source image | Unreadable |")
+        lines.append("|---|---|---|---|")
+        for slug, group in singletons:
+            r = group[0]
+            lines.append(
+                f"| {r['id']} | {r['card_name']} ({r['language']}) | "
+                f"{_source_image(r['first_seen'])} | {r['notes']} |"
+            )
+        lines.append("")
+    lines.append("## 4. Gaps and known issues")
+    lines.append("")
+    lines.append(
+        "<!-- Hand-written. Regenerating this document does not reproduce this section;\n"
+        "     copy it forward from the previous version. -->"
+    )
+    lines.append("")
+    if departed:
+        lines.append("## 5. Cards no longer in the binder")
+        lines.append("")
+        lines.append("Rows whose `notes` record that the card has left the binder:")
+        lines.append("")
+        lines.append("| ID | Card name | Notes |")
+        lines.append("|---|---|---|")
+        for r in departed:
+            lines.append(f"| {r['id']} | {r['card_name']} ({r['language']}) | {r['notes']} |")
+        lines.append("")
+    return "\n".join(lines)
+
+
 def main(argv):
-    if len(argv) != 2:
+    args = argv[1:]
+    worklist = "--worklist" in args
+    positional = [a for a in args if a != "--worklist"]
+    if len(positional) != 1:
         print(__doc__)
         return 2
-    text = Path(argv[1]).read_text(encoding="utf-8")
+    text = Path(positional[0]).read_text(encoding="utf-8")
     rows = parse_registry(text)
+    errors = validate(rows)
+
+    if worklist:
+        for error in errors:
+            print(f"ERROR {error}", file=sys.stderr)
+        print(render_worklist(rows))
+        return 1 if errors else 0
+
     print(f"{len(rows)} rows")
 
-    errors = validate(rows)
     for error in errors:
         print(f"ERROR {error}")
 

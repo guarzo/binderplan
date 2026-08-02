@@ -12,6 +12,7 @@ parse_registry = check_registry.parse_registry
 validate = check_registry.validate
 duplicate_printings = check_registry.duplicate_printings
 confirmation_queue = check_registry.confirmation_queue
+render_worklist = check_registry.render_worklist
 
 HEADER = (
     "| id | species | card_name | language | set | number | confidence | first_seen | notes |\n"
@@ -233,6 +234,72 @@ def test_counters_not_starting_at_01_is_an_error():
         row("gengar-03", "Gengar"),
     )))
     assert any("gengar" in e and "01" in e for e in errors)
+
+
+def test_worklist_includes_row_id_and_notes_for_uncertain_row():
+    doc = render_worklist(parse_registry(table(
+        row("mew-01", "Mew", conf="uncertain", set_="", num="",
+            notes="footer illegible after crop attempt"),
+    )))
+    assert "mew-01" in doc
+    assert "footer illegible after crop attempt" in doc
+
+
+def test_worklist_excludes_confirmed_row():
+    doc = render_worklist(parse_registry(table(
+        row("umbreon-01", "Umbreon", conf="confirmed", set_="Neo Discovery", num="13/75",
+            notes="should not appear anywhere"),
+    )))
+    assert "umbreon-01" not in doc
+    assert "should not appear anywhere" not in doc
+
+
+def test_worklist_cluster_species_appear_before_singletons():
+    doc = render_worklist(parse_registry(table(
+        row("mew-01", "Mew", conf="uncertain", set_="", num=""),
+        row("umbreon-01", "Umbreon", conf="uncertain", set_="", num=""),
+        row("umbreon-02", "Umbreon", conf="uncertain", set_="", num=""),
+    )))
+    assert doc.index("umbreon-01") < doc.index("mew-01")
+
+
+def test_worklist_header_totals_match_fixture():
+    doc = render_worklist(parse_registry(table(
+        row("umbreon-01", "Umbreon", conf="confirmed", set_="A", num="1"),
+        row("gengar-01", "Gengar", conf="photo", set_="B", num="2"),
+        row("gengar-02", "Gengar", conf="uncertain", set_="", num="3"),
+        row("mew-01", "Mew", conf="uncertain", set_="", num=""),
+    )))
+    assert "4 rows total" in doc
+    assert "1 `photo` (25.0%)" in doc
+    assert "2 `uncertain` (50.0%)" in doc
+    assert "2 rows have both `set` and `number` read (50.0%)" in doc
+    assert "1 have `number` only, 0 have `set` only, 1 have neither field" in doc
+    assert "2 rows across 2 species: 0 clusters (0 rows) and 2 singletons" in doc
+
+
+def test_worklist_departed_section_appears_when_notes_flag_present():
+    doc = render_worklist(parse_registry(table(
+        row("umbreon-01", "Umbreon", conf="confirmed", set_="A", num="1",
+            notes="**NOT IN THE BINDER** — swapped out; check the holding box."),
+    )))
+    assert "NOT IN THE BINDER" in doc
+    assert "no longer in the binder" in doc.lower()
+
+
+def test_worklist_departed_section_absent_when_no_departed_rows():
+    doc = render_worklist(parse_registry(table(
+        row("umbreon-01", "Umbreon", conf="confirmed", set_="A", num="1"),
+    )))
+    assert "no longer in the binder" not in doc.lower()
+
+
+def test_worklist_has_handwritten_placeholder():
+    doc = render_worklist(parse_registry(table(
+        row("umbreon-01", "Umbreon"),
+    )))
+    assert "Gaps and known issues" in doc
+    assert "Hand-written" in doc
 
 
 def test_compound_slug_does_not_count_toward_prefix_species():
