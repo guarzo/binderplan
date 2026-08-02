@@ -503,3 +503,24 @@ def test_carried_section_four_does_not_duplicate_the_heading(tmp_path):
     doc = render_worklist(parse_registry(table(row("umbreon-01", "Umbreon"))),
                           previous=prev)
     assert doc.count("## 4. Gaps and known issues") == 1
+
+
+def test_carries_forward_a_terminal_section_four(tmp_path):
+    # Section 4 last in the file: end-of-file is a valid boundary.
+    prev = tmp_path / "registry-confirmation.md"
+    prev.write_text(
+        "# Registry confirmation worklist\n\n"
+        "## 4. Gaps and known issues\n\nTerminal narrative.\n",
+        encoding="utf-8",
+    )
+    doc = render_worklist(parse_registry(table(row("umbreon-01", "Umbreon"))),
+                          previous=prev)
+    assert "Terminal narrative." in doc
+    assert "Hand-written" not in doc.split("## 4.")[1].split("## 5.")[0]
+
+
+def test_previous_rejects_a_following_option_instead_of_using_it_as_a_path():
+    rc = check_registry.main(
+        ["prog", "docs/card-registry.md", "--previous", "--worklist"]
+    )
+    assert rc == 2

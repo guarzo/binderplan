@@ -14,12 +14,18 @@ undetected duplicate could be hiding.
 
 Usage:
     python scripts/check-registry.py docs/card-registry.md
+    python scripts/check-registry.py docs/card-registry.md --worklist --write
     python scripts/check-registry.py docs/card-registry.md --worklist [--previous PATH]
 
---worklist regenerates the confirmation document on stdout. It reads the
-document it is replacing (docs/registry-confirmation.md, or --previous) to carry
-section 4's hand-written narrative forward, so regeneration cannot silently drop
-it.
+--worklist regenerates the confirmation document. It reads the document it is
+replacing (docs/registry-confirmation.md, or --previous) to carry section 4's
+hand-written narrative forward, so regeneration cannot silently drop it.
+
+Prefer --write, which reads the old document and replaces it atomically. Plain
+--worklist prints to stdout, and redirecting that back onto the source document
+destroys section 4: the shell truncates the file before the script can read it,
+so the narrative is gone before carry-forward runs. Redirect only to a different
+path.
 """
 import re
 import sys
@@ -270,7 +276,7 @@ def carry_forward_section_four(previous):
     except OSError:
         return _HANDWRITTEN_PLACEHOLDER
     match = re.search(
-        r"^## 4\. Gaps and known issues\s*\n(.*?)(?=^## \d+\.)",
+        r"^## 4\. Gaps and known issues\s*\n(.*?)(?=^## \d+\.|\Z)",
         text,
         re.DOTALL | re.MULTILINE,
     )
@@ -284,10 +290,11 @@ def render_worklist(rows, previous=None):
     """The full confirmation-worklist document, as Markdown text.
 
     Reproduces the structure of the hand-written docs/registry-confirmation.md
-    (sections 1-3) purely from the rows
+    (sections 1-3, 5 and 6) purely from the rows
     passed in, so it can be regenerated on demand instead of drifting out of
     date. Section 4, "Gaps and known issues", is hand-written narrative the
-    registry cannot reconstruct -- a placeholder is emitted in its place.
+    registry cannot reconstruct, so it is carried forward from the previous
+    document at `previous`; see carry_forward_section_four().
     """
     total = len(rows)
     photo = sum(1 for r in rows if r["confidence"] == "photo")
@@ -312,9 +319,10 @@ def render_worklist(rows, previous=None):
     lines.append("")
     lines.append(
         "Generated from `docs/card-registry.md` by `python3 scripts/check-registry.py "
-        "docs/card-registry.md --worklist`. Every section below is recomputed from the "
-        "registry except \"4. Gaps and known issues\", which is hand-written and must be "
-        "carried forward manually when this document is regenerated."
+        "docs/card-registry.md --worklist --write`. Every section below is recomputed from the "
+        "registry except \"4. Gaps and known issues\", which is hand-written; regeneration "
+        "reads the previous version of this document and carries that section forward "
+        "automatically."
     )
     lines.append("")
     lines.append(
@@ -411,8 +419,8 @@ def render_worklist(rows, previous=None):
         "Not derivable here. The registry records what a card **is**, never where it sits, "
         "so a row gives no sign that its card has left the binder. Movement lives in "
         "`ledger.md`: grep it for an ID to see whether that card was swapped out. Any list "
-        "of departed cards in this document is hand-written and must be carried forward "
-        "when it is regenerated."
+        "of departed cards in this document is hand-written; put it in section 4, which is "
+        "carried forward automatically when this document is regenerated."
     )
     lines.append("")
     lines.append("## 6. Confirmation queue by page")
@@ -446,16 +454,22 @@ def render_worklist(rows, previous=None):
 def main(argv):
     args = argv[1:]
     worklist = "--worklist" in args
+    write = "--write" in args
     previous = DEFAULT_PREVIOUS
     if "--previous" in args:
         i = args.index("--previous")
-        if i + 1 >= len(args):
+        if i + 1 >= len(args) or args[i + 1].startswith("--"):
+            print("--previous needs a path")
             print(__doc__)
             return 2
         previous = Path(args[i + 1])
         args = args[:i] + args[i + 2:]
-    positional = [a for a in args if a != "--worklist"]
+    positional = [a for a in args if a not in ("--worklist", "--write")]
     if len(positional) != 1:
+        print(__doc__)
+        return 2
+    if write and not worklist:
+        print("--write only applies to --worklist")
         print(__doc__)
         return 2
     text = Path(positional[0]).read_text(encoding="utf-8")
@@ -465,7 +479,19 @@ def main(argv):
     if worklist:
         for error in errors:
             print(f"ERROR {error}", file=sys.stderr)
-        print(render_worklist(rows, previous=previous))
+        document = render_worklist(rows, previous=previous)
+        if write:
+            # Render first, write second. The document is fully built -- section
+            # 4 already carried forward -- before the target is touched, which
+            # is the whole point: `--worklist > docs/registry-confirmation.md`
+            # lets the shell truncate the file before carry-forward can read it.
+            target = Path(previous)
+            tmp = target.with_suffix(target.suffix + ".tmp")
+            tmp.write_text(document + "\n", encoding="utf-8")
+            tmp.replace(target)
+            print(f"wrote {target}", file=sys.stderr)
+        else:
+            print(document)
         return 1 if errors else 0
 
     print(f"{len(rows)} rows")

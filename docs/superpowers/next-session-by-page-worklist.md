@@ -80,11 +80,11 @@ explicit image → page map. The correct mapping, verified against the images:
 
 Present pages in that order — it is binder order, which is what makes the document walkable.
 
-These 19 images are exactly the set of non-`IMG_*` `first_seen` values in the registry today, so
-the map is complete as written. Each maps to 9 rows except `enduring_presence_1.webp`, which has
-8: that page (Quiet Familiarity p2) held the single empty pocket in either volume, and
-`cinccino-01` — an `IMG_*` swap-in, see gotcha 2 — fills it. After the merge every page is 9.
-`docs/ledger.md` records this.
+The 18 non-`IMG_*` `first_seen` values in the registry, plus `IMG_6865.HEIC`, are exactly the 19
+images above, so the map is complete as written. Each maps to 9 rows except
+`enduring_presence_1.webp`, which has 8: that page (Quiet Familiarity p2) held the single empty
+pocket in either volume, and `cinccino-01` — an `IMG_*` swap-in, see gotcha 2 — fills it. After
+the merge every page is 9. `docs/ledger.md` records this.
 
 Note the `static/images/binder/` **files** were renamed correctly during the gallery refresh;
 only the registry's historical `first_seen` values still carry the old names, deliberately, because

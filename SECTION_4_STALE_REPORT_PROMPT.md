@@ -48,14 +48,16 @@ faith; that is step 1.
    the registry to match the filenames. Drop the "repository bug" framing and the stale
    `_index.md:41` citation.
 
-4. **Round-trip it.** Section 4 is hand-written but now carried forward automatically by
-   `--worklist`. Edit `docs/registry-confirmation.md` directly, then run:
+4. **Round-trip it.** Section 4 is hand-written but now carried forward automatically. Edit
+   `docs/registry-confirmation.md` directly, then regenerate:
 
    ```bash
-   python3 scripts/check-registry.py docs/card-registry.md --worklist > /tmp/gen.md
+   python3 scripts/check-registry.py docs/card-registry.md --worklist --write
    ```
 
-   Confirm your edit survives into `/tmp/gen.md` and that nothing else changed.
+   Confirm your edit survived and that nothing else changed (`git diff`). Do **not** redirect
+   `--worklist` back onto `docs/registry-confirmation.md` — the shell truncates the file before
+   the script can read it, and section 4 is lost. Use `--write`, or redirect to a temp path.
 
 ## Verify
 

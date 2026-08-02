@@ -1,6 +1,6 @@
 # Registry confirmation worklist
 
-Generated from `docs/card-registry.md` by `python3 scripts/check-registry.py docs/card-registry.md --worklist`. Every section below is recomputed from the registry except "4. Gaps and known issues", which is hand-written and must be carried forward manually when this document is regenerated.
+Generated from `docs/card-registry.md` by `python3 scripts/check-registry.py docs/card-registry.md --worklist --write`. Every section below is recomputed from the registry except "4. Gaps and known issues", which is hand-written; regeneration reads the previous version of this document and carries that section forward automatically.
 
 **Honest numbers, recomputed from the current file.** 175 rows total. 29 `photo` (16.6%), 146 `uncertain` (83.4%). 31 rows have both `set` and `number` read (17.7%) — 75 have `number` only, 0 have `set` only, 69 have neither field. The confirmation queue (section 3) holds 146 rows across 92 species: 34 clusters (88 rows) and 58 singletons.
 
@@ -396,7 +396,7 @@ registry.
 
 ## 5. Cards no longer in the binder
 
-Not derivable here. The registry records what a card **is**, never where it sits, so a row gives no sign that its card has left the binder. Movement lives in `ledger.md`: grep it for an ID to see whether that card was swapped out. Any list of departed cards in this document is hand-written and must be carried forward when it is regenerated.
+Not derivable here. The registry records what a card **is**, never where it sits, so a row gives no sign that its card has left the binder. Movement lives in `ledger.md`: grep it for an ID to see whether that card was swapped out. Any list of departed cards in this document is hand-written; put it in section 4, which is carried forward automatically when this document is regenerated.
 
 ## 6. Confirmation queue by page
 
