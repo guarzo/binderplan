@@ -16,6 +16,8 @@ This is not an inventory. It records what a card **is**, never where it sits. A 
 
 **When in doubt, split.** If you cannot tell whether a card is a new copy or one already listed, assign a new ID. Two IDs for one card is recoverable — note `superseded-by: <id>`. One ID for two cards is not.
 
+**Image filenames change.** `first_seen` names the file a row was read from at the time, not a file that necessarily still exists with that content. The 2026-08-01 gallery refresh replaced the binder images and corrected an off-by-one in the Volume II names; earlier filenames remain resolvable through git history.
+
 **Reshoot provenance.** Rows whose `first_seen` names an `IMG_####.HEIC` file come from the 2026-08-01 whole-binder reshoot. Those originals are the owner's camera files and are not stored in this repository.
 
 **Design note:** `superpowers/specs/2026-08-01-card-registry-design.md`.
