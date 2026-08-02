@@ -526,15 +526,15 @@ def test_previous_rejects_a_following_option_instead_of_using_it_as_a_path():
     assert rc == 2
 
 
-def test_previous_without_worklist_is_rejected():
+def test_previous_without_worklist_is_rejected(tmp_path):
     # The path would otherwise be parsed, discarded, and silently ignored.
     rc = check_registry.main(
-        ["prog", "docs/card-registry.md", "--previous", "/tmp/bogus.md"]
+        ["prog", "docs/card-registry.md", "--previous", str(tmp_path / "bogus.md")]
     )
     assert rc == 2
 
 
-def test_write_replaces_the_target_and_keeps_section_four(tmp_path, capsys):
+def test_write_replaces_the_target_and_keeps_section_four(tmp_path):
     registry = tmp_path / "card-registry.md"
     registry.write_text(table(row("umbreon-01", "Umbreon", conf="uncertain",
                                   set_="", num="",
