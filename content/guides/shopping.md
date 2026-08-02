@@ -1,19 +1,19 @@
 ---
 title: "Current Watchlist"
-description: "Current page needs and visual targets, updated July 2026"
+description: "Current page needs and visual targets, updated August 2026"
 aliases:
   - "/guides/watchlist/"
 ---
 
-*Updated July 2026.*
+*Updated 2 August 2026.*
 
-The [Buying Checklist](../buying/) is the permanent decision process. This page is the changing part: the images and page needs I am actively watching for now. The more detailed reasoning behind the current Volume II work lives in the [July 2026 collection notes](../volume-2-refinement/).
+The [Buying Checklist](../buying/) is the permanent decision process. This page is the changing part: the images and page needs I am actively watching for now. The reasoning behind the Volume II work lives in the [July 2026 collection notes](../volume-2-refinement/), whose Enduring Presence sections were superseded on 2 August 2026 — the Quiet Familiarity and Threshold audits there still stand.
 
 ---
 
 ## Volume II — Where New Cards Go
 
-Volume II is the active volume. These themes are still being built and benefit most from targeted pickups.
+Volume II is the active volume, but it is not empty space: both volumes are currently full, 19 pages and 171 cards with no open pockets. Pickups here are worth making because the pulls still owed on Quiet Familiarity and Threshold will open pockets. Enduring Presence is the exception — it is settled, and takes replacements only.
 
 ### Threshold
 
@@ -23,9 +23,11 @@ Look for art where the *setting* does most of the work and the Pokemon is passin
 
 Skip cards where the Pokemon is merely flying, running, or looking dramatic. Motion is not passage unless a boundary is present.
 
-### Enduring Presence
+### Enduring Presence — replacements only
 
-Pokemon shown complete and self-contained — finished rather than becoming, power held rather than spent, the pose suggesting continuity. Look for stillness without spectacle, force implied but not discharged, and containment: sealed, ringed, or self-enclosed.
+Both pages are full and were ratified on 2026-08-02 under the current definition, so this theme is closed to additions. Buy for it only to replace something already placed.
+
+Pokemon shown complete and self-contained — finished rather than becoming, power held rather than spent, the pose suggesting continuity. Stillness without spectacle, force implied but not discharged, and containment: sealed, ringed, or self-enclosed.
 
 Skip active attacks, transformations, and cards that only feel important because the species is legendary.
 
@@ -120,7 +122,7 @@ I do not shop directly for these. They become real themes only if 6–9 convinci
 Found a card with great art? Ask what signal it carries:
 
 - **Bond or domestic warmth** — Volume II: Companions or Quiet Familiarity
-- **Power held whole, contained, self-enclosed** — Volume II: Enduring Presence
+- **Power held whole, contained, self-enclosed** — Volume II: Enduring Presence (upgrade only)
 - **A visible edge, departure, or arrival** — Volume II: Threshold
 - **Power gathering, transition** — Volume I: Awakened Power (upgrade only)
 - **Authority witnessed through scale or posture** — Volume I: Legendary Bearing (upgrade only)

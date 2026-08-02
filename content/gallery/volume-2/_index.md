@@ -34,7 +34,7 @@ Volume II is less about action and more about memory, familiarity, and change ov
   </figure>
   <figure class="gallery-item span-narrow">
     <img src="../../images/binder/volume-2/quiet_familiarity_2.webp" alt="Nine-pocket page including Umbreon, Ditto, a sleeping Snorlax, Light Arcanine, Erika's Dragonair, Celebi, Togepi, Mudkip and a Cinccino illustration rare" loading="lazy">
-    <figcaption><strong>Quiet Familiarity — Domestic Scale.</strong> Rest, small routines, and the ease of a familiar room.</figcaption>
+    <figcaption><strong>Quiet Familiarity — Domestic Scale.</strong> A sleeping Snorlax, a Ditto among scattered toys, a Cinccino behind a shop counter — the page where the theme comes closest to itself.</figcaption>
   </figure>
 </div>
 
@@ -47,7 +47,7 @@ Volume II is less about action and more about memory, familiarity, and change ov
   </figure>
   <figure class="gallery-item span-half">
     <img src="../../images/binder/volume-2/enduring_presence_1.webp" alt="Nine-pocket page of mostly vintage Japanese holos — Muk, Vulpix, Groudon, Steelix, Blastoise, Jirachi, Joltik, Dark Gengar and Bulbasaur" loading="lazy">
-    <figcaption><strong>Enduring Presence — Relics and Survivors.</strong> Vintage forms and long-lived holos, presented complete rather than mid-action.</figcaption>
+    <figcaption><strong>Enduring Presence — Standing Whole.</strong> Vintage forms and long-lived holos, each presented complete rather than mid-action.</figcaption>
   </figure>
   <figure class="gallery-item span-wide">
     <img src="../../images/binder/volume-2/enduring_presence_2.webp" alt="Nine-pocket page including Machop, Mew, Zygarde, Reshiram, Hoopa, a Master Ball, Sandshrew, Houndoom and Shaymin" loading="lazy">
