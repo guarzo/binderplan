@@ -1,6 +1,7 @@
 # Registry pass-2 confirmation — curator review
 
-`docs/card-registry.md` holds 175 rows, one per pocket in Volumes 1 and 2, seeded from 18 spread
+`docs/card-registry.md` holds 175 rows covering Volumes 1 and 2 — 171 cards currently in the
+binder, plus 4 that have since moved to the holding box and correctly keep their IDs. Seeded from 18 spread
 photographs shot through sleeves plus 14 rows added from a 27-photo reshoot. This document is the
 pass-2 gate described in `docs/superpowers/specs/2026-08-01-card-registry-design.md`: everything
 pass 1 and the reshoot follow-up could not settle, handed to the curator before the registry is
@@ -16,7 +17,7 @@ never-rewrite rule.
 
 ## 1. Blocked — species unreadable
 
-None. All 175 pockets across the 18 original spread photos plus the 14 reshoot additions were
+None. All 175 cards across the 18 original spread photos plus the 14 reshoot additions were
 identified to species. Nothing is held out of the registry.
 
 ## 2. Duplicate printing candidates
@@ -82,7 +83,7 @@ curator knows what to look for on each physical card.
 | ID | Card name | Source image | Unreadable |
 |---|---|---|---|
 | umbreon-02 | ブラッキー (JP) | contemplation_1.webp | vintage Pokedex-number print, distinct from umbreon-01, era not identifiable |
-| umbreon-03 | Umbreon (EN) | elemental_solitude_1.webp | Confuse Ray/Shadow Shutdown, distinct from umbreon-01/02, set code not textual |
+| umbreon-03 | Umbreon (EN) | elemental_solitude_1.webp | **NOT IN THE BINDER** — swapped out for Jasmine's Ampharos; check in the holding box. Confuse Ray/Shadow Shutdown, distinct from umbreon-01/02, set code not textual |
 | umbreon-04 | Umbreon (EN) | legendary_bearing_2.webp | Moonlight Fang/Quick Blow, RH holo mark, distinct from umbreon-01/02/03, set code not textual |
 | umbreon-05 | ブラッキー (JP) | enduring_presence_1.webp | distinct from umbreon-01..04, set not readable as text |
 
@@ -297,7 +298,7 @@ curator knows what to look for on each physical card.
 | ID | Card name | Source image | Unreadable |
 |---|---|---|---|
 | typhlosion-01 | バクフーン (JP) | intimidation_1.webp | vintage Pokedex-number print, era not identifiable |
-| typhlosion-02 | バクフーン (JP) | legendary_bearing_1.webp | Lv.46 print, distinct from typhlosion-01, vintage Pokedex-number print, era not identifiable |
+| typhlosion-02 | バクフーン (JP) | legendary_bearing_1.webp | **NOT IN THE BINDER** — swapped out for Zapdos; check in the holding box. Lv.46 print, distinct from typhlosion-01, vintage Pokedex-number print, era not identifiable |
 
 **yveltal** (2)
 
