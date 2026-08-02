@@ -105,7 +105,7 @@ The "Unreadable" column is the row's own `notes` field: what specifically blocke
 |---|---|---|---|
 | joltik-01 | 电电虫 (ZH) | companions_2.webp | holo print, number illegible after crop attempt |
 | joltik-02 | Joltik (EN) | enduring_presence_2.webp | Jolting Charge attack, distinct from joltik-01, set not readable as text |
-| pachirisu-01 | バチュル (JP) | contemplation_1.webp | AR rarity, set code not textual, number read with low confidence; バチュル is Joltik, not Pachirisu (パチリス); ID frozen before the error was found, species corrected per the never-rewrite rule |
+| joltik-03 | バチュル (JP) | contemplation_1.webp | AR rarity, set code not textual, number read with low confidence |
 
 **mew** (3)
 
@@ -159,7 +159,7 @@ The "Unreadable" column is the row's own `notes` field: what specifically blocke
 | ID | Card name | Source image | Unreadable |
 |---|---|---|---|
 | cubone-01 | 卡拉卡拉 (ZH) | world_people_1.webp | number illegible |
-| marowak-01 | カラカラ (JP) | at_rest_1.webp | vintage-style print, set name not identifiable; カラカラ is Cubone, not Marowak (ガラガラ); ID frozen before the error was found, species corrected per the never-rewrite rule |
+| cubone-02 | カラカラ (JP) | at_rest_1.webp | vintage-style print, set name not identifiable |
 
 **cyndaquil** (2)
 
@@ -312,7 +312,7 @@ The "Unreadable" column is the row's own `notes` field: what specifically blocke
 | lucario-01 | ルカリオVSTAR (JP) | intimidation_1.webp | VSTAR, SAR rarity mark; third digit of number ambiguous 5-vs-6 at source resolution |
 | machop-01 | Machop (EN) | threshold_1.webp | Punch attack, set not readable as text |
 | marill-01 | Marill (EN) | joyful_action_1.webp | vintage-style print, number legible, set name not shown |
-| marowak-02 | ガラガラ (JP) | intimidation_1.webp | delta species print, distinct from marowak-01, number illegible after crop attempt |
+| marowak-01 | ガラガラ (JP) | intimidation_1.webp | delta species print, distinct from cubone-02 (the カラカラ), number illegible after crop attempt |
 | master-ball-01 | マスターボール (JP) | threshold_1.webp | Trainer item card, no number field visible after crop attempt |
 | mimikyu-01 | 谜拟丘 (ZH) | companions_1.webp | Ability 假扮 (Disguise), number illegible |
 | misdreavus-01 | ムウマ (JP) | intimidation_1.webp | number illegible |
@@ -320,7 +320,7 @@ The "Unreadable" column is the row's own `notes` field: what specifically blocke
 | muk-01 | ベトベトン (JP) | enduring_presence_2.webp | Grimer evolution Lv.34, HP70, vintage Pokedex-number print, era not identifiable |
 | ns-plan-01 | N's Plan (EN) | legendary_bearing_2.webp | Supporter trainer, double-star SR rarity mark, set code not textual |
 | ninetales-01 | キュウコン (JP) | legendary_bearing_2.webp | Lv.32, vintage Pokedex-number print, era not identifiable |
-| woobat-01 | オンバット (JP) | calm_nature_1.webp | set/number code visible but digits ambiguous under magnification, left blank rather than guess; オンバット is Noibat, not Woobat (コロモリ); ID frozen before the error was found, species corrected per the never-rewrite rule |
+| noibat-01 | オンバット (JP) | calm_nature_1.webp | set/number code visible but digits ambiguous under magnification, left blank rather than guess |
 | numel-01 | Numel (EN) | quiet_familiarity_1.webp | Firebreathing/Tackle attacks, e-Card era, set not readable as text |
 | oshawott-01 | Oshawott (EN) | at_rest_1.webp | number illegible |
 | piplup-01 | Piplup (EN) | quiet_familiarity_1.webp | Lv.9, Peck/Water Splash attacks, footer illegible after crop attempt |

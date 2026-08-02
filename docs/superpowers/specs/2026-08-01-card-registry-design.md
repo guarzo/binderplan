@@ -151,7 +151,10 @@ more `uncertain` rows leads the list, because that is where an undetected duplic
 hiding. Isolated `uncertain` rows are cosmetic by comparison — a single Cinccino with an unread
 number breaks nothing.
 
-**IDs are provisional until the curator signs off on pass 2.** This is a one-time carve-out from the
+**IDs are provisional until the registry merges to `main`.** Curator sign-off on pass 2 closes the
+*data* questions, but the never-rewrite rule protects existing references, and none exist while the
+registry sits on a branch. Errors found in review — including a misidentified species — are fixed by
+renumbering, not by leaving a mismatched ID behind. This is a carve-out from the
 never-rewrite rule, and it is safe only because nothing has cited these IDs yet. Once signed off, the
 registry is frozen and every subsequent ID is permanent from the moment it is written.
 
