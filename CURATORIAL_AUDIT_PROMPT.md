@@ -69,7 +69,7 @@ Energy and movement without conflict.
 ### Chapter III — Power Awakening
 Transition into power, not power fully realized.
 - **Awakened Power:** Energy gathering, the moment before inevitability
-- **Legendary Bearing:** Complete, enduring forces — power contained, timeless presence
+- **Legendary Bearing:** Authority encountered — scale, confrontation, ceremony, arrival
 
 ### Chapter IV — Threat & Conflict
 Danger, menace, and combat.
@@ -117,9 +117,9 @@ Volume 2 uses three chapters (fewer movements, but deeper than Volume 1).
 These themes are easily confused.
 
 **Legendary Bearing** should show:
-- Power that is **contained**, unquestioned, not in flux
-- Timeless presence, stillness with gravity
-- The Pokémon as a **complete, enduring force**
+- Power presented to be **encountered** — scale, low angle, commanding posture
+- Ceremony, confrontation, revelation, or arrival
+- A sense of audience: the composition positions a viewer
 
 **Awakened Power** should show:
 - **Transition** into power
@@ -131,6 +131,7 @@ These themes are easily confused.
 - Cards showing active attack energy → wrong for Legendary Bearing
 - Cards showing fully realized, static power → wrong for Awakened Power
 - Cards that are legendary by name only → insufficient for Legendary Bearing
+- Power complete but **not staged for a viewer** → Enduring Presence, not Legendary Bearing (see §4)
 
 ### B. Vintage Cards — Sorting Without Era Identity
 Era Identity was retired as a standalone chapter. Vintage cards must now earn placement through emotional signal, not age.

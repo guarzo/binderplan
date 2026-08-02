@@ -72,3 +72,65 @@ above and carries no identifier. It is a historical card, not a registry entry.
 The superseded ledger accepted eleven swaps. Four are recorded above as executed. The remaining
 seven are not recorded here at all: planning is not movement, and an entry claiming a swap that has
 not happened would be worse than no entry. Each earns one when it is carried out.
+
+---
+
+## 2026-08-02 — Enduring Presence redefined: power held whole, not time witnessed
+
+A contested definition, not a contested card. Recorded here because every future Enduring
+Presence call depends on it and because it **reverses** the test written in
+`content/guides/volume-2-refinement.md` on 2026-07-10.
+
+### The conflict
+
+`CURATORIAL_AUDIT_PROMPT.md` §4 defined Enduring Presence as "complete, self-contained forces —
+power contained (not expressed), pose suggests continuity." `content/philosophy/themes.md` and the
+July refinement guide defined the same theme as *time witnessed*: ruins, weathering, artifacts, a
+world shaped around the Pokemon. §5A compounded it by assigning "power contained… complete,
+enduring force" to **Legendary Bearing** as well, so the audit prompt contradicted itself as well
+as the canonical file.
+
+### What the pages showed
+
+Both Enduring Presence pages were read card by card on 2026-08-02, the first time the artwork was
+examined rather than the captions.
+
+`enduring_presence_2.webp` — Machop (`machop-01`), Mew (`mew-05`), Zygarde (`zygarde-01`), Reshiram
+(`reshiram-02`), Hoopa (`hoopa-01`), Master Ball (`master-ball-01`), Sandshrew (`sandshrew-02`),
+Houndoom (`houndoom-04`), Shaymin (`shaymin-04`). No ruins, architecture, artifacts, weathering or
+generations anywhere on the page. Under the time test the entire page failed.
+
+`enduring_presence_1.webp` — Muk (`muk-01`), Vulpix (`vulpix-01`), Groudon (`groudon-03`), Steelix
+(`steelix-01`), Blastoise (`blastoise-01`), Jirachi (`jirachi-03`), Joltik (`joltik-02`), Dark
+Gengar (`gengar-05`), Bulbasaur (`bulbasaur-03`). Genuinely old *cards* — Neo, e-Card and
+Pokédex-number prints — but the *artwork* carries no historical signal either. The refinement
+guide anticipated exactly this: "the age of the physical card is not enough by itself."
+
+So the time definition was not describing one drifted page. It had never described the theme as
+physically built, in either page.
+
+### The ruling
+
+**§4 is canonical. The time definition is retired.** Enduring Presence is completeness and
+containment: finished rather than becoming, power held rather than spent, continuity in the pose.
+
+The Legendary Bearing boundary is redrawn as **encounter versus containment**. `themes.md` already
+defined Legendary Bearing as "the power is already complete; the scene is about encountering it,"
+so that file needed no change on the Legendary Bearing side — it was the audit prompt's §3 and §5A
+that had borrowed Enduring Presence's language, and those were corrected.
+
+Both photographed pages are ratified where they stand. **No card moves.**
+
+### What was rejected
+
+"Contained Power" as a new theme, per §8: it fails test 1 (not a distinct axis — it is the axis
+Enduring Presence now owns) and test 4 (solves no classification problem that the redefinition does
+not already solve). The page keeps the caption as a page name, not as a theme.
+
+### Reversed by this entry
+
+- `volume-2-refinement.md` "The Power Distinction" and "Enduring Presence Audit", both marked
+  superseded in place rather than deleted
+- Review-order step 3, "test every Enduring Presence card for evidence of time" — dropped
+
+The Quiet Familiarity and Threshold audits in that guide are untouched and still stand.

@@ -25,16 +25,16 @@ Skip cards where the Pokemon is merely flying, running, or looking dramatic. Mot
 
 ### Enduring Presence
 
-Pokemon shown as survivors, relics, recurring witnesses, or parts of a world older than the current moment. Look for ruins, shrines, fossils, old machinery, weathered landscapes, archival framing, repeated generations, or communities built around a longstanding presence.
+Pokemon shown complete and self-contained — finished rather than becoming, power held rather than spent, the pose suggesting continuity. Look for stillness without spectacle, force implied but not discharged, and containment: sealed, ringed, or self-enclosed.
 
-Skip generic heroic poses, active attacks, transformations, and cards that only feel important because the species is legendary.
+Skip active attacks, transformations, and cards that only feel important because the species is legendary.
 
 **How this differs from Legendary Bearing (V1):**
 
 - **Legendary Bearing:** The scene feels immediate, vertical, confrontational, ceremonial, or built around scale and posture.
-- **Enduring Presence:** The scene feels historical, weathered, remembered, recurring, or embedded in place.
+- **Enduring Presence:** The scene feels settled and self-enclosed — power at rest inside itself, with nothing staged for a viewer.
 
-If removing all signs of age, memory, or accumulated world leaves the card unchanged, it probably belongs in Legendary Bearing instead.
+Both themes show power that is already complete. If the composition stages an encounter, it belongs in Legendary Bearing instead.
 
 ### Companions
 
@@ -64,7 +64,7 @@ Skip fully realized power (that's Legendary Bearing) and active attacks already 
 
 **Legendary Bearing** — Complete authority made visible through scale, posture, ceremonial framing, or a strong sense of arrival.
 
-I skip active attacks and transformations here. Quiet relics and weathered survivors fit Enduring Presence better, and legendary status alone does not determine the theme.
+I skip active attacks and transformations here. Cards whose power reads as held rather than staged fit Enduring Presence better, and legendary status alone does not determine the theme.
 
 ### Selective Upgrades
 
@@ -120,7 +120,7 @@ I do not shop directly for these. They become real themes only if 6–9 convinci
 Found a card with great art? Ask what signal it carries:
 
 - **Bond or domestic warmth** — Volume II: Companions or Quiet Familiarity
-- **Weathered, remembered, historically embedded** — Volume II: Enduring Presence
+- **Power held whole, contained, self-enclosed** — Volume II: Enduring Presence
 - **A visible edge, departure, or arrival** — Volume II: Threshold
 - **Power gathering, transition** — Volume I: Awakened Power (upgrade only)
 - **Authority witnessed through scale or posture** — Volume I: Legendary Bearing (upgrade only)
