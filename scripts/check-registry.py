@@ -14,6 +14,12 @@ undetected duplicate could be hiding.
 
 Usage:
     python scripts/check-registry.py docs/card-registry.md
+    python scripts/check-registry.py docs/card-registry.md --worklist [--previous PATH]
+
+--worklist regenerates the confirmation document on stdout. It reads the
+document it is replacing (docs/registry-confirmation.md, or --previous) to carry
+section 4's hand-written narrative forward, so regeneration cannot silently drop
+it.
 """
 import re
 import sys
@@ -164,7 +170,117 @@ def _source_image(first_seen):
     return first_seen.split()[0] if first_seen else first_seen
 
 
-def render_worklist(rows):
+# Image -> page, in binder order. A photograph shows what it shows, so this is a
+# stable fact and can live here. It is deliberately NOT a card -> page index:
+# that would rot on the first swap, and it is the inventory the curator rejected.
+#
+# Volume II carries a systematic off-by-one: the pre-2026-08-01 shoot missed the
+# Threshold page, so every page after quiet_familiarity_1 was filed under the
+# next page's name. The registry's first_seen keeps those old names on purpose --
+# it is immutable provenance -- so the correction lives here instead. The
+# static/images/binder/ files themselves were renamed correctly during the
+# gallery refresh; do not "fix" the registry to match.
+PAGE_ORDER = {
+    "calm_nature_1.webp": "V1 · Calm in Nature",
+    "world_people_1.webp": "V1 · World of People",
+    "at_rest_1.webp": "V1 · At Rest",
+    "joyful_action_1.webp": "V1 · Joyful Action",
+    "awakened_power_1.webp": "V1 · Awakened Power p1",
+    "awakened_power_2.webp": "V1 · Awakened Power p2",
+    "legendary_bearing_1.webp": "V1 · Legendary Bearing p1",
+    "legendary_bearing_2.webp": "V1 · Legendary Bearing p2",
+    "intimidation_1.webp": "V1 · Intimidation",
+    "on_attack_1.webp": "V1 · On the Attack",
+    "elemental_solitude_1.webp": "V1 · Elemental Solitude",
+    "contemplation_1.webp": "V1 · Contemplation",
+    "companions_1.webp": "V2 · Companions p1",
+    "companions_2.webp": "V2 · Companions p2",
+    "quiet_familiarity_1.webp": "V2 · Quiet Familiarity p1",
+    "enduring_presence_1.webp": "V2 · Quiet Familiarity p2",   # misnamed
+    "enduring_presence_2.webp": "V2 · Enduring Presence p1",   # off by one
+    "threshold_1.webp": "V2 · Enduring Presence p2",           # off by one
+    "IMG_6865.HEIC": "V2 · Threshold",   # never published before the reshoot
+}
+
+# Single cards added after the original shoot. Each belongs to an existing page
+# and merges into that page's group rather than showing as a one-card page.
+#
+# Do not dispatch on the IMG_* filename shape: IMG_6865.HEIC matches it too but
+# is a whole nine-card page, in PAGE_ORDER above. These two tables are the only
+# source of truth -- a pattern match would misplace nine cards.
+SWAP_INS = {
+    "IMG_6842.HEIC": "V1 · At Rest",
+    "IMG_6847.HEIC": "V1 · Legendary Bearing p1",
+    "IMG_6853.HEIC": "V1 · Elemental Solitude",
+    "IMG_6858.HEIC": "V2 · Companions p2",
+    "IMG_6860.HEIC": "V2 · Quiet Familiarity p2",
+}
+
+_PAGE_POSITION = {label: i for i, label in enumerate(PAGE_ORDER.values())}
+
+
+def page_groups(rows):
+    """Unresolved rows grouped by binder page, in binder order.
+
+    Same row set as confirmation_queue(), regrouped for walking the binder
+    instead of for spotting duplicate printings: open to one page, clear every
+    card on it, move on. Pages with nothing unresolved are omitted.
+
+    An image in neither table gets its own "Unmapped source image" group, sorted
+    last, so a future shoot cannot make cards silently vanish from the worklist.
+    """
+    buckets = {}
+    for _, group in confirmation_queue(rows):
+        for row in group:
+            image = _source_image(row["first_seen"])
+            label = PAGE_ORDER.get(image) or SWAP_INS.get(image)
+            if label is None:
+                label = f"Unmapped source image · {image}"
+            buckets.setdefault(label, []).append(row)
+    return sorted(
+        buckets.items(),
+        key=lambda kv: (_PAGE_POSITION.get(kv[0], len(_PAGE_POSITION)), kv[0]),
+    )
+
+
+DEFAULT_PREVIOUS = Path("docs/registry-confirmation.md")
+
+_HANDWRITTEN_PLACEHOLDER = (
+    "<!-- Hand-written. Regenerating this document does not reproduce this section;\n"
+    "     write it here and it will be carried forward automatically. -->"
+)
+
+
+def carry_forward_section_four(previous):
+    """Section 4's hand-written body, lifted from the previous document.
+
+    Section 4 is narrative the registry cannot reconstruct, so regeneration has
+    to preserve it. Doing that by hand -- extract, splice, write back -- fails
+    silently the first time someone forgets, and nothing in the verify step
+    would catch it. So the script reads the document it is about to replace.
+
+    Returns the placeholder when the file is absent or holds no section 4, which
+    covers a first run and a fresh checkout. A previous of None means the caller
+    did not ask for carry-forward at all.
+    """
+    if previous is None:
+        return _HANDWRITTEN_PLACEHOLDER
+    try:
+        text = Path(previous).read_text(encoding="utf-8")
+    except OSError:
+        return _HANDWRITTEN_PLACEHOLDER
+    match = re.search(
+        r"^## 4\. Gaps and known issues\s*\n(.*?)(?=^## \d+\.)",
+        text,
+        re.DOTALL | re.MULTILINE,
+    )
+    if not match:
+        return _HANDWRITTEN_PLACEHOLDER
+    body = match.group(1).strip()
+    return body or _HANDWRITTEN_PLACEHOLDER
+
+
+def render_worklist(rows, previous=None):
     """The full confirmation-worklist document, as Markdown text.
 
     Reproduces the structure of the hand-written docs/registry-confirmation.md
@@ -287,10 +403,7 @@ def render_worklist(rows):
         lines.append("")
     lines.append("## 4. Gaps and known issues")
     lines.append("")
-    lines.append(
-        "<!-- Hand-written. Regenerating this document does not reproduce this section;\n"
-        "     copy it forward from the previous version. -->"
-    )
+    lines.append(carry_forward_section_four(previous))
     lines.append("")
     lines.append("## 5. Cards no longer in the binder")
     lines.append("")
@@ -302,12 +415,45 @@ def render_worklist(rows):
         "when it is regenerated."
     )
     lines.append("")
+    lines.append("## 6. Confirmation queue by page")
+    lines.append("")
+    lines.append(
+        "The same rows as section 3, regrouped for walking the binder. Open to a page, clear "
+        "every card listed under it, move on. Pages in binder order; a page with nothing "
+        "unresolved is omitted. The source image is dropped here — the page implies it."
+    )
+    lines.append("")
+    lines.append(
+        "Photographs record what was on a page when the shoot happened, so a card since "
+        "swapped out still appears under its old page. `ursaring-01`, `typhlosion-02` and "
+        "`umbreon-03` are the known cases; check `ledger.md` before hunting for a card that "
+        "is not there."
+    )
+    lines.append("")
+    for label, group in page_groups(rows):
+        lines.append(f"### {label}")
+        lines.append("")
+        lines.append("| ID | Card name | Unreadable |")
+        lines.append("|---|---|---|")
+        for r in sorted(group, key=lambda r: r["id"]):
+            lines.append(
+                f"| {r['id']} | {r['card_name']} ({r['language']}) | {r['notes']} |"
+            )
+        lines.append("")
     return "\n".join(lines)
 
 
 def main(argv):
     args = argv[1:]
     worklist = "--worklist" in args
+    previous = DEFAULT_PREVIOUS
+    if "--previous" in args:
+        i = args.index("--previous")
+        if i + 1 >= len(args):
+            print(__doc__)
+            return 2
+        previous = Path(args[i + 1])
+        args = args[:i] + args[i + 2:]
     positional = [a for a in args if a != "--worklist"]
     if len(positional) != 1:
         print(__doc__)
@@ -319,7 +465,7 @@ def main(argv):
     if worklist:
         for error in errors:
             print(f"ERROR {error}", file=sys.stderr)
-        print(render_worklist(rows))
+        print(render_worklist(rows, previous=previous))
         return 1 if errors else 0
 
     print(f"{len(rows)} rows")

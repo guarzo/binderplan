@@ -398,3 +398,250 @@ registry.
 
 Not derivable here. The registry records what a card **is**, never where it sits, so a row gives no sign that its card has left the binder. Movement lives in `ledger.md`: grep it for an ID to see whether that card was swapped out. Any list of departed cards in this document is hand-written and must be carried forward when it is regenerated.
 
+## 6. Confirmation queue by page
+
+The same rows as section 3, regrouped for walking the binder. Open to a page, clear every card listed under it, move on. Pages in binder order; a page with nothing unresolved is omitted. The source image is dropped here — the page implies it.
+
+Photographs record what was on a page when the shoot happened, so a card since swapped out still appears under its old page. `ursaring-01`, `typhlosion-02` and `umbreon-03` are the known cases; check `ledger.md` before hunting for a card that is not there.
+
+### V1 · Calm in Nature
+
+| ID | Card name | Unreadable |
+|---|---|---|
+| bulbasaur-01 | Bulbasaur (EN) | number legible, set name not printed on visible area |
+| cyndaquil-01 | Cyndaquil (EN) | number illegible |
+| horsea-01 | Horsea (EN) | e-card era border, number illegible |
+| noibat-01 | オンバット (JP) | set/number code visible but digits ambiguous under magnification, left blank rather than guess |
+| pikachu-01 | Pikachu (EN) | classic border, corner number illegible |
+| plusle-01 | プラスル (JP) |  |
+| sandshrew-01 | Sandshrew (EN) | small logo bottom-right, number illegible |
+| snivy-01 | Snivy (EN) | number illegible |
+
+### V1 · World of People
+
+| ID | Card name | Unreadable |
+|---|---|---|
+| chansey-01 | ラッキー (JP) | set code truncated/illegible |
+| charmander-01 | Charmander (EN) | number illegible |
+| cubone-01 | 卡拉卡拉 (ZH) | number illegible |
+| quaxly-01 | Quaxly (EN) | number illegible |
+| squirtle-01 | Squirtle (EN) | set code ambiguous under magnification |
+
+### V1 · At Rest
+
+| ID | Card name | Unreadable |
+|---|---|---|
+| cubone-02 | カラカラ (JP) | vintage-style print, set name not identifiable |
+| eevee-01 | Eevee (EN) | number illegible |
+| oshawott-01 | Oshawott (EN) | number illegible |
+| snorlax-01 | カビゴン (JP) | number illegible |
+| sprigatito-01 | Sprigatito (EN) | number illegible |
+
+### V1 · Joyful Action
+
+| ID | Card name | Unreadable |
+|---|---|---|
+| bulbasaur-02 | フシギダネ (JP) | vintage Pokedex-number print, distinct from bulbasaur-01; era not identifiable |
+| charmander-02 | Charmander (EN) | distinct printing from charmander-01, set code not textual |
+| jirachi-01 | Jirachi (EN) | number illegible |
+| latias-01 | Latias (EN) | secret rare numbering, set name not identifiable |
+| marill-01 | Marill (EN) | vintage-style print, number legible, set name not shown |
+| pikachu-02 | Surfing Pikachu (EN) | vintage-style print, distinct from pikachu-01 |
+| victini-01 | Victini (EN) | number illegible |
+
+### V1 · Awakened Power p1
+
+| ID | Card name | Unreadable |
+|---|---|---|
+| darkrai-01 | Darkrai EX (EN) | set code not textual |
+| gengar-mimikyu-01 | 耿鬼＆谜拟丘GX (ZH) | TAG TEAM card featuring two species, printed name kept whole rather than split; number illegible |
+| groudon-01 | Groudon (EN) | number illegible |
+| gyarados-01 | Dark Gyarados (EN) | Team Rocket-era print with PRERELEASE stamp, number illegible |
+| houndoom-01 | Houndoom (EN) | Single Strike era print, number illegible |
+| jirachi-02 | 基拉祈V (ZH) | distinct printing from jirachi-01, number illegible |
+| lugia-01 | ルギア (JP) | vintage Pokedex-number print, era inferred from card style/border, not printed text |
+| walrein-01 | トドゼルガex (JP) | number illegible |
+
+### V1 · Awakened Power p2
+
+| ID | Card name | Unreadable |
+|---|---|---|
+| golem-01 | Golem EX (EN) | set code not textual |
+| mewtwo-01 | Mewtwo (EN) | heavy holo glare, number illegible after crop attempt |
+| rayquaza-01 | Rayquaza (EN) | set code not textual |
+| salamence-01 | ボーマンダex (JP) | set code not textual |
+| scyther-01 | ストライク (JP) | vintage Pokedex-number print, era not identifiable |
+| shaymin-02 | シェイミLv.X (JP) | distinct printing from shaymin-01, glare obscured number after crop attempt |
+| torterra-01 | Torterra (EN) | set code not textual |
+
+### V1 · Legendary Bearing p1
+
+| ID | Card name | Unreadable |
+|---|---|---|
+| darkrai-03 | Darkrai (EN) | Dark Cutter/Abyssal Sleep, distinct from darkrai-01/02, number illegible |
+| dialga-01 | ディアルガ (JP) | Lv.69, No.483 dex entry, card number partially visible ("006/...") but remainder illegible, left blank rather than guessed |
+| entei-01 | 結晶塔のエンテイ (JP) | No.244 dex entry, number illegible |
+| groudon-02 | Groudon (EN) | Swelling Power/Magma Purge, distinct from groudon-01, set code not textual |
+| lugia-03 | Lugia (EN) | Aerowing attack, No.249 dex entry, vintage print, distinct from lugia-01/02, era not identifiable |
+| mewtwo-04 | Mewtwo (EN) | delta species, Delta Switch/Energy Burst, distinct from mewtwo-01/02/03, set code not textual |
+| typhlosion-02 | バクフーン (JP) | Lv.46 print, distinct from typhlosion-01, vintage Pokedex-number print, era not identifiable |
+| yveltal-02 | 伊裴尔塔尔 (ZH) | distinct from yveltal-01, number illegible |
+| zapdos-01 | サンダー (JP) | vintage Pokedex-number print, era not identifiable |
+
+### V1 · Legendary Bearing p2
+
+| ID | Card name | Unreadable |
+|---|---|---|
+| dragonite-02 | カイリューex (JP) | ex card, distinct from dragonite-01, set code not textual |
+| espeon-02 | 太阳伊布GX (ZH) | GX card, SSR rarity mark, distinct from espeon-01; 太阳伊布 is Espeon's Chinese localized name, set code not textual |
+| gardevoir-01 | ザーナイトex (JP) | ex card, Breakdown/Psycho Storm, number illegible after crop attempt |
+| golem-02 | ゴローニャex (JP) | ex card, distinct from golem-01, number illegible after crop attempt |
+| mew-03 | Mew GX (JP) | double-star SR rarity mark, distinct from mew-01/02, set code not textual |
+| ninetales-01 | キュウコン (JP) | Lv.32, vintage Pokedex-number print, era not identifiable |
+| ns-plan-01 | N's Plan (EN) | Supporter trainer, double-star SR rarity mark, set code not textual |
+| umbreon-04 | Umbreon (EN) | Moonlight Fang/Quick Blow, RH holo mark, distinct from umbreon-01/02/03, set code not textual |
+| zekrom-01 | Zekrom EX (EN) | Slash/Voltage Burst, set code not textual |
+
+### V1 · Intimidation
+
+| ID | Card name | Unreadable |
+|---|---|---|
+| bewear-01 | キテルグマ (JP) | number illegible after crop attempt |
+| gengar-02 | ゲンガー (JP) | Lv.38 print, distinct from gengar-01 and gengar-mimikyu-01, number illegible |
+| houndour-01 | Houndour (EN) | illustrator Mitsuhiro Arita credited, set code not textual |
+| lucario-01 | ルカリオVSTAR (JP) | VSTAR, SAR rarity mark; third digit of number ambiguous 5-vs-6 at source resolution |
+| marowak-01 | ガラガラ (JP) | delta species print, distinct from cubone-02 (the カラカラ), number illegible after crop attempt |
+| mewtwo-02 | Mewtwo EX (EN) | Shatter Shot/Damage Change EX card, distinct from mewtwo-01, set code not textual |
+| misdreavus-01 | ムウマ (JP) | number illegible |
+| sabrinas-gaze-01 | ナツメの眼 (JP) | trainer card, number illegible |
+| typhlosion-01 | バクフーン (JP) | vintage Pokedex-number print, era not identifiable |
+
+### V1 · On the Attack
+
+| ID | Card name | Unreadable |
+|---|---|---|
+| charizard-01 | リザードンG (JP) | Lv.X print, set code not textual, number read with low confidence |
+| gengar-03 | M Gengar EX (JP) | Mega Evolution EX, "ファントムゲート"/Phantom Gate, distinct from gengar-01/02 and gengar-mimikyu-01, number illegible |
+| kingdra-01 | キングドラ (JP) | Lv.47, vintage Pokedex-number print, illustrator Mitsuhiro Arita, era not identifiable |
+| spheal-02 | タマザラシ (JP) | Lv.18 print, distinct from spheal-01, set code not textual |
+| ursaring-02 | リングマ (JP) | Lv.43 print, distinct from ursaring-01, vintage Pokedex-number print, era not identifiable |
+| yveltal-01 | Yveltal EX (EN) | set code not textual |
+
+### V1 · Elemental Solitude
+
+| ID | Card name | Unreadable |
+|---|---|---|
+| absol-01 | Absol (EN) | promo-style number, set code not textual |
+| ampharos-01 | ミカンのデンリュウ (JP) | Jasmine's Ampharos, VS-series print, set code not textual |
+| cyndaquil-02 | Cyndaquil (EN) | distinct from cyndaquil-01, set code not textual |
+| darkrai-02 | ダークライVSTAR (JP) | VSTAR, SAR rarity mark, distinct from darkrai-01, set code not textual |
+| espeon-01 | わるいエーフィ (JP) | Dark Espeon, vintage-style print, number illegible |
+| glaceon-01 | Glaceon (EN) | Lv.46 print, number illegible after crop attempt |
+| houndoom-03 | Houndoom (EN) | Dark Flame/Black Fang, Lv.35 #219 dex entry in flavor text, distinct from houndoom-01/02, set code not textual |
+| kyogre-01 | Kyogre ex (EN) | number illegible, below visible border |
+| latios-02 | ラティオス (JP) | distinct from latios-01, number illegible |
+| umbreon-03 | Umbreon (EN) | Confuse Ray/Shadow Shutdown, distinct from umbreon-01/02, set code not textual |
+
+### V1 · Contemplation
+
+| ID | Card name | Unreadable |
+|---|---|---|
+| dragonite-01 | カイリュー (JP) | Lv.45 print, vintage Pokedex-number print, era not identifiable |
+| dratini-01 | Dratini (EN) | set code not textual |
+| joltik-03 | バチュル (JP) | AR rarity, set code not textual, number read with low confidence |
+| latios-01 | ラティオス (JP) | AR rarity, set code not textual |
+| snivy-02 | ツタージャ (JP) | distinct from snivy-01, set code not textual, number read with low confidence |
+| spheal-03 | Spheal (EN) | Lv.17 print, distinct from spheal-01/02, number illegible |
+| umbreon-02 | ブラッキー (JP) | vintage Pokedex-number print, distinct from umbreon-01, era not identifiable |
+
+### V2 · Companions p1
+
+| ID | Card name | Unreadable |
+|---|---|---|
+| beldum-01 | Beldum (EN) | Steven's Beldum, Ram attack, number illegible after crop attempt |
+| charizard-02 | リザードン (JP) | Ability バトルセンス, キングブレイズ attack, distinct from charizard-01, number illegible after crop attempt |
+| gardevoir-02 | Gardevoir (EN) | Ability Shining Arcana, Prainwave attack, distinct from gardevoir-01, number illegible after crop attempt |
+| gengar-04 | ゲンガー (JP) | Ability たくらみのうごう, スクリームサークル attack, distinct from gengar-01..03, number illegible after crop attempt |
+| imposter-professor-oaks-revenge-01 | にせオーキドの逆襲 (JP) | Trainer card, vintage Team Rocket-era print, "R" rarity mark visible, number illegible |
+| mimikyu-01 | 谜拟丘 (ZH) | Ability 假扮 (Disguise), number illegible |
+| pikachu-03 | 皮卡丘 (ZH) | CHR rarity mark, Ash-style artwork, set not readable as text |
+| reshiram-01 | レシラム (JP) | AR rarity mark, set not readable as text |
+
+### V2 · Companions p2
+
+| ID | Card name | Unreadable |
+|---|---|---|
+| houndour-02 | デルビル (JP) | distinct from houndour-01, number illegible after crop attempt |
+| joltik-01 | 电电虫 (ZH) | holo print, number illegible after crop attempt |
+| kangaskhan-01 | ガルーラ (JP) | vintage Pokedex-number print, era not identifiable |
+| professors-research-01 | 博士の研究 (JP) | Supporter trainer, promo S-P number, featuring Professor Willow, set not readable as text |
+| rockets-trap-01 | ロケット団のワナ (JP) | Trainer card, vintage print, number illegible after crop attempt |
+
+### V2 · Quiet Familiarity p1
+
+| ID | Card name | Unreadable |
+|---|---|---|
+| charmander-03 | Charmander (EN) | Gnaw/Searing Flame attacks, distinct from charmander-01/02, footer obscured by sleeve tab |
+| dratini-02 | Dratini (EN) | Pound attack, Wizards era, distinct from dratini-01, set not readable as text |
+| mew-04 | ミュウ (JP) | Pokepower type-change, Link Blast attack, distinct from mew-01..03, footer illegible after crop attempt |
+| numel-01 | Numel (EN) | Firebreathing/Tackle attacks, e-Card era, set not readable as text |
+| pikachu-05 | Pikachu (EN) | Max Voltage attack, e-Card era, distinct from pikachu-01..04, set not readable as text |
+| piplup-01 | Piplup (EN) | Lv.9, Peck/Water Splash attacks, footer illegible after crop attempt |
+| shaymin-03 | Shaymin (EN) | Ability Flower Curtain, Smash Kick attack, distinct from shaymin-01/02, set not readable as text |
+| snivy-03 | Snivy (EN) | Leaf Blade attack, distinct from snivy-01/02, set not readable as text |
+| squirtle-02 | Squirtle (EN) | Wave Splash/Doubleslap attacks, distinct from squirtle-01, footer illegible after crop attempt |
+
+### V2 · Quiet Familiarity p2
+
+| ID | Card name | Unreadable |
+|---|---|---|
+| cinccino-01 | チラチーノ (JP) | AR rarity mark, third digit of number ambiguous under magnification, set code not textual |
+| ditto-01 | Ditto (EN) | Metamorphosis Gene ability, Stick On attack, promo number, set not readable as text |
+| dragonair-01 | エリカのハクリュー (JP) | Erika's Dragonair, Lv.32, vintage Pokedex-number print, era not identifiable |
+| mudkip-01 | Mudkip (EN) | Nap/Waterfall attacks, number illegible after crop attempt |
+| snorlax-03 | Snorlax (EN) | Rest Up ability, Collapse/Toss and Turn attacks, distinct from snorlax-01/02, number illegible after crop attempt |
+| togepi-01 | トゲピー (JP) | number illegible after crop attempt |
+| umbreon-05 | ブラッキー (JP) | distinct from umbreon-01..04, set not readable as text |
+
+### V2 · Enduring Presence p1
+
+| ID | Card name | Unreadable |
+|---|---|---|
+| blastoise-01 | カメックス (JP) | Lv.52 HP100, vintage Pokedex-number print, era not identifiable |
+| bulbasaur-03 | Bulbasaur (EN) | Sleep Seed ability, Vine Whip attack, distinct from bulbasaur-01/02, footer illegible after crop attempt |
+| gengar-05 | わるいゲンガー (JP) | Dark Gengar, HP70, distinct from gengar-01..04, footer illegible after crop attempt |
+| groudon-03 | Groudon (EN) | Rock Smash/Break Ground attacks, AR rarity mark, set not readable as text |
+| jirachi-03 | ジラーチex (JP) | ex card, promo Play number, set not readable as text |
+| joltik-02 | Joltik (EN) | Jolting Charge attack, distinct from joltik-01, set not readable as text |
+| muk-01 | ベトベトン (JP) | Grimer evolution Lv.34, HP70, vintage Pokedex-number print, era not identifiable |
+| steelix-01 | ハガネール (JP) | vintage Pokedex-number print, era not identifiable |
+| vulpix-01 | Vulpix (EN) | Collect Fire attack, e-Card era stamp, number ambiguous (119 or 116)/147, set not readable as text |
+
+### V2 · Enduring Presence p2
+
+| ID | Card name | Unreadable |
+|---|---|---|
+| hoopa-01 | フーパ (JP) | full-art secret rare, footer illegible after crop attempt |
+| houndoom-04 | Houndoom (EN) | Crunch/Flamethrower attacks, distinct from houndoom-01..03, set not readable as text |
+| machop-01 | Machop (EN) | Punch attack, set not readable as text |
+| master-ball-01 | マスターボール (JP) | Trainer item card, no number field visible after crop attempt |
+| mew-05 | ミュウ (JP) | Psywave/Recover-Beam attacks, distinct from mew-01..04, footer illegible after crop attempt |
+| reshiram-02 | Reshiram (EN) | Outrage/Blue Flare attacks, distinct from reshiram-01, set not readable as text |
+| sandshrew-02 | Sandshrew (EN) | Dig Under/Scratch attacks, distinct from sandshrew-01, footer illegible after crop attempt |
+| shaymin-04 | Shaymin (EN) | Ability Celebration Wind, Energy Bloom attack, distinct from shaymin-01..03, footer illegible after crop attempt |
+| zygarde-01 | ジガルデ (JP) | Aura Break attack, set not readable as text |
+
+### V2 · Threshold
+
+| ID | Card name | Unreadable |
+|---|---|---|
+| dawns-stadium-01 | 夜明けのスタジアム (JP) | Stadium trainer card, number illegible after crop attempt |
+| deoxys-01 | Deoxys (EN) | Cell Storm attack, number illegible after crop attempt |
+| hoopa-02 | Hoopa EX (EN) | Scoundrel Ring ability, Hyperspace Fury attack, distinct from hoopa-01, number partially obscured by holo glare |
+| jirachi-04 | 七夜のジラーチ (JP) | みらいよち/はめつのねがい attacks, distinct from jirachi-01..03, number illegible after crop attempt |
+| kabuto-01 | Kabuto (EN) | Kabuto Armor ability, Scratch attack, set code not textual |
+| kasumis-tears-01 | カスミのなみだ (JP) | Trainer card, number illegible |
+| pikachu-07 | Pikachu (EN) | Lightning Ball/Thunderbolt attacks, distinct from pikachu-01..06, set code not textual |
+| rayquaza-02 | Rayquaza ex (EN) | Frenzy/Dragon Bind/Twister, distinct from rayquaza-01, number partially visible but illegible, left blank rather than guessed |
+| squirtle-03 | Squirtle (EN) | Withdraw/Skull Bash attacks, distinct from squirtle-01/02, set code not textual |
+
