@@ -13,7 +13,11 @@ The [Buying Checklist](../buying/) is the permanent decision process. This page 
 
 ## Volume II — Where New Cards Go
 
-Volume II is the active volume, but it is not empty space: both volumes are currently full, 19 pages and 171 cards with no open pockets. Pickups here are worth making because the pulls still owed on Quiet Familiarity and Threshold will open pockets. Enduring Presence is the exception — it is settled, and takes replacements only.
+Volume II is the active volume, and it has room — but the room is in new themes, not in the existing ones.
+
+Every theme already in the binder is full: 19 pages, 171 cards, no open pockets. Placing into one is a **challenge, not an addition** — a card enters only by displacing a named incumbent, which then leaves the binder. A new theme that passes the expansion tests adds pages instead, so its cards evict nothing. That is the only additive path.
+
+Two exceptions are coming: the pulls still owed on Quiet Familiarity and Threshold will open genuine pockets.
 
 ### Threshold
 
@@ -23,9 +27,9 @@ Look for art where the *setting* does most of the work and the Pokemon is passin
 
 Skip cards where the Pokemon is merely flying, running, or looking dramatic. Motion is not passage unless a boundary is present.
 
-### Enduring Presence — replacements only
+### Enduring Presence — settled, no pulls owed
 
-Both pages are full and were ratified on 2026-08-02 under the current definition, so this theme is closed to additions. Buy for it only to replace something already placed.
+Both pages were ratified on 2 August 2026 under the current definition, so unlike Quiet Familiarity and Threshold this theme has no vacancies coming. A card enters only by displacing a named incumbent.
 
 Pokemon shown complete and self-contained — finished rather than becoming, power held rather than spent, the pose suggesting continuity. Stillness without spectacle, force implied but not discharged, and containment: sealed, ringed, or self-enclosed.
 
@@ -93,6 +97,8 @@ These themes lose clarity if they grow. Only buy strict upgrades to existing car
 
 I do not shop directly for these. They become real themes only if 6–9 convincing cards accumulate without forcing the idea.
 
+This is the one route by which the binder grows rather than churns: a theme that earns its place adds pages, and its cards displace nothing. Cards accumulating toward a candidate live in the holding box under EDGE until the idea either proves itself or doesn't.
+
 **Volume I candidates, only if the volume is deliberately reopened:**
 - **Journey** — Pokemon mid-travel, paths stretching ahead, a sense of going somewhere
 - **Defiance** — Refusal, standing ground, resistance without aggression
@@ -119,16 +125,16 @@ I do not shop directly for these. They become real themes only if 6–9 convinci
 
 ## Quick Decision Guide
 
-Found a card with great art? Ask what signal it carries:
+Found a card with great art? Ask what signal it carries. Every theme listed here is full, so a match means *challenge the incumbent*, not *add*:
 
 - **Bond or domestic warmth** — Volume II: Companions or Quiet Familiarity
-- **Power held whole, contained, self-enclosed** — Volume II: Enduring Presence (upgrade only)
+- **Power held whole, contained, self-enclosed** — Volume II: Enduring Presence
 - **A visible edge, departure, or arrival** — Volume II: Threshold
-- **Power gathering, transition** — Volume I: Awakened Power (upgrade only)
-- **Authority witnessed through scale or posture** — Volume I: Legendary Bearing (upgrade only)
-- **Fits a V1 theme but isn't an upgrade** — Pass
+- **Power gathering, transition** — Volume I: Awakened Power
+- **Authority witnessed through scale or posture** — Volume I: Legendary Bearing
+- **Fits a theme but isn't better than what's there** — Pass
 - **No clear signal** — Pass
-- **Doesn't fit any theme** — Holding box. Review it with EDGE, then move it to Future Self after about a year if it remains unresolved.
+- **Doesn't fit any theme** — Holding box under EDGE. This is also where a future theme would start, so a card that fits nothing is not automatically a mistake. Move it to Future Self after about a year if it remains unresolved.
 
 ---
 
