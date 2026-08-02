@@ -137,8 +137,9 @@ def confirmation_queue(rows):
     cosmetic by comparison.
 
     Grouped by the `species` column, NOT by the ID slug. The never-rewrite rule
-    freezes an ID but lets a mistaken `species` be corrected, so the two diverge
-    over time -- marowak-01 holds a Cubone. A duplicate printing is defined by
+    freezes an ID once something cites it, but lets a mistaken `species` be
+    corrected, so the two drift apart -- a row keeping an ID of marowak-NN while
+    its species reads Cubone. A duplicate printing is defined by
     species, so a cluster built on the slug would hide exactly the pair it exists
     to surface. species_slug() stays in use for counter validation, where the ID
     sequence is the thing being checked.
