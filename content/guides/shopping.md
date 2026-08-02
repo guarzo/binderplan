@@ -125,13 +125,14 @@ This is the one route by which the binder grows rather than churns: a theme that
 
 ## Quick Decision Guide
 
-Found a card with great art? Ask what signal it carries. Every theme listed here is full, so a match means *challenge the incumbent*, not *add*:
+Found a card with great art? Ask what signal it carries. Quiet Familiarity and Threshold have pulls owed, so a match there fills a pocket that is opening. Everywhere else the theme is full and a match means *challenge a named incumbent*, not *add*:
 
-- **Bond or domestic warmth** — Volume II: Companions or Quiet Familiarity
-- **Power held whole, contained, self-enclosed** — Volume II: Enduring Presence
-- **A visible edge, departure, or arrival** — Volume II: Threshold
-- **Power gathering, transition** — Volume I: Awakened Power
-- **Authority witnessed through scale or posture** — Volume I: Legendary Bearing
+- **Domestic warmth, routine, an inhabited place** — Volume II: Quiet Familiarity, into a pocket the owed pulls are opening
+- **A visible edge, departure, or arrival** — Volume II: Threshold, into a pocket the owed pulls are opening
+- **Bond that shapes the image** — Volume II: Companions — full, name the incumbent to challenge
+- **Power held whole, contained, self-enclosed** — Volume II: Enduring Presence — full, name the incumbent to challenge
+- **Power gathering, transition** — Volume I: Awakened Power — full, name the incumbent to challenge
+- **Authority witnessed through scale or posture** — Volume I: Legendary Bearing — full, name the incumbent to challenge
 - **Fits a theme but isn't better than what's there** — Pass
 - **No clear signal** — Pass
 - **Doesn't fit any theme** — Holding box under EDGE. This is also where a future theme would start, so a card that fits nothing is not automatically a mistake. Move it to Future Self after about a year if it remains unresolved.

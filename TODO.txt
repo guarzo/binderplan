@@ -50,8 +50,9 @@ Movement or atmosphere without a readable edge:
 - Rayquaza (rayquaza-02) — open sky
 - Deoxys (deoxys-01) — open space
 - Jirachi (jirachi-04) — sky and hillside
-- Kasumi's Tears (kasumis-tears-01) — underwater; line 96 names underwater
-- Kabuto (kabuto-01) — fossil; line 96 names fossils
+- Kasumi's Tears (kasumis-tears-01) — underwater; "Current Page Plan" under
+  the Threshold Audit in content/guides/volume-2-refinement.md names underwater
+- Kabuto (kabuto-01) — fossil; the same line names fossils
 
 Kabuto is the contested one: the gallery caption defends it as "carried out of
 one age into another," which is a claim about time rather than about a boundary.

@@ -67,7 +67,7 @@ Energy and movement without conflict.
 - **Joyful Action:** Play, flight, celebration
 
 ### Chapter III — Power Awakening
-Transition into power, not power fully realized.
+How power arrives. Awakened Power covers transition into power, not power fully realized; Legendary Bearing is the chapter's completed end of that arc, where the power is already whole and the scene stages meeting it.
 - **Awakened Power:** Energy gathering, the moment before inevitability
 - **Legendary Bearing:** Authority encountered — scale, confrontation, ceremony, arrival
 

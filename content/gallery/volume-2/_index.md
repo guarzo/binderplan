@@ -47,7 +47,7 @@ Volume II is less about action and more about memory, familiarity, and change ov
   </figure>
   <figure class="gallery-item span-half">
     <img src="../../images/binder/volume-2/enduring_presence_1.webp" alt="Nine-pocket page of mostly vintage Japanese holos — Muk, Vulpix, Groudon, Steelix, Blastoise, Jirachi, Joltik, Dark Gengar and Bulbasaur" loading="lazy">
-    <figcaption><strong>Enduring Presence — Standing Whole.</strong> Vintage forms and long-lived holos, each presented complete rather than mid-action.</figcaption>
+    <figcaption><strong>Enduring Presence — Standing Whole.</strong> Finished forms holding their power rather than spending it, each presented complete rather than mid-action.</figcaption>
   </figure>
   <figure class="gallery-item span-wide">
     <img src="../../images/binder/volume-2/enduring_presence_2.webp" alt="Nine-pocket page including Machop, Mew, Zygarde, Reshiram, Hoopa, a Master Ball, Sandshrew, Houndoom and Shaymin" loading="lazy">
