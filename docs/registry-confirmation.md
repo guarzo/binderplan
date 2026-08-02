@@ -391,7 +391,8 @@ same root cause: treat no `static/images/binder/` filename as a reliable descrip
 **The single empty pocket was where the earlier ledger said it was.** It was on Quiet Familiarity
 p2 (the page misfiled as `enduring_presence_1.webp`), exactly as `docs/ledger.md` recorded before
 the previous analysis second-guessed it based on a filename. That pocket is no longer empty — the
-planned Cinccino AR placement (`docs/holding-box-placement.md` lines 14, 52, 167) has been executed;
+planned Cinccino AR placement (recorded in the holding-box placement analysis, since retired; it
+survives in git at commit `a254855`) has been executed;
 it is now `cinccino-01`. The binder holds 19 card pages × 9 pockets = 171 cards, no empty pockets
 anywhere.
 
