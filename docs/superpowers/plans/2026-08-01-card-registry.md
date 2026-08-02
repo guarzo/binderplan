@@ -641,7 +641,7 @@ git commit -m "Seed registry from Volume 2 and sort by id"
 ## Task 5: Pass-2 report and curator review gate
 
 **Files:**
-- Create: `docs/registry-confirmation.md` (temporary — deleted in Task 9)
+- Create: `docs/registry-confirmation.md` (planned as temporary; **it is not deleted** — Task 6 makes it the standing physical-confirmation worklist, and it is now regenerable with `check-registry.py --worklist`. Task 9 deletes only `docs/holding-box-placement.md`.)
 
 **Interfaces:**
 - Consumes: the complete pass-1 registry and `scripts/check-registry.py` reports.

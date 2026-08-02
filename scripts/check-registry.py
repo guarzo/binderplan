@@ -135,6 +135,13 @@ def confirmation_queue(rows):
     A species holding two or more unresolved rows leads the queue: that is where
     a duplicate printing could be hiding unseen. An isolated unread number is
     cosmetic by comparison.
+
+    Grouped by the `species` column, NOT by the ID slug. The never-rewrite rule
+    freezes an ID but lets a mistaken `species` be corrected, so the two diverge
+    over time -- marowak-01 holds a Cubone. A duplicate printing is defined by
+    species, so a cluster built on the slug would hide exactly the pair it exists
+    to surface. species_slug() stays in use for counter validation, where the ID
+    sequence is the thing being checked.
     """
     buckets = {}
     for row in rows:
@@ -142,7 +149,8 @@ def confirmation_queue(rows):
             continue
         if row["confidence"] != "uncertain" and row["set"] and row["number"]:
             continue
-        buckets.setdefault(species_slug(row["id"]), []).append(row)
+        key = row["species"].strip().lower().replace(" ", "-")
+        buckets.setdefault(key, []).append(row)
     return sorted(buckets.items(), key=lambda kv: (-len(kv[1]), kv[0]))
 
 

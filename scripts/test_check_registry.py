@@ -332,3 +332,27 @@ def test_zero_counter_is_an_error_alongside_valid_counters():
 
 def test_valid_counters_starting_at_01_still_pass():
     assert validate(parse_registry(table(row("foo-01", "Foo"), row("foo-02", "Foo")))) == []
+
+
+def test_confirmation_queue_groups_by_species_not_id_slug():
+    # The never-rewrite rule freezes IDs but lets `species` be corrected, so an ID
+    # slug is not a reliable species indicator. Clusters exist to surface possible
+    # duplicate printings, which are defined by species -- so they must follow the
+    # species column, not the slug.
+    queue = confirmation_queue(parse_registry(table(
+        row("marowak-01", "Cubone", num="", conf="uncertain"),
+        row("cubone-01", "Cubone", num="", conf="uncertain"),
+        row("marowak-02", "Marowak", num="", conf="uncertain"),
+    )))
+    groups = dict(queue)
+    assert "cubone" in groups and len(groups["cubone"]) == 2
+    assert {r["id"] for r in groups["cubone"]} == {"marowak-01", "cubone-01"}
+    assert "marowak" in groups and {r["id"] for r in groups["marowak"]} == {"marowak-02"}
+
+
+def test_counter_validation_still_uses_the_id_slug():
+    # Counters are per-ID-sequence and must not follow a corrected species.
+    # marowak-01/-02 remain one contiguous counter run even though -01 is a Cubone.
+    assert validate(parse_registry(table(
+        row("marowak-01", "Cubone"), row("marowak-02", "Marowak"),
+    ))) == []

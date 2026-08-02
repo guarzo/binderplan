@@ -1,55 +1,24 @@
-# Registry pass-2 confirmation — curator review
+# Registry confirmation worklist
 
-`docs/card-registry.md` holds 175 rows covering Volumes 1 and 2 — 171 cards currently in the
-binder, plus 4 that have since moved to the holding box and correctly keep their IDs. Seeded from 18 spread
-photographs shot through sleeves plus 14 rows added from a 27-photo reshoot. This document is the
-pass-2 gate described in `docs/superpowers/specs/2026-08-01-card-registry-design.md`: everything
-pass 1 and the reshoot follow-up could not settle, handed to the curator before the registry is
-frozen.
+Generated from `docs/card-registry.md` by `python3 scripts/check-registry.py docs/card-registry.md --worklist`. Every section below is recomputed from the registry except "4. Gaps and known issues", which is hand-written and must be carried forward manually when this document is regenerated.
 
-**Honest numbers, recomputed from the current file.** 175 rows total. 29 `photo` (16.6%), 146
-`uncertain` (83.4%). 31 rows have both `set` and `number` read (17.7%) — 75 have `number` only, 0
-have `set` only, 69 have neither field. The confirmation queue (section 3) holds 146 rows across 93
-species: 34 clusters (87 rows) and 59 singletons.
-
-**The registry is frozen.** The curator signed off on 2026-08-01; the IDs below are permanent and
-the one-time carve-out from the never-rewrite rule has closed. Every other column stays correctable
-— filling in a `set`, correcting a `species`, upgrading a `confidence` are all normal. Three species
-have already been corrected this way (`marowak-01` is a Cubone, `pachirisu-01` a Joltik,
-`woobat-01` a Noibat); their IDs stayed, as the rule requires.
+**Honest numbers, recomputed from the current file.** 175 rows total. 29 `photo` (16.6%), 146 `uncertain` (83.4%). 31 rows have both `set` and `number` read (17.7%) — 75 have `number` only, 0 have `set` only, 69 have neither field. The confirmation queue (section 3) holds 146 rows across 92 species: 34 clusters (88 rows) and 58 singletons.
 
 ## 1. Blocked — species unreadable
 
-None. All 175 cards across the 18 original spread photos plus the 14 reshoot additions were
-identified to species. Nothing is held out of the registry.
+None. The registry has no state for a card that was seen but never identified to species -- every row that exists already carries one -- so this section is always empty.
 
 ## 2. Duplicate printing candidates
 
-**None found** — `python3 scripts/check-registry.py docs/card-registry.md` reports
-`duplicate printings: 0`.
+**None found** — `python3 scripts/check-registry.py docs/card-registry.md` reports `duplicate printings: 0`.
 
-Take that as a weak result, not a clean bill of health. The check requires all four fields —
-`species`, `set`, `number`, `language` — to match on two rows, and only **31 of 175 rows (17.7%)**
-have both `set` and `number` read. The remaining 144 rows (82.3%) are missing one or both fields
-and are structurally invisible to this check: two physical duplicates sitting in the registry right
-now would not be flagged unless both happened to land among that same 31-row minority. A zero-count
-result here is evidence the check found nothing to compare, not evidence the binders hold no
-duplicate printings.
-
-The species clusters in section 3 — species with several unread rows — are exactly where an
-undetected duplicate could be hiding, per the design note. The reshoot did not improve this odds
-picture: of the 14 rows it added, 9 got a legible `number` but only 1 got a legible `set` alongside
-it. Re-photographing at higher resolution did not shrink this exposure, because set codes are
-frequently not printed as legible text at all on these cards — see section 4.
+Take that as a weak result, not a clean bill of health. The check requires all four fields — `species`, `set`, `number`, `language` — to match on two rows, and only **31 of 175 rows (17.7%)** have both `set` and `number` read. The remaining 144 rows (82.3%) are missing one or both fields and are structurally invisible to this check: two physical duplicates sitting in the registry right now would not be flagged unless both happened to land among that same 31-row minority.
 
 ## 3. Confirmation queue — clusters first
 
-146 rows, 93 species. **34 species (87 rows) hold two or more unresolved rows** and lead the list,
-because that is where an undetected duplicate printing could hide. The remaining 59 species have a
-single unresolved row each — cosmetic on their own, but still needed to close out `set`/`number`.
+146 rows, 92 species. **34 species (88 rows) hold two or more unresolved rows** and lead the list, because that is where an undetected duplicate printing could hide. The remaining 58 species have a single unresolved row each.
 
-The "Unreadable" column is the row's own `notes` field: what specifically blocked the read, so the
-curator knows what to look for on each physical card.
+The "Unreadable" column is the row's own `notes` field: what specifically blocked the read.
 
 ### Clusters (species with 2+ unresolved rows)
 
@@ -86,7 +55,7 @@ curator knows what to look for on each physical card.
 | ID | Card name | Source image | Unreadable |
 |---|---|---|---|
 | umbreon-02 | ブラッキー (JP) | contemplation_1.webp | vintage Pokedex-number print, distinct from umbreon-01, era not identifiable |
-| umbreon-03 | Umbreon (EN) | elemental_solitude_1.webp | **NOT IN THE BINDER** — swapped out for Jasmine's Ampharos; check in the holding box. Confuse Ray/Shadow Shutdown, distinct from umbreon-01/02, set code not textual |
+| umbreon-03 | Umbreon (EN) | elemental_solitude_1.webp | Confuse Ray/Shadow Shutdown, distinct from umbreon-01/02, set code not textual |
 | umbreon-04 | Umbreon (EN) | legendary_bearing_2.webp | Moonlight Fang/Quick Blow, RH holo mark, distinct from umbreon-01/02/03, set code not textual |
 | umbreon-05 | ブラッキー (JP) | enduring_presence_1.webp | distinct from umbreon-01..04, set not readable as text |
 
@@ -129,6 +98,14 @@ curator knows what to look for on each physical card.
 | houndoom-01 | Houndoom (EN) | awakened_power_1.webp | Single Strike era print, number illegible |
 | houndoom-03 | Houndoom (EN) | elemental_solitude_1.webp | Dark Flame/Black Fang, Lv.35 #219 dex entry in flavor text, distinct from houndoom-01/02, set code not textual |
 | houndoom-04 | Houndoom (EN) | threshold_1.webp | Crunch/Flamethrower attacks, distinct from houndoom-01..03, set not readable as text |
+
+**joltik** (3)
+
+| ID | Card name | Source image | Unreadable |
+|---|---|---|---|
+| joltik-01 | 电电虫 (ZH) | companions_2.webp | holo print, number illegible after crop attempt |
+| joltik-02 | Joltik (EN) | enduring_presence_2.webp | Jolting Charge attack, distinct from joltik-01, set not readable as text |
+| pachirisu-01 | バチュル (JP) | contemplation_1.webp | AR rarity, set code not textual, number read with low confidence; バチュル is Joltik, not Pachirisu (パチリス); ID frozen before the error was found, species corrected per the never-rewrite rule |
 
 **mew** (3)
 
@@ -176,6 +153,13 @@ curator knows what to look for on each physical card.
 |---|---|---|---|
 | charizard-01 | リザードンG (JP) | on_attack_1.webp | Lv.X print, set code not textual, number read with low confidence |
 | charizard-02 | リザードン (JP) | companions_1.webp | Ability バトルセンス, キングブレイズ attack, distinct from charizard-01, number illegible after crop attempt |
+
+**cubone** (2)
+
+| ID | Card name | Source image | Unreadable |
+|---|---|---|---|
+| cubone-01 | 卡拉卡拉 (ZH) | world_people_1.webp | number illegible |
+| marowak-01 | カラカラ (JP) | at_rest_1.webp | vintage-style print, set name not identifiable; カラカラ is Cubone, not Marowak (ガラガラ); ID frozen before the error was found, species corrected per the never-rewrite rule |
 
 **cyndaquil** (2)
 
@@ -233,13 +217,6 @@ curator knows what to look for on each physical card.
 | houndour-01 | Houndour (EN) | intimidation_1.webp | illustrator Mitsuhiro Arita credited, set code not textual |
 | houndour-02 | デルビル (JP) | companions_2.webp | distinct from houndour-01, number illegible after crop attempt |
 
-**joltik** (2)
-
-| ID | Card name | Source image | Unreadable |
-|---|---|---|---|
-| joltik-01 | 电电虫 (ZH) | companions_2.webp | holo print, number illegible after crop attempt |
-| joltik-02 | Joltik (EN) | enduring_presence_2.webp | Jolting Charge attack, distinct from joltik-01, set not readable as text |
-
 **latios** (2)
 
 | ID | Card name | Source image | Unreadable |
@@ -253,13 +230,6 @@ curator knows what to look for on each physical card.
 |---|---|---|---|
 | lugia-01 | ルギア (JP) | awakened_power_1.webp | vintage Pokedex-number print, era inferred from card style/border, not printed text |
 | lugia-03 | Lugia (EN) | legendary_bearing_1.webp | Aerowing attack, No.249 dex entry, vintage print, distinct from lugia-01/02, era not identifiable |
-
-**marowak** (2)
-
-| ID | Card name | Source image | Unreadable |
-|---|---|---|---|
-| marowak-01 | カラカラ (JP) | at_rest_1.webp | vintage-style print, set name not identifiable |
-| marowak-02 | ガラガラ (JP) | intimidation_1.webp | delta species print, distinct from marowak-01, number illegible after crop attempt |
 
 **rayquaza** (2)
 
@@ -301,7 +271,7 @@ curator knows what to look for on each physical card.
 | ID | Card name | Source image | Unreadable |
 |---|---|---|---|
 | typhlosion-01 | バクフーン (JP) | intimidation_1.webp | vintage Pokedex-number print, era not identifiable |
-| typhlosion-02 | バクフーン (JP) | legendary_bearing_1.webp | **NOT IN THE BINDER** — swapped out for Zapdos; check in the holding box. Lv.46 print, distinct from typhlosion-01, vintage Pokedex-number print, era not identifiable |
+| typhlosion-02 | バクフーン (JP) | legendary_bearing_1.webp | Lv.46 print, distinct from typhlosion-01, vintage Pokedex-number print, era not identifiable |
 
 **yveltal** (2)
 
@@ -310,7 +280,7 @@ curator knows what to look for on each physical card.
 | yveltal-01 | Yveltal EX (EN) | on_attack_1.webp | set code not textual |
 | yveltal-02 | 伊裴尔塔尔 (ZH) | legendary_bearing_1.webp | distinct from yveltal-01, number illegible |
 
-### Singletons (59 species, one unresolved row each)
+### Singletons (58 species, one unresolved row each)
 
 | ID | Card name | Source image | Unreadable |
 |---|---|---|---|
@@ -321,7 +291,6 @@ curator knows what to look for on each physical card.
 | blastoise-01 | カメックス (JP) | enduring_presence_2.webp | Lv.52 HP100, vintage Pokedex-number print, era not identifiable |
 | chansey-01 | ラッキー (JP) | world_people_1.webp | set code truncated/illegible |
 | cinccino-01 | チラチーノ (JP) | IMG_6860.HEIC | AR rarity mark, third digit of number ambiguous under magnification, set code not textual |
-| cubone-01 | 卡拉卡拉 (ZH) | world_people_1.webp | number illegible |
 | dawns-stadium-01 | 夜明けのスタジアム (JP) | IMG_6865.HEIC | Stadium trainer card, number illegible after crop attempt |
 | deoxys-01 | Deoxys (EN) | IMG_6865.HEIC | Cell Storm attack, number illegible after crop attempt |
 | dialga-01 | ディアルガ (JP) | legendary_bearing_1.webp | Lv.69, No.483 dex entry, card number partially visible ("006/...") but remainder illegible, left blank rather than guessed |
@@ -343,18 +312,19 @@ curator knows what to look for on each physical card.
 | lucario-01 | ルカリオVSTAR (JP) | intimidation_1.webp | VSTAR, SAR rarity mark; third digit of number ambiguous 5-vs-6 at source resolution |
 | machop-01 | Machop (EN) | threshold_1.webp | Punch attack, set not readable as text |
 | marill-01 | Marill (EN) | joyful_action_1.webp | vintage-style print, number legible, set name not shown |
+| marowak-02 | ガラガラ (JP) | intimidation_1.webp | delta species print, distinct from marowak-01, number illegible after crop attempt |
 | master-ball-01 | マスターボール (JP) | threshold_1.webp | Trainer item card, no number field visible after crop attempt |
 | mimikyu-01 | 谜拟丘 (ZH) | companions_1.webp | Ability 假扮 (Disguise), number illegible |
 | misdreavus-01 | ムウマ (JP) | intimidation_1.webp | number illegible |
 | mudkip-01 | Mudkip (EN) | enduring_presence_1.webp | Nap/Waterfall attacks, number illegible after crop attempt |
 | muk-01 | ベトベトン (JP) | enduring_presence_2.webp | Grimer evolution Lv.34, HP70, vintage Pokedex-number print, era not identifiable |
-| ninetales-01 | キュウコン (JP) | legendary_bearing_2.webp | Lv.32, vintage Pokedex-number print, era not identifiable |
 | ns-plan-01 | N's Plan (EN) | legendary_bearing_2.webp | Supporter trainer, double-star SR rarity mark, set code not textual |
+| ninetales-01 | キュウコン (JP) | legendary_bearing_2.webp | Lv.32, vintage Pokedex-number print, era not identifiable |
+| woobat-01 | オンバット (JP) | calm_nature_1.webp | set/number code visible but digits ambiguous under magnification, left blank rather than guess; オンバット is Noibat, not Woobat (コロモリ); ID frozen before the error was found, species corrected per the never-rewrite rule |
 | numel-01 | Numel (EN) | quiet_familiarity_1.webp | Firebreathing/Tackle attacks, e-Card era, set not readable as text |
 | oshawott-01 | Oshawott (EN) | at_rest_1.webp | number illegible |
-| pachirisu-01 | バチュル (JP) | contemplation_1.webp | AR rarity, set code not textual, number read with low confidence |
 | piplup-01 | Piplup (EN) | quiet_familiarity_1.webp | Lv.9, Peck/Water Splash attacks, footer illegible after crop attempt |
-| plusle-01 | プラスル (JP) | calm_nature_1.webp | notes blank in registry — number/set not captured |
+| plusle-01 | プラスル (JP) | calm_nature_1.webp |  |
 | professors-research-01 | 博士の研究 (JP) | companions_2.webp | Supporter trainer, promo S-P number, featuring Professor Willow, set not readable as text |
 | quaxly-01 | Quaxly (EN) | world_people_1.webp | number illegible |
 | rockets-trap-01 | ロケット団のワナ (JP) | companions_2.webp | Trainer card, vintage print, number illegible after crop attempt |
@@ -369,7 +339,6 @@ curator knows what to look for on each physical card.
 | victini-01 | Victini (EN) | joyful_action_1.webp | number illegible |
 | vulpix-01 | Vulpix (EN) | enduring_presence_2.webp | Collect Fire attack, e-Card era stamp, number ambiguous (119 or 116)/147, set not readable as text |
 | walrein-01 | トドゼルガex (JP) | awakened_power_1.webp | number illegible |
-| woobat-01 | オンバット (JP) | calm_nature_1.webp | set/number code visible but digits ambiguous under magnification, left blank rather than guess |
 | zapdos-01 | サンダー (JP) | IMG_6847.HEIC | vintage Pokedex-number print, era not identifiable |
 | zekrom-01 | Zekrom EX (EN) | legendary_bearing_2.webp | Slash/Voltage Burst, set code not textual |
 | zygarde-01 | ジガルデ (JP) | threshold_1.webp | Aura Break attack, set not readable as text |
@@ -424,3 +393,8 @@ first seen under.
 9 cards, seeded from the reshoot as `dawns-stadium-01` through the rest of the `IMG_6865.HEIC`
 group (see the cluster and singleton tables above for the individual rows). It is now fully in the
 registry.
+
+## 5. Cards no longer in the binder
+
+Not derivable here. The registry records what a card **is**, never where it sits, so a row gives no sign that its card has left the binder. Movement lives in `ledger.md`: grep it for an ID to see whether that card was swapped out. Any list of departed cards in this document is hand-written and must be carried forward when it is regenerated.
+
