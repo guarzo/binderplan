@@ -151,6 +151,9 @@ rather than that number, since earlier sessions may already have moved it.
 - Design and reasoning: `docs/superpowers/specs/2026-08-01-card-registry-design.md`
 - Registry conventions: the "How to use this file" header in `docs/card-registry.md`
 - Capacity and duplicate rules: `CURATORIAL_AUDIT_PROMPT.md` §2
-- A separate deferred task adds a by-page view to the worklist, which will make walking the binder
-  easier than the species view: `docs/superpowers/next-session-by-page-worklist.md`. If that is
-  already done, work from the by-page section instead.
+- **Walking the binder: use §6 of the worklist, "Confirmation queue by page."** It shipped in #13
+  and holds the same rows as §3 regrouped by page, so you can open to one page and clear every card
+  on it instead of flipping back and forth. Use §3 when you are chasing a species cluster for
+  duplicate risk, §6 when you are physically working through the binder — which, for the 75 rows
+  above, is most of the time. (`docs/superpowers/next-session-by-page-worklist.md` is the handoff
+  that built it, kept for history; it is not work still to do.)
