@@ -30,7 +30,7 @@ Choose **one**:
 **Volume II — Memory & Presence:**
 - Companions (bond without spectacle)
 - Quiet familiarity (domestic calm)
-- Enduring presence (survival through time)
+- Enduring presence (power held whole)
 - Threshold (a visible boundary being crossed)
 
 **If no clear signal appears — don't buy it.**

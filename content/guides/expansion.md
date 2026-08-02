@@ -91,7 +91,7 @@ Once the binder is full, I stop adding pages and improve it by replacement until
 Volume II has three chapters, each narrower and demanding stronger curation than Volume I:
 
 - **Nearness** — Companions + Quiet Familiarity (bond and domestic calm)
-- **Permanence** — Enduring Presence (survival through time)
+- **Permanence** — Enduring Presence (power held whole)
 - **Passage** — Threshold (a visible boundary being crossed)
 
 Volume II themes don't auto-expand. No theme grows beyond 2 pages without a deliberate decision.

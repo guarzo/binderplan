@@ -135,7 +135,7 @@ Awake and still. Not resting, not acting — *thinking*. These cards have a quie
 
 ## Volume II — Memory, Presence, and Passage
 
-Volume II is less concerned with action. Its themes focus on relationship, familiar places, accumulated time, and moments of passage.
+Volume II is less concerned with action. Its themes focus on relationship, familiar places, power at rest, and moments of passage.
 
 ### Chapter I — Nearness
 
@@ -169,11 +169,13 @@ Pokemon woven into everyday life through routines, familiar objects, work, meals
 
 ### Enduring Presence
 
-Beings, places, and presences that seem to have survived beyond the moment shown. The image carries evidence of time: ruins, old architecture, artifacts, weathering, memory, repetition, or a world shaped around the Pokemon.
+Pokemon shown as complete, self-contained forces. The Pokemon is finished rather than becoming, its power held rather than spent, and the pose suggests continuity — this is how it has been and how it will remain.
 
-The Pokemon does not need to dominate the scene. Its importance comes from having **remained**.
+The scene does not need ruins or artifacts to carry this. A Pokemon standing whole, a force sealed inside a Master Ball, a legendary ringed by its own energy: all read as power kept intact rather than released.
 
-<p class="signal">What I look for: survival through time</p>
+**Against Legendary Bearing:** both themes show power that is already complete, so the question is never *how much* power but *how the image treats it*. If the composition stages an encounter — scale, confrontation, ceremony, a dramatic arrival, someone or something to be met — choose Legendary Bearing. If the power is simply held, still and unwitnessed, choose Enduring Presence.
+
+<p class="signal">What I look for: power held whole</p>
 </div>
 
 ---

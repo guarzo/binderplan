@@ -10,9 +10,13 @@ This is a snapshot of the binder in July 2026, not a permanent set of rules. The
 
 ## The Power Distinction
 
-### Legendary Bearing — Authority Witnessed
+> **Superseded 2026-08-02.** This section originally split Legendary Bearing from Enduring Presence along *authority now* versus *time witnessed*. That test was retired: both photographed Enduring Presence pages were built on completeness and containment, not on accumulated time, and the canonical definition in [Core Themes](../../philosophy/themes/) was rewritten to match what the binder actually holds. The current test is **encounter versus containment** — staged for a viewer, or simply held whole. See `docs/ledger.md`, 2026-08-02.
+>
+> The Enduring Presence audit below is superseded with it. The Quiet Familiarity and Threshold audits are unaffected and still stand.
 
-The scene presents power in the current moment through scale, posture, confrontation, ceremony, or arrival.
+### Legendary Bearing — Authority Encountered
+
+The scene presents power as something met: scale, posture, confrontation, ceremony, or arrival.
 
 **Usually present:**
 - Monumental scale or low viewing angle
@@ -20,23 +24,23 @@ The scene presents power in the current moment through scale, posture, confronta
 - Ceremonial, confrontational, or awe-filled framing
 - A sense of arrival, revelation, or audience
 
-**Question:** *Is the image primarily about encountering authority now?*
+**Question:** *Is the image staging an encounter with this power?*
 
-### Enduring Presence — Time Witnessed
+### Enduring Presence — Power Held Whole
 
-The viewer is placed after, within, or alongside history. The Pokemon matters because it has remained while places, people, objects, or eras accumulated around it.
+The Pokemon is complete rather than becoming. Its power is contained rather than expressed, and nothing in the composition asks to be witnessed.
 
 **Usually present:**
-- Ruins, shrines, fossils, artifacts, or old architecture
-- Weathering, age, archival imagery, or repeated generations
-- A landscape or community shaped around the Pokemon
-- Stillness that feels historical rather than merely powerful
+- A finished, unhurried pose
+- Force implied but not discharged
+- Stillness without spectacle
+- Containment: sealed, ringed, self-enclosed
 
-**Question:** *Does the image depend on what has remained over time?*
+**Question:** *Is the power simply being held?*
 
 ### Tie-Breaker
 
-If the artwork would retain the same meaning after removing every sign of age, memory, or history, choose **Legendary Bearing**. If its meaning depends on accumulated time, choose **Enduring Presence**.
+Both themes show power that is already complete. If the composition stages an encounter — someone or something to meet it — choose **Legendary Bearing**. If the power is held, still and unwitnessed, choose **Enduring Presence**.
 
 ---
 
@@ -107,18 +111,15 @@ The page should read as a journey through an edge without becoming a general Jou
 
 ## Enduring Presence Audit
 
-The current pages contain strong vintage gravity, but some cards communicate importance or power without communicating time.
+> **Superseded 2026-08-02.** This audit asked both pages to prove accumulated time. Under the current definition — power held whole — they already qualify, and no rebuild is owed. The original text is kept below so the reversal is legible.
 
-### Current Page Plan
+### Original plan, no longer in force
 
 **Relics and Survivors:** Build around fossils, ancient forms, and beings visually connected to preservation. Vintage borders can support the idea, but the age of the physical card is not enough by itself.
 
 **Witnesses to History:** Replace generic heroic poses with scenes containing ruins, artifacts, architecture, weathering, generations, or communities. A modern card can be stronger than a vintage card if the artwork carries more historical weight.
 
-### Desired End State
-
-- **Page 1 — Preserved:** fossils, relics, archives, specimens, and recovered forms
-- **Page 2 — Remaining:** ancient guardians, recurring witnesses, old places, and worlds built around them
+Desired end state was **Page 1 — Preserved** and **Page 2 — Remaining**. Neither page was rebuilt toward it, and neither now needs to be.
 
 ---
 
@@ -126,6 +127,6 @@ The current pages contain strong vintage gravity, but some cards communicate imp
 
 1. Pull obvious Calm in Nature cards from Quiet Familiarity.
 2. Pull motion-without-boundary cards from Threshold.
-3. Test every Enduring Presence card for evidence of time.
+3. ~~Test every Enduring Presence card for evidence of time.~~ Dropped 2026-08-02; both pages qualify under the current definition.
 4. Leave empty pockets open until a card clearly fits the revised page.
 5. Photograph and reassess the rebuilt spreads before buying replacements.

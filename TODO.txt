@@ -1,30 +1,70 @@
-BINDERPLAN DEFERRED TODO
-========================
-
-These ideas are intentionally saved for later. They are not current shopping
-priorities and should not interrupt the Volume II refinement work.
+BINDERPLAN TODO
+===============
 
 
-1. RESEQUENCE THE COMPANIONS PAGES
-----------------------------------
+1. PULL OUTDOOR PORTRAITS FROM QUIET FAMILIARITY PAGE 1
+-------------------------------------------------------
 
-Goal:
-Give the two Companions pages distinct internal roles without creating a new
-canonical theme.
+The Volume II refinement planned in content/guides/volume-2-refinement.md was
+never executed for Quiet Familiarity. The 2026-08-01 reshoot re-photographed the
+pages; it did not re-sort them. docs/ledger.md records only the Cinccino insert
+and states plainly that the other planned swaps "are not recorded here at all:
+planning is not movement."
 
-Proposed structure:
-- Page 1 — Chosen Bonds: recognition, loyalty, and shared history
-- Page 2 — Care in Practice: teaching, protection, work, and ordinary attention
+So the "Quiet Familiarity Audit" in content/guides/volume-2-refinement.md still
+stands, and reading the artwork on 2026-08-02 made it worse than the audit
+assumed: page 1 is nine outdoor nature portraits with no interior, no household
+object, no human, and no routine anywhere on it. Nothing on the page reads as
+inhabited.
 
-When revisiting:
-- Test whether every card makes the relationship central to the image.
-- Separate human-Pokemon and Pokemon-Pokemon bonds only if doing so improves
-  the spreads naturally.
-- Reorder existing cards before shopping for replacements.
-- Preserve strong visual pairings even when they cross the proposed page roles.
+- Charmander (charmander-03) — flame swirls, abstract
+- Mew (mew-04) — forest
+- Snivy (snivy-03) — leafy tree
+- Pikachu (pikachu-05) — rock and grass
+- Numel (numel-01) — open field
+- Dratini (dratini-02) — lake at sunset; test against Threshold first
+- Piplup (piplup-01) — water
+- Shaymin (shaymin-03) — flower field
+- Squirtle (squirtle-02) — beach; test against Threshold first
+
+Page 2 is better but still thin: only Ditto (ditto-01) among coloured balls and
+Cinccino (cinccino-01) in a shop interior read as domestic. The "Domestic Scale"
+caption currently overstates that page.
+
+Per review-order step 4, leave pockets open rather than forcing replacements.
+Record contested calls and every release in docs/ledger.md.
 
 
-2. REORGANIZE THE STAMPED CARD BINDER
+2. RESOLVE THE WEAK CARDS ON THRESHOLD
+--------------------------------------
+
+The Threshold page was genuinely rebuilt in the 2026-08-01 reshoot — all nine
+cards are new — so this is refinement, not a missed swap. Read 2026-08-02.
+
+Holding up under themes.md's "visible boundary" rule:
+- Dawn's Stadium (dawns-stadium-01) — sun on the horizon
+- Squirtle (squirtle-03) — standing at the waterline
+- Hoopa EX (hoopa-02) — portal rings
+- Pikachu (pikachu-07) — shoreline, weaker but arguable
+
+Movement or atmosphere without a readable edge:
+- Rayquaza (rayquaza-02) — open sky
+- Deoxys (deoxys-01) — open space
+- Jirachi (jirachi-04) — sky and hillside
+- Kasumi's Tears (kasumis-tears-01) — underwater; "Current Page Plan" under
+  the Threshold Audit in content/guides/volume-2-refinement.md names underwater
+- Kabuto (kabuto-01) — fossil; the same line names fossils
+
+Kabuto is the contested one: the gallery caption defends it as "carried out of
+one age into another," which is a claim about time rather than about a boundary.
+Under the 2026-08-02 redefinition that is no longer an Enduring Presence
+argument either, so it needs deciding on its own merits.
+
+The planned three-row structure (approach / cross / depart) does not exist on
+the page, though the top row does read as "at the edge."
+
+
+3. REORGANIZE THE STAMPED CARD BINDER
 -------------------------------------
 
 Goal:
@@ -44,40 +84,5 @@ Within each section:
 - Add section labels or divider cards.
 - Document unclear stamp provenance before assigning a permanent location.
 
-
-3. CREATE A COLLECTION INVENTORY AND LOCATION SYSTEM
-----------------------------------------------------
-
-Goal:
-Make every card findable and make binder changes traceable without turning the
-collection into a finance spreadsheet.
-
-Possible format:
-- Start with CSV, YAML, or JSON only when maintaining it feels worthwhile.
-
-Suggested fields:
-- Card name
-- Set and collector number
-- Language and variant
-- Collection, volume, theme, page, and pocket
-- Status: binder, slab, holding box, candidate, duplicate, or outgoing
-- Condition
-- Acquisition date and cost
-- Replacement target
-- Curatorial notes
-
-Possible location ID:
-- V2-NEAR-COMP-02-B2
-
-Before implementing:
-- Decide whether the website should read the inventory directly.
-- Decide how much purchase and condition data should remain private.
-- Test the system on one binder section before cataloging everything.
-
-
-REVISIT TRIGGER
----------------
-
-Review these tasks after the Quiet Familiarity, Threshold, and Enduring Presence
-pages have been physically refined and re-photographed. Do not start all three
-deferred projects at once.
+Then update content/gallery/stamped-cards/_index.md, which currently captions
+the spreads only as "Stamped cards — page 1" through "page 7".

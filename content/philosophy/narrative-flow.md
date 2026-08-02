@@ -94,7 +94,7 @@ Volume II is quieter and more compact. Where Volume I mostly follows action and 
 
 - Enduring Presence
 
-*The midpoint slows down around images that carry visible age, repetition, or memory.*
+*The midpoint slows down around images whose power is held rather than spent.*
 
 ---
 

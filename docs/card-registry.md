@@ -18,6 +18,10 @@ This is not an inventory. It records what a card **is**, never where it sits. A 
 
 **Image filenames change.** `first_seen` names the file a row was read from at the time, not a file that necessarily still exists with that content. The 2026-08-01 gallery refresh replaced the binder images and corrected an off-by-one in the Volume II names; earlier filenames remain resolvable through git history.
 
+**Volume II `first_seen` names are offset by one page.** The off-by-one correction above landed in the gallery filenames but not in this column, which still carries the pre-correction names. Do not read a Volume II `first_seen` value as the page a card sits on today — as written, the rows labelled `threshold_1.webp` are the Master Ball / Zygarde / Reshiram page, not Threshold.
+
+The column is left as recorded rather than rewritten: `first_seen` is provenance, and these are the names the rows were genuinely read under. The authoritative mapping from these names to the pages they truly depict is `PAGE_ORDER` in `scripts/check-registry.py`, so the correction is enforced by the validator rather than restated in prose; `docs/registry-confirmation.md` §4 explains how the offset was pinned. To place a card, read its `first_seen` through `PAGE_ORDER` — never off this column directly — then check `ledger.md` for a later move. The ledger records only contested placements and releases, so a card with no entry there has not moved and sits where `PAGE_ORDER` puts it.
+
 **Reshoot provenance.** Rows whose `first_seen` names an `IMG_####.HEIC` file come from the 2026-08-01 whole-binder reshoot. Those originals are the owner's camera files and are not stored in this repository.
 
 **Design note:** `superpowers/specs/2026-08-01-card-registry-design.md`.
