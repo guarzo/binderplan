@@ -11,10 +11,11 @@ pages; it did not re-sort them. docs/ledger.md records only the Cinccino insert
 and states plainly that the other planned swaps "are not recorded here at all:
 planning is not movement."
 
-So the audit at volume-2-refinement.md line 43 still stands, and reading the
-artwork on 2026-08-02 made it worse than the audit assumed: page 1 is nine
-outdoor nature portraits with no interior, no household object, no human, and
-no routine anywhere on it. Nothing on the page reads as inhabited.
+So the "Quiet Familiarity Audit" in content/guides/volume-2-refinement.md still
+stands, and reading the artwork on 2026-08-02 made it worse than the audit
+assumed: page 1 is nine outdoor nature portraits with no interior, no household
+object, no human, and no routine anywhere on it. Nothing on the page reads as
+inhabited.
 
 - Charmander (charmander-03) — flame swirls, abstract
 - Mew (mew-04) — forest
