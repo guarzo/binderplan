@@ -345,37 +345,58 @@ The "Unreadable" column is the row's own `notes` field: what specifically blocke
 
 ## 4. Gaps and known issues
 
-**The earlier "quiet_familiarity_2 does not exist" claim was wrong.** Quiet Familiarity page 2 does
-exist — it is on the binder shelf and was photographed in the original 18-image pass. It is stored
-under the filename **`enduring_presence_1.webp`**, and `content/gallery/volume-2/_index.md:41`
-captions it "Enduring Presence spread 1" — also wrong. The file is real, the 8 (now 9) rows sourced
-from it are real and correctly identified to species; only the filename and caption misdescribe
-which themed page they show. This is a repository bug — filenames and captions under
-`static/images/binder/` do not reliably describe what they depict — and is worth fixing separately.
-Do not fix it here.
+**The volume-2 page naming is resolved — do not "fix" it again.** Some registry `first_seen`
+values name a photo file that depicts a *different* binder page than the filename suggests. This
+was once a live defect. It is not one now, and the correction is already in place.
 
-A second, independent piece of evidence points the same way. In Volume 1, section dividers
-consistently precede the pages they name (confirmed across the reshoot). `IMG_6864` is the
-"THRESHOLD" divider, immediately followed by `IMG_6865`. But the registry's `threshold_1.webp`
-matches `IMG_6863` — the frame *before* `IMG_6864`'s divider, not after. So `threshold_1.webp` is
-also misnamed relative to its actual position in the binder. Two independent filename mismatches,
-same root cause: treat no `static/images/binder/` filename as a reliable description of contents.
+What happened: the earlier "quiet_familiarity_2 does not exist" claim was wrong. Quiet Familiarity
+page 2 does exist — it is on the binder shelf and was photographed in the original 18-image pass —
+but it was stored under the filename `enduring_presence_1.webp`, and everything downstream
+inherited the error. The gallery refresh fixed the downstream side: filenames and captions under
+`content/` and `static/images/binder/` now describe what they actually show.
+
+The registry's `first_seen` values were deliberately *not* changed. `first_seen` is immutable
+provenance — it records which file a row was first read from, and that is a historical fact that
+stays true no matter what the file is later understood to depict or renamed to. Rewriting it to
+match the corrected filenames would destroy the audit trail and make the registry unverifiable
+against the original pass. **If you are tempted to "helpfully" align `first_seen` with the current
+filenames: don't. That is the bug, not the fix.**
+
+The correction instead lives in `PAGE_ORDER` in `scripts/check-registry.py`, which maps each
+`first_seen` filename to the page it truly depicts. Across volume 2 the mapping is off by one:
+
+| Registry `first_seen` | Page it actually depicts |
+|---|---|
+| `enduring_presence_1.webp` | V2 · Quiet Familiarity p2 |
+| `enduring_presence_2.webp` | V2 · Enduring Presence p1 |
+| `threshold_1.webp` | V2 · Enduring Presence p2 |
+| `IMG_6865.HEIC` | V2 · Threshold |
+
+Two independent lines of evidence fix that offset, and both still hold. First, contents: the nine
+rows whose `first_seen` is `enduring_presence_1.webp` are Umbreon, Ditto, Snorlax, Arcanine,
+Dragonair, Celebi, Togepi, Mudkip and Cinccino — which is the Quiet Familiarity p2 page, not
+Enduring Presence. Second, divider order: in Volume 1 section dividers consistently precede the
+pages they name (confirmed across the reshoot). `IMG_6864` is the "THRESHOLD" divider, immediately
+followed by `IMG_6865`; the registry's `threshold_1.webp` matches `IMG_6863`, the frame *before*
+that divider. Same offset, reached two different ways.
 
 **The single empty pocket was where the earlier ledger said it was.** It was on Quiet Familiarity
-p2 (the page misfiled as `enduring_presence_1.webp`), exactly as `docs/ledger.md` recorded before
-the previous analysis second-guessed it based on a filename. That pocket is no longer empty — the
+p2 (`first_seen` `enduring_presence_1.webp`), exactly as `docs/ledger.md` recorded before a
+previous analysis second-guessed it based on a filename. That pocket is no longer empty — the
 planned Cinccino AR placement (recorded in the holding-box placement analysis, since retired; it
-survives in git at commit `a254855`) has been executed;
-it is now `cinccino-01`. The binder holds 19 card pages × 9 pockets = 171 cards, no empty pockets
-anywhere.
+survives in git at commit `a254855`) has been executed; it is now `cinccino-01`. The binder holds
+19 card pages × 9 pockets = 171 cards, no empty pockets anywhere.
 
-**No registry row was affected by any of this.** `first_seen` names a source *file*, not a theme or
-a shelf location, so every one of the 161 original rows stayed literally true throughout — the file
-`enduring_presence_1.webp` really was the row's source image, regardless of what the file is
-actually a photo of or what it's captioned. This is the clearest evidence the no-location design
-decision was correct: a naming error in the photo pipeline could not corrupt the registry, only a
-downstream caption. The error is contained to `content/gallery/volume-2/_index.md` and the
-filenames themselves.
+**No registry row was ever affected by any of this.** `first_seen` names a source *file*, not a
+theme or a shelf location, so every row stayed literally true throughout — the file
+`enduring_presence_1.webp` really was the row's source image, regardless of which page that file
+turned out to be a photo of. This is the clearest evidence the no-location design decision was
+correct: a naming error in the photo pipeline could not corrupt the registry, only the captions
+downstream of it. Those captions have since been corrected, and the residue is confined to
+`first_seen`, where it is intentional and `PAGE_ORDER` accounts for it.
+
+The registry currently holds 175 rows: the 171 cards in the binder plus the 4 below that have left
+it.
 
 **Four cards have physically left the binder** as part of planned swaps the owner has been
 executing. Their registry rows still exist and still hold their IDs — this is correct, not a bug.

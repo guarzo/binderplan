@@ -46,7 +46,7 @@ Volume II is less about action and more about memory, familiarity, and change ov
     <figcaption><strong>Permanence.</strong> The divider that opens the chapter.</figcaption>
   </figure>
   <figure class="gallery-item span-half">
-    <img src="../../images/binder/volume-2/enduring_presence_1.webp" alt="Nine-pocket page of mostly vintage Japanese holos — Muk, Vulpix, Groudon, Steelix, Blastoise, Jirachi, Pikachu, Dark Gengar and Bulbasaur" loading="lazy">
+    <img src="../../images/binder/volume-2/enduring_presence_1.webp" alt="Nine-pocket page of mostly vintage Japanese holos — Muk, Vulpix, Groudon, Steelix, Blastoise, Jirachi, Joltik, Dark Gengar and Bulbasaur" loading="lazy">
     <figcaption><strong>Enduring Presence — Relics and Survivors.</strong> Vintage forms and long-lived holos, presented complete rather than mid-action.</figcaption>
   </figure>
   <figure class="gallery-item span-wide">
