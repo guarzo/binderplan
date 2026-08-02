@@ -27,7 +27,14 @@ rule from aspiration into something actually enforced.
 
 Within that, do the **species clusters first** (section 3 of the worklist lists them first for this
 reason). A species with several unresolved rows is exactly where an undetected duplicate hides.
-The largest are pikachu (5), gengar (4), jirachi (4), umbreon (4), joltik (3), cubone (2).
+Counting only the number-only rows, the clusters are pikachu (4), umbreon (4), then fourteen pairs:
+bulbasaur, darkrai, dragonite, dratini, groudon, houndoom, joltik, mewtwo, reshiram, snivy,
+squirtle, typhlosion. The other 43 of the 57 species here have a single row each.
+
+Note that section 3 of the worklist ranks by **all** unresolved rows, not just these, so its order
+differs. Its largest clusters — gengar (4) and jirachi (3 of 4) — are rows with *both* fields blank,
+so they contribute nothing to the coverage gain above. They are still real duplicate risk and worth
+doing; they are just a separate job from the 75.
 
 ## How to work
 
@@ -107,13 +114,25 @@ generator cannot reproduce, so it has to be carried across:
 ```bash
 awk '/^## 4\. Gaps and known issues/,/^## 5\./' docs/registry-confirmation.md | sed '$d' > /tmp/hw4.md
 python3 scripts/check-registry.py docs/card-registry.md --worklist > /tmp/gen.md
-# splice /tmp/hw4.md over section 4 in /tmp/gen.md, write the result to docs/registry-confirmation.md
+python3 - <<'PY'
+import re
+gen = open('/tmp/gen.md').read()
+hw = open('/tmp/hw4.md').read()
+out = re.sub(r'^## 4\. Gaps and known issues\n.*?(?=^## 5\.)', hw, gen, flags=re.S | re.M)
+open('docs/registry-confirmation.md', 'w').write(out)
+PY
 python3 -m pytest scripts/test_check_registry.py -q
 git add docs/card-registry.md docs/registry-confirmation.md
 git commit -m "Regenerate confirmation worklist"
 ```
 
-The queue count in the regenerated header is the honest progress marker: it starts at 146.
+The generator emits a placeholder §4 telling you to copy the real one forward; the splice above
+replaces it. Read the result before committing — if §4 has gone stale against the work you just did,
+this is the moment to update it.
+
+The queue count in the regenerated header is the honest progress marker. It was 146 when this
+handoff was written; compare against the count in the current `docs/registry-confirmation.md` header
+rather than that number, since earlier sessions may already have moved it.
 
 ## What good looks like
 
