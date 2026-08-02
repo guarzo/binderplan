@@ -464,6 +464,10 @@ def main(argv):
             return 2
         previous = Path(args[i + 1])
         args = args[:i] + args[i + 2:]
+        if not worklist:
+            print("--previous only applies to --worklist")
+            print(__doc__)
+            return 2
     positional = [a for a in args if a not in ("--worklist", "--write")]
     if len(positional) != 1:
         print(__doc__)

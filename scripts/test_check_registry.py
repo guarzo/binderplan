@@ -524,3 +524,50 @@ def test_previous_rejects_a_following_option_instead_of_using_it_as_a_path():
         ["prog", "docs/card-registry.md", "--previous", "--worklist"]
     )
     assert rc == 2
+
+
+def test_previous_without_worklist_is_rejected():
+    # The path would otherwise be parsed, discarded, and silently ignored.
+    rc = check_registry.main(
+        ["prog", "docs/card-registry.md", "--previous", "/tmp/bogus.md"]
+    )
+    assert rc == 2
+
+
+def test_write_replaces_the_target_and_keeps_section_four(tmp_path, capsys):
+    registry = tmp_path / "card-registry.md"
+    registry.write_text(table(row("umbreon-01", "Umbreon", conf="uncertain",
+                                  set_="", num="",
+                                  seen="calm_nature_1.webp 2026-08-01")),
+                        encoding="utf-8")
+    target = tmp_path / "registry-confirmation.md"
+    target.write_text(
+        "# Registry confirmation worklist\n\n"
+        "## 4. Gaps and known issues\n\nCarried narrative.\n\n"
+        "## 5. Cards no longer in the binder\n\nold\n",
+        encoding="utf-8",
+    )
+    rc = check_registry.main(
+        ["prog", str(registry), "--worklist", "--write", "--previous", str(target)]
+    )
+    assert rc == 0
+    written = target.read_text(encoding="utf-8")
+    assert "Carried narrative." in written        # survived the replace
+    assert "## 6. Confirmation queue by page" in written   # actually regenerated
+    assert "Hand-written" not in written
+    assert not (tmp_path / "registry-confirmation.md.tmp").exists()
+
+
+def test_write_is_idempotent_across_repeated_runs(tmp_path):
+    registry = tmp_path / "card-registry.md"
+    registry.write_text(table(row("umbreon-01", "Umbreon", conf="uncertain",
+                                  set_="", num="",
+                                  seen="calm_nature_1.webp 2026-08-01")),
+                        encoding="utf-8")
+    target = tmp_path / "registry-confirmation.md"
+    target.write_text("## 4. Gaps and known issues\n\nNarrative.\n", encoding="utf-8")
+    argv = ["prog", str(registry), "--worklist", "--write", "--previous", str(target)]
+    check_registry.main(argv)
+    first = target.read_text(encoding="utf-8")
+    check_registry.main(argv)
+    assert target.read_text(encoding="utf-8") == first
