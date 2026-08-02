@@ -3,6 +3,10 @@
 **Run this after PR #12 merges.** Everything below assumes `main` contains the card
 registry work.
 
+> **Before your first commit:** stage explicit paths, never `git add -A`. The previous
+> session ran several agents concurrently in `.claude/worktrees/card-registry`, and one commit
+> was contaminated by `-A` sweeping in another agent's stray files.
+
 ## The ask
 
 `docs/registry-confirmation.md` lists cards needing a physical check, grouped by **species
@@ -23,13 +27,22 @@ card on it, and move on. Keep the species view; this is an addition, not a repla
 - `scripts/test_check_registry.py` — 41 tests, all passing.
 - 146 of 175 rows need a physical check, across 92 species.
 
-Regeneration workflow, since the hand-written section must survive:
+Regeneration currently requires a manual splice, because the hand-written section 4 must
+survive:
 
 ```bash
 awk '/^## 4\. Gaps and known issues/,/^## 5\./' docs/registry-confirmation.md | sed '$d' > /tmp/hw4.md
 python3 scripts/check-registry.py docs/card-registry.md --worklist > /tmp/gen.md
 # splice /tmp/hw4.md over the placeholder section 4 in /tmp/gen.md, then write the result
 ```
+
+**Fix this as part of the task.** An `awk` range extract plus a by-hand splice, repeated on
+every regeneration, will eventually drop the narrative silently — and nothing would fail. Have
+`--worklist` take the existing `docs/registry-confirmation.md` (default path, overridable),
+extract its section 4, and emit it in place of the placeholder; fall back to the placeholder
+when the file is absent or the section is missing. That is a small change to one function, it
+deletes a manual step this handoff otherwise has to describe twice, and it wants a test of its
+own for the fallback path.
 
 ## Four gotchas — these are the whole difficulty
 
@@ -67,6 +80,12 @@ explicit image → page map. The correct mapping, verified against the images:
 
 Present pages in that order — it is binder order, which is what makes the document walkable.
 
+The 18 non-`IMG_*` `first_seen` values in the registry, plus `IMG_6865.HEIC`, are exactly the 19
+images above, so the map is complete as written. Each maps to 9 rows except
+`enduring_presence_1.webp`, which has 8: that page (Quiet Familiarity p2) held the single empty
+pocket in either volume, and `cinccino-01` — an `IMG_*` swap-in, see gotcha 2 — fills it. After
+the merge every page is 9. `docs/ledger.md` records this.
+
 Note the `static/images/binder/` **files** were renamed correctly during the gallery refresh;
 only the registry's historical `first_seen` values still carry the old names, deliberately, because
 `first_seen` is immutable provenance. Do not "fix" the registry to match.
@@ -86,20 +105,23 @@ be **merged into that page's group**, not shown as a one-card page:
 
 (`IMG_6865.HEIC` is different — it is a whole page, per the table above.)
 
+**Never dispatch on the `IMG_*` filename pattern.** `IMG_6865.HEIC` matches it and carries 9
+rows as a full page, while these five are singles. The two tables above are the only source of
+truth: an image is a page if it is in the gotcha-1 map, a swap-in if it is in this one, and
+unmapped otherwise (see Requirements). A pattern match would misplace nine cards.
+
 ### 3. Four cards in the registry are no longer in the binder
 
 `ursaring-01`, `typhlosion-02`, `umbreon-03`, `electrode-01` were swapped out. They keep their
 rows and IDs — correct, the registry records identity, not location — but a by-page view would
 list them on pages they have left, sending the curator hunting for cards that aren't there.
 
-The registry cannot know this; movement lives in `docs/ledger.md`. Decide how to handle it and
-say which you chose:
+Only three of the four actually reach this view: `electrode-01` is `photo` with both `set` and
+`number` read, so `confirmation_queue()` already filters it out.
 
-- **Simplest:** state the caveat in the section preamble and point at `ledger.md`. Proportionate
-  for four rows.
-- **Better if cheap:** have `--worklist` optionally take a ledger path and exclude IDs appearing
-  in an "Out" column. Only do this if ledger parsing stays robust — it is prose with tables, and
-  a fragile parser is worse than a clear caveat.
+**Handle it with a caveat in the section preamble** pointing at `docs/ledger.md`, which is where
+movement lives. That is proportionate for three rows. Do not build ledger parsing for this —
+`ledger.md` is prose with tables, and a fragile parser is worse than a clear sentence.
 
 Do not solve it by writing location into the registry. That is the one thing the design forbids;
 see `docs/superpowers/specs/2026-08-01-card-registry-design.md`.
@@ -135,11 +157,12 @@ language, and the `notes` text saying what specifically was unreadable.
 
 - TDD. Write the failing tests first; do not weaken or delete any of the 41 existing ones.
 - Cover at minimum: pages appear in binder order; a swap-in `IMG_*` row merges into its page's
-  group; a page with no unresolved rows is omitted; the off-by-one images render their corrected
-  page labels.
+  group; `IMG_6865.HEIC` renders as a full 9-row page and is *not* treated as a swap-in; a page
+  with no unresolved rows is omitted; the off-by-one images render their corrected page labels.
 - An unmapped `first_seen` must not be silently dropped — emit it under an explicit
   "Unmapped source image" heading so a future image cannot vanish from the worklist.
-- Regenerate `docs/registry-confirmation.md` and carry section 4 forward.
+- Section 4 carry-forward happens in the script, with a test for the missing-file fallback.
+- Regenerate `docs/registry-confirmation.md`.
 
 ## Verify
 
@@ -157,9 +180,3 @@ for id in $(grep -oE '`[a-z0-9-]+-[0-9]{2}`' docs/ledger.md | tr -d '`' | sort -
   grep -qE "^\| $id " docs/card-registry.md || echo "DANGLING $id"
 done
 ```
-
-## One warning about the worktree
-
-This work was done in `.claude/worktrees/card-registry` with several agents writing concurrently.
-One commit was contaminated by `git add -A` sweeping in another agent's stray files. **Stage
-explicit paths, never `-A`**, unless you are certain you are the only writer.
