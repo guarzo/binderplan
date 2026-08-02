@@ -2,7 +2,30 @@ BINDERPLAN TODO
 ===============
 
 
-1. REORGANIZE THE STAMPED CARD BINDER
+1. PULL OUTDOOR PORTRAITS FROM QUIET FAMILIARITY PAGE 1
+-------------------------------------------------------
+
+The Volume II refinement planned in content/guides/volume-2-refinement.md was
+never executed for Quiet Familiarity. The 2026-08-01 reshoot re-photographed the
+pages; it did not re-sort them. docs/ledger.md records only the Cinccino insert
+and states plainly that the other planned swaps "are not recorded here at all:
+planning is not movement."
+
+So the audit at volume-2-refinement.md line 43 still stands: page 1 holds too
+many peaceful outdoor portraits, a signal that belongs to Calm in Nature.
+
+Candidates to pull, pending a look at the artwork:
+- Snivy (snivy-03)
+- Numel (numel-01)
+- Dratini (dratini-02)
+- Piplup (piplup-01)
+- Squirtle (squirtle-02)
+
+Per review-order step 4, leave pockets open rather than forcing replacements.
+Record contested calls and every release in docs/ledger.md.
+
+
+2. REORGANIZE THE STAMPED CARD BINDER
 -------------------------------------
 
 Goal:

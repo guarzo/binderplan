@@ -173,6 +173,8 @@ Beings, places, and presences that seem to have survived beyond the moment shown
 
 The Pokemon does not need to dominate the scene. Its importance comes from having **remained**.
 
+**Against Legendary Bearing:** if the artwork would retain the same meaning after removing every sign of age, memory, or history, choose Legendary Bearing. If its meaning depends on accumulated time, choose Enduring Presence.
+
 <p class="signal">What I look for: survival through time</p>
 </div>
 

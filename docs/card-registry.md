@@ -18,6 +18,20 @@ This is not an inventory. It records what a card **is**, never where it sits. A 
 
 **Image filenames change.** `first_seen` names the file a row was read from at the time, not a file that necessarily still exists with that content. The 2026-08-01 gallery refresh replaced the binder images and corrected an off-by-one in the Volume II names; earlier filenames remain resolvable through git history.
 
+**Volume II `first_seen` names are offset by one page.** The off-by-one correction above landed in the gallery filenames but not in this column, which still carries the pre-correction names. Do not read a Volume II `first_seen` value as the page a card sits on today — as written, the rows labelled `threshold_1.webp` are the Master Ball / Zygarde / Reshiram page, not Threshold. The mapping to published pages is:
+
+| `first_seen` in this column | published page |
+|---|---|
+| `quiet_familiarity_1.webp` | `quiet_familiarity_1.webp` |
+| `enduring_presence_1.webp` | `quiet_familiarity_2.webp` |
+| `enduring_presence_2.webp` | `enduring_presence_1.webp` |
+| `threshold_1.webp` | `enduring_presence_2.webp` |
+| `IMG_6865.HEIC` | `threshold_1.webp` |
+
+Two independent checks pin this: no row anywhere names `quiet_familiarity_2.webp`, and the only eight-row page is the one labelled `enduring_presence_1.webp` — which must be Quiet Familiarity page 2, shot before `cinccino-01` filled its one empty pocket per `ledger.md`. Separately, the ledger places Hoopa EX (`hoopa-02`, `first_seen` `IMG_6865.HEIC`) in Threshold.
+
+The column is left as recorded rather than rewritten: `first_seen` is provenance, and these are the names the rows were genuinely read under. This note is the correction. To find where a card is now, use `ledger.md` as always — not this column.
+
 **Reshoot provenance.** Rows whose `first_seen` names an `IMG_####.HEIC` file come from the 2026-08-01 whole-binder reshoot. Those originals are the owner's camera files and are not stored in this repository.
 
 **Design note:** `superpowers/specs/2026-08-01-card-registry-design.md`.
