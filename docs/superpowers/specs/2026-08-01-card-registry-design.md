@@ -151,12 +151,15 @@ more `uncertain` rows leads the list, because that is where an undetected duplic
 hiding. Isolated `uncertain` rows are cosmetic by comparison — a single Cinccino with an unread
 number breaks nothing.
 
-**IDs are provisional until the registry merges to `main`.** Curator sign-off on pass 2 closes the
-*data* questions, but the never-rewrite rule protects existing references, and none exist while the
-registry sits on a branch. Errors found in review — including a misidentified species — are fixed by
-renumbering, not by leaving a mismatched ID behind. This is a carve-out from the
-never-rewrite rule, and it is safe only because nothing has cited these IDs yet. Once signed off, the
-registry is frozen and every subsequent ID is permanent from the moment it is written.
+**An ID is provisional until something cites it, and permanent from that moment.** The never-rewrite
+rule exists to protect references, so it binds per-ID, at first citation — not on a date and not on
+merge. Curator sign-off on pass 2 closes the *data* questions; it does not by itself freeze an ID
+nothing has referenced.
+
+In practice the ledger is what cites. An uncited ID found to be wrong — a misidentified species, say
+— is renumbered, because leaving a mismatched ID behind would buy nothing. A **cited** ID is not
+renumbered casually; if it genuinely must change, every citation of it is updated in the same commit,
+so no reference is ever left dangling. Silent renumbering after citation is what the rule forbids.
 
 ## Duplicate detection
 
