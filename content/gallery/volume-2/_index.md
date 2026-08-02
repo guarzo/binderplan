@@ -51,7 +51,7 @@ Volume II is less about action and more about memory, familiarity, and change ov
   </figure>
   <figure class="gallery-item span-wide">
     <img src="../../images/binder/volume-2/enduring_presence_2.webp" alt="Nine-pocket page including Machop, Mew, Zygarde, Reshiram, Hoopa, a Master Ball, Sandshrew, Houndoom and Shaymin" loading="lazy">
-    <figcaption><strong>Enduring Presence — Contained Power.</strong> Master Ball and Hoopa's rings hold force rather than release it; Zygarde, Reshiram, Mew, and Shaymin sit whole and settled, not mid-attack.</figcaption>
+    <figcaption><strong>Enduring Presence — Contained Power.</strong> Force held rather than spent — sealed in a Master Ball, ringed by Hoopa, or simply standing whole.</figcaption>
   </figure>
 </div>
 
