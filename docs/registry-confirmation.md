@@ -2,7 +2,7 @@
 
 Generated from `docs/card-registry.md` by `python3 scripts/check-registry.py docs/card-registry.md --worklist --write`. Every section below is recomputed from the registry except "4. Gaps and known issues", which is hand-written; regeneration reads the previous version of this document and carries that section forward automatically.
 
-**Honest numbers, recomputed from the current file.** 175 rows total. 11 `photo` (6.3%), 23 `uncertain` (13.1%). 163 rows have both `set` and `number` read (93.1%) — 4 have `number` only, 8 have `set` only, 0 have neither field. The confirmation queue (section 3) holds 23 rows across 20 species: 3 clusters (6 rows) and 17 singletons.
+**Honest numbers, recomputed from the current file.** 175 rows total. 11 `photo` (6.3%), 22 `uncertain` (12.6%). 164 rows have both `set` and `number` read (93.7%) — 3 have `number` only, 8 have `set` only, 0 have neither field. The confirmation queue (section 3) holds 22 rows across 19 species: 3 clusters (6 rows) and 16 singletons.
 
 ## 1. Blocked — species unreadable
 
@@ -12,11 +12,11 @@ None. The registry has no state for a card that was seen but never identified to
 
 **None found** — `python3 scripts/check-registry.py docs/card-registry.md` reports `duplicate printings: 0`.
 
-Take that as a weak result, not a clean bill of health. The check requires all four fields — `species`, `set`, `number`, `language` — to match on two rows, and only **163 of 175 rows (93.1%)** have both `set` and `number` read. The remaining 12 rows (6.9%) are missing one or both fields and are structurally invisible to this check: two physical duplicates sitting in the registry right now would not be flagged unless both happened to land among that same 163-row minority.
+Take that as a weak result, not a clean bill of health. The check requires all four fields — `species`, `set`, `number`, `language` — to match on two rows, and only **164 of 175 rows (93.7%)** have both `set` and `number` read. The remaining 11 rows (6.3%) are missing one or both fields and are structurally invisible to this check: two physical duplicates sitting in the registry right now would not be flagged unless both happened to land among that same 164-row minority.
 
 ## 3. Confirmation queue — clusters first
 
-23 rows, 20 species. **3 species (6 rows) hold two or more unresolved rows** and lead the list, because that is where an undetected duplicate printing could hide. The remaining 17 species have a single unresolved row each.
+22 rows, 19 species. **3 species (6 rows) hold two or more unresolved rows** and lead the list, because that is where an undetected duplicate printing could hide. The remaining 16 species have a single unresolved row each.
 
 The "Unreadable" column is the row's own `notes` field: what specifically blocked the read.
 
@@ -43,7 +43,7 @@ The "Unreadable" column is the row's own `notes` field: what specifically blocke
 | umbreon-02 | ブラッキー (JP) | contemplation_1.webp | vintage Pokedex-number print, distinct from umbreon-01, set per owner's doubleholo entry |
 | umbreon-03 | Umbreon (EN) | elemental_solitude_1.webp | Confuse Ray/Shadow Shutdown, distinct from umbreon-01/02, set code not textual |
 
-### Singletons (17 species, one unresolved row each)
+### Singletons (16 species, one unresolved row each)
 
 | ID | Card name | Source image | Unreadable |
 |---|---|---|---|
@@ -52,7 +52,6 @@ The "Unreadable" column is the row's own `notes` field: what specifically blocke
 | dragonair-01 | エリカのハクリュー (JP) | enduring_presence_1.webp | Erika's Dragonair, Lv.32, vintage Pokedex-number print, set per owner's doubleholo entry |
 | dragonite-01 | カイリュー (JP) | contemplation_1.webp | Lv.45 print, vintage Pokedex-number print, set per owner's doubleholo entry |
 | espeon-01 | わるいエーフィ (JP) | elemental_solitude_1.webp | Dark Espeon, vintage-style print, Pokédex-number print, set per owner's doubleholo export 2026-09-18 |
-| jirachi-02 | 基拉祈V (ZH) | awakened_power_1.webp | distinct printing from jirachi-01, number checked in hand 2026-09-19, set code pending re-read (CS55C or CS5.5C) |
 | kangaskhan-01 | ガルーラ (JP) | IMG_6858.HEIC | vintage Pokedex-number print, set per owner's doubleholo entry |
 | kingdra-01 | キングドラ (JP) | on_attack_1.webp | Lv.47, vintage Pokedex-number print, illustrator Mitsuhiro Arita, set per owner's doubleholo entry |
 | lugia-01 | ルギア (JP) | awakened_power_1.webp | vintage Pokedex-number print, set per owner's doubleholo entry |
@@ -157,7 +156,6 @@ Photographs record what was on a page when the shoot happened, so a card since s
 
 | ID | Card name | Unreadable |
 |---|---|---|
-| jirachi-02 | 基拉祈V (ZH) | distinct printing from jirachi-01, number checked in hand 2026-09-19, set code pending re-read (CS55C or CS5.5C) |
 | lugia-01 | ルギア (JP) | vintage Pokedex-number print, set per owner's doubleholo entry |
 
 ### V1 · Awakened Power p2

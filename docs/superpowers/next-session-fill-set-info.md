@@ -7,7 +7,7 @@ later.
 ## Where it stands
 
 `docs/card-registry.md` holds 175 rows, one per card. The pass started with 146 `uncertain` rows
-and duplicate detection able to compare only 31 of them (18%). It now compares 163 of 175, and
+and duplicate detection able to compare only 31 of them (18%). It now compares 164 of 175, and
 finds no duplicate printings. The pass had two sources:
 
 - **The owner's doubleholo catalogue**, entered card by card with each card in hand and exported
@@ -18,12 +18,11 @@ finds no duplicate printings. The pass had two sources:
   its own — the photo reads misread digits through sleeves, and the export sometimes picked the
   wrong catalogue entry — which is why disagreements went to the card rather than to a rule.
 
-What is left in the queue, 23 rows, is expected to stay there:
+What is left in the queue, 22 rows, is expected to stay there:
 
 | Rows | Why |
 |---|---|
 | 21 | Vintage Japanese Pokédex-number prints (`No.xxx`). Uncertain by rule — see below. |
-| `jirachi-02` | Chinese Jirachi V, `36/66`; set code pending the owner's re-read (`CS55C` or `CS5.5C`). |
 | `umbreon-03` | In the holding box, not the binder. Optional. |
 
 `docs/registry-confirmation.md` is the worklist. Regenerate it when you finish (see below) rather
@@ -131,7 +130,7 @@ replaces it. Read the result before committing — if §4 has gone stale against
 this is the moment to update it.
 
 The queue count in the regenerated header is the honest progress marker: 146 when the pass began,
-23 after it. Compare against the current `docs/registry-confirmation.md` header rather than either
+22 after it. Compare against the current `docs/registry-confirmation.md` header rather than either
 number.
 
 ## What good looks like
