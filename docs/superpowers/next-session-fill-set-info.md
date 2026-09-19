@@ -1,40 +1,33 @@
 # Handoff — filling in set and number from the physical cards
 
-**Use this when you sit down with the binder to work through the confirmation list.** Paste it
-into a fresh session; it assumes PR #12 has merged.
+**Status, 2026-09-19: the confirmation pass is done.** The rest of this file is the procedure for
+the next time a row needs filling or correcting — a new card joining the binder, or a misread found
+later.
 
-## What the work is
+## Where it stands
 
-`docs/card-registry.md` holds 175 rows, one per card. **146 of them are `uncertain`** — the set
-code, the collector number, or both could not be read from photographs shot through sleeves. Those
-fields can only be closed by handling the cards.
+`docs/card-registry.md` holds 175 rows, one per card. The pass started with 146 `uncertain` rows
+and duplicate detection able to compare only 31 of them (18%). It now compares 163 of 175, and
+finds no duplicate printings. The pass had two sources:
 
-| Rows | State | What's needed |
-|---|---|---|
-| 75 | `number` read, `set` blank | the set |
-| 69 | both blank | both |
-| 2 | both present, still `uncertain` | verify — `cinccino-01` (ambiguous digit), `lugia-01` (era inferred, not printed) |
+- **The owner's doubleholo catalogue**, entered card by card with each card in hand and exported
+  one lot per binder chapter. Rows were matched on species + collector number, and within a
+  chapter where a species had several cards. Those values count as read from the card.
+- **An in-hand check sheet** for everything the export could not settle: 49 cards where the export
+  and the photo read disagreed, or a field was still blank. Neither source was reliably right on
+  its own — the photo reads misread digits through sleeves, and the export sometimes picked the
+  wrong catalogue entry — which is why disagreements went to the card rather than to a rule.
 
-`docs/registry-confirmation.md` is the worklist: which cards, and what specifically was unreadable
-on each. Regenerate it when you finish (see below) rather than editing it by hand.
+What is left in the queue, 23 rows, is expected to stay there:
 
-## Start with the 75 number-only rows
+| Rows | Why |
+|---|---|
+| 21 | Vintage Japanese Pokédex-number prints (`No.xxx`). Uncertain by rule — see below. |
+| `jirachi-02` | Chinese Jirachi V, `36/66`; set code pending the owner's re-read (`CS55C` or `CS5.5C`). |
+| `umbreon-03` | In the holding box, not the binder. Optional. |
 
-They are the highest-value subset, and not for tidiness. Duplicate detection needs **all four** of
-species + set + number + language to match, so it currently runs against only 31 of 175 rows (18%).
-Filling in the sets on those 75 would take coverage to about 61% — turning the no-duplicate-printings
-rule from aspiration into something actually enforced.
-
-Within that, do the **species clusters first** (section 3 of the worklist lists them first for this
-reason). A species with several unresolved rows is exactly where an undetected duplicate hides.
-Counting only the number-only rows, the clusters are pikachu (4), umbreon (4), then fourteen pairs:
-bulbasaur, darkrai, dragonite, dratini, groudon, houndoom, joltik, mewtwo, reshiram, snivy,
-squirtle, typhlosion. The other 43 of the 57 species here have a single row each.
-
-Note that section 3 of the worklist ranks by **all** unresolved rows, not just these, so its order
-differs. Its largest clusters — gengar (4) and jirachi (3 of 4) — are rows with *both* fields blank,
-so they contribute nothing to the coverage gain above. They are still real duplicate risk and worth
-doing; they are just a separate job from the 75.
+`docs/registry-confirmation.md` is the worklist. Regenerate it when you finish (see below) rather
+than editing it by hand.
 
 ## How to work
 
@@ -62,12 +55,19 @@ The registry records what a card **is**; movement belongs in `docs/ledger.md`.
 
 ## Recording the set
 
-Record **what is printed**, not a normalised form. The column already holds both styles because
-both appear on cards:
+Record **what is printed**, with the conventions the column already follows:
 
-- Japanese set codes as printed: `sv1b`, `s12a`, `sm1`, `s6c`, `sv11B`
-- English set names as printed: `Neo Destiny`, `Neo Revelation`, `Cosmic Eclipse`, `Platinum`
-- Promo markers: `SVP`, `XY`
+- Japanese set codes as printed, lowercase letter prefix: `sv11B`, `s12a`, `sv5K`, `sm1`, `m1S`.
+  Older Japanese sets that print no code use the set's name: `Rulers of the Heavens`,
+  `Flight of Legends`.
+- English sets by **name**, even where a modern card prints a code: write `Scarlet & Violet`, not
+  `SVI`; `Black Bolt`, not `BLK`. Most English rows were named before modern codes came up, and a
+  code on one row would never match a name on another.
+- Chinese set codes as printed: `CSM2BC`, `CSV5C`.
+- Promo markers: `SVP`, `XY`, `S-P`, `XY-P`, with the number as printed (`224/S-P`, `155/XY-P`).
+- Numbers as printed. Modern Japanese cards print three digits both sides — `087/086`, not `87/86`.
+- A card that prints no number (most vintage trainers, some movie promos) gets a blank `number` and
+  `no number printed` in `notes`. That row can still be `confirmed`: the blank is the reading.
 
 One consistency rule that matters: **duplicate detection compares these strings** (case-insensitively).
 If the same printing appears twice and you write `Base Set` on one row and `base set` on the other,
@@ -130,9 +130,9 @@ The generator emits a placeholder §4 telling you to copy the real one forward; 
 replaces it. Read the result before committing — if §4 has gone stale against the work you just did,
 this is the moment to update it.
 
-The queue count in the regenerated header is the honest progress marker. It was 146 when this
-handoff was written; compare against the count in the current `docs/registry-confirmation.md` header
-rather than that number, since earlier sessions may already have moved it.
+The queue count in the regenerated header is the honest progress marker: 146 when the pass began,
+23 after it. Compare against the current `docs/registry-confirmation.md` header rather than either
+number.
 
 ## What good looks like
 
@@ -142,6 +142,11 @@ rather than that number, since earlier sessions may already have moved it.
   the object, and an inferred value that looks confirmed is worse than a blank.
 - If you look something up and want to keep it, put it in `notes` as clearly inferred, leave `set`
   blank, and leave `confidence` as `uncertain`.
+- The line between a reading and a lookup: the owner's own catalogue entry, made with the card in
+  hand, is a reading. Turning a set the owner named into its printed code (TCGdex maps
+  `Black Bolt` to `SV11B`) is a translation of that reading, not a lookup — but check the result
+  against the owner's set name. TCGdex matches on name and number, and a vintage card's Pokédex
+  number can hit a modern card with the same number (`mew-05` briefly landed in the 151 set).
 - Four cards in the registry are no longer in the binder (`ursaring-01`, `typhlosion-02`,
   `umbreon-03`, `electrode-01`). They still have rows, correctly. Do not hunt for them; if you want
   to confirm them, they are in the holding box.
@@ -154,6 +159,6 @@ rather than that number, since earlier sessions may already have moved it.
 - **Walking the binder: use §6 of the worklist, "Confirmation queue by page."** It shipped in #13
   and holds the same rows as §3 regrouped by page, so you can open to one page and clear every card
   on it instead of flipping back and forth. Use §3 when you are chasing a species cluster for
-  duplicate risk, §6 when you are physically working through the binder — which, for the 75 rows
-  above, is most of the time. (`docs/superpowers/next-session-by-page-worklist.md` is the handoff
+  duplicate risk, §6 when you are physically working through the binder.
+  (`docs/superpowers/next-session-by-page-worklist.md` is the handoff
   that built it, kept for history; it is not work still to do.)

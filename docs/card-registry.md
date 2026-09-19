@@ -101,7 +101,7 @@ The column is left as recorded rather than rewritten: `first_seen` is provenance
 | houndour-02 | Houndour | デルビル | JP | sv3 | 115 | confirmed | companions_2.webp 2026-08-01 | distinct from houndour-01, set/number from owner's doubleholo export 2026-09-18, denominator not recorded |
 | imposter-professor-oaks-revenge-01 | Imposter Professor Oak's Revenge | にせオーキドの逆襲 | JP | Rocket Gang |  | confirmed | companions_1.webp 2026-08-01 | Trainer card, vintage Team Rocket-era print, "R" rarity mark visible, no number printed, checked in hand 2026-09-19 |
 | jirachi-01 | Jirachi | Jirachi | EN | XY | XY67a | confirmed | joyful_action_1.webp 2026-08-01 | set/number from owner's doubleholo export 2026-09-18 |
-| jirachi-02 | Jirachi | 基拉祈V | ZH |  |  | uncertain | awakened_power_1.webp 2026-08-01 | distinct printing from jirachi-01, number illegible |
+| jirachi-02 | Jirachi | 基拉祈V | ZH |  | 36/66 | uncertain | awakened_power_1.webp 2026-08-01 | distinct printing from jirachi-01, number checked in hand 2026-09-19, set code pending re-read (CS55C or CS5.5C) |
 | jirachi-03 | Jirachi | ジラーチex | JP | Player's Club | 032/PLAY | confirmed | enduring_presence_2.webp 2026-08-01 | ex card, promo Play number, checked in hand 2026-09-19 |
 | jirachi-04 | Jirachi | 七夜のジラーチ | JP | Temple of Anger |  | confirmed | IMG_6865.HEIC 2026-08-01 | みらいよち/はめつのねがい attacks, distinct from jirachi-01..03, no number printed, checked in hand 2026-09-19 |
 | joltik-01 | Joltik | 电电虫 | ZH | CSV5C | 132/129 | confirmed | companions_2.webp 2026-08-01 | holo print, checked in hand 2026-09-19 |
