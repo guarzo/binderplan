@@ -56,7 +56,7 @@ The column is left as recorded rather than rewritten: `first_seen` is provenance
 | cyndaquil-02 | Cyndaquil | Cyndaquil | EN | Unseen Forces | 54/115 | confirmed | elemental_solitude_1.webp 2026-08-01 | distinct from cyndaquil-01 |
 | darkrai-01 | Darkrai | Darkrai EX | EN |  | 37/122 | uncertain | awakened_power_1.webp 2026-08-01 | set code not textual |
 | darkrai-02 | Darkrai | ダークライVSTAR | JP | s12a | 228/172 | confirmed | elemental_solitude_1.webp 2026-08-01 | VSTAR, SAR rarity mark, distinct from darkrai-01 |
-| darkrai-03 | Darkrai | Darkrai | EN |  |  | uncertain | legendary_bearing_1.webp 2026-08-01 | Dark Cutter/Abyssal Sleep, distinct from darkrai-01/02, number illegible |
+| darkrai-03 | Darkrai | Darkrai | EN | XY | XY114 | confirmed | legendary_bearing_1.webp 2026-08-01 | Dark Cutter/Abyssal Sleep, distinct from darkrai-01/02, set/number from owner's doubleholo export 2026-09-18 |
 | dawns-stadium-01 | Dawn's Stadium | 夜明けのスタジアム | JP | Dawn Dash |  | uncertain | IMG_6865.HEIC 2026-08-01 | Stadium trainer card, set from owner's doubleholo export 2026-09-18, no number in export |
 | deoxys-01 | Deoxys | Deoxys | EN | Call of Legends | SL1 | confirmed | IMG_6865.HEIC 2026-08-01 | Cell Storm attack, set/number from owner's doubleholo export 2026-09-18 |
 | dialga-01 | Dialga | ディアルガ | JP | 11th Movie Commemoration Promo | 8 | confirmed | legendary_bearing_1.webp 2026-08-01 | Lv.69, No.483 dex entry, set/number from owner's doubleholo export 2026-09-18 |
@@ -76,7 +76,7 @@ The column is left as recorded rather than rewritten: `first_seen` is provenance
 | gardevoir-01 | Gardevoir | ザーナイトex | JP | Miracle of the Desert | 28 | confirmed | legendary_bearing_2.webp 2026-08-01 | ex card, Breakdown/Psycho Storm, set/number from owner's doubleholo export 2026-09-18, denominator not recorded |
 | gardevoir-02 | Gardevoir | Gardevoir | EN | Astral Radiance | TG05 | confirmed | companions_1.webp 2026-08-01 | Ability Shining Arcana, Prainwave attack, distinct from gardevoir-01, set/number from owner's doubleholo export 2026-09-18 |
 | gengar-01 | Gengar | 耿鬼VMAX | ZH | s6c | 072/172 | photo | awakened_power_2.webp 2026-08-01 | Single Strike era, distinct from gengar-mimikyu-01 TAG TEAM |
-| gengar-02 | Gengar | ゲンガー | JP |  |  | uncertain | intimidation_1.webp 2026-08-01 | Lv.38 print, distinct from gengar-01 and gengar-mimikyu-01, number illegible |
+| gengar-02 | Gengar | ゲンガー | JP | Mystery of the Fossils | No.094 | uncertain | intimidation_1.webp 2026-08-01 | Lv.38 print, distinct from gengar-01 and gengar-mimikyu-01, Pokédex-number print, set per owner's doubleholo export 2026-09-18 |
 | gengar-03 | Gengar | M Gengar EX | JP |  |  | uncertain | on_attack_1.webp 2026-08-01 | Mega Evolution EX, "ファントムゲート"/Phantom Gate, distinct from gengar-01/02 and gengar-mimikyu-01, number illegible |
 | gengar-04 | Gengar | ゲンガー | JP | s10a | 074 | confirmed | companions_1.webp 2026-08-01 | Ability たくらみのうごう, スクリームサークル attack, distinct from gengar-01..03, set/number from owner's doubleholo export 2026-09-18, denominator not recorded |
 | gengar-05 | Gengar | わるいゲンガー | JP | Darkness, and to Light | No.094 | uncertain | enduring_presence_2.webp 2026-08-01 | Dark Gengar, HP70, distinct from gengar-01..04, Pokédex-number print, set per owner's doubleholo export 2026-09-18 |
@@ -114,7 +114,7 @@ The column is left as recorded rather than rewritten: `first_seen` is provenance
 | kyogre-01 | Kyogre | Kyogre ex | EN | Crystal Guardians | 95 | confirmed | elemental_solitude_1.webp 2026-08-01 | set/number from owner's doubleholo export 2026-09-18, denominator not recorded |
 | latias-01 | Latias | Latias | EN | Latias & Latios 2015 | 30/30 | confirmed | joyful_action_1.webp 2026-08-01 | XY Trainer Kit card, owner checked in hand 2026-09-18; earlier 35/30 was a misread |
 | latios-01 | Latios | ラティオス | JP | sv7a | 070/064 | confirmed | contemplation_1.webp 2026-08-01 | AR rarity |
-| latios-02 | Latios | ラティオス | JP |  |  | uncertain | elemental_solitude_1.webp 2026-08-01 | distinct from latios-01, number illegible |
+| latios-02 | Latios | ラティオス | JP | Holon Phantom | 14 | confirmed | elemental_solitude_1.webp 2026-08-01 | distinct from latios-01, set/number from owner's doubleholo export 2026-09-18, denominator not recorded |
 | latios-03 | Latios | Latios | EN | Dragon Vault | 10/20 | photo | legendary_bearing_1.webp 2026-08-01 | Sky Blade/Speed Wing, distinct from latios-01/02, "DRAGON VAULT" printed on card face |
 | lucario-01 | Lucario | ルカリオVSTAR | JP | s12a | 226/172 | confirmed | intimidation_1.webp 2026-08-01 | VSTAR, SAR rarity mark |
 | lugia-01 | Lugia | ルギア | JP | Gold, Silver, New World | No.249 | uncertain | awakened_power_1.webp 2026-08-01 | vintage Pokedex-number print, set per owner's doubleholo entry |
@@ -129,10 +129,10 @@ The column is left as recorded rather than rewritten: `first_seen` is provenance
 | mew-03 | Mew | Mew GX | JP |  | 137/165 | uncertain | legendary_bearing_2.webp 2026-08-01 | double-star SR rarity mark, distinct from mew-01/02, set code not textual |
 | mew-04 | Mew | ミュウ | JP | Mirage's Mew Constructed Starter Deck | 5 | confirmed | quiet_familiarity_1.webp 2026-08-01 | Pokepower type-change, Link Blast attack, distinct from mew-01..03, set/number from owner's doubleholo export 2026-09-18, denominator not recorded |
 | mew-05 | Mew | ミュウ | JP | Mystery of the Fossils | No.151 | uncertain | threshold_1.webp 2026-08-01 | Psywave/Recover-Beam attacks, distinct from mew-01..04, Pokédex-number print, set per owner's doubleholo export 2026-09-18 |
-| mewtwo-01 | Mewtwo | Mewtwo | EN |  |  | uncertain | awakened_power_2.webp 2026-08-01 | heavy holo glare, number illegible after crop attempt |
+| mewtwo-01 | Mewtwo | Mewtwo | EN | WoTC Promos | 12 | confirmed | awakened_power_2.webp 2026-08-01 | heavy holo glare, set/number from owner's doubleholo export 2026-09-18 |
 | mewtwo-02 | Mewtwo | Mewtwo EX | EN | BREAKthrough | 164/162 | confirmed | intimidation_1.webp 2026-08-01 | Shatter Shot/Damage Change EX card, distinct from mewtwo-01 |
 | mewtwo-03 | Mewtwo | Mewtwo | EN | SVP | 052 | confirmed | contemplation_1.webp 2026-08-01 | Scarlet & Violet promo, Reflective Barrier/Psyslash, distinct from mewtwo-01/02 |
-| mewtwo-04 | Mewtwo | Mewtwo | EN |  | 12/113 | uncertain | legendary_bearing_1.webp 2026-08-01 | delta species, Delta Switch/Energy Burst, distinct from mewtwo-01/02/03, set code not textual |
+| mewtwo-04 | Mewtwo | Mewtwo | EN | Delta Species | 12/113 | confirmed | legendary_bearing_1.webp 2026-08-01 | delta species, Delta Switch/Energy Burst, distinct from mewtwo-01/02/03, set from owner's doubleholo export 2026-09-18; Delta Species has 113 cards, matching the /113 read |
 | mimikyu-01 | Mimikyu | 谜拟丘 | ZH |  |  | uncertain | companions_1.webp 2026-08-01 | Ability 假扮 (Disguise), number illegible |
 | misdreavus-01 | Misdreavus | ムウマ | JP | Awakening Legends | No.200 | uncertain | intimidation_1.webp 2026-08-01 | Pokédex-number print, set per owner's doubleholo export 2026-09-18 |
 | mudkip-01 | Mudkip | Mudkip | EN | Crystal Guardians | 58 | confirmed | enduring_presence_1.webp 2026-08-01 | Nap/Waterfall attacks, set/number from owner's doubleholo export 2026-09-18, denominator not recorded |
@@ -143,7 +143,7 @@ The column is left as recorded rather than rewritten: `first_seen` is provenance
 | numel-01 | Numel | Numel | EN |  | 49/97 | uncertain | quiet_familiarity_1.webp 2026-08-01 | Firebreathing/Tackle attacks, e-Card era, set not readable as text |
 | oshawott-01 | Oshawott | Oshawott | EN | White Flare | 105 | confirmed | at_rest_1.webp 2026-08-01 | set/number from owner's doubleholo export 2026-09-18, denominator not recorded |
 | palkia-01 | Palkia | Palkia | EN | Platinum | 26/106 | photo | awakened_power_2.webp 2026-08-01 | Lv.67, "PLATINUM" printed on card face |
-| pikachu-01 | Pikachu | Pikachu | EN |  |  | uncertain | calm_nature_1.webp 2026-08-01 | classic border, corner number illegible |
+| pikachu-01 | Pikachu | Pikachu | EN | WoTC Promos | 27 | confirmed | calm_nature_1.webp 2026-08-01 | classic border, set/number from owner's doubleholo export 2026-09-18 |
 | pikachu-02 | Pikachu | Surfing Pikachu | EN | Evolutions | 111/108 | confirmed | joyful_action_1.webp 2026-08-01 | vintage-style print, distinct from pikachu-01 |
 | pikachu-03 | Pikachu | 皮卡丘 | ZH |  | 153/150 | uncertain | companions_1.webp 2026-08-01 | CHR rarity mark, Ash-style artwork, set not readable as text |
 | pikachu-04 | Pikachu | Pikachu | EN | Pokémon GO | 027/078 | photo | companions_2.webp 2026-08-01 | Buddy Bolt attack, distinct from pikachu-01/02/03 |
