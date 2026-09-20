@@ -87,7 +87,7 @@ These themes lose clarity if they grow. Only buy strict upgrades to existing car
 | **Joyful Action** | Motion driven by joy — running, leaping, playing | Anything aggressive or tense |
 | **On the Attack** | Mid-strike, fully committed, moment of impact | Buildup or aftermath |
 | **Intimidation** | Menace through presence alone, no combat | Anything mid-attack |
-| **World of People** | Genuine coexistence, daily life with humans | Humans as background props |
+| **World of People** | Pokemon inhabiting human-made places; people are environmental, not relational | A bond or reciprocal interaction as the subject (that's Companions) |
 | **At Rest** | Sleep, vulnerability, fully disengaged | Calm but awake (that's Contemplation) |
 | **Contemplation** | Awake, still, inward-looking, thinking | Resting or sleeping |
 

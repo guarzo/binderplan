@@ -17,6 +17,10 @@ This smaller side collection focuses on Japanese trainer cards with expressive c
     <img src="../../images/binder/waifu/waifu_2.jpg" alt="Second binder spread of Japanese full-art trainer cards" loading="lazy">
     <figcaption>Trainer Full Arts — page 2</figcaption>
   </figure>
+  <figure class="gallery-item span-full">
+    <img src="../../images/binder/waifu/waifu_3.jpg" alt="Third trainer full-art page with three Japanese cards across the top row and six empty pockets" loading="lazy">
+    <figcaption>Trainer Full Arts — page 3</figcaption>
+  </figure>
 </div>
 
 <!-- Lightbox container -->

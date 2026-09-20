@@ -13,11 +13,11 @@ I'm working toward every Emolga printing I can track down. It's the longest-runn
 <div class="gallery-grid">
   <figure class="gallery-item span-wide">
     <img src="../../images/binder/emolga-masterset/emolga_1.webp" alt="Four-pocket binder page of early Emolga cards in English and Japanese" loading="lazy">
-    <figcaption>Early Emolga printings — page 1</figcaption>
+    <figcaption>Early Emolga printings — page 1. The bottom-left 081/BW-P is a placeholder print, not an owned copy.</figcaption>
   </figure>
   <figure class="gallery-item span-narrow">
     <img src="../../images/binder/emolga-masterset/emolga_2.webp" alt="Four-pocket binder page of Emolga cards in several languages" loading="lazy">
-    <figcaption>Early Emolga printings — page 2</figcaption>
+    <figcaption>Early Emolga printings — page 2. The top-left 025/BW-P is a placeholder print, not an owned copy.</figcaption>
   </figure>
   <figure class="gallery-item span-full">
     <img src="../../images/binder/emolga-masterset/emolga_3.webp" alt="Four-pocket binder page showing regional Emolga variants" loading="lazy">
@@ -52,7 +52,7 @@ I'm working toward every Emolga printing I can track down. It's the longest-runn
     <figcaption>Modern and earlier printings — page 10</figcaption>
   </figure>
   <figure class="gallery-item span-half">
-    <img src="../../images/binder/emolga-masterset/emolga_11.webp" alt="Partially filled final binder page of Emolga cards" loading="lazy">
+    <img src="../../images/binder/emolga-masterset/emolga_11.webp" alt="Final four-pocket binder page with all four pockets occupied by Emolga cards" loading="lazy">
     <figcaption>The current end of the binder — page 11</figcaption>
   </figure>
 </div>
@@ -61,7 +61,7 @@ I'm working toward every Emolga printing I can track down. It's the longest-runn
 
 ## Still Hunting
 
-These are the ones I haven't tracked down yet. If you've got a lead, I'm listening.
+Both cards below are still missing. The matching images visible in the binder are placeholder prints, not owned copies. If you've got a lead, I'm listening.
 
 <div class="gallery-grid">
   <figure class="gallery-item span-half">
@@ -69,8 +69,8 @@ These are the ones I haven't tracked down yet. If you've got a lead, I'm listeni
     <figcaption>Emolga 025 BW-P</figcaption>
   </figure>
   <figure class="gallery-item span-half">
-    <img src="../../images/binder/emolga-masterset/Missing%20Emolga%20BW-9%2081.jpg" alt="Emolga BW-9 81" loading="lazy">
-    <figcaption>Emolga BW-9 81</figcaption>
+    <img src="../../images/binder/emolga-masterset/Missing%20Emolga%20BW-9%2081.jpg" alt="Wanted reference image for Emolga 081/BW-P" loading="lazy">
+    <figcaption>Emolga 081/BW-P</figcaption>
   </figure>
 </div>
 

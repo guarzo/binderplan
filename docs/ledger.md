@@ -134,3 +134,13 @@ not already solve). The page keeps the caption as a page name, not as a theme.
 - Review-order step 3, "test every Enduring Presence card for evidence of time" — dropped
 
 The Quiet Familiarity and Threshold audits in that guide are untouched and still stand.
+
+---
+
+## 2026-09-20 — World of People boundary clarified; placement changes deferred
+
+The owner selected **environmental emphasis** on the [completed audit checklist](evidence/2026-09-20/validation/completed-checklist.pdf): human-made places are central to World of People; relationships primarily belong in Companions. This resolves the conflict between §3's environmental/non-relational rule and the broader partnership wording previously in `content/philosophy/themes.md`. The philosophy now follows the selected boundary.
+
+This is a definition ruling, not a move of Ralts (`ralts-01`) or any other card. The owner wrote **“no moves”** and **“Review Holding First”** across the proposed swaps and replacement review. No Threshold extractions, cross-theme swaps, or releases are recorded as executed. Squirtle (`squirtle-03`) and Dawn's Stadium (`dawns-stadium-01`) remain in Threshold; the 2026-08-02 Enduring Presence ruling is unchanged.
+
+The holding-box overlaps identified during this audit are additional copies, not evidence that the corresponding binder cards moved. They must not inherit the binder copies' IDs. A separate duplicate-removal review is not a release record. See the [preserved evidence and owner clarifications](evidence/2026-09-20/README.md).
