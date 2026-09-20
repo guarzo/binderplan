@@ -28,6 +28,8 @@ The column is left as recorded rather than rewritten: `first_seen` is provenance
 
 **Validate with:** `python scripts/check-registry.py docs/card-registry.md`
 
+**2026-09-20 verification scope.** The owner checked the character and printed number for the 20 in-binder entries on the [completed checklist](evidence/2026-09-20/validation/completed-checklist.pdf), not their set names. Those ticks do not upgrade printing confidence. Bulbasaur's `Corocoro Promo` set was supplied separately; the explicit Umbreon, Latios and Dratini corrections are recorded below. See the [evidence notes](evidence/2026-09-20/README.md) for the checked IDs and limitations.
+
 ## Registry
 
 | id | species | card_name | language | set | number | confidence | first_seen | notes |
@@ -40,7 +42,7 @@ The column is left as recorded rather than rewritten: `first_seen` is provenance
 | bewear-01 | Bewear | キテルグマ | JP | sv6a | 076 | confirmed | intimidation_1.webp 2026-08-01 | set/number from owner's doubleholo export 2026-09-18, denominator not recorded |
 | blastoise-01 | Blastoise | カメックス | JP | Expansion Pack | No.009 | uncertain | enduring_presence_2.webp 2026-08-01 | Lv.52 HP100, vintage Pokedex-number print, set per owner's doubleholo entry |
 | bulbasaur-01 | Bulbasaur | Bulbasaur | EN | Crystal Guardians | 45/100 | confirmed | calm_nature_1.webp 2026-08-01 |  |
-| bulbasaur-02 | Bulbasaur | フシギダネ | JP |  | No.001 | uncertain | joyful_action_1.webp 2026-08-01 | vintage Pokedex-number print, distinct from bulbasaur-01; era not identifiable |
+| bulbasaur-02 | Bulbasaur | フシギダネ | JP | Corocoro Promo | No.001 | uncertain | joyful_action_1.webp 2026-08-01 | set supplied by owner 2026-09-20; character and printed Pokedex number checked in hand, no blanket set/printing verification from checklist ticks |
 | bulbasaur-03 | Bulbasaur | Bulbasaur | EN | Expedition | 95 | confirmed | enduring_presence_2.webp 2026-08-01 | Sleep Seed ability, Vine Whip attack, distinct from bulbasaur-01/02, set/number from owner's doubleholo export 2026-09-18, denominator not recorded |
 | celebi-01 | Celebi | Celebi | EN | Neo Revelation | 16/64 | confirmed | enduring_presence_1.webp 2026-08-01 | Psychic Leaf attack |
 | chansey-01 | Chansey | ラッキー | JP | sv6 | 113/101 | confirmed | world_people_1.webp 2026-08-01 |  |
@@ -65,7 +67,7 @@ The column is left as recorded rather than rewritten: `first_seen` is provenance
 | dragonite-01 | Dragonite | カイリュー | JP | Mystery of the Fossils | No.149 | uncertain | contemplation_1.webp 2026-08-01 | Lv.45 print, vintage Pokedex-number print, set per owner's doubleholo entry |
 | dragonite-02 | Dragonite | カイリューex | JP | Rulers of the Heavens | 038/054 | confirmed | legendary_bearing_2.webp 2026-08-01 | ex card, distinct from dragonite-01 |
 | dratini-01 | Dratini | Dratini | EN | Team Rocket | 53/82 | confirmed | contemplation_1.webp 2026-08-01 | checked in hand 2026-09-19 |
-| dratini-02 | Dratini | Dratini | EN | Base Set 2 | 38/130 | confirmed | quiet_familiarity_1.webp 2026-08-01 | Pound attack, Wizards era, distinct from dratini-01, checked in hand 2026-09-19 |
+| dratini-02 | Dratini | Dratini | EN | Base Set | 26/102 | confirmed | quiet_familiarity_1.webp 2026-08-01 | Pound attack, distinct from dratini-01; owner corrected Base Set 2 38/130 to Base Set 26/102 on completed checklist 2026-09-20; no card move |
 | eevee-01 | Eevee | Eevee | EN | SVP | 173 | confirmed | at_rest_1.webp 2026-08-01 | set/number from owner's doubleholo export 2026-09-18 |
 | electrode-01 | Electrode | マルマイン | JP | sm1 | 037/095 | photo | companions_2.webp 2026-08-01 |  |
 | emolga-01 | Emolga | エモンガ | JP | sv11B | 116/086 | confirmed | joyful_action_1.webp 2026-08-01 | checked in hand 2026-09-19 |
@@ -115,7 +117,7 @@ The column is left as recorded rather than rewritten: `first_seen` is provenance
 | latias-01 | Latias | Latias | EN | Latias & Latios 2015 | 30/30 | confirmed | joyful_action_1.webp 2026-08-01 | XY Trainer Kit card, owner checked in hand 2026-09-18; earlier 35/30 was a misread |
 | latios-01 | Latios | ラティオス | JP | sv7a | 070/064 | confirmed | contemplation_1.webp 2026-08-01 | AR rarity |
 | latios-02 | Latios | ラティオス | JP | Holon Phantom | 14 | confirmed | elemental_solitude_1.webp 2026-08-01 | distinct from latios-01, set/number from owner's doubleholo export 2026-09-18, denominator not recorded |
-| latios-03 | Latios | Latios | EN | Dragon Vault | 10/20 | photo | legendary_bearing_1.webp 2026-08-01 | Sky Blade/Speed Wing, distinct from latios-01/02, "DRAGON VAULT" printed on card face |
+| latios-03 | Latios | Latios | EN | Latios & Latias Trainer Kit | 30/30 | confirmed | legendary_bearing_1.webp 2026-08-01 | Supersonic Flight/Psyburn; owner corrected Dragon Vault 10/20 to Latios + Latias deck 30/30 on completed checklist 2026-09-20; the Dragon Vault card is separate in the stamped collection |
 | lucario-01 | Lucario | ルカリオVSTAR | JP | s12a | 226/172 | confirmed | intimidation_1.webp 2026-08-01 | VSTAR, SAR rarity mark |
 | lugia-01 | Lugia | ルギア | JP | Gold, Silver, New World | No.249 | uncertain | awakened_power_1.webp 2026-08-01 | vintage Pokedex-number print, set per owner's doubleholo entry |
 | lugia-02 | Lugia | ルギアV | JP | s12 | 079/098 | confirmed | on_attack_1.webp 2026-08-01 | V card, distinct from lugia-01 |
@@ -191,7 +193,7 @@ The column is left as recorded rather than rewritten: `first_seen` is provenance
 | torterra-01 | Torterra | Torterra | EN | Unleashed | 10/95 | confirmed | awakened_power_2.webp 2026-08-01 |  |
 | typhlosion-01 | Typhlosion | バクフーン | JP | Gold, Silver, New World | No.157 | uncertain | intimidation_1.webp 2026-08-01 | vintage Pokedex-number print, set per owner's doubleholo entry |
 | typhlosion-02 | Typhlosion | バクフーン | JP |  | No.157 | uncertain | legendary_bearing_1.webp 2026-08-01 | Lv.46 print, distinct from typhlosion-01, vintage Pokedex-number print, era not identifiable |
-| umbreon-01 | Umbreon | 月亮伊布VMAX | ZH | s6c | 053/032 | photo | awakened_power_1.webp 2026-08-01 | alt-art VMAX, art matches the well-known "Moonbreon" print; 月亮伊布 is Umbreon's Chinese localized name |
+| umbreon-01 | Umbreon | 月亮伊布VMAX | ZH | CS4AC | 085/132 | confirmed | awakened_power_1.webp 2026-08-01 | owner corrected set/number to CS4AC 085/132 and confirmed Chinese on completed checklist 2026-09-20; close rearing figure amid energy, not moon-and-tower artwork |
 | umbreon-02 | Umbreon | ブラッキー | JP | Crossing The Ruins | No.197 | uncertain | contemplation_1.webp 2026-08-01 | vintage Pokedex-number print, distinct from umbreon-01, set per owner's doubleholo entry |
 | umbreon-03 | Umbreon | Umbreon | EN |  | 61/108 | uncertain | elemental_solitude_1.webp 2026-08-01 | Confuse Ray/Shadow Shutdown, distinct from umbreon-01/02, set code not textual |
 | umbreon-04 | Umbreon | Umbreon | EN | Undaunted | 10/90 | confirmed | legendary_bearing_2.webp 2026-08-01 | Moonlight Fang/Quick Blow, RH holo mark, distinct from umbreon-01/02/03, checked in hand 2026-09-19 |

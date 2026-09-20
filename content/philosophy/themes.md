@@ -28,9 +28,9 @@ Pokemon at ease in a natural setting. Not sleeping, not playing — just *presen
 
 ### World of People
 
-Pokemon sharing space with humans in a way that matters. Not just background humans — genuine coexistence, daily life, or partnership.
+Pokemon inhabiting human-made spaces. Streets, shops, homes, and other built environments shape the scene; any humans are environmental rather than the focus of a relationship. When a bond or reciprocal interaction is the subject, Companions is the stronger fit.
 
-<p class="signal">What I look for: social context matters</p>
+<p class="signal">What I look for: human-made surroundings, not a central relationship</p>
 </div>
 
 <div class="theme-card">

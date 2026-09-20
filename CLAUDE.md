@@ -37,6 +37,13 @@ Production builds use `hugo --gc --minify --baseURL <url>` via GitHub Actions.
 - Markdown files with HTML embedded (enabled via `markup.goldmark.renderer.unsafe = true`)
 - Gallery images referenced inline using `<figure class="gallery-item">` pattern
 
+## Evidence Intake
+
+- `tmp/` is a disposable upload inbox, not evidence storage. Before relying on an upload for ongoing work, preserve the relevant original under `docs/evidence/<receipt-date>/` in the working branch and verify the copy. Do not rely on session caches or ask the owner to restore files that should have been preserved.
+- Keep source filenames and record provenance, verification limits, and any recovered renditions in an evidence README. Keep archival originals separate from optimized gallery derivatives in `static/images/`.
+- Archive original inputs before replacing gallery images. Ignore incidental files such as `desktop.ini`.
+- Catalogue exports and screenshot matches can contain proxy versions or errors. Preserve them as evidence, not automatically verified metadata. A check of character/number does not verify the set; a pictured placeholder does not establish ownership; a proposed move is not an executed move.
+
 ## Adding Gallery Images
 
 Binder spreads are organized by volume:

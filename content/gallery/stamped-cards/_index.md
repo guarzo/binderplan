@@ -34,7 +34,7 @@ Prerelease stamps, league promos, Pokemon GO crossovers, and event printings. I 
     <figcaption>Stamped cards — page 6</figcaption>
   </figure>
   <figure class="gallery-item span-half">
-    <img src="../../images/binder/stamped-cards/stamp_7.jpg" alt="Partially filled nine-pocket binder page of stamped Pokemon cards" loading="lazy">
+    <img src="../../images/binder/stamped-cards/stamp_7.jpg" alt="Last stamped-card page with Dialga, Squirtle, two Combusken cards, Latios, Pikachu, Togepi and Slowking; bottom-left pocket empty" loading="lazy">
     <figcaption>The current end of the stamped-card binder — page 7</figcaption>
   </figure>
 </div>

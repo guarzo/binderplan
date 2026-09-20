@@ -2,7 +2,7 @@
 
 Generated from `docs/card-registry.md` by `python3 scripts/check-registry.py docs/card-registry.md --worklist --write`. Every section below is recomputed from the registry except "4. Gaps and known issues", which is hand-written; regeneration reads the previous version of this document and carries that section forward automatically.
 
-**Honest numbers, recomputed from the current file.** 175 rows total. 11 `photo` (6.3%), 22 `uncertain` (12.6%). 164 rows have both `set` and `number` read (93.7%) — 3 have `number` only, 8 have `set` only, 0 have neither field. The confirmation queue (section 3) holds 22 rows across 19 species: 3 clusters (6 rows) and 16 singletons.
+**Honest numbers, recomputed from the current file.** 175 rows total. 9 `photo` (5.1%), 22 `uncertain` (12.6%). 165 rows have both `set` and `number` read (94.3%) — 2 have `number` only, 8 have `set` only, 0 have neither field. The confirmation queue (section 3) holds 22 rows across 19 species: 3 clusters (6 rows) and 16 singletons.
 
 ## 1. Blocked — species unreadable
 
@@ -12,7 +12,7 @@ None. The registry has no state for a card that was seen but never identified to
 
 **None found** — `python3 scripts/check-registry.py docs/card-registry.md` reports `duplicate printings: 0`.
 
-Take that as a weak result, not a clean bill of health. The check requires all four fields — `species`, `set`, `number`, `language` — to match on two rows, and only **164 of 175 rows (93.7%)** have both `set` and `number` read. The remaining 11 rows (6.3%) are missing one or both fields and are structurally invisible to this check: two physical duplicates sitting in the registry right now would not be flagged unless both happened to land among that same 164-row minority.
+Take that as a weak result, not a clean bill of health. The check requires all four fields — `species`, `set`, `number`, `language` — to match on two rows, and only **165 of 175 rows (94.3%)** have both `set` and `number` read. The remaining 10 rows (5.7%) are missing one or both fields and are structurally invisible to this check: two physical duplicates sitting in the registry right now would not be flagged unless both happened to land among that same 165-row minority.
 
 ## 3. Confirmation queue — clusters first
 
@@ -48,7 +48,7 @@ The "Unreadable" column is the row's own `notes` field: what specifically blocke
 | ID | Card name | Source image | Unreadable |
 |---|---|---|---|
 | blastoise-01 | カメックス (JP) | enduring_presence_2.webp | Lv.52 HP100, vintage Pokedex-number print, set per owner's doubleholo entry |
-| bulbasaur-02 | フシギダネ (JP) | joyful_action_1.webp | vintage Pokedex-number print, distinct from bulbasaur-01; era not identifiable |
+| bulbasaur-02 | フシギダネ (JP) | joyful_action_1.webp | set supplied by owner 2026-09-20; character and printed Pokedex number checked in hand, no blanket set/printing verification from checklist ticks |
 | dragonair-01 | エリカのハクリュー (JP) | enduring_presence_1.webp | Erika's Dragonair, Lv.32, vintage Pokedex-number print, set per owner's doubleholo entry |
 | dragonite-01 | カイリュー (JP) | contemplation_1.webp | Lv.45 print, vintage Pokedex-number print, set per owner's doubleholo entry |
 | espeon-01 | わるいエーフィ (JP) | elemental_solitude_1.webp | Dark Espeon, vintage-style print, Pokédex-number print, set per owner's doubleholo export 2026-09-18 |
@@ -150,7 +150,7 @@ Photographs record what was on a page when the shoot happened, so a card since s
 
 | ID | Card name | Unreadable |
 |---|---|---|
-| bulbasaur-02 | フシギダネ (JP) | vintage Pokedex-number print, distinct from bulbasaur-01; era not identifiable |
+| bulbasaur-02 | フシギダネ (JP) | set supplied by owner 2026-09-20; character and printed Pokedex number checked in hand, no blanket set/printing verification from checklist ticks |
 
 ### V1 · Awakened Power p1
 
