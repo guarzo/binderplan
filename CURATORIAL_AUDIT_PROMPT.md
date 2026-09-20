@@ -51,6 +51,15 @@ Your responsibility is to **audit all volumes**, evaluate reserve cards for plac
 - The same printing — same card, same set, same collector number, same language — must not appear twice across Volumes 1 and 2.
 - A second copy goes to the holding pool or is released.
 - Different illustrations of the same species in different themes are **not** duplicates and are permitted.
+- **“No duplicates detected” is not “verified duplicate-free.”** The registry check skips rows missing set or number and compares all registered cards, including departed copies. Report incomplete coverage; verify both printing identity and current occupancy before declaring a violation across the volumes.
+
+### Evidence & Card Identity
+- Use [`docs/card-registry.md`](docs/card-registry.md) for recorded identity and printing information. Cite specific registered cards as **`Umbreon (umbreon-02)`**, adding printed name, language, set, or number where known and useful. IDs identify physical cards, not themes; keep them when cards move or leave the collection.
+- **The registry is not a current inventory.** Its row count is not the binder's occupancy, and absence from it does not establish absence from the collection. Its current scope is Volumes 1 and 2, not comprehensive coverage of reserves or other collections.
+- **`first_seen` is historical provenance**, not a current image path, theme, or pocket. Resolve source-page references through `PAGE_ORDER` and `SWAP_INS` in `scripts/check-registry.py`, with the explanations in [`docs/registry-confirmation.md`](docs/registry-confirmation.md) §4. In particular, old Volume 2 filenames do not reliably name today's themes. Do not rewrite provenance to match the current gallery.
+- Establish placement from dated spread images or explicit physical confirmation, reconciled with later verified movements in [`docs/ledger.md`](docs/ledger.md). Distinguish **last observed placement** from **verified current placement**; mark unresolved conflicts or destinations unknown. The ledger is selective, so no entry is not proof that a card has not moved. A proposed or accepted swap is not evidence of execution.
+- Respect registry confidence: **`confirmed`** means read in hand; **`photo`**, legible in a photograph; **`uncertain`**, inferred or obscured. Do not invent missing metadata or silently upgrade it. Keep printing uncertainty separate from confidence in the card's visual signal; request a crop or physical check when a conclusion depends on unresolved identity.
+- Consult prior ledger rulings before reopening settled calls. If new visual evidence warrants reversal, cite the earlier decision and explain what changed rather than silently replacing its rationale.
 
 ---
 
@@ -141,7 +150,7 @@ Era Identity was retired as a standalone chapter. Vintage cards must now earn pl
 Cards that are old but emotionally active should distribute to:
 - Companions (if showing bond)
 - Quiet Familiarity (if domestic or gentle)
-- Enduring Presence (if timeless or self-contained)
+- Enduring Presence (if complete and self-contained, with power held rather than spent)
 - Threshold (if liminal or between-states)
 
 ---
@@ -168,6 +177,8 @@ Full-art Japanese trainer supporter cards, collected purely for illustration qua
 
 ## 7. Audit Tasks
 
+For all card-specific findings, use the ID and evidence rules in §2. For an unregistered reserve card, search for an existing match first; identify it by image/pocket and known printed details, marking registration as pending rather than inventing an existing ID. If durable recording is authorized, follow the registry's assignment conventions before citing a new ID. Do not backfill IDs for historical cards that left before registry adoption.
+
 ### A. Volume 1 Audit (Selective & Surgical)
 For each spread:
 1. Identify the **theme's purest signal**
@@ -177,9 +188,9 @@ For each spread:
    - Weaken the page's narrative cohesion
 3. Recommend:
    - Keep as-is
-   - Replace (specify what kind of card should replace it)
-   - Extract to Volume 2 (specify destination theme)
-   - Retire
+   - Replace (name the candidate and incumbent by ID; if only a desired visual profile is known, mark the replacement as conditional)
+   - Extract to Volume 2 (name the destination theme and displaced incumbent, if any under §2, and account for the source-page vacancy or replacement)
+   - Retire from the binder (specify a proposed holding-box destination or release; do not assume either has occurred)
 
 ### B. Volume 2 Audit (Comprehensive)
 For each spread:
@@ -205,9 +216,9 @@ For cards not yet placed:
    - Solve an existing placement problem
    - Suggest a potential new theme
 4. Recommend:
-   - Immediate placement (specify theme)
+   - Proposed placement (specify theme and displaced incumbent by ID, unless a verified empty pocket or a new theme passing §8 makes it additive)
    - Hold for future consideration
-   - Retire (doesn't fit any theme cleanly)
+   - Retire from thematic consideration (doesn't fit any theme cleanly; distinguish holding from release)
 
 ---
 
@@ -232,12 +243,14 @@ You must state:
 
 ## 9. Output Format (Required)
 
-Your response must be structured as:
+Your response must be structured as below. Mark sections **not assessed** when evidence is unavailable; do not invent completeness findings or scores. Registry metadata supports identification, but does not replace artwork and spread images for visual judgments.
 
 ### 1. Executive Summary
 - Health of each volume (score /10)
 - Primary risks
 - Immediate recommendations
+- Evidence reviewed, image dates, scope not assessed, and unresolved identity or placement limitations
+- Duplicate-check result and coverage limitations (or state that the check was not run)
 
 ### 2. Volume 1 Audit Findings
 - Chapter-by-chapter assessment
@@ -267,7 +280,16 @@ Your response must be structured as:
 - What to lock (do not modify)
 - Immediate actions required
 - What to revisit later
-- What to retire permanently
+- What to retire from the binder versus what to release from the collection
+
+Include an action table for proposed changes:
+
+| Card + ID (or pending registration) | Observed placement + evidence/date | Proposed destination | Displaced card + ID, if any | Visual rationale / prior ruling | Confirmation needed | Status |
+|---|---|---|---|---|---|---|
+
+Use **proposed**, **accepted but unexecuted**, or **verified executed** only as supported by the evidence. Account for both ends of cross-volume moves. Use existing theme names and holding-box destinations: **EDGE, REDUNDANT, HERITAGE, FUTURE SELF, RELEASE**. Leaving the binder does not establish release or a known holding-box location.
+
+An audit produces recommendations, not physical movements or automatic file edits. If recording is separately authorized, append qualifying decisions and releases to `docs/ledger.md` under its existing rules; cite earlier entries when reversing them. Keep identity corrections in the registry, never placement data, and preserve IDs and historical provenance.
 
 ---
 
@@ -286,9 +308,10 @@ The goal is not to grow the binder quickly —
 
 ## 11. How to Use This Prompt
 
-1. **Provide images of all current binder spreads** (both volumes)
-2. **Provide images of reserve/unplaced cards** for evaluation
-3. **Note any specific concerns** or areas you want extra scrutiny on
-4. **Request the audit** using this prompt as context
+1. **Read or provide the evidence documents:** `docs/card-registry.md`, `docs/registry-confirmation.md`, and `docs/ledger.md`. Consult `content/philosophy/themes.md` alongside this prompt and the ledger's explicit rulings; surface unresolved definition conflicts rather than silently choosing a different boundary. When running outside the repository, include the relevant `PAGE_ORDER` / `SWAP_INS` mappings from `scripts/check-registry.py` if historical source names need resolving.
+2. **Provide dated images of current binder spreads** (both volumes), or identify the repository gallery snapshot being audited. Note subsequent physically confirmed changes; do not present an old snapshot as verified current occupancy.
+3. **Provide dated images of reserve/unplaced cards** and any other collections to be assessed, with known IDs where available. State which sections or cards are unavailable.
+4. **Run the read-only registry check when repository access is available:** `python3 scripts/check-registry.py docs/card-registry.md`. Report validation errors, detected duplicate candidates, and outstanding confirmation needs without treating a successful check as proof of complete identity or placement data. If unavailable, state that it was not run.
+5. **Note specific concerns** or areas for extra scrutiny, then request the audit using this prompt as context.
 
-The audit will evaluate current placements, recommend changes, and assess reserve cards for integration.
+The audit will evaluate evidenced placements, recommend changes, and assess reserve cards for integration. Unresolved identity, occupancy, and missing visual evidence remain explicit limitations, not gaps to fill by inference.
