@@ -256,3 +256,85 @@ leaves:
         type: published-photo
         source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/quiet_familiarity_1.webp
         observed_on: '2026-08-01'
+- id: v2-06
+  kind: cards
+  physical_leaf: 6
+  chapter: Nearness
+  chapter_order: 1
+  theme: Quiet Familiarity
+  theme_page: 2
+  caption: Domestic Scale. A sleeping Snorlax, a Ditto among scattered toys, a Cinccino behind a shop
+    counter — the page where the theme comes closest to itself.
+  pockets:
+  - position: 1
+    card_id: umbreon-05
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/quiet_familiarity_2.webp
+        observed_on: '2026-08-01'
+  - position: 2
+    card_id: ditto-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/quiet_familiarity_2.webp
+        observed_on: '2026-08-01'
+  - position: 3
+    card_id: snorlax-03
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/quiet_familiarity_2.webp
+        observed_on: '2026-08-01'
+  - position: 4
+    card_id: arcanine-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/quiet_familiarity_2.webp
+        observed_on: '2026-08-01'
+  - position: 5
+    card_id: dragonair-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/quiet_familiarity_2.webp
+        observed_on: '2026-08-01'
+  - position: 6
+    card_id: celebi-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/quiet_familiarity_2.webp
+        observed_on: '2026-08-01'
+  - position: 7
+    card_id: togepi-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/quiet_familiarity_2.webp
+        observed_on: '2026-08-01'
+  - position: 8
+    card_id: mudkip-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/quiet_familiarity_2.webp
+        observed_on: '2026-08-01'
+  - position: 9
+    card_id: cinccino-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/quiet_familiarity_2.webp
+        observed_on: '2026-08-01'

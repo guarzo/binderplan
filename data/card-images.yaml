@@ -10,6 +10,11 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  arcanine-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   audino-01:
     classification: missing
     asset_path: ''
@@ -31,6 +36,11 @@ cards:
     reviewed: false
     reviewed_on: ''
   bulbasaur-02:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  celebi-01:
     classification: missing
     asset_path: ''
     reviewed: false
@@ -61,6 +71,11 @@ cards:
     reviewed: false
     reviewed_on: ''
   charmander-03:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  cinccino-01:
     classification: missing
     asset_path: ''
     reviewed: false
@@ -101,6 +116,16 @@ cards:
     reviewed: false
     reviewed_on: ''
   dialga-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  ditto-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  dragonair-01:
     classification: missing
     asset_path: ''
     reviewed: false
@@ -400,6 +425,11 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  mudkip-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   ninetales-01:
     classification: missing
     asset_path: ''
@@ -570,6 +600,11 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  snorlax-03:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   spheal-01:
     classification: missing
     asset_path: ''
@@ -610,6 +645,11 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  togepi-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   torterra-01:
     classification: missing
     asset_path: ''
@@ -631,6 +671,11 @@ cards:
     reviewed: false
     reviewed_on: ''
   umbreon-04:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  umbreon-05:
     classification: missing
     asset_path: ''
     reviewed: false
