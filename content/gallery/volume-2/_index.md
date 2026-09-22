@@ -4,7 +4,7 @@ description: "Memory, Presence, and Passage"
 layout: "gallery"
 ---
 
-Volume II is less about action and more about memory, familiarity, and change over time. These pages were photographed on 1 August 2026 and capture the volume as it stood that day; the collection will continue to change around them.
+Volume II is less about action and more about memory, familiarity, and change over time. Most pages come from the 1 August 2026 reshoot; Companions page 2, Quiet Familiarity page 1, and Threshold were refreshed after verified movements on 21 September 2026.
 
 <div class="gallery-grid">
   <figure class="gallery-item span-half">
@@ -25,12 +25,12 @@ Volume II is less about action and more about memory, familiarity, and change ov
     <figcaption><strong>Companions — Chosen Bonds.</strong> Partnerships defined by loyalty, recognition, and shared history.</figcaption>
   </figure>
   <figure class="gallery-item span-wide">
-    <img src="../../images/binder/volume-2/companions_2.webp" alt="Companions spread 2" loading="lazy">
-    <figcaption><strong>Companions — Care in Practice.</strong> Affection expressed through teaching, protection, work, and ordinary attention.</figcaption>
+    <img src="../../images/binder/volume-2/companions_2.webp" alt="Nine-pocket Companions page holding Professor Elm, Pikachu, Togedemaru, Flareon, Kangaskhan, Professor's Research, Ursaring with Teddiursa, Houndour and Joltik" loading="lazy">
+    <figcaption><strong>Companions — Care in Practice.</strong> Ursaring sheltering Teddiursa joins a page of affection expressed through teaching, protection, work, and ordinary attention.</figcaption>
   </figure>
   <figure class="gallery-item span-narrow">
-    <img src="../../images/binder/volume-2/quiet_familiarity_1.webp" alt="Nine-pocket page of mostly vintage cards — Charmander, Mew, Snivy, Pikachu, Numel, Dratini, Piplup, Shaymin and Squirtle in open outdoor settings" loading="lazy">
-    <figcaption><strong>Quiet Familiarity — Gentle Company.</strong> Calm companionship across gardens, paths, and shared outdoor spaces.</figcaption>
+    <img src="../../images/binder/volume-2/quiet_familiarity_1.webp" alt="Nine-pocket page holding Charmander, Mew, Snivy, Pikachu, Numel, Special Delivery Dragonite, Piplup, Shaymin and Squirtle" loading="lazy">
+    <figcaption><strong>Quiet Familiarity — Gentle Company.</strong> Dragonite's familiar delivery route introduces repeated work among gardens, paths, and shared outdoor spaces.</figcaption>
   </figure>
   <figure class="gallery-item span-narrow">
     <img src="../../images/binder/volume-2/quiet_familiarity_2.webp" alt="Nine-pocket page including Umbreon, Ditto, a sleeping Snorlax, Light Arcanine, Erika's Dragonair, Celebi, Togepi, Mudkip and a Cinccino illustration rare" loading="lazy">
@@ -63,8 +63,8 @@ Volume II is less about action and more about memory, familiarity, and change ov
     <figcaption><strong>Threshold.</strong> Space between moments.</figcaption>
   </figure>
   <figure class="gallery-item span-half">
-    <img src="../../images/binder/volume-2/threshold_1.webp" alt="Nine-pocket page of edges and crossings — a sunrise stadium, Squirtle at a shoreline, Deoxys and Rayquaza in open space, a revived Kabuto fossil, and Hoopa's portal rings" loading="lazy">
-    <figcaption><strong>Threshold — At the Edge.</strong> Dawn, shoreline, deep space, and the fossil carried out of one age into another.</figcaption>
+    <img src="../../images/binder/volume-2/threshold_1.webp" alt="Nine-pocket page of edges and crossings — Dawn's Stadium, Pikachu, Squirtle at a shoreline, Rayquaza, Deoxys, Jirachi, Mudkip beneath a sheltered opening, Kabuto and Litleo emerging through a doorway" loading="lazy">
+    <figcaption><strong>Threshold — At the Edge.</strong> Litleo's doorway and Mudkip's sheltered opening strengthen a page of dawn, shoreline, deep space, and visible passage.</figcaption>
   </figure>
 </div>
 

@@ -4,7 +4,7 @@ description: "Lived Experience — how Pokemon exist in the world"
 layout: "gallery"
 ---
 
-Volume I is where it all started. These pages cover how Pokemon move, rest, threaten, think, and belong in the world — organized into five chapters that flow from safety to solitude.
+Volume I is where it all started. These pages cover how Pokemon move, rest, threaten, think, and belong in the world — organized into five chapters that flow from safety to solitude. On the Attack and Legendary Bearing page 2 were refreshed after verified movements on 21 September 2026.
 
 <div class="gallery-grid">
   <figure class="gallery-item span-half">
@@ -67,8 +67,8 @@ Volume I is where it all started. These pages cover how Pokemon move, rest, thre
     <figcaption><strong>Legendary Bearing — Mythic Authority.</strong> Complete forces presented as rulers, guardians, and objects of awe.</figcaption>
   </figure>
   <figure class="gallery-item span-full">
-    <img src="../../images/binder/volume-1/legendary_bearing_2.webp" alt="Nine-pocket binder page holding Dragonite, Espeon, Gardevoir, Golem, Mew, N's Plan, Ninetales, Umbreon, Zekrom" loading="lazy">
-    <figcaption><strong>Legendary Bearing — The Encounter.</strong> Power made immediate through commanding posture, scale, and revelation.</figcaption>
+    <img src="../../images/binder/volume-1/legendary_bearing_2.webp" alt="Nine-pocket binder page holding Umbreon, Blastoise VMAX, Mew, Gardevoir, Dragonite, Golem, Zekrom, Ninetales and Espeon" loading="lazy">
+    <figcaption><strong>Legendary Bearing — The Encounter.</strong> Blastoise's monumental frontal stance now anchors a page of power made immediate through posture, scale, and revelation.</figcaption>
   </figure>
 </div>
 
@@ -84,8 +84,8 @@ Volume I is where it all started. These pages cover how Pokemon move, rest, thre
     <figcaption><strong>Intimidation — Before the Strike.</strong> Menace communicated through presence, gaze, and restraint alone.</figcaption>
   </figure>
   <figure class="gallery-item span-full">
-    <img src="../../images/binder/volume-1/on_attack_1.webp" alt="Nine-pocket binder page holding Charizard, Gengar, Houndoom, Kingdra, Lugia, Snorlax, Spheal, Ursaring, Yveltal" loading="lazy">
-    <figcaption><strong>On the Attack — Commitment to Force.</strong> The instant hesitation ends and action becomes irreversible.</figcaption>
+    <img src="../../images/binder/volume-1/on_attack_1.webp" alt="Nine-pocket binder page holding Gengar, Lugia, Spheal, Kingdra, Charizard VSTAR, Yveltal, Houndoom, Lucario Lv.X and Charizard" loading="lazy">
+    <figcaption><strong>On the Attack — Commitment to Force.</strong> Charizard VSTAR and Lucario sharpen the instant hesitation ends and action becomes irreversible.</figcaption>
   </figure>
 </div>
 
