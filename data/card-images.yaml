@@ -40,10 +40,13 @@ cards:
     reviewed: false
     reviewed_on: ''
   bewear-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: tcgdex
+    upstream_id: SV6a-076
+    classification: exact
+    asset_path: assets/images/cards/bewear-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://assets.tcgdex.net/ja/SV/SV6a/076/high.webp
   blastoise-01:
     classification: missing
     asset_path: ''
@@ -317,10 +320,16 @@ cards:
     provider: evidence-crop
     source_path: docs/evidence/2026-09-22/owner-supplied-card-images/gengar-vmax-chinese.jpg
   gengar-02:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: doubleholo
+    upstream_id: '22197'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: exact
+    asset_path: assets/images/cards/gengar-02.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/22197/primary.webp
+    note: 2026-09-22 image review matched authorized DoubleHolo identity; registry
+      identity is photo/not-in-hand.
   gengar-03:
     classification: missing
     asset_path: ''
@@ -461,10 +470,13 @@ cards:
     reviewed: false
     reviewed_on: ''
   houndour-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: tcgdex
+    upstream_id: ecard1-113
+    classification: exact
+    asset_path: assets/images/cards/houndour-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://assets.tcgdex.net/en/ecard/ecard1/113/high.webp
   houndour-02:
     classification: missing
     asset_path: ''
@@ -587,10 +599,13 @@ cards:
     note: Curator visually confirmed Latias & Latios 2015 is the trainer-kit set-name
       alias and the Latios 30/30 printing matches the archived leaf.
   lucario-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: tcgdex
+    upstream_id: S12a-226
+    classification: exact
+    asset_path: assets/images/cards/lucario-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://assets.tcgdex.net/ja/S/S12a/226/high.webp
   lugia-01:
     provider: doubleholo
     upstream_id: '22462'
@@ -627,10 +642,16 @@ cards:
     reviewed_on: '2026-09-22'
     source_url: https://assets.tcgdex.net/en/neo/neo1/66/high.webp
   marowak-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: doubleholo
+    upstream_id: '34977'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: exact
+    asset_path: assets/images/cards/marowak-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/34977/primary.webp
+    note: Competing 1st Edition candidate 34978 inspected; approved non-1st-edition
+      DoubleHolo 34977 against the archived leaf.
   master-ball-01:
     classification: missing
     asset_path: ''
@@ -683,10 +704,13 @@ cards:
     note: 'Owner corrected the registry identity to English Legendary Collection reverse
       holo #29; authorized DoubleHolo card 2767 approved on 2026-09-22.'
   mewtwo-02:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: tcgdex
+    upstream_id: xy8-164
+    classification: exact
+    asset_path: assets/images/cards/mewtwo-02.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://assets.tcgdex.net/en/xy/xy8/164/high.webp
   mewtwo-03:
     classification: exact
     asset_path: assets/images/cards/mewtwo-03.webp
@@ -709,10 +733,16 @@ cards:
     reviewed: false
     reviewed_on: ''
   misdreavus-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: doubleholo
+    upstream_id: '33213'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: exact
+    asset_path: assets/images/cards/misdreavus-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/33213/primary.webp
+    note: 2026-09-22 image review matched authorized DoubleHolo identity; registry
+      identity is photo/not-in-hand.
   mudkip-01:
     classification: missing
     asset_path: ''
@@ -883,10 +913,18 @@ cards:
     reviewed: false
     reviewed_on: ''
   sabrinas-gaze-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: doubleholo
+    upstream_id: '46839'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    identity_basis: In-hand-confirmed unnumbered registry identity plus curator comparison
+      of DoubleHolo 46839 with the archived leaf.
+    classification: exact
+    asset_path: assets/images/cards/sabrinas-gaze-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/46839/primary.webp
+    note: Curator visually confirmed the unnumbered Challenge From The Darkness printing
+      against the archived leaf.
   salamence-01:
     provider: tcgdex
     upstream_id: SV9-119
@@ -1087,10 +1125,16 @@ cards:
     reviewed_on: '2026-09-22'
     source_url: https://assets.tcgdex.net/en/hgss/hgss2/10/high.webp
   typhlosion-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: doubleholo
+    upstream_id: '23444'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: exact
+    asset_path: assets/images/cards/typhlosion-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/23444/primary.webp
+    note: Authorized DoubleHolo 23444 selected during 2026-09-22 visual review; registry
+      identity is photo/not-in-hand.
   umbreon-01:
     provider: doubleholo
     upstream_id: '32179'
