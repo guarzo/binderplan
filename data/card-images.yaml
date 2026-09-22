@@ -90,7 +90,17 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  dragonite-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   dragonite-02:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  dratini-01:
     classification: missing
     asset_path: ''
     reviewed: false
@@ -215,6 +225,11 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  joltik-03:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   kingdra-01:
     classification: missing
     asset_path: ''
@@ -226,6 +241,11 @@ cards:
     reviewed: false
     reviewed_on: ''
   latias-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  latios-01:
     classification: missing
     asset_path: ''
     reviewed: false
@@ -291,6 +311,11 @@ cards:
     reviewed: false
     reviewed_on: ''
   mewtwo-02:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  mewtwo-03:
     classification: missing
     asset_path: ''
     reviewed: false
@@ -405,6 +430,11 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  snivy-02:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   snorlax-01:
     classification: missing
     asset_path: ''
@@ -421,6 +451,11 @@ cards:
     reviewed: false
     reviewed_on: ''
   spheal-02:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  spheal-03:
     classification: missing
     asset_path: ''
     reviewed: false
@@ -455,6 +490,11 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  umbreon-02:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   umbreon-04:
     classification: missing
     asset_path: ''
@@ -466,6 +506,11 @@ cards:
     reviewed: false
     reviewed_on: ''
   victini-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  victini-02:
     classification: missing
     asset_path: ''
     reviewed: false

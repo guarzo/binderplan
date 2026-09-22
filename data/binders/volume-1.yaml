@@ -922,3 +922,83 @@ leaves:
         type: published-photo
         source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/elemental_solitude_1.webp
         observed_on: '2026-08-01'
+- id: v1-18
+  kind: cards
+  physical_leaf: 18
+  chapter: Isolation & Reflection
+  chapter_order: 5
+  theme: Contemplation
+  caption: Inner Weather. Awake, motionless attention directed toward something beyond the frame.
+  pockets:
+  - position: 1
+    card_id: dragonite-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/contemplation_1.webp
+        observed_on: '2026-08-01'
+  - position: 2
+    card_id: latios-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/contemplation_1.webp
+        observed_on: '2026-08-01'
+  - position: 3
+    card_id: mewtwo-03
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/contemplation_1.webp
+        observed_on: '2026-08-01'
+  - position: 4
+    card_id: joltik-03
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/contemplation_1.webp
+        observed_on: '2026-08-01'
+  - position: 5
+    card_id: victini-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/contemplation_1.webp
+        observed_on: '2026-08-01'
+  - position: 6
+    card_id: umbreon-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/contemplation_1.webp
+        observed_on: '2026-08-01'
+  - position: 7
+    card_id: spheal-03
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/contemplation_1.webp
+        observed_on: '2026-08-01'
+  - position: 8
+    card_id: snivy-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/contemplation_1.webp
+        observed_on: '2026-08-01'
+  - position: 9
+    card_id: dratini-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/contemplation_1.webp
+        observed_on: '2026-08-01'
