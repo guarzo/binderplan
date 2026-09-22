@@ -1,6 +1,6 @@
 # Review, Keeper, and Trade Binder Design
 
-**Date:** 2026-09-22  
+**Date:** 2026-09-22
 **Status:** Approved in conversation; card assignments remain proposed until physically sorted.
 
 ## Purpose
@@ -151,4 +151,4 @@ The proposed card-by-card assignments are in [`2026-09-22-holding-pool-sorting-m
 - seven cards moved into canon on 2026-09-21;
 - seven cards displaced from canon into the current pool.
 
-The physical pool reconciles to 97 unique cards. The manifest is a recommendation, not evidence that the sort has been executed.
+The physical pool reconciles to 97 current inventory entries at the photograph/export level. Some exact printings and several photograph-to-export matches still require an in-hand check. The manifest is a recommendation, not evidence that the sort has been executed.

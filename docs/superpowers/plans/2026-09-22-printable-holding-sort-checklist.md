@@ -35,7 +35,7 @@
 - Consumes: the 97 manifest rows and destination totals from the approved Markdown manifest.
 - Produces: a human-printable A4 PDF and editable LaTeX source.
 
-- [ ] **Step 1: Create the LaTeX checklist structure**
+- [x] **Step 1: Create the LaTeX checklist structure**
 
 Use A4 paper, compact margins, page numbers, square checkboxes, and sections in this exact order:
 
@@ -55,7 +55,7 @@ Use A4 paper, compact margins, page numbers, square checkboxes, and sections in 
 
 Every card line must include its manifest key, short card name, and destination-specific checkbox.
 
-- [ ] **Step 2: Compile the PDF twice**
+- [x] **Step 2: Compile the PDF twice**
 
 Run:
 
@@ -67,7 +67,7 @@ pdflatex -interaction=nonstopmode -halt-on-error 2026-09-22-holding-pool-sorting
 
 Expected: exit code 0 and `2026-09-22-holding-pool-sorting-checklist.pdf` created.
 
-- [ ] **Step 3: Verify document structure and counts**
+- [x] **Step 3: Verify document structure and counts**
 
 Run a script or text check that confirms:
 
@@ -95,11 +95,11 @@ rg 'Overfull|LaTeX Warning' docs/2026-09-22-holding-pool-sorting-checklist.log
 
 Expected: no overfull boxes or unresolved-reference warnings.
 
-- [ ] **Step 4: Visually inspect every rendered page**
+- [x] **Step 4: Visually inspect every rendered page**
 
 Render pages to temporary PNG files using `pdftoppm`, inspect for clipped rows, illegible type, orphaned headings, and insufficient writing space, then adjust and recompile if needed.
 
-- [ ] **Step 5: Remove generated build intermediates**
+- [x] **Step 5: Remove generated build intermediates**
 
 Delete only:
 
@@ -111,7 +111,7 @@ docs/2026-09-22-holding-pool-sorting-checklist.out
 
 Keep the `.tex` and `.pdf` files.
 
-- [ ] **Step 6: Commit the checklist**
+- [x] **Step 6: Commit the checklist**
 
 ```bash
 git add docs/2026-09-22-holding-pool-sorting-checklist.tex \
@@ -119,7 +119,7 @@ git add docs/2026-09-22-holding-pool-sorting-checklist.tex \
 git commit -m "Add printable holding pool sort checklist"
 ```
 
-- [ ] **Step 7: Run final branch verification**
+- [x] **Step 7: Run final branch verification**
 
 Run:
 

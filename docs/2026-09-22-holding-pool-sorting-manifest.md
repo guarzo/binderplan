@@ -1,7 +1,7 @@
 # Holding Pool Sorting Manifest
 
-**Date:** 2026-09-22  
-**Status:** Proposed first sort; no physical movement is asserted by this document.  
+**Date:** 2026-09-22
+**Status:** Proposed first sort; no physical movement is asserted by this document.
 **Design:** [`Review, Keeper, and Trade Binder Design`](superpowers/specs/2026-09-22-review-keeper-trade-binders-design.md)
 
 ## Reconciliation
@@ -13,109 +13,110 @@ The current pool contains **97 physical cards**:
 - minus seven cards moved into the canonical binders on 2026-09-21;
 - plus seven cards displaced from canon by those movements.
 
-Every current card appears exactly once below. Coordinates are evidence references, not permanent storage locations. Low-confidence identities should be checked in hand during the sort.
+Every current inventory entry appears exactly once below. `HP-NNN` values are neutral sorting IDs assigned by this manifest; they are not claims about photograph pocket coordinates or permanent registry IDs. Locate cards by the printed card label during the in-hand sort. Low-confidence identities should be checked before final placement.
 
 ## Card-by-card assignments
 
 | Manifest key | Card | Proposed destination | Reason |
 |---|---|---|---|
-| 7078-R1C1 | Houndour — Aquapolis 87 | Review · EDGE Watch · Environmental Momentum | Wind and terrain visibly drive the movement. |
-| 7078-R1C2 | Houndour — JP silver-border copy | Keeper · Species Studies | Owner-significant line; printing unresolved. |
-| 7078-R1C3 | Houndour — JP Megalo Cannon-era copy | Keeper · Species Studies | Distinct treatment within the Houndour study. |
-| houndoom-g-retained | Houndoom G — one retained copy | Keeper · Species Studies | Keep one representative; surplus removed. |
-| 7078-R2C1 | Houndour — Great Encounters 69 | Keeper · Species Studies | Different era and composition in a personal line. |
-| 7078-R2C2 | Houndour — JP No.228 | Keeper · Species Studies | Vintage Japanese Houndour printing. |
-| 7078-R3C1 | Dark Houndoom — Team Rocket Returns reverse holo | Keeper · Species Studies | Distinctive Houndoom treatment. |
-| 7078-R3C2 | Houndour — Neo Discovery 39 | Keeper · Species Studies | Early-era species study. |
-| 7078-R3C3 | M Houndoom EX — full art | Keeper · Personal Keepers | Directly supports the established personal Houndoom collection. |
-| 7078-R3C4 | Houndour — Skyridge 66 | Keeper · Species Studies | e-Card-era Houndour treatment. |
-| 7079-R1C1 | Porygon-Z Lv.X | Review · EDGE Watch · Unease | Distorted, unstable composition without direct attack. |
-| 7079-R1C2 | Ninetales — JP 20th Anniversary 15 | Keeper · Heritage | Anniversary and vintage-style presentation. |
-| 7079-R1C3 | Nidoking — Base Set 11 | Keeper · Heritage | Foundational Base Set holo. |
-| 7079-R1C4 | Rayquaza EX — JP constructed-deck artwork | Trade · Core Value | Valuable older EX without a unique keeper role. |
-| 7079-R2C1 | Yveltal — Celebrations 19 | Release | Weak treatment and extensive Yveltal coverage. |
-| 7079-R2C2 | Genesect — Dream Shine Collection 29 | Review · REDUNDANT · Contemplation | Quiet attention fits but loses to the current page. |
-| 7079-R2C3 | Azurill — JP Storm Emeralda 86 | Keeper · Beautiful Misfits | Charming foil image without a canonical home. |
-| 7079-R2C4 | Graveler — EX Dragon reverse holo 29 | Keeper · Heritage | EX-era reverse treatment. |
-| 7079-R3C1 | Zygarde — XY152 | Review · REDUNDANT · Legendary Bearing | Complete authority, weaker than current encounters. |
-| 7079-R3C2 | Suicune — Pikachu Libre deck 14 | Review · REDUNDANT · Elemental Solitude | Valid elemental isolation that loses today. |
-| 7079-R3C3 | Mightyena — JP Holon Research 70 | Review · REDUNDANT · Intimidation | Menacing restraint, weaker than incumbents. |
-| 7079-R3C4 | Charizard — Secret Wonders 3 | Keeper · Heritage | Older holo with strong era identity. |
-| 7079-R4C1 | Gastly — Base Set 50 | Keeper · Heritage | Foundational printing. |
-| 7079-R4C2 | Gengar — Legend Maker 5 | Keeper · Species Studies | The close, red-eyed subject reads as Gengar-led menace, not setting-led Unease. |
-| 7079-R4C3 | Gengar EX — dark full-art treatment | Keeper · Species Studies | Distinct Gengar treatment. |
-| 7079-R4C4 | Gengar ex — modern full-art treatment | Keeper · Species Studies | Separate visual treatment in the Gengar study. |
-| 7080-R1C1 | Kirlia pictured; Ralts export slot | Keeper · Beautiful Misfits | Preserve the unusual image while resolving metadata. |
-| 7080-R1C2 | Gengar — Diamond & Pearl 27 | Keeper · Species Studies | Older Gengar treatment broadens the chronology. |
-| 7080-R1C3 | N — BW100 export slot/full art | Trade · Core Value | Desirable trainer card without a stable collection role. |
-| 7080-R1C4 | N — Fates Collide 105a export slot | Trade · Core Value | Strong trade value; no canonical role. |
-| 7080-R2C1 | Gardevoir EX — Dragon Frontiers 93 | Keeper · Heritage | EX-era historical significance. |
-| 7080-R2C2 | Dialga — Platinum 6 | Review · REDUNDANT · Legendary Bearing | Authoritative fit that loses to current staging. |
-| 7080-R2C3 | Dark Blastoise — Team Rocket 20 | Keeper · Heritage | Classic Dark-era card. |
-| 7080-R2C4 | Suicune — POP Series 2 #4 | Keeper · Heritage | POP-series release context. |
-| 7080-R2C5 | Yveltal ex — JP Nihil Zero 98 | Trade · Core Value | Premium treatment; existing Yveltal coverage is sufficient. |
-| 7080-R3C1 | Dhelmise — JP Abyss Eye 88 | Review · EDGE Watch · Unease | The animate wreck/anchor makes the marine setting feel wrong without a direct attack. |
-| 7080-R3C2 | Groudon — printing unresolved | Review · REDUNDANT · Legendary Bearing | Same visual idea as the incumbent; compare finish. |
-| 7080-R3C3 | Ampharos — Chaos Rising 90 | Review · Existing-theme EDGE · Elemental Solitude | Self-lit isolation creates a credible challenge. |
-| 7080-R3C4 | Kyogre — JP Storm Emeralda 80 | Review · REDUNDANT · Elemental Solitude | Valid fit; existing Kyogre coverage is stronger. |
-| 7080-R3C5 | Victini — JP premium deck 41 | Review · REDUNDANT · Joyful Action | Bright motion fits but does not improve the page. |
-| 7080-R4C1 | Swampert — Great Encounters 9 | Review · REDUNDANT · Enduring Presence | Complete, self-contained form; visually subdued. |
-| 7080-R4C3 | Feraligatr Prime — HGSS 108 | Keeper · Heritage | Prime-era touchstone. |
-| 7080-R4C4 | Dark Dragonair — Team Rocket Returns 31 | Review · EDGE Watch · Environmental Momentum | Airflow and curving space determine movement. |
-| 7080-R4C5 | Umbreon — Dark Explorers 61 | Review · REDUNDANT · Elemental Solitude | Former valid fit displaced by stronger solitude. |
-| 7081-R1C1 | Pikachu — McDonald's 020/M-P artwork | Review · Existing-theme EDGE · World of People | Human meal setting is central to the scene. |
-| 7081-R1C2 | Pikachu — Pika Charge artwork | Review · REDUNDANT · World of People | Human-made context fits but does not upgrade the page. |
-| 7081-R1C3 | Pikachu — WoTC Promo 1 | Keeper · Heritage | Foundational Black Star promo. |
-| 7081-R1C4 | Pikachu — Pokémon GO 28 artwork | Review · REDUNDANT · World of People | Community context fits; current cards tell it better. |
-| 7081-R1C5 | Pikachu — tree artwork, mapping unresolved | Review · FUTURE SELF | Personal reassessment without active canon competition. |
-| 7081-R2C1 | Darkrai — DP24 | Review · REDUNDANT · Intimidation | Dominant subject-led menace fits Intimidation, not the setting-led Unease rule. |
-| 7081-R2C3 | Mewtwo EX — BREAKthrough 157 slot | Review · REDUNDANT · Awakened Power | Credible buildup, but another Mewtwo already fills the role. |
-| 7081-R2C4 | Lugia — Call of Legends 15 | Review · REDUNDANT · Legendary Bearing | Strong authority limited by extensive Lugia coverage. |
-| 7081-R2C5 | Sandshrew — JP McDonald's 16 | Keeper · Heritage | Historically specific regional promo. |
-| 7081-R3C1 | Rock-line card / Ditto-Geodude export slot | Keeper · Beautiful Misfits | Identity/disguise ambiguity is interesting outside canon. |
-| 7081-R3C2 | Golem — Rising Rivals 23 | Review · REDUNDANT · Enduring Presence | Stable complete form, weaker than incumbents. |
-| 7081-R3C4 | Dedenne — Perfect Order 93 | Review · Existing-theme EDGE · Calm in Nature | Warm seasonal setting creates a credible challenge. |
-| 7081-R3C5 | Rocket's Zapdos ex — export slot | Keeper · Heritage | Older Japanese Rocket-era ex context. |
-| 7081-R4C1 | Torterra Lv.X — JP promo 76 | Review · REDUNDANT · Awakened Power | Transformation signal fits but repeats existing territory. |
-| 7081-R4C3 | Kecleon — JP promo/artwork | Keeper · Personal Keepers | Kecleon has established personal significance. |
-| 7081-R4C5 | Electrode — JP Tag Bolt 37 | Review · REDUNDANT · Companions | Former group-bond reading lost decisively. |
-| 7082-R1C1 | Mareep — Expedition 119 | Review · REDUNDANT · Calm in Nature | Natural ease fits but does not improve the page. |
-| 7082-R1C2 | Ampharos — Steam Siege 40 | Review · REDUNDANT · Elemental Solitude | Valid fit; stronger Ampharos challenge exists. |
-| 7082-R1C3 | Cyndaquil — JP SoulSilver Collection 14 | Keeper · Heritage | Japanese HGSS-era printing. |
-| 7082-R2C1 | M Gengar EX — Phantom Forces 121 slot | Keeper · Species Studies | Major treatment of an owner-significant species. |
-| 7082-R2C2 | Yveltal ex — JP full-art copy | Trade · Core Value | Tradeable premium treatment; species already covered. |
-| 7082-R2C3 | Shaymin EX — Roaring Skies 106 | Trade · Core Value | Valuable full art that does not improve current placements. |
-| 7082-R2C4 | Erika's Bulbasaur — CoroCoro-era artwork | Keeper · Heritage | Vintage Japanese character card. |
-| 7082-R2C5 | Venusaur ex — JP, exact set unresolved | Keeper · Heritage | Older Japanese ex presentation. |
-| 7082-R3C1 | Pelipper — Deoxys reverse holo 21 | Review · EDGE Watch · Environmental Momentum | Flight and weather visibly determine movement. |
-| 7082-R3C2 | Alolan Meowth — JP 115 | Review · Existing-theme EDGE · World of People | Built nighttime setting is central. |
-| 7082-R3C3 | Ditto — 30th Celebration promo 106 | Keeper · Beautiful Misfits | Playful identity distortion, not a theme. |
-| 7082-R3C4 | Yveltal — Steam Siege 65 | Review · REDUNDANT · On the Attack | Valid attack fit; existing cards are stronger. |
-| 7082-R3C5 | Shaymin — Vivid Voltage 15 | Review · REDUNDANT · Calm in Nature | Peaceful natural fit without page improvement. |
-| 7082-R4C1 | Gengar EX — printing unresolved | Keeper · Species Studies | Distinct physical Gengar treatment. |
-| 7082-R4C2 | Numel [Ditto] — Pokémon GO 13 | Keeper · Beautiful Misfits | Enjoyable disguise oddity outside canon. |
-| 7082-R4C3 | Mewtwo — JP 049/DPt-P artwork | Keeper · Heritage | Japanese promotional context. |
-| 7082-R4C4 | Pokémon Communication — English | Release | Device-focused artwork has no keeper or canonical path. |
-| 7082-R4C5 | Dark Primeape — Team Rocket 43, 1st Edition | Keeper · Heritage | First-edition Dark-era printing. |
-| 7088-R1C1 | Piplup — Manaphy & Lucario 5 | Release | Plain artwork with no competitive or keeper role. |
-| 7088-R1C2 | Piplup — JP Inferno X 85 | Keeper · Heritage | Stronger Japanese DP-era Piplup. |
-| 7088-R1C3 | Mudkip — EX Dragon 65 | Review · EDGE Watch · Environmental Momentum | Water and terrain visibly carry the subject. |
-| 7088-R1C4 | Charmander — Team Rocket 50 | Keeper · Heritage | Classic Team Rocket printing. |
-| 7088-R2C1 | Shaymin EX — Legendary Treasures RC21 | Keeper · Beautiful Misfits | Attractive Radiant Collection treatment. |
-| 7088-R2C4 | Galarian Obstagoon — JP 209 | Review · Existing-theme EDGE · Intimidation | Confrontational posture offers a restrained-threat challenge. |
-| 7088-R2C5 | Mudkip — JP Sky-Splitting Charisma 21 | Review · REDUNDANT · Calm in Nature | Natural setting fits; movement signal is weak. |
-| 7088-R3C1 | Mewtwo EX — full-art copy | Trade · Core Value | Premium tradeable copy amid extensive Mewtwo coverage. |
-| 7088-R3C2 | Groudon EX — Crystal Guardians 93 | Trade · Core Value | Older EX value exceeds its canonical prospects. |
-| 7088-R3C3 | Shaymin EX — full-art treatment, exact printing unresolved | Trade · Core Value | Premium Shaymin treatment with no stronger canonical or permanent keeper role. |
-| 7088-R3C4 | Rayquaza EX — JP constructed-deck artwork | Trade · Core Value | Desirable older EX; canonical coverage is sufficient. |
-| 7088-R3C5 | Gengar ex — modern multicolor treatment | Keeper · Species Studies | Distinct Gengar treatment. |
-| hoopa-02 | Hoopa EX — Ancient Origins 36/98 | Review · REDUNDANT · On the Attack | The rings frame an expressed attack, but the rebuilt page has no weaker named incumbent. |
-| kasumis-tears-01 | Kasumi's Tears — JP Leaders' Stadium | Keeper · Heritage | Vintage trainer; executed Heritage decision. |
-| dratini-02 | Dratini — Base Set 26/102 | Keeper · Heritage | Corrected Base Set identity. |
-| rockets-trap-01 | Rocket's Trap — JP Leaders' Stadium | Keeper · Heritage | Vintage Rocket trainer. |
-| snorlax-02 | Snorlax VMAX — JP s1H 046/060 | Review · REDUNDANT · On the Attack | Former fit lost directly to Charizard VSTAR. |
-| ursaring-02 | Ursaring — JP No.217 | Review · REDUNDANT · On the Attack | Former fit lost directly to Lucario. |
-| ns-plan-01 | N's Plan — Black Bolt 163/086 | Keeper · Heritage | Preserve the executed Heritage decision and binder provenance. |
+| HP-001 | Houndour — Aquapolis 87 | Review · EDGE Watch · Environmental Momentum | Wind and terrain visibly drive the movement. |
+| HP-002 | Houndour — JP silver-border copy | Keeper · Species Studies | Owner-significant line; printing unresolved. |
+| HP-003 | Houndour — JP Megalo Cannon-era copy | Keeper · Species Studies | Distinct treatment within the Houndour study. |
+| HP-004 | Houndoom G — one retained copy | Keeper · Species Studies | Keep one representative; surplus removed. |
+| HP-005 | Houndour — Great Encounters 69 | Keeper · Species Studies | Different era and composition in a personal line. |
+| HP-006 | Houndour — JP No.228 | Keeper · Species Studies | Vintage Japanese Houndour printing. |
+| HP-007 | Dark Houndoom — Team Rocket Returns reverse holo | Keeper · Species Studies | Distinctive Houndoom treatment. |
+| HP-008 | Houndour — Neo Discovery 39 | Keeper · Species Studies | Early-era species study. |
+| HP-009 | M Houndoom EX — full art | Keeper · Personal Keepers | Directly supports the established personal Houndoom collection. |
+| HP-010 | Houndour — Skyridge 66 | Keeper · Species Studies | e-Card-era Houndour treatment. |
+| HP-011 | Porygon-Z Lv.X | Review · EDGE Watch · Unease | Distorted, unstable composition without direct attack. |
+| HP-012 | Ninetales — JP 20th Anniversary 15 | Keeper · Heritage | Anniversary and vintage-style presentation. |
+| HP-013 | Nidoking — Base Set 11 | Keeper · Heritage | Foundational Base Set holo. |
+| HP-014 | Rayquaza EX — JP constructed-deck artwork | Trade · Core Value | Valuable older EX without a unique keeper role. |
+| HP-015 | Yveltal — Celebrations 19 | Release | Weak treatment and extensive Yveltal coverage. |
+| HP-016 | Genesect — Dream Shine Collection 29 | Review · REDUNDANT · Contemplation | Quiet attention fits but loses to the current page. |
+| HP-017 | Azurill — JP Storm Emeralda 86 | Keeper · Beautiful Misfits | Charming foil image without a canonical home. |
+| HP-018 | Graveler — EX Dragon reverse holo 29 | Keeper · Heritage | EX-era reverse treatment. |
+| HP-019 | Zygarde — XY152 | Review · REDUNDANT · Legendary Bearing | Complete authority, weaker than current encounters. |
+| HP-020 | Suicune — Pikachu Libre deck 14 | Review · REDUNDANT · Elemental Solitude | Valid elemental isolation that loses today. |
+| HP-021 | Mightyena — JP Holon Research 70 | Review · REDUNDANT · Intimidation | Menacing restraint, weaker than incumbents. |
+| HP-022 | Charizard — Secret Wonders 3 | Keeper · Heritage | Older holo with strong era identity. |
+| HP-023 | Gastly — Base Set 50 | Keeper · Heritage | Foundational printing. |
+| HP-024 | Gengar — Legend Maker 5 | Keeper · Species Studies | The close, red-eyed subject reads as Gengar-led menace, not setting-led Unease. |
+| HP-025 | Gengar EX — dark full-art treatment | Keeper · Species Studies | Distinct Gengar treatment. |
+| HP-026 | Gengar ex — modern full-art treatment | Keeper · Species Studies | Separate visual treatment in the Gengar study. |
+| HP-027 | Kirlia pictured; Ralts export slot | Keeper · Beautiful Misfits | Preserve the unusual image while resolving metadata. |
+| HP-028 | Gengar — Diamond & Pearl 27 | Keeper · Species Studies | Older Gengar treatment broadens the chronology. |
+| HP-029 | N — BW100 export slot/full art | Trade · Core Value | Desirable trainer card without a stable collection role. |
+| HP-030 | N — Fates Collide 105a export slot | Trade · Core Value | Strong trade value; no canonical role. |
+| HP-031 | Gardevoir EX — Dragon Frontiers 93 | Keeper · Heritage | EX-era historical significance. |
+| HP-032 | Dialga — Platinum 6 | Review · REDUNDANT · Legendary Bearing | Authoritative fit that loses to current staging. |
+| HP-033 | Dark Blastoise — Team Rocket 20 | Keeper · Heritage | Classic Dark-era card. |
+| HP-034 | Suicune — POP Series 2 #4 | Keeper · Heritage | POP-series release context. |
+| HP-035 | Yveltal ex — JP Nihil Zero 98 | Trade · Core Value | Premium treatment; existing Yveltal coverage is sufficient. |
+| HP-036 | Dhelmise — JP Abyss Eye 88 | Review · EDGE Watch · Unease | The animate wreck/anchor makes the marine setting feel wrong without a direct attack. |
+| HP-037 | Groudon — printing unresolved | Review · REDUNDANT · Legendary Bearing | Same visual idea as the incumbent; compare finish. |
+| HP-038 | Ampharos — Chaos Rising 90 | Review · Existing-theme EDGE · Elemental Solitude | Self-lit isolation creates a credible challenge. |
+| HP-039 | Kyogre — JP Storm Emeralda 80 | Review · REDUNDANT · Elemental Solitude | Valid fit; existing Kyogre coverage is stronger. |
+| HP-040 | Victini — JP premium deck 41 | Review · REDUNDANT · Joyful Action | Bright motion fits but does not improve the page. |
+| HP-041 | Swampert — Great Encounters 9 | Review · REDUNDANT · Enduring Presence | Complete, self-contained form; visually subdued. |
+| HP-042 | Feraligatr Prime — HGSS 108 | Keeper · Heritage | Prime-era touchstone. |
+| HP-043 | Dark Dragonair — Team Rocket Returns 31 | Review · EDGE Watch · Environmental Momentum | Airflow and curving space determine movement. |
+| HP-044 | Umbreon — Dark Explorers 61 | Review · REDUNDANT · Elemental Solitude | Former valid fit displaced by stronger solitude. |
+| HP-045 | Pikachu — McDonald's 020/M-P artwork | Review · Existing-theme EDGE · World of People | Human meal setting is central to the scene. |
+| HP-046 | Pikachu — Pika Charge artwork | Review · REDUNDANT · World of People | Human-made context fits but does not upgrade the page. |
+| HP-047 | Pikachu — WoTC Promo 1 | Keeper · Heritage | Foundational Black Star promo. |
+| HP-048 | Pikachu — Pokémon GO 28 artwork | Review · REDUNDANT · World of People | Community context fits; current cards tell it better. |
+| HP-049 | Pikachu — tree artwork, mapping unresolved | Review · FUTURE SELF | Personal reassessment without active canon competition. |
+| HP-050 | Darkrai — DP24 | Review · REDUNDANT · Intimidation | Dominant subject-led menace fits Intimidation, not the setting-led Unease rule. |
+| HP-051 | Mewtwo EX — BREAKthrough 157 slot | Review · REDUNDANT · Awakened Power | Credible buildup, but another Mewtwo already fills the role. |
+| HP-052 | Lugia — Call of Legends 15 | Review · REDUNDANT · Legendary Bearing | Strong authority limited by extensive Lugia coverage. |
+| HP-053 | Sandshrew — JP McDonald's 16 | Keeper · Heritage | Historically specific regional promo. |
+| HP-054 | Rock-line card / Ditto-Geodude export slot | Keeper · Beautiful Misfits | Identity/disguise ambiguity is interesting outside canon. |
+| HP-055 | Golem — Rising Rivals 23 | Review · REDUNDANT · Enduring Presence | Stable complete form, weaker than incumbents. |
+| HP-056 | Dedenne — Perfect Order 93 | Review · Existing-theme EDGE · Calm in Nature | Warm seasonal setting creates a credible challenge. |
+| HP-057 | Rocket's Zapdos ex — export slot | Keeper · Heritage | Older Japanese Rocket-era ex context. |
+| HP-058 | Torterra Lv.X — JP promo 76 | Review · REDUNDANT · Awakened Power | Transformation signal fits but repeats existing territory. |
+| HP-059 | Kecleon — JP promo/artwork | Keeper · Personal Keepers | Kecleon has established personal significance. |
+| HP-060 | Electrode — JP Tag Bolt 37 | Review · REDUNDANT · Companions | Former group-bond reading lost decisively. |
+| HP-061 | Mareep — Expedition 119 | Review · REDUNDANT · Calm in Nature | Natural ease fits but does not improve the page. |
+| HP-062 | Ampharos — Steam Siege 40 | Review · REDUNDANT · Elemental Solitude | Valid fit; stronger Ampharos challenge exists. |
+| HP-063 | Cyndaquil — JP SoulSilver Collection 14 | Keeper · Heritage | Japanese HGSS-era printing. |
+| HP-064 | M Gengar EX — Phantom Forces 121 slot | Keeper · Species Studies | Major treatment of an owner-significant species. |
+| HP-065 | Yveltal ex — JP full-art copy | Trade · Core Value | Tradeable premium treatment; species already covered. |
+| HP-066 | Shaymin EX — Roaring Skies 106 | Trade · Core Value | Valuable full art that does not improve current placements. |
+| HP-067 | Erika's Bulbasaur — CoroCoro-era artwork | Keeper · Heritage | Vintage Japanese character card. |
+| HP-068 | Venusaur ex — JP, exact set unresolved | Keeper · Heritage | Older Japanese ex presentation. |
+| HP-069 | Pelipper — Deoxys reverse holo 21 | Review · EDGE Watch · Environmental Momentum | Flight and weather visibly determine movement. |
+| HP-070 | Alolan Meowth — JP 115 | Review · Existing-theme EDGE · World of People | Built nighttime setting is central. |
+| HP-071 | Ditto — 30th Celebration promo 106 | Keeper · Beautiful Misfits | Playful identity distortion, not a theme. |
+| HP-072 | Yveltal — Steam Siege 65 | Review · REDUNDANT · On the Attack | Valid attack fit; existing cards are stronger. |
+| HP-073 | Shaymin — Vivid Voltage 15 | Review · REDUNDANT · Calm in Nature | Peaceful natural fit without page improvement. |
+| HP-074 | Gengar EX — printing unresolved | Keeper · Species Studies | Distinct physical Gengar treatment. |
+| HP-075 | Numel [Ditto] — Pokémon GO 13 | Keeper · Beautiful Misfits | Enjoyable disguise oddity outside canon. |
+| HP-076 | Mewtwo — JP 049/DPt-P artwork | Keeper · Heritage | Japanese promotional context. |
+| HP-077 | Pokémon Communication — English | Release | Device-focused artwork has no keeper or canonical path. |
+| HP-078 | Dark Primeape — Team Rocket 43, 1st Edition | Keeper · Heritage | First-edition Dark-era printing. |
+| HP-079 | Piplup — Manaphy & Lucario 5 | Release | Plain artwork with no competitive or keeper role. |
+| HP-080 | Piplup — JP Inferno X 85 | Keeper · Heritage | Stronger Japanese DP-era Piplup. |
+| HP-081 | Mudkip — EX Dragon 65 | Review · EDGE Watch · Environmental Momentum | Water and terrain visibly carry the subject. |
+| HP-082 | Charmander — Team Rocket 50 | Keeper · Heritage | Classic Team Rocket printing. |
+| HP-083 | Shaymin EX — Legendary Treasures RC21 | Keeper · Beautiful Misfits | Attractive Radiant Collection treatment. |
+| HP-084 | Galarian Obstagoon — JP 209 | Review · Existing-theme EDGE · Intimidation | Confrontational posture offers a restrained-threat challenge. |
+| HP-085 | Mudkip — JP Sky-Splitting Charisma 21 | Review · REDUNDANT · Calm in Nature | Natural setting fits; movement signal is weak. |
+| HP-086 | Mewtwo EX — full-art copy | Trade · Core Value | Premium tradeable copy amid extensive Mewtwo coverage. |
+| HP-087 | Groudon EX — Crystal Guardians 93 | Trade · Core Value | Older EX value exceeds its canonical prospects. |
+| HP-088 | Shaymin EX — full-art treatment, exact printing unresolved | Trade · Core Value | Premium Shaymin treatment with no stronger canonical or permanent keeper role. |
+| HP-089 | Rayquaza EX — JP constructed-deck artwork | Trade · Core Value | Desirable older EX; canonical coverage is sufficient. |
+| HP-090 | Gengar ex — modern multicolor treatment | Keeper · Species Studies | Distinct Gengar treatment. |
+| HP-091 | Hoopa EX — Ancient Origins 36/98 | Review · REDUNDANT · On the Attack | The rings frame an expressed attack, but the rebuilt page has no weaker named incumbent. |
+| HP-092 | Kasumi's Tears — JP Leaders' Stadium | Keeper · Heritage | Vintage trainer; executed Heritage decision. |
+| HP-093 | Dratini — Base Set 26/102 | Keeper · Heritage | Corrected Base Set identity. |
+| HP-094 | Rocket's Trap — JP Leaders' Stadium | Keeper · Heritage | Vintage Rocket trainer. |
+| HP-095 | Snorlax VMAX — JP s1H 046/060 | Review · REDUNDANT · On the Attack | Former fit lost directly to Charizard VSTAR. |
+| HP-096 | Ursaring — JP No.217 | Review · REDUNDANT · On the Attack | Former fit lost directly to Lucario. |
+| HP-097 | N's Plan — Black Bolt 163/086 | Keeper · Heritage | Preserve the executed Heritage decision and binder provenance. |
+
 
 ## Destination totals
 
@@ -142,11 +143,11 @@ These are comparison tests, not accepted swaps. A candidate remains EDGE only wh
 
 | Candidate | Target theme | Named incumbent to compare | Test |
 |---|---|---|---|
-| Ampharos — Chaos Rising 90 (`7080-R3C3`) | Elemental Solitude | Cyndaquil (`cyndaquil-02`) | Does self-lit isolation create more environmental scale than the incumbent? |
-| McDonald's Pikachu (`7081-R1C1`) | World of People | Ralts (`ralts-01`) | Does the restaurant setting express human society more clearly under the environmental-emphasis rule? |
-| Dedenne — Perfect Order 93 (`7081-R3C4`) | Calm in Nature | Plusle (`plusle-01`) | Does the autumn setting add enough seasonal range to beat the existing foliage role? |
-| Alolan Meowth — JP 115 (`7082-R3C2`) | World of People | Greavard (`greavard-01`) | Does the inhabited nighttime architecture contribute more than the incumbent street scene? |
-| Galarian Obstagoon — JP 209 (`7088-R2C4`) | Intimidation | Misdreavus (`misdreavus-01`) | Does the confrontational posture communicate restrained threat more clearly? |
+| Dedenne — Perfect Order 93 (`HP-056`) | Calm in Nature | Plusle (`plusle-01`) | Does the autumn setting add enough seasonal range to beat the existing foliage role? |
+| Ampharos — Chaos Rising 90 (`HP-038`) | Elemental Solitude | Cyndaquil (`cyndaquil-02`) | Does self-lit isolation create more environmental scale than the incumbent? |
+| Galarian Obstagoon — JP 209 (`HP-084`) | Intimidation | Misdreavus (`misdreavus-01`) | Does the confrontational posture communicate restrained threat more clearly? |
+| McDonald's Pikachu (`HP-045`) | World of People | Ralts (`ralts-01`) | Does the restaurant setting express human society more clearly under the environmental-emphasis rule? |
+| Alolan Meowth — JP 115 (`HP-070`) | World of People | Greavard (`greavard-01`) | Does the inhabited nighttime architecture contribute more than the incumbent street scene? |
 
 ## Proposed page plan
 
@@ -175,16 +176,19 @@ Three pages, ten occupied pockets and two open event-supplement pockets.
 
 ## Identity checks during the sort
 
-1. One retained Houndoom G exists, but the archived evidence does not identify which photographed copy was removed.
-2. `7080-R1C1` visibly depicts Kirlia while the export calls the slot Ralts.
-3. `7080-R3C2` Groudon requires an in-hand footer/finish comparison.
-4. Several Pikachu positions in `IMG_7081` do not reconcile cleanly to the export; use artwork descriptions until checked.
-5. `7081-R3C1` cannot be conclusively separated between the photographed rock-line identity and the export's Ditto-Geodude entry.
-6. `7081-R3C5` Rocket's Zapdos assignment remains low confidence.
-7. Several Gengar coordinates are physically distinct but not fully mapped to exact export rows.
-8. The moved Tidal Storm Mudkip and retained Sky-Splitting Charisma Mudkip are separate cards.
+The overview photographs and export do not support a reliable card-by-card pocket coordinate map. Resolve these entries from the physical card before final placement:
+
+1. One retained Houndoom G exists, but the archived evidence does not establish which photographed copy was removed.
+2. The photographed Kirlia conflicts with a Ralts export entry; the physical card governs.
+3. Groudon with the Prismatic Evolutions artwork requires a footer and finish comparison.
+4. Several Pikachu artworks do not reconcile cleanly to the export.
+5. One rock-line/disguise entry cannot be conclusively separated from the export's Ditto-Geodude entry.
+6. Rocket's Zapdos ex is catalogue-derived and needs a footer check.
+7. Several Gengar cards are physically distinct but not fully mapped to exact export records.
+8. The moved Tidal Storm Mudkip and retained Sky-Splitting Charisma Mudkip are separate physical cards.
 9. Team Rocket Charmander remains; the removed duplicate was SVP44.
-10. Galarian Obstagoon remains; the adjacent Japanese Misdreavus was the removed duplicate.
+10. Galarian Obstagoon remains; the removed Japanese Misdreavus was a separate card.
+11. Dedenne, Zygarde, Dhelmise, Ditto, Mightyena, and other export-derived identities must be located by card name rather than an inferred photo coordinate.
 
 ## Execution rules
 
