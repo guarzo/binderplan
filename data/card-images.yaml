@@ -10,12 +10,37 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  chansey-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  charmander-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  cubone-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   cyndaquil-01:
     classification: missing
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  greavard-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   horsea-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  mew-01:
     classification: missing
     asset_path: ''
     reviewed: false
@@ -35,12 +60,32 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  quaxly-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  ralts-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   sandshrew-01:
     classification: missing
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  slowpoke-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   snivy-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  squirtle-01:
     classification: missing
     asset_path: ''
     reviewed: false

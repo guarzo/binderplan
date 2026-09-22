@@ -93,3 +93,83 @@ leaves:
         type: published-photo
         source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/calm_nature_1.webp
         observed_on: '2026-08-01'
+- id: v1-04
+  kind: cards
+  physical_leaf: 4
+  chapter: Belonging & Safety
+  chapter_order: 1
+  theme: World of People
+  caption: Shared Worlds. Daily human spaces made fuller by Pokemon participation and coexistence.
+  pockets:
+  - position: 1
+    card_id: mew-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/world_people_1.webp
+        observed_on: '2026-08-01'
+  - position: 2
+    card_id: ralts-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/world_people_1.webp
+        observed_on: '2026-08-01'
+  - position: 3
+    card_id: greavard-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/world_people_1.webp
+        observed_on: '2026-08-01'
+  - position: 4
+    card_id: chansey-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/world_people_1.webp
+        observed_on: '2026-08-01'
+  - position: 5
+    card_id: squirtle-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/world_people_1.webp
+        observed_on: '2026-08-01'
+  - position: 6
+    card_id: slowpoke-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/world_people_1.webp
+        observed_on: '2026-08-01'
+  - position: 7
+    card_id: quaxly-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/world_people_1.webp
+        observed_on: '2026-08-01'
+  - position: 8
+    card_id: charmander-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/world_people_1.webp
+        observed_on: '2026-08-01'
+  - position: 9
+    card_id: cubone-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/world_people_1.webp
+        observed_on: '2026-08-01'
