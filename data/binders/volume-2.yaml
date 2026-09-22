@@ -338,3 +338,90 @@ leaves:
         type: published-photo
         source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/quiet_familiarity_2.webp
         observed_on: '2026-08-01'
+- id: v2-07
+  kind: transition
+  physical_leaf: 7
+  role: chapter
+  heading: Chapter II — Permanence
+- id: v2-08
+  kind: cards
+  physical_leaf: 8
+  chapter: Permanence
+  chapter_order: 2
+  theme: Enduring Presence
+  theme_page: 1
+  caption: Standing Whole. Finished forms holding their power rather than spending it, each presented
+    complete rather than mid-action.
+  pockets:
+  - position: 1
+    card_id: muk-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/enduring_presence_1.webp
+        observed_on: '2026-08-01'
+  - position: 2
+    card_id: vulpix-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/enduring_presence_1.webp
+        observed_on: '2026-08-01'
+  - position: 3
+    card_id: groudon-03
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/enduring_presence_1.webp
+        observed_on: '2026-08-01'
+  - position: 4
+    card_id: steelix-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/enduring_presence_1.webp
+        observed_on: '2026-08-01'
+  - position: 5
+    card_id: blastoise-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/enduring_presence_1.webp
+        observed_on: '2026-08-01'
+  - position: 6
+    card_id: jirachi-03
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/enduring_presence_1.webp
+        observed_on: '2026-08-01'
+  - position: 7
+    card_id: joltik-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/enduring_presence_1.webp
+        observed_on: '2026-08-01'
+  - position: 8
+    card_id: gengar-05
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/enduring_presence_1.webp
+        observed_on: '2026-08-01'
+  - position: 9
+    card_id: bulbasaur-03
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/enduring_presence_1.webp
+        observed_on: '2026-08-01'

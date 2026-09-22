@@ -30,12 +30,22 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  blastoise-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   bulbasaur-01:
     classification: missing
     asset_path: ''
     reviewed: false
     reviewed_on: ''
   bulbasaur-02:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  bulbasaur-03:
     classification: missing
     asset_path: ''
     reviewed: false
@@ -210,6 +220,11 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  gengar-05:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   gengar-mimikyu-01:
     classification: missing
     asset_path: ''
@@ -246,6 +261,11 @@ cards:
     reviewed: false
     reviewed_on: ''
   groudon-02:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  groudon-03:
     classification: missing
     asset_path: ''
     reviewed: false
@@ -300,7 +320,17 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  jirachi-03:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   joltik-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  joltik-02:
     classification: missing
     asset_path: ''
     reviewed: false
@@ -426,6 +456,11 @@ cards:
     reviewed: false
     reviewed_on: ''
   mudkip-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  muk-01:
     classification: missing
     asset_path: ''
     reviewed: false
@@ -635,6 +670,11 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  steelix-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   stufful-01:
     classification: missing
     asset_path: ''
@@ -691,6 +731,11 @@ cards:
     reviewed: false
     reviewed_on: ''
   victini-02:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  vulpix-01:
     classification: missing
     asset_path: ''
     reviewed: false
