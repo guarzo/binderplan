@@ -73,10 +73,13 @@ cards:
     reviewed: false
     reviewed_on: ''
   chansey-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: tcgdex
+    upstream_id: SV6-113
+    classification: exact
+    asset_path: assets/images/cards/chansey-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://assets.tcgdex.net/ja/SV/SV6/113/high.webp
   charizard-01:
     classification: missing
     asset_path: ''
@@ -88,10 +91,18 @@ cards:
     reviewed: false
     reviewed_on: ''
   charmander-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: doubleholo
+    upstream_id: '30829'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    identity_basis: curator visually confirmed printing; DoubleHolo set-name alias
+      differs from registry
+    classification: exact
+    asset_path: assets/images/cards/charmander-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/30829/primary.webp
+    note: Curator visually confirmed Scarlet & Violet Promos is the SVP set-name alias
+      and selected the unstamped Charmander printing.
   charmander-02:
     classification: missing
     asset_path: ''
@@ -108,10 +119,14 @@ cards:
     reviewed: false
     reviewed_on: ''
   cubone-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: doubleholo
+    upstream_id: '49932'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: exact
+    asset_path: assets/images/cards/cubone-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/49932/primary.webp
   cubone-02:
     classification: missing
     asset_path: ''
@@ -294,10 +309,13 @@ cards:
     reviewed: false
     reviewed_on: ''
   greavard-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: tcgdex
+    upstream_id: sv01-214
+    classification: exact
+    asset_path: assets/images/cards/greavard-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://assets.tcgdex.net/en/sv/sv01/214/high.webp
   grotle-01:
     classification: missing
     asset_path: ''
@@ -512,10 +530,13 @@ cards:
     reviewed: false
     reviewed_on: ''
   mew-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: tcgdex
+    upstream_id: svp-053
+    classification: exact
+    asset_path: assets/images/cards/mew-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://assets.tcgdex.net/en/sv/svp/053/high.webp
   mew-02:
     classification: missing
     asset_path: ''
@@ -675,15 +696,21 @@ cards:
     reviewed: false
     reviewed_on: ''
   quaxly-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: tcgdex
+    upstream_id: sv02-206
+    classification: exact
+    asset_path: assets/images/cards/quaxly-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://assets.tcgdex.net/en/sv/sv02/206/high.webp
   ralts-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: tcgdex
+    upstream_id: SV1S-083
+    classification: exact
+    asset_path: assets/images/cards/ralts-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://assets.tcgdex.net/ja/SV/SV1S/083/high.webp
   rayquaza-01:
     classification: missing
     asset_path: ''
@@ -758,10 +785,13 @@ cards:
     reviewed: false
     reviewed_on: ''
   slowpoke-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: tcgdex
+    upstream_id: SV1V-082
+    classification: exact
+    asset_path: assets/images/cards/slowpoke-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://assets.tcgdex.net/ja/SV/SV1V/082/high.webp
   snivy-01:
     provider: tcgdex
     upstream_id: bwp-BW06
@@ -822,10 +852,13 @@ cards:
     reviewed: false
     reviewed_on: ''
   squirtle-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: tcgdex
+    upstream_id: sv07-148
+    classification: exact
+    asset_path: assets/images/cards/squirtle-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://assets.tcgdex.net/en/sv/sv07/148/high.webp
   squirtle-02:
     classification: missing
     asset_path: ''
