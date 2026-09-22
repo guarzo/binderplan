@@ -550,3 +550,21 @@ def test_check_passes_previous_ref_to_git_loader(tmp_path, monkeypatch):
         ["git", "show", "main:data/binders/volume-1.yaml"],
         ["git", "show", "main:data/binders/volume-2.yaml"],
     ]
+
+
+def test_seeded_repository_has_expected_leaf_and_card_counts():
+    root = Path(__file__).parents[1]
+    volumes = [
+        digital_binder.load_yaml(root / "data/binders/volume-1.yaml"),
+        digital_binder.load_yaml(root / "data/binders/volume-2.yaml"),
+    ]
+    leaves = [leaf for volume in volumes for leaf in volume["leaves"]]
+    card_leaves = [leaf for leaf in leaves if leaf["kind"] == "cards"]
+    occupied = [
+        pocket for leaf in card_leaves for pocket in leaf["pockets"]
+        if "card_id" in pocket
+    ]
+    assert len(leaves) == 30
+    assert len(card_leaves) == 19
+    assert len(occupied) == 171
+    assert len({pocket["card_id"] for pocket in occupied}) == 171
