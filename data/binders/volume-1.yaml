@@ -669,3 +669,89 @@ leaves:
         type: published-photo
         source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/legendary_bearing_2.webp
         observed_on: '2026-08-01'
+- id: v1-13
+  kind: transition
+  physical_leaf: 13
+  role: chapter
+  heading: Chapter IV — Threat & Conflict
+  copy: Pressure, then action.
+- id: v1-14
+  kind: cards
+  physical_leaf: 14
+  chapter: Threat & Conflict
+  chapter_order: 4
+  theme: Intimidation
+  caption: Before the Strike. Menace communicated through presence, gaze, and restraint alone.
+  pockets:
+  - position: 1
+    card_id: mewtwo-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/intimidation_1.webp
+        observed_on: '2026-08-01'
+  - position: 2
+    card_id: sabrinas-gaze-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/intimidation_1.webp
+        observed_on: '2026-08-01'
+  - position: 3
+    card_id: typhlosion-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/intimidation_1.webp
+        observed_on: '2026-08-01'
+  - position: 4
+    card_id: misdreavus-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/intimidation_1.webp
+        observed_on: '2026-08-01'
+  - position: 5
+    card_id: lucario-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/intimidation_1.webp
+        observed_on: '2026-08-01'
+  - position: 6
+    card_id: houndour-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/intimidation_1.webp
+        observed_on: '2026-08-01'
+  - position: 7
+    card_id: bewear-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/intimidation_1.webp
+        observed_on: '2026-08-01'
+  - position: 8
+    card_id: marowak-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/intimidation_1.webp
+        observed_on: '2026-08-01'
+  - position: 9
+    card_id: gengar-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/intimidation_1.webp
+        observed_on: '2026-08-01'

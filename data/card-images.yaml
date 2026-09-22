@@ -5,6 +5,11 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  bewear-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   bulbasaur-01:
     classification: missing
     asset_path: ''
@@ -95,6 +100,11 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  gengar-02:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   gengar-mimikyu-01:
     classification: missing
     asset_path: ''
@@ -140,6 +150,11 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  houndour-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   jirachi-01:
     classification: missing
     asset_path: ''
@@ -160,6 +175,11 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  lucario-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   lugia-01:
     classification: missing
     asset_path: ''
@@ -171,6 +191,11 @@ cards:
     reviewed: false
     reviewed_on: ''
   marill-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  marowak-01:
     classification: missing
     asset_path: ''
     reviewed: false
@@ -195,7 +220,17 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  mewtwo-02:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   mewtwo-04:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  misdreavus-01:
     classification: missing
     asset_path: ''
     reviewed: false
@@ -256,6 +291,11 @@ cards:
     reviewed: false
     reviewed_on: ''
   rayquaza-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  sabrinas-gaze-01:
     classification: missing
     asset_path: ''
     reviewed: false
@@ -321,6 +361,11 @@ cards:
     reviewed: false
     reviewed_on: ''
   torterra-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  typhlosion-01:
     classification: missing
     asset_path: ''
     reviewed: false
