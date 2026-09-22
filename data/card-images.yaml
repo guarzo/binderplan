@@ -45,6 +45,11 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  darkrai-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   eevee-01:
     classification: missing
     asset_path: ''
@@ -55,7 +60,22 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  gengar-mimikyu-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   greavard-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  groudon-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  gyarados-01:
     classification: missing
     asset_path: ''
     reviewed: false
@@ -65,12 +85,27 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  houndoom-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   jirachi-01:
     classification: missing
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  jirachi-02:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   latias-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  lugia-01:
     classification: missing
     asset_path: ''
     reviewed: false
@@ -175,7 +210,17 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  umbreon-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   victini-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  walrein-01:
     classification: missing
     asset_path: ''
     reviewed: false

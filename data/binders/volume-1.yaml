@@ -339,3 +339,90 @@ leaves:
         type: published-photo
         source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/joyful_action_1.webp
         observed_on: '2026-08-01'
+- id: v1-08
+  kind: transition
+  physical_leaf: 8
+  role: chapter
+  heading: Chapter III — Power Awakening
+  copy: The moment before release.
+- id: v1-09
+  kind: cards
+  physical_leaf: 9
+  chapter: Power Awakening
+  chapter_order: 3
+  theme: Awakened Power
+  theme_page: 1
+  caption: Gathering. Energy collecting around Pokemon at the moment before release.
+  pockets:
+  - position: 1
+    card_id: walrein-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/awakened_power_1.webp
+        observed_on: '2026-08-01'
+  - position: 2
+    card_id: umbreon-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/awakened_power_1.webp
+        observed_on: '2026-08-01'
+  - position: 3
+    card_id: lugia-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/awakened_power_1.webp
+        observed_on: '2026-08-01'
+  - position: 4
+    card_id: houndoom-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/awakened_power_1.webp
+        observed_on: '2026-08-01'
+  - position: 5
+    card_id: gengar-mimikyu-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/awakened_power_1.webp
+        observed_on: '2026-08-01'
+  - position: 6
+    card_id: darkrai-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/awakened_power_1.webp
+        observed_on: '2026-08-01'
+  - position: 7
+    card_id: gyarados-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/awakened_power_1.webp
+        observed_on: '2026-08-01'
+  - position: 8
+    card_id: jirachi-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/awakened_power_1.webp
+        observed_on: '2026-08-01'
+  - position: 9
+    card_id: groudon-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/awakened_power_1.webp
+        observed_on: '2026-08-01'
