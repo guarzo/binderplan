@@ -6,7 +6,7 @@
 
 ## Summary
 
-Replace the photographed Volume I and Volume II gallery pages with a digital binder assembled from reviewed, locally stored card scans. The public gallery will present true card-page order as open two-page spreads on desktop and one page at a time on mobile.
+Replace the photographed Volume I and Volume II gallery pages with a digital binder assembled from reviewed, locally stored card scans. The public gallery will preserve the physical leaf sequence as open two-page spreads on desktop and one leaf at a time on mobile.
 
 The change removes the ongoing requirement to photograph the binder. It preserves collection truth by distinguishing exact scans, evidence-photo crops, reference images, missing images, and placements that have not been physically confirmed.
 
@@ -27,7 +27,7 @@ The first release covers Volumes I and II. Side binders can migrate in later pro
 - Migrating the Emolga, stamped-card, or trainer-card binders in the first release.
 - Turning the site into an inventory, pricing tool, marketplace, or collection-management application.
 - Adding current location to `docs/card-registry.md`.
-- Reproducing contents cards, chapter divider cards, or the Volume I `Fin` card. Native site structure replaces those physical navigation devices.
+- Reproducing or simulating the physical contents, chapter-divider, or Volume I `Fin` cards. Site-native transition leaves preserve the physical page parity those binder leaves created.
 - Automatically approving card-image matches.
 - Fetching card images from a third party in a visitor's browser.
 
@@ -57,17 +57,19 @@ Create one structured placement manifest per volume under `data/binders/`:
 - `data/binders/volume-1.yaml`
 - `data/binders/volume-2.yaml`
 
-Each manifest contains ordered card pages. Each page records:
+Each manifest contains ordered leaves with `kind: cards` or `kind: transition`. Every leaf records a stable identifier and physical leaf number.
 
-- Stable page identifier
+A card leaf also records:
+
 - Chapter name and order
 - Theme name
 - Theme-local page number when a theme spans multiple leaves
-- Physical leaf number
 - Exactly nine ordered pocket entries
 - Optional page-level curatorial caption
 
-Each pocket stores either an explicit empty state or an intended `card_id` plus placement state:
+A transition leaf records its role (`volume-opening`, `chapter`, or `volume-closing`), native site heading, and optional short curatorial copy. It contains no pockets and does not depict or simulate a physical card. Transition leaves occupy the same sequence positions as the removed physical navigation leaves so later card pages retain their true left/right parity and facing relationships.
+
+Each pocket on a card leaf stores either an explicit empty state or an intended `card_id` plus placement state:
 
 - `status`: `confirmed` or `pending`
 - `evidence`: evidence type, source reference, and observation date
@@ -194,11 +196,11 @@ Migration must update the usage guidance in `docs/card-registry.md` and `docs/le
 
 ### Desktop spread
 
-The primary desktop view shows two physical card pages facing one another. Each page contains a three-by-three pocket grid. A restrained spine, page material, and transparent-pocket treatment provide physical context without imitating photographic glare.
+The primary desktop view shows two physical-sequence leaves facing one another. A card leaf contains a three-by-three pocket grid; a transition leaf uses native typography and whitespace. A restrained spine, page material, and transparent-pocket treatment provide physical context without imitating photographic glare.
 
 Previous and next controls advance one spread at a time. Left and right arrow keys provide equivalent navigation. A stable URL fragment or query state permits direct links to a spread.
 
-Physical card-page order wins over theme grouping. A one-page theme may face the first page of the next theme.
+Physical leaf order wins over theme grouping. A one-page theme may face a transition leaf or the first card leaf of the next theme, according to the actual sequence.
 
 ### Theme and chapter labels
 
@@ -208,11 +210,11 @@ Each leaf receives an independent label above the page containing:
 - Theme
 - Page number where useful
 
-When the theme changes at the spine, the two labels make the transition explicit. The interface does not insert fictional empty pages, dividers, tabs, or cards.
+When the theme changes at the spine, the two labels make the transition explicit. Site-native transition leaves appear where removed physical navigation leaves are necessary to preserve page parity. They use typography and whitespace rather than fictional pockets, tabs, or simulated cards.
 
 ### Mobile presentation
 
-Mobile shows one nine-card page at a time so each card remains legible. It preserves physical order and states the spread relationship, such as `Pages 8-9, viewing page 8`.
+Mobile shows one leaf at a time. Card leaves retain the legible nine-card grid; transition leaves present their native heading and short copy. The sequence preserves physical order and states the spread relationship, such as `Pages 8-9, viewing page 8`.
 
 Visible previous and next controls are required. Swipe may supplement those controls but cannot replace them.
 
@@ -267,7 +269,7 @@ A compact legend appears only when the current spread contains a nonstandard sta
 Production validation fails for:
 
 - Unknown registry IDs
-- Invalid or incomplete nine-pocket page definitions
+- Unknown leaf kinds, invalid transition leaves, or card leaves without exactly nine pocket definitions
 - Duplicate occupied placements
 - Invalid placement states, missing placement evidence, or invalid state transitions
 - Pending placements that define neither a last-observed occupant nor an explicit unknown physical state
@@ -296,14 +298,15 @@ The validator's `--check` mode covers registry generation drift, placement and i
 3. Update registry and ledger usage guidance to name the binder manifests as the current intended-placement and confirmation-state authority.
 4. Populate initial candidate matches from the registry.
 5. Review and approve image matches, updating uncertain registry identity in the same commit whenever review establishes an exact printing.
-6. Implement one representative pilot spread whose two leaves belong to different themes.
-7. Review desktop presentation, mobile presentation, accessibility, source status, and visual quality.
-8. Complete Volume I.
-9. Complete Volume II.
-10. Replace the photographed public gallery only after both volumes pass review.
-11. Remove no evidence files as part of the public replacement.
-12. Treat each side-binder migration as a later scoped project.
-13. Leave slab galleries unchanged.
+6. Seed site-native transition leaves at the physical positions of removed contents, chapter-divider, and closing leaves.
+7. Implement one representative pilot spread whose two leaves demonstrate a transition or theme change while preserving physical parity.
+8. Review desktop presentation, mobile presentation, accessibility, source status, and visual quality.
+9. Complete Volume I.
+10. Complete Volume II.
+11. Replace the photographed public gallery only after both volumes pass review.
+12. Remove no evidence files as part of the public replacement.
+13. Treat each side-binder migration as a later scoped project.
+14. Leave slab galleries unchanged.
 
 The old public experience remains available until the reconstructed volumes are complete, so migration is reversible and does not expose a partially matched binder.
 
@@ -315,7 +318,7 @@ The old public experience remains available until the reconstructed volumes are 
 - Fixtures for exact images, photo crops, proxies, missing images, duplicate placements, and unknown IDs
 - Existing registry test suite
 - Production Hugo build
-- Generated-output checks for nine pockets per page, alt text, unique controls, navigation metadata, and absence of unintended remote image requests
+- Generated-output checks for valid leaf sequence and parity, nine pockets per card leaf, alt text, unique controls, navigation metadata, and absence of unintended remote image requests
 
 ### Manual
 
