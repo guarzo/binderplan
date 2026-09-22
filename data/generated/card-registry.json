@@ -1,0 +1,1577 @@
+{
+  "absol-01": {
+    "id": "absol-01",
+    "species": "Absol",
+    "card_name": "Absol",
+    "language": "EN",
+    "set": "XY",
+    "number": "XY178",
+    "confidence": "confirmed"
+  },
+  "ampharos-01": {
+    "id": "ampharos-01",
+    "species": "Ampharos",
+    "card_name": "ミカンのデンリュウ",
+    "language": "JP",
+    "set": "Pokémon VS",
+    "number": "031/141",
+    "confidence": "confirmed"
+  },
+  "arcanine-01": {
+    "id": "arcanine-01",
+    "species": "Arcanine",
+    "card_name": "Light Arcanine",
+    "language": "EN",
+    "set": "Neo Destiny",
+    "number": "12/105",
+    "confidence": "confirmed"
+  },
+  "audino-01": {
+    "id": "audino-01",
+    "species": "Audino",
+    "card_name": "タブンネ",
+    "language": "JP",
+    "set": "sv11B",
+    "number": "156/086",
+    "confidence": "confirmed"
+  },
+  "beldum-01": {
+    "id": "beldum-01",
+    "species": "Beldum",
+    "card_name": "Beldum",
+    "language": "EN",
+    "set": "SVP",
+    "number": "207",
+    "confidence": "confirmed"
+  },
+  "bewear-01": {
+    "id": "bewear-01",
+    "species": "Bewear",
+    "card_name": "キテルグマ",
+    "language": "JP",
+    "set": "sv6a",
+    "number": "076",
+    "confidence": "confirmed"
+  },
+  "blastoise-01": {
+    "id": "blastoise-01",
+    "species": "Blastoise",
+    "card_name": "カメックス",
+    "language": "JP",
+    "set": "Expansion Pack",
+    "number": "No.009",
+    "confidence": "uncertain"
+  },
+  "bulbasaur-01": {
+    "id": "bulbasaur-01",
+    "species": "Bulbasaur",
+    "card_name": "Bulbasaur",
+    "language": "EN",
+    "set": "Crystal Guardians",
+    "number": "45/100",
+    "confidence": "confirmed"
+  },
+  "bulbasaur-02": {
+    "id": "bulbasaur-02",
+    "species": "Bulbasaur",
+    "card_name": "フシギダネ",
+    "language": "JP",
+    "set": "Corocoro Promo",
+    "number": "No.001",
+    "confidence": "uncertain"
+  },
+  "bulbasaur-03": {
+    "id": "bulbasaur-03",
+    "species": "Bulbasaur",
+    "card_name": "Bulbasaur",
+    "language": "EN",
+    "set": "Expedition",
+    "number": "95",
+    "confidence": "confirmed"
+  },
+  "celebi-01": {
+    "id": "celebi-01",
+    "species": "Celebi",
+    "card_name": "Celebi",
+    "language": "EN",
+    "set": "Neo Revelation",
+    "number": "16/64",
+    "confidence": "confirmed"
+  },
+  "chansey-01": {
+    "id": "chansey-01",
+    "species": "Chansey",
+    "card_name": "ラッキー",
+    "language": "JP",
+    "set": "sv6",
+    "number": "113/101",
+    "confidence": "confirmed"
+  },
+  "charizard-01": {
+    "id": "charizard-01",
+    "species": "Charizard",
+    "card_name": "リザードンG",
+    "language": "JP",
+    "set": "Charizard Half Deck",
+    "number": "002/016",
+    "confidence": "confirmed"
+  },
+  "charizard-02": {
+    "id": "charizard-02",
+    "species": "Charizard",
+    "card_name": "リザードン",
+    "language": "JP",
+    "set": "s8b",
+    "number": "187",
+    "confidence": "confirmed"
+  },
+  "charmander-01": {
+    "id": "charmander-01",
+    "species": "Charmander",
+    "card_name": "Charmander",
+    "language": "EN",
+    "set": "SVP",
+    "number": "44",
+    "confidence": "confirmed"
+  },
+  "charmander-02": {
+    "id": "charmander-02",
+    "species": "Charmander",
+    "card_name": "Charmander",
+    "language": "EN",
+    "set": "Vivid Voltage",
+    "number": "023/185",
+    "confidence": "confirmed"
+  },
+  "charmander-03": {
+    "id": "charmander-03",
+    "species": "Charmander",
+    "card_name": "Charmander",
+    "language": "EN",
+    "set": "Expedition",
+    "number": "98",
+    "confidence": "confirmed"
+  },
+  "cinccino-01": {
+    "id": "cinccino-01",
+    "species": "Cinccino",
+    "card_name": "チラチーノ",
+    "language": "JP",
+    "set": "sv5K",
+    "number": "083/071",
+    "confidence": "confirmed"
+  },
+  "cubone-01": {
+    "id": "cubone-01",
+    "species": "Cubone",
+    "card_name": "卡拉卡拉",
+    "language": "ZH",
+    "set": "Gem Pack 3",
+    "number": "407",
+    "confidence": "confirmed"
+  },
+  "cubone-02": {
+    "id": "cubone-02",
+    "species": "Cubone",
+    "card_name": "カラカラ",
+    "language": "JP",
+    "set": "Flight of Legends",
+    "number": "062/082",
+    "confidence": "confirmed"
+  },
+  "cyndaquil-01": {
+    "id": "cyndaquil-01",
+    "species": "Cyndaquil",
+    "card_name": "Cyndaquil",
+    "language": "EN",
+    "set": "Dragon Frontiers",
+    "number": "45",
+    "confidence": "confirmed"
+  },
+  "cyndaquil-02": {
+    "id": "cyndaquil-02",
+    "species": "Cyndaquil",
+    "card_name": "Cyndaquil",
+    "language": "EN",
+    "set": "Unseen Forces",
+    "number": "54/115",
+    "confidence": "confirmed"
+  },
+  "darkrai-01": {
+    "id": "darkrai-01",
+    "species": "Darkrai",
+    "card_name": "Darkrai EX",
+    "language": "EN",
+    "set": "BREAKpoint",
+    "number": "118/122",
+    "confidence": "confirmed"
+  },
+  "darkrai-02": {
+    "id": "darkrai-02",
+    "species": "Darkrai",
+    "card_name": "ダークライVSTAR",
+    "language": "JP",
+    "set": "s12a",
+    "number": "228/172",
+    "confidence": "confirmed"
+  },
+  "darkrai-03": {
+    "id": "darkrai-03",
+    "species": "Darkrai",
+    "card_name": "Darkrai",
+    "language": "EN",
+    "set": "XY",
+    "number": "XY114",
+    "confidence": "confirmed"
+  },
+  "dawns-stadium-01": {
+    "id": "dawns-stadium-01",
+    "species": "Dawn's Stadium",
+    "card_name": "夜明けのスタジアム",
+    "language": "JP",
+    "set": "Dawn Dash",
+    "number": "",
+    "confidence": "confirmed"
+  },
+  "deoxys-01": {
+    "id": "deoxys-01",
+    "species": "Deoxys",
+    "card_name": "Deoxys",
+    "language": "EN",
+    "set": "Call of Legends",
+    "number": "SL1",
+    "confidence": "confirmed"
+  },
+  "dialga-01": {
+    "id": "dialga-01",
+    "species": "Dialga",
+    "card_name": "ディアルガ",
+    "language": "JP",
+    "set": "11th Movie Commemoration Promo",
+    "number": "8",
+    "confidence": "confirmed"
+  },
+  "ditto-01": {
+    "id": "ditto-01",
+    "species": "Ditto",
+    "card_name": "Ditto",
+    "language": "EN",
+    "set": "XY",
+    "number": "XY40",
+    "confidence": "confirmed"
+  },
+  "dragonair-01": {
+    "id": "dragonair-01",
+    "species": "Dragonair",
+    "card_name": "エリカのハクリュー",
+    "language": "JP",
+    "set": "Leaders' Stadium",
+    "number": "No.148",
+    "confidence": "uncertain"
+  },
+  "dragonite-01": {
+    "id": "dragonite-01",
+    "species": "Dragonite",
+    "card_name": "カイリュー",
+    "language": "JP",
+    "set": "Mystery of the Fossils",
+    "number": "No.149",
+    "confidence": "uncertain"
+  },
+  "dragonite-02": {
+    "id": "dragonite-02",
+    "species": "Dragonite",
+    "card_name": "カイリューex",
+    "language": "JP",
+    "set": "Rulers of the Heavens",
+    "number": "038/054",
+    "confidence": "confirmed"
+  },
+  "dratini-01": {
+    "id": "dratini-01",
+    "species": "Dratini",
+    "card_name": "Dratini",
+    "language": "EN",
+    "set": "Team Rocket",
+    "number": "53/82",
+    "confidence": "confirmed"
+  },
+  "dratini-02": {
+    "id": "dratini-02",
+    "species": "Dratini",
+    "card_name": "Dratini",
+    "language": "EN",
+    "set": "Base Set",
+    "number": "26/102",
+    "confidence": "confirmed"
+  },
+  "eevee-01": {
+    "id": "eevee-01",
+    "species": "Eevee",
+    "card_name": "Eevee",
+    "language": "EN",
+    "set": "SVP",
+    "number": "173",
+    "confidence": "confirmed"
+  },
+  "electrode-01": {
+    "id": "electrode-01",
+    "species": "Electrode",
+    "card_name": "マルマイン",
+    "language": "JP",
+    "set": "sm1",
+    "number": "037/095",
+    "confidence": "photo"
+  },
+  "emolga-01": {
+    "id": "emolga-01",
+    "species": "Emolga",
+    "card_name": "エモンガ",
+    "language": "JP",
+    "set": "sv11B",
+    "number": "116/086",
+    "confidence": "confirmed"
+  },
+  "entei-01": {
+    "id": "entei-01",
+    "species": "Entei",
+    "card_name": "結晶塔のエンテイ",
+    "language": "JP",
+    "set": "10th Movie Commemoration Promo",
+    "number": "",
+    "confidence": "confirmed"
+  },
+  "espeon-01": {
+    "id": "espeon-01",
+    "species": "Espeon",
+    "card_name": "わるいエーフィ",
+    "language": "JP",
+    "set": "Darkness, and to Light",
+    "number": "No.196",
+    "confidence": "uncertain"
+  },
+  "espeon-02": {
+    "id": "espeon-02",
+    "species": "Espeon",
+    "card_name": "太阳伊布GX",
+    "language": "ZH",
+    "set": "CSM1AC",
+    "number": "195/151",
+    "confidence": "confirmed"
+  },
+  "flareon-01": {
+    "id": "flareon-01",
+    "species": "Flareon",
+    "card_name": "Flareon EX",
+    "language": "EN",
+    "set": "Radiant Collection",
+    "number": "RC28/RC32",
+    "confidence": "confirmed"
+  },
+  "gardevoir-01": {
+    "id": "gardevoir-01",
+    "species": "Gardevoir",
+    "card_name": "ザーナイトex",
+    "language": "JP",
+    "set": "Miracle of the Desert",
+    "number": "28",
+    "confidence": "confirmed"
+  },
+  "gardevoir-02": {
+    "id": "gardevoir-02",
+    "species": "Gardevoir",
+    "card_name": "Gardevoir",
+    "language": "EN",
+    "set": "Astral Radiance",
+    "number": "TG05",
+    "confidence": "confirmed"
+  },
+  "gengar-01": {
+    "id": "gengar-01",
+    "species": "Gengar",
+    "card_name": "耿鬼VMAX",
+    "language": "ZH",
+    "set": "s6c",
+    "number": "072/172",
+    "confidence": "photo"
+  },
+  "gengar-02": {
+    "id": "gengar-02",
+    "species": "Gengar",
+    "card_name": "ゲンガー",
+    "language": "JP",
+    "set": "Mystery of the Fossils",
+    "number": "No.094",
+    "confidence": "uncertain"
+  },
+  "gengar-03": {
+    "id": "gengar-03",
+    "species": "Gengar",
+    "card_name": "M Gengar EX",
+    "language": "EN",
+    "set": "Phantom Forces",
+    "number": "35/119",
+    "confidence": "confirmed"
+  },
+  "gengar-04": {
+    "id": "gengar-04",
+    "species": "Gengar",
+    "card_name": "ゲンガー",
+    "language": "JP",
+    "set": "s10a",
+    "number": "074",
+    "confidence": "confirmed"
+  },
+  "gengar-05": {
+    "id": "gengar-05",
+    "species": "Gengar",
+    "card_name": "わるいゲンガー",
+    "language": "JP",
+    "set": "Darkness, and to Light",
+    "number": "No.094",
+    "confidence": "uncertain"
+  },
+  "gengar-mimikyu-01": {
+    "id": "gengar-mimikyu-01",
+    "species": "Gengar & Mimikyu",
+    "card_name": "耿鬼＆谜拟丘GX",
+    "language": "ZH",
+    "set": "CSM2BC",
+    "number": "033/150",
+    "confidence": "confirmed"
+  },
+  "glaceon-01": {
+    "id": "glaceon-01",
+    "species": "Glaceon",
+    "card_name": "Glaceon",
+    "language": "EN",
+    "set": "Majestic Dawn",
+    "number": "20",
+    "confidence": "confirmed"
+  },
+  "golem-01": {
+    "id": "golem-01",
+    "species": "Golem",
+    "card_name": "Golem EX",
+    "language": "EN",
+    "set": "Scarlet & Violet 151",
+    "number": "189/165",
+    "confidence": "confirmed"
+  },
+  "golem-02": {
+    "id": "golem-02",
+    "species": "Golem",
+    "card_name": "ゴローニャex",
+    "language": "JP",
+    "set": "Magma Vs Aqua Two Ambitions",
+    "number": "48",
+    "confidence": "confirmed"
+  },
+  "greavard-01": {
+    "id": "greavard-01",
+    "species": "Greavard",
+    "card_name": "Greavard",
+    "language": "EN",
+    "set": "Scarlet & Violet",
+    "number": "214/198",
+    "confidence": "confirmed"
+  },
+  "grotle-01": {
+    "id": "grotle-01",
+    "species": "Grotle",
+    "card_name": "ハヤシガメ",
+    "language": "JP",
+    "set": "sv5K",
+    "number": "072/071",
+    "confidence": "confirmed"
+  },
+  "groudon-01": {
+    "id": "groudon-01",
+    "species": "Groudon",
+    "card_name": "Groudon",
+    "language": "EN",
+    "set": "Hidden Legends",
+    "number": "102",
+    "confidence": "confirmed"
+  },
+  "groudon-02": {
+    "id": "groudon-02",
+    "species": "Groudon",
+    "card_name": "Groudon",
+    "language": "EN",
+    "set": "Prismatic Evolutions",
+    "number": "049/131",
+    "confidence": "confirmed"
+  },
+  "groudon-03": {
+    "id": "groudon-03",
+    "species": "Groudon",
+    "card_name": "Groudon",
+    "language": "EN",
+    "set": "Primal Clash",
+    "number": "84/100",
+    "confidence": "confirmed"
+  },
+  "gyarados-01": {
+    "id": "gyarados-01",
+    "species": "Gyarados",
+    "card_name": "Dark Gyarados",
+    "language": "EN",
+    "set": "Team Rocket",
+    "number": "25",
+    "confidence": "confirmed"
+  },
+  "hoopa-01": {
+    "id": "hoopa-01",
+    "species": "Hoopa",
+    "card_name": "フーパ",
+    "language": "JP",
+    "set": "XY-P",
+    "number": "155/XY-P",
+    "confidence": "confirmed"
+  },
+  "hoopa-02": {
+    "id": "hoopa-02",
+    "species": "Hoopa",
+    "card_name": "Hoopa EX",
+    "language": "EN",
+    "set": "Ancient Origins",
+    "number": "36/98",
+    "confidence": "confirmed"
+  },
+  "horsea-01": {
+    "id": "horsea-01",
+    "species": "Horsea",
+    "card_name": "Horsea",
+    "language": "EN",
+    "set": "Aquapolis",
+    "number": "84",
+    "confidence": "confirmed"
+  },
+  "houndoom-01": {
+    "id": "houndoom-01",
+    "species": "Houndoom",
+    "card_name": "Houndoom",
+    "language": "EN",
+    "set": "Battle Styles",
+    "number": "179",
+    "confidence": "confirmed"
+  },
+  "houndoom-02": {
+    "id": "houndoom-02",
+    "species": "Houndoom",
+    "card_name": "ヘルガー",
+    "language": "JP",
+    "set": "sv6a",
+    "number": "066/064",
+    "confidence": "confirmed"
+  },
+  "houndoom-03": {
+    "id": "houndoom-03",
+    "species": "Houndoom",
+    "card_name": "Houndoom",
+    "language": "EN",
+    "set": "Neo Revelation",
+    "number": "8/64",
+    "confidence": "confirmed"
+  },
+  "houndoom-04": {
+    "id": "houndoom-04",
+    "species": "Houndoom",
+    "card_name": "Houndoom",
+    "language": "EN",
+    "set": "Neo Discovery",
+    "number": "23/75",
+    "confidence": "confirmed"
+  },
+  "houndour-01": {
+    "id": "houndour-01",
+    "species": "Houndour",
+    "card_name": "Houndour",
+    "language": "EN",
+    "set": "Expedition",
+    "number": "113/165",
+    "confidence": "confirmed"
+  },
+  "houndour-02": {
+    "id": "houndour-02",
+    "species": "Houndour",
+    "card_name": "デルビル",
+    "language": "JP",
+    "set": "sv3",
+    "number": "115",
+    "confidence": "confirmed"
+  },
+  "imposter-professor-oaks-revenge-01": {
+    "id": "imposter-professor-oaks-revenge-01",
+    "species": "Imposter Professor Oak's Revenge",
+    "card_name": "にせオーキドの逆襲",
+    "language": "JP",
+    "set": "Rocket Gang",
+    "number": "",
+    "confidence": "confirmed"
+  },
+  "jirachi-01": {
+    "id": "jirachi-01",
+    "species": "Jirachi",
+    "card_name": "Jirachi",
+    "language": "EN",
+    "set": "XY",
+    "number": "XY67a",
+    "confidence": "confirmed"
+  },
+  "jirachi-02": {
+    "id": "jirachi-02",
+    "species": "Jirachi",
+    "card_name": "基拉祈V",
+    "language": "ZH",
+    "set": "CS5.5C",
+    "number": "36/66",
+    "confidence": "confirmed"
+  },
+  "jirachi-03": {
+    "id": "jirachi-03",
+    "species": "Jirachi",
+    "card_name": "ジラーチex",
+    "language": "JP",
+    "set": "Player's Club",
+    "number": "032/PLAY",
+    "confidence": "confirmed"
+  },
+  "jirachi-04": {
+    "id": "jirachi-04",
+    "species": "Jirachi",
+    "card_name": "七夜のジラーチ",
+    "language": "JP",
+    "set": "Temple of Anger",
+    "number": "",
+    "confidence": "confirmed"
+  },
+  "joltik-01": {
+    "id": "joltik-01",
+    "species": "Joltik",
+    "card_name": "电电虫",
+    "language": "ZH",
+    "set": "CSV5C",
+    "number": "132/129",
+    "confidence": "confirmed"
+  },
+  "joltik-02": {
+    "id": "joltik-02",
+    "species": "Joltik",
+    "card_name": "Joltik",
+    "language": "EN",
+    "set": "Stellar Crown",
+    "number": "150/142",
+    "confidence": "confirmed"
+  },
+  "joltik-03": {
+    "id": "joltik-03",
+    "species": "Joltik",
+    "card_name": "バチュル",
+    "language": "JP",
+    "set": "sv11W",
+    "number": "113/086",
+    "confidence": "confirmed"
+  },
+  "kabuto-01": {
+    "id": "kabuto-01",
+    "species": "Kabuto",
+    "card_name": "Kabuto",
+    "language": "EN",
+    "set": "Fossil",
+    "number": "50/62",
+    "confidence": "confirmed"
+  },
+  "kangaskhan-01": {
+    "id": "kangaskhan-01",
+    "species": "Kangaskhan",
+    "card_name": "ガルーラ",
+    "language": "JP",
+    "set": "Jungle",
+    "number": "No.115",
+    "confidence": "uncertain"
+  },
+  "kasumis-tears-01": {
+    "id": "kasumis-tears-01",
+    "species": "Kasumi's Tears",
+    "card_name": "カスミのなみだ",
+    "language": "JP",
+    "set": "Leaders' Stadium",
+    "number": "",
+    "confidence": "confirmed"
+  },
+  "kingdra-01": {
+    "id": "kingdra-01",
+    "species": "Kingdra",
+    "card_name": "キングドラ",
+    "language": "JP",
+    "set": "Awakening Legends",
+    "number": "No.230",
+    "confidence": "uncertain"
+  },
+  "kyogre-01": {
+    "id": "kyogre-01",
+    "species": "Kyogre",
+    "card_name": "Kyogre ex",
+    "language": "EN",
+    "set": "Crystal Guardians",
+    "number": "95",
+    "confidence": "confirmed"
+  },
+  "latias-01": {
+    "id": "latias-01",
+    "species": "Latias",
+    "card_name": "Latias",
+    "language": "EN",
+    "set": "Latias & Latios 2015",
+    "number": "30/30",
+    "confidence": "confirmed"
+  },
+  "latios-01": {
+    "id": "latios-01",
+    "species": "Latios",
+    "card_name": "ラティオス",
+    "language": "JP",
+    "set": "sv7a",
+    "number": "070/064",
+    "confidence": "confirmed"
+  },
+  "latios-02": {
+    "id": "latios-02",
+    "species": "Latios",
+    "card_name": "ラティオス",
+    "language": "JP",
+    "set": "Holon Phantom",
+    "number": "14",
+    "confidence": "confirmed"
+  },
+  "latios-03": {
+    "id": "latios-03",
+    "species": "Latios",
+    "card_name": "Latios",
+    "language": "EN",
+    "set": "Latios & Latias Trainer Kit",
+    "number": "30/30",
+    "confidence": "confirmed"
+  },
+  "lucario-01": {
+    "id": "lucario-01",
+    "species": "Lucario",
+    "card_name": "ルカリオVSTAR",
+    "language": "JP",
+    "set": "s12a",
+    "number": "226/172",
+    "confidence": "confirmed"
+  },
+  "lugia-01": {
+    "id": "lugia-01",
+    "species": "Lugia",
+    "card_name": "ルギア",
+    "language": "JP",
+    "set": "Gold, Silver, New World",
+    "number": "No.249",
+    "confidence": "uncertain"
+  },
+  "lugia-02": {
+    "id": "lugia-02",
+    "species": "Lugia",
+    "card_name": "ルギアV",
+    "language": "JP",
+    "set": "s12",
+    "number": "079/098",
+    "confidence": "confirmed"
+  },
+  "lugia-03": {
+    "id": "lugia-03",
+    "species": "Lugia",
+    "card_name": "Lugia",
+    "language": "EN",
+    "set": "Neo Revelation",
+    "number": "20/64",
+    "confidence": "confirmed"
+  },
+  "machop-01": {
+    "id": "machop-01",
+    "species": "Machop",
+    "card_name": "Machop",
+    "language": "EN",
+    "set": "Lost Origin",
+    "number": "086/136",
+    "confidence": "confirmed"
+  },
+  "marill-01": {
+    "id": "marill-01",
+    "species": "Marill",
+    "card_name": "Marill",
+    "language": "EN",
+    "set": "Neo Genesis",
+    "number": "66/111",
+    "confidence": "confirmed"
+  },
+  "marowak-01": {
+    "id": "marowak-01",
+    "species": "Marowak",
+    "card_name": "ガラガラ",
+    "language": "JP",
+    "set": "Holon Research",
+    "number": "58",
+    "confidence": "confirmed"
+  },
+  "master-ball-01": {
+    "id": "master-ball-01",
+    "species": "Master Ball",
+    "card_name": "マスターボール",
+    "language": "JP",
+    "set": "City Gym Decks",
+    "number": "",
+    "confidence": "confirmed"
+  },
+  "mew-01": {
+    "id": "mew-01",
+    "species": "Mew",
+    "card_name": "Mew ex",
+    "language": "EN",
+    "set": "SVP",
+    "number": "053",
+    "confidence": "photo"
+  },
+  "mew-02": {
+    "id": "mew-02",
+    "species": "Mew",
+    "card_name": "ミュウ",
+    "language": "JP",
+    "set": "s12a",
+    "number": "187/172",
+    "confidence": "photo"
+  },
+  "mew-03": {
+    "id": "mew-03",
+    "species": "Mew",
+    "card_name": "Mew ex",
+    "language": "EN",
+    "set": "Scarlet & Violet 151",
+    "number": "193/165",
+    "confidence": "confirmed"
+  },
+  "mew-04": {
+    "id": "mew-04",
+    "species": "Mew",
+    "card_name": "ミュウ",
+    "language": "JP",
+    "set": "Mirage's Mew Constructed Starter Deck",
+    "number": "5",
+    "confidence": "confirmed"
+  },
+  "mew-05": {
+    "id": "mew-05",
+    "species": "Mew",
+    "card_name": "ミュウ",
+    "language": "JP",
+    "set": "Mystery of the Fossils",
+    "number": "No.151",
+    "confidence": "uncertain"
+  },
+  "mewtwo-01": {
+    "id": "mewtwo-01",
+    "species": "Mewtwo",
+    "card_name": "Mewtwo",
+    "language": "EN",
+    "set": "WoTC Promos",
+    "number": "12",
+    "confidence": "confirmed"
+  },
+  "mewtwo-02": {
+    "id": "mewtwo-02",
+    "species": "Mewtwo",
+    "card_name": "Mewtwo EX",
+    "language": "EN",
+    "set": "BREAKthrough",
+    "number": "164/162",
+    "confidence": "confirmed"
+  },
+  "mewtwo-03": {
+    "id": "mewtwo-03",
+    "species": "Mewtwo",
+    "card_name": "Mewtwo",
+    "language": "EN",
+    "set": "SVP",
+    "number": "052",
+    "confidence": "confirmed"
+  },
+  "mewtwo-04": {
+    "id": "mewtwo-04",
+    "species": "Mewtwo",
+    "card_name": "Mewtwo",
+    "language": "EN",
+    "set": "Delta Species",
+    "number": "12/113",
+    "confidence": "confirmed"
+  },
+  "mimikyu-01": {
+    "id": "mimikyu-01",
+    "species": "Mimikyu",
+    "card_name": "谜拟丘",
+    "language": "ZH",
+    "set": "CSM2BC",
+    "number": "151/150",
+    "confidence": "confirmed"
+  },
+  "misdreavus-01": {
+    "id": "misdreavus-01",
+    "species": "Misdreavus",
+    "card_name": "ムウマ",
+    "language": "JP",
+    "set": "Awakening Legends",
+    "number": "No.200",
+    "confidence": "uncertain"
+  },
+  "mudkip-01": {
+    "id": "mudkip-01",
+    "species": "Mudkip",
+    "card_name": "Mudkip",
+    "language": "EN",
+    "set": "Crystal Guardians",
+    "number": "58",
+    "confidence": "confirmed"
+  },
+  "muk-01": {
+    "id": "muk-01",
+    "species": "Muk",
+    "card_name": "ベトベトン",
+    "language": "JP",
+    "set": "Mystery of the Fossils",
+    "number": "No.089",
+    "confidence": "uncertain"
+  },
+  "ninetales-01": {
+    "id": "ninetales-01",
+    "species": "Ninetales",
+    "card_name": "キュウコン",
+    "language": "JP",
+    "set": "Expansion Pack",
+    "number": "No.038",
+    "confidence": "uncertain"
+  },
+  "noibat-01": {
+    "id": "noibat-01",
+    "species": "Noibat",
+    "card_name": "オンバット",
+    "language": "JP",
+    "set": "sv9",
+    "number": "111",
+    "confidence": "confirmed"
+  },
+  "ns-plan-01": {
+    "id": "ns-plan-01",
+    "species": "N's Plan",
+    "card_name": "N's Plan",
+    "language": "EN",
+    "set": "Black Bolt",
+    "number": "163/086",
+    "confidence": "confirmed"
+  },
+  "numel-01": {
+    "id": "numel-01",
+    "species": "Numel",
+    "card_name": "Numel",
+    "language": "EN",
+    "set": "EX Dragon",
+    "number": "69/97",
+    "confidence": "confirmed"
+  },
+  "oshawott-01": {
+    "id": "oshawott-01",
+    "species": "Oshawott",
+    "card_name": "Oshawott",
+    "language": "EN",
+    "set": "White Flare",
+    "number": "105",
+    "confidence": "confirmed"
+  },
+  "palkia-01": {
+    "id": "palkia-01",
+    "species": "Palkia",
+    "card_name": "Palkia",
+    "language": "EN",
+    "set": "Great Encounters",
+    "number": "26/106",
+    "confidence": "confirmed"
+  },
+  "pikachu-01": {
+    "id": "pikachu-01",
+    "species": "Pikachu",
+    "card_name": "Pikachu",
+    "language": "EN",
+    "set": "WoTC Promos",
+    "number": "27",
+    "confidence": "confirmed"
+  },
+  "pikachu-02": {
+    "id": "pikachu-02",
+    "species": "Pikachu",
+    "card_name": "Surfing Pikachu",
+    "language": "EN",
+    "set": "Evolutions",
+    "number": "111/108",
+    "confidence": "confirmed"
+  },
+  "pikachu-03": {
+    "id": "pikachu-03",
+    "species": "Pikachu",
+    "card_name": "皮卡丘",
+    "language": "ZH",
+    "set": "CSM2AC",
+    "number": "153/150",
+    "confidence": "confirmed"
+  },
+  "pikachu-04": {
+    "id": "pikachu-04",
+    "species": "Pikachu",
+    "card_name": "Pikachu",
+    "language": "EN",
+    "set": "Pokémon GO",
+    "number": "027/078",
+    "confidence": "photo"
+  },
+  "pikachu-05": {
+    "id": "pikachu-05",
+    "species": "Pikachu",
+    "card_name": "Pikachu",
+    "language": "EN",
+    "set": "Skyridge",
+    "number": "84/144",
+    "confidence": "confirmed"
+  },
+  "pikachu-06": {
+    "id": "pikachu-06",
+    "species": "Pikachu",
+    "card_name": "ピカチュウ",
+    "language": "JP",
+    "set": "SVP",
+    "number": "242",
+    "confidence": "confirmed"
+  },
+  "pikachu-07": {
+    "id": "pikachu-07",
+    "species": "Pikachu",
+    "card_name": "Pikachu",
+    "language": "EN",
+    "set": "POP Series 5",
+    "number": "12/17",
+    "confidence": "confirmed"
+  },
+  "piplup-01": {
+    "id": "piplup-01",
+    "species": "Piplup",
+    "card_name": "Piplup",
+    "language": "EN",
+    "set": "POP Series 6",
+    "number": "15",
+    "confidence": "confirmed"
+  },
+  "plusle-01": {
+    "id": "plusle-01",
+    "species": "Plusle",
+    "card_name": "プラスル",
+    "language": "JP",
+    "set": "Rulers of the Heavens",
+    "number": "26",
+    "confidence": "confirmed"
+  },
+  "professor-elm-01": {
+    "id": "professor-elm-01",
+    "species": "Professor Elm",
+    "card_name": "Professor Elm",
+    "language": "EN",
+    "set": "Neo Genesis",
+    "number": "96/111",
+    "confidence": "confirmed"
+  },
+  "professors-research-01": {
+    "id": "professors-research-01",
+    "species": "Professor's Research",
+    "card_name": "博士の研究",
+    "language": "JP",
+    "set": "S-P",
+    "number": "224/S-P",
+    "confidence": "confirmed"
+  },
+  "quaxly-01": {
+    "id": "quaxly-01",
+    "species": "Quaxly",
+    "card_name": "Quaxly",
+    "language": "EN",
+    "set": "Paldea Evolved",
+    "number": "206",
+    "confidence": "confirmed"
+  },
+  "ralts-01": {
+    "id": "ralts-01",
+    "species": "Ralts",
+    "card_name": "ラルトス",
+    "language": "JP",
+    "set": "sv1S",
+    "number": "083/078",
+    "confidence": "confirmed"
+  },
+  "rayquaza-01": {
+    "id": "rayquaza-01",
+    "species": "Rayquaza",
+    "card_name": "Rayquaza",
+    "language": "EN",
+    "set": "Vivid Voltage",
+    "number": "138/185",
+    "confidence": "confirmed"
+  },
+  "rayquaza-02": {
+    "id": "rayquaza-02",
+    "species": "Rayquaza",
+    "card_name": "Rayquaza ex",
+    "language": "EN",
+    "set": "Nintendo Promos",
+    "number": "39",
+    "confidence": "confirmed"
+  },
+  "reshiram-01": {
+    "id": "reshiram-01",
+    "species": "Reshiram",
+    "card_name": "レシラム",
+    "language": "JP",
+    "set": "sv9",
+    "number": "109/100",
+    "confidence": "confirmed"
+  },
+  "reshiram-02": {
+    "id": "reshiram-02",
+    "species": "Reshiram",
+    "card_name": "Reshiram",
+    "language": "EN",
+    "set": "Black & White",
+    "number": "113/114",
+    "confidence": "confirmed"
+  },
+  "rockets-trap-01": {
+    "id": "rockets-trap-01",
+    "species": "Rocket's Trap",
+    "card_name": "ロケット団のワナ",
+    "language": "JP",
+    "set": "Leaders' Stadium",
+    "number": "",
+    "confidence": "confirmed"
+  },
+  "sabrinas-gaze-01": {
+    "id": "sabrinas-gaze-01",
+    "species": "Sabrina's Gaze",
+    "card_name": "ナツメの眼",
+    "language": "JP",
+    "set": "Challenge From The Darkness",
+    "number": "",
+    "confidence": "confirmed"
+  },
+  "salamence-01": {
+    "id": "salamence-01",
+    "species": "Salamence",
+    "card_name": "ボーマンダex",
+    "language": "JP",
+    "set": "sv9",
+    "number": "119/100",
+    "confidence": "confirmed"
+  },
+  "sandshrew-01": {
+    "id": "sandshrew-01",
+    "species": "Sandshrew",
+    "card_name": "Sandshrew",
+    "language": "EN",
+    "set": "Team Rocket Returns",
+    "number": "74",
+    "confidence": "confirmed"
+  },
+  "sandshrew-02": {
+    "id": "sandshrew-02",
+    "species": "Sandshrew",
+    "card_name": "Sandshrew",
+    "language": "EN",
+    "set": "Delta Species",
+    "number": "82",
+    "confidence": "confirmed"
+  },
+  "scyther-01": {
+    "id": "scyther-01",
+    "species": "Scyther",
+    "card_name": "ストライク",
+    "language": "JP",
+    "set": "Jungle",
+    "number": "No.123",
+    "confidence": "uncertain"
+  },
+  "shaymin-01": {
+    "id": "shaymin-01",
+    "species": "Shaymin",
+    "card_name": "Shaymin EX",
+    "language": "EN",
+    "set": "XY",
+    "number": "148",
+    "confidence": "photo"
+  },
+  "shaymin-02": {
+    "id": "shaymin-02",
+    "species": "Shaymin",
+    "card_name": "シェイミLv.X",
+    "language": "JP",
+    "set": "Galactic's Conquest",
+    "number": "15",
+    "confidence": "confirmed"
+  },
+  "shaymin-03": {
+    "id": "shaymin-03",
+    "species": "Shaymin",
+    "card_name": "Shaymin",
+    "language": "EN",
+    "set": "Destined Rivals",
+    "number": "185/142",
+    "confidence": "confirmed"
+  },
+  "shaymin-04": {
+    "id": "shaymin-04",
+    "species": "Shaymin",
+    "card_name": "Shaymin",
+    "language": "EN",
+    "set": "Unleashed",
+    "number": "8",
+    "confidence": "confirmed"
+  },
+  "slowpoke-01": {
+    "id": "slowpoke-01",
+    "species": "Slowpoke",
+    "card_name": "ヤドン",
+    "language": "JP",
+    "set": "sv1V",
+    "number": "082/078",
+    "confidence": "confirmed"
+  },
+  "snivy-01": {
+    "id": "snivy-01",
+    "species": "Snivy",
+    "card_name": "Snivy",
+    "language": "EN",
+    "set": "BW",
+    "number": "BW06",
+    "confidence": "confirmed"
+  },
+  "snivy-02": {
+    "id": "snivy-02",
+    "species": "Snivy",
+    "card_name": "ツタージャ",
+    "language": "JP",
+    "set": "sv11B",
+    "number": "087/086",
+    "confidence": "confirmed"
+  },
+  "snivy-03": {
+    "id": "snivy-03",
+    "species": "Snivy",
+    "card_name": "Snivy",
+    "language": "EN",
+    "set": "Legendary Treasures",
+    "number": "6/113",
+    "confidence": "confirmed"
+  },
+  "snorlax-01": {
+    "id": "snorlax-01",
+    "species": "Snorlax",
+    "card_name": "カビゴン",
+    "language": "JP",
+    "set": "sv2a",
+    "number": "181",
+    "confidence": "confirmed"
+  },
+  "snorlax-02": {
+    "id": "snorlax-02",
+    "species": "Snorlax",
+    "card_name": "カビゴンVMAX",
+    "language": "JP",
+    "set": "s1H",
+    "number": "046/060",
+    "confidence": "photo"
+  },
+  "snorlax-03": {
+    "id": "snorlax-03",
+    "species": "Snorlax",
+    "card_name": "Snorlax",
+    "language": "EN",
+    "set": "Fire Red & Leaf Green",
+    "number": "15",
+    "confidence": "confirmed"
+  },
+  "spheal-01": {
+    "id": "spheal-01",
+    "species": "Spheal",
+    "card_name": "タマザラシ",
+    "language": "JP",
+    "set": "sv8",
+    "number": "133/106",
+    "confidence": "photo"
+  },
+  "spheal-02": {
+    "id": "spheal-02",
+    "species": "Spheal",
+    "card_name": "タマザラシ",
+    "language": "JP",
+    "set": "Bonds to the End of Time",
+    "number": "016/086",
+    "confidence": "confirmed"
+  },
+  "spheal-03": {
+    "id": "spheal-03",
+    "species": "Spheal",
+    "card_name": "Spheal",
+    "language": "EN",
+    "set": "Mysterious Treasures",
+    "number": "102",
+    "confidence": "confirmed"
+  },
+  "sprigatito-01": {
+    "id": "sprigatito-01",
+    "species": "Sprigatito",
+    "card_name": "Sprigatito",
+    "language": "EN",
+    "set": "Paldea Evolved",
+    "number": "196",
+    "confidence": "confirmed"
+  },
+  "squirtle-01": {
+    "id": "squirtle-01",
+    "species": "Squirtle",
+    "card_name": "Squirtle",
+    "language": "EN",
+    "set": "Stellar Crown",
+    "number": "148/142",
+    "confidence": "confirmed"
+  },
+  "squirtle-02": {
+    "id": "squirtle-02",
+    "species": "Squirtle",
+    "card_name": "Squirtle",
+    "language": "EN",
+    "set": "Expedition",
+    "number": "131",
+    "confidence": "confirmed"
+  },
+  "squirtle-03": {
+    "id": "squirtle-03",
+    "species": "Squirtle",
+    "card_name": "Squirtle",
+    "language": "EN",
+    "set": "Scarlet & Violet 151",
+    "number": "170/165",
+    "confidence": "confirmed"
+  },
+  "steelix-01": {
+    "id": "steelix-01",
+    "species": "Steelix",
+    "card_name": "ハガネール",
+    "language": "JP",
+    "set": "Gold, Silver, New World",
+    "number": "No.208",
+    "confidence": "uncertain"
+  },
+  "stufful-01": {
+    "id": "stufful-01",
+    "species": "Stufful",
+    "card_name": "ヌイコグマ",
+    "language": "JP",
+    "set": "m1S",
+    "number": "075/063",
+    "confidence": "confirmed"
+  },
+  "togedemaru-01": {
+    "id": "togedemaru-01",
+    "species": "Togedemaru",
+    "card_name": "Togedemaru",
+    "language": "EN",
+    "set": "Phantasmal Flames",
+    "number": "104/94",
+    "confidence": "confirmed"
+  },
+  "togepi-01": {
+    "id": "togepi-01",
+    "species": "Togepi",
+    "card_name": "トゲピー",
+    "language": "JP",
+    "set": "Rocket Gang Strikes Back",
+    "number": "56",
+    "confidence": "confirmed"
+  },
+  "torterra-01": {
+    "id": "torterra-01",
+    "species": "Torterra",
+    "card_name": "Torterra",
+    "language": "EN",
+    "set": "Unleashed",
+    "number": "10/95",
+    "confidence": "confirmed"
+  },
+  "typhlosion-01": {
+    "id": "typhlosion-01",
+    "species": "Typhlosion",
+    "card_name": "バクフーン",
+    "language": "JP",
+    "set": "Gold, Silver, New World",
+    "number": "No.157",
+    "confidence": "uncertain"
+  },
+  "typhlosion-02": {
+    "id": "typhlosion-02",
+    "species": "Typhlosion",
+    "card_name": "バクフーン",
+    "language": "JP",
+    "set": "",
+    "number": "No.157",
+    "confidence": "uncertain"
+  },
+  "umbreon-01": {
+    "id": "umbreon-01",
+    "species": "Umbreon",
+    "card_name": "月亮伊布VMAX",
+    "language": "ZH",
+    "set": "CS4AC",
+    "number": "085/132",
+    "confidence": "confirmed"
+  },
+  "umbreon-02": {
+    "id": "umbreon-02",
+    "species": "Umbreon",
+    "card_name": "ブラッキー",
+    "language": "JP",
+    "set": "Crossing The Ruins",
+    "number": "No.197",
+    "confidence": "uncertain"
+  },
+  "umbreon-03": {
+    "id": "umbreon-03",
+    "species": "Umbreon",
+    "card_name": "Umbreon",
+    "language": "EN",
+    "set": "",
+    "number": "61/108",
+    "confidence": "uncertain"
+  },
+  "umbreon-04": {
+    "id": "umbreon-04",
+    "species": "Umbreon",
+    "card_name": "Umbreon",
+    "language": "EN",
+    "set": "Undaunted",
+    "number": "10/90",
+    "confidence": "confirmed"
+  },
+  "umbreon-05": {
+    "id": "umbreon-05",
+    "species": "Umbreon",
+    "card_name": "ブラッキー",
+    "language": "JP",
+    "set": "Magma Vs Aqua Two Ambitions",
+    "number": "062/080",
+    "confidence": "confirmed"
+  },
+  "ursaring-01": {
+    "id": "ursaring-01",
+    "species": "Ursaring",
+    "card_name": "Ursaring",
+    "language": "EN",
+    "set": "Radiant Collection",
+    "number": "RC16/RC25",
+    "confidence": "photo"
+  },
+  "ursaring-02": {
+    "id": "ursaring-02",
+    "species": "Ursaring",
+    "card_name": "リングマ",
+    "language": "JP",
+    "set": "Crossing The Ruins",
+    "number": "No.217",
+    "confidence": "uncertain"
+  },
+  "victini-01": {
+    "id": "victini-01",
+    "species": "Victini",
+    "card_name": "Victini",
+    "language": "EN",
+    "set": "Unified Minds",
+    "number": "26",
+    "confidence": "confirmed"
+  },
+  "victini-02": {
+    "id": "victini-02",
+    "species": "Victini",
+    "card_name": "Victini",
+    "language": "EN",
+    "set": "SVP",
+    "number": "208",
+    "confidence": "confirmed"
+  },
+  "vulpix-01": {
+    "id": "vulpix-01",
+    "species": "Vulpix",
+    "card_name": "Vulpix",
+    "language": "EN",
+    "set": "Aquapolis",
+    "number": "116/147",
+    "confidence": "confirmed"
+  },
+  "walrein-01": {
+    "id": "walrein-01",
+    "species": "Walrein",
+    "card_name": "トドゼルガex",
+    "language": "JP",
+    "set": "Mirage Forest",
+    "number": "29",
+    "confidence": "confirmed"
+  },
+  "yveltal-01": {
+    "id": "yveltal-01",
+    "species": "Yveltal",
+    "card_name": "Yveltal EX",
+    "language": "EN",
+    "set": "XY",
+    "number": "79/146",
+    "confidence": "confirmed"
+  },
+  "yveltal-02": {
+    "id": "yveltal-02",
+    "species": "Yveltal",
+    "card_name": "伊裴尔塔尔",
+    "language": "ZH",
+    "set": "CSV5C",
+    "number": "135/129",
+    "confidence": "confirmed"
+  },
+  "zapdos-01": {
+    "id": "zapdos-01",
+    "species": "Zapdos",
+    "card_name": "サンダー",
+    "language": "JP",
+    "set": "Mystery of the Fossils",
+    "number": "No.145",
+    "confidence": "uncertain"
+  },
+  "zekrom-01": {
+    "id": "zekrom-01",
+    "species": "Zekrom",
+    "card_name": "Zekrom EX",
+    "language": "EN",
+    "set": "Black Bolt",
+    "number": "158/086",
+    "confidence": "confirmed"
+  },
+  "zygarde-01": {
+    "id": "zygarde-01",
+    "species": "Zygarde",
+    "card_name": "ジガルデ",
+    "language": "JP",
+    "set": "Awakening Psychic King",
+    "number": "040/078",
+    "confidence": "confirmed"
+  }
+}
