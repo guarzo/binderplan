@@ -25,7 +25,17 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  cubone-02:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   cyndaquil-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  eevee-01:
     classification: missing
     asset_path: ''
     reviewed: false
@@ -45,12 +55,27 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  mew-02:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   noibat-01:
     classification: missing
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  oshawott-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   pikachu-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  pikachu-06:
     classification: missing
     asset_path: ''
     reviewed: false
@@ -75,6 +100,11 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  shaymin-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   slowpoke-01:
     classification: missing
     asset_path: ''
@@ -85,7 +115,22 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  snorlax-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  sprigatito-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   squirtle-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  stufful-01:
     classification: missing
     asset_path: ''
     reviewed: false

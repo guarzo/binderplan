@@ -173,3 +173,83 @@ leaves:
         type: published-photo
         source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/world_people_1.webp
         observed_on: '2026-08-01'
+- id: v1-05
+  kind: cards
+  physical_leaf: 5
+  chapter: Belonging & Safety
+  chapter_order: 1
+  theme: At Rest
+  caption: Guard Lowered. Sleep, recovery, and the vulnerability of complete disengagement.
+  pockets:
+  - position: 1
+    card_id: mew-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/at_rest_1.webp
+        observed_on: '2026-08-01'
+  - position: 2
+    card_id: stufful-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/at_rest_1.webp
+        observed_on: '2026-08-01'
+  - position: 3
+    card_id: shaymin-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/at_rest_1.webp
+        observed_on: '2026-08-01'
+  - position: 4
+    card_id: eevee-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/at_rest_1.webp
+        observed_on: '2026-08-01'
+  - position: 5
+    card_id: snorlax-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/at_rest_1.webp
+        observed_on: '2026-08-01'
+  - position: 6
+    card_id: pikachu-06
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/at_rest_1.webp
+        observed_on: '2026-08-01'
+  - position: 7
+    card_id: sprigatito-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/at_rest_1.webp
+        observed_on: '2026-08-01'
+  - position: 8
+    card_id: oshawott-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/at_rest_1.webp
+        observed_on: '2026-08-01'
+  - position: 9
+    card_id: cubone-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/at_rest_1.webp
+        observed_on: '2026-08-01'
