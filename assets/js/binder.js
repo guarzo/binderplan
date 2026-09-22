@@ -15,23 +15,28 @@
     const leaves = Array.from(root.querySelectorAll("[data-binder-leaf]"));
     if (!leaves.length) return;
 
-    const controls = document.querySelector("[data-binder-controls]");
+    const controls = root.querySelector("[data-binder-controls]");
     const previous = controls && controls.querySelector("[data-binder-prev]");
     const next = controls && controls.querySelector("[data-binder-next]");
     const position = controls && controls.querySelector("[data-binder-position]");
-    const legend = document.querySelector("[data-binder-legend]");
+    const legend = root.querySelector("[data-binder-legend]");
     const legendItems = legend && legend.querySelector("[data-binder-legend-items]");
-    const dialog = document.querySelector("[data-card-inspector]");
+    const dialog = root.querySelector("[data-card-inspector]");
+    const binderRoots = document.querySelectorAll("[data-binder]");
     const mobile = window.matchMedia("(max-width: 720px)");
     const leafIndex = new Map(leaves.map((leaf, index) => [leaf, index]));
     const idIndex = new Map(leaves.map((leaf, index) => [leaf.dataset.binderLeaf, index]));
     const pocketButtons = Array.from(root.querySelectorAll("button[data-card-id]"));
-    let index = indexFromHash();
+    let index = indexFromHash(0);
     let originFocus = null;
     let inspectedIndex = -1;
 
-    function indexFromHash() {
-      return idIndex.get(leafIdFromHash(window.location.hash)) ?? 0;
+    function indexFromHash(fallback) {
+      return idIndex.get(leafIdFromHash(window.location.hash)) ?? fallback;
+    }
+
+    function ownsCurrentHash() {
+      return idIndex.has(leafIdFromHash(window.location.hash));
     }
 
     function normalizedIndex(candidate) {
@@ -124,15 +129,15 @@
       });
     }
 
-    window.addEventListener("hashchange", () => {
-      index = indexFromHash();
-      render(true);
-    });
-    window.addEventListener("popstate", () => {
-      index = indexFromHash();
-      render(true);
-    });
-    const onMediaChange = () => render(true);
+    function renderHashDestination() {
+      if (!ownsCurrentHash()) return;
+      index = indexFromHash(index);
+      render(false);
+    }
+
+    window.addEventListener("hashchange", renderHashDestination);
+    window.addEventListener("popstate", renderHashDestination);
+    const onMediaChange = () => render(binderRoots.length === 1 || ownsCurrentHash());
     if (mobile.addEventListener) {
       mobile.addEventListener("change", onMediaChange);
     } else {
@@ -140,7 +145,10 @@
     }
 
     document.addEventListener("keydown", (event) => {
-      if (dialog && dialog.open || event.defaultPrevented || isInteractiveTarget(event.target)) return;
+      const eventRoot = event.target instanceof Element && event.target.closest("[data-binder]");
+      const belongsToRoot = eventRoot ? eventRoot === root : binderRoots.length === 1;
+      if (!belongsToRoot || document.querySelector("dialog[open]")
+          || event.defaultPrevented || isInteractiveTarget(event.target)) return;
       if (event.key === "ArrowLeft") {
         event.preventDefault();
         move(-1);
@@ -183,6 +191,9 @@
       }
 
       function renderInspector(button) {
+        const focusedAdjacentControl = [priorCard, nextCard].includes(document.activeElement)
+          ? document.activeElement
+          : null;
         inspectedIndex = pocketButtons.indexOf(button);
         name.textContent = button.dataset.cardName;
         setField("language", button.dataset.cardLanguage);
@@ -199,6 +210,7 @@
         if (button.dataset.inspectorSrc) image.src = button.dataset.inspectorSrc;
         priorCard.disabled = inspectedIndex <= 0;
         nextCard.disabled = inspectedIndex >= pocketButtons.length - 1;
+        if (focusedAdjacentControl && focusedAdjacentControl.disabled) close.focus();
       }
 
       function openInspector(button) {
@@ -262,7 +274,7 @@
       });
     }
 
-    render(true);
+    render(binderRoots.length === 1 || !window.location.hash || ownsCurrentHash());
   }
 
   window.initBinder = initBinder;

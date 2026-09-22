@@ -15,6 +15,7 @@
   {{ errorf "missing card image records" }}
 {{ end }}
 {{ $leaves := $volume.leaves }}
+{{ $inspectorTitleID := printf "card-inspector-title-%s" $binderID }}
 {{ if not $leaves }}
   {{ errorf "binder %q has no leaves" $binderID }}
 {{ end }}
@@ -27,13 +28,13 @@
   {{ $nextLeaf = index $leaves 1 }}
 {{ end }}
 
-<nav class="binder-controls" data-binder-controls aria-label="Binder pages">
-  <a data-binder-prev href="#leaf-{{ $firstLeaf.id }}">Previous</a>
-  <p data-binder-position aria-live="polite"></p>
-  <a data-binder-next href="#leaf-{{ $nextLeaf.id }}">Next</a>
-</nav>
-
 <div class="binder" data-binder="{{ $binderID }}" data-publication-status="{{ $volume.publication_status }}">
+  <nav class="binder-controls" data-binder-controls aria-label="Binder pages">
+    <a data-binder-prev href="#leaf-{{ $firstLeaf.id }}">Previous</a>
+    <p data-binder-position aria-live="polite"></p>
+    <a data-binder-next href="#leaf-{{ $nextLeaf.id }}">Next</a>
+  </nav>
+
   {{ range $index, $leaf := $leaves }}
     {{ if eq (mod $index 2) 0 }}
       {{ $nextIndex := add $index 1 }}
@@ -46,30 +47,30 @@
       </div>
     {{ end }}
   {{ end }}
+
+  <aside class="binder-legend" data-binder-legend hidden aria-live="polite">
+    <p>Active spread notes</p>
+    <ul data-binder-legend-items></ul>
+  </aside>
+
+  <dialog class="card-inspector" data-card-inspector aria-labelledby="{{ $inspectorTitleID }}">
+    <div class="card-inspector-controls">
+      <button type="button" data-card-inspector-close>Close</button>
+      <button type="button" data-card-inspector-previous>Previous card</button>
+      <button type="button" data-card-inspector-next>Next card</button>
+    </div>
+    <img data-card-inspector-image alt="" hidden>
+    <div class="card-inspector-copy">
+      <h2 id="{{ $inspectorTitleID }}" data-card-inspector-name></h2>
+      <dl>
+        <div><dt>Language</dt><dd data-card-inspector-field="language"></dd></div>
+        <div><dt>Set / number</dt><dd data-card-inspector-field="set-number"></dd></div>
+        <div><dt>Binder location</dt><dd data-card-inspector-field="theme-pocket"></dd></div>
+        <div><dt>Image fidelity</dt><dd data-card-inspector-field="image-classification"></dd></div>
+        <div><dt>Image source</dt><dd data-card-inspector-field="image-source"></dd></div>
+        <div><dt>Image notes</dt><dd data-card-inspector-field="image-note"></dd></div>
+        <div><dt>Placement</dt><dd data-card-inspector-field="placement"></dd></div>
+      </dl>
+    </div>
+  </dialog>
 </div>
-
-<aside class="binder-legend" data-binder-legend hidden aria-live="polite">
-  <p>Active spread notes</p>
-  <ul data-binder-legend-items></ul>
-</aside>
-
-<dialog class="card-inspector" data-card-inspector aria-labelledby="card-inspector-title">
-  <div class="card-inspector-controls">
-    <button type="button" data-card-inspector-close>Close</button>
-    <button type="button" data-card-inspector-previous>Previous card</button>
-    <button type="button" data-card-inspector-next>Next card</button>
-  </div>
-  <img data-card-inspector-image alt="" hidden>
-  <div class="card-inspector-copy">
-    <h2 id="card-inspector-title" data-card-inspector-name></h2>
-    <dl>
-      <div><dt>Language</dt><dd data-card-inspector-field="language"></dd></div>
-      <div><dt>Set / number</dt><dd data-card-inspector-field="set-number"></dd></div>
-      <div><dt>Binder location</dt><dd data-card-inspector-field="theme-pocket"></dd></div>
-      <div><dt>Image fidelity</dt><dd data-card-inspector-field="image-classification"></dd></div>
-      <div><dt>Image source</dt><dd data-card-inspector-field="image-source"></dd></div>
-      <div><dt>Image notes</dt><dd data-card-inspector-field="image-note"></dd></div>
-      <div><dt>Placement</dt><dd data-card-inspector-field="placement"></dd></div>
-    </dl>
-  </div>
-</dialog>

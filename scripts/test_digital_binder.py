@@ -1132,6 +1132,44 @@ def rendered_elements(html):
     return parser.elements
 
 
+class BinderOwnershipParser(HTMLParser):
+    VOID_ELEMENTS = {
+        "area", "base", "br", "col", "embed", "hr", "img", "input",
+        "link", "meta", "param", "source", "track", "wbr",
+    }
+    OWNED_ATTRIBUTES = {
+        "data-binder-controls", "data-binder-legend", "data-card-inspector",
+    }
+
+    def __init__(self):
+        super().__init__()
+        self.stack = []
+        self.owners = []
+
+    def handle_starttag(self, tag, attrs):
+        attributes = dict(attrs)
+        owner = attributes.get("data-binder")
+        if owner is None and self.stack:
+            owner = self.stack[-1][1]
+        for attribute in self.OWNED_ATTRIBUTES:
+            if attribute in attributes:
+                self.owners.append((attribute, owner))
+        if tag not in self.VOID_ELEMENTS:
+            self.stack.append((tag, owner))
+
+    def handle_endtag(self, tag):
+        for index in range(len(self.stack) - 1, -1, -1):
+            if self.stack[index][0] == tag:
+                del self.stack[index:]
+                return
+
+
+def binder_owners(html):
+    parser = BinderOwnershipParser()
+    parser.feed(html)
+    return parser.owners
+
+
 def test_rendered_draft_pilot_uses_binder_markup_without_remote_card_images(tmp_path):
     root = Path(__file__).parents[1]
     destination = tmp_path / "public"
@@ -1200,6 +1238,11 @@ def test_rendered_draft_pilot_uses_binder_markup_without_remote_card_images(tmp_
     assert any(tag == "aside" and "data-binder-legend" in attrs
                and "hidden" in attrs for tag, attrs in elements)
     assert any(tag == "dialog" and "data-card-inspector" in attrs for tag, attrs in elements)
+    assert binder_owners(html) == [
+        ("data-binder-controls", "volume-1"),
+        ("data-binder-legend", "volume-1"),
+        ("data-card-inspector", "volume-1"),
+    ]
     inspector_fields = {
         attrs.get("data-card-inspector-field")
         for tag, attrs in elements
@@ -1251,6 +1294,14 @@ def test_binder_interaction_assets_declare_accessible_contract():
     assert 'event.key !== "Tab"' in javascript
     assert 'originFocus.focus()' in javascript
     assert 'image.removeAttribute("src")' in javascript
+    assert 'const controls = root.querySelector("[data-binder-controls]")' in javascript
+    assert 'const legend = root.querySelector("[data-binder-legend]")' in javascript
+    assert 'const dialog = root.querySelector("[data-card-inspector]")' in javascript
+    assert 'document.querySelector("[data-binder-controls]")' not in javascript
+    assert 'document.querySelector("[data-binder-legend]")' not in javascript
+    assert 'document.querySelector("[data-card-inspector]")' not in javascript
+    assert "focusedAdjacentControl.disabled" in javascript
+    assert "focusedAdjacentControl.focus()" not in javascript
     assert "@media (max-width: 720px)" in stylesheet
     assert "@media (prefers-reduced-motion: reduce)" in stylesheet
     assert "transition: none !important" in stylesheet
