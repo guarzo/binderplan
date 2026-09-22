@@ -315,13 +315,15 @@ def seed_existing_proxy_image(root):
 
 
 def approve_args(card_id="abra-01", candidate_index=0, classification="exact", note=None,
-                 confirm_identity=False):
+                 confirm_identity=False, confirm_unnumbered=False, identity_basis=None):
     return argparse.Namespace(
         card_id=card_id,
         candidate_index=candidate_index,
         classification=classification,
         note=note,
         confirm_identity=confirm_identity,
+        confirm_unnumbered=confirm_unnumbered,
+        identity_basis=identity_basis,
     )
 
 
@@ -915,6 +917,242 @@ def test_approve_doubleholo_rejects_exact_when_candidate_identity_is_not_exact(t
     assert not (root / manage_card_images.CARD_ASSET_DIR / "abra-01.webp").exists()
 
 
+def test_approve_doubleholo_confirm_unnumbered_accepts_provider_internal_number_and_records_provenance(
+        tmp_path, monkeypatch, capsys):
+    root = project_fixture(tmp_path)
+    (root / "docs" / "card-registry.md").write_text(
+        registry_doc(confidence="confirmed", set_="Base Set", number=""),
+        encoding="utf-8",
+    )
+    write_current_generated(root)
+    write_doubleholo_candidate_cache(root, "abra-01", [
+        doubleholo_cached_candidate(number="SEALED-5427857")
+    ])
+    requested_urls = []
+
+    def fake_urlopen(request, timeout):
+        requested_urls.append(request.full_url)
+        return FakeBinaryHTTPResponse(image_bytes("PNG"))
+
+    monkeypatch.chdir(root)
+    monkeypatch.setattr(manage_card_images, "urlopen", fake_urlopen)
+
+    assert manage_card_images.approve_doubleholo_command(approve_args(
+        note="Curator compared the unnumbered printing visually.",
+        confirm_unnumbered=True,
+        identity_basis="No collector number printed; curator matched name, language, and set.",
+    )) == 0
+
+    assert requested_urls == ["https://supabase.example/abra.png"]
+    assert "exact_identity_match does not verify edition/variant" in capsys.readouterr().out
+    record = load_images(root)["cards"]["abra-01"]
+    assert record["provider"] == "doubleholo"
+    assert record["classification"] == "exact"
+    assert record["upstream_id"] == "dh-43"
+    assert record["source_url"] == "https://supabase.example/abra.png"
+    assert record["identity_basis"] == (
+        "No collector number printed; curator matched name, language, and set."
+    )
+    assert record["note"] == "Curator compared the unnumbered printing visually."
+    assert "number" not in record
+    assert "local_id" not in record
+
+
+def test_approve_doubleholo_confirm_unnumbered_accepts_blank_candidate_number(
+        tmp_path, monkeypatch):
+    root = project_fixture(tmp_path)
+    (root / "docs" / "card-registry.md").write_text(
+        registry_doc(confidence="confirmed", set_="Base Set", number=""),
+        encoding="utf-8",
+    )
+    write_current_generated(root)
+    write_doubleholo_candidate_cache(root, "abra-01", [doubleholo_cached_candidate(number="")])
+
+    def fake_urlopen(request, timeout):
+        return FakeBinaryHTTPResponse(image_bytes("PNG"))
+
+    monkeypatch.chdir(root)
+    monkeypatch.setattr(manage_card_images, "urlopen", fake_urlopen)
+
+    assert manage_card_images.approve_doubleholo_command(approve_args(
+        note="Curator compared the unnumbered printing visually.",
+        confirm_unnumbered=True,
+        identity_basis="No collector number printed; matched to the registry printing.",
+    )) == 0
+
+    record = load_images(root)["cards"]["abra-01"]
+    assert record["identity_basis"] == "No collector number printed; matched to the registry printing."
+
+
+def test_approve_doubleholo_without_confirm_unnumbered_rejects_unnumbered_exact_before_download(
+        tmp_path, monkeypatch):
+    root = project_fixture(tmp_path)
+    (root / "docs" / "card-registry.md").write_text(
+        registry_doc(confidence="confirmed", set_="Base Set", number=""),
+        encoding="utf-8",
+    )
+    write_current_generated(root)
+    write_doubleholo_candidate_cache(root, "abra-01", [doubleholo_cached_candidate(number="")])
+
+    def fail_if_called(request, timeout):
+        raise AssertionError("default exact approval should reject before image download")
+
+    monkeypatch.chdir(root)
+    monkeypatch.setattr(manage_card_images, "urlopen", fail_if_called)
+
+    try:
+        manage_card_images.approve_doubleholo_command(approve_args())
+    except ValueError as exc:
+        assert "exact identity" in str(exc)
+    else:
+        raise AssertionError("default DoubleHolo exact approval should not accept blank registry number")
+
+    assert not (root / manage_card_images.CARD_ASSET_DIR / "abra-01.webp").exists()
+
+
+def test_approve_doubleholo_confirm_unnumbered_requires_exact_note_and_identity_basis_before_candidate_lookup(
+        tmp_path, monkeypatch):
+    cases = [
+        ("proxy", {"classification": "proxy", "note": "Curator note.", "identity_basis": "Basis."}, "exact"),
+        ("missing-note", {"note": " ", "identity_basis": "Basis."}, "--note"),
+        ("missing-basis", {"note": "Curator note.", "identity_basis": " "}, "--identity-basis"),
+    ]
+    for label, kwargs, expected in cases:
+        root = tmp_path / label
+        root.mkdir()
+        project_fixture(root)
+        (root / "docs" / "card-registry.md").write_text(
+            registry_doc(confidence="confirmed", set_="Base Set", number=""),
+            encoding="utf-8",
+        )
+        write_current_generated(root)
+
+        def fail_if_candidate_loaded(*args, **kwargs):
+            raise AssertionError("approval should reject before reading candidate cache")
+
+        monkeypatch.chdir(root)
+        monkeypatch.setattr(manage_card_images, "_load_doubleholo_candidate", fail_if_candidate_loaded)
+
+        try:
+            manage_card_images.approve_doubleholo_command(approve_args(
+                confirm_unnumbered=True,
+                **kwargs,
+            ))
+        except ValueError as exc:
+            assert expected in str(exc)
+        else:
+            raise AssertionError(f"confirm-unnumbered should reject {label}")
+
+        assert not (root / manage_card_images.CARD_ASSET_DIR / "abra-01.webp").exists()
+
+
+def test_approve_doubleholo_confirm_unnumbered_rejects_confidence_and_number_before_candidate_lookup(
+        tmp_path, monkeypatch):
+    cases = [
+        ("uncertain", registry_doc(confidence="uncertain", set_="Base Set", number=""), "uncertain"),
+        ("photo", registry_doc(confidence="photo", set_="Base Set", number="43/102"), "confirmed"),
+        ("numbered", registry_doc(confidence="confirmed", set_="Base Set", number="43/102"), "blank"),
+    ]
+    for label, registry_text, expected in cases:
+        root = tmp_path / label
+        root.mkdir()
+        project_fixture(root)
+        (root / "docs" / "card-registry.md").write_text(registry_text, encoding="utf-8")
+        write_current_generated(root)
+
+        def fail_if_candidate_loaded(*args, **kwargs):
+            raise AssertionError("approval should reject before reading candidate cache")
+
+        monkeypatch.chdir(root)
+        monkeypatch.setattr(manage_card_images, "_load_doubleholo_candidate", fail_if_candidate_loaded)
+
+        try:
+            manage_card_images.approve_doubleholo_command(approve_args(
+                note="Curator compared the unnumbered printing visually.",
+                confirm_unnumbered=True,
+                identity_basis="No collector number printed; matched to registry.",
+            ))
+        except ValueError as exc:
+            assert expected in str(exc)
+        else:
+            raise AssertionError(f"confirm-unnumbered should reject {label} registry")
+
+        assert not (root / manage_card_images.CARD_ASSET_DIR / "abra-01.webp").exists()
+
+
+def test_approve_doubleholo_confirm_unnumbered_rejects_candidate_mismatches_before_download(
+        tmp_path, monkeypatch):
+    cases = [
+        ("missing-image", doubleholo_cached_candidate(image_url=None), "image_url"),
+        ("printed-number", doubleholo_cached_candidate(number="43"), "number"),
+        ("name", doubleholo_cached_candidate(name="Kadabra", number=""), "unnumbered"),
+        ("language", doubleholo_cached_candidate(language="japanese", number=""), "unnumbered"),
+        ("set", doubleholo_cached_candidate(set_name="Pokemon Jungle", number=""), "unnumbered"),
+    ]
+    for label, candidate, expected in cases:
+        root = tmp_path / label
+        root.mkdir()
+        project_fixture(root)
+        (root / "docs" / "card-registry.md").write_text(
+            registry_doc(confidence="confirmed", set_="Base Set", number=""),
+            encoding="utf-8",
+        )
+        write_current_generated(root)
+        write_doubleholo_candidate_cache(root, "abra-01", [candidate])
+        downloads = []
+
+        def fail_if_called(request, timeout):
+            downloads.append(request.full_url)
+            raise AssertionError("approval should reject before image download")
+
+        monkeypatch.chdir(root)
+        monkeypatch.setattr(manage_card_images, "urlopen", fail_if_called)
+
+        try:
+            manage_card_images.approve_doubleholo_command(approve_args(
+                note="Curator compared the unnumbered printing visually.",
+                confirm_unnumbered=True,
+                identity_basis="No collector number printed; matched to registry.",
+            ))
+        except ValueError as exc:
+            assert expected in str(exc)
+        else:
+            raise AssertionError(f"confirm-unnumbered should reject wrong {label}")
+
+        assert downloads == []
+        assert not (root / manage_card_images.CARD_ASSET_DIR / "abra-01.webp").exists()
+
+
+def test_approve_doubleholo_confirm_unnumbered_cannot_combine_with_confirm_identity_before_lookup(
+        tmp_path, monkeypatch):
+    root = project_fixture(tmp_path)
+    (root / "docs" / "card-registry.md").write_text(
+        registry_doc(confidence="confirmed", set_="Base Set", number=""),
+        encoding="utf-8",
+    )
+    write_current_generated(root)
+
+    def fail_if_candidate_loaded(*args, **kwargs):
+        raise AssertionError("approval should reject before reading candidate cache")
+
+    monkeypatch.chdir(root)
+    monkeypatch.setattr(manage_card_images, "_load_doubleholo_candidate", fail_if_candidate_loaded)
+
+    try:
+        manage_card_images.approve_doubleholo_command(approve_args(
+            note="Curator compared the unnumbered printing visually.",
+            confirm_identity=True,
+            confirm_unnumbered=True,
+            identity_basis="No collector number printed; matched to registry.",
+        ))
+    except ValueError as exc:
+        assert "cannot combine" in str(exc)
+    else:
+        raise AssertionError("confirm-unnumbered should not combine with confirm-identity")
+
+    assert not (root / manage_card_images.CARD_ASSET_DIR / "abra-01.webp").exists()
+
+
 def test_approve_doubleholo_confirm_identity_accepts_set_alias_and_records_provenance(
         tmp_path, monkeypatch, capsys):
     root = project_fixture(tmp_path)
@@ -1073,7 +1311,7 @@ def test_approve_doubleholo_confirm_identity_rejects_missing_image_before_downlo
     assert not (root / manage_card_images.CARD_ASSET_DIR / "abra-01.webp").exists()
 
 
-def test_approve_doubleholo_confirm_identity_is_documented_only_on_doubleholo_help():
+def test_approve_doubleholo_curator_confirmation_flags_are_documented_only_on_doubleholo_help():
     script = Path(__file__).with_name("manage-card-images.py")
     doubleholo_help = subprocess.run(
         ["python3", str(script), "approve-doubleholo", "--help"],
@@ -1089,8 +1327,14 @@ def test_approve_doubleholo_confirm_identity_is_documented_only_on_doubleholo_he
     )
 
     assert "--confirm-identity" in doubleholo_help.stdout
+    assert "--confirm-unnumbered" in doubleholo_help.stdout
+    assert "--identity-basis" in doubleholo_help.stdout
     assert "curator-confirmed" in doubleholo_help.stdout
+    assert "cannot be" in doubleholo_help.stdout
+    assert "combined with --confirm-identity" in doubleholo_help.stdout
     assert "--confirm-identity" not in approve_help.stdout
+    assert "--confirm-unnumbered" not in approve_help.stdout
+    assert "--identity-basis" not in approve_help.stdout
 
 
 def test_approve_doubleholo_rejects_missing_raw_original_with_rerun_search_error(tmp_path, monkeypatch):

@@ -26,6 +26,17 @@ DOUBLEHOLO_VARIANT_WARNING = (
 DOUBLEHOLO_CONFIRMED_IDENTITY_BASIS = (
     "curator visually confirmed printing; DoubleHolo set-name alias differs from registry"
 )
+DOUBLEHOLO_NONPRINTED_NUMBER_MARKERS = {
+    "n-a",
+    "na",
+    "no-number",
+    "none",
+    "non-printed",
+    "nonprinted",
+    "not-numbered",
+    "un-numbered",
+    "unnumbered",
+}
 
 
 class CachedHTTPResponse:
@@ -438,6 +449,44 @@ def _doubleholo_confirmed_identity_record(args, recomputed: dict) -> dict:
     return {"identity_basis": DOUBLEHOLO_CONFIRMED_IDENTITY_BASIS}
 
 
+def _check_doubleholo_confirm_unnumbered_args(args, row: dict) -> None:
+    if args.classification != "exact":
+        raise ValueError("--confirm-unnumbered is only allowed for exact DoubleHolo approvals")
+    if row.get("confidence") != "confirmed":
+        raise ValueError("--confirm-unnumbered requires registry confidence exactly confirmed")
+    if str(row.get("number") or "").strip():
+        raise ValueError("--confirm-unnumbered requires blank registry number")
+    if not str(args.note or "").strip():
+        raise ValueError("--confirm-unnumbered requires a nonempty --note")
+    if not str(getattr(args, "identity_basis", None) or "").strip():
+        raise ValueError("--confirm-unnumbered requires a nonempty --identity-basis")
+
+
+def _doubleholo_number_is_blank_or_nonprinted(number: str | None) -> bool:
+    raw_number = str(number or "").strip()
+    if not raw_number:
+        return True
+    normalized = raw_number.casefold().replace(" ", "-").replace("/", "-")
+    if normalized.startswith("sealed-") and len(normalized) > len("sealed-"):
+        return True
+    return normalized in DOUBLEHOLO_NONPRINTED_NUMBER_MARKERS
+
+
+def _doubleholo_confirmed_unnumbered_record(args, recomputed: dict) -> dict:
+    if not recomputed.get("image_url"):
+        raise ValueError("--confirm-unnumbered requires a recomputed candidate with image_url")
+    if not _doubleholo_number_is_blank_or_nonprinted(recomputed.get("local_id")):
+        raise ValueError(
+            "--confirm-unnumbered requires blank, provider-internal, or nonprinted candidate number"
+        )
+    for field in ("name_match", "language_match", "set_match"):
+        if recomputed.get(field) is not True:
+            raise ValueError(
+                "--confirm-unnumbered requires recomputed name_match, language_match, and set_match"
+            )
+    return {"identity_basis": str(args.identity_basis).strip()}
+
+
 def _approve_remote_candidate(root: Path, args, candidate: dict, record: dict, context: str) -> None:
     image_url = candidate.get("image_url")
     if not image_url:
@@ -477,16 +526,23 @@ def approve_doubleholo_command(args) -> int:
     root = Path.cwd()
     row = _require_card(root, args.card_id)
     confirm_identity = bool(getattr(args, "confirm_identity", False))
+    confirm_unnumbered = bool(getattr(args, "confirm_unnumbered", False))
+    if confirm_identity and confirm_unnumbered:
+        raise ValueError("--confirm-unnumbered cannot combine with --confirm-identity")
     _check_classification(row, args.classification, args.note)
     if confirm_identity and args.classification != "exact":
         raise ValueError("--confirm-identity is only allowed for exact DoubleHolo approvals")
     if confirm_identity and not str(args.note or "").strip():
         raise ValueError("--confirm-identity requires a nonempty --note")
+    if confirm_unnumbered:
+        _check_doubleholo_confirm_unnumbered_args(args, row)
     candidate = _load_doubleholo_candidate(root, args.card_id, args.candidate_index)
     recomputed = _recomputed_doubleholo_candidate(row, candidate)
     identity_record = {}
     if confirm_identity:
         identity_record = _doubleholo_confirmed_identity_record(args, recomputed)
+    elif confirm_unnumbered:
+        identity_record = _doubleholo_confirmed_unnumbered_record(args, recomputed)
     elif args.classification == "exact" and recomputed.get("exact_identity_match") is not True:
         raise ValueError("exact DoubleHolo approval requires a recomputed exact identity match")
     print(DOUBLEHOLO_VARIANT_WARNING)
@@ -581,7 +637,8 @@ def build_parser() -> argparse.ArgumentParser:
         description=(
             "Approve an owner-authorized DoubleHolo image. Use --confirm-identity only for "
             "curator-confirmed exact approvals where DoubleHolo's set name is an alias for the "
-            "registry identity."
+            "registry identity. Use --confirm-unnumbered only for curator-confirmed exact "
+            "approvals of genuinely unnumbered registry printings."
         ),
     )
     approve_doubleholo.add_argument("card_id")
@@ -595,6 +652,19 @@ def build_parser() -> argparse.ArgumentParser:
             "permit a curator-confirmed exact DoubleHolo set-name alias mismatch; requires "
             "--note and cannot override number, language, name, image, uncertain registry, or variants"
         ),
+    )
+    approve_doubleholo.add_argument(
+        "--confirm-unnumbered",
+        action="store_true",
+        help=(
+            "permit a curator-confirmed exact DoubleHolo scan for a genuinely unnumbered "
+            "confirmed registry printing; requires --note and --identity-basis, and cannot be "
+            "combined with --confirm-identity"
+        ),
+    )
+    approve_doubleholo.add_argument(
+        "--identity-basis",
+        help="curator provenance explaining the unnumbered printing identity",
     )
     approve_doubleholo.set_defaults(func=approve_doubleholo_command)
 
