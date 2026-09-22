@@ -60,6 +60,11 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  dragonite-02:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   eevee-01:
     classification: missing
     asset_path: ''
@@ -75,6 +80,16 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  espeon-02:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  gardevoir-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   gengar-01:
     classification: missing
     asset_path: ''
@@ -86,6 +101,11 @@ cards:
     reviewed: false
     reviewed_on: ''
   golem-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  golem-02:
     classification: missing
     asset_path: ''
     reviewed: false
@@ -165,6 +185,11 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  mew-03:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   mewtwo-01:
     classification: missing
     asset_path: ''
@@ -175,7 +200,17 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  ninetales-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   noibat-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  ns-plan-01:
     classification: missing
     asset_path: ''
     reviewed: false
@@ -295,6 +330,11 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  umbreon-04:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   victini-01:
     classification: missing
     asset_path: ''
@@ -311,6 +351,11 @@ cards:
     reviewed: false
     reviewed_on: ''
   zapdos-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  zekrom-01:
     classification: missing
     asset_path: ''
     reviewed: false

@@ -588,3 +588,84 @@ leaves:
         type: published-photo
         source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/legendary_bearing_1.webp
         observed_on: '2026-08-01'
+- id: v1-12
+  kind: cards
+  physical_leaf: 12
+  chapter: Power Awakening
+  chapter_order: 3
+  theme: Legendary Bearing
+  theme_page: 2
+  caption: The Encounter. Power made immediate through commanding posture, scale, and revelation.
+  pockets:
+  - position: 1
+    card_id: umbreon-04
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/legendary_bearing_2.webp
+        observed_on: '2026-08-01'
+  - position: 2
+    card_id: ns-plan-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/legendary_bearing_2.webp
+        observed_on: '2026-08-01'
+  - position: 3
+    card_id: mew-03
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/legendary_bearing_2.webp
+        observed_on: '2026-08-01'
+  - position: 4
+    card_id: gardevoir-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/legendary_bearing_2.webp
+        observed_on: '2026-08-01'
+  - position: 5
+    card_id: dragonite-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/legendary_bearing_2.webp
+        observed_on: '2026-08-01'
+  - position: 6
+    card_id: golem-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/legendary_bearing_2.webp
+        observed_on: '2026-08-01'
+  - position: 7
+    card_id: zekrom-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/legendary_bearing_2.webp
+        observed_on: '2026-08-01'
+  - position: 8
+    card_id: ninetales-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/legendary_bearing_2.webp
+        observed_on: '2026-08-01'
+  - position: 9
+    card_id: espeon-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/legendary_bearing_2.webp
+        observed_on: '2026-08-01'
