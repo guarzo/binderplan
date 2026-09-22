@@ -60,6 +60,11 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  charmander-03:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   cubone-01:
     classification: missing
     asset_path: ''
@@ -111,6 +116,11 @@ cards:
     reviewed: false
     reviewed_on: ''
   dratini-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  dratini-02:
     classification: missing
     asset_path: ''
     reviewed: false
@@ -355,6 +365,11 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  mew-04:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   mewtwo-01:
     classification: missing
     asset_path: ''
@@ -400,6 +415,11 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  numel-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   oshawott-01:
     classification: missing
     asset_path: ''
@@ -430,7 +450,17 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  pikachu-05:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   pikachu-06:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  piplup-01:
     classification: missing
     asset_path: ''
     reviewed: false
@@ -505,6 +535,11 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  shaymin-03:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   slowpoke-01:
     classification: missing
     asset_path: ''
@@ -516,6 +551,11 @@ cards:
     reviewed: false
     reviewed_on: ''
   snivy-02:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  snivy-03:
     classification: missing
     asset_path: ''
     reviewed: false
@@ -551,6 +591,11 @@ cards:
     reviewed: false
     reviewed_on: ''
   squirtle-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  squirtle-02:
     classification: missing
     asset_path: ''
     reviewed: false

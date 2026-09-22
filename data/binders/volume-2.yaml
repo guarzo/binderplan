@@ -175,3 +175,84 @@ leaves:
         type: published-photo
         source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/companions_2.webp
         observed_on: '2026-08-01'
+- id: v2-05
+  kind: cards
+  physical_leaf: 5
+  chapter: Nearness
+  chapter_order: 1
+  theme: Quiet Familiarity
+  theme_page: 1
+  caption: Gentle Company. Calm companionship across gardens, paths, and shared outdoor spaces.
+  pockets:
+  - position: 1
+    card_id: charmander-03
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/quiet_familiarity_1.webp
+        observed_on: '2026-08-01'
+  - position: 2
+    card_id: mew-04
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/quiet_familiarity_1.webp
+        observed_on: '2026-08-01'
+  - position: 3
+    card_id: snivy-03
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/quiet_familiarity_1.webp
+        observed_on: '2026-08-01'
+  - position: 4
+    card_id: pikachu-05
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/quiet_familiarity_1.webp
+        observed_on: '2026-08-01'
+  - position: 5
+    card_id: numel-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/quiet_familiarity_1.webp
+        observed_on: '2026-08-01'
+  - position: 6
+    card_id: dratini-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/quiet_familiarity_1.webp
+        observed_on: '2026-08-01'
+  - position: 7
+    card_id: piplup-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/quiet_familiarity_1.webp
+        observed_on: '2026-08-01'
+  - position: 8
+    card_id: shaymin-03
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/quiet_familiarity_1.webp
+        observed_on: '2026-08-01'
+  - position: 9
+    card_id: squirtle-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/quiet_familiarity_1.webp
+        observed_on: '2026-08-01'
