@@ -179,7 +179,7 @@ The column is left as recorded rather than rewritten: `first_seen` is provenance
 | snorlax-01 | Snorlax | カビゴン | JP | sv2a | 181 | confirmed | at_rest_1.webp 2026-08-01 | set/number from owner's doubleholo export 2026-09-18, denominator not recorded |
 | snorlax-02 | Snorlax | カビゴンVMAX | JP | s1H | 046/060 | photo | on_attack_1.webp 2026-08-01 | VMAX, distinct from snorlax-01 |
 | snorlax-03 | Snorlax | Snorlax | EN | Fire Red & Leaf Green | 15 | confirmed | enduring_presence_1.webp 2026-08-01 | Rest Up ability, Collapse/Toss and Turn attacks, distinct from snorlax-01/02, set/number from owner's doubleholo export 2026-09-18, denominator not recorded |
-| spheal-01 | Spheal | タマザラシ | JP | sv8 | 133/106 | photo | joyful_action_1.webp 2026-08-01 | AR rarity |
+| spheal-01 | Spheal | タマザラシ | JP | sv8 | 111/106 | confirmed | joyful_action_1.webp 2026-08-01 | AR rarity; owner corrected number 2026-09-22; DoubleHolo card 37220 matches JP sv8 Super Electric Breaker AR |
 | spheal-02 | Spheal | タマザラシ | JP | Bonds to the End of Time | 016/086 | confirmed | on_attack_1.webp 2026-08-01 | Lv.18 print, distinct from spheal-01 |
 | spheal-03 | Spheal | Spheal | EN | Mysterious Treasures | 102 | confirmed | contemplation_1.webp 2026-08-01 | Lv.17 print, distinct from spheal-01/02, set/number from owner's doubleholo export 2026-09-18, denominator not recorded |
 | sprigatito-01 | Sprigatito | Sprigatito | EN | Paldea Evolved | 196 | confirmed | at_rest_1.webp 2026-08-01 | set/number from owner's doubleholo export 2026-09-18, denominator not recorded |

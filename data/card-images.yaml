@@ -58,10 +58,12 @@ cards:
     reviewed_on: '2026-09-22'
     source_url: https://assets.tcgdex.net/en/ex/ex14/45/high.webp
   bulbasaur-02:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    classification: photo-crop
+    asset_path: assets/images/cards/bulbasaur-02.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-22/owner-supplied-card-images/bulbasaur-corocoro.webp
   bulbasaur-03:
     classification: missing
     asset_path: ''
@@ -104,10 +106,14 @@ cards:
     note: Curator visually confirmed Scarlet & Violet Promos is the SVP set-name alias
       and selected the unstamped Charmander printing.
   charmander-02:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: doubleholo
+    upstream_id: '21592'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: exact
+    asset_path: assets/images/cards/charmander-02.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/21592/primary.webp
   charmander-03:
     classification: missing
     asset_path: ''
@@ -230,10 +236,18 @@ cards:
     reviewed_on: '2026-09-22'
     source_url: https://assets.tcgdex.net/en/sv/svp/173/high.webp
   emolga-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: doubleholo
+    upstream_id: '31409'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    identity_basis: curator visually confirmed printing; DoubleHolo set-name alias
+      differs from registry
+    classification: exact
+    asset_path: assets/images/cards/emolga-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/31409/primary.webp
+    note: Curator visually confirmed Black Bolt is the sv11B set-name alias and the
+      116/086 AR printing matches the archived leaf.
   entei-01:
     classification: missing
     asset_path: ''
@@ -405,10 +419,13 @@ cards:
     reviewed: false
     reviewed_on: ''
   jirachi-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: tcgdex
+    upstream_id: xyp-XY67a
+    classification: exact
+    asset_path: assets/images/cards/jirachi-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://assets.tcgdex.net/en/xy/xyp/XY67a/high.webp
   jirachi-02:
     classification: missing
     asset_path: ''
@@ -471,10 +488,12 @@ cards:
     upstream_id: ex14-95
     source_url: https://assets.tcgdex.net/en/ex/ex14/95/high.webp
   latias-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    classification: photo-crop
+    asset_path: assets/images/cards/latias-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-22/owner-supplied-card-images/latias-30.jpg
   latios-01:
     classification: exact
     asset_path: assets/images/cards/latios-01.webp
@@ -522,10 +541,13 @@ cards:
     reviewed: false
     reviewed_on: ''
   marill-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: tcgdex
+    upstream_id: neo1-66
+    classification: exact
+    asset_path: assets/images/cards/marill-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://assets.tcgdex.net/en/neo/neo1/66/high.webp
   marowak-01:
     classification: missing
     asset_path: ''
@@ -655,10 +677,13 @@ cards:
     reviewed_on: '2026-09-22'
     source_url: https://assets.tcgdex.net/en/base/basep/27/high.webp
   pikachu-02:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: tcgdex
+    upstream_id: xy12-111
+    classification: exact
+    asset_path: assets/images/cards/pikachu-02.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://assets.tcgdex.net/en/xy/xy12/111/high.webp
   pikachu-03:
     classification: missing
     asset_path: ''
@@ -855,10 +880,18 @@ cards:
     reviewed: false
     reviewed_on: ''
   spheal-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: doubleholo
+    upstream_id: '37220'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    identity_basis: curator visually confirmed printing; DoubleHolo set-name alias
+      differs from registry
+    classification: exact
+    asset_path: assets/images/cards/spheal-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/37220/primary.webp
+    note: Curator visually confirmed Super Electric Breaker is the sv8 set-name alias
+      and the 111/106 AR printing matches the archived leaf.
   spheal-02:
     classification: missing
     asset_path: ''
@@ -965,10 +998,13 @@ cards:
     reviewed: false
     reviewed_on: ''
   victini-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: tcgdex
+    upstream_id: sm11-26
+    classification: exact
+    asset_path: assets/images/cards/victini-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://assets.tcgdex.net/en/sm/sm11/26/high.webp
   victini-02:
     classification: photo-crop
     asset_path: assets/images/cards/victini-02.webp
