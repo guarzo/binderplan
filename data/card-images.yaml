@@ -275,6 +275,11 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  hoopa-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   horsea-01:
     classification: missing
     asset_path: ''
@@ -291,6 +296,11 @@ cards:
     reviewed: false
     reviewed_on: ''
   houndoom-03:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  houndoom-04:
     classification: missing
     asset_path: ''
     reviewed: false
@@ -395,12 +405,22 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  machop-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   marill-01:
     classification: missing
     asset_path: ''
     reviewed: false
     reviewed_on: ''
   marowak-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  master-ball-01:
     classification: missing
     asset_path: ''
     reviewed: false
@@ -421,6 +441,11 @@ cards:
     reviewed: false
     reviewed_on: ''
   mew-04:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  mew-05:
     classification: missing
     asset_path: ''
     reviewed: false
@@ -565,6 +590,11 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  reshiram-02:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   rockets-trap-01:
     classification: missing
     asset_path: ''
@@ -585,6 +615,11 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  sandshrew-02:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   scyther-01:
     classification: missing
     asset_path: ''
@@ -601,6 +636,11 @@ cards:
     reviewed: false
     reviewed_on: ''
   shaymin-03:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  shaymin-04:
     classification: missing
     asset_path: ''
     reviewed: false
@@ -761,6 +801,11 @@ cards:
     reviewed: false
     reviewed_on: ''
   zekrom-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  zygarde-01:
     classification: missing
     asset_path: ''
     reviewed: false

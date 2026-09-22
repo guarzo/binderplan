@@ -425,3 +425,85 @@ leaves:
         type: published-photo
         source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/enduring_presence_1.webp
         observed_on: '2026-08-01'
+- id: v2-09
+  kind: cards
+  physical_leaf: 9
+  chapter: Permanence
+  chapter_order: 2
+  theme: Enduring Presence
+  theme_page: 2
+  caption: Contained Power. Force held rather than spent — sealed in a Master Ball, ringed by Hoopa, or
+    simply standing whole.
+  pockets:
+  - position: 1
+    card_id: machop-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/enduring_presence_2.webp
+        observed_on: '2026-08-01'
+  - position: 2
+    card_id: mew-05
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/enduring_presence_2.webp
+        observed_on: '2026-08-01'
+  - position: 3
+    card_id: zygarde-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/enduring_presence_2.webp
+        observed_on: '2026-08-01'
+  - position: 4
+    card_id: reshiram-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/enduring_presence_2.webp
+        observed_on: '2026-08-01'
+  - position: 5
+    card_id: hoopa-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/enduring_presence_2.webp
+        observed_on: '2026-08-01'
+  - position: 6
+    card_id: master-ball-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/enduring_presence_2.webp
+        observed_on: '2026-08-01'
+  - position: 7
+    card_id: sandshrew-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/enduring_presence_2.webp
+        observed_on: '2026-08-01'
+  - position: 8
+    card_id: houndoom-04
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/enduring_presence_2.webp
+        observed_on: '2026-08-01'
+  - position: 9
+    card_id: shaymin-04
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/enduring_presence_2.webp
+        observed_on: '2026-08-01'
