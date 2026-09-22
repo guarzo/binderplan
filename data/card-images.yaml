@@ -125,6 +125,16 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  dawns-stadium-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  deoxys-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   dialga-01:
     classification: missing
     asset_path: ''
@@ -280,6 +290,11 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  hoopa-02:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   horsea-01:
     classification: missing
     asset_path: ''
@@ -335,6 +350,11 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  jirachi-04:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   joltik-01:
     classification: missing
     asset_path: ''
@@ -350,7 +370,17 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  kabuto-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   kangaskhan-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  kasumis-tears-01:
     classification: missing
     asset_path: ''
     reviewed: false
@@ -550,6 +580,11 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  pikachu-07:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   piplup-01:
     classification: missing
     asset_path: ''
@@ -581,6 +616,11 @@ cards:
     reviewed: false
     reviewed_on: ''
   rayquaza-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  rayquaza-02:
     classification: missing
     asset_path: ''
     reviewed: false
@@ -706,6 +746,11 @@ cards:
     reviewed: false
     reviewed_on: ''
   squirtle-02:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  squirtle-03:
     classification: missing
     asset_path: ''
     reviewed: false

@@ -507,3 +507,89 @@ leaves:
         type: published-photo
         source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/enduring_presence_2.webp
         observed_on: '2026-08-01'
+- id: v2-10
+  kind: transition
+  physical_leaf: 10
+  role: chapter
+  heading: Chapter III — Passage
+  copy: Space between moments.
+- id: v2-11
+  kind: cards
+  physical_leaf: 11
+  chapter: Passage
+  chapter_order: 3
+  theme: Threshold
+  caption: At the Edge. Dawn, shoreline, deep space, and the fossil carried out of one age into another.
+  pockets:
+  - position: 1
+    card_id: dawns-stadium-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/threshold_1.webp
+        observed_on: '2026-08-01'
+  - position: 2
+    card_id: pikachu-07
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/threshold_1.webp
+        observed_on: '2026-08-01'
+  - position: 3
+    card_id: squirtle-03
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/threshold_1.webp
+        observed_on: '2026-08-01'
+  - position: 4
+    card_id: rayquaza-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/threshold_1.webp
+        observed_on: '2026-08-01'
+  - position: 5
+    card_id: deoxys-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/threshold_1.webp
+        observed_on: '2026-08-01'
+  - position: 6
+    card_id: jirachi-04
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/threshold_1.webp
+        observed_on: '2026-08-01'
+  - position: 7
+    card_id: kasumis-tears-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/threshold_1.webp
+        observed_on: '2026-08-01'
+  - position: 8
+    card_id: kabuto-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/threshold_1.webp
+        observed_on: '2026-08-01'
+  - position: 9
+    card_id: hoopa-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/threshold_1.webp
+        observed_on: '2026-08-01'
