@@ -1,4 +1,95 @@
 version: 1
 volume_id: volume-1
 publication_status: draft
-leaves: []
+leaves:
+- id: v1-01
+  kind: transition
+  physical_leaf: 1
+  role: volume-opening
+  heading: Volume I
+  copy: Lived Experience — how Pokemon exist in the world.
+- id: v1-02
+  kind: transition
+  physical_leaf: 2
+  role: chapter
+  heading: Chapter I — Belonging & Safety
+- id: v1-03
+  kind: cards
+  physical_leaf: 3
+  chapter: Belonging & Safety
+  chapter_order: 1
+  theme: Calm in Nature
+  caption: Ease in the Wild. Pokemon held comfortably by landscape, weather, and open space.
+  pockets:
+  - position: 1
+    card_id: sandshrew-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/calm_nature_1.webp
+        observed_on: '2026-08-01'
+  - position: 2
+    card_id: noibat-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/calm_nature_1.webp
+        observed_on: '2026-08-01'
+  - position: 3
+    card_id: audino-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/calm_nature_1.webp
+        observed_on: '2026-08-01'
+  - position: 4
+    card_id: horsea-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/calm_nature_1.webp
+        observed_on: '2026-08-01'
+  - position: 5
+    card_id: bulbasaur-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/calm_nature_1.webp
+        observed_on: '2026-08-01'
+  - position: 6
+    card_id: plusle-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/calm_nature_1.webp
+        observed_on: '2026-08-01'
+  - position: 7
+    card_id: pikachu-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/calm_nature_1.webp
+        observed_on: '2026-08-01'
+  - position: 8
+    card_id: snivy-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/calm_nature_1.webp
+        observed_on: '2026-08-01'
+  - position: 9
+    card_id: cyndaquil-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/calm_nature_1.webp
+        observed_on: '2026-08-01'

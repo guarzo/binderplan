@@ -1,2 +1,47 @@
 version: 1
-cards: {}
+cards:
+  audino-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  bulbasaur-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  cyndaquil-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  horsea-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  noibat-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  pikachu-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  plusle-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  sandshrew-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  snivy-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
