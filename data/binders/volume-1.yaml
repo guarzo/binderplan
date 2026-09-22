@@ -835,3 +835,90 @@ leaves:
         type: published-photo
         source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/on_attack_1.webp
         observed_on: '2026-08-01'
+- id: v1-16
+  kind: transition
+  physical_leaf: 16
+  role: chapter
+  heading: Chapter V — Isolation & Reflection
+  copy: Scale, silence, and awareness.
+- id: v1-17
+  kind: cards
+  physical_leaf: 17
+  chapter: Isolation & Reflection
+  chapter_order: 5
+  theme: Elemental Solitude
+  caption: Alone with the Element. Solitary Pokemon defined by water, fire, weather, and environmental
+    scale.
+  pockets:
+  - position: 1
+    card_id: absol-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/elemental_solitude_1.webp
+        observed_on: '2026-08-01'
+  - position: 2
+    card_id: espeon-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/elemental_solitude_1.webp
+        observed_on: '2026-08-01'
+  - position: 3
+    card_id: houndoom-03
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/elemental_solitude_1.webp
+        observed_on: '2026-08-01'
+  - position: 4
+    card_id: kyogre-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/elemental_solitude_1.webp
+        observed_on: '2026-08-01'
+  - position: 5
+    card_id: cyndaquil-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/elemental_solitude_1.webp
+        observed_on: '2026-08-01'
+  - position: 6
+    card_id: ampharos-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/elemental_solitude_1.webp
+        observed_on: '2026-08-01'
+  - position: 7
+    card_id: darkrai-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/elemental_solitude_1.webp
+        observed_on: '2026-08-01'
+  - position: 8
+    card_id: glaceon-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/elemental_solitude_1.webp
+        observed_on: '2026-08-01'
+  - position: 9
+    card_id: latios-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/elemental_solitude_1.webp
+        observed_on: '2026-08-01'

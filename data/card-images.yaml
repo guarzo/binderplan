@@ -1,5 +1,15 @@
 version: 1
 cards:
+  absol-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  ampharos-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   audino-01:
     classification: missing
     asset_path: ''
@@ -55,7 +65,17 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  cyndaquil-02:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   darkrai-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  darkrai-02:
     classification: missing
     asset_path: ''
     reviewed: false
@@ -90,6 +110,11 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  espeon-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   espeon-02:
     classification: missing
     asset_path: ''
@@ -116,6 +141,11 @@ cards:
     reviewed: false
     reviewed_on: ''
   gengar-mimikyu-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  glaceon-01:
     classification: missing
     asset_path: ''
     reviewed: false
@@ -165,6 +195,11 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  houndoom-03:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   houndour-01:
     classification: missing
     asset_path: ''
@@ -185,7 +220,17 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  kyogre-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   latias-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  latios-02:
     classification: missing
     asset_path: ''
     reviewed: false
