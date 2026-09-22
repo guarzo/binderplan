@@ -4,11 +4,13 @@
 import argparse
 import importlib.util
 import json
+import os
 import re
 import subprocess
 from functools import lru_cache
+from html.parser import HTMLParser
 from pathlib import Path
-from urllib.parse import quote
+from urllib.parse import quote, unquote, urlsplit
 from urllib.request import Request, urlopen
 
 from PIL import Image
@@ -35,6 +37,11 @@ TCGDEX_API_ROOT = "https://api.tcgdex.net/v2"
 TCGDEX_USER_AGENT = "binderplan digital-binder-image-review/1.0"
 SAFE_REF_RE = re.compile(r"^(?!-)[A-Za-z0-9._/@+-]+$")
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+INITIAL_BINDER_IMAGE_BUDGET = 1_572_864
+HTML_VOID_ELEMENTS = {
+    "area", "base", "br", "col", "embed", "hr", "img", "input",
+    "link", "meta", "param", "source", "track", "wbr",
+}
 
 
 @lru_cache(maxsize=1)
@@ -665,6 +672,296 @@ def validate_project(root: Path, previous_ref: str | None = None) -> list[str]:
     return errors
 
 
+class _PublicBinderParser(HTMLParser):
+    """Collect rendered binder structure while ignoring unrelated page markup."""
+
+    def __init__(self, page_path: Path):
+        super().__init__(convert_charrefs=True)
+        self.page_path = page_path
+        self.binders: list[dict] = []
+        self.stack: list[dict] = []
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        attributes = dict(attrs)
+        parent = self.stack[-1] if self.stack else {}
+        root = parent.get("root")
+        spread = parent.get("spread")
+        leaf = parent.get("leaf")
+        in_pocket = parent.get("in_pocket", False)
+
+        if "data-binder" in attributes:
+            root = {
+                "name": attributes.get("data-binder") or "(unnamed)",
+                "page_path": self.page_path,
+                "leaves": [],
+                "ids": [],
+                "controls": [],
+                "previous_controls": [],
+                "next_controls": [],
+                "positions": [],
+                "dialogs": [],
+                "dialog_close": [],
+                "dialog_previous": [],
+                "dialog_next": [],
+                "initial_urls": set(),
+                "spread_count": 0,
+            }
+            self.binders.append(root)
+            spread = None
+            leaf = None
+            in_pocket = False
+
+        if root is not None:
+            element_id = attributes.get("id")
+            if element_id:
+                root["ids"].append(element_id)
+
+            if "data-binder-spread" in attributes:
+                root["spread_count"] += 1
+                spread = root["spread_count"]
+
+            if "data-binder-leaf" in attributes:
+                leaf = {
+                    "name": attributes.get("data-binder-leaf") or "(unnamed)",
+                    "kind": attributes.get("data-kind"),
+                    "id": attributes.get("id"),
+                    "pockets": 0,
+                    "spread": spread,
+                }
+                root["leaves"].append(leaf)
+
+            if "data-pocket" in attributes:
+                in_pocket = True
+                if leaf is not None:
+                    leaf["pockets"] += 1
+
+            if "data-binder-controls" in attributes:
+                root["controls"].append(attributes)
+            if "data-binder-prev" in attributes:
+                root["previous_controls"].append(attributes)
+            if "data-binder-next" in attributes:
+                root["next_controls"].append(attributes)
+            if "data-binder-position" in attributes:
+                root["positions"].append(attributes)
+            if tag == "dialog" and "data-card-inspector" in attributes:
+                root["dialogs"].append(attributes)
+            if "data-card-inspector-close" in attributes:
+                root["dialog_close"].append(attributes)
+            if "data-card-inspector-previous" in attributes:
+                root["dialog_previous"].append(attributes)
+            if "data-card-inspector-next" in attributes:
+                root["dialog_next"].append(attributes)
+
+            inspector_src = attributes.get("data-inspector-src")
+            if inspector_src:
+                root.setdefault("card_urls", []).append(inspector_src)
+
+            if tag == "img":
+                self._record_image_urls(root, attributes)
+                if in_pocket:
+                    self._record_card_image(root, leaf, spread, attributes)
+
+        if tag not in HTML_VOID_ELEMENTS:
+            self.stack.append({
+                "tag": tag,
+                "root": root,
+                "spread": spread,
+                "leaf": leaf,
+                "in_pocket": in_pocket,
+            })
+
+    def handle_startendtag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        self.handle_starttag(tag, attrs)
+        if tag not in HTML_VOID_ELEMENTS:
+            self.handle_endtag(tag)
+
+    def handle_endtag(self, tag: str) -> None:
+        for index in range(len(self.stack) - 1, -1, -1):
+            if self.stack[index]["tag"] == tag:
+                del self.stack[index:]
+                return
+
+    @staticmethod
+    def _record_image_urls(root: dict, attributes: dict[str, str | None]) -> None:
+        source = attributes.get("src") or ""
+        if source:
+            root.setdefault("card_urls", []).append(source)
+        srcset = attributes.get("srcset") or ""
+        root.setdefault("card_urls", []).extend(
+            candidate.strip().split()[0]
+            for candidate in srcset.split(",")
+            if candidate.strip()
+        )
+
+    @staticmethod
+    def _record_card_image(root: dict, leaf: dict | None, spread: int | None,
+                           attributes: dict[str, str | None]) -> None:
+        source = attributes.get("src") or ""
+        initial = "data-initial-binder-image" in attributes
+        if initial and source:
+            root["initial_urls"].add(source)
+        root.setdefault("images", []).append({
+            "source": source,
+            "alt": attributes.get("alt"),
+            "loading": attributes.get("loading"),
+            "initial": initial,
+            "spread": spread,
+            "leaf": leaf.get("name") if leaf else "(unknown leaf)",
+        })
+
+
+def _is_remote_url(url: str) -> bool:
+    parsed = urlsplit(url)
+    return parsed.scheme.lower() in {"http", "https"} or bool(parsed.netloc)
+
+
+def _public_asset_path(public_dir: Path, page_path: Path, url: str) -> Path | None:
+    parsed = urlsplit(url)
+    if _is_remote_url(url) or not parsed.path:
+        return None
+    decoded_path = unquote(parsed.path)
+    if decoded_path.startswith("/"):
+        candidate = public_dir / decoded_path.lstrip("/")
+    else:
+        candidate = page_path.parent / decoded_path
+    try:
+        resolved = candidate.resolve()
+        resolved.relative_to(public_dir.resolve())
+    except (OSError, ValueError):
+        return None
+    return resolved
+
+
+def _validate_public_binder(public_dir: Path, root: dict) -> list[str]:
+    page = root["page_path"].relative_to(public_dir)
+    label = f"{page}: binder {root['name']}"
+    errors: list[str] = []
+
+    leaf_names = [leaf["name"] for leaf in root["leaves"]]
+    for leaf_name in sorted({name for name in leaf_names if leaf_names.count(name) > 1}):
+        errors.append(f"{label}: duplicate binder leaf ID {leaf_name}")
+    html_ids = root["ids"]
+    for element_id in sorted({item for item in html_ids if html_ids.count(item) > 1}):
+        errors.append(f"{label}: duplicate HTML id {element_id}")
+
+    leaf_anchors = set()
+    for leaf in root["leaves"]:
+        expected_anchor = f"leaf-{leaf['name']}"
+        if leaf["id"] != expected_anchor:
+            errors.append(
+                f"{label}: leaf {leaf['name']} needs direct-link anchor id={expected_anchor!r}"
+            )
+        else:
+            leaf_anchors.add(expected_anchor)
+        if leaf["kind"] == "cards" and leaf["pockets"] != 9:
+            errors.append(
+                f"{label}: card leaf {leaf['name']} must contain exactly 9 pockets "
+                f"(found {leaf['pockets']})"
+            )
+        if leaf["kind"] == "transition" and leaf["pockets"]:
+            errors.append(f"{label}: transition leaf {leaf['name']} must not contain pockets")
+
+    if len(root["controls"]) != 1:
+        errors.append(f"{label}: must contain exactly one binder controls navigation")
+    else:
+        controls = root["controls"][0]
+        if not (controls.get("aria-label") or controls.get("aria-labelledby")):
+            errors.append(f"{label}: binder controls navigation needs an accessible label")
+    for direction, key in (("previous", "previous_controls"), ("next", "next_controls")):
+        controls = root[key]
+        if len(controls) != 1:
+            errors.append(f"{label}: must contain exactly one {direction} control")
+            continue
+        target = controls[0].get("href") or ""
+        if not target.startswith("#") or target[1:] not in leaf_anchors:
+            errors.append(f"{label}: {direction} control must link to a binder leaf anchor")
+    if len(root["positions"]) != 1:
+        errors.append(f"{label}: must contain exactly one binder position control")
+
+    if len(root["dialogs"]) != 1:
+        errors.append(f"{label}: must contain exactly one card inspector dialog")
+    for control_name, key in (
+        ("close", "dialog_close"),
+        ("previous card", "dialog_previous"),
+        ("next card", "dialog_next"),
+    ):
+        if len(root[key]) != 1:
+            errors.append(f"{label}: card inspector dialog needs one {control_name} control")
+
+    for url in root.get("card_urls", []):
+        if _is_remote_url(url):
+            errors.append(f"{label}: remote card image URL is not allowed: {url}")
+
+    for image in root.get("images", []):
+        if not image["source"]:
+            errors.append(f"{label}: card image on {image['leaf']} needs a src URL")
+        elif not _is_remote_url(image["source"]) and not str(image["alt"] or "").strip():
+            errors.append(f"{label}: local card image on {image['leaf']} needs alt text")
+
+        if image["spread"] == 1:
+            if not image["initial"]:
+                errors.append(
+                    f"{label}: first-spread card image on {image['leaf']} must be an initial binder image"
+                )
+            if image["loading"] != "eager":
+                errors.append(f"{label}: initial binder image on {image['leaf']} must use loading=\"eager\"")
+        else:
+            if image["initial"]:
+                errors.append(
+                    f"{label}: only first-spread card images may be initial binder images"
+                )
+            if image["loading"] != "lazy":
+                errors.append(
+                    f"{label}: non-initial card image on {image['leaf']} must use loading=\"lazy\""
+                )
+
+    initial_bytes = 0
+    for url in sorted(root["initial_urls"]):
+        asset_path = _public_asset_path(public_dir, root["page_path"], url)
+        if asset_path is None or not asset_path.is_file():
+            errors.append(f"{label}: initial binder image does not resolve under public output: {url}")
+            continue
+        initial_bytes += asset_path.stat().st_size
+    if initial_bytes > INITIAL_BINDER_IMAGE_BUDGET:
+        errors.append(
+            f"{label}: initial image budget is {initial_bytes:,} bytes; "
+            f"maximum is {INITIAL_BINDER_IMAGE_BUDGET:,} bytes"
+        )
+    return errors
+
+
+def validate_public_output(public_dir: Path) -> list[str]:
+    """Validate only rendered roots that opt into the digital binder contract."""
+    public_dir = Path(public_dir)
+    if not public_dir.is_dir():
+        return [f"public output directory does not exist: {public_dir}"]
+
+    errors: list[str] = []
+    for page_path in sorted(public_dir.rglob("*.html")):
+        parser = _PublicBinderParser(page_path)
+        try:
+            parser.feed(page_path.read_text(encoding="utf-8"))
+            parser.close()
+        except (OSError, UnicodeError) as exc:
+            errors.append(f"{page_path.relative_to(public_dir)}: cannot read HTML: {exc}")
+            continue
+        for root in parser.binders:
+            errors.extend(_validate_public_binder(public_dir, root))
+    return errors
+
+
+def _normalize_previous_ref(previous_ref: str | None) -> str | None:
+    if not previous_ref or re.fullmatch(r"0+", previous_ref):
+        return None
+    return previous_ref
+
+
+def _previous_ref_from_environment() -> str | None:
+    return _normalize_previous_ref(
+        os.environ.get("DIGITAL_BINDER_PREVIOUS_REF", "").strip()
+    )
+
+
 def _root_path(root: Path, path: Path) -> Path:
     return path if path.is_absolute() else root / path
 
@@ -675,6 +972,7 @@ def main(argv=None) -> int:
     mode.add_argument("--write-generated", action="store_true")
     mode.add_argument("--check-generated", action="store_true")
     mode.add_argument("--check", action="store_true")
+    mode.add_argument("--check-public", type=Path, metavar="PATH")
     parser.add_argument(
         "--registry",
         type=Path,
@@ -686,17 +984,25 @@ def main(argv=None) -> int:
         default=Path("data/generated/card-registry.json"),
     )
     parser.add_argument("--root", type=Path, default=Path("."))
-    parser.add_argument("--previous-ref")
+    parser.add_argument("--previous-ref", default=_previous_ref_from_environment())
     args = parser.parse_args(argv)
 
     root = args.root
+    previous_ref = _normalize_previous_ref(args.previous_ref)
+    if args.check_public is not None:
+        public_dir = _root_path(root, args.check_public)
+        errors = validate_public_output(public_dir)
+        for error in errors:
+            print(error, flush=True)
+        return 1 if errors else 0
+
     registry_path = _root_path(root, args.registry)
     output_path = _root_path(root, args.output)
     try:
         rendered = render_registry_json(load_registry(registry_path))
     except (FileNotFoundError, ValueError):
         if args.check:
-            errors = validate_project(root, previous_ref=args.previous_ref)
+            errors = validate_project(root, previous_ref=previous_ref)
             for error in errors:
                 print(error, flush=True)
             return 1
@@ -717,7 +1023,7 @@ def main(argv=None) -> int:
     errors = []
     if not generated_current:
         errors.append(f"drift detected: {output_path} is out of date")
-    errors.extend(validate_project(root, previous_ref=args.previous_ref))
+    errors.extend(validate_project(root, previous_ref=previous_ref))
     for error in errors:
         print(error, flush=True)
     return 1 if errors else 0

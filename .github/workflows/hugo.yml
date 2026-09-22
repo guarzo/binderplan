@@ -27,8 +27,8 @@ jobs:
     steps:
       - name: Install Hugo CLI
         run: |
-          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
-          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
+          wget -O "${{ runner.temp }}/hugo.deb" "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb" \
+          && sudo dpkg -i "${{ runner.temp }}/hugo.deb"
 
       - name: Checkout
         uses: actions/checkout@v4
@@ -37,11 +37,42 @@ jobs:
           fetch-depth: 0
           lfs: true
 
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.14'
+
+      - name: Install validation dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Test and validate binder data
+        env:
+          DIGITAL_BINDER_PREVIOUS_REF: ${{ github.event.before }}
+        run: |
+          python -m pytest scripts/test_check_registry.py scripts/test_digital_binder.py -q
+          python scripts/check-registry.py docs/card-registry.md
+          python scripts/check-digital-binder.py --check
+
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
 
-      - name: Build with Hugo
+      - name: Build draft binder with Hugo
+        env:
+          HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
+          HUGO_ENVIRONMENT: production
+        run: |
+          hugo \
+            --buildDrafts \
+            --gc \
+            --minify \
+            --destination draft-public \
+            --baseURL "https://collection.dpao.la/"
+
+      - name: Validate rendered draft binder output
+        run: python scripts/check-digital-binder.py --check-public draft-public
+
+      - name: Build production with Hugo
         env:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
           HUGO_ENVIRONMENT: production
@@ -50,6 +81,9 @@ jobs:
             --gc \
             --minify \
             --baseURL "https://collection.dpao.la/"
+
+      - name: Validate rendered production binder output
+        run: python scripts/check-digital-binder.py --check-public public
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

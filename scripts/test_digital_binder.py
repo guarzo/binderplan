@@ -1446,3 +1446,342 @@ def test_rendered_synthetic_binder_marks_only_first_spread_images_eager(tmp_path
     assert 'Reference image' in html
     assert 'Image unavailable' in html
     assert 'Placement pending' in html
+
+
+def write_html(root: Path, body: str) -> None:
+    page = root / "gallery/volume-1/index.html"
+    page.parent.mkdir(parents=True, exist_ok=True)
+    page.write_text(body, encoding="utf-8")
+
+
+def valid_public_binder_html() -> str:
+    def card_leaf(leaf_id: str, image_name: str, *, initial: bool) -> str:
+        loading = "eager" if initial else "lazy"
+        initial_attribute = " data-initial-binder-image" if initial else ""
+        empty_pockets = "".join(
+            f'<div data-pocket data-pocket-position="{position}"></div>'
+            for position in range(2, 10)
+        )
+        return (
+            f'<section id="leaf-{leaf_id}" data-binder-leaf="{leaf_id}" data-kind="cards">'
+            '<div class="binder-pockets">'
+            '<button data-pocket data-pocket-position="1" data-card-id="abra-01">'
+            f'<img src="/images/cards/{image_name}" alt="Abra, Base Set 43/102" '
+            f'loading="{loading}"{initial_attribute}>'
+            '</button>'
+            f'{empty_pockets}'
+            '</div>'
+            '</section>'
+        )
+
+    return (
+        '<!doctype html><html><body>'
+        '<div data-binder="volume-1">'
+        '<nav data-binder-controls aria-label="Binder pages">'
+        '<a data-binder-prev href="#leaf-v1-01">Previous</a>'
+        '<p data-binder-position aria-live="polite"></p>'
+        '<a data-binder-next href="#leaf-v1-03">Next</a>'
+        '</nav>'
+        '<div data-binder-spread="1">'
+        f'{card_leaf("v1-01", "one.webp", initial=True)}'
+        f'{card_leaf("v1-02", "two.webp", initial=True)}'
+        '</div>'
+        '<div data-binder-spread="2">'
+        f'{card_leaf("v1-03", "three.webp", initial=False)}'
+        '<section id="leaf-v1-04" data-binder-leaf="v1-04" data-kind="transition"></section>'
+        '</div>'
+        '<dialog id="card-inspector-volume-1" data-card-inspector>'
+        '<button data-card-inspector-close>Close</button>'
+        '<button data-card-inspector-previous>Previous card</button>'
+        '<button data-card-inspector-next>Next card</button>'
+        '</dialog>'
+        '</div>'
+        '</body></html>'
+    )
+
+
+def write_valid_public_binder(root: Path) -> None:
+    write_html(root, valid_public_binder_html())
+    for name in ("one.webp", "two.webp", "three.webp"):
+        asset = root / "images/cards" / name
+        asset.parent.mkdir(parents=True, exist_ok=True)
+        asset.write_bytes(b"fixture image")
+
+
+def test_public_check_rejects_remote_card_image_url(tmp_path):
+    html = valid_public_binder_html().replace(
+        "/images/cards/one.webp",
+        "https://assets.tcgdex.net/en/base/base1/4/high.webp",
+    )
+    write_html(tmp_path, html)
+
+    errors = digital_binder.validate_public_output(tmp_path)
+
+    assert any("remote card image" in error for error in errors)
+
+
+def test_public_check_requires_nine_pockets_per_card_leaf(tmp_path):
+    html = valid_public_binder_html().replace(
+        '<div data-pocket data-pocket-position="9"></div>',
+        "",
+        1,
+    )
+    write_html(tmp_path, html)
+
+    errors = digital_binder.validate_public_output(tmp_path)
+
+    assert any("9 pockets" in error for error in errors)
+
+
+def test_public_check_requires_unique_leaf_ids(tmp_path):
+    html = valid_public_binder_html().replace(
+        'id="leaf-v1-02" data-binder-leaf="v1-02"',
+        'id="leaf-v1-01" data-binder-leaf="v1-01"',
+    )
+    write_html(tmp_path, html)
+
+    errors = digital_binder.validate_public_output(tmp_path)
+
+    assert any("duplicate" in error and "v1-01" in error for error in errors)
+
+
+def test_public_check_requires_alt_text_on_local_card_images(tmp_path):
+    html = valid_public_binder_html().replace(
+        'alt="Abra, Base Set 43/102"',
+        'alt=""',
+        1,
+    )
+    write_html(tmp_path, html)
+
+    errors = digital_binder.validate_public_output(tmp_path)
+
+    assert any("alt text" in error for error in errors)
+
+
+def test_public_check_requires_direct_link_leaf_anchors(tmp_path):
+    html = valid_public_binder_html().replace('id="leaf-v1-02"', "", 1)
+    write_html(tmp_path, html)
+
+    errors = digital_binder.validate_public_output(tmp_path)
+
+    assert any("direct-link anchor" in error and "v1-02" in error for error in errors)
+
+
+def test_public_check_requires_dialog_and_labelled_controls(tmp_path):
+    html = valid_public_binder_html().replace(
+        '<nav data-binder-controls aria-label="Binder pages">',
+        '<nav data-binder-controls>',
+    ).replace(
+        '<dialog id="card-inspector-volume-1" data-card-inspector>',
+        '<div>',
+    ).replace("</dialog>", "</div>")
+    write_html(tmp_path, html)
+
+    errors = digital_binder.validate_public_output(tmp_path)
+
+    assert any("dialog" in error for error in errors)
+    assert any("controls" in error and "label" in error for error in errors)
+
+
+def test_public_check_requires_previous_and_next_controls(tmp_path):
+    html = valid_public_binder_html().replace(" data-binder-next", "", 1)
+    write_html(tmp_path, html)
+
+    errors = digital_binder.validate_public_output(tmp_path)
+
+    assert any("next control" in error for error in errors)
+
+
+def test_public_check_rejects_transition_pockets(tmp_path):
+    html = valid_public_binder_html().replace(
+        '<section id="leaf-v1-04" data-binder-leaf="v1-04" data-kind="transition"></section>',
+        '<section id="leaf-v1-04" data-binder-leaf="v1-04" data-kind="transition">'
+        '<div data-pocket></div></section>',
+    )
+    write_html(tmp_path, html)
+
+    errors = digital_binder.validate_public_output(tmp_path)
+
+    assert any("transition" in error and "pockets" in error for error in errors)
+
+
+def test_public_check_requires_non_initial_card_images_to_be_lazy(tmp_path):
+    html = valid_public_binder_html().replace(
+        '<img src="/images/cards/three.webp" alt="Abra, Base Set 43/102" loading="lazy">',
+        '<img src="/images/cards/three.webp" alt="Abra, Base Set 43/102" loading="eager">',
+    )
+    write_html(tmp_path, html)
+
+    errors = digital_binder.validate_public_output(tmp_path)
+
+    assert any("loading=\"lazy\"" in error for error in errors)
+
+
+def test_public_check_requires_initial_images_to_be_eager(tmp_path):
+    html = valid_public_binder_html().replace(
+        'loading="eager" data-initial-binder-image',
+        'loading="lazy" data-initial-binder-image',
+        1,
+    )
+    write_html(tmp_path, html)
+
+    errors = digital_binder.validate_public_output(tmp_path)
+
+    assert any("initial binder image" in error and "eager" in error for error in errors)
+
+
+def test_public_check_enforces_unique_initial_image_file_budget(tmp_path):
+    html = valid_public_binder_html().replace(
+        "/images/cards/two.webp",
+        "/images/cards/one.webp",
+        1,
+    )
+    write_html(tmp_path, html)
+    image = tmp_path / "images/cards/one.webp"
+    image.parent.mkdir(parents=True)
+    image.write_bytes(b"x" * 1_572_864)
+
+    assert digital_binder.validate_public_output(tmp_path) == []
+
+    image.write_bytes(b"x" * 1_572_865)
+    errors = digital_binder.validate_public_output(tmp_path)
+
+    assert any("initial image budget" in error and "1,572,864" in error for error in errors)
+
+
+def test_public_check_accumulates_errors(tmp_path):
+    html = valid_public_binder_html().replace(
+        'alt="Abra, Base Set 43/102"',
+        'alt=""',
+        1,
+    ).replace(
+        '<dialog id="card-inspector-volume-1" data-card-inspector>',
+        '<div>',
+    ).replace("</dialog>", "</div>")
+    write_html(tmp_path, html)
+
+    errors = digital_binder.validate_public_output(tmp_path)
+
+    assert any("alt text" in error for error in errors)
+    assert any("dialog" in error for error in errors)
+
+
+def test_public_check_accepts_valid_binder_output(tmp_path):
+    write_valid_public_binder(tmp_path)
+
+    assert digital_binder.validate_public_output(tmp_path) == []
+
+
+def test_public_check_accepts_zero_binders_and_unrelated_site_images(tmp_path):
+    write_html(
+        tmp_path,
+        '<main><img src="https://example.com/gallery-photo.webp" alt="Gallery photo"></main>',
+    )
+
+    assert digital_binder.validate_public_output(tmp_path) == []
+
+
+def test_public_check_ignores_unrelated_images_outside_binder_root(tmp_path):
+    write_html(
+        tmp_path,
+        '<img src="https://example.com/gallery-photo.webp" alt="Gallery photo">'
+        + valid_public_binder_html(),
+    )
+    for name in ("one.webp", "two.webp"):
+        asset = tmp_path / "images/cards" / name
+        asset.parent.mkdir(parents=True, exist_ok=True)
+        asset.write_bytes(b"fixture image")
+
+    assert digital_binder.validate_public_output(tmp_path) == []
+
+
+def test_check_public_cli_prints_all_errors_and_exits_one(tmp_path, capsys):
+    html = valid_public_binder_html().replace(
+        'alt="Abra, Base Set 43/102"',
+        'alt=""',
+        1,
+    ).replace(
+        '<dialog id="card-inspector-volume-1" data-card-inspector>',
+        '<div>',
+    ).replace("</dialog>", "</div>")
+    write_html(tmp_path, html)
+
+    rc = digital_binder.main(["--check-public", str(tmp_path)])
+
+    output = capsys.readouterr().out
+    assert rc == 1
+    assert "alt text" in output
+    assert "dialog" in output
+
+
+def test_check_ignores_absent_previous_ref_environment(tmp_path, monkeypatch, capsys):
+    root = project_fixture(tmp_path, pockets=[confirmed_pocket("abra-01")])
+    write_current_generated(root)
+    monkeypatch.delenv("DIGITAL_BINDER_PREVIOUS_REF", raising=False)
+
+    rc = digital_binder.main(["--check", "--root", str(root)])
+
+    assert rc == 1
+    assert "exactly 9 pockets" in capsys.readouterr().out
+
+
+def test_check_ignores_all_zero_previous_ref_environment(tmp_path, monkeypatch):
+    root = project_fixture(tmp_path)
+    write_current_generated(root)
+    monkeypatch.setenv("DIGITAL_BINDER_PREVIOUS_REF", "0" * 40)
+
+    def fail_if_called(*args, **kwargs):
+        raise AssertionError("git should not be called for an all-zero ref")
+
+    monkeypatch.setattr(digital_binder.subprocess, "run", fail_if_called)
+
+    assert digital_binder.main(["--check", "--root", str(root)]) == 0
+
+
+def test_check_passes_valid_previous_ref_environment(tmp_path, monkeypatch):
+    root = project_fixture(tmp_path)
+    write_current_generated(root)
+    calls = []
+    monkeypatch.setenv("DIGITAL_BINDER_PREVIOUS_REF", "abc123")
+
+    def fake_run(command, check, capture_output, text, cwd):
+        calls.append(command)
+        volume_id = command[2].split("/")[-1].removesuffix(".yaml")
+        return subprocess.CompletedProcess(
+            command,
+            0,
+            stdout=yaml.safe_dump(project_manifest()[volume_id]),
+            stderr="",
+        )
+
+    monkeypatch.setattr(digital_binder.subprocess, "run", fake_run)
+
+    assert digital_binder.main(["--check", "--root", str(root)]) == 0
+    assert calls == [
+        ["git", "show", "abc123:data/binders/volume-1.yaml"],
+        ["git", "show", "abc123:data/binders/volume-2.yaml"],
+    ]
+
+
+def test_rendered_draft_and_production_outputs_pass_public_validation(tmp_path):
+    root = Path(__file__).parents[1]
+    draft_destination = tmp_path / "draft-public"
+    production_destination = tmp_path / "public"
+
+    draft = subprocess.run(
+        ["hugo", "--buildDrafts", "--destination", str(draft_destination)],
+        cwd=root,
+        capture_output=True,
+        text=True,
+    )
+    production = subprocess.run(
+        ["hugo", "--destination", str(production_destination)],
+        cwd=root,
+        capture_output=True,
+        text=True,
+    )
+
+    assert draft.returncode == 0, draft.stderr
+    assert digital_binder.validate_public_output(draft_destination) == []
+    assert production.returncode == 0, production.stderr
+    assert digital_binder.validate_public_output(production_destination) == []

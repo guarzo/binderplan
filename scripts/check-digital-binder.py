@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""CLI wrapper for the digital binder registry projection."""
+"""CLI wrapper for digital binder data and rendered-output validation."""
 
 from digital_binder import main
 
