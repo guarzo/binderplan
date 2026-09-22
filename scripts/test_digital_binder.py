@@ -2,6 +2,7 @@ import argparse
 import importlib.util
 import json
 import re
+import shutil
 import subprocess
 import sys
 from pathlib import Path
@@ -1154,3 +1155,111 @@ def test_rendered_draft_pilot_uses_binder_markup_without_remote_card_images(tmp_
 
     assert production.returncode == 0, production.stderr
     assert not (production_destination / "gallery/digital-binder-pilot/index.html").exists()
+
+
+def test_rendered_synthetic_binder_marks_only_first_spread_images_eager(tmp_path):
+    root = Path(__file__).parents[1]
+    site = tmp_path / "site"
+    destination = tmp_path / "public"
+    shutil.copytree(root / "layouts", site / "layouts")
+    shutil.copytree(root / "assets/css", site / "assets/css")
+    (site / "content/gallery/digital-binder-pilot").mkdir(parents=True)
+    (site / "content/gallery/digital-binder-pilot/_index.md").write_text(
+        "---\n"
+        "title: Synthetic Binder\n"
+        "draft: true\n"
+        "binder: volume-1\n"
+        "---\n",
+        encoding="utf-8",
+    )
+    (site / "hugo.toml").write_text(
+        "baseURL = 'https://example.invalid/'\n"
+        "languageCode = 'en-us'\n"
+        "title = 'Synthetic Binder'\n",
+        encoding="utf-8",
+    )
+
+    card_ids = ["first-leaf-card", "second-leaf-card", "third-leaf-card"]
+    registry = {
+        card_id: {
+            "id": card_id,
+            "card_name": card_id.replace("-", " ").title(),
+            "set": "Fixture Set",
+            "number": str(index),
+        }
+        for index, card_id in enumerate(card_ids, start=1)
+    }
+    (site / "data/generated").mkdir(parents=True)
+    (site / "data/generated/card-registry.json").write_text(
+        json.dumps(registry, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    (site / "data").joinpath("card-images.yaml").write_text(
+        yaml.safe_dump({
+            "version": 1,
+            "cards": {
+                card_id: {
+                    "classification": "exact",
+                    "asset_path": f"assets/images/cards/{card_id}.webp",
+                    "reviewed": True,
+                    "reviewed_on": "2026-09-22",
+                    "provider": "fixture",
+                    "source_url": "https://example.invalid/card.webp",
+                }
+                for card_id in card_ids
+            },
+        }, sort_keys=False),
+        encoding="utf-8",
+    )
+    for card_id in card_ids:
+        write_image(site / "assets/images/cards" / f"{card_id}.webp", size=(500, 700))
+
+    leaves = []
+    for index, card_id in enumerate(card_ids, start=1):
+        leaves.append({
+            "id": f"leaf-{index}",
+            "kind": "cards",
+            "physical_leaf": index,
+            "chapter": "Fixture Chapter",
+            "chapter_order": 1,
+            "theme": f"Leaf {index}",
+            "pockets": [confirmed_pocket(card_id)]
+                       + [empty_pocket(position) for position in range(2, 10)],
+        })
+    (site / "data/binders").mkdir(parents=True)
+    (site / "data/binders/volume-1.yaml").write_text(
+        yaml.safe_dump({
+            "version": 1,
+            "volume_id": "volume-1",
+            "publication_status": "draft",
+            "leaves": leaves,
+        }, sort_keys=False),
+        encoding="utf-8",
+    )
+
+    result = subprocess.run(
+        ["hugo", "--buildDrafts", "--destination", str(destination)],
+        cwd=site,
+        capture_output=True,
+        text=True,
+    )
+
+    assert result.returncode == 0, result.stderr
+    html = (destination / "gallery/digital-binder-pilot/index.html").read_text(
+        encoding="utf-8"
+    )
+    first = re.search(
+        r'data-card-id="first-leaf-card"(?P<body>.*?)</button>', html, re.S
+    ).group("body")
+    second = re.search(
+        r'data-card-id="second-leaf-card"(?P<body>.*?)</button>', html, re.S
+    ).group("body")
+    third = re.search(
+        r'data-card-id="third-leaf-card"(?P<body>.*?)</button>', html, re.S
+    ).group("body")
+    assert 'loading="eager"' in first
+    assert 'data-initial-binder-image' in first
+    assert 'loading="eager"' in second
+    assert 'data-initial-binder-image' in second
+    assert 'loading="lazy"' in third
+    assert 'data-initial-binder-image' not in third
