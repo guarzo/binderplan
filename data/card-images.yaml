@@ -650,8 +650,9 @@ cards:
     reviewed: true
     reviewed_on: '2026-09-22'
     source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/34977/primary.webp
-    note: Competing 1st Edition candidate 34978 inspected; approved non-1st-edition
-      DoubleHolo 34977 against the archived leaf.
+    note: Both DoubleHolo candidates 34977 and 34978 show 1st Edition; curator
+      selected 34977 after side-by-side visual comparison with the archived leaf,
+      without asserting an unsupported finish or edition distinction.
   master-ball-01:
     classification: missing
     asset_path: ''
