@@ -285,10 +285,12 @@ cards:
     reviewed: false
     reviewed_on: ''
   gengar-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    classification: photo-crop
+    asset_path: assets/images/cards/gengar-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-22/owner-supplied-card-images/gengar-vmax-chinese.jpg
   gengar-02:
     classification: missing
     asset_path: ''
@@ -327,10 +329,14 @@ cards:
     upstream_id: dp5-20
     source_url: https://assets.tcgdex.net/en/dp/dp5/20/high.webp
   golem-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: doubleholo
+    upstream_id: '22729'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: exact
+    asset_path: assets/images/cards/golem-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/22729/primary.webp
   golem-02:
     classification: missing
     asset_path: ''
@@ -616,10 +622,16 @@ cards:
     reviewed: false
     reviewed_on: ''
   mewtwo-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: doubleholo
+    upstream_id: '2767'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: exact
+    asset_path: assets/images/cards/mewtwo-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/2767/primary.webp
+    note: 'Owner corrected the registry identity to English Legendary Collection reverse
+      holo #29; authorized DoubleHolo card 2767 approved on 2026-09-22.'
   mewtwo-02:
     classification: missing
     asset_path: ''
@@ -690,10 +702,13 @@ cards:
     reviewed_on: '2026-09-22'
     source_url: https://assets.tcgdex.net/en/sv/sv10.5w/105/high.webp
   palkia-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: tcgdex
+    upstream_id: dp4-26
+    classification: exact
+    asset_path: assets/images/cards/palkia-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://assets.tcgdex.net/en/dp/dp4/26/high.webp
   pikachu-01:
     provider: tcgdex
     upstream_id: basep-27
@@ -778,10 +793,13 @@ cards:
     reviewed_on: '2026-09-22'
     source_url: https://assets.tcgdex.net/ja/SV/SV1S/083/high.webp
   rayquaza-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: tcgdex
+    upstream_id: swsh4-138
+    classification: exact
+    asset_path: assets/images/cards/rayquaza-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://assets.tcgdex.net/en/swsh/swsh4/138/high.webp
   rayquaza-02:
     classification: missing
     asset_path: ''
@@ -808,10 +826,13 @@ cards:
     reviewed: false
     reviewed_on: ''
   salamence-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: tcgdex
+    upstream_id: SV9-119
+    classification: exact
+    asset_path: assets/images/cards/salamence-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://assets.tcgdex.net/ja/SV/SV9/119/high.webp
   sandshrew-01:
     provider: tcgdex
     upstream_id: ex7-74
@@ -826,10 +847,16 @@ cards:
     reviewed: false
     reviewed_on: ''
   scyther-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: doubleholo
+    upstream_id: '22164'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: exact
+    asset_path: assets/images/cards/scyther-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/22164/primary.webp
+    note: Curator visually confirmed the DoubleHolo printing against the archived
+      leaf on 2026-09-22.
   shaymin-01:
     provider: doubleholo
     upstream_id: '29063'
@@ -844,10 +871,14 @@ cards:
     note: Curator visually confirmed the DoubleHolo set-name alias and printing against
       the archived leaf.
   shaymin-02:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: doubleholo
+    upstream_id: '76899'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: exact
+    asset_path: assets/images/cards/shaymin-02.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/76899/primary.webp
   shaymin-03:
     classification: missing
     asset_path: ''
@@ -986,10 +1017,13 @@ cards:
     reviewed: false
     reviewed_on: ''
   torterra-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: tcgdex
+    upstream_id: hgss2-10
+    classification: exact
+    asset_path: assets/images/cards/torterra-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://assets.tcgdex.net/en/hgss/hgss2/10/high.webp
   typhlosion-01:
     classification: missing
     asset_path: ''

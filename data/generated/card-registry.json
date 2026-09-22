@@ -877,8 +877,8 @@
     "species": "Mewtwo",
     "card_name": "Mewtwo",
     "language": "EN",
-    "set": "WoTC Promos",
-    "number": "12",
+    "set": "Legendary Collection",
+    "number": "29/110",
     "confidence": "confirmed"
   },
   "mewtwo-02": {
@@ -1203,7 +1203,7 @@
     "language": "JP",
     "set": "Jungle",
     "number": "No.123",
-    "confidence": "uncertain"
+    "confidence": "confirmed"
   },
   "shaymin-01": {
     "id": "shaymin-01",

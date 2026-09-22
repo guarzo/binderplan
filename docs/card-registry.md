@@ -131,7 +131,7 @@ The column is left as recorded rather than rewritten: `first_seen` is provenance
 | mew-03 | Mew | Mew ex | EN | Scarlet & Violet 151 | 193/165 | confirmed | legendary_bearing_2.webp 2026-08-01 | double-star SR rarity mark, distinct from mew-01/02, language and name corrected from JP Mew GX, checked in hand 2026-09-19 |
 | mew-04 | Mew | ミュウ | JP | Mirage's Mew Constructed Starter Deck | 5 | confirmed | quiet_familiarity_1.webp 2026-08-01 | Pokepower type-change, Link Blast attack, distinct from mew-01..03, set/number from owner's doubleholo export 2026-09-18, denominator not recorded |
 | mew-05 | Mew | ミュウ | JP | Mystery of the Fossils | No.151 | uncertain | threshold_1.webp 2026-08-01 | Psywave/Recover-Beam attacks, distinct from mew-01..04, Pokédex-number print, set per owner's doubleholo export 2026-09-18 |
-| mewtwo-01 | Mewtwo | Mewtwo | EN | WoTC Promos | 12 | confirmed | awakened_power_2.webp 2026-08-01 | heavy holo glare, set/number from owner's doubleholo export 2026-09-18 |
+| mewtwo-01 | Mewtwo | Mewtwo | EN | Legendary Collection | 29/110 | confirmed | awakened_power_2.webp 2026-08-01 | reverse holo; owner corrected prior WoTC Promos 12 identity on 2026-09-22; authorized DoubleHolo card 2767 |
 | mewtwo-02 | Mewtwo | Mewtwo EX | EN | BREAKthrough | 164/162 | confirmed | intimidation_1.webp 2026-08-01 | Shatter Shot/Damage Change EX card, distinct from mewtwo-01 |
 | mewtwo-03 | Mewtwo | Mewtwo | EN | SVP | 052 | confirmed | contemplation_1.webp 2026-08-01 | Scarlet & Violet promo, Reflective Barrier/Psyslash, distinct from mewtwo-01/02 |
 | mewtwo-04 | Mewtwo | Mewtwo | EN | Delta Species | 12/113 | confirmed | legendary_bearing_1.webp 2026-08-01 | delta species, Delta Switch/Energy Burst, distinct from mewtwo-01/02/03, set from owner's doubleholo export 2026-09-18; Delta Species has 113 cards, matching the /113 read |
@@ -167,7 +167,7 @@ The column is left as recorded rather than rewritten: `first_seen` is provenance
 | salamence-01 | Salamence | ボーマンダex | JP | sv9 | 119/100 | confirmed | awakened_power_2.webp 2026-08-01 |  |
 | sandshrew-01 | Sandshrew | Sandshrew | EN | Team Rocket Returns | 74 | confirmed | calm_nature_1.webp 2026-08-01 | small logo bottom-right, set/number from owner's doubleholo export 2026-09-18, denominator not recorded |
 | sandshrew-02 | Sandshrew | Sandshrew | EN | Delta Species | 82 | confirmed | threshold_1.webp 2026-08-01 | Dig Under/Scratch attacks, distinct from sandshrew-01, set/number from owner's doubleholo export 2026-09-18, denominator not recorded |
-| scyther-01 | Scyther | ストライク | JP | Jungle | No.123 | uncertain | awakened_power_2.webp 2026-08-01 | vintage Pokedex-number print, set per owner's doubleholo entry |
+| scyther-01 | Scyther | ストライク | JP | Jungle | No.123 | confirmed | awakened_power_2.webp 2026-08-01 | vintage Pokedex-number print; curator visually confirmed DoubleHolo candidate 22164 against the archived leaf on 2026-09-22 |
 | shaymin-01 | Shaymin | Shaymin EX | EN | XY | XY148 | photo | at_rest_1.webp 2026-08-01 | promo number normalized from 148 to XY148 during 2026-09-22 image review; XY Black Star Promo, artist Kanako Eo |
 | shaymin-02 | Shaymin | シェイミLv.X | JP | Galactic's Conquest | 15 | confirmed | awakened_power_2.webp 2026-08-01 | distinct printing from shaymin-01, set/number from owner's doubleholo export 2026-09-18, denominator not recorded |
 | shaymin-03 | Shaymin | Shaymin | EN | Destined Rivals | 185/142 | confirmed | quiet_familiarity_1.webp 2026-08-01 | Ability Flower Curtain, Smash Kick attack, distinct from shaymin-01/02 |
