@@ -604,6 +604,27 @@ def test_cache_opener_keys_post_requests_by_body(tmp_path, monkeypatch):
     assert calls == [b"first", b"second"]
 
 
+def test_doubleholo_search_command_prints_variant_confirmation_warning(tmp_path, monkeypatch, capsys):
+    root = project_fixture(tmp_path)
+    write_current_generated(root)
+
+    def fake_search(row, opener):
+        return [{
+            "provider": "doubleholo", "provider_id": "dh-43", "name": "Abra",
+            "set_name": "Base Set", "local_id": "43/102", "language": "EN",
+            "image_url": "https://example.invalid/abra.webp",
+        }]
+
+    monkeypatch.chdir(root)
+    monkeypatch.setattr(manage_card_images.digital_binder, "search_doubleholo", fake_search)
+
+    assert manage_card_images.search_doubleholo_command(argparse.Namespace(card_id="abra-01")) == 0
+
+    output = capsys.readouterr().out
+    assert "exact_identity_match does not verify edition/variant" in output
+    assert "visual confirmation" in output
+
+
 def test_doubleholo_search_command_caches_under_doubleholo_review_dir(tmp_path, monkeypatch):
     root = project_fixture(tmp_path)
     write_current_generated(root)
@@ -636,6 +657,15 @@ def test_approve_doubleholo_rejects_file_candidate_url(tmp_path, monkeypatch):
         "provider_id": "dh-43",
         "image_url": "file:///tmp/abra.webp",
         "exact_identity_match": True,
+        "original": {
+            "objectID": "dh-43",
+            "name": "Abra",
+            "set_name": "Pokemon Base Set",
+            "number": "43",
+            "language": "english",
+            "image_url": "file:///tmp/abra.webp",
+            "image_url_small": None,
+        },
     }])
     monkeypatch.chdir(root)
 
@@ -649,6 +679,100 @@ def test_approve_doubleholo_rejects_file_candidate_url(tmp_path, monkeypatch):
     assert not (root / manage_card_images.CARD_ASSET_DIR / "abra-01.webp").exists()
 
 
+def test_approve_doubleholo_rejects_tampered_cached_exact_identity_flag(tmp_path, monkeypatch):
+    root = project_fixture(tmp_path)
+    write_current_generated(root)
+    write_doubleholo_candidate_cache(root, "abra-01", [{
+        "candidate_index": 0,
+        "provider_id": "dh-43",
+        "image_url": "https://example.invalid/abra.png",
+        "exact_identity_match": True,
+        "original": {
+            "objectID": "dh-43",
+            "name": "Abra",
+            "set_name": "Pokemon Jungle",
+            "number": "43",
+            "language": "english",
+            "image_url": "https://example.invalid/abra.png",
+            "image_url_small": None,
+        },
+    }])
+
+    def fail_if_called(request, timeout):
+        raise AssertionError("approval should reject before image download")
+
+    monkeypatch.chdir(root)
+    monkeypatch.setattr(manage_card_images, "urlopen", fail_if_called)
+
+    try:
+        manage_card_images.approve_doubleholo_command(approve_args())
+    except ValueError as exc:
+        assert "exact identity" in str(exc)
+    else:
+        raise AssertionError("tampered cached exact flag should not permit exact approval")
+
+    assert not (root / manage_card_images.CARD_ASSET_DIR / "abra-01.webp").exists()
+
+
+def test_approve_doubleholo_recomputes_exact_identity_from_current_registry(tmp_path, monkeypatch):
+    root = project_fixture(tmp_path)
+    (root / "docs" / "card-registry.md").write_text(
+        registry_doc(confidence="confirmed", set_="Jungle", number="43/64"),
+        encoding="utf-8",
+    )
+    write_current_generated(root)
+    write_doubleholo_candidate_cache(root, "abra-01", [{
+        "candidate_index": 0,
+        "provider_id": "dh-43",
+        "image_url": "https://example.invalid/abra.png",
+        "exact_identity_match": True,
+        "original": {
+            "objectID": "dh-43",
+            "name": "Abra",
+            "set_name": "Pokemon Base Set",
+            "number": "43",
+            "language": "english",
+            "image_url": "https://example.invalid/abra.png",
+            "image_url_small": None,
+        },
+    }])
+
+    def fail_if_called(request, timeout):
+        raise AssertionError("approval should reject before image download")
+
+    monkeypatch.chdir(root)
+    monkeypatch.setattr(manage_card_images, "urlopen", fail_if_called)
+
+    try:
+        manage_card_images.approve_doubleholo_command(approve_args())
+    except ValueError as exc:
+        assert "exact identity" in str(exc)
+    else:
+        raise AssertionError("stale exact flag should be recomputed against current registry")
+
+    assert not (root / manage_card_images.CARD_ASSET_DIR / "abra-01.webp").exists()
+
+
+def test_approve_doubleholo_rejects_uncertain_registry_exact_before_candidate_lookup(tmp_path, monkeypatch):
+    root = project_fixture(tmp_path, registry_confidence="uncertain")
+    write_current_generated(root)
+
+    def fail_if_candidate_loaded(*args, **kwargs):
+        raise AssertionError("uncertain exact should reject before reading candidate cache")
+
+    monkeypatch.chdir(root)
+    monkeypatch.setattr(manage_card_images, "_load_doubleholo_candidate", fail_if_candidate_loaded)
+
+    try:
+        manage_card_images.approve_doubleholo_command(approve_args())
+    except ValueError as exc:
+        assert "uncertain" in str(exc)
+    else:
+        raise AssertionError("uncertain registry identity should reject exact approval")
+
+    assert not (root / manage_card_images.CARD_ASSET_DIR / "abra-01.webp").exists()
+
+
 def test_approve_doubleholo_rejects_exact_when_candidate_identity_is_not_exact(tmp_path, monkeypatch):
     root = project_fixture(tmp_path)
     write_current_generated(root)
@@ -657,6 +781,15 @@ def test_approve_doubleholo_rejects_exact_when_candidate_identity_is_not_exact(t
         "provider_id": "dh-43",
         "image_url": "https://example.invalid/abra.png",
         "exact_identity_match": False,
+        "original": {
+            "objectID": "dh-43",
+            "name": "Abra",
+            "set_name": "Pokemon Jungle",
+            "number": "43",
+            "language": "english",
+            "image_url": "https://example.invalid/abra.png",
+            "image_url_small": None,
+        },
     }])
     monkeypatch.chdir(root)
 
@@ -678,6 +811,15 @@ def test_approve_doubleholo_writes_authorized_provider_record(tmp_path, monkeypa
         "provider_id": "dh-43",
         "image_url": "https://supabase.example/abra.png",
         "exact_identity_match": True,
+        "original": {
+            "objectID": "dh-43",
+            "name": "Abra",
+            "set_name": "Pokemon Base Set",
+            "number": "43",
+            "language": "english",
+            "image_url": "https://supabase.example/abra.png",
+            "image_url_small": None,
+        },
     }])
 
     def fake_urlopen(request, timeout):
@@ -698,12 +840,8 @@ def test_approve_doubleholo_writes_authorized_provider_record(tmp_path, monkeypa
     assert record["usage_basis"] == "Owner-authorized DoubleHolo card catalog image."
 
 
-def test_approve_doubleholo_preserves_existing_asset_and_yaml_when_validation_rejects(tmp_path, monkeypatch):
+def test_approve_doubleholo_preserves_existing_asset_and_yaml_when_manifest_write_fails(tmp_path, monkeypatch):
     root = project_fixture(tmp_path)
-    (root / "docs" / "card-registry.md").write_text(
-        registry_doc(confidence="confirmed", set_="Base Set", number=""),
-        encoding="utf-8",
-    )
     write_current_generated(root)
     original_yaml, original_asset, asset_path = seed_existing_proxy_image(root)
     write_doubleholo_candidate_cache(root, "abra-01", [{
@@ -711,20 +849,33 @@ def test_approve_doubleholo_preserves_existing_asset_and_yaml_when_validation_re
         "provider_id": "dh-43",
         "image_url": "https://supabase.example/abra.png",
         "exact_identity_match": True,
+        "original": {
+            "objectID": "dh-43",
+            "name": "Abra",
+            "set_name": "Pokemon Base Set",
+            "number": "43",
+            "language": "english",
+            "image_url": "https://supabase.example/abra.png",
+            "image_url_small": None,
+        },
     }])
 
     def fake_urlopen(request, timeout):
         return FakeBinaryHTTPResponse(image_bytes("PNG", color=(255, 0, 0)))
 
+    def fail_write(root_arg, images):
+        raise OSError("simulated DoubleHolo manifest write failure")
+
     monkeypatch.chdir(root)
     monkeypatch.setattr(manage_card_images, "urlopen", fake_urlopen)
+    monkeypatch.setattr(manage_card_images.digital_binder, "write_image_manifest_atomically", fail_write)
 
     try:
         manage_card_images.approve_doubleholo_command(approve_args())
-    except ValueError as exc:
-        assert "exact" in str(exc) and "set and number" in str(exc)
+    except OSError as exc:
+        assert "simulated DoubleHolo" in str(exc)
     else:
-        raise AssertionError("invalid exact doubleholo approval should be rejected")
+        raise AssertionError("manifest write failure should reject DoubleHolo update")
 
     assert (root / "data/card-images.yaml").read_bytes() == original_yaml
     assert asset_path.read_bytes() == original_asset

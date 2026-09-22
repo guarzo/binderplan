@@ -19,6 +19,10 @@ import digital_binder
 
 REVIEW_ROOT = Path("tmp/digital-binder-review")
 CARD_ASSET_DIR = Path("assets/images/cards")
+DOUBLEHOLO_VARIANT_WARNING = (
+    "Warning: exact_identity_match does not verify edition/variant; "
+    "visual confirmation of edition, stamp, holo treatment, and other variants is required before approval."
+)
 
 
 class CachedHTTPResponse:
@@ -175,6 +179,7 @@ def search_doubleholo_command(args) -> int:
     root = Path.cwd()
     report = _search_doubleholo_candidates(root, args.card_id)
     _print_candidate_summary(report)
+    print(DOUBLEHOLO_VARIANT_WARNING)
     return 0
 
 
@@ -391,6 +396,24 @@ def _load_doubleholo_candidate(root: Path, card_id: str, candidate_index: int) -
     )
 
 
+def _doubleholo_raw_hit_from_candidate(candidate: dict) -> dict:
+    original = candidate.get("original")
+    if isinstance(original, dict) and original.get("objectID"):
+        return dict(original)
+    raise ValueError(
+        "DoubleHolo exact approval requires raw candidate fields; rerun search-doubleholo"
+    )
+
+
+def _recomputed_doubleholo_candidate(row: dict, candidate: dict) -> dict:
+    raw = _doubleholo_raw_hit_from_candidate(candidate)
+    normalized = digital_binder.normalize_doubleholo_candidate(raw)
+    ranked = digital_binder.rank_doubleholo_candidates(row, [normalized])
+    if not ranked:
+        raise ValueError("selected DoubleHolo candidate could not be ranked")
+    return ranked[0]
+
+
 def _approve_remote_candidate(root: Path, args, candidate: dict, record: dict, context: str) -> None:
     image_url = candidate.get("image_url")
     if not image_url:
@@ -431,8 +454,10 @@ def approve_doubleholo_command(args) -> int:
     row = _require_card(root, args.card_id)
     _check_classification(row, args.classification, args.note)
     candidate = _load_doubleholo_candidate(root, args.card_id, args.candidate_index)
-    if args.classification == "exact" and candidate.get("exact_identity_match") is not True:
-        raise ValueError("exact DoubleHolo approval requires an exact identity match")
+    if args.classification == "exact":
+        recomputed = _recomputed_doubleholo_candidate(row, candidate)
+        if recomputed.get("exact_identity_match") is not True:
+            raise ValueError("exact DoubleHolo approval requires a recomputed exact identity match")
     _approve_remote_candidate(root, args, candidate, {
         "provider": "doubleholo",
         "upstream_id": candidate.get("provider_id") or "",
@@ -498,7 +523,11 @@ def build_parser() -> argparse.ArgumentParser:
     search.add_argument("card_id")
     search.set_defaults(func=search_command)
 
-    search_doubleholo = subcommands.add_parser("search-doubleholo")
+    search_doubleholo = subcommands.add_parser(
+        "search-doubleholo",
+        description=DOUBLEHOLO_VARIANT_WARNING,
+        epilog=DOUBLEHOLO_VARIANT_WARNING,
+    )
     search_doubleholo.add_argument("card_id")
     search_doubleholo.set_defaults(func=search_doubleholo_command)
 
