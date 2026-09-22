@@ -517,6 +517,55 @@ def test_normalize_doubleholo_candidate_preserves_original_fields_and_normalizes
     }
 
 
+def test_normalize_doubleholo_candidate_maps_chinese_variants_to_registry_zh():
+    labels = [
+        "chinese",
+        "chinese_traditional",
+        "chinese traditional",
+        "chinese-traditional",
+        "traditional_chinese",
+        "traditional chinese",
+        "chinese_simplified",
+        "chinese simplified",
+        "chinese-simplified",
+        "simplified_chinese",
+        "simplified chinese",
+    ]
+
+    for label in labels:
+        candidate = digital_binder.normalize_doubleholo_candidate({
+            "objectID": f"dh-{label}",
+            "name": "Cubone",
+            "set_name": "Pokemon Chinese Gem Pack 3",
+            "number": "407",
+            "language": label,
+            "image_url": "https://supabase.example/cubone.webp",
+        })
+
+        assert candidate["language"] == "ZH"
+
+
+def test_rank_doubleholo_candidates_accepts_traditional_chinese_exact_identity():
+    row = {
+        "id": "cubone-01", "species": "Cubone", "card_name": "卡拉卡拉",
+        "language": "ZH", "set": "Gem Pack 3", "number": "407",
+    }
+    candidate = digital_binder.normalize_doubleholo_candidate({
+        "objectID": "49932",
+        "name": "Cubone",
+        "set_name": "Pokemon Chinese Gem Pack 3",
+        "number": "407",
+        "language": "chinese_traditional",
+        "image_url": "https://supabase.example/cubone.webp",
+    })
+
+    ranked = digital_binder.rank_doubleholo_candidates(row, [candidate])
+
+    assert ranked[0]["language"] == "ZH"
+    assert ranked[0]["language_match"] is True
+    assert ranked[0]["exact_identity_match"] is True
+
+
 def test_rank_doubleholo_candidates_scores_identity_components_without_approval():
     row = {
         "id": "espeon-01", "species": "Espeon", "card_name": "わるいエーフィ",

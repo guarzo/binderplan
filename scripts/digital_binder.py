@@ -45,6 +45,10 @@ DOUBLEHOLO_LANGUAGE = {
     "english": "EN",
     "japanese": "JP",
     "chinese": "ZH",
+    "chinese traditional": "ZH",
+    "traditional chinese": "ZH",
+    "chinese simplified": "ZH",
+    "simplified chinese": "ZH",
 }
 DOUBLEHOLO_NAME_SYMBOLS = {"♀", "♂"}
 SAFE_REF_RE = re.compile(r"^(?!-)[A-Za-z0-9._/@+-]+$")
@@ -146,8 +150,14 @@ def _doubleholo_search_query(row: dict) -> str:
     return " ".join(terms)
 
 
+def _normalize_doubleholo_language(value: str | None) -> str:
+    label = re.sub(r"[-_]+", " ", str(value or "").strip().casefold())
+    label = re.sub(r"\s+", " ", label)
+    return DOUBLEHOLO_LANGUAGE.get(label, "")
+
+
 def normalize_doubleholo_candidate(hit: dict) -> dict:
-    language = DOUBLEHOLO_LANGUAGE.get(str(hit.get("language") or "").casefold(), "")
+    language = _normalize_doubleholo_language(hit.get("language"))
     number = str(hit.get("number") or "")
     set_name = str(hit.get("set_name") or "")
     return {
