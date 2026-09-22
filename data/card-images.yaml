@@ -50,12 +50,27 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  darkrai-03:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  dialga-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   eevee-01:
     classification: missing
     asset_path: ''
     reviewed: false
     reviewed_on: ''
   emolga-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  entei-01:
     classification: missing
     asset_path: ''
     reviewed: false
@@ -81,6 +96,11 @@ cards:
     reviewed: false
     reviewed_on: ''
   groudon-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  groudon-02:
     classification: missing
     asset_path: ''
     reviewed: false
@@ -115,7 +135,17 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  latios-03:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   lugia-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  lugia-03:
     classification: missing
     asset_path: ''
     reviewed: false
@@ -136,6 +166,11 @@ cards:
     reviewed: false
     reviewed_on: ''
   mewtwo-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  mewtwo-04:
     classification: missing
     asset_path: ''
     reviewed: false
@@ -266,6 +301,16 @@ cards:
     reviewed: false
     reviewed_on: ''
   walrein-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  yveltal-02:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  zapdos-01:
     classification: missing
     asset_path: ''
     reviewed: false

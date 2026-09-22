@@ -507,3 +507,84 @@ leaves:
         type: published-photo
         source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/awakened_power_2.webp
         observed_on: '2026-08-01'
+- id: v1-11
+  kind: cards
+  physical_leaf: 11
+  chapter: Power Awakening
+  chapter_order: 3
+  theme: Legendary Bearing
+  theme_page: 1
+  caption: Mythic Authority. Complete forces presented as rulers, guardians, and objects of awe.
+  pockets:
+  - position: 1
+    card_id: mewtwo-04
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/legendary_bearing_1.webp
+        observed_on: '2026-08-01'
+  - position: 2
+    card_id: groudon-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/legendary_bearing_1.webp
+        observed_on: '2026-08-01'
+  - position: 3
+    card_id: yveltal-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/legendary_bearing_1.webp
+        observed_on: '2026-08-01'
+  - position: 4
+    card_id: latios-03
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/legendary_bearing_1.webp
+        observed_on: '2026-08-01'
+  - position: 5
+    card_id: lugia-03
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/legendary_bearing_1.webp
+        observed_on: '2026-08-01'
+  - position: 6
+    card_id: entei-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/legendary_bearing_1.webp
+        observed_on: '2026-08-01'
+  - position: 7
+    card_id: darkrai-03
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/legendary_bearing_1.webp
+        observed_on: '2026-08-01'
+  - position: 8
+    card_id: dialga-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/legendary_bearing_1.webp
+        observed_on: '2026-08-01'
+  - position: 9
+    card_id: zapdos-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/legendary_bearing_1.webp
+        observed_on: '2026-08-01'
