@@ -175,10 +175,13 @@ cards:
     upstream_id: S12a-228
     source_url: https://assets.tcgdex.net/ja/S/S12a/228/high.webp
   darkrai-03:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: tcgdex
+    upstream_id: xyp-XY114
+    classification: exact
+    asset_path: assets/images/cards/darkrai-03.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://assets.tcgdex.net/en/xy/xyp/XY114/high.webp
   dawns-stadium-01:
     classification: missing
     asset_path: ''
@@ -190,10 +193,14 @@ cards:
     reviewed: false
     reviewed_on: ''
   dialga-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: doubleholo
+    upstream_id: '78164'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: exact
+    asset_path: assets/images/cards/dialga-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/78164/primary.webp
   ditto-01:
     classification: missing
     asset_path: ''
@@ -252,10 +259,18 @@ cards:
     note: Curator visually confirmed Black Bolt is the sv11B set-name alias and the
       116/086 AR printing matches the archived leaf.
   entei-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: doubleholo
+    upstream_id: '32699'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    identity_basis: In-hand-confirmed unnumbered registry identity plus curator comparison
+      of DoubleHolo 32699 with the archived leaf.
+    classification: exact
+    asset_path: assets/images/cards/entei-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/32699/primary.webp
+    note: Curator visually confirmed the unnumbered 10th Movie Commemoration Promo
+      printing against the archived leaf.
   espeon-01:
     classification: photo-crop
     asset_path: assets/images/cards/espeon-01.webp
@@ -364,10 +379,13 @@ cards:
     reviewed_on: '2026-09-22'
     source_url: https://assets.tcgdex.net/en/ex/ex5/102/high.webp
   groudon-02:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: tcgdex
+    upstream_id: sv08.5-049
+    classification: exact
+    asset_path: assets/images/cards/groudon-02.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://assets.tcgdex.net/en/sv/sv08.5/049/high.webp
   groudon-03:
     classification: missing
     asset_path: ''
@@ -539,10 +557,18 @@ cards:
     source_path: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/elemental_solitude_1.webp
     note: Pilot fallback; re-search stock or sourced scan before Volume I publication.
   latios-03:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: doubleholo
+    upstream_id: '66514'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    identity_basis: curator visually confirmed printing; DoubleHolo set-name alias
+      differs from registry
+    classification: exact
+    asset_path: assets/images/cards/latios-03.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/66514/primary.webp
+    note: Curator visually confirmed Latias & Latios 2015 is the trainer-kit set-name
+      alias and the Latios 30/30 printing matches the archived leaf.
   lucario-01:
     classification: missing
     asset_path: ''
@@ -563,10 +589,13 @@ cards:
     reviewed: false
     reviewed_on: ''
   lugia-03:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: tcgdex
+    upstream_id: neo3-20
+    classification: exact
+    asset_path: assets/images/cards/lugia-03.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://assets.tcgdex.net/en/neo/neo3/20/high.webp
   machop-01:
     classification: missing
     asset_path: ''
@@ -646,10 +675,13 @@ cards:
     upstream_id: svp-052
     source_url: https://assets.tcgdex.net/en/sv/svp/052/high.webp
   mewtwo-04:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: tcgdex
+    upstream_id: ex11-12
+    classification: exact
+    asset_path: assets/images/cards/mewtwo-04.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://assets.tcgdex.net/en/ex/ex11/12/high.webp
   mimikyu-01:
     classification: missing
     asset_path: ''
@@ -1097,15 +1129,23 @@ cards:
     reviewed: false
     reviewed_on: ''
   yveltal-02:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    classification: photo-crop
+    asset_path: assets/images/cards/yveltal-02.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-22/owner-supplied-card-images/yvetal-chinese.jpg
   zapdos-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: doubleholo
+    upstream_id: '22202'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: exact
+    asset_path: assets/images/cards/zapdos-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/22202/primary.webp
+    note: 2026-09-22 image review compared DoubleHolo 22202 with the archived leaf;
+      registry identity remains photo-based, not in-hand confirmed.
   zekrom-01:
     classification: missing
     asset_path: ''

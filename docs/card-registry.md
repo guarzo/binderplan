@@ -206,6 +206,6 @@ The column is left as recorded rather than rewritten: `first_seen` is provenance
 | walrein-01 | Walrein | トドゼルガex | JP | Mirage Forest | 29 | confirmed | awakened_power_1.webp 2026-08-01 | set/number from owner's doubleholo export 2026-09-18, denominator not recorded |
 | yveltal-01 | Yveltal | Yveltal EX | EN | XY | 79/146 | confirmed | on_attack_1.webp 2026-08-01 |  |
 | yveltal-02 | Yveltal | 伊裴尔塔尔 | ZH | CSV5C | 135/129 | confirmed | legendary_bearing_1.webp 2026-08-01 | distinct from yveltal-01, checked in hand 2026-09-19 |
-| zapdos-01 | Zapdos | サンダー | JP | Mystery of the Fossils | No.145 | uncertain | IMG_6847.HEIC 2026-08-01 | vintage Pokedex-number print, number corrected from No.143 (misread): Zapdos is Pokédex #145, matching owner's doubleholo export 2026-09-18 |
+| zapdos-01 | Zapdos | サンダー | JP | Mystery of the Fossils | No.145 | photo | IMG_6847.HEIC 2026-08-01 | vintage Pokedex-number print, number corrected from No.143 (misread): Zapdos is Pokédex #145, matching owner's doubleholo export 2026-09-18; 2026-09-22 image review compared DoubleHolo 22202 with the archived leaf; identity remains photo-based, not in-hand confirmed. |
 | zekrom-01 | Zekrom | Zekrom EX | EN | Black Bolt | 158/086 | confirmed | legendary_bearing_2.webp 2026-08-01 | Slash/Voltage Burst, checked in hand 2026-09-19 |
 | zygarde-01 | Zygarde | ジガルデ | JP | Awakening Psychic King | 040/078 | confirmed | threshold_1.webp 2026-08-01 | Aura Break attack, U rarity mark |
