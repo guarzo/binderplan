@@ -10,12 +10,22 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  bulbasaur-02:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   chansey-01:
     classification: missing
     asset_path: ''
     reviewed: false
     reviewed_on: ''
   charmander-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  charmander-02:
     classification: missing
     asset_path: ''
     reviewed: false
@@ -40,12 +50,32 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  emolga-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   greavard-01:
     classification: missing
     asset_path: ''
     reviewed: false
     reviewed_on: ''
   horsea-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  jirachi-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  latias-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  marill-01:
     classification: missing
     asset_path: ''
     reviewed: false
@@ -71,6 +101,11 @@ cards:
     reviewed: false
     reviewed_on: ''
   pikachu-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  pikachu-02:
     classification: missing
     asset_path: ''
     reviewed: false
@@ -120,6 +155,11 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  spheal-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   sprigatito-01:
     classification: missing
     asset_path: ''
@@ -131,6 +171,11 @@ cards:
     reviewed: false
     reviewed_on: ''
   stufful-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  victini-01:
     classification: missing
     asset_path: ''
     reviewed: false

@@ -253,3 +253,89 @@ leaves:
         type: published-photo
         source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/at_rest_1.webp
         observed_on: '2026-08-01'
+- id: v1-06
+  kind: transition
+  physical_leaf: 6
+  role: chapter
+  heading: Chapter II — Motion & Life
+  copy: Energy with nothing dangerous attached to it.
+- id: v1-07
+  kind: cards
+  physical_leaf: 7
+  chapter: Motion & Life
+  chapter_order: 2
+  theme: Joyful Action
+  caption: Play in Motion. Movement powered by delight rather than urgency, threat, or force.
+  pockets:
+  - position: 1
+    card_id: emolga-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/joyful_action_1.webp
+        observed_on: '2026-08-01'
+  - position: 2
+    card_id: marill-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/joyful_action_1.webp
+        observed_on: '2026-08-01'
+  - position: 3
+    card_id: bulbasaur-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/joyful_action_1.webp
+        observed_on: '2026-08-01'
+  - position: 4
+    card_id: jirachi-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/joyful_action_1.webp
+        observed_on: '2026-08-01'
+  - position: 5
+    card_id: charmander-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/joyful_action_1.webp
+        observed_on: '2026-08-01'
+  - position: 6
+    card_id: spheal-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/joyful_action_1.webp
+        observed_on: '2026-08-01'
+  - position: 7
+    card_id: victini-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/joyful_action_1.webp
+        observed_on: '2026-08-01'
+  - position: 8
+    card_id: pikachu-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/joyful_action_1.webp
+        observed_on: '2026-08-01'
+  - position: 9
+    card_id: latias-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/joyful_action_1.webp
+        observed_on: '2026-08-01'
