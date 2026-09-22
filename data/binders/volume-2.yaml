@@ -94,3 +94,84 @@ leaves:
         type: published-photo
         source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/companions_1.webp
         observed_on: '2026-08-01'
+- id: v2-04
+  kind: cards
+  physical_leaf: 4
+  chapter: Nearness
+  chapter_order: 1
+  theme: Companions
+  theme_page: 2
+  caption: Care in Practice. Affection expressed through teaching, protection, work, and ordinary attention.
+  pockets:
+  - position: 1
+    card_id: professor-elm-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/companions_2.webp
+        observed_on: '2026-08-01'
+  - position: 2
+    card_id: pikachu-04
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/companions_2.webp
+        observed_on: '2026-08-01'
+  - position: 3
+    card_id: togedemaru-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/companions_2.webp
+        observed_on: '2026-08-01'
+  - position: 4
+    card_id: flareon-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/companions_2.webp
+        observed_on: '2026-08-01'
+  - position: 5
+    card_id: kangaskhan-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/companions_2.webp
+        observed_on: '2026-08-01'
+  - position: 6
+    card_id: professors-research-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/companions_2.webp
+        observed_on: '2026-08-01'
+  - position: 7
+    card_id: rockets-trap-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/companions_2.webp
+        observed_on: '2026-08-01'
+  - position: 8
+    card_id: houndour-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/companions_2.webp
+        observed_on: '2026-08-01'
+  - position: 9
+    card_id: joltik-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/companions_2.webp
+        observed_on: '2026-08-01'

@@ -140,6 +140,11 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  flareon-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   gardevoir-01:
     classification: missing
     asset_path: ''
@@ -240,6 +245,11 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  houndour-02:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   imposter-professor-oaks-revenge-01:
     classification: missing
     asset_path: ''
@@ -255,7 +265,17 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  joltik-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   joltik-03:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  kangaskhan-01:
     classification: missing
     asset_path: ''
     reviewed: false
@@ -405,12 +425,27 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  pikachu-04:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   pikachu-06:
     classification: missing
     asset_path: ''
     reviewed: false
     reviewed_on: ''
   plusle-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  professor-elm-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  professors-research-01:
     classification: missing
     asset_path: ''
     reviewed: false
@@ -431,6 +466,11 @@ cards:
     reviewed: false
     reviewed_on: ''
   reshiram-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  rockets-trap-01:
     classification: missing
     asset_path: ''
     reviewed: false
@@ -516,6 +556,11 @@ cards:
     reviewed: false
     reviewed_on: ''
   stufful-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  togedemaru-01:
     classification: missing
     asset_path: ''
     reviewed: false
