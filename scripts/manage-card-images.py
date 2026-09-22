@@ -2,12 +2,14 @@
 """Review and approve local card images for the digital binder."""
 
 import argparse
+from io import BytesIO
 import hashlib
 import html
 import json
 import sys
 from datetime import date
 from pathlib import Path
+from urllib.parse import urlparse
 from urllib.request import Request, urlopen
 
 import yaml
@@ -38,6 +40,13 @@ def _write_bytes_atomic(path: Path, payload: bytes) -> None:
     tmp = path.with_name(path.name + ".tmp")
     tmp.write_bytes(payload)
     tmp.replace(path)
+
+
+def _remove_if_exists(path: Path) -> None:
+    try:
+        path.unlink()
+    except FileNotFoundError:
+        pass
 
 
 def _write_text_atomic(path: Path, content: str) -> None:
@@ -227,13 +236,47 @@ def _check_classification(row: dict, classification: str, note: str | None) -> N
         raise ValueError("proxy approval requires --note")
 
 
-def _merge_record(root: Path, card_id: str, record: dict) -> None:
+def _merged_images(root: Path, card_id: str, record: dict) -> dict:
     images = _load_images(root)
     existing = images.setdefault("cards", {}).get(card_id)
     if isinstance(existing, dict) and existing.get("identity_basis") and record.get("classification") == "exact":
         record["identity_basis"] = existing["identity_basis"]
     images["cards"][card_id] = record
-    digital_binder.write_image_manifest_atomically(root, images)
+    return images
+
+
+def _replace_reviewed_image(root: Path, card_id: str, record: dict, staged_asset: Path) -> None:
+    final_asset = _card_asset_path(root, card_id)
+    images = _merged_images(root, card_id, record)
+    asset_record_path = _asset_record_path(card_id)
+    errors = digital_binder.validate_image_manifest(
+        root,
+        images,
+        asset_overrides={asset_record_path: staged_asset},
+    )
+    if errors:
+        _remove_if_exists(staged_asset)
+        raise ValueError("\n".join(errors))
+
+    manifest_path = root / "data/card-images.yaml"
+    old_manifest = manifest_path.read_bytes()
+    old_asset = final_asset.read_bytes() if final_asset.exists() else None
+    try:
+        final_asset.parent.mkdir(parents=True, exist_ok=True)
+        staged_asset.replace(final_asset)
+        digital_binder.write_image_manifest_atomically(root, images)
+    except Exception:
+        _write_bytes_atomic(manifest_path, old_manifest)
+        if old_asset is None:
+            _remove_if_exists(final_asset)
+        else:
+            _write_bytes_atomic(final_asset, old_asset)
+        _remove_if_exists(staged_asset)
+        raise
+
+
+def _stage_path(root: Path, card_id: str) -> Path:
+    return root / REVIEW_ROOT / "staged" / f"{card_id}.webp"
 
 
 def _save_local_image_as_webp(source: Path, target: Path) -> None:
@@ -244,6 +287,21 @@ def _save_local_image_as_webp(source: Path, target: Path) -> None:
     tmp.replace(target)
 
 
+def _save_image_payload_as_webp(payload: bytes, target: Path) -> None:
+    target.parent.mkdir(parents=True, exist_ok=True)
+    tmp = target.with_name(target.name + ".tmp")
+    with Image.open(BytesIO(payload)) as image:
+        image.verify()
+    with Image.open(BytesIO(payload)) as image:
+        image.convert("RGB").save(tmp, format="WEBP")
+    tmp.replace(target)
+
+
+def _require_http_url(url: str, context: str) -> None:
+    if urlparse(url).scheme not in {"http", "https"}:
+        raise ValueError(f"{context} requires an HTTP(S) URL")
+
+
 def approve_local_command(args) -> int:
     root = Path.cwd()
     if not args.source_url.startswith(("http://", "https://")):
@@ -252,8 +310,8 @@ def approve_local_command(args) -> int:
         raise ValueError("approve-local requires a nonempty usage basis")
     row = _require_card(root, args.card_id)
     _check_classification(row, args.classification, args.note)
-    target = _card_asset_path(root, args.card_id)
-    _save_local_image_as_webp(Path(args.file), target)
+    staged_asset = _stage_path(root, args.card_id)
+    _save_local_image_as_webp(Path(args.file), staged_asset)
     record = {
         "classification": args.classification,
         "asset_path": _asset_record_path(args.card_id),
@@ -265,7 +323,7 @@ def approve_local_command(args) -> int:
     }
     if args.note:
         record["note"] = args.note
-    _merge_record(root, args.card_id, record)
+    _replace_reviewed_image(root, args.card_id, record, staged_asset)
     print(f"approved local image for {args.card_id}")
     return 0
 
@@ -289,11 +347,12 @@ def approve_command(args) -> int:
     image_url = candidate.get("image_url")
     if not image_url:
         raise ValueError("selected candidate has no image_url")
+    _require_http_url(image_url, "approve candidate image")
     request = Request(image_url, headers={"User-Agent": digital_binder.TCGDEX_USER_AGENT})
     with urlopen(request, timeout=20) as response:
         payload = response.read()
-    target = _card_asset_path(root, args.card_id)
-    _write_bytes_atomic(target, payload)
+    staged_asset = _stage_path(root, args.card_id)
+    _save_image_payload_as_webp(payload, staged_asset)
     record = {
         "classification": args.classification,
         "asset_path": _asset_record_path(args.card_id),
@@ -305,7 +364,7 @@ def approve_command(args) -> int:
     }
     if args.note:
         record["note"] = args.note
-    _merge_record(root, args.card_id, record)
+    _replace_reviewed_image(root, args.card_id, record, staged_asset)
     print(f"approved candidate {args.candidate_index} for {args.card_id}")
     return 0
 
@@ -327,8 +386,8 @@ def crop_evidence_command(args) -> int:
     _require_card(root, args.card_id)
     reviewed_on = _validate_date(args.reviewed_on)
     source, source_rel = _source_under_evidence(root, Path(args.source))
-    target = _card_asset_path(root, args.card_id)
-    digital_binder.crop_evidence_photo(source, _parse_box(args.box), target)
+    staged_asset = _stage_path(root, args.card_id)
+    digital_binder.crop_evidence_photo(source, _parse_box(args.box), staged_asset)
     record = {
         "classification": "photo-crop",
         "asset_path": _asset_record_path(args.card_id),
@@ -337,7 +396,7 @@ def crop_evidence_command(args) -> int:
         "provider": "evidence-crop",
         "source_path": source_rel,
     }
-    _merge_record(root, args.card_id, record)
+    _replace_reviewed_image(root, args.card_id, record, staged_asset)
     print(f"cropped evidence image for {args.card_id}")
     return 0
 
@@ -352,7 +411,8 @@ def mark_missing_command(args) -> int:
         "reviewed_on": date.today().isoformat(),
         "note": args.note,
     }
-    _merge_record(root, args.card_id, record)
+    images = _merged_images(root, args.card_id, record)
+    digital_binder.write_image_manifest_atomically(root, images)
     print(f"marked {args.card_id} missing")
     return 0
 

@@ -134,9 +134,21 @@ def search_tcgdex(row: dict, opener=urlopen) -> list[dict]:
         if not isinstance(summary, dict) or not summary.get("id"):
             continue
         detail_url = f"{TCGDEX_API_ROOT}/{language}/cards/{quote(str(summary['id']))}"
-        detail = _tcgdex_json(detail_url, opener=opener)
+        try:
+            detail = _tcgdex_json(detail_url, opener=opener)
+        except (OSError, ValueError, json.JSONDecodeError) as exc:
+            candidate = normalize_tcgdex_candidate(summary)
+            candidate["image_url"] = None
+            candidate["detail_error"] = str(exc)
+            candidates.append(candidate)
+            continue
         if isinstance(detail, dict):
             candidates.append(normalize_tcgdex_candidate(detail))
+        else:
+            candidate = normalize_tcgdex_candidate(summary)
+            candidate["image_url"] = None
+            candidate["detail_error"] = "detail response was not a JSON object"
+            candidates.append(candidate)
     return candidates
 
 
@@ -178,7 +190,10 @@ def crop_evidence_photo(source: Path, box: tuple[int, int, int, int], target: Pa
         tmp.replace(target)
 
 
-def _validate_images_against_project(root: Path, images: dict) -> list[str]:
+def _validate_images_against_project(
+        root: Path,
+        images: dict,
+        asset_overrides: dict[str, Path] | None = None) -> list[str]:
     root = Path(root)
     errors: list[str] = []
     try:
@@ -195,8 +210,16 @@ def _validate_images_against_project(root: Path, images: dict) -> list[str]:
             volume_id, manifest, registry, errors
         )
     _validate_global_duplicates(manifests, errors)
-    _validate_images(root, images, registry, occupied_by_volume, publication_statuses, errors)
+    _validate_images(
+        root, images, registry, occupied_by_volume, publication_statuses, errors,
+        asset_overrides=asset_overrides,
+    )
     return errors
+
+
+def validate_image_manifest(root: Path, images: dict,
+                            asset_overrides: dict[str, Path] | None = None) -> list[str]:
+    return _validate_images_against_project(root, images, asset_overrides=asset_overrides)
 
 
 def write_image_manifest_atomically(root: Path, images: dict) -> None:
@@ -435,7 +458,8 @@ def _validate_placement(volume_id: str, leaf_label: str, position: int | None,
 
 def _validate_images(root: Path, images: dict, registry: dict[str, dict],
                      occupied_by_volume: dict[str, set[str]], publication_statuses: dict[str, str],
-                     errors: list[str]) -> None:
+                     errors: list[str],
+                     asset_overrides: dict[str, Path] | None = None) -> None:
     if images.get("version") != 1:
         errors.append("data/card-images.yaml: version must be 1")
     cards = images.get("cards")
@@ -461,8 +485,12 @@ def _validate_images(root: Path, images: dict, registry: dict[str, dict],
         else:
             if not asset_path:
                 errors.append(f"image record {card_id}: {classification} image requires asset_path")
-            elif not (root / asset_path).is_file():
-                errors.append(f"image record {card_id}: missing asset {asset_path}")
+            else:
+                effective_asset = asset_overrides.get(asset_path) if asset_overrides else None
+                if effective_asset is None:
+                    effective_asset = root / asset_path
+                if not effective_asset.is_file():
+                    errors.append(f"image record {card_id}: missing asset {asset_path}")
         reviewed = record.get("reviewed")
         if not isinstance(reviewed, bool):
             errors.append(f"image record {card_id}: reviewed must be true or false")

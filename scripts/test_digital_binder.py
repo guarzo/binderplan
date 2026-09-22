@@ -1,6 +1,8 @@
+import argparse
 import importlib.util
 import json
 import subprocess
+import sys
 from pathlib import Path
 
 from PIL import Image
@@ -11,6 +13,13 @@ spec = importlib.util.spec_from_file_location(
 )
 digital_binder = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(digital_binder)
+sys.modules["digital_binder"] = digital_binder
+
+manage_spec = importlib.util.spec_from_file_location(
+    "manage_card_images", Path(__file__).parent / "manage-card-images.py"
+)
+manage_card_images = importlib.util.module_from_spec(manage_spec)
+manage_spec.loader.exec_module(manage_card_images)
 
 
 EVIDENCE_SOURCE = (
@@ -219,6 +228,68 @@ class FakeHTTPResponse:
         return json.dumps(self.payload).encode("utf-8")
 
 
+class FakeBinaryHTTPResponse:
+    def __init__(self, payload):
+        self.payload = payload
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, exc_type, exc, tb):
+        return False
+
+    def read(self):
+        return self.payload
+
+
+def image_bytes(format_="PNG", size=(12, 10), color=(64, 128, 192)):
+    from io import BytesIO
+
+    buffer = BytesIO()
+    Image.new("RGB", size, color).save(buffer, format=format_)
+    return buffer.getvalue()
+
+
+def write_candidate_cache(root, card_id, candidates):
+    path = root / "tmp/digital-binder-review/candidates" / f"{card_id}.json"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(
+        json.dumps({"card_id": card_id, "registry": {}, "candidates": candidates}),
+        encoding="utf-8",
+    )
+
+
+def seed_existing_proxy_image(root):
+    asset_path = root / manage_card_images.CARD_ASSET_DIR / "abra-01.webp"
+    write_image(asset_path, color=(9, 8, 7))
+    images = load_images(root)
+    images["cards"]["abra-01"] = {
+        "classification": "proxy",
+        "asset_path": str(manage_card_images.CARD_ASSET_DIR / "abra-01.webp"),
+        "reviewed": True,
+        "reviewed_on": "2026-09-22",
+        "provider": "tcgdex",
+        "upstream_id": "old-proxy",
+        "source_url": "https://example.invalid/old.webp",
+        "note": "Existing reviewed proxy.",
+    }
+    write_images(root, images)
+    return (
+        (root / "data/card-images.yaml").read_bytes(),
+        asset_path.read_bytes(),
+        asset_path,
+    )
+
+
+def approve_args(card_id="abra-01", candidate_index=0, classification="exact", note=None):
+    return argparse.Namespace(
+        card_id=card_id,
+        candidate_index=candidate_index,
+        classification=classification,
+        note=note,
+    )
+
+
 def project_manifest(card_id="abra-01", status="confirmed", observed_card_id=None):
     pocket = confirmed_pocket(card_id)
     if status == "pending":
@@ -293,6 +364,43 @@ def test_search_tcgdex_maps_language_and_uses_detail_records():
     assert calls[1][0] == "https://api.tcgdex.net/v2/ja/cards/SV11B-156"
     assert all(user_agent and "binderplan" in user_agent for _, user_agent, _ in calls)
     assert all(timeout == 20 for _, _, timeout in calls)
+
+
+def test_search_tcgdex_keeps_summary_when_one_detail_fetch_fails():
+    def fake_opener(request, timeout):
+        if request.full_url.endswith("/en/cards?name=Abra"):
+            return FakeHTTPResponse([
+                {
+                    "id": "base1-43", "localId": "43", "name": "Abra",
+                    "image": None, "set": {"id": "base1", "name": "Base Set"},
+                },
+                {
+                    "id": "base1-44", "localId": "44", "name": "Abra",
+                    "image": None, "set": {"id": "base1", "name": "Base Set"},
+                },
+            ])
+        if request.full_url.endswith("/en/cards/base1-43"):
+            raise OSError("404 not found")
+        if request.full_url.endswith("/en/cards/base1-44"):
+            return FakeHTTPResponse({
+                "id": "base1-44", "localId": "44", "name": "Abra",
+                "image": "https://assets.tcgdex.net/en/base/base1/44",
+                "set": {"id": "base1", "name": "Base Set"},
+            })
+        raise AssertionError(f"unexpected URL {request.full_url}")
+
+    row = {
+        "id": "abra-01", "card_name": "Abra", "language": "EN",
+        "set": "Base Set", "number": "43/102", "confidence": "confirmed",
+    }
+
+    candidates = digital_binder.search_tcgdex(row, opener=fake_opener)
+
+    assert [candidate["provider_id"] for candidate in candidates] == ["base1-43", "base1-44"]
+    assert candidates[0]["image_url"] is None
+    assert "404 not found" in candidates[0]["detail_error"]
+    assert "detail_error" not in candidates[1]
+    assert candidates[1]["image_url"] == "https://assets.tcgdex.net/en/base/base1/44/high.webp"
 
 
 def test_candidate_without_image_remains_reviewable():
@@ -400,6 +508,168 @@ def test_approve_local_cli_requires_http_source_url_and_usage_basis(tmp_path):
     assert missing_basis.returncode == 1
     assert "HTTP(S)" in missing_basis.stderr
     assert not (root / "assets/images/cards/abra-01.webp").exists()
+
+
+def test_approve_rejects_file_candidate_url(tmp_path, monkeypatch):
+    root = project_fixture(tmp_path)
+    write_current_generated(root)
+    write_candidate_cache(root, "abra-01", [{
+        "candidate_index": 0,
+        "provider_id": "base1-43",
+        "image_url": "file:///tmp/abra.webp",
+    }])
+    monkeypatch.chdir(root)
+
+    try:
+        manage_card_images.approve_command(approve_args())
+    except ValueError as exc:
+        assert "HTTP(S)" in str(exc)
+    else:
+        raise AssertionError("approve should reject file: candidate URLs")
+
+    assert not (root / manage_card_images.CARD_ASSET_DIR / "abra-01.webp").exists()
+
+
+def test_approve_rejects_invalid_image_payload(tmp_path, monkeypatch):
+    root = project_fixture(tmp_path)
+    write_current_generated(root)
+    write_candidate_cache(root, "abra-01", [{
+        "candidate_index": 0,
+        "provider_id": "base1-43",
+        "image_url": "https://example.invalid/not-image.webp",
+    }])
+
+    def fake_urlopen(request, timeout):
+        return FakeBinaryHTTPResponse(b"not an image")
+
+    monkeypatch.chdir(root)
+    monkeypatch.setattr(manage_card_images, "urlopen", fake_urlopen)
+
+    try:
+        manage_card_images.approve_command(approve_args())
+    except OSError:
+        pass
+    else:
+        raise AssertionError("approve should reject invalid image payloads")
+
+    assert not (root / manage_card_images.CARD_ASSET_DIR / "abra-01.webp").exists()
+
+
+def test_approve_reencodes_valid_candidate_image_to_webp(tmp_path, monkeypatch):
+    root = project_fixture(tmp_path)
+    write_current_generated(root)
+    write_candidate_cache(root, "abra-01", [{
+        "candidate_index": 0,
+        "provider_id": "base1-43",
+        "image_url": "https://example.invalid/abra.png",
+    }])
+
+    def fake_urlopen(request, timeout):
+        return FakeBinaryHTTPResponse(image_bytes("PNG"))
+
+    monkeypatch.chdir(root)
+    monkeypatch.setattr(manage_card_images, "urlopen", fake_urlopen)
+
+    assert manage_card_images.approve_command(approve_args()) == 0
+
+    asset_path = root / manage_card_images.CARD_ASSET_DIR / "abra-01.webp"
+    with Image.open(asset_path) as image:
+        assert image.format == "WEBP"
+    record = load_images(root)["cards"]["abra-01"]
+    assert record["provider"] == "tcgdex"
+    assert record["upstream_id"] == "base1-43"
+    assert record["source_url"] == "https://example.invalid/abra.png"
+
+
+def test_approve_preserves_existing_asset_and_yaml_when_validation_rejects(tmp_path, monkeypatch):
+    root = project_fixture(tmp_path)
+    (root / "docs" / "card-registry.md").write_text(
+        registry_doc(confidence="confirmed", set_="Base Set", number=""),
+        encoding="utf-8",
+    )
+    write_current_generated(root)
+    original_yaml, original_asset, asset_path = seed_existing_proxy_image(root)
+    write_candidate_cache(root, "abra-01", [{
+        "candidate_index": 0,
+        "provider_id": "base1-43",
+        "image_url": "https://example.invalid/abra.png",
+    }])
+
+    def fake_urlopen(request, timeout):
+        return FakeBinaryHTTPResponse(image_bytes("PNG", color=(255, 0, 0)))
+
+    monkeypatch.chdir(root)
+    monkeypatch.setattr(manage_card_images, "urlopen", fake_urlopen)
+
+    try:
+        manage_card_images.approve_command(approve_args())
+    except ValueError as exc:
+        assert "exact" in str(exc) and "set and number" in str(exc)
+    else:
+        raise AssertionError("invalid exact approval should be rejected")
+
+    assert (root / "data/card-images.yaml").read_bytes() == original_yaml
+    assert asset_path.read_bytes() == original_asset
+
+
+def test_approve_local_preserves_existing_asset_and_yaml_when_validation_rejects(tmp_path):
+    root = project_fixture(tmp_path)
+    (root / "docs" / "card-registry.md").write_text(
+        registry_doc(confidence="confirmed", set_="Base Set", number=""),
+        encoding="utf-8",
+    )
+    write_current_generated(root)
+    original_yaml, original_asset, asset_path = seed_existing_proxy_image(root)
+    image_file = tmp_path / "local.png"
+    write_image(image_file, color=(255, 0, 0))
+
+    result = subprocess.run(
+        [
+            "python3", str(Path(__file__).with_name("manage-card-images.py")),
+            "approve-local", "abra-01", "--file", str(image_file),
+            "--source-url", "https://example.invalid/abra.png",
+            "--usage-basis", "Curator-supplied reference photograph.",
+            "--classification", "exact",
+        ],
+        cwd=root,
+        capture_output=True,
+        text=True,
+    )
+
+    assert result.returncode == 1
+    assert "set and number" in result.stderr
+    assert (root / "data/card-images.yaml").read_bytes() == original_yaml
+    assert asset_path.read_bytes() == original_asset
+
+
+def test_crop_evidence_preserves_existing_asset_and_yaml_when_manifest_write_fails(tmp_path, monkeypatch):
+    root = project_fixture(tmp_path)
+    write_current_generated(root)
+    original_yaml, original_asset, asset_path = seed_existing_proxy_image(root)
+    source = root / "docs/evidence/2026-09-22/crop-source.png"
+    write_image(source, color=(255, 0, 0))
+
+    def fail_write(root_arg, images):
+        raise OSError("simulated manifest write failure")
+
+    monkeypatch.chdir(root)
+    monkeypatch.setattr(manage_card_images.digital_binder, "write_image_manifest_atomically", fail_write)
+
+    args = argparse.Namespace(
+        card_id="abra-01",
+        source=str(source),
+        box="1,1,8,9",
+        reviewed_on="2026-09-22",
+    )
+    try:
+        manage_card_images.crop_evidence_command(args)
+    except OSError as exc:
+        assert "simulated" in str(exc)
+    else:
+        raise AssertionError("manifest write failure should reject crop update")
+
+    assert (root / "data/card-images.yaml").read_bytes() == original_yaml
+    assert asset_path.read_bytes() == original_asset
 
 
 def test_approve_local_cli_writes_asset_and_reviewed_mapping(tmp_path):
