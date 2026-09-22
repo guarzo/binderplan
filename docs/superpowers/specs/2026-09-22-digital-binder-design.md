@@ -67,9 +67,24 @@ Each manifest contains ordered card pages. Each page records:
 - Exactly nine ordered pocket entries
 - Optional page-level curatorial caption
 
-Each occupied pocket references one registry ID. A pocket may instead be explicitly empty when the physical or intended composition contains an empty position.
+Each pocket stores either an explicit empty state or an intended `card_id` plus placement state:
 
-The manifest is a mutable presentation snapshot. It is not historical evidence and does not replace the ledger. Updating it is required when the public intended arrangement changes.
+- `status`: `confirmed` or `pending`
+- `evidence`: evidence type, source reference, and observation date
+- `observed_card_id`: required for a pending replacement when the last physically observed occupant is known
+- `physical_state_unknown`: required and set to `true` for a pending placement when no previous occupant was established
+- `note`: required when placement is pending and the evidence reference does not fully explain why
+
+A confirmed pocket means the intended card has been physically observed in that position. A pending pocket means the public composition intentionally shows a move that has not been physically verified. Its `observed_card_id` preserves the last known physical occupant rather than silently erasing that fact. A pending pocket must contain exactly one of `observed_card_id` or `physical_state_unknown: true`.
+
+Allowed placement transitions are:
+
+1. **Propose a move:** replace `card_id` with the intended incoming card, set `status: pending`, retain the outgoing card as `observed_card_id`, and cite the decision or proposal.
+2. **Confirm execution:** add dated observation evidence, set `status: confirmed`, and remove `observed_card_id`.
+3. **Revert an unexecuted move:** restore `observed_card_id` as `card_id`, set `status: confirmed`, and cite the observation that established the reversion.
+4. **Correct contradicted evidence:** make a new manifest change with a note and evidence reference. Never rewrite an evidence file to make the old state appear correct.
+
+The manifest is the current authority for the intended public composition and its pocket-level physical confirmation state. It is a mutable snapshot, not historical evidence, and does not replace the ledger.
 
 ### Image mapping
 
@@ -84,6 +99,8 @@ Create `data/card-images.yaml`, keyed by registry ID. Each entry records:
 - Optional note describing a mismatch or fallback
 
 An entry classified as `missing` has no asset path. A `proxy` must explain how it differs from the owned printing.
+
+`exact` means the scan depicts the same printing, not merely the same artwork or species. It is valid only when the canonical registry contains enough established identity to distinguish that printing. A registry row with `confidence: uncertain` cannot receive an `exact` image mapping. If image review establishes previously missing or uncertain printing identity, the reviewer must update the registry and image mapping in the same commit. The registry confidence still follows its existing evidence semantics: image research does not claim an in-hand confirmation. Genuinely unnumbered printings require an explicit identity-basis note naming the distinguishing evidence.
 
 ### Generated card metadata
 
@@ -102,6 +119,8 @@ Add a Python tool responsible for:
 - Rejecting duplicate occupied placements unless explicitly supported by a future design
 - Confirming referenced source assets exist
 - Rejecting unreviewed public image mappings
+- Rejecting `exact` mappings whose registry identity remains uncertain or insufficiently distinguishing
+- Validating placement states, evidence fields, the pending-state `observed_card_id` or `physical_state_unknown` requirement, and allowed transitions against the previous committed manifest
 - Producing a review queue for proxies, missing assets, uncertain identities, and pending placements
 - Searching configured providers for candidate scans
 - Downloading only human-approved images
@@ -157,6 +176,19 @@ Before the public gallery stops using the current photographs:
 - Retain the files as evidence for image matching and fallback crops.
 
 Existing photographs are the authoritative source for seeding pocket order because the registry records pages but not positions within each page.
+
+## Placement lifecycle and documentation compatibility
+
+After migration, the sources answer different questions:
+
+- `docs/card-registry.md`: what physical card is this, and what observation first established it?
+- `data/binders/*.yaml`: where does the intended public composition place it, and has that exact pocket placement been physically confirmed?
+- `docs/ledger.md`: why was a contested placement, correction, release, or theme decision made?
+- `docs/evidence/`: what immutable observation supports a placement or identity claim?
+
+A routine physical move updates the binder manifest even when it does not meet the ledger's threshold for a historical reasoning entry. A contested move, correction, or release updates the manifest and also appends the ledger entry required by existing policy. Image-only corrections update the registry when identity changes and the image mapping when presentation changes; they do not alter placement unless evidence also establishes a move.
+
+Migration must update the usage guidance in `docs/card-registry.md` and `docs/ledger.md`. Those files currently describe reconstructing location from the photo baseline plus ledger history. Once the manifests launch, they must direct current-placement questions to the binder manifests while retaining `first_seen` and ledger history as provenance.
 
 ## Gallery experience
 
@@ -237,28 +269,41 @@ Production validation fails for:
 - Unknown registry IDs
 - Invalid or incomplete nine-pocket page definitions
 - Duplicate occupied placements
+- Invalid placement states, missing placement evidence, or invalid state transitions
+- Pending placements that define neither a last-observed occupant nor an explicit unknown physical state
 - Missing local files for non-missing image records
 - Unreviewed image mappings
+- `exact` mappings whose registry identity is uncertain or insufficient
 - Proxy records without an explanatory note
 - Generated registry data that is out of date
 - Public remote card-image URLs
 
 A deliberately missing image is valid only when explicitly classified as `missing`. An upstream provider failure affects acquisition commands, not the published gallery or ordinary Hugo builds.
 
+GitHub Actions must run the complete semantic validator before Hugo:
+
+```text
+python3 scripts/check-digital-binder.py --check
+hugo --gc --minify --baseURL "https://collection.dpao.la/"
+```
+
+The validator's `--check` mode covers registry generation drift, placement and image manifests, local assets, review state, and all failure conditions above. Hugo must not be the first command capable of discovering invalid binder data.
+
 ## Migration and rollout
 
 1. Preserve existing Volume I and II photographs under dated evidence storage.
-2. Seed card-page and pocket order from those photographs.
-3. Populate initial candidate matches from the registry.
-4. Review and approve image matches.
-5. Implement one representative pilot spread whose two leaves belong to different themes.
-6. Review desktop presentation, mobile presentation, accessibility, source status, and visual quality.
-7. Complete Volume I.
-8. Complete Volume II.
-9. Replace the photographed public gallery only after both volumes pass review.
-10. Remove no evidence files as part of the public replacement.
-11. Treat each side-binder migration as a later scoped project.
-12. Leave slab galleries unchanged.
+2. Seed card-page and pocket order from those photographs, including dated placement evidence and any known post-photograph changes.
+3. Update registry and ledger usage guidance to name the binder manifests as the current intended-placement and confirmation-state authority.
+4. Populate initial candidate matches from the registry.
+5. Review and approve image matches, updating uncertain registry identity in the same commit whenever review establishes an exact printing.
+6. Implement one representative pilot spread whose two leaves belong to different themes.
+7. Review desktop presentation, mobile presentation, accessibility, source status, and visual quality.
+8. Complete Volume I.
+9. Complete Volume II.
+10. Replace the photographed public gallery only after both volumes pass review.
+11. Remove no evidence files as part of the public replacement.
+12. Treat each side-binder migration as a later scoped project.
+13. Leave slab galleries unchanged.
 
 The old public experience remains available until the reconstructed volumes are complete, so migration is reversible and does not expose a partially matched binder.
 
