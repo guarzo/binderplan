@@ -22,10 +22,18 @@ cards:
     reviewed: false
     reviewed_on: ''
   audino-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: doubleholo
+    upstream_id: '31392'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    identity_basis: curator visually confirmed printing; DoubleHolo set-name alias
+      differs from registry
+    classification: exact
+    asset_path: assets/images/cards/audino-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/31392/primary.webp
+    note: Curator visually confirmed Black Bolt is the sv11B set-name alias and the
+      printing matches the archived leaf.
   beldum-01:
     classification: missing
     asset_path: ''
@@ -42,10 +50,13 @@ cards:
     reviewed: false
     reviewed_on: ''
   bulbasaur-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: tcgdex
+    upstream_id: ex14-45
+    classification: exact
+    asset_path: assets/images/cards/bulbasaur-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://assets.tcgdex.net/en/ex/ex14/45/high.webp
   bulbasaur-02:
     classification: missing
     asset_path: ''
@@ -107,10 +118,13 @@ cards:
     reviewed: false
     reviewed_on: ''
   cyndaquil-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: tcgdex
+    upstream_id: ex15-45
+    classification: exact
+    asset_path: assets/images/cards/cyndaquil-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://assets.tcgdex.net/en/ex/ex15/45/high.webp
   cyndaquil-02:
     classification: exact
     asset_path: assets/images/cards/cyndaquil-02.webp
@@ -320,10 +334,13 @@ cards:
     reviewed: false
     reviewed_on: ''
   horsea-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: tcgdex
+    upstream_id: ecard2-84
+    classification: exact
+    asset_path: assets/images/cards/horsea-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://assets.tcgdex.net/en/ecard/ecard2/84/high.webp
   houndoom-01:
     classification: missing
     asset_path: ''
@@ -568,10 +585,13 @@ cards:
     reviewed: false
     reviewed_on: ''
   noibat-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: tcgdex
+    upstream_id: SV9-111
+    classification: exact
+    asset_path: assets/images/cards/noibat-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://assets.tcgdex.net/ja/SV/SV9/111/high.webp
   ns-plan-01:
     classification: missing
     asset_path: ''
@@ -593,10 +613,13 @@ cards:
     reviewed: false
     reviewed_on: ''
   pikachu-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: tcgdex
+    upstream_id: basep-27
+    classification: exact
+    asset_path: assets/images/cards/pikachu-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://assets.tcgdex.net/en/base/basep/27/high.webp
   pikachu-02:
     classification: missing
     asset_path: ''
@@ -633,10 +656,14 @@ cards:
     reviewed: false
     reviewed_on: ''
   plusle-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: doubleholo
+    upstream_id: '77937'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: exact
+    asset_path: assets/images/cards/plusle-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/77937/primary.webp
   professor-elm-01:
     classification: missing
     asset_path: ''
@@ -693,10 +720,13 @@ cards:
     reviewed: false
     reviewed_on: ''
   sandshrew-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: tcgdex
+    upstream_id: ex7-74
+    classification: exact
+    asset_path: assets/images/cards/sandshrew-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://assets.tcgdex.net/en/ex/ex7/74/high.webp
   sandshrew-02:
     classification: missing
     asset_path: ''
@@ -733,10 +763,13 @@ cards:
     reviewed: false
     reviewed_on: ''
   snivy-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: tcgdex
+    upstream_id: bwp-BW06
+    classification: exact
+    asset_path: assets/images/cards/snivy-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://assets.tcgdex.net/en/bw/bwp/BW06/high.webp
   snivy-02:
     classification: photo-crop
     asset_path: assets/images/cards/snivy-02.webp
