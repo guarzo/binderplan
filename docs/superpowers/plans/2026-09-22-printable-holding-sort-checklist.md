@@ -133,6 +133,6 @@ git diff --check origin/main...HEAD
 
 Expected: tests and validators pass, Hugo builds successfully, and the branch diff has no whitespace errors.
 
-- [ ] **Step 8: Push and open a pull request**
+- [x] **Step 8: Push and open a pull request**
 
 Push the design branch and open a PR against `main` summarizing the architecture, 97-card manifest, printable checklist, and verification results.
