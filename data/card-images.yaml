@@ -60,7 +60,17 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  gengar-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   gengar-mimikyu-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  golem-01:
     classification: missing
     asset_path: ''
     reviewed: false
@@ -125,12 +135,22 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  mewtwo-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   noibat-01:
     classification: missing
     asset_path: ''
     reviewed: false
     reviewed_on: ''
   oshawott-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  palkia-01:
     classification: missing
     asset_path: ''
     reviewed: false
@@ -165,12 +185,32 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  rayquaza-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  salamence-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   sandshrew-01:
     classification: missing
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  scyther-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   shaymin-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  shaymin-02:
     classification: missing
     asset_path: ''
     reviewed: false
@@ -206,6 +246,11 @@ cards:
     reviewed: false
     reviewed_on: ''
   stufful-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  torterra-01:
     classification: missing
     asset_path: ''
     reviewed: false

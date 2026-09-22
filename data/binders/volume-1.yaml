@@ -426,3 +426,84 @@ leaves:
         type: published-photo
         source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/awakened_power_1.webp
         observed_on: '2026-08-01'
+- id: v1-10
+  kind: cards
+  physical_leaf: 10
+  chapter: Power Awakening
+  chapter_order: 3
+  theme: Awakened Power
+  theme_page: 2
+  caption: Becoming. Transformation, escalation, and power crossing toward inevitability.
+  pockets:
+  - position: 1
+    card_id: gengar-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/awakened_power_2.webp
+        observed_on: '2026-08-01'
+  - position: 2
+    card_id: torterra-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/awakened_power_2.webp
+        observed_on: '2026-08-01'
+  - position: 3
+    card_id: rayquaza-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/awakened_power_2.webp
+        observed_on: '2026-08-01'
+  - position: 4
+    card_id: scyther-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/awakened_power_2.webp
+        observed_on: '2026-08-01'
+  - position: 5
+    card_id: palkia-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/awakened_power_2.webp
+        observed_on: '2026-08-01'
+  - position: 6
+    card_id: mewtwo-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/awakened_power_2.webp
+        observed_on: '2026-08-01'
+  - position: 7
+    card_id: salamence-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/awakened_power_2.webp
+        observed_on: '2026-08-01'
+  - position: 8
+    card_id: shaymin-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/awakened_power_2.webp
+        observed_on: '2026-08-01'
+  - position: 9
+    card_id: golem-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/awakened_power_2.webp
+        observed_on: '2026-08-01'
