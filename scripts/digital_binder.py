@@ -7,6 +7,7 @@ import json
 import os
 import re
 import subprocess
+import unicodedata
 from functools import lru_cache
 from html.parser import HTMLParser
 from pathlib import Path
@@ -45,6 +46,7 @@ DOUBLEHOLO_LANGUAGE = {
     "japanese": "JP",
     "chinese": "ZH",
 }
+DOUBLEHOLO_NAME_SYMBOLS = {"♀", "♂"}
 SAFE_REF_RE = re.compile(r"^(?!-)[A-Za-z0-9._/@+-]+$")
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 INITIAL_BINDER_IMAGE_BUDGET = 1_572_864
@@ -227,9 +229,27 @@ def _doubleholo_set_matches(wanted: str, candidate: str) -> bool:
     return wanted == candidate
 
 
+def _doubleholo_name_tokens(value: str | None) -> list[str]:
+    normalized = unicodedata.normalize("NFKC", str(value or "")).casefold()
+    tokens = []
+    token = []
+    for char in normalized:
+        if char.isalnum():
+            token.append(char)
+        else:
+            if token:
+                tokens.append("".join(token))
+                token = []
+            if char in DOUBLEHOLO_NAME_SYMBOLS:
+                tokens.append(char)
+    if token:
+        tokens.append("".join(token))
+    return tokens
+
+
 def _contains_token_sequence(candidate_value: str | None, wanted_value: str | None) -> bool:
-    candidate_tokens = re.findall(r"[a-z0-9]+", str(candidate_value or "").casefold())
-    wanted_tokens = re.findall(r"[a-z0-9]+", str(wanted_value or "").casefold())
+    candidate_tokens = _doubleholo_name_tokens(candidate_value)
+    wanted_tokens = _doubleholo_name_tokens(wanted_value)
     if not candidate_tokens or not wanted_tokens:
         return False
     width = len(wanted_tokens)
@@ -238,14 +258,10 @@ def _contains_token_sequence(candidate_value: str | None, wanted_value: str | No
 
 
 def _doubleholo_name_matches(row: dict, candidate: dict) -> bool:
-    candidate_name = _fold_identity(candidate.get("name"))
-    for raw_name in (row.get("card_name"), row.get("species")):
-        name = _fold_identity(raw_name)
-        if name and name == candidate_name:
-            return True
-        if _contains_token_sequence(candidate.get("name"), raw_name):
-            return True
-    return False
+    return any(
+        _contains_token_sequence(candidate.get("name"), raw_name)
+        for raw_name in (row.get("card_name"), row.get("species"))
+    )
 
 
 def rank_doubleholo_candidates(row: dict, candidates: list[dict]) -> list[dict]:

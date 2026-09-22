@@ -578,6 +578,47 @@ def test_doubleholo_exact_identity_requires_normalized_set_equality_not_substrin
     assert ranked[0]["exact_identity_match"] is False
 
 
+def ranked_doubleholo_name_match(card_name, species, candidate_name, language="EN", hit_language="english"):
+    row = {
+        "id": "name-01", "species": species, "card_name": card_name,
+        "language": language, "set": "Base Set", "number": "1",
+    }
+    candidate = digital_binder.normalize_doubleholo_candidate({
+        "objectID": "name-candidate", "name": candidate_name,
+        "set_name": "Pokemon Base Set", "number": "1", "language": hit_language,
+        "image_url": "https://example.invalid/name.webp",
+    })
+    return digital_binder.rank_doubleholo_candidates(row, [candidate])[0]["name_match"]
+
+
+def test_doubleholo_name_match_accepts_exact_japanese_native_name_with_nfkc():
+    assert ranked_doubleholo_name_match(
+        "ピカチュウ", "Pikachu", "ﾋﾟｶﾁｭｳ", language="JP", hit_language="japanese"
+    ) is True
+
+
+def test_doubleholo_name_match_accepts_exact_chinese_native_name():
+    assert ranked_doubleholo_name_match(
+        "皮卡丘", "Pikachu", "皮卡丘", language="ZH", hit_language="chinese"
+    ) is True
+
+
+def test_doubleholo_name_match_preserves_nidoran_gender_variants():
+    assert ranked_doubleholo_name_match("Nidoran♀", "Nidoran♀", "Nidoran♀") is True
+    assert ranked_doubleholo_name_match("Nidoran♀", "Nidoran♀", "Nidoran♂") is False
+
+
+def test_doubleholo_name_match_accepts_qualified_english_species_token_sequence():
+    assert ranked_doubleholo_name_match(
+        "わるいエーフィ", "Espeon", "Dark Espeon", language="JP", hit_language="japanese"
+    ) is True
+
+
+def test_doubleholo_name_match_rejects_embedded_species_without_token_boundary():
+    assert ranked_doubleholo_name_match("Mew", "Mew", "Mewtwo") is False
+    assert ranked_doubleholo_name_match("Abra", "Abra", "Kadabra") is False
+
+
 def test_search_doubleholo_skips_bad_hits_and_returns_empty_on_failed_or_malformed_response():
     row = {
         "id": "abra-01", "species": "Abra", "card_name": "Abra",
