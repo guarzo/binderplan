@@ -31,11 +31,40 @@
           {{ if not (in (slice "exact" "photo-crop" "proxy" "missing") $classification) }}
             {{ errorf "unknown image classification %q for card %q" $classification .card_id }}
           {{ end }}
+          {{ $provenance := $mapping.provider }}
+          {{ if not $provenance }}{{ $provenance = "No source recorded" }}{{ end }}
+          {{ $sourceAttribution := $mapping.source_url }}
+          {{ if not $sourceAttribution }}{{ $sourceAttribution = $mapping.source_path }}{{ end }}
+          {{ $inspectorSrc := "" }}
+          {{ if ne $classification "missing" }}
+            {{ $assetPath := $mapping.asset_path }}
+            {{ if not $assetPath }}
+              {{ errorf "missing asset path for card %q" .card_id }}
+            {{ end }}
+            {{ $resourcePath := strings.TrimPrefix "assets/" $assetPath }}
+            {{ $source := resources.Get $resourcePath }}
+            {{ if not $source }}
+              {{ errorf "missing image resource %q for card %q" $resourcePath .card_id }}
+            {{ end }}
+            {{ $inspectorImage := $source.Resize "900x webp q84" }}
+            {{ $inspectorSrc = $inspectorImage.RelPermalink }}
+          {{ end }}
           <button class="binder-pocket" type="button" data-pocket
                   data-pocket-position="{{ .position }}"
                   data-card-id="{{ .card_id }}"
+                  data-card-name="{{ $card.card_name }}"
+                  data-card-language="{{ $card.language }}"
+                  data-card-set="{{ $card.set }}"
+                  data-card-number="{{ $card.number }}"
+                  data-leaf-theme="{{ $leaf.theme }}"
                   data-classification="{{ $classification }}"
+                  data-image-provenance="{{ $provenance }}"
+                  data-image-source="{{ $sourceAttribution }}"
+                  data-image-note="{{ $mapping.note }}"
                   data-placement-status="{{ .placement.status }}"
+                  data-placement-observed-card-id="{{ .placement.observed_card_id }}"
+                  data-placement-physical-state="{{ if .placement.physical_state_unknown }}unknown{{ end }}"
+                  data-inspector-src="{{ $inspectorSrc }}"
                   aria-label="Inspect {{ $card.card_name }}, {{ $leaf.theme }} pocket {{ .position }}">
             {{ if eq $classification "missing" }}
               <span class="binder-missing">{{ $card.card_name }}<small>Image unavailable</small></span>
@@ -57,8 +86,7 @@
                    width="{{ $thumb.Width }}" height="{{ $thumb.Height }}"
                    alt="{{ $card.card_name }}, {{ $card.set }} {{ $card.number }}"
                    loading="{{ if $.eager }}eager{{ else }}lazy{{ end }}"
-                   {{ if $.eager }}data-initial-binder-image{{ end }}
-                   data-inspector-src="{{ $large.RelPermalink }}">
+                   {{ if $.eager }}data-initial-binder-image{{ end }}>
             {{ end }}
             {{ if eq $classification "proxy" }}<span class="pocket-state">Reference image</span>{{ end }}
             {{ if eq .placement.status "pending" }}<span class="pocket-state">Placement pending</span>{{ end }}

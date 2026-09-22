@@ -5,6 +5,7 @@ import re
 import shutil
 import subprocess
 import sys
+from html.parser import HTMLParser
 from pathlib import Path
 
 from PIL import Image
@@ -1116,6 +1117,21 @@ def test_seeded_repository_has_expected_leaf_and_card_counts():
     assert len({pocket["card_id"] for pocket in occupied}) == 171
 
 
+class RenderedElementParser(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.elements = []
+
+    def handle_starttag(self, tag, attrs):
+        self.elements.append((tag, dict(attrs)))
+
+
+def rendered_elements(html):
+    parser = RenderedElementParser()
+    parser.feed(html)
+    return parser.elements
+
+
 def test_rendered_draft_pilot_uses_binder_markup_without_remote_card_images(tmp_path):
     root = Path(__file__).parents[1]
     destination = tmp_path / "public"
@@ -1136,7 +1152,7 @@ def test_rendered_draft_pilot_uses_binder_markup_without_remote_card_images(tmp_
     assert 'data-binder-leaf="v1-17"' in html
     assert 'data-pocket-position="1"' in html
     assert '<dialog' in html
-    assert 'https://assets.tcgdex.net' not in html
+    assert not re.search(r'(?:src|srcset)="https://assets\.tcgdex\.net', html)
     assert 'srcset="' in html
     assert re.search(r'srcset="[^"]+ 360w, [^"]+ 900w"', html)
     assert 'sizes="(max-width: 860px) 30vw, 180px"' in html
@@ -1144,6 +1160,64 @@ def test_rendered_draft_pilot_uses_binder_markup_without_remote_card_images(tmp_
     assert html.count('data-initial-binder-image') == html.count('loading="eager"')
     assert 'loading="lazy"' in html
     assert 'Image unavailable' in html
+
+    elements = rendered_elements(html)
+    controls = [attrs for tag, attrs in elements
+                if tag == "nav" and "data-binder-controls" in attrs]
+    assert len(controls) == 1
+    control_links = [
+        attrs for tag, attrs in elements
+        if tag == "a"
+        and ("data-binder-prev" in attrs or "data-binder-next" in attrs)
+    ]
+    assert {link["href"] for link in control_links} == {"#leaf-v1-01", "#leaf-v1-03"}
+    assert any(tag == "p" and "data-binder-position" in attrs
+               and attrs.get("aria-live") == "polite" for tag, attrs in elements)
+
+    card_buttons = [attrs for tag, attrs in elements
+                    if tag == "button" and "data-card-id" in attrs]
+    assert card_buttons
+    for button in card_buttons:
+        assert button["data-card-name"]
+        assert button["data-card-language"]
+        assert button["data-card-set"]
+        assert "data-card-number" in button
+        assert button["data-leaf-theme"]
+        assert button["data-pocket-position"]
+        assert button["data-classification"] in {"exact", "photo-crop", "proxy", "missing"}
+        assert button["data-placement-status"] in {"confirmed", "pending"}
+        assert "data-image-provenance" in button
+        assert "data-image-source" in button
+        assert "data-image-note" in button
+        assert "data-placement-observed-card-id" in button
+        assert "data-placement-physical-state" in button
+        assert "data-inspector-src" in button
+        if button["data-classification"] == "missing":
+            assert button["data-inspector-src"] == ""
+        else:
+            assert button["data-inspector-src"].startswith("/")
+
+    assert any(tag == "aside" and "data-binder-legend" in attrs
+               and "hidden" in attrs for tag, attrs in elements)
+    assert any(tag == "dialog" and "data-card-inspector" in attrs for tag, attrs in elements)
+    inspector_fields = {
+        attrs.get("data-card-inspector-field")
+        for tag, attrs in elements
+        if attrs.get("data-card-inspector-field")
+    }
+    assert inspector_fields == {
+        "language",
+        "set-number",
+        "theme-pocket",
+        "image-classification",
+        "image-source",
+        "image-note",
+        "placement",
+    }
+    assert any(tag == "img" and "data-card-inspector-image" in attrs
+               and "hidden" in attrs and "src" not in attrs for tag, attrs in elements)
+    assert any(tag == "script" and "data-binder-script" in attrs and "defer" in attrs
+               for tag, attrs in elements)
 
     production_destination = tmp_path / "production-public"
     production = subprocess.run(
@@ -1157,12 +1231,38 @@ def test_rendered_draft_pilot_uses_binder_markup_without_remote_card_images(tmp_
     assert not (production_destination / "gallery/digital-binder-pilot/index.html").exists()
 
 
+def test_binder_interaction_assets_declare_accessible_contract():
+    root = Path(__file__).parents[1]
+    javascript = (root / "assets/js/binder.js").read_text(encoding="utf-8")
+    stylesheet = (root / "assets/css/binder.css").read_text(encoding="utf-8")
+
+    syntax = subprocess.run(
+        ["node", "--check", str(root / "assets/js/binder.js")],
+        capture_output=True,
+        text=True,
+    )
+    assert syntax.returncode == 0, syntax.stderr
+    assert ".innerHTML" not in javascript
+    assert "textContent" in javascript
+    assert 'window.matchMedia("(max-width: 720px)")' in javascript
+    assert 'dialog.showModal()' in javascript
+    assert 'dialog.addEventListener("cancel"' in javascript
+    assert 'dialog.addEventListener("close"' in javascript
+    assert 'event.key !== "Tab"' in javascript
+    assert 'originFocus.focus()' in javascript
+    assert 'image.removeAttribute("src")' in javascript
+    assert "@media (max-width: 720px)" in stylesheet
+    assert "@media (prefers-reduced-motion: reduce)" in stylesheet
+    assert "transition: none !important" in stylesheet
+
+
 def test_rendered_synthetic_binder_marks_only_first_spread_images_eager(tmp_path):
     root = Path(__file__).parents[1]
     site = tmp_path / "site"
     destination = tmp_path / "public"
     shutil.copytree(root / "layouts", site / "layouts")
     shutil.copytree(root / "assets/css", site / "assets/css")
+    shutil.copytree(root / "assets/js", site / "assets/js")
     (site / "content/gallery/digital-binder-pilot").mkdir(parents=True)
     (site / "content/gallery/digital-binder-pilot/_index.md").write_text(
         "---\n"
@@ -1179,11 +1279,17 @@ def test_rendered_synthetic_binder_marks_only_first_spread_images_eager(tmp_path
         encoding="utf-8",
     )
 
-    card_ids = ["first-leaf-card", "second-leaf-card", "third-leaf-card"]
+    card_ids = [
+        "first-leaf-card",
+        "second-leaf-card",
+        "third-leaf-card",
+        "missing-card",
+    ]
     registry = {
         card_id: {
             "id": card_id,
             "card_name": card_id.replace("-", " ").title(),
+            "language": "EN",
             "set": "Fixture Set",
             "number": str(index),
         }
@@ -1194,28 +1300,50 @@ def test_rendered_synthetic_binder_marks_only_first_spread_images_eager(tmp_path
         json.dumps(registry, indent=2) + "\n",
         encoding="utf-8",
     )
+    classifications = {
+        "first-leaf-card": "exact",
+        "second-leaf-card": "proxy",
+        "third-leaf-card": "photo-crop",
+        "missing-card": "missing",
+    }
+    image_records = {}
+    for card_id, classification in classifications.items():
+        image_records[card_id] = {
+            "classification": classification,
+            "asset_path": (
+                "" if classification == "missing"
+                else f"assets/images/cards/{card_id}.webp"
+            ),
+            "reviewed": classification != "missing",
+            "reviewed_on": "" if classification == "missing" else "2026-09-22",
+            "provider": "" if classification == "missing" else "fixture",
+            "source_url": (
+                "" if classification == "missing"
+                else "https://example.invalid/card.webp"
+            ),
+            "note": "Different printing used for reference" if classification == "proxy" else "",
+        }
     (site / "data").joinpath("card-images.yaml").write_text(
-        yaml.safe_dump({
-            "version": 1,
-            "cards": {
-                card_id: {
-                    "classification": "exact",
-                    "asset_path": f"assets/images/cards/{card_id}.webp",
-                    "reviewed": True,
-                    "reviewed_on": "2026-09-22",
-                    "provider": "fixture",
-                    "source_url": "https://example.invalid/card.webp",
-                }
-                for card_id in card_ids
-            },
-        }, sort_keys=False),
+        yaml.safe_dump({"version": 1, "cards": image_records}, sort_keys=False),
         encoding="utf-8",
     )
     for card_id in card_ids:
-        write_image(site / "assets/images/cards" / f"{card_id}.webp", size=(500, 700))
+        if classifications[card_id] != "missing":
+            write_image(site / "assets/images/cards" / f"{card_id}.webp", size=(500, 700))
 
     leaves = []
-    for index, card_id in enumerate(card_ids, start=1):
+    for index, card_id in enumerate(card_ids[:3], start=1):
+        first_pocket = (
+            pending_pocket(card_id, physical_state_unknown=True)
+            if card_id == "second-leaf-card"
+            else confirmed_pocket(card_id)
+        )
+        pockets = [first_pocket]
+        if card_id == "third-leaf-card":
+            missing = confirmed_pocket("missing-card")
+            missing["position"] = 2
+            pockets.append(missing)
+        pockets.extend(empty_pocket(position) for position in range(len(pockets) + 1, 10))
         leaves.append({
             "id": f"leaf-{index}",
             "kind": "cards",
@@ -1223,8 +1351,7 @@ def test_rendered_synthetic_binder_marks_only_first_spread_images_eager(tmp_path
             "chapter": "Fixture Chapter",
             "chapter_order": 1,
             "theme": f"Leaf {index}",
-            "pockets": [confirmed_pocket(card_id)]
-                       + [empty_pocket(position) for position in range(2, 10)],
+            "pockets": pockets,
         })
     (site / "data/binders").mkdir(parents=True)
     (site / "data/binders/volume-1.yaml").write_text(
@@ -1263,3 +1390,8 @@ def test_rendered_synthetic_binder_marks_only_first_spread_images_eager(tmp_path
     assert 'data-initial-binder-image' in second
     assert 'loading="lazy"' in third
     assert 'data-initial-binder-image' not in third
+    assert 'data-classification="exact"' in html
+    assert 'data-classification="photo-crop"' in html
+    assert 'Reference image' in html
+    assert 'Image unavailable' in html
+    assert 'Placement pending' in html

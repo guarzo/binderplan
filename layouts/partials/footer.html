@@ -61,3 +61,8 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 </script>
+
+{{ if .Params.binder }}
+  {{ $binderScript := resources.Get "js/binder.js" | fingerprint }}
+  <script data-binder-script src="{{ $binderScript.RelPermalink }}" defer></script>
+{{ end }}
