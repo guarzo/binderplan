@@ -42,6 +42,8 @@ def load_registry_module():
 def load_registry(path: Path) -> dict[str, dict]:
     module = load_registry_module()
     rows = module.parse_registry(path.read_text(encoding="utf-8"))
+    if not rows:
+        raise ValueError(f"{path}: no registry rows found")
     errors = module.validate(rows)
     if errors:
         raise ValueError("\n".join(errors))
@@ -165,6 +167,7 @@ def _validate_volume_manifest(volume_id: str, manifest: dict, registry: dict[str
                 )
             continue
 
+        _validate_card_leaf_metadata(volume_id, leaf_label, leaf, errors)
         pockets = leaf.get("pockets")
         if not isinstance(pockets, list):
             errors.append(f"{volume_id} {leaf_label}: pockets must be a list")
@@ -218,6 +221,46 @@ def _validate_volume_manifest(volume_id: str, manifest: dict, registry: dict[str
             f"{volume_id}: leaves must use contiguous physical_leaf numbers starting at 1"
         )
     return occupied_cards
+
+
+def _validate_card_leaf_metadata(volume_id: str, leaf_label: str, leaf: dict,
+                                 errors: list[str]) -> None:
+    for field in ("chapter", "theme"):
+        if not isinstance(leaf.get(field), str) or not leaf.get(field).strip():
+            errors.append(f"{volume_id} {leaf_label}: {field} must be a nonempty string")
+    chapter_order = leaf.get("chapter_order")
+    if not isinstance(chapter_order, int) or chapter_order < 1:
+        errors.append(f"{volume_id} {leaf_label}: chapter_order must be a positive integer")
+    if "theme_page" in leaf:
+        theme_page = leaf.get("theme_page")
+        if not isinstance(theme_page, int) or theme_page < 1:
+            errors.append(f"{volume_id} {leaf_label}: theme_page must be a positive integer")
+
+
+def _validate_global_duplicates(manifests: dict[str, dict], errors: list[str]) -> None:
+    locations: dict[str, list[tuple[str, int, int]]] = {}
+    for volume_id, manifest in manifests.items():
+        if not isinstance(manifest, dict):
+            continue
+        for leaf in manifest.get("leaves", []):
+            if not isinstance(leaf, dict) or leaf.get("kind") != "cards":
+                continue
+            physical_leaf = leaf.get("physical_leaf")
+            for pocket in leaf.get("pockets", []):
+                if not isinstance(pocket, dict) or pocket.get("empty") is True:
+                    continue
+                card_id = pocket.get("card_id")
+                position = pocket.get("position")
+                if card_id and isinstance(physical_leaf, int) and isinstance(position, int):
+                    locations.setdefault(card_id, []).append((volume_id, physical_leaf, position))
+    for card_id, card_locations in locations.items():
+        if len({location[0] for location in card_locations}) < 2:
+            continue
+        rendered = "; ".join(
+            f"{volume_id} physical_leaf {physical_leaf} pocket {position}"
+            for volume_id, physical_leaf, position in card_locations
+        )
+        errors.append(f"duplicate occupied placement for {card_id} across volumes: {rendered}")
 
 
 def _validate_placement(volume_id: str, leaf_label: str, position: int | None,
@@ -422,6 +465,7 @@ def validate_project(root: Path, previous_ref: str | None = None) -> list[str]:
         occupied_by_volume[volume_id] = _validate_volume_manifest(
             volume_id, manifest, registry, errors
         )
+    _validate_global_duplicates(manifests, errors)
 
     if images_loaded:
         _validate_images(root, images, registry, occupied_by_volume, publication_statuses, errors)
@@ -461,7 +505,15 @@ def main(argv=None) -> int:
     root = args.root
     registry_path = _root_path(root, args.registry)
     output_path = _root_path(root, args.output)
-    rendered = render_registry_json(load_registry(registry_path))
+    try:
+        rendered = render_registry_json(load_registry(registry_path))
+    except (FileNotFoundError, ValueError):
+        if args.check:
+            errors = validate_project(root, previous_ref=args.previous_ref)
+            for error in errors:
+                print(error, flush=True)
+            return 1
+        raise
 
     if args.write_generated:
         output_path.parent.mkdir(parents=True, exist_ok=True)

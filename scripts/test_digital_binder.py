@@ -1,5 +1,6 @@
 import importlib.util
 import json
+import subprocess
 from pathlib import Path
 
 import yaml
@@ -184,6 +185,16 @@ def load_images(root):
 def write_images(root, images):
     (root / "data" / "card-images.yaml").write_text(
         yaml.safe_dump(images, sort_keys=False),
+        encoding="utf-8",
+    )
+
+
+def write_current_generated(root):
+    rendered = digital_binder.render_registry_json(
+        digital_binder.load_registry(root / "docs" / "card-registry.md")
+    )
+    (root / "data" / "generated" / "card-registry.json").write_text(
+        rendered,
         encoding="utf-8",
     )
 
@@ -389,3 +400,153 @@ def test_pending_to_confirmed_rejects_unrelated_card(tmp_path):
     current = confirmed_project(tmp_path, card_id="alakazam-01")
     errors = digital_binder.validate_transition(previous, current)
     assert any("pending card" in error for error in errors)
+
+
+def test_check_reports_malformed_registry_without_traceback(tmp_path, capsys):
+    root = project_fixture(tmp_path)
+    (root / "docs" / "card-registry.md").write_text("not a registry\n", encoding="utf-8")
+
+    rc = digital_binder.main(["--check", "--root", str(root)])
+
+    output = capsys.readouterr().out
+    assert rc == 1
+    assert "registry validation failed" in output
+
+
+def test_check_reports_missing_registry_without_traceback(tmp_path, capsys):
+    root = project_fixture(tmp_path)
+    (root / "docs" / "card-registry.md").unlink()
+
+    rc = digital_binder.main(["--check", "--root", str(root)])
+
+    output = capsys.readouterr().out
+    assert rc == 1
+    assert "registry validation failed" in output
+    assert "card-registry.md" in output
+
+
+def test_duplicate_occupied_placements_are_rejected_across_volumes(tmp_path):
+    root = project_fixture(tmp_path)
+    volume_two = load_volume(root, "volume-2")
+    volume_two["leaves"] = [{
+        "id": "volume-2-leaf-1",
+        "kind": "cards",
+        "physical_leaf": 1,
+        "chapter": "Fixture Chapter",
+        "chapter_order": 1,
+        "theme": "Fixture Theme",
+        "pockets": valid_pockets("abra-01"),
+    }]
+    write_volume(root, volume_two)
+
+    errors = digital_binder.validate_project(root)
+
+    assert any("duplicate occupied placement" in error and "volume-1" in error
+               and "volume-2" in error for error in errors)
+
+
+def test_card_leaf_requires_core_metadata(tmp_path):
+    root = project_fixture(tmp_path)
+    volume = load_volume(root)
+    leaf = volume["leaves"][0]
+    leaf["chapter"] = ""
+    leaf["theme"] = 123
+    leaf["chapter_order"] = 0
+    leaf["theme_page"] = 0
+    write_volume(root, volume)
+
+    errors = digital_binder.validate_project(root)
+
+    assert any("chapter" in error and "nonempty string" in error for error in errors)
+    assert any("theme" in error and "nonempty string" in error for error in errors)
+    assert any("chapter_order" in error and "positive integer" in error for error in errors)
+    assert any("theme_page" in error and "positive integer" in error for error in errors)
+
+
+def test_single_page_card_leaf_may_omit_theme_page(tmp_path):
+    root = project_fixture(tmp_path)
+    volume = load_volume(root)
+    del volume["leaves"][0]["theme_page"]
+    write_volume(root, volume)
+
+    assert digital_binder.validate_project(root) == []
+
+
+def test_load_previous_manifests_uses_git_show_for_each_volume(tmp_path, monkeypatch):
+    calls = []
+
+    def fake_run(command, check, capture_output, text, cwd):
+        calls.append((command, check, capture_output, text, cwd))
+        volume_id = command[2].split("/")[-1].removesuffix(".yaml")
+        return subprocess.CompletedProcess(
+            command,
+            0,
+            stdout=yaml.safe_dump(project_manifest()[volume_id]),
+            stderr="",
+        )
+
+    monkeypatch.setattr(digital_binder.subprocess, "run", fake_run)
+    errors = []
+
+    manifests = digital_binder._load_previous_manifests(tmp_path, "main", errors)
+
+    assert errors == []
+    assert manifests["volume-1"]["volume_id"] == "volume-1"
+    assert [call[0] for call in calls] == [
+        ["git", "show", "main:data/binders/volume-1.yaml"],
+        ["git", "show", "main:data/binders/volume-2.yaml"],
+    ]
+    assert all(call[4] == tmp_path for call in calls)
+
+
+def test_validate_project_rejects_unsafe_previous_ref_without_git(tmp_path, monkeypatch):
+    root = project_fixture(tmp_path)
+
+    def fail_if_called(*args, **kwargs):
+        raise AssertionError("git should not be called for an unsafe ref")
+
+    monkeypatch.setattr(digital_binder.subprocess, "run", fail_if_called)
+
+    errors = digital_binder.validate_project(root, previous_ref="-bad")
+
+    assert any("invalid previous_ref" in error and "-bad" in error for error in errors)
+
+
+def test_validate_project_skips_absent_previous_manifest_but_keeps_current_validation(tmp_path, monkeypatch):
+    root = project_fixture(tmp_path, pockets=[confirmed_pocket("abra-01")])
+
+    def missing_manifest(command, check, capture_output, text, cwd):
+        raise subprocess.CalledProcessError(128, command, stderr="not found")
+
+    monkeypatch.setattr(digital_binder.subprocess, "run", missing_manifest)
+
+    errors = digital_binder.validate_project(root, previous_ref="main")
+
+    assert any("exactly 9 pockets" in error for error in errors)
+    assert not any("previous" in error for error in errors)
+
+
+def test_check_passes_previous_ref_to_git_loader(tmp_path, monkeypatch):
+    root = project_fixture(tmp_path)
+    write_current_generated(root)
+    calls = []
+
+    def fake_run(command, check, capture_output, text, cwd):
+        calls.append(command)
+        volume_id = command[2].split("/")[-1].removesuffix(".yaml")
+        return subprocess.CompletedProcess(
+            command,
+            0,
+            stdout=yaml.safe_dump(project_manifest()[volume_id]),
+            stderr="",
+        )
+
+    monkeypatch.setattr(digital_binder.subprocess, "run", fake_run)
+
+    rc = digital_binder.main(["--check", "--root", str(root), "--previous-ref", "main"])
+
+    assert rc == 0
+    assert calls == [
+        ["git", "show", "main:data/binders/volume-1.yaml"],
+        ["git", "show", "main:data/binders/volume-2.yaml"],
+    ]
