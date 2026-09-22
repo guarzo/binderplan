@@ -1,15 +1,21 @@
 version: 1
 cards:
   absol-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    classification: exact
+    asset_path: assets/images/cards/absol-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    provider: tcgdex
+    upstream_id: xyp-XY178
+    source_url: https://assets.tcgdex.net/en/xy/xyp/XY178/high.webp
   ampharos-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    classification: photo-crop
+    asset_path: assets/images/cards/ampharos-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/elemental_solitude_1.webp
+    note: Pilot fallback; re-search stock or sourced scan before Volume I publication.
   arcanine-01:
     classification: missing
     asset_path: ''
@@ -106,20 +112,26 @@ cards:
     reviewed: false
     reviewed_on: ''
   cyndaquil-02:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    classification: exact
+    asset_path: assets/images/cards/cyndaquil-02.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    provider: tcgdex
+    upstream_id: ex10-54
+    source_url: https://assets.tcgdex.net/en/ex/ex10/54/high.webp
   darkrai-01:
     classification: missing
     asset_path: ''
     reviewed: false
     reviewed_on: ''
   darkrai-02:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    classification: exact
+    asset_path: assets/images/cards/darkrai-02.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    provider: tcgdex
+    upstream_id: S12a-228
+    source_url: https://assets.tcgdex.net/ja/S/S12a/228/high.webp
   darkrai-03:
     classification: missing
     asset_path: ''
@@ -151,20 +163,26 @@ cards:
     reviewed: false
     reviewed_on: ''
   dragonite-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    classification: photo-crop
+    asset_path: assets/images/cards/dragonite-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/contemplation_1.webp
+    note: Pilot fallback; re-search stock or sourced scan before Volume I publication.
   dragonite-02:
     classification: missing
     asset_path: ''
     reviewed: false
     reviewed_on: ''
   dratini-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    classification: exact
+    asset_path: assets/images/cards/dratini-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    provider: tcgdex
+    upstream_id: base5-53
+    source_url: https://assets.tcgdex.net/en/base/base5/53/high.webp
   dratini-02:
     classification: missing
     asset_path: ''
@@ -186,10 +204,13 @@ cards:
     reviewed: false
     reviewed_on: ''
   espeon-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    classification: photo-crop
+    asset_path: assets/images/cards/espeon-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/elemental_solitude_1.webp
+    note: Pilot fallback; re-search stock or sourced scan before Volume I publication.
   espeon-02:
     classification: missing
     asset_path: ''
@@ -241,10 +262,13 @@ cards:
     reviewed: false
     reviewed_on: ''
   glaceon-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    classification: exact
+    asset_path: assets/images/cards/glaceon-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    provider: tcgdex
+    upstream_id: dp5-20
+    source_url: https://assets.tcgdex.net/en/dp/dp5/20/high.webp
   golem-01:
     classification: missing
     asset_path: ''
@@ -311,10 +335,13 @@ cards:
     reviewed: false
     reviewed_on: ''
   houndoom-03:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    classification: exact
+    asset_path: assets/images/cards/houndoom-03.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    provider: tcgdex
+    upstream_id: neo3-8
+    source_url: https://assets.tcgdex.net/en/neo/neo3/8/high.webp
   houndoom-04:
     classification: missing
     asset_path: ''
@@ -366,10 +393,13 @@ cards:
     reviewed: false
     reviewed_on: ''
   joltik-03:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    classification: photo-crop
+    asset_path: assets/images/cards/joltik-03.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/contemplation_1.webp
+    note: Pilot fallback; re-search stock or sourced scan before Volume I publication.
   kabuto-01:
     classification: missing
     asset_path: ''
@@ -391,25 +421,34 @@ cards:
     reviewed: false
     reviewed_on: ''
   kyogre-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    classification: exact
+    asset_path: assets/images/cards/kyogre-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    provider: tcgdex
+    upstream_id: ex14-95
+    source_url: https://assets.tcgdex.net/en/ex/ex14/95/high.webp
   latias-01:
     classification: missing
     asset_path: ''
     reviewed: false
     reviewed_on: ''
   latios-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    classification: exact
+    asset_path: assets/images/cards/latios-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    provider: tcgdex
+    upstream_id: SV7a-070
+    source_url: https://assets.tcgdex.net/ja/SV/SV7a/070/high.webp
   latios-02:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    classification: photo-crop
+    asset_path: assets/images/cards/latios-02.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/elemental_solitude_1.webp
+    note: Pilot fallback; re-search stock or sourced scan before Volume I publication.
   latios-03:
     classification: missing
     asset_path: ''
@@ -491,10 +530,13 @@ cards:
     reviewed: false
     reviewed_on: ''
   mewtwo-03:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    classification: exact
+    asset_path: assets/images/cards/mewtwo-03.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    provider: tcgdex
+    upstream_id: svp-052
+    source_url: https://assets.tcgdex.net/en/sv/svp/052/high.webp
   mewtwo-04:
     classification: missing
     asset_path: ''
@@ -696,10 +738,13 @@ cards:
     reviewed: false
     reviewed_on: ''
   snivy-02:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    classification: photo-crop
+    asset_path: assets/images/cards/snivy-02.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/contemplation_1.webp
+    note: Pilot fallback; re-search stock or sourced scan before Volume I publication.
   snivy-03:
     classification: missing
     asset_path: ''
@@ -731,10 +776,13 @@ cards:
     reviewed: false
     reviewed_on: ''
   spheal-03:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    classification: exact
+    asset_path: assets/images/cards/spheal-03.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    provider: tcgdex
+    upstream_id: dp2-102
+    source_url: https://assets.tcgdex.net/en/dp/dp2/102/high.webp
   sprigatito-01:
     classification: missing
     asset_path: ''
@@ -791,10 +839,13 @@ cards:
     reviewed: false
     reviewed_on: ''
   umbreon-02:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    classification: photo-crop
+    asset_path: assets/images/cards/umbreon-02.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/contemplation_1.webp
+    note: Pilot fallback; re-search stock or sourced scan before Volume I publication.
   umbreon-04:
     classification: missing
     asset_path: ''
@@ -816,10 +867,13 @@ cards:
     reviewed: false
     reviewed_on: ''
   victini-02:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    classification: photo-crop
+    asset_path: assets/images/cards/victini-02.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/contemplation_1.webp
+    note: Pilot fallback; re-search stock or sourced scan before Volume I publication.
   vulpix-01:
     classification: missing
     asset_path: ''
