@@ -13,7 +13,7 @@ This directory preserves the inputs and owner clarifications used by the Septemb
 | `validation/rayquaza.WEBP` | Supplied card-art reference, archived byte-for-byte. Not evidence of a new physical copy or a move. |
 | `validation/stamped.jpeg` | Original replacement image for the existing last stamped-card gallery page, as explicitly directed by the owner. |
 | `validation/trainer.jpeg` | Original image of a new trainer full-art page. Append it; do not replace either existing trainer page. |
-| `checklists/` | The two printable checklists, their LaTeX sources, and the resolved card-label definitions used to build them. These are historical review forms, not a current movement log. |
+| `checklists/` | Three printable checklists and their LaTeX sources, including the blank curatorial movement form later completed on 2026-09-21. These are historical review forms, not a current movement log; the completed scan lives with the 2026-09-21 evidence. |
 | `SHA256SUMS` | Integrity hashes of the archived source assets and checklist files. |
 
 Incidental `desktop.ini` was excluded. Archival inputs are outside Hugo's `content/` and `static/` trees: they are retained in the repository, not published as gallery assets. The gallery JPEGs are EXIF-oriented derivatives, limited to 1500 pixels on the longest edge and encoded at JPEG quality 90. The archived originals are not resized or reencoded.

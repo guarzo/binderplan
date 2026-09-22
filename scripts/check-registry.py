@@ -433,9 +433,8 @@ def render_worklist(rows, previous=None):
     lines.append("")
     lines.append(
         "Photographs record what was on a page when the shoot happened, so a card since "
-        "swapped out still appears under its old page. `ursaring-01`, `typhlosion-02` and "
-        "`umbreon-03` are the known cases; check `ledger.md` before hunting for a card that "
-        "is not there."
+        "swapped out can still appear under its old page. Multiple movements are now recorded; "
+        "check `ledger.md` before hunting for a card that is no longer there."
     )
     lines.append("")
     for label, group in page_groups(rows):

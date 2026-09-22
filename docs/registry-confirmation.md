@@ -2,7 +2,7 @@
 
 Generated from `docs/card-registry.md` by `python3 scripts/check-registry.py docs/card-registry.md --worklist --write`. Every section below is recomputed from the registry except "4. Gaps and known issues", which is hand-written; regeneration reads the previous version of this document and carries that section forward automatically.
 
-**Honest numbers, recomputed from the current file.** 175 rows total. 9 `photo` (5.1%), 22 `uncertain` (12.6%). 165 rows have both `set` and `number` read (94.3%) — 2 have `number` only, 8 have `set` only, 0 have neither field. The confirmation queue (section 3) holds 22 rows across 19 species: 3 clusters (6 rows) and 16 singletons.
+**Honest numbers, recomputed from the current file.** 181 rows total. 9 `photo` (5.0%), 28 `uncertain` (15.5%). 170 rows have both `set` and `number` read (93.9%) — 2 have `number` only, 8 have `set` only, 1 have neither field. The confirmation queue (section 3) holds 28 rows across 23 species: 5 clusters (10 rows) and 18 singletons.
 
 ## 1. Blocked — species unreadable
 
@@ -12,15 +12,29 @@ None. The registry has no state for a card that was seen but never identified to
 
 **None found** — `python3 scripts/check-registry.py docs/card-registry.md` reports `duplicate printings: 0`.
 
-Take that as a weak result, not a clean bill of health. The check requires all four fields — `species`, `set`, `number`, `language` — to match on two rows, and only **165 of 175 rows (94.3%)** have both `set` and `number` read. The remaining 10 rows (5.7%) are missing one or both fields and are structurally invisible to this check: two physical duplicates sitting in the registry right now would not be flagged unless both happened to land among that same 165-row minority.
+Take that as a weak result, not a clean bill of health. The check requires all four fields — `species`, `set`, `number`, `language` — to match on two rows, and only **170 of 181 rows (93.9%)** have both `set` and `number` read. The remaining 11 rows (6.1%) are missing one or both fields and are structurally invisible to this check: two physical duplicates sitting in the registry right now would not be flagged unless both happened to land among that same 170-row minority.
 
 ## 3. Confirmation queue — clusters first
 
-22 rows, 19 species. **3 species (6 rows) hold two or more unresolved rows** and lead the list, because that is where an undetected duplicate printing could hide. The remaining 16 species have a single unresolved row each.
+28 rows, 23 species. **5 species (10 rows) hold two or more unresolved rows** and lead the list, because that is where an undetected duplicate printing could hide. The remaining 18 species have a single unresolved row each.
 
 The "Unreadable" column is the row's own `notes` field: what specifically blocked the read.
 
 ### Clusters (species with 2+ unresolved rows)
+
+**blastoise** (2)
+
+| ID | Card name | Source image | Unreadable |
+|---|---|---|---|
+| blastoise-01 | カメックス (JP) | enduring_presence_2.webp | Lv.52 HP100, vintage Pokedex-number print, set per owner's doubleholo entry |
+| blastoise-02 | 水箭龟VMAX (ZH) | IMG_7080.jpeg | holding photo R1C5; Chinese-language VMAX using SWSH103 artwork; exact Chinese set and number unresolved; entered Legendary Bearing p2 in verified 2026-09-21 swap |
+
+**dragonite** (2)
+
+| ID | Card name | Source image | Unreadable |
+|---|---|---|---|
+| dragonite-01 | カイリュー (JP) | contemplation_1.webp | Lv.45 print, vintage Pokedex-number print, set per owner's doubleholo entry |
+| dragonite-03 | Dragonite (EN) | IMG_7081.jpeg | holding photo R4C2; set/number from holding export plus artwork match, not a legible footer; Special Delivery artwork; entered Quiet Familiarity p1 in verified 2026-09-21 swap |
 
 **gengar** (2)
 
@@ -43,20 +57,22 @@ The "Unreadable" column is the row's own `notes` field: what specifically blocke
 | umbreon-02 | ブラッキー (JP) | contemplation_1.webp | vintage Pokedex-number print, distinct from umbreon-01, set per owner's doubleholo entry |
 | umbreon-03 | Umbreon (EN) | elemental_solitude_1.webp | Confuse Ray/Shadow Shutdown, distinct from umbreon-01/02, set code not textual |
 
-### Singletons (16 species, one unresolved row each)
+### Singletons (18 species, one unresolved row each)
 
 | ID | Card name | Source image | Unreadable |
 |---|---|---|---|
-| blastoise-01 | カメックス (JP) | enduring_presence_2.webp | Lv.52 HP100, vintage Pokedex-number print, set per owner's doubleholo entry |
 | bulbasaur-02 | フシギダネ (JP) | joyful_action_1.webp | set supplied by owner 2026-09-20; character and printed Pokedex number checked in hand, no blanket set/printing verification from checklist ticks |
+| charizard-03 | Charizard VSTAR (EN) | IMG_7088.jpeg | holding photo R2C2; set/number from holding export plus artwork match, not a legible footer; entered On the Attack in verified 2026-09-21 swap |
 | dragonair-01 | エリカのハクリュー (JP) | enduring_presence_1.webp | Erika's Dragonair, Lv.32, vintage Pokedex-number print, set per owner's doubleholo entry |
-| dragonite-01 | カイリュー (JP) | contemplation_1.webp | Lv.45 print, vintage Pokedex-number print, set per owner's doubleholo entry |
 | espeon-01 | わるいエーフィ (JP) | elemental_solitude_1.webp | Dark Espeon, vintage-style print, Pokédex-number print, set per owner's doubleholo export 2026-09-18 |
 | kangaskhan-01 | ガルーラ (JP) | IMG_6858.HEIC | vintage Pokedex-number print, set per owner's doubleholo entry |
 | kingdra-01 | キングドラ (JP) | on_attack_1.webp | Lv.47, vintage Pokedex-number print, illustrator Mitsuhiro Arita, set per owner's doubleholo entry |
+| litleo-01 | Litleo (EN) | IMG_7082.jpeg | holding photo R1C5; set/number from holding export plus artwork match, not a legible footer; doorway illustration rare; entered Threshold in verified 2026-09-21 swap |
+| lucario-02 | Lucario LV.X (EN) | IMG_7081.jpeg | holding photo R4C4; set/number from holding export plus artwork match, not a legible footer; entered On the Attack in verified 2026-09-21 swap |
 | lugia-01 | ルギア (JP) | awakened_power_1.webp | vintage Pokedex-number print, set per owner's doubleholo entry |
 | mew-05 | ミュウ (JP) | threshold_1.webp | Psywave/Recover-Beam attacks, distinct from mew-01..04, Pokédex-number print, set per owner's doubleholo export 2026-09-18 |
 | misdreavus-01 | ムウマ (JP) | intimidation_1.webp | Pokédex-number print, set per owner's doubleholo export 2026-09-18 |
+| mudkip-02 | ミズゴロウ (JP) | IMG_7080.jpeg | holding photo R4C2; set/number from holding export plus artwork match, not a legible footer; sheltered-opening artwork; entered Threshold in verified 2026-09-21 swap |
 | muk-01 | ベトベトン (JP) | enduring_presence_2.webp | Grimer evolution Lv.34, HP70, vintage Pokedex-number print, set per owner's doubleholo entry |
 | ninetales-01 | キュウコン (JP) | legendary_bearing_2.webp | Lv.32, vintage Pokedex-number print, set per owner's doubleholo entry |
 | scyther-01 | ストライク (JP) | awakened_power_2.webp | vintage Pokedex-number print, set per owner's doubleholo entry |
@@ -116,20 +132,29 @@ correct: a naming error in the photo pipeline could not corrupt the registry, on
 downstream of it. Those captions have since been corrected, and the residue is confined to
 `first_seen`, where it is intentional and `PAGE_ORDER` accounts for it.
 
-The registry currently holds 175 rows: the 171 cards in the binder plus the 4 below that have left
-it.
+The registry currently holds 181 rows: the 171 cards in the binder plus 10 physical identities
+recorded from earlier occupancy that are now outside it. The rows remain by design: the registry
+records identity, not current location.
 
-**Four cards have physically left the binder** as part of planned swaps the owner has been
-executing. Their registry rows still exist and still hold their IDs — this is correct, not a bug.
-The registry records identity, not shelf location; a card in the holding box keeps the ID it was
-first seen under.
+Radiant Collection Ursaring (`ursaring-01`) is no longer a departed card. The owner identified the
+RC16/RC25 card entering Companions on 2026-09-21 as that same physical identity, so it keeps its ID
+and re-enters without a new row.
 
-| ID | Card | Was at | Replaced by |
-|---|---|---|---|
-| ursaring-01 | Ursaring (EN, Radiant Collection) | at_rest_1.webp | Pikachu (pikachu-06) |
-| typhlosion-02 | バクフーン (JP) | legendary_bearing_1.webp | Zapdos (zapdos-01) |
-| umbreon-03 | Umbreon (EN) | elemental_solitude_1.webp | Jasmine's Ampharos (ampharos-01) |
-| electrode-01 | マルマイン (JP) | companions_2.webp | Kangaskhan (kangaskhan-01) |
+**Ten registered cards are currently outside the thematic binder.** Their latest observed holding
+destinations come from the ledger; absence from the binder does not establish release.
+
+| ID | Card | Former page | Replaced by | Latest recorded state |
+|---|---|---|---|---|
+| typhlosion-02 | バクフーン (JP) | Legendary Bearing p1 | Zapdos (`zapdos-01`) | outside binder; no active follow-up |
+| umbreon-03 | Umbreon (EN) | Elemental Solitude | Ampharos (`ampharos-01`) | outside binder; no active follow-up |
+| electrode-01 | マルマイン (JP) | Companions p2 | Kangaskhan (`kangaskhan-01`) | outside binder; no active follow-up |
+| hoopa-02 | Hoopa EX (EN) | Threshold | Litleo (`litleo-01`) | EDGE |
+| kasumis-tears-01 | カスミのなみだ (JP) | Threshold | Mudkip (`mudkip-02`) | HERITAGE |
+| dratini-02 | Dratini (EN) | Quiet Familiarity p1 | Dragonite (`dragonite-03`) | HERITAGE |
+| rockets-trap-01 | ロケット団のワナ (JP) | Companions p2 | Ursaring (`ursaring-01`) | HERITAGE |
+| snorlax-02 | カビゴンVMAX (JP) | On the Attack | Charizard (`charizard-03`) | EDGE |
+| ursaring-02 | リングマ (JP) | On the Attack | Lucario (`lucario-02`) | EDGE |
+| ns-plan-01 | N's Plan (EN) | Legendary Bearing p2 | Blastoise (`blastoise-02`) | HERITAGE |
 
 **One binder page had never been photographed at all**, and was entirely absent from pass 1 —
 9 cards, seeded from the reshoot as `dawns-stadium-01` through the rest of the `IMG_6865.HEIC`
@@ -144,7 +169,7 @@ Not derivable here. The registry records what a card **is**, never where it sits
 
 The same rows as section 3, regrouped for walking the binder. Open to a page, clear every card listed under it, move on. Pages in binder order; a page with nothing unresolved is omitted. The source image is dropped here — the page implies it.
 
-Photographs record what was on a page when the shoot happened, so a card since swapped out still appears under its old page. `ursaring-01`, `typhlosion-02` and `umbreon-03` are the known cases; check `ledger.md` before hunting for a card that is not there.
+Photographs record what was on a page when the shoot happened, so a card since swapped out can still appear under its old page. Multiple movements are now recorded; check `ledger.md` before hunting for a card that is no longer there.
 
 ### V1 · Joyful Action
 
@@ -232,4 +257,30 @@ Photographs record what was on a page when the shoot happened, so a card since s
 | ID | Card name | Unreadable |
 |---|---|---|
 | mew-05 | ミュウ (JP) | Psywave/Recover-Beam attacks, distinct from mew-01..04, Pokédex-number print, set per owner's doubleholo export 2026-09-18 |
+
+### Unmapped source image · IMG_7080.jpeg
+
+| ID | Card name | Unreadable |
+|---|---|---|
+| blastoise-02 | 水箭龟VMAX (ZH) | holding photo R1C5; Chinese-language VMAX using SWSH103 artwork; exact Chinese set and number unresolved; entered Legendary Bearing p2 in verified 2026-09-21 swap |
+| mudkip-02 | ミズゴロウ (JP) | holding photo R4C2; set/number from holding export plus artwork match, not a legible footer; sheltered-opening artwork; entered Threshold in verified 2026-09-21 swap |
+
+### Unmapped source image · IMG_7081.jpeg
+
+| ID | Card name | Unreadable |
+|---|---|---|
+| dragonite-03 | Dragonite (EN) | holding photo R4C2; set/number from holding export plus artwork match, not a legible footer; Special Delivery artwork; entered Quiet Familiarity p1 in verified 2026-09-21 swap |
+| lucario-02 | Lucario LV.X (EN) | holding photo R4C4; set/number from holding export plus artwork match, not a legible footer; entered On the Attack in verified 2026-09-21 swap |
+
+### Unmapped source image · IMG_7082.jpeg
+
+| ID | Card name | Unreadable |
+|---|---|---|
+| litleo-01 | Litleo (EN) | holding photo R1C5; set/number from holding export plus artwork match, not a legible footer; doorway illustration rare; entered Threshold in verified 2026-09-21 swap |
+
+### Unmapped source image · IMG_7088.jpeg
+
+| ID | Card name | Unreadable |
+|---|---|---|
+| charizard-03 | Charizard VSTAR (EN) | holding photo R2C2; set/number from holding export plus artwork match, not a legible footer; entered On the Attack in verified 2026-09-21 swap |
 

@@ -41,6 +41,7 @@ The column is left as recorded rather than rewritten: `first_seen` is provenance
 | beldum-01 | Beldum | Beldum | EN | SVP | 207 | confirmed | companions_1.webp 2026-08-01 | Steven's Beldum, Ram attack, set/number from owner's doubleholo export 2026-09-18 |
 | bewear-01 | Bewear | キテルグマ | JP | sv6a | 076 | confirmed | intimidation_1.webp 2026-08-01 | set/number from owner's doubleholo export 2026-09-18, denominator not recorded |
 | blastoise-01 | Blastoise | カメックス | JP | Expansion Pack | No.009 | uncertain | enduring_presence_2.webp 2026-08-01 | Lv.52 HP100, vintage Pokedex-number print, set per owner's doubleholo entry |
+| blastoise-02 | Blastoise | 水箭龟VMAX | ZH |  |  | uncertain | IMG_7080.jpeg 2026-09-20 | holding photo R1C5; Chinese-language VMAX using SWSH103 artwork; exact Chinese set and number unresolved; entered Legendary Bearing p2 in verified 2026-09-21 swap |
 | bulbasaur-01 | Bulbasaur | Bulbasaur | EN | Crystal Guardians | 45/100 | confirmed | calm_nature_1.webp 2026-08-01 |  |
 | bulbasaur-02 | Bulbasaur | フシギダネ | JP | Corocoro Promo | No.001 | uncertain | joyful_action_1.webp 2026-08-01 | set supplied by owner 2026-09-20; character and printed Pokedex number checked in hand, no blanket set/printing verification from checklist ticks |
 | bulbasaur-03 | Bulbasaur | Bulbasaur | EN | Expedition | 95 | confirmed | enduring_presence_2.webp 2026-08-01 | Sleep Seed ability, Vine Whip attack, distinct from bulbasaur-01/02, set/number from owner's doubleholo export 2026-09-18, denominator not recorded |
@@ -48,6 +49,7 @@ The column is left as recorded rather than rewritten: `first_seen` is provenance
 | chansey-01 | Chansey | ラッキー | JP | sv6 | 113/101 | confirmed | world_people_1.webp 2026-08-01 |  |
 | charizard-01 | Charizard | リザードンG | JP | Charizard Half Deck | 002/016 | confirmed | on_attack_1.webp 2026-08-01 | Lv.X print, checked in hand 2026-09-19 |
 | charizard-02 | Charizard | リザードン | JP | s8b | 187 | confirmed | companions_1.webp 2026-08-01 | Ability バトルセンス, キングブレイズ attack, distinct from charizard-01, set/number from owner's doubleholo export 2026-09-18, denominator not recorded |
+| charizard-03 | Charizard | Charizard VSTAR | EN | SWSH Promos | SWSH262 | uncertain | IMG_7088.jpeg 2026-09-20 | holding photo R2C2; set/number from holding export plus artwork match, not a legible footer; entered On the Attack in verified 2026-09-21 swap |
 | charmander-01 | Charmander | Charmander | EN | SVP | 44 | confirmed | world_people_1.webp 2026-08-01 | set/number from owner's doubleholo export 2026-09-18 |
 | charmander-02 | Charmander | Charmander | EN | Vivid Voltage | 023/185 | confirmed | joyful_action_1.webp 2026-08-01 | distinct printing from charmander-01 |
 | charmander-03 | Charmander | Charmander | EN | Expedition | 98 | confirmed | quiet_familiarity_1.webp 2026-08-01 | Gnaw/Searing Flame attacks, distinct from charmander-01/02, set/number from owner's doubleholo export 2026-09-18, denominator not recorded |
@@ -66,6 +68,7 @@ The column is left as recorded rather than rewritten: `first_seen` is provenance
 | dragonair-01 | Dragonair | エリカのハクリュー | JP | Leaders' Stadium | No.148 | uncertain | enduring_presence_1.webp 2026-08-01 | Erika's Dragonair, Lv.32, vintage Pokedex-number print, set per owner's doubleholo entry |
 | dragonite-01 | Dragonite | カイリュー | JP | Mystery of the Fossils | No.149 | uncertain | contemplation_1.webp 2026-08-01 | Lv.45 print, vintage Pokedex-number print, set per owner's doubleholo entry |
 | dragonite-02 | Dragonite | カイリューex | JP | Rulers of the Heavens | 038/054 | confirmed | legendary_bearing_2.webp 2026-08-01 | ex card, distinct from dragonite-01 |
+| dragonite-03 | Dragonite | Dragonite | EN | WoTC Promos | 5 | uncertain | IMG_7081.jpeg 2026-09-20 | holding photo R4C2; set/number from holding export plus artwork match, not a legible footer; Special Delivery artwork; entered Quiet Familiarity p1 in verified 2026-09-21 swap |
 | dratini-01 | Dratini | Dratini | EN | Team Rocket | 53/82 | confirmed | contemplation_1.webp 2026-08-01 | checked in hand 2026-09-19 |
 | dratini-02 | Dratini | Dratini | EN | Base Set | 26/102 | confirmed | quiet_familiarity_1.webp 2026-08-01 | Pound attack, distinct from dratini-01; owner corrected Base Set 2 38/130 to Base Set 26/102 on completed checklist 2026-09-20; no card move |
 | eevee-01 | Eevee | Eevee | EN | SVP | 173 | confirmed | at_rest_1.webp 2026-08-01 | set/number from owner's doubleholo export 2026-09-18 |
@@ -118,7 +121,9 @@ The column is left as recorded rather than rewritten: `first_seen` is provenance
 | latios-01 | Latios | ラティオス | JP | sv7a | 070/064 | confirmed | contemplation_1.webp 2026-08-01 | AR rarity |
 | latios-02 | Latios | ラティオス | JP | Holon Phantom | 14 | confirmed | elemental_solitude_1.webp 2026-08-01 | distinct from latios-01, set/number from owner's doubleholo export 2026-09-18, denominator not recorded |
 | latios-03 | Latios | Latios | EN | Latios & Latias Trainer Kit | 30/30 | confirmed | legendary_bearing_1.webp 2026-08-01 | Supersonic Flight/Psyburn; owner corrected Dragon Vault 10/20 to Latios + Latias deck 30/30 on completed checklist 2026-09-20; the Dragon Vault card is separate in the stamped collection |
+| litleo-01 | Litleo | Litleo | EN | Mega Evolution | 139/132 | uncertain | IMG_7082.jpeg 2026-09-20 | holding photo R1C5; set/number from holding export plus artwork match, not a legible footer; doorway illustration rare; entered Threshold in verified 2026-09-21 swap |
 | lucario-01 | Lucario | ルカリオVSTAR | JP | s12a | 226/172 | confirmed | intimidation_1.webp 2026-08-01 | VSTAR, SAR rarity mark |
+| lucario-02 | Lucario | Lucario LV.X | EN | Mysterious Treasures | 122/123 | uncertain | IMG_7081.jpeg 2026-09-20 | holding photo R4C4; set/number from holding export plus artwork match, not a legible footer; entered On the Attack in verified 2026-09-21 swap |
 | lugia-01 | Lugia | ルギア | JP | Gold, Silver, New World | No.249 | uncertain | awakened_power_1.webp 2026-08-01 | vintage Pokedex-number print, set per owner's doubleholo entry |
 | lugia-02 | Lugia | ルギアV | JP | s12 | 079/098 | confirmed | on_attack_1.webp 2026-08-01 | V card, distinct from lugia-01 |
 | lugia-03 | Lugia | Lugia | EN | Neo Revelation | 20/64 | confirmed | legendary_bearing_1.webp 2026-08-01 | Aerowing attack, No.249 dex entry, vintage print, distinct from lugia-01/02, checked in hand 2026-09-19 |
@@ -138,6 +143,7 @@ The column is left as recorded rather than rewritten: `first_seen` is provenance
 | mimikyu-01 | Mimikyu | 谜拟丘 | ZH | CSM2BC | 151/150 | confirmed | companions_1.webp 2026-08-01 | Ability 假扮 (Disguise), checked in hand 2026-09-19 |
 | misdreavus-01 | Misdreavus | ムウマ | JP | Awakening Legends | No.200 | uncertain | intimidation_1.webp 2026-08-01 | Pokédex-number print, set per owner's doubleholo export 2026-09-18 |
 | mudkip-01 | Mudkip | Mudkip | EN | Crystal Guardians | 58 | confirmed | enduring_presence_1.webp 2026-08-01 | Nap/Waterfall attacks, set/number from owner's doubleholo export 2026-09-18, denominator not recorded |
+| mudkip-02 | Mudkip | ミズゴロウ | JP | Tidal Storm | 012/070 | uncertain | IMG_7080.jpeg 2026-09-20 | holding photo R4C2; set/number from holding export plus artwork match, not a legible footer; sheltered-opening artwork; entered Threshold in verified 2026-09-21 swap |
 | muk-01 | Muk | ベトベトン | JP | Mystery of the Fossils | No.089 | uncertain | enduring_presence_2.webp 2026-08-01 | Grimer evolution Lv.34, HP70, vintage Pokedex-number print, set per owner's doubleholo entry |
 | ninetales-01 | Ninetales | キュウコン | JP | Expansion Pack | No.038 | uncertain | legendary_bearing_2.webp 2026-08-01 | Lv.32, vintage Pokedex-number print, set per owner's doubleholo entry |
 | noibat-01 | Noibat | オンバット | JP | sv9 | 111 | confirmed | calm_nature_1.webp 2026-08-01 | set/number from owner's doubleholo export 2026-09-18, denominator not recorded |
@@ -198,7 +204,7 @@ The column is left as recorded rather than rewritten: `first_seen` is provenance
 | umbreon-03 | Umbreon | Umbreon | EN |  | 61/108 | uncertain | elemental_solitude_1.webp 2026-08-01 | Confuse Ray/Shadow Shutdown, distinct from umbreon-01/02, set code not textual |
 | umbreon-04 | Umbreon | Umbreon | EN | Undaunted | 10/90 | confirmed | legendary_bearing_2.webp 2026-08-01 | Moonlight Fang/Quick Blow, RH holo mark, distinct from umbreon-01/02/03, checked in hand 2026-09-19 |
 | umbreon-05 | Umbreon | ブラッキー | JP | Magma Vs Aqua Two Ambitions | 062/080 | confirmed | enduring_presence_1.webp 2026-08-01 | distinct from umbreon-01..04, checked in hand 2026-09-19 |
-| ursaring-01 | Ursaring | Ursaring | EN | Radiant Collection | RC16/RC25 | photo | at_rest_1.webp 2026-08-01 | artist Sonosuke Sakuma |
+| ursaring-01 | Ursaring | Ursaring | EN | Radiant Collection | RC16/RC25 | photo | at_rest_1.webp 2026-08-01 | artist Sonosuke Sakuma; owner identified the returning RC16/RC25 card as this physical identity; entered Companions p2 in verified 2026-09-21 swap |
 | ursaring-02 | Ursaring | リングマ | JP | Crossing The Ruins | No.217 | uncertain | on_attack_1.webp 2026-08-01 | Lv.43 print, distinct from ursaring-01, vintage Pokedex-number print, set per owner's doubleholo entry |
 | victini-01 | Victini | Victini | EN | Unified Minds | 26 | confirmed | joyful_action_1.webp 2026-08-01 | set/number from owner's doubleholo export 2026-09-18, denominator not recorded |
 | victini-02 | Victini | Victini | EN | SVP | 208 | confirmed | contemplation_1.webp 2026-08-01 | Scarlet & Violet promo, V-Force attack, distinct from victini-01 |

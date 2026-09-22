@@ -144,3 +144,39 @@ The owner selected **environmental emphasis** on the [completed audit checklist]
 This is a definition ruling, not a move of Ralts (`ralts-01`) or any other card. The owner wrote **“no moves”** and **“Review Holding First”** across the proposed swaps and replacement review. No Threshold extractions, cross-theme swaps, or releases are recorded as executed. Squirtle (`squirtle-03`) and Dawn's Stadium (`dawns-stadium-01`) remain in Threshold; the 2026-08-02 Enduring Presence ruling is unchanged.
 
 The holding-box overlaps identified during this audit are additional copies, not evidence that the corresponding binder cards moved. They must not inherit the binder copies' IDs. A separate duplicate-removal review is not a release record. See the [preserved evidence and owner clarifications](evidence/2026-09-20/README.md).
+
+---
+
+## 2026-09-21 — Seven holding-box challenges executed
+
+Governing evidence: the owner-marked [movement checklist](evidence/2026-09-21/validation/completed-movement-checklist.pdf) and five dated [after photographs](evidence/2026-09-21/README.md). Each movement below is verified executed: the checklist marks it moved, and the named incoming card appears on the corresponding after page in a one-for-one exchange.
+
+| In | Destination | Out | Observed holding destination |
+|---|---|---|---|
+| Litleo (`litleo-01`) | Threshold | Hoopa EX (`hoopa-02`) | EDGE |
+| Mudkip (`mudkip-02`) | Threshold | Kasumi's Tears (`kasumis-tears-01`) | HERITAGE |
+| Dragonite (`dragonite-03`) | Quiet Familiarity | Dratini (`dratini-02`) | HERITAGE |
+| Ursaring (`ursaring-01`) | Companions | Rocket's Trap (`rockets-trap-01`) | HERITAGE |
+| Charizard (`charizard-03`) | On the Attack | Snorlax (`snorlax-02`) | EDGE |
+| Lucario (`lucario-02`) | On the Attack | Ursaring (`ursaring-02`) | EDGE |
+| Blastoise (`blastoise-02`) | Legendary Bearing | N's Plan (`ns-plan-01`) | HERITAGE |
+
+### Identity continuity: Ursaring (`ursaring-01`)
+
+The incoming Radiant Collection RC16/RC25 Ursaring is the same physical identity previously photographed in At Rest and recorded leaving that page on 2026-08-01. At the owner's direction it keeps `ursaring-01`; re-entering in Companions does not create a new registry row.
+
+### Threshold correction
+
+Hoopa EX (`hoopa-02`) is no longer treated as a Threshold anchor. Its rings frame an expressed attack rather than a visible boundary being crossed. Litleo (`litleo-01`) replaces it with an explicit doorway and emergence; Mudkip (`mudkip-02`) replaces Kasumi's Tears with a readable sheltered opening. This reverses the earlier unverified Hoopa/Kecleon placement rationale without claiming that historical Kecleon movement can now be reconstructed.
+
+### Reviewed and declined
+
+Three additional comparisons on the checklist were not executed:
+
+- McDonald's Pikachu 020/M-P did not replace Charmander (`charmander-03`); the owner's note points toward World of People instead.
+- Alolan Meowth did not replace Shaymin (`shaymin-03`); the owner's note likewise points toward World of People.
+- Mewtwo EX did not replace Groudon (`groudon-01`) because it would add another Mewtwo to Awakened Power.
+
+Those incumbents remain where they were. A comparison is not movement, so none of the three reserve cards receives a registry ID from this decision alone.
+
+No release is recorded. EDGE and HERITAGE are observed holding-box destinations, not disposal states.
