@@ -119,7 +119,7 @@ The column is left as recorded rather than rewritten: `first_seen` is provenance
 | latios-02 | Latios | ラティオス | JP | Holon Phantom | 14 | confirmed | elemental_solitude_1.webp 2026-08-01 | distinct from latios-01, set/number from owner's doubleholo export 2026-09-18, denominator not recorded |
 | latios-03 | Latios | Latios | EN | Latios & Latias Trainer Kit | 30/30 | confirmed | legendary_bearing_1.webp 2026-08-01 | Supersonic Flight/Psyburn; owner corrected Dragon Vault 10/20 to Latios + Latias deck 30/30 on completed checklist 2026-09-20; the Dragon Vault card is separate in the stamped collection |
 | lucario-01 | Lucario | ルカリオVSTAR | JP | s12a | 226/172 | confirmed | intimidation_1.webp 2026-08-01 | VSTAR, SAR rarity mark |
-| lugia-01 | Lugia | ルギア | JP | Gold, Silver, New World | No.249 | uncertain | awakened_power_1.webp 2026-08-01 | vintage Pokedex-number print, set per owner's doubleholo entry |
+| lugia-01 | Lugia | ルギア | JP | Gold, Silver, New World | No.249 | confirmed | awakened_power_1.webp 2026-08-01 | vintage Pokedex-number print, set per owner's doubleholo entry; Curator visually confirmed the DoubleHolo printing against the archived leaf on 2026-09-22. |
 | lugia-02 | Lugia | ルギアV | JP | s12 | 079/098 | confirmed | on_attack_1.webp 2026-08-01 | V card, distinct from lugia-01 |
 | lugia-03 | Lugia | Lugia | EN | Neo Revelation | 20/64 | confirmed | legendary_bearing_1.webp 2026-08-01 | Aerowing attack, No.249 dex entry, vintage print, distinct from lugia-01/02, checked in hand 2026-09-19 |
 | machop-01 | Machop | Machop | EN | Lost Origin | 086/136 | confirmed | threshold_1.webp 2026-08-01 | Punch attack |

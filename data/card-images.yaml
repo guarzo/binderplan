@@ -159,10 +159,13 @@ cards:
     upstream_id: ex10-54
     source_url: https://assets.tcgdex.net/en/ex/ex10/54/high.webp
   darkrai-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: tcgdex
+    upstream_id: xy9-118
+    classification: exact
+    asset_path: assets/images/cards/darkrai-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://assets.tcgdex.net/en/xy/xy9/118/high.webp
   darkrai-02:
     classification: exact
     asset_path: assets/images/cards/darkrai-02.webp
@@ -307,10 +310,14 @@ cards:
     reviewed: false
     reviewed_on: ''
   gengar-mimikyu-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: doubleholo
+    upstream_id: '32261'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: exact
+    asset_path: assets/images/cards/gengar-mimikyu-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/32261/primary.webp
   glaceon-01:
     classification: exact
     asset_path: assets/images/cards/glaceon-01.webp
@@ -343,10 +350,13 @@ cards:
     reviewed: false
     reviewed_on: ''
   groudon-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: tcgdex
+    upstream_id: ex5-102
+    classification: exact
+    asset_path: assets/images/cards/groudon-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://assets.tcgdex.net/en/ex/ex5/102/high.webp
   groudon-02:
     classification: missing
     asset_path: ''
@@ -358,10 +368,13 @@ cards:
     reviewed: false
     reviewed_on: ''
   gyarados-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: tcgdex
+    upstream_id: base5-25
+    classification: exact
+    asset_path: assets/images/cards/gyarados-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://assets.tcgdex.net/en/base/base5/25/high.webp
   hoopa-01:
     classification: missing
     asset_path: ''
@@ -381,10 +394,13 @@ cards:
     reviewed_on: '2026-09-22'
     source_url: https://assets.tcgdex.net/en/ecard/ecard2/84/high.webp
   houndoom-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: tcgdex
+    upstream_id: swsh5-179
+    classification: exact
+    asset_path: assets/images/cards/houndoom-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://assets.tcgdex.net/en/swsh/swsh5/179/high.webp
   houndoom-02:
     classification: missing
     asset_path: ''
@@ -427,10 +443,16 @@ cards:
     reviewed_on: '2026-09-22'
     source_url: https://assets.tcgdex.net/en/xy/xyp/XY67a/high.webp
   jirachi-02:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: doubleholo
+    upstream_id: '29581'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: proxy
+    asset_path: assets/images/cards/jirachi-02.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/29581/primary.webp
+    note: Planned English SWSH299 replacement selected by curator; physical Chinese
+      card swap remains unconfirmed.
   jirachi-03:
     classification: missing
     asset_path: ''
@@ -521,10 +543,14 @@ cards:
     reviewed: false
     reviewed_on: ''
   lugia-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: doubleholo
+    upstream_id: '22462'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: exact
+    asset_path: assets/images/cards/lugia-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/22462/primary.webp
   lugia-02:
     classification: missing
     asset_path: ''
@@ -970,10 +996,14 @@ cards:
     reviewed: false
     reviewed_on: ''
   umbreon-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: doubleholo
+    upstream_id: '32179'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: exact
+    asset_path: assets/images/cards/umbreon-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/32179/primary.webp
   umbreon-02:
     classification: photo-crop
     asset_path: assets/images/cards/umbreon-02.webp
@@ -1019,10 +1049,14 @@ cards:
     reviewed: false
     reviewed_on: ''
   walrein-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: doubleholo
+    upstream_id: '77632'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: exact
+    asset_path: assets/images/cards/walrein-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/77632/primary.webp
   yveltal-01:
     classification: missing
     asset_path: ''
