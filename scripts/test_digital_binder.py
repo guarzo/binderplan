@@ -1,6 +1,7 @@
 import argparse
 import importlib.util
 import json
+import re
 import subprocess
 import sys
 from pathlib import Path
@@ -1112,3 +1113,44 @@ def test_seeded_repository_has_expected_leaf_and_card_counts():
     assert len(card_leaves) == 19
     assert len(occupied) == 171
     assert len({pocket["card_id"] for pocket in occupied}) == 171
+
+
+def test_rendered_draft_pilot_uses_binder_markup_without_remote_card_images(tmp_path):
+    root = Path(__file__).parents[1]
+    destination = tmp_path / "public"
+
+    result = subprocess.run(
+        ["hugo", "--buildDrafts", "--destination", str(destination)],
+        cwd=root,
+        capture_output=True,
+        text=True,
+    )
+
+    assert result.returncode == 0, result.stderr
+    html = (destination / "gallery/digital-binder-pilot/index.html").read_text(
+        encoding="utf-8"
+    )
+    assert 'data-binder="volume-1"' in html
+    assert html.count('data-binder-leaf="') == 19
+    assert 'data-binder-leaf="v1-17"' in html
+    assert 'data-pocket-position="1"' in html
+    assert '<dialog' in html
+    assert 'https://assets.tcgdex.net' not in html
+    assert 'srcset="' in html
+    assert re.search(r'srcset="[^"]+ 360w, [^"]+ 900w"', html)
+    assert 'sizes="(max-width: 860px) 30vw, 180px"' in html
+    assert 'data-inspector-src="' in html
+    assert html.count('data-initial-binder-image') == html.count('loading="eager"')
+    assert 'loading="lazy"' in html
+    assert 'Image unavailable' in html
+
+    production_destination = tmp_path / "production-public"
+    production = subprocess.run(
+        ["hugo", "--destination", str(production_destination)],
+        cwd=root,
+        capture_output=True,
+        text=True,
+    )
+
+    assert production.returncode == 0, production.stderr
+    assert not (production_destination / "gallery/digital-binder-pilot/index.html").exists()

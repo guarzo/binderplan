@@ -1,0 +1,41 @@
+{{ $binderID := .Params.binder }}
+{{ $volume := index .Site.Data.binders $binderID }}
+{{ if not $volume }}
+  {{ errorf "missing binder data for %q" $binderID }}
+{{ end }}
+{{ $cards := index .Site.Data.generated "card-registry" }}
+{{ if not $cards }}
+  {{ errorf "missing generated card registry data" }}
+{{ end }}
+{{ $images := index .Site.Data "card-images" }}
+{{ if not $images }}
+  {{ errorf "missing card image mapping data" }}
+{{ end }}
+{{ if not (index $images "cards") }}
+  {{ errorf "missing card image records" }}
+{{ end }}
+{{ $leaves := $volume.leaves }}
+{{ if not $leaves }}
+  {{ errorf "binder %q has no leaves" $binderID }}
+{{ end }}
+
+<div class="binder" data-binder="{{ $binderID }}" data-publication-status="{{ $volume.publication_status }}">
+  {{ range $index, $leaf := $leaves }}
+    {{ if eq (mod $index 2) 0 }}
+      {{ $nextIndex := add $index 1 }}
+      <div class="binder-spread" data-binder-spread="{{ add (div $index 2) 1 }}">
+        {{ partial "binder-leaf.html" (dict "leaf" $leaf "cards" $cards "images" $images "eager" (lt $index 2)) }}
+        {{ if lt $nextIndex (len $leaves) }}
+          {{ $nextLeaf := index $leaves $nextIndex }}
+          {{ partial "binder-leaf.html" (dict "leaf" $nextLeaf "cards" $cards "images" $images "eager" (lt $nextIndex 2)) }}
+        {{ end }}
+      </div>
+    {{ end }}
+  {{ end }}
+</div>
+
+<dialog data-card-inspector aria-label="Card inspector">
+  <button type="button" data-card-inspector-close aria-label="Close card inspector">Close</button>
+  <img data-card-inspector-image src="" alt="">
+  <p data-card-inspector-caption></p>
+</dialog>

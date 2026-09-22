@@ -5,8 +5,12 @@
     {{ with .Description }}<p class="description">{{ . }}</p>{{ end }}
   </header>
 
-  <div class="gallery-content">
-    {{ .Content }}
-  </div>
+  {{ if .Params.binder }}
+    {{ partial "binder.html" . }}
+  {{ else }}
+    <div class="gallery-content">
+      {{ .Content }}
+    </div>
+  {{ end }}
 </article>
 {{ end }}

@@ -541,3 +541,11 @@ hr {
   .lightbox { transition: none; }
 }
 </style>
+{{ if .Params.binder }}
+  {{ with resources.Get "css/binder.css" }}
+    {{ $binderCSS := . | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $binderCSS.RelPermalink }}" integrity="{{ $binderCSS.Data.Integrity }}">
+  {{ else }}
+    {{ errorf "missing binder stylesheet assets/css/binder.css" }}
+  {{ end }}
+{{ end }}
