@@ -25,6 +25,11 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  charizard-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   charmander-01:
     classification: missing
     asset_path: ''
@@ -105,6 +110,11 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  gengar-03:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   gengar-mimikyu-01:
     classification: missing
     asset_path: ''
@@ -150,6 +160,11 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  houndoom-02:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   houndour-01:
     classification: missing
     asset_path: ''
@@ -161,6 +176,11 @@ cards:
     reviewed: false
     reviewed_on: ''
   jirachi-02:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  kingdra-01:
     classification: missing
     asset_path: ''
     reviewed: false
@@ -181,6 +201,11 @@ cards:
     reviewed: false
     reviewed_on: ''
   lugia-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  lugia-02:
     classification: missing
     asset_path: ''
     reviewed: false
@@ -340,7 +365,17 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  snorlax-02:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   spheal-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  spheal-02:
     classification: missing
     asset_path: ''
     reviewed: false
@@ -380,12 +415,22 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  ursaring-02:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   victini-01:
     classification: missing
     asset_path: ''
     reviewed: false
     reviewed_on: ''
   walrein-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  yveltal-01:
     classification: missing
     asset_path: ''
     reviewed: false

@@ -755,3 +755,83 @@ leaves:
         type: published-photo
         source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/intimidation_1.webp
         observed_on: '2026-08-01'
+- id: v1-15
+  kind: cards
+  physical_leaf: 15
+  chapter: Threat & Conflict
+  chapter_order: 4
+  theme: On the Attack
+  caption: Commitment to Force. The instant hesitation ends and action becomes irreversible.
+  pockets:
+  - position: 1
+    card_id: gengar-03
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/on_attack_1.webp
+        observed_on: '2026-08-01'
+  - position: 2
+    card_id: lugia-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/on_attack_1.webp
+        observed_on: '2026-08-01'
+  - position: 3
+    card_id: spheal-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/on_attack_1.webp
+        observed_on: '2026-08-01'
+  - position: 4
+    card_id: kingdra-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/on_attack_1.webp
+        observed_on: '2026-08-01'
+  - position: 5
+    card_id: snorlax-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/on_attack_1.webp
+        observed_on: '2026-08-01'
+  - position: 6
+    card_id: yveltal-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/on_attack_1.webp
+        observed_on: '2026-08-01'
+  - position: 7
+    card_id: charizard-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/on_attack_1.webp
+        observed_on: '2026-08-01'
+  - position: 8
+    card_id: ursaring-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/on_attack_1.webp
+        observed_on: '2026-08-01'
+  - position: 9
+    card_id: houndoom-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/on_attack_1.webp
+        observed_on: '2026-08-01'
