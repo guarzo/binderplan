@@ -80,6 +80,10 @@ def _candidate_cache_path(root: Path, card_id: str) -> Path:
     return root / REVIEW_ROOT / "candidates" / f"{card_id}.json"
 
 
+def _doubleholo_candidate_cache_path(root: Path, card_id: str) -> Path:
+    return root / REVIEW_ROOT / "doubleholo" / f"{card_id}.json"
+
+
 def _page_review_paths(root: Path, leaf_id: str) -> tuple[Path, Path]:
     base = root / REVIEW_ROOT / "pages" / leaf_id
     return base.with_suffix(".html"), base.with_suffix(".json")
@@ -90,7 +94,12 @@ def _cache_opener(root: Path):
 
     def opener(request: Request, timeout: int):
         url = request.full_url
-        key = hashlib.sha256(url.encode("utf-8")).hexdigest() + ".json"
+        cache_identity = b"\0".join((
+            request.get_method().encode("utf-8"),
+            url.encode("utf-8"),
+            request.data or b"",
+        ))
+        key = hashlib.sha256(cache_identity).hexdigest() + ".json"
         path = cache_dir / key
         if path.exists():
             return CachedHTTPResponse(path.read_bytes())
@@ -123,9 +132,7 @@ def _search_candidates(root: Path, card_id: str) -> dict:
     return report
 
 
-def search_command(args) -> int:
-    root = Path.cwd()
-    report = _search_candidates(root, args.card_id)
+def _print_candidate_summary(report: dict) -> None:
     if report["candidates"]:
         for candidate in report["candidates"]:
             print(
@@ -133,7 +140,41 @@ def search_command(args) -> int:
                 f"score={candidate.get('score')} image={candidate.get('image_url') or 'none'}"
             )
     else:
-        print(f"no candidates for {args.card_id}")
+        print(f"no candidates for {report['card_id']}")
+
+
+def search_command(args) -> int:
+    root = Path.cwd()
+    report = _search_candidates(root, args.card_id)
+    _print_candidate_summary(report)
+    return 0
+
+
+def _search_doubleholo_candidates(root: Path, card_id: str) -> dict:
+    registry = _load_registry(root)
+    if card_id not in registry:
+        raise ValueError(f"unknown card_id {card_id}")
+    row = registry[card_id]
+    candidates = digital_binder.rank_doubleholo_candidates(
+        row,
+        digital_binder.search_doubleholo(row, opener=_cache_opener(root)),
+    )
+    report = {
+        "card_id": card_id,
+        "registry": row,
+        "candidates": [
+            {"candidate_index": index, **candidate}
+            for index, candidate in enumerate(candidates)
+        ],
+    }
+    _write_text_atomic(_doubleholo_candidate_cache_path(root, card_id), _json_dump(report))
+    return report
+
+
+def search_doubleholo_command(args) -> int:
+    root = Path.cwd()
+    report = _search_doubleholo_candidates(root, args.card_id)
+    _print_candidate_summary(report)
     return 0
 
 
@@ -328,10 +369,9 @@ def approve_local_command(args) -> int:
     return 0
 
 
-def _load_candidate(root: Path, card_id: str, candidate_index: int) -> dict:
-    path = _candidate_cache_path(root, card_id)
+def _load_candidate_from_path(path: Path, card_id: str, candidate_index: int, source: str) -> dict:
     if not path.exists():
-        raise ValueError(f"missing candidate cache for {card_id}; run search or review first")
+        raise ValueError(f"missing {source} candidate cache for {card_id}; run {source} search first")
     data = json.loads(path.read_text(encoding="utf-8"))
     for candidate in data.get("candidates", []):
         if candidate.get("candidate_index") == candidate_index:
@@ -339,33 +379,66 @@ def _load_candidate(root: Path, card_id: str, candidate_index: int) -> dict:
     raise ValueError(f"candidate index {candidate_index} not found for {card_id}")
 
 
-def approve_command(args) -> int:
-    root = Path.cwd()
-    row = _require_card(root, args.card_id)
-    _check_classification(row, args.classification, args.note)
-    candidate = _load_candidate(root, args.card_id, args.candidate_index)
+def _load_candidate(root: Path, card_id: str, candidate_index: int) -> dict:
+    return _load_candidate_from_path(
+        _candidate_cache_path(root, card_id), card_id, candidate_index, "tcgdex"
+    )
+
+
+def _load_doubleholo_candidate(root: Path, card_id: str, candidate_index: int) -> dict:
+    return _load_candidate_from_path(
+        _doubleholo_candidate_cache_path(root, card_id), card_id, candidate_index, "doubleholo"
+    )
+
+
+def _approve_remote_candidate(root: Path, args, candidate: dict, record: dict, context: str) -> None:
     image_url = candidate.get("image_url")
     if not image_url:
         raise ValueError("selected candidate has no image_url")
-    _require_http_url(image_url, "approve candidate image")
+    _require_http_url(image_url, f"approve {context} candidate image")
     request = Request(image_url, headers={"User-Agent": digital_binder.TCGDEX_USER_AGENT})
     with urlopen(request, timeout=20) as response:
         payload = response.read()
     staged_asset = _stage_path(root, args.card_id)
     _save_image_payload_as_webp(payload, staged_asset)
-    record = {
+    record.update({
         "classification": args.classification,
         "asset_path": _asset_record_path(args.card_id),
         "reviewed": True,
         "reviewed_on": date.today().isoformat(),
-        "provider": "tcgdex",
-        "upstream_id": candidate.get("provider_id") or "",
         "source_url": image_url,
-    }
+    })
     if args.note:
         record["note"] = args.note
     _replace_reviewed_image(root, args.card_id, record, staged_asset)
+
+
+def approve_command(args) -> int:
+    root = Path.cwd()
+    row = _require_card(root, args.card_id)
+    _check_classification(row, args.classification, args.note)
+    candidate = _load_candidate(root, args.card_id, args.candidate_index)
+    _approve_remote_candidate(root, args, candidate, {
+        "provider": "tcgdex",
+        "upstream_id": candidate.get("provider_id") or "",
+    }, "tcgdex")
     print(f"approved candidate {args.candidate_index} for {args.card_id}")
+    return 0
+
+
+def approve_doubleholo_command(args) -> int:
+    root = Path.cwd()
+    row = _require_card(root, args.card_id)
+    _check_classification(row, args.classification, args.note)
+    candidate = _load_doubleholo_candidate(root, args.card_id, args.candidate_index)
+    if args.classification == "exact" and candidate.get("exact_identity_match") is not True:
+        raise ValueError("exact DoubleHolo approval requires an exact identity match")
+    _approve_remote_candidate(root, args, candidate, {
+        "provider": "doubleholo",
+        "upstream_id": candidate.get("provider_id") or "",
+        "usage_basis": "Owner-authorized DoubleHolo card catalog image.",
+    }, "doubleholo")
+    print(f"approved DoubleHolo candidate {args.candidate_index} for {args.card_id}")
     return 0
 
 
@@ -425,6 +498,10 @@ def build_parser() -> argparse.ArgumentParser:
     search.add_argument("card_id")
     search.set_defaults(func=search_command)
 
+    search_doubleholo = subcommands.add_parser("search-doubleholo")
+    search_doubleholo.add_argument("card_id")
+    search_doubleholo.set_defaults(func=search_doubleholo_command)
+
     review = subcommands.add_parser("review")
     review.add_argument("--page", required=True)
     review.set_defaults(func=review_command)
@@ -435,6 +512,13 @@ def build_parser() -> argparse.ArgumentParser:
     approve.add_argument("--classification", choices=("exact", "proxy"), required=True)
     approve.add_argument("--note")
     approve.set_defaults(func=approve_command)
+
+    approve_doubleholo = subcommands.add_parser("approve-doubleholo")
+    approve_doubleholo.add_argument("card_id")
+    approve_doubleholo.add_argument("--candidate-index", required=True, type=int)
+    approve_doubleholo.add_argument("--classification", choices=("exact", "proxy"), required=True)
+    approve_doubleholo.add_argument("--note")
+    approve_doubleholo.set_defaults(func=approve_doubleholo_command)
 
     approve_local = subcommands.add_parser("approve-local")
     approve_local.add_argument("card_id")

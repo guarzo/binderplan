@@ -10,7 +10,7 @@ import subprocess
 from functools import lru_cache
 from html.parser import HTMLParser
 from pathlib import Path
-from urllib.parse import quote, unquote, urlsplit
+from urllib.parse import quote, urlencode, unquote, urlsplit
 from urllib.request import Request, urlopen
 
 from PIL import Image
@@ -35,6 +35,16 @@ IMAGE_CLASSIFICATIONS = {"exact", "photo-crop", "proxy", "missing"}
 TCGDEX_LANGUAGE = {"EN": "en", "JP": "ja", "ZH": "zh-tw"}
 TCGDEX_API_ROOT = "https://api.tcgdex.net/v2"
 TCGDEX_USER_AGENT = "binderplan digital-binder-image-review/1.0"
+DOUBLEHOLO_APPLICATION_ID = "W5SF479ZKL"
+DOUBLEHOLO_INDEX = "production_cards"
+DOUBLEHOLO_SEARCH_ONLY_API_KEY = "50fdd89ab8d777151bc000bba6097357"
+DOUBLEHOLO_SEARCH_ENDPOINT = "https://w5sf479zkl-dsn.algolia.net/1/indexes/*/queries"
+DOUBLEHOLO_HITS_PER_PAGE = 100
+DOUBLEHOLO_LANGUAGE = {
+    "english": "EN",
+    "japanese": "JP",
+    "chinese": "ZH",
+}
 SAFE_REF_RE = re.compile(r"^(?!-)[A-Za-z0-9._/@+-]+$")
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 INITIAL_BINDER_IMAGE_BUDGET = 1_572_864
@@ -97,6 +107,165 @@ def _tcgdex_json(url: str, opener=urlopen):
         return json.loads(response.read().decode("utf-8"))
 
 
+def _local_number(number: str | None) -> str:
+    return str(number or "").split("/", 1)[0].strip()
+
+
+def _fold_identity(value: str | None) -> str:
+    return re.sub(r"[^a-z0-9]+", "", str(value or "").casefold())
+
+
+def _normalize_doubleholo_number(number: str | None) -> str:
+    folded = re.sub(r"^no\.?\s*", "", _local_number(number).casefold()).strip()
+    compact = re.sub(r"[^a-z0-9]+", "", folded)
+    if compact.isdigit():
+        return str(int(compact))
+    return compact
+
+
+def _normalize_doubleholo_set(value: str | None) -> str:
+    tokens = re.findall(r"[a-z0-9]+", str(value or "").casefold())
+    ignored = {"pokemon", "pokémon", "pok", "mon", "english", "japanese", "chinese", "of", "the", "and"}
+    return "".join(token for token in tokens if token not in ignored)
+
+
+def _doubleholo_search_query(row: dict) -> str:
+    terms = []
+    species = str(row.get("species") or row.get("card_name") or "").strip()
+    number = _normalize_doubleholo_number(row.get("number"))
+    if species:
+        terms.append(species)
+    if number:
+        terms.append(number)
+    set_text = re.sub(r"pok[eé]mon", " ", str(row.get("set") or ""), flags=re.IGNORECASE)
+    set_words = re.findall(r"[A-Za-z0-9]+", set_text)
+    ignored = {"pokemon", "pok", "mon", "english", "japanese", "chinese", "of", "the", "and", "to"}
+    terms.extend(word for word in set_words if word.casefold() not in ignored)
+    return " ".join(terms)
+
+
+def normalize_doubleholo_candidate(hit: dict) -> dict:
+    language = DOUBLEHOLO_LANGUAGE.get(str(hit.get("language") or "").casefold(), "")
+    number = str(hit.get("number") or "")
+    set_name = str(hit.get("set_name") or "")
+    return {
+        "provider": "doubleholo",
+        "provider_id": str(hit.get("objectID") or ""),
+        "name": str(hit.get("name") or ""),
+        "set_name": set_name,
+        "local_id": number,
+        "language": language,
+        "image_url": hit.get("image_url") or hit.get("image_url_small"),
+        "image_url_small": hit.get("image_url_small"),
+        "normalized_set": _normalize_doubleholo_set(set_name),
+        "normalized_number": _normalize_doubleholo_number(number),
+        "original": {
+            "objectID": hit.get("objectID"),
+            "name": hit.get("name"),
+            "set_name": hit.get("set_name"),
+            "number": hit.get("number"),
+            "language": hit.get("language"),
+            "image_url": hit.get("image_url"),
+            "image_url_small": hit.get("image_url_small"),
+        },
+    }
+
+
+def search_doubleholo(row: dict, opener=urlopen) -> list[dict]:
+    params = urlencode({
+        "query": _doubleholo_search_query(row),
+        "hitsPerPage": str(DOUBLEHOLO_HITS_PER_PAGE),
+        "attributesToRetrieve": ",".join((
+            "objectID",
+            "name",
+            "set_name",
+            "number",
+            "language",
+            "image_url",
+            "image_url_small",
+        )),
+    })
+    payload = json.dumps({
+        "requests": [{"indexName": DOUBLEHOLO_INDEX, "params": params}],
+    }).encode("utf-8")
+    request = Request(
+        DOUBLEHOLO_SEARCH_ENDPOINT,
+        data=payload,
+        headers={
+            "Content-Type": "application/json",
+            "User-Agent": TCGDEX_USER_AGENT,
+            "X-Algolia-Application-Id": DOUBLEHOLO_APPLICATION_ID,
+            "X-Algolia-API-Key": DOUBLEHOLO_SEARCH_ONLY_API_KEY,
+        },
+        method="POST",
+    )
+    try:
+        with opener(request, timeout=20) as response:
+            data = json.loads(response.read().decode("utf-8"))
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError, ValueError):
+        return []
+    results = data.get("results") if isinstance(data, dict) else None
+    if not isinstance(results, list) or not results:
+        return []
+    hits = results[0].get("hits") if isinstance(results[0], dict) else None
+    if not isinstance(hits, list):
+        return []
+    candidates = []
+    for hit in hits:
+        if not isinstance(hit, dict) or not hit.get("objectID"):
+            continue
+        try:
+            candidates.append(normalize_doubleholo_candidate(hit))
+        except (AttributeError, TypeError, ValueError):
+            continue
+    return candidates
+
+
+def _doubleholo_set_matches(wanted: str, candidate: str) -> bool:
+    if not wanted or not candidate:
+        return False
+    return wanted == candidate
+
+
+def _doubleholo_name_matches(row: dict, candidate: dict) -> bool:
+    candidate_name = _fold_identity(candidate.get("name"))
+    names = [_fold_identity(row.get("card_name")), _fold_identity(row.get("species"))]
+    return any(name and (name == candidate_name or name in candidate_name) for name in names)
+
+
+def rank_doubleholo_candidates(row: dict, candidates: list[dict]) -> list[dict]:
+    wanted_number = _normalize_doubleholo_number(row.get("number"))
+    wanted_language = str(row.get("language") or "").upper()
+    wanted_set = _normalize_doubleholo_set(row.get("set"))
+    ranked = []
+    for candidate in candidates:
+        item = dict(candidate)
+        number_match = bool(wanted_number and candidate.get("normalized_number") == wanted_number)
+        language_match = bool(wanted_language and candidate.get("language") == wanted_language)
+        set_match = _doubleholo_set_matches(wanted_set, str(candidate.get("normalized_set") or ""))
+        name_match = _doubleholo_name_matches(row, candidate)
+        score = 0
+        if number_match:
+            score += 50
+        if language_match:
+            score += 55
+        if set_match:
+            score += 35
+        if name_match:
+            score += 15
+        if candidate.get("image_url"):
+            score += 5
+        item["number_match"] = number_match
+        item["language_match"] = language_match
+        item["set_match"] = set_match
+        item["name_match"] = name_match
+        item["exact_identity_match"] = number_match and language_match and set_match
+        item["score"] = score
+        item["review_state"] = "candidate"
+        ranked.append(item)
+    return sorted(ranked, key=lambda item: (-item["score"], item.get("provider_id") or ""))
+
+
 def _tcgdex_image_url(image_base: str | None) -> str | None:
     if not image_base:
         return None
@@ -116,14 +285,6 @@ def normalize_tcgdex_candidate(candidate: dict) -> dict:
         "set_name": card_set.get("name") or "",
         "image_url": _tcgdex_image_url(candidate.get("image")),
     }
-
-
-def _local_number(number: str | None) -> str:
-    return str(number or "").split("/", 1)[0].strip()
-
-
-def _fold_identity(value: str | None) -> str:
-    return re.sub(r"[^a-z0-9]+", "", str(value or "").casefold())
 
 
 def search_tcgdex(row: dict, opener=urlopen) -> list[dict]:
@@ -540,6 +701,11 @@ def _validate_non_missing_image_source(card_id: str, record: dict, errors: list[
         errors.append(f"image record {card_id}: local-file image requires usage_basis")
     if provider == "tcgdex" and not str(record.get("upstream_id") or "").strip():
         errors.append(f"image record {card_id}: tcgdex image requires upstream_id")
+    if provider == "doubleholo":
+        if not str(record.get("upstream_id") or "").strip():
+            errors.append(f"image record {card_id}: doubleholo image requires upstream_id")
+        if record.get("usage_basis") != "Owner-authorized DoubleHolo card catalog image.":
+            errors.append(f"image record {card_id}: doubleholo image requires authorized usage_basis")
 
 
 def _validate_exact_image(card_id: str, record: dict, registry_row: dict, errors: list[str]) -> None:

@@ -7,6 +7,7 @@ import subprocess
 import sys
 from html.parser import HTMLParser
 from pathlib import Path
+from urllib.parse import parse_qs
 
 from PIL import Image
 import yaml
@@ -262,6 +263,15 @@ def write_candidate_cache(root, card_id, candidates):
     )
 
 
+def write_doubleholo_candidate_cache(root, card_id, candidates):
+    path = root / "tmp/digital-binder-review/doubleholo" / f"{card_id}.json"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(
+        json.dumps({"card_id": card_id, "registry": {}, "candidates": candidates}),
+        encoding="utf-8",
+    )
+
+
 def seed_existing_proxy_image(root):
     asset_path = root / manage_card_images.CARD_ASSET_DIR / "abra-01.webp"
     write_image(asset_path, color=(9, 8, 7))
@@ -404,6 +414,320 @@ def test_search_tcgdex_keeps_summary_when_one_detail_fetch_fails():
     assert "404 not found" in candidates[0]["detail_error"]
     assert "detail_error" not in candidates[1]
     assert candidates[1]["image_url"] == "https://assets.tcgdex.net/en/base/base1/44/high.webp"
+
+
+def test_search_doubleholo_posts_public_algolia_query_shape():
+    calls = []
+
+    def fake_opener(request, timeout):
+        calls.append((request, timeout))
+        body = json.loads(request.data.decode("utf-8"))
+        params = parse_qs(body["requests"][0]["params"])
+        assert body["requests"][0]["indexName"] == "production_cards"
+        assert params["query"] == ["Dragonite 149 Mystery Fossils"]
+        assert int(params["hitsPerPage"][0]) >= 80
+        assert params["attributesToRetrieve"] == [
+            "objectID,name,set_name,number,language,image_url,image_url_small"
+        ]
+        return FakeHTTPResponse({"results": [{"hits": []}]})
+
+    row = {
+        "id": "dragonite-01", "species": "Dragonite", "card_name": "カイリュー",
+        "language": "JP", "set": "Mystery of the Fossils", "number": "No.149",
+    }
+
+    assert digital_binder.search_doubleholo(row, opener=fake_opener) == []
+
+    request, timeout = calls[0]
+    assert request.full_url == "https://w5sf479zkl-dsn.algolia.net/1/indexes/*/queries"
+    assert request.get_method() == "POST"
+    assert request.headers["X-algolia-application-id"] == "W5SF479ZKL"
+    assert request.headers["X-algolia-api-key"] == "50fdd89ab8d777151bc000bba6097357"
+    assert "Cookie" not in request.headers
+    assert timeout == 20
+
+
+def test_search_doubleholo_query_ignores_accented_pokemon_set_prefix():
+    queries = []
+
+    def fake_opener(request, timeout):
+        body = json.loads(request.data.decode("utf-8"))
+        queries.append(parse_qs(body["requests"][0]["params"])["query"][0])
+        return FakeHTTPResponse({"results": [{"hits": []}]})
+
+    row = {
+        "id": "ampharos-01", "species": "Ampharos", "card_name": "ミカンのデンリュウ",
+        "language": "JP", "set": "Pokémon VS", "number": "031/141",
+    }
+
+    digital_binder.search_doubleholo(row, opener=fake_opener)
+
+    assert queries == ["Ampharos 31 VS"]
+
+
+def test_normalize_doubleholo_candidate_preserves_original_fields_and_normalizes_identity():
+    candidate = digital_binder.normalize_doubleholo_candidate({
+        "objectID": "dh-123",
+        "name": "Dark Espeon",
+        "set_name": "Pokemon Japanese Neo 4 Darkness, and to Light",
+        "number": "196",
+        "language": "japanese",
+        "image_url": "https://supabase.example/card.webp",
+        "image_url_small": "https://supabase.example/card-small.webp",
+    })
+
+    assert candidate["provider"] == "doubleholo"
+    assert candidate["provider_id"] == "dh-123"
+    assert candidate["name"] == "Dark Espeon"
+    assert candidate["set_name"] == "Pokemon Japanese Neo 4 Darkness, and to Light"
+    assert candidate["local_id"] == "196"
+    assert candidate["language"] == "JP"
+    assert candidate["normalized_set"] == "neo4darknesstolight"
+    assert candidate["normalized_number"] == "196"
+    assert candidate["original"] == {
+        "objectID": "dh-123",
+        "name": "Dark Espeon",
+        "set_name": "Pokemon Japanese Neo 4 Darkness, and to Light",
+        "number": "196",
+        "language": "japanese",
+        "image_url": "https://supabase.example/card.webp",
+        "image_url_small": "https://supabase.example/card-small.webp",
+    }
+
+
+def test_rank_doubleholo_candidates_scores_identity_components_without_approval():
+    row = {
+        "id": "espeon-01", "species": "Espeon", "card_name": "わるいエーフィ",
+        "language": "JP", "set": "Darkness, and to Light", "number": "No.196",
+    }
+    candidates = [
+        digital_binder.normalize_doubleholo_candidate({
+            "objectID": "wrong-language", "name": "Dark Espeon",
+            "set_name": "Pokemon Darkness, and to Light",
+            "number": "196", "language": "english",
+            "image_url": "https://example.invalid/wrong.webp",
+        }),
+        digital_binder.normalize_doubleholo_candidate({
+            "objectID": "exact", "name": "Dark Espeon",
+            "set_name": "Pokemon Japanese Darkness, and to Light",
+            "number": "196", "language": "japanese",
+            "image_url": "https://example.invalid/exact.webp",
+        }),
+        digital_binder.normalize_doubleholo_candidate({
+            "objectID": "wrong-number", "name": "Dark Espeon",
+            "set_name": "Pokemon Japanese Darkness, and to Light",
+            "number": "197", "language": "japanese",
+            "image_url": "https://example.invalid/wrong-number.webp",
+        }),
+    ]
+
+    ranked = digital_binder.rank_doubleholo_candidates(row, candidates)
+
+    assert [candidate["provider_id"] for candidate in ranked] == [
+        "exact", "wrong-number", "wrong-language",
+    ]
+    assert ranked[0]["number_match"] is True
+    assert ranked[0]["language_match"] is True
+    assert ranked[0]["set_match"] is True
+    assert ranked[0]["name_match"] is True
+    assert ranked[0]["exact_identity_match"] is True
+    assert ranked[0]["review_state"] == "candidate"
+    assert "approved" not in ranked[0].values()
+    assert ranked[1]["exact_identity_match"] is False
+    assert ranked[2]["exact_identity_match"] is False
+
+
+def test_doubleholo_exact_identity_requires_normalized_set_equality_not_substring():
+    row = {
+        "id": "promo-01", "species": "Umbreon", "card_name": "Umbreon",
+        "language": "EN", "set": "Promo", "number": "60",
+    }
+    candidate = digital_binder.normalize_doubleholo_candidate({
+        "objectID": "stamped-promo", "name": "Umbreon",
+        "set_name": "Pokemon Stamped Promo", "number": "60", "language": "english",
+        "image_url": "https://example.invalid/umbreon.webp",
+    })
+
+    ranked = digital_binder.rank_doubleholo_candidates(row, [candidate])
+
+    assert ranked[0]["number_match"] is True
+    assert ranked[0]["language_match"] is True
+    assert ranked[0]["set_match"] is False
+    assert ranked[0]["exact_identity_match"] is False
+
+
+def test_search_doubleholo_skips_bad_hits_and_returns_empty_on_failed_or_malformed_response():
+    row = {
+        "id": "abra-01", "species": "Abra", "card_name": "Abra",
+        "language": "EN", "set": "Base Set", "number": "43/102",
+    }
+
+    def mixed_hits_opener(request, timeout):
+        return FakeHTTPResponse({"results": [{"hits": [
+            None,
+            {"objectID": "ok", "name": "Abra", "set_name": "Pokemon Base Set",
+             "number": "43/102", "language": "english"},
+            {"name": "missing object"},
+        ]}]})
+
+    candidates = digital_binder.search_doubleholo(row, opener=mixed_hits_opener)
+    assert [candidate["provider_id"] for candidate in candidates] == ["ok"]
+
+    def failed_opener(request, timeout):
+        raise OSError("network down")
+
+    assert digital_binder.search_doubleholo(row, opener=failed_opener) == []
+
+    def malformed_opener(request, timeout):
+        return FakeBinaryHTTPResponse(b"not json")
+
+    assert digital_binder.search_doubleholo(row, opener=malformed_opener) == []
+
+
+def test_cache_opener_keys_post_requests_by_body(tmp_path, monkeypatch):
+    calls = []
+
+    def fake_urlopen(request, timeout):
+        calls.append(request.data)
+        return FakeBinaryHTTPResponse(request.data)
+
+    monkeypatch.setattr(manage_card_images, "urlopen", fake_urlopen)
+    opener = manage_card_images._cache_opener(tmp_path)
+    first_request = manage_card_images.Request("https://example.invalid/search", data=b"first")
+    second_request = manage_card_images.Request("https://example.invalid/search", data=b"second")
+
+    with opener(first_request, timeout=20) as response:
+        assert response.read() == b"first"
+    with opener(second_request, timeout=20) as response:
+        assert response.read() == b"second"
+
+    assert calls == [b"first", b"second"]
+
+
+def test_doubleholo_search_command_caches_under_doubleholo_review_dir(tmp_path, monkeypatch):
+    root = project_fixture(tmp_path)
+    write_current_generated(root)
+
+    def fake_search(row, opener):
+        return [{
+            "provider": "doubleholo", "provider_id": "dh-43", "name": "Abra",
+            "set_name": "Base Set", "local_id": "43/102", "language": "EN",
+            "image_url": "https://example.invalid/abra.webp",
+        }]
+
+    monkeypatch.chdir(root)
+    monkeypatch.setattr(manage_card_images.digital_binder, "search_doubleholo", fake_search)
+
+    assert manage_card_images.search_doubleholo_command(argparse.Namespace(card_id="abra-01")) == 0
+
+    cached = json.loads(
+        (root / "tmp/digital-binder-review/doubleholo/abra-01.json").read_text(encoding="utf-8")
+    )
+    assert cached["card_id"] == "abra-01"
+    assert cached["candidates"][0]["candidate_index"] == 0
+    assert cached["candidates"][0]["provider"] == "doubleholo"
+
+
+def test_approve_doubleholo_rejects_file_candidate_url(tmp_path, monkeypatch):
+    root = project_fixture(tmp_path)
+    write_current_generated(root)
+    write_doubleholo_candidate_cache(root, "abra-01", [{
+        "candidate_index": 0,
+        "provider_id": "dh-43",
+        "image_url": "file:///tmp/abra.webp",
+        "exact_identity_match": True,
+    }])
+    monkeypatch.chdir(root)
+
+    try:
+        manage_card_images.approve_doubleholo_command(approve_args())
+    except ValueError as exc:
+        assert "HTTP(S)" in str(exc)
+    else:
+        raise AssertionError("approve-doubleholo should reject file: candidate URLs")
+
+    assert not (root / manage_card_images.CARD_ASSET_DIR / "abra-01.webp").exists()
+
+
+def test_approve_doubleholo_rejects_exact_when_candidate_identity_is_not_exact(tmp_path, monkeypatch):
+    root = project_fixture(tmp_path)
+    write_current_generated(root)
+    write_doubleholo_candidate_cache(root, "abra-01", [{
+        "candidate_index": 0,
+        "provider_id": "dh-43",
+        "image_url": "https://example.invalid/abra.png",
+        "exact_identity_match": False,
+    }])
+    monkeypatch.chdir(root)
+
+    try:
+        manage_card_images.approve_doubleholo_command(approve_args())
+    except ValueError as exc:
+        assert "exact identity" in str(exc)
+    else:
+        raise AssertionError("exact doubleholo approval should require an exact identity match")
+
+    assert not (root / manage_card_images.CARD_ASSET_DIR / "abra-01.webp").exists()
+
+
+def test_approve_doubleholo_writes_authorized_provider_record(tmp_path, monkeypatch):
+    root = project_fixture(tmp_path)
+    write_current_generated(root)
+    write_doubleholo_candidate_cache(root, "abra-01", [{
+        "candidate_index": 0,
+        "provider_id": "dh-43",
+        "image_url": "https://supabase.example/abra.png",
+        "exact_identity_match": True,
+    }])
+
+    def fake_urlopen(request, timeout):
+        return FakeBinaryHTTPResponse(image_bytes("PNG"))
+
+    monkeypatch.chdir(root)
+    monkeypatch.setattr(manage_card_images, "urlopen", fake_urlopen)
+
+    assert manage_card_images.approve_doubleholo_command(approve_args()) == 0
+
+    asset_path = root / manage_card_images.CARD_ASSET_DIR / "abra-01.webp"
+    with Image.open(asset_path) as image:
+        assert image.format == "WEBP"
+    record = load_images(root)["cards"]["abra-01"]
+    assert record["provider"] == "doubleholo"
+    assert record["upstream_id"] == "dh-43"
+    assert record["source_url"] == "https://supabase.example/abra.png"
+    assert record["usage_basis"] == "Owner-authorized DoubleHolo card catalog image."
+
+
+def test_approve_doubleholo_preserves_existing_asset_and_yaml_when_validation_rejects(tmp_path, monkeypatch):
+    root = project_fixture(tmp_path)
+    (root / "docs" / "card-registry.md").write_text(
+        registry_doc(confidence="confirmed", set_="Base Set", number=""),
+        encoding="utf-8",
+    )
+    write_current_generated(root)
+    original_yaml, original_asset, asset_path = seed_existing_proxy_image(root)
+    write_doubleholo_candidate_cache(root, "abra-01", [{
+        "candidate_index": 0,
+        "provider_id": "dh-43",
+        "image_url": "https://supabase.example/abra.png",
+        "exact_identity_match": True,
+    }])
+
+    def fake_urlopen(request, timeout):
+        return FakeBinaryHTTPResponse(image_bytes("PNG", color=(255, 0, 0)))
+
+    monkeypatch.chdir(root)
+    monkeypatch.setattr(manage_card_images, "urlopen", fake_urlopen)
+
+    try:
+        manage_card_images.approve_doubleholo_command(approve_args())
+    except ValueError as exc:
+        assert "exact" in str(exc) and "set and number" in str(exc)
+    else:
+        raise AssertionError("invalid exact doubleholo approval should be rejected")
+
+    assert (root / "data/card-images.yaml").read_bytes() == original_yaml
+    assert asset_path.read_bytes() == original_asset
 
 
 def test_candidate_without_image_remains_reviewable():
