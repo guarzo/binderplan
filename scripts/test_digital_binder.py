@@ -3,6 +3,7 @@ import json
 import subprocess
 from pathlib import Path
 
+from PIL import Image
 import yaml
 
 spec = importlib.util.spec_from_file_location(
@@ -199,6 +200,25 @@ def write_current_generated(root):
     )
 
 
+def write_image(path, size=(12, 10), color=(64, 128, 192)):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    Image.new("RGB", size, color).save(path)
+
+
+class FakeHTTPResponse:
+    def __init__(self, payload):
+        self.payload = payload
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, exc_type, exc, tb):
+        return False
+
+    def read(self):
+        return json.dumps(self.payload).encode("utf-8")
+
+
 def project_manifest(card_id="abra-01", status="confirmed", observed_card_id=None):
     pocket = confirmed_pocket(card_id)
     if status == "pending":
@@ -234,6 +254,260 @@ def confirmed_project(tmp_path, card_id):
 
 def pending_project(tmp_path, card_id, observed_card_id):
     return project_manifest(card_id=card_id, status="pending", observed_card_id=observed_card_id)
+
+
+def test_tcgdex_language_mapping_includes_traditional_chinese():
+    assert digital_binder.TCGDEX_LANGUAGE == {
+        "EN": "en", "JP": "ja", "ZH": "zh-tw"
+    }
+
+
+def test_search_tcgdex_maps_language_and_uses_detail_records():
+    calls = []
+
+    def fake_opener(request, timeout):
+        calls.append((request.full_url, request.headers.get("User-agent"), timeout))
+        if request.full_url.endswith("/ja/cards?name=%E3%82%BF%E3%83%96%E3%83%B3%E3%83%8D"):
+            return FakeHTTPResponse([{
+                "id": "SV11B-156", "localId": "156", "name": "タブンネ",
+                "image": None, "set": {"id": "SV11B", "name": "ブラックボルト"},
+            }])
+        if request.full_url.endswith("/ja/cards/SV11B-156"):
+            return FakeHTTPResponse({
+                "id": "SV11B-156", "localId": "156", "name": "タブンネ",
+                "image": "https://assets.tcgdex.net/ja/sv/sv11b/156",
+                "set": {"id": "SV11B", "name": "ブラックボルト"},
+            })
+        raise AssertionError(f"unexpected URL {request.full_url}")
+
+    row = {
+        "id": "audino-01", "card_name": "タブンネ", "language": "JP",
+        "set": "sv11B", "number": "156/086", "confidence": "confirmed",
+    }
+
+    candidates = digital_binder.search_tcgdex(row, opener=fake_opener)
+
+    assert [candidate["provider_id"] for candidate in candidates] == ["SV11B-156"]
+    assert candidates[0]["image_url"] == "https://assets.tcgdex.net/ja/sv/sv11b/156/high.webp"
+    assert calls[0][0] == "https://api.tcgdex.net/v2/ja/cards?name=%E3%82%BF%E3%83%96%E3%83%B3%E3%83%8D"
+    assert calls[1][0] == "https://api.tcgdex.net/v2/ja/cards/SV11B-156"
+    assert all(user_agent and "binderplan" in user_agent for _, user_agent, _ in calls)
+    assert all(timeout == 20 for _, _, timeout in calls)
+
+
+def test_candidate_without_image_remains_reviewable():
+    candidate = digital_binder.normalize_tcgdex_candidate({
+        "id": "SV11B-156",
+        "localId": "156",
+        "name": "タブンネ",
+        "image": None,
+        "set": {"id": "SV11B", "name": "ブラックボルト"},
+    })
+    assert candidate["image_url"] is None
+    assert candidate["provider_id"] == "SV11B-156"
+
+
+def test_ranker_does_not_mark_top_candidate_approved():
+    registry = {
+        "id": "audino-01", "card_name": "タブンネ", "language": "JP",
+        "set": "sv11B", "number": "156/086", "confidence": "confirmed",
+    }
+    candidate = {
+        "provider_id": "SV11B-156", "name": "タブンネ",
+        "set_id": "SV11B", "local_id": "156", "image_url": None,
+    }
+    ranked = digital_binder.rank_candidates(registry, [candidate])
+    assert ranked[0]["review_state"] == "candidate"
+
+
+def test_rank_candidates_orders_by_identity_score_then_provider_id():
+    row = {
+        "id": "audino-01", "card_name": "タブンネ", "language": "JP",
+        "set": "sv11B", "number": "156/086", "confidence": "confirmed",
+    }
+    candidates = [
+        {"provider_id": "SV11B-999", "name": "タブンネ", "set_id": "SV11B", "local_id": "999"},
+        {"provider_id": "SV11B-156B", "name": "タブンネ", "set_id": "SV11B", "local_id": "156"},
+        {"provider_id": "SV11B-156A", "name": "タブンネ", "set_id": "SV11B", "local_id": "156"},
+    ]
+
+    ranked = digital_binder.rank_candidates(row, candidates)
+
+    assert [candidate["provider_id"] for candidate in ranked] == [
+        "SV11B-156A", "SV11B-156B", "SV11B-999",
+    ]
+    assert ranked[0]["score"] > ranked[2]["score"]
+
+
+def test_crop_evidence_photo_rejects_out_of_bounds_box(tmp_path):
+    source = tmp_path / "source.png"
+    target = tmp_path / "crop.webp"
+    write_image(source, size=(10, 10))
+
+    try:
+        digital_binder.crop_evidence_photo(source, (0, 0, 11, 10), target)
+    except ValueError as exc:
+        assert "bounds" in str(exc)
+    else:
+        raise AssertionError("crop should reject out-of-bounds boxes")
+    assert not target.exists()
+
+
+def test_crop_evidence_photo_writes_webp(tmp_path):
+    source = tmp_path / "source.png"
+    target = tmp_path / "crop.webp"
+    write_image(source, size=(10, 10))
+
+    digital_binder.crop_evidence_photo(source, (1, 2, 8, 9), target)
+
+    assert target.exists()
+    with Image.open(target) as image:
+        assert image.format == "WEBP"
+        assert image.size == (7, 7)
+
+
+def test_external_photo_record_requires_source_url_and_usage_basis(tmp_path):
+    root = project_fixture(tmp_path, image_classification="exact")
+    images = load_images(root)
+    images["cards"]["abra-01"].update({"provider": "local-file"})
+    images["cards"]["abra-01"].pop("source_url")
+    write_images(root, images)
+
+    errors = digital_binder.validate_project(root)
+
+    assert any("source_url" in error for error in errors)
+    assert any("usage_basis" in error for error in errors)
+
+
+def test_approve_local_cli_requires_http_source_url_and_usage_basis(tmp_path):
+    root = project_fixture(tmp_path)
+    write_current_generated(root)
+    image_file = tmp_path / "local.png"
+    write_image(image_file)
+
+    missing_basis = subprocess.run(
+        [
+            "python3", str(Path(__file__).with_name("manage-card-images.py")),
+            "approve-local", "abra-01", "--file", str(image_file),
+            "--source-url", "file:///tmp/abra.png", "--usage-basis", "curator-supplied",
+            "--classification", "exact",
+        ],
+        cwd=root,
+        capture_output=True,
+        text=True,
+    )
+
+    assert missing_basis.returncode == 1
+    assert "HTTP(S)" in missing_basis.stderr
+    assert not (root / "assets/images/cards/abra-01.webp").exists()
+
+
+def test_approve_local_cli_writes_asset_and_reviewed_mapping(tmp_path):
+    root = project_fixture(tmp_path)
+    write_current_generated(root)
+    image_file = tmp_path / "local.png"
+    write_image(image_file)
+
+    result = subprocess.run(
+        [
+            "python3", str(Path(__file__).with_name("manage-card-images.py")),
+            "approve-local", "abra-01", "--file", str(image_file),
+            "--source-url", "https://example.invalid/abra.png",
+            "--usage-basis", "Curator-supplied reference photograph.",
+            "--classification", "exact", "--note", "Checked against registry.",
+        ],
+        cwd=root,
+        capture_output=True,
+        text=True,
+    )
+
+    assert result.returncode == 0, result.stderr
+    assert (root / "assets/images/cards/abra-01.webp").is_file()
+    record = load_images(root)["cards"]["abra-01"]
+    assert record["classification"] == "exact"
+    assert record["provider"] == "local-file"
+    assert record["source_url"] == "https://example.invalid/abra.png"
+    assert record["usage_basis"] == "Curator-supplied reference photograph."
+    assert record["reviewed"] is True
+
+
+def test_crop_evidence_cli_restricts_sources_to_evidence_directory(tmp_path):
+    root = project_fixture(tmp_path)
+    write_current_generated(root)
+    source = tmp_path / "outside.png"
+    write_image(source)
+
+    result = subprocess.run(
+        [
+            "python3", str(Path(__file__).with_name("manage-card-images.py")),
+            "crop-evidence", "abra-01", "--source", str(source),
+            "--box", "0,0,5,5", "--reviewed-on", "2026-09-22",
+        ],
+        cwd=root,
+        capture_output=True,
+        text=True,
+    )
+
+    assert result.returncode == 1
+    assert "docs/evidence" in result.stderr
+    assert not (root / "assets/images/cards/abra-01.webp").exists()
+
+
+def test_crop_evidence_cli_writes_photo_crop_mapping(tmp_path):
+    root = project_fixture(tmp_path)
+    write_current_generated(root)
+    source = root / "docs/evidence/2026-09-22/crop-source.png"
+    write_image(source)
+
+    result = subprocess.run(
+        [
+            "python3", str(Path(__file__).with_name("manage-card-images.py")),
+            "crop-evidence", "abra-01", "--source", str(source),
+            "--box", "1,1,8,9", "--reviewed-on", "2026-09-22",
+        ],
+        cwd=root,
+        capture_output=True,
+        text=True,
+    )
+
+    assert result.returncode == 0, result.stderr
+    assert (root / "assets/images/cards/abra-01.webp").is_file()
+    record = load_images(root)["cards"]["abra-01"]
+    assert record["classification"] == "photo-crop"
+    assert record["provider"] == "evidence-crop"
+    assert record["source_path"] == "docs/evidence/2026-09-22/crop-source.png"
+    assert record["reviewed_on"] == "2026-09-22"
+
+
+def test_image_manifest_write_validates_before_replacing(tmp_path):
+    root = project_fixture(
+        tmp_path,
+        registry_confidence="uncertain",
+        image_classification="missing",
+    )
+    write_current_generated(root)
+    images = load_images(root)
+    images["cards"]["abra-01"] = {
+        "classification": "exact",
+        "asset_path": IMAGE_ASSET,
+        "reviewed": True,
+        "reviewed_on": "2026-09-22",
+        "provider": "tcgdex",
+        "upstream_id": "base1-43",
+        "source_url": "https://example.invalid/abra.webp",
+    }
+    image_path = root / IMAGE_ASSET
+    image_path.parent.mkdir(parents=True)
+    image_path.write_bytes(b"fixture image")
+
+    try:
+        digital_binder.write_image_manifest_atomically(root, images)
+    except ValueError as exc:
+        assert "exact" in str(exc) and "uncertain" in str(exc)
+    else:
+        raise AssertionError("invalid image manifest should be rejected")
+
+    assert load_images(root)["cards"]["abra-01"]["classification"] == "missing"
 
 
 def test_registry_projection_is_sorted_and_stable(tmp_path):

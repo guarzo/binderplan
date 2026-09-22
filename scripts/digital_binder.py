@@ -8,7 +8,10 @@ import re
 import subprocess
 from functools import lru_cache
 from pathlib import Path
+from urllib.parse import quote
+from urllib.request import Request, urlopen
 
+from PIL import Image
 import yaml
 
 GENERATED_FIELDS = (
@@ -27,7 +30,11 @@ LEAF_KINDS = {"cards", "transition"}
 TRANSITION_ROLES = {"volume-opening", "chapter", "volume-closing"}
 PLACEMENT_STATUSES = {"confirmed", "pending"}
 IMAGE_CLASSIFICATIONS = {"exact", "photo-crop", "proxy", "missing"}
+TCGDEX_LANGUAGE = {"EN": "en", "JP": "ja", "ZH": "zh-tw"}
+TCGDEX_API_ROOT = "https://api.tcgdex.net/v2"
+TCGDEX_USER_AGENT = "binderplan digital-binder-image-review/1.0"
 SAFE_REF_RE = re.compile(r"^(?!-)[A-Za-z0-9._/@+-]+$")
+DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 
 
 @lru_cache(maxsize=1)
@@ -75,6 +82,129 @@ def _write_atomic(path: Path, content: str) -> None:
     tmp = path.with_name(path.name + ".tmp")
     tmp.write_text(content, encoding="utf-8")
     tmp.replace(path)
+
+
+def _tcgdex_json(url: str, opener=urlopen):
+    request = Request(url, headers={"User-Agent": TCGDEX_USER_AGENT})
+    with opener(request, timeout=20) as response:
+        return json.loads(response.read().decode("utf-8"))
+
+
+def _tcgdex_image_url(image_base: str | None) -> str | None:
+    if not image_base:
+        return None
+    if image_base.endswith(".webp"):
+        return image_base
+    return image_base.rstrip("/") + "/high.webp"
+
+
+def normalize_tcgdex_candidate(candidate: dict) -> dict:
+    card_set = candidate.get("set") if isinstance(candidate.get("set"), dict) else {}
+    return {
+        "provider": "tcgdex",
+        "provider_id": candidate.get("id") or "",
+        "name": candidate.get("name") or "",
+        "local_id": str(candidate.get("localId") or ""),
+        "set_id": card_set.get("id") or "",
+        "set_name": card_set.get("name") or "",
+        "image_url": _tcgdex_image_url(candidate.get("image")),
+    }
+
+
+def _local_number(number: str | None) -> str:
+    return str(number or "").split("/", 1)[0].strip()
+
+
+def _fold_identity(value: str | None) -> str:
+    return re.sub(r"[^a-z0-9]+", "", str(value or "").casefold())
+
+
+def search_tcgdex(row: dict, opener=urlopen) -> list[dict]:
+    language = TCGDEX_LANGUAGE.get(row.get("language"))
+    if not language:
+        return []
+    query = quote(str(row.get("card_name") or ""))
+    search_url = f"{TCGDEX_API_ROOT}/{language}/cards?name={query}"
+    summaries = _tcgdex_json(search_url, opener=opener)
+    if not isinstance(summaries, list):
+        return []
+
+    candidates = []
+    for summary in summaries:
+        if not isinstance(summary, dict) or not summary.get("id"):
+            continue
+        detail_url = f"{TCGDEX_API_ROOT}/{language}/cards/{quote(str(summary['id']))}"
+        detail = _tcgdex_json(detail_url, opener=opener)
+        if isinstance(detail, dict):
+            candidates.append(normalize_tcgdex_candidate(detail))
+    return candidates
+
+
+def rank_candidates(row: dict, candidates: list[dict]) -> list[dict]:
+    wanted_number = _fold_identity(_local_number(row.get("number")))
+    wanted_set = _fold_identity(row.get("set"))
+    wanted_name = _fold_identity(row.get("card_name"))
+    ranked = []
+    for candidate in candidates:
+        item = dict(candidate)
+        score = 0
+        if wanted_number and _fold_identity(candidate.get("local_id")) == wanted_number:
+            score += 50
+        if wanted_set and _fold_identity(candidate.get("set_id")) == wanted_set:
+            score += 35
+        elif wanted_set and _fold_identity(candidate.get("set_name")) == wanted_set:
+            score += 25
+        if wanted_name and _fold_identity(candidate.get("name")) == wanted_name:
+            score += 20
+        if candidate.get("image_url"):
+            score += 5
+        item["score"] = score
+        item["review_state"] = "candidate"
+        ranked.append(item)
+    return sorted(ranked, key=lambda item: (-item["score"], item.get("provider_id") or ""))
+
+
+def crop_evidence_photo(source: Path, box: tuple[int, int, int, int], target: Path) -> None:
+    left, top, right, bottom = box
+    with Image.open(source) as image:
+        width, height = image.size
+        if not (0 <= left < right <= width and 0 <= top < bottom <= height):
+            raise ValueError(
+                f"crop box {(left, top, right, bottom)} is outside image bounds {width}x{height}"
+            )
+        target.parent.mkdir(parents=True, exist_ok=True)
+        tmp = target.with_name(target.name + ".tmp")
+        image.crop((left, top, right, bottom)).convert("RGB").save(tmp, format="WEBP")
+        tmp.replace(target)
+
+
+def _validate_images_against_project(root: Path, images: dict) -> list[str]:
+    root = Path(root)
+    errors: list[str] = []
+    try:
+        registry = load_registry(root / "docs" / "card-registry.md")
+    except (FileNotFoundError, ValueError) as exc:
+        registry = {}
+        errors.append(f"registry validation failed: {exc}")
+    manifests = _load_project_manifests(root, errors)
+    occupied_by_volume: dict[str, set[str]] = {}
+    publication_statuses: dict[str, str] = {}
+    for volume_id, manifest in manifests.items():
+        publication_statuses[volume_id] = manifest.get("publication_status")
+        occupied_by_volume[volume_id] = _validate_volume_manifest(
+            volume_id, manifest, registry, errors
+        )
+    _validate_global_duplicates(manifests, errors)
+    _validate_images(root, images, registry, occupied_by_volume, publication_statuses, errors)
+    return errors
+
+
+def write_image_manifest_atomically(root: Path, images: dict) -> None:
+    errors = _validate_images_against_project(root, images)
+    if errors:
+        raise ValueError("\n".join(errors))
+    rendered = yaml.safe_dump(images, sort_keys=False, allow_unicode=True)
+    _write_atomic(Path(root) / "data" / "card-images.yaml", rendered)
 
 
 def _load_project_manifests(root: Path, errors: list[str]) -> dict[str, dict]:
@@ -333,6 +463,16 @@ def _validate_images(root: Path, images: dict, registry: dict[str, dict],
                 errors.append(f"image record {card_id}: {classification} image requires asset_path")
             elif not (root / asset_path).is_file():
                 errors.append(f"image record {card_id}: missing asset {asset_path}")
+        reviewed = record.get("reviewed")
+        if not isinstance(reviewed, bool):
+            errors.append(f"image record {card_id}: reviewed must be true or false")
+        reviewed_on = record.get("reviewed_on")
+        if reviewed is True and not (isinstance(reviewed_on, str) and DATE_RE.match(reviewed_on)):
+            errors.append(f"image record {card_id}: reviewed image requires reviewed_on YYYY-MM-DD")
+        if reviewed is False and reviewed_on not in ("", None):
+            errors.append(f"image record {card_id}: unreviewed image requires empty reviewed_on")
+        if classification != "missing":
+            _validate_non_missing_image_source(card_id, record, errors)
         if classification == "proxy" and not record.get("note"):
             errors.append(f"image record {card_id}: proxy image requires note")
         if classification == "exact":
@@ -346,6 +486,25 @@ def _validate_images(root: Path, images: dict, registry: dict[str, dict],
         record = cards.get(card_id)
         if not isinstance(record, dict) or record.get("reviewed") is not True:
             errors.append(f"published binder uses unreviewed image for {card_id}")
+
+
+def _validate_non_missing_image_source(card_id: str, record: dict, errors: list[str]) -> None:
+    provider = record.get("provider")
+    if not isinstance(provider, str) or not provider.strip():
+        errors.append(f"image record {card_id}: non-missing image requires provider")
+        return
+    if provider == "evidence-crop":
+        source_path = record.get("source_path")
+        if not isinstance(source_path, str) or not source_path.startswith("docs/evidence/"):
+            errors.append(f"image record {card_id}: evidence crop requires source_path under docs/evidence")
+        return
+    source_url = record.get("source_url")
+    if not isinstance(source_url, str) or not source_url.startswith(("http://", "https://")):
+        errors.append(f"image record {card_id}: {provider} image requires HTTP(S) source_url")
+    if provider == "local-file" and not str(record.get("usage_basis") or "").strip():
+        errors.append(f"image record {card_id}: local-file image requires usage_basis")
+    if provider == "tcgdex" and not str(record.get("upstream_id") or "").strip():
+        errors.append(f"image record {card_id}: tcgdex image requires upstream_id")
 
 
 def _validate_exact_image(card_id: str, record: dict, registry_row: dict, errors: list[str]) -> None:
