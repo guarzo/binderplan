@@ -803,6 +803,73 @@ def test_approve_doubleholo_rejects_exact_when_candidate_identity_is_not_exact(t
     assert not (root / manage_card_images.CARD_ASSET_DIR / "abra-01.webp").exists()
 
 
+def test_approve_doubleholo_rejects_missing_raw_original_with_rerun_search_error(tmp_path, monkeypatch):
+    root = project_fixture(tmp_path)
+    write_current_generated(root)
+    write_doubleholo_candidate_cache(root, "abra-01", [{
+        "candidate_index": 0,
+        "provider_id": "dh-43",
+        "image_url": "https://supabase.example/abra.png",
+        "exact_identity_match": True,
+    }])
+
+    def fail_if_called(request, timeout):
+        raise AssertionError("approval should reject before image download")
+
+    monkeypatch.chdir(root)
+    monkeypatch.setattr(manage_card_images, "urlopen", fail_if_called)
+
+    try:
+        manage_card_images.approve_doubleholo_command(approve_args())
+    except ValueError as exc:
+        assert "raw candidate fields" in str(exc)
+        assert "rerun search-doubleholo" in str(exc)
+    else:
+        raise AssertionError("missing raw DoubleHolo candidate fields should reject approval")
+
+    assert not (root / manage_card_images.CARD_ASSET_DIR / "abra-01.webp").exists()
+
+
+def test_approve_doubleholo_uses_recomputed_raw_url_and_upstream_id(tmp_path, monkeypatch, capsys):
+    root = project_fixture(tmp_path)
+    write_current_generated(root)
+    write_doubleholo_candidate_cache(root, "abra-01", [{
+        "candidate_index": 0,
+        "provider_id": "tampered-id",
+        "image_url": "https://attacker.example/tampered.png",
+        "exact_identity_match": True,
+        "original": {
+            "objectID": "dh-43",
+            "name": "Abra",
+            "set_name": "Pokemon Base Set",
+            "number": "43",
+            "language": "english",
+            "image_url": "https://supabase.example/abra.png",
+            "image_url_small": None,
+        },
+    }])
+    requested_urls = []
+
+    def fake_urlopen(request, timeout):
+        requested_urls.append(request.full_url)
+        if request.full_url != "https://supabase.example/abra.png":
+            raise AssertionError(f"unexpected approval download URL {request.full_url}")
+        return FakeBinaryHTTPResponse(image_bytes("PNG"))
+
+    monkeypatch.chdir(root)
+    monkeypatch.setattr(manage_card_images, "urlopen", fake_urlopen)
+
+    assert manage_card_images.approve_doubleholo_command(approve_args()) == 0
+
+    assert requested_urls == ["https://supabase.example/abra.png"]
+    output = capsys.readouterr().out
+    assert "exact_identity_match does not verify edition/variant" in output
+    record = load_images(root)["cards"]["abra-01"]
+    assert record["provider"] == "doubleholo"
+    assert record["upstream_id"] == "dh-43"
+    assert record["source_url"] == "https://supabase.example/abra.png"
+
+
 def test_approve_doubleholo_writes_authorized_provider_record(tmp_path, monkeypatch):
     root = project_fixture(tmp_path)
     write_current_generated(root)

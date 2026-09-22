@@ -454,13 +454,13 @@ def approve_doubleholo_command(args) -> int:
     row = _require_card(root, args.card_id)
     _check_classification(row, args.classification, args.note)
     candidate = _load_doubleholo_candidate(root, args.card_id, args.candidate_index)
-    if args.classification == "exact":
-        recomputed = _recomputed_doubleholo_candidate(row, candidate)
-        if recomputed.get("exact_identity_match") is not True:
-            raise ValueError("exact DoubleHolo approval requires a recomputed exact identity match")
-    _approve_remote_candidate(root, args, candidate, {
+    recomputed = _recomputed_doubleholo_candidate(row, candidate)
+    if args.classification == "exact" and recomputed.get("exact_identity_match") is not True:
+        raise ValueError("exact DoubleHolo approval requires a recomputed exact identity match")
+    print(DOUBLEHOLO_VARIANT_WARNING)
+    _approve_remote_candidate(root, args, recomputed, {
         "provider": "doubleholo",
-        "upstream_id": candidate.get("provider_id") or "",
+        "upstream_id": recomputed.get("provider_id") or "",
         "usage_basis": "Owner-authorized DoubleHolo card catalog image.",
     }, "doubleholo")
     print(f"approved DoubleHolo candidate {args.candidate_index} for {args.card_id}")
