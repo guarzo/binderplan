@@ -771,7 +771,7 @@
     "language": "JP",
     "set": "Gold, Silver, New World",
     "number": "No.249",
-    "confidence": "confirmed"
+    "confidence": "photo"
   },
   "lugia-02": {
     "id": "lugia-02",
@@ -843,7 +843,7 @@
     "language": "JP",
     "set": "s12a",
     "number": "183/172",
-    "confidence": "confirmed"
+    "confidence": "photo"
   },
   "mew-03": {
     "id": "mew-03",
@@ -879,7 +879,7 @@
     "language": "EN",
     "set": "Legendary Collection",
     "number": "29/110",
-    "confidence": "confirmed"
+    "confidence": "photo"
   },
   "mewtwo-02": {
     "id": "mewtwo-02",
@@ -1203,7 +1203,7 @@
     "language": "JP",
     "set": "Jungle",
     "number": "No.123",
-    "confidence": "confirmed"
+    "confidence": "photo"
   },
   "shaymin-01": {
     "id": "shaymin-01",
@@ -1311,7 +1311,7 @@
     "language": "JP",
     "set": "sv8",
     "number": "111/106",
-    "confidence": "confirmed"
+    "confidence": "photo"
   },
   "spheal-02": {
     "id": "spheal-02",
