@@ -15,6 +15,11 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  beldum-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   bewear-01:
     classification: missing
     asset_path: ''
@@ -36,6 +41,11 @@ cards:
     reviewed: false
     reviewed_on: ''
   charizard-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  charizard-02:
     classification: missing
     asset_path: ''
     reviewed: false
@@ -135,6 +145,11 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  gardevoir-02:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   gengar-01:
     classification: missing
     asset_path: ''
@@ -146,6 +161,11 @@ cards:
     reviewed: false
     reviewed_on: ''
   gengar-03:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  gengar-04:
     classification: missing
     asset_path: ''
     reviewed: false
@@ -171,6 +191,11 @@ cards:
     reviewed: false
     reviewed_on: ''
   greavard-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  grotle-01:
     classification: missing
     asset_path: ''
     reviewed: false
@@ -211,6 +236,11 @@ cards:
     reviewed: false
     reviewed_on: ''
   houndour-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  imposter-professor-oaks-revenge-01:
     classification: missing
     asset_path: ''
     reviewed: false
@@ -325,6 +355,11 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  mimikyu-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   misdreavus-01:
     classification: missing
     asset_path: ''
@@ -365,6 +400,11 @@ cards:
     asset_path: ''
     reviewed: false
     reviewed_on: ''
+  pikachu-03:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
   pikachu-06:
     classification: missing
     asset_path: ''
@@ -386,6 +426,11 @@ cards:
     reviewed: false
     reviewed_on: ''
   rayquaza-01:
+    classification: missing
+    asset_path: ''
+    reviewed: false
+    reviewed_on: ''
+  reshiram-01:
     classification: missing
     asset_path: ''
     reviewed: false

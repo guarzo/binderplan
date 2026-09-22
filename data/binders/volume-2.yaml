@@ -1,4 +1,96 @@
 version: 1
 volume_id: volume-2
 publication_status: draft
-leaves: []
+leaves:
+- id: v2-01
+  kind: transition
+  physical_leaf: 1
+  role: volume-opening
+  heading: Volume II
+  copy: Memory, Presence, and Passage.
+- id: v2-02
+  kind: transition
+  physical_leaf: 2
+  role: chapter
+  heading: Chapter I — Nearness
+- id: v2-03
+  kind: cards
+  physical_leaf: 3
+  chapter: Nearness
+  chapter_order: 1
+  theme: Companions
+  theme_page: 1
+  caption: Chosen Bonds. Partnerships defined by loyalty, recognition, and shared history.
+  pockets:
+  - position: 1
+    card_id: mimikyu-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/companions_1.webp
+        observed_on: '2026-08-01'
+  - position: 2
+    card_id: grotle-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/companions_1.webp
+        observed_on: '2026-08-01'
+  - position: 3
+    card_id: imposter-professor-oaks-revenge-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/companions_1.webp
+        observed_on: '2026-08-01'
+  - position: 4
+    card_id: beldum-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/companions_1.webp
+        observed_on: '2026-08-01'
+  - position: 5
+    card_id: reshiram-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/companions_1.webp
+        observed_on: '2026-08-01'
+  - position: 6
+    card_id: pikachu-03
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/companions_1.webp
+        observed_on: '2026-08-01'
+  - position: 7
+    card_id: gardevoir-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/companions_1.webp
+        observed_on: '2026-08-01'
+  - position: 8
+    card_id: charizard-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/companions_1.webp
+        observed_on: '2026-08-01'
+  - position: 9
+    card_id: gengar-04
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/companions_1.webp
+        observed_on: '2026-08-01'
