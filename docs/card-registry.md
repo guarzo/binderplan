@@ -127,7 +127,7 @@ The column is left as recorded rather than rewritten: `first_seen` is provenance
 | marowak-01 | Marowak | ガラガラ | JP | Holon Research | 58 | confirmed | intimidation_1.webp 2026-08-01 | delta species print, distinct from cubone-02 (the カラカラ), set/number from owner's doubleholo export 2026-09-18, denominator not recorded |
 | master-ball-01 | Master Ball | マスターボール | JP | City Gym Decks |  | confirmed | threshold_1.webp 2026-08-01 | Trainer item card, no number printed, checked in hand 2026-09-19 |
 | mew-01 | Mew | Mew ex | EN | SVP | 053 | photo | world_people_1.webp 2026-08-01 | promo stamp |
-| mew-02 | Mew | ミュウ | JP | s12a | 187/172 | photo | at_rest_1.webp 2026-08-01 | distinct printing from mew-01 |
+| mew-02 | Mew | ミュウ | JP | s12a | 183/172 | confirmed | at_rest_1.webp 2026-08-01 | number corrected from 187/172 by owner 2026-09-22; source references DoubleHolo 37751 and TCGdex S12a-183; distinct printing from mew-01 |
 | mew-03 | Mew | Mew ex | EN | Scarlet & Violet 151 | 193/165 | confirmed | legendary_bearing_2.webp 2026-08-01 | double-star SR rarity mark, distinct from mew-01/02, language and name corrected from JP Mew GX, checked in hand 2026-09-19 |
 | mew-04 | Mew | ミュウ | JP | Mirage's Mew Constructed Starter Deck | 5 | confirmed | quiet_familiarity_1.webp 2026-08-01 | Pokepower type-change, Link Blast attack, distinct from mew-01..03, set/number from owner's doubleholo export 2026-09-18, denominator not recorded |
 | mew-05 | Mew | ミュウ | JP | Mystery of the Fossils | No.151 | uncertain | threshold_1.webp 2026-08-01 | Psywave/Recover-Beam attacks, distinct from mew-01..04, Pokédex-number print, set per owner's doubleholo export 2026-09-18 |
@@ -168,7 +168,7 @@ The column is left as recorded rather than rewritten: `first_seen` is provenance
 | sandshrew-01 | Sandshrew | Sandshrew | EN | Team Rocket Returns | 74 | confirmed | calm_nature_1.webp 2026-08-01 | small logo bottom-right, set/number from owner's doubleholo export 2026-09-18, denominator not recorded |
 | sandshrew-02 | Sandshrew | Sandshrew | EN | Delta Species | 82 | confirmed | threshold_1.webp 2026-08-01 | Dig Under/Scratch attacks, distinct from sandshrew-01, set/number from owner's doubleholo export 2026-09-18, denominator not recorded |
 | scyther-01 | Scyther | ストライク | JP | Jungle | No.123 | uncertain | awakened_power_2.webp 2026-08-01 | vintage Pokedex-number print, set per owner's doubleholo entry |
-| shaymin-01 | Shaymin | Shaymin EX | EN | XY | 148 | photo | at_rest_1.webp 2026-08-01 | XY Black Star Promo, artist Kouki Saito |
+| shaymin-01 | Shaymin | Shaymin EX | EN | XY | XY148 | photo | at_rest_1.webp 2026-08-01 | promo number normalized from 148 to XY148 during 2026-09-22 image review; XY Black Star Promo, artist Kouki Saito |
 | shaymin-02 | Shaymin | シェイミLv.X | JP | Galactic's Conquest | 15 | confirmed | awakened_power_2.webp 2026-08-01 | distinct printing from shaymin-01, set/number from owner's doubleholo export 2026-09-18, denominator not recorded |
 | shaymin-03 | Shaymin | Shaymin | EN | Destined Rivals | 185/142 | confirmed | quiet_familiarity_1.webp 2026-08-01 | Ability Flower Curtain, Smash Kick attack, distinct from shaymin-01/02 |
 | shaymin-04 | Shaymin | Shaymin | EN | Unleashed | 8 | confirmed | threshold_1.webp 2026-08-01 | Ability Celebration Wind, Energy Bloom attack, distinct from shaymin-01..03, set/number from owner's doubleholo export 2026-09-18, denominator not recorded |

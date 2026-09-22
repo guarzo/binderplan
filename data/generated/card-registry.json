@@ -842,8 +842,8 @@
     "card_name": "ミュウ",
     "language": "JP",
     "set": "s12a",
-    "number": "187/172",
-    "confidence": "photo"
+    "number": "183/172",
+    "confidence": "confirmed"
   },
   "mew-03": {
     "id": "mew-03",
@@ -1211,7 +1211,7 @@
     "card_name": "Shaymin EX",
     "language": "EN",
     "set": "XY",
-    "number": "148",
+    "number": "XY148",
     "confidence": "photo"
   },
   "shaymin-02": {
