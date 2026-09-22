@@ -220,10 +220,14 @@ cards:
     source_path: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/contemplation_1.webp
     note: Pilot fallback; re-search stock or sourced scan before Volume I publication.
   dragonite-02:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: doubleholo
+    upstream_id: '77949'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: exact
+    asset_path: assets/images/cards/dragonite-02.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/77949/primary.webp
   dratini-01:
     classification: exact
     asset_path: assets/images/cards/dratini-01.webp
@@ -280,20 +284,26 @@ cards:
     source_path: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/elemental_solitude_1.webp
     note: Pilot fallback; re-search stock or sourced scan before Volume I publication.
   espeon-02:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    classification: photo-crop
+    asset_path: assets/images/cards/espeon-02.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-22/owner-supplied-card-images/chinese-espeon.webp
   flareon-01:
     classification: missing
     asset_path: ''
     reviewed: false
     reviewed_on: ''
   gardevoir-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: doubleholo
+    upstream_id: '78088'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: exact
+    asset_path: assets/images/cards/gardevoir-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/78088/primary.webp
   gardevoir-02:
     classification: missing
     asset_path: ''
@@ -353,10 +363,17 @@ cards:
     reviewed_on: '2026-09-22'
     source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/22729/primary.webp
   golem-02:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: doubleholo
+    upstream_id: '46001'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: exact
+    asset_path: assets/images/cards/golem-02.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/46001/small.webp
+    note: DoubleHolo 46001 primary image returned 404 during approval; approved candidate
+      0 asset uses the same DoubleHolo record small image URL after visual variant
+      check against the archived leaf.
   greavard-01:
     provider: tcgdex
     upstream_id: sv01-214
@@ -636,10 +653,14 @@ cards:
     reviewed_on: '2026-09-22'
     source_url: https://assets.tcgdex.net/ja/S/S12a/183/high.webp
   mew-03:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: doubleholo
+    upstream_id: '556'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: exact
+    asset_path: assets/images/cards/mew-03.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/556/primary.webp
   mew-04:
     classification: missing
     asset_path: ''
@@ -703,10 +724,16 @@ cards:
     reviewed: false
     reviewed_on: ''
   ninetales-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: doubleholo
+    upstream_id: '23327'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: exact
+    asset_path: assets/images/cards/ninetales-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/23327/primary.webp
+    note: 2026-09-22 visual review compared DoubleHolo 23327 with the archived leaf;
+      registry identity remains photo-based/not in-hand confirmed.
   noibat-01:
     provider: tcgdex
     upstream_id: SV9-111
@@ -716,10 +743,13 @@ cards:
     reviewed_on: '2026-09-22'
     source_url: https://assets.tcgdex.net/ja/SV/SV9/111/high.webp
   ns-plan-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: tcgdex
+    upstream_id: sv10.5b-163
+    classification: exact
+    asset_path: assets/images/cards/ns-plan-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://assets.tcgdex.net/en/sv/sv10.5b/163/high.webp
   numel-01:
     classification: missing
     asset_path: ''
@@ -1079,10 +1109,13 @@ cards:
     source_path: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/contemplation_1.webp
     note: Pilot fallback; re-search stock or sourced scan before Volume I publication.
   umbreon-04:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: tcgdex
+    upstream_id: hgss3-10
+    classification: exact
+    asset_path: assets/images/cards/umbreon-04.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://assets.tcgdex.net/en/hgss/hgss3/10/high.webp
   umbreon-05:
     classification: missing
     asset_path: ''
@@ -1147,10 +1180,13 @@ cards:
     note: 2026-09-22 image review compared DoubleHolo 22202 with the archived leaf;
       registry identity remains photo-based, not in-hand confirmed.
   zekrom-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: tcgdex
+    upstream_id: sv10.5b-158
+    classification: exact
+    asset_path: assets/images/cards/zekrom-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://assets.tcgdex.net/en/sv/sv10.5b/158/high.webp
   zygarde-01:
     classification: missing
     asset_path: ''

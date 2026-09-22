@@ -139,7 +139,7 @@ The column is left as recorded rather than rewritten: `first_seen` is provenance
 | misdreavus-01 | Misdreavus | ムウマ | JP | Awakening Legends | No.200 | uncertain | intimidation_1.webp 2026-08-01 | Pokédex-number print, set per owner's doubleholo export 2026-09-18 |
 | mudkip-01 | Mudkip | Mudkip | EN | Crystal Guardians | 58 | confirmed | enduring_presence_1.webp 2026-08-01 | Nap/Waterfall attacks, set/number from owner's doubleholo export 2026-09-18, denominator not recorded |
 | muk-01 | Muk | ベトベトン | JP | Mystery of the Fossils | No.089 | uncertain | enduring_presence_2.webp 2026-08-01 | Grimer evolution Lv.34, HP70, vintage Pokedex-number print, set per owner's doubleholo entry |
-| ninetales-01 | Ninetales | キュウコン | JP | Expansion Pack | No.038 | uncertain | legendary_bearing_2.webp 2026-08-01 | Lv.32, vintage Pokedex-number print, set per owner's doubleholo entry |
+| ninetales-01 | Ninetales | キュウコン | JP | Expansion Pack | No.038 | photo | legendary_bearing_2.webp 2026-08-01 | Lv.32, vintage Pokedex-number print, set per owner's doubleholo entry; 2026-09-22 visual review compared DoubleHolo 23327 with the archived leaf; identity remains photo-based/not in-hand confirmed. |
 | noibat-01 | Noibat | オンバット | JP | sv9 | 111 | confirmed | calm_nature_1.webp 2026-08-01 | set/number from owner's doubleholo export 2026-09-18, denominator not recorded |
 | ns-plan-01 | N's Plan | N's Plan | EN | Black Bolt | 163/086 | confirmed | legendary_bearing_2.webp 2026-08-01 | Supporter trainer, double-star SR rarity mark, checked in hand 2026-09-19 |
 | numel-01 | Numel | Numel | EN | EX Dragon | 69/97 | confirmed | quiet_familiarity_1.webp 2026-08-01 | Firebreathing/Tackle attacks, e-Card era, checked in hand 2026-09-19 |
