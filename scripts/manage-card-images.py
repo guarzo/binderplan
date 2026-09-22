@@ -23,6 +23,9 @@ DOUBLEHOLO_VARIANT_WARNING = (
     "Warning: exact_identity_match does not verify edition/variant; "
     "visual confirmation of edition, stamp, holo treatment, and other variants is required before approval."
 )
+DOUBLEHOLO_CONFIRMED_IDENTITY_BASIS = (
+    "curator visually confirmed printing; DoubleHolo set-name alias differs from registry"
+)
 
 
 class CachedHTTPResponse:
@@ -285,7 +288,11 @@ def _check_classification(row: dict, classification: str, note: str | None) -> N
 def _merged_images(root: Path, card_id: str, record: dict) -> dict:
     images = _load_images(root)
     existing = images.setdefault("cards", {}).get(card_id)
-    if isinstance(existing, dict) and existing.get("identity_basis") and record.get("classification") == "exact":
+    if (
+            isinstance(existing, dict)
+            and existing.get("identity_basis")
+            and not record.get("identity_basis")
+            and record.get("classification") == "exact"):
         record["identity_basis"] = existing["identity_basis"]
     images["cards"][card_id] = record
     return images
@@ -414,6 +421,23 @@ def _recomputed_doubleholo_candidate(row: dict, candidate: dict) -> dict:
     return ranked[0]
 
 
+def _doubleholo_confirmed_identity_record(args, recomputed: dict) -> dict:
+    if args.classification != "exact":
+        raise ValueError("--confirm-identity is only allowed for exact DoubleHolo approvals")
+    if not str(args.note or "").strip():
+        raise ValueError("--confirm-identity requires a nonempty --note")
+    if not recomputed.get("image_url"):
+        raise ValueError("--confirm-identity requires a recomputed candidate with image_url")
+    for field in ("name_match", "number_match", "language_match"):
+        if recomputed.get(field) is not True:
+            raise ValueError(
+                "--confirm-identity may only override a DoubleHolo set-name alias mismatch"
+            )
+    if recomputed.get("set_match") is True:
+        raise ValueError("--confirm-identity is only for DoubleHolo set-name alias mismatches")
+    return {"identity_basis": DOUBLEHOLO_CONFIRMED_IDENTITY_BASIS}
+
+
 def _approve_remote_candidate(root: Path, args, candidate: dict, record: dict, context: str) -> None:
     image_url = candidate.get("image_url")
     if not image_url:
@@ -452,17 +476,27 @@ def approve_command(args) -> int:
 def approve_doubleholo_command(args) -> int:
     root = Path.cwd()
     row = _require_card(root, args.card_id)
+    confirm_identity = bool(getattr(args, "confirm_identity", False))
     _check_classification(row, args.classification, args.note)
+    if confirm_identity and args.classification != "exact":
+        raise ValueError("--confirm-identity is only allowed for exact DoubleHolo approvals")
+    if confirm_identity and not str(args.note or "").strip():
+        raise ValueError("--confirm-identity requires a nonempty --note")
     candidate = _load_doubleholo_candidate(root, args.card_id, args.candidate_index)
     recomputed = _recomputed_doubleholo_candidate(row, candidate)
-    if args.classification == "exact" and recomputed.get("exact_identity_match") is not True:
+    identity_record = {}
+    if confirm_identity:
+        identity_record = _doubleholo_confirmed_identity_record(args, recomputed)
+    elif args.classification == "exact" and recomputed.get("exact_identity_match") is not True:
         raise ValueError("exact DoubleHolo approval requires a recomputed exact identity match")
     print(DOUBLEHOLO_VARIANT_WARNING)
-    _approve_remote_candidate(root, args, recomputed, {
+    record = {
         "provider": "doubleholo",
         "upstream_id": recomputed.get("provider_id") or "",
         "usage_basis": "Owner-authorized DoubleHolo card catalog image.",
-    }, "doubleholo")
+    }
+    record.update(identity_record)
+    _approve_remote_candidate(root, args, recomputed, record, "doubleholo")
     print(f"approved DoubleHolo candidate {args.candidate_index} for {args.card_id}")
     return 0
 
@@ -542,11 +576,26 @@ def build_parser() -> argparse.ArgumentParser:
     approve.add_argument("--note")
     approve.set_defaults(func=approve_command)
 
-    approve_doubleholo = subcommands.add_parser("approve-doubleholo")
+    approve_doubleholo = subcommands.add_parser(
+        "approve-doubleholo",
+        description=(
+            "Approve an owner-authorized DoubleHolo image. Use --confirm-identity only for "
+            "curator-confirmed exact approvals where DoubleHolo's set name is an alias for the "
+            "registry identity."
+        ),
+    )
     approve_doubleholo.add_argument("card_id")
     approve_doubleholo.add_argument("--candidate-index", required=True, type=int)
     approve_doubleholo.add_argument("--classification", choices=("exact", "proxy"), required=True)
     approve_doubleholo.add_argument("--note")
+    approve_doubleholo.add_argument(
+        "--confirm-identity",
+        action="store_true",
+        help=(
+            "permit a curator-confirmed exact DoubleHolo set-name alias mismatch; requires "
+            "--note and cannot override number, language, name, image, uncertain registry, or variants"
+        ),
+    )
     approve_doubleholo.set_defaults(func=approve_doubleholo_command)
 
     approve_local = subcommands.add_parser("approve-local")

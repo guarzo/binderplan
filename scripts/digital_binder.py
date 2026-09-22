@@ -227,10 +227,25 @@ def _doubleholo_set_matches(wanted: str, candidate: str) -> bool:
     return wanted == candidate
 
 
+def _contains_token_sequence(candidate_value: str | None, wanted_value: str | None) -> bool:
+    candidate_tokens = re.findall(r"[a-z0-9]+", str(candidate_value or "").casefold())
+    wanted_tokens = re.findall(r"[a-z0-9]+", str(wanted_value or "").casefold())
+    if not candidate_tokens or not wanted_tokens:
+        return False
+    width = len(wanted_tokens)
+    return any(candidate_tokens[index:index + width] == wanted_tokens
+               for index in range(len(candidate_tokens) - width + 1))
+
+
 def _doubleholo_name_matches(row: dict, candidate: dict) -> bool:
     candidate_name = _fold_identity(candidate.get("name"))
-    names = [_fold_identity(row.get("card_name")), _fold_identity(row.get("species"))]
-    return any(name and (name == candidate_name or name in candidate_name) for name in names)
+    for raw_name in (row.get("card_name"), row.get("species")):
+        name = _fold_identity(raw_name)
+        if name and name == candidate_name:
+            return True
+        if _contains_token_sequence(candidate.get("name"), raw_name):
+            return True
+    return False
 
 
 def rank_doubleholo_candidates(row: dict, candidates: list[dict]) -> list[dict]:
