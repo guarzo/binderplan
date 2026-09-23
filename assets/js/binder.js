@@ -19,8 +19,6 @@
     const previous = controls && controls.querySelector("[data-binder-prev]");
     const next = controls && controls.querySelector("[data-binder-next]");
     const position = controls && controls.querySelector("[data-binder-position]");
-    const legend = root.querySelector("[data-binder-legend]");
-    const legendItems = legend && legend.querySelector("[data-binder-legend-items]");
     const dialog = root.querySelector("[data-card-inspector]");
     const binderRoots = document.querySelectorAll("[data-binder]");
     const mobile = window.matchMedia("(max-width: 720px)");
@@ -58,32 +56,9 @@
       }
     }
 
-    function updateLegend(activeLeaves) {
-      if (!legend || !legendItems) return;
-      const labels = new Set();
-      activeLeaves.forEach((leaf) => {
-        leaf.querySelectorAll("button[data-card-id]").forEach((button) => {
-          const classification = button.dataset.classification;
-          if (classification === "proxy") labels.add("Reference image");
-          if (classification === "photo-crop") labels.add("Photo crop");
-          if (classification === "missing") labels.add("Image unavailable");
-          if (button.dataset.placementStatus === "pending") labels.add("Placement pending");
-        });
-      });
-      legendItems.replaceChildren();
-      labels.forEach((label) => {
-        const item = document.createElement("li");
-        item.textContent = label;
-        legendItems.append(item);
-      });
-      legend.hidden = labels.size === 0;
-    }
-
     function render(syncHash) {
       index = normalizedIndex(index);
       const activeIndexes = mobile.matches ? [index] : [index, index + 1];
-      const spreadStart = index - (index % 2);
-      const spreadLeaves = leaves.slice(spreadStart, spreadStart + 2);
       const activeLeaves = leaves.filter((leaf, leafIndex) => activeIndexes.includes(leafIndex));
       leaves.forEach((leaf, leafIndex) => {
         leaf.classList.toggle("is-active", activeIndexes.includes(leafIndex));
@@ -101,7 +76,6 @@
           : "Spread " + spread + " of " + spreads + " · leaves " + (index + 1)
             + (index + 1 < leaves.length ? "–" + (index + 2) : "");
       }
-      updateLegend(spreadLeaves);
       root.dataset.binderReady = "true";
       if (syncHash) setHash(index, true);
     }

@@ -2788,7 +2788,6 @@ class BinderOwnershipParser(HTMLParser):
         "data-binder-stage",
         "data-binder-spreads",
         "data-binder-controls",
-        "data-binder-legend",
         "data-card-inspector",
     }
 
@@ -3002,14 +3001,13 @@ def test_rendered_public_volume_routes_use_binder_markup_without_remote_card_ima
             else:
                 assert button["data-inspector-src"].startswith("/")
 
-        assert any(tag == "aside" and "data-binder-legend" in attrs
-                   and "hidden" in attrs for tag, attrs in elements)
+        assert "data-binder-legend" not in html
+        assert "Active spread notes" not in html
         assert any(tag == "dialog" and "data-card-inspector" in attrs for tag, attrs in elements)
         assert binder_owners(html) == [
             ("data-binder-stage", volume_id),
             ("data-binder-controls", volume_id),
             ("data-binder-spreads", volume_id),
-            ("data-binder-legend", volume_id),
             ("data-card-inspector", volume_id),
         ]
         inspector_fields = {
@@ -3066,10 +3064,10 @@ def test_binder_interaction_assets_declare_accessible_contract():
     assert 'originFocus.focus()' in javascript
     assert 'image.removeAttribute("src")' in javascript
     assert 'const controls = root.querySelector("[data-binder-controls]")' in javascript
-    assert 'const legend = root.querySelector("[data-binder-legend]")' in javascript
+    assert "data-binder-legend" not in javascript
+    assert "updateLegend" not in javascript
     assert 'const dialog = root.querySelector("[data-card-inspector]")' in javascript
     assert 'document.querySelector("[data-binder-controls]")' not in javascript
-    assert 'document.querySelector("[data-binder-legend]")' not in javascript
     assert 'document.querySelector("[data-card-inspector]")' not in javascript
     assert "focusedAdjacentControl.disabled" in javascript
     assert "focusedAdjacentControl.focus()" not in javascript
@@ -3084,6 +3082,8 @@ def test_binder_interaction_assets_declare_accessible_contract():
     for declarations in (prev_base, next_base):
         assert declarations["min-width"] == "2.75rem"
         assert declarations["min-height"] == "2.75rem"
+    assert prev_base["grid-column"] == "1"
+    assert next_base["grid-column"] == "3"
 
     focus = css_declarations(stylesheet, ".binder-controls a:focus-visible")
     assert focus["outline"].startswith("3px solid")
@@ -3110,11 +3110,17 @@ def test_binder_interaction_assets_declare_accessible_contract():
     assert ready_prev["left"] == "0"
     assert ready_next["right"] == "0"
 
-    position_copy = css_declarations(
-        stylesheet, '.binder[data-binder-ready="true"] .binder-controls [data-binder-position]'
-    )
-    assert position_copy["left"] == "50%"
-    assert position_copy["transform"] == "translateX(-50%)"
+    position_copy = css_declarations(stylesheet, ".binder-controls [data-binder-position]")
+    assert position_copy["position"] == "absolute"
+    assert position_copy["width"] == "1px"
+    assert position_copy["height"] == "1px"
+    assert position_copy["margin"] == "-1px"
+    assert position_copy["overflow"] == "hidden"
+    assert position_copy["clip"] == "rect(0, 0, 0, 0)"
+    assert position_copy["white-space"] == "nowrap"
+    assert position_copy["border"] == "0"
+    assert '.binder[data-binder-ready="true"] .binder-controls [data-binder-position]' not in stylesheet
+    assert '.binder-legend' not in stylesheet
 
     stage = css_declarations(stylesheet, '.binder[data-binder-ready="true"] .binder-stage')
     assert stage["padding-inline"] == "clamp(3.5rem, 6vw, 5rem)"

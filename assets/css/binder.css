@@ -60,13 +60,23 @@
 }
 
 .binder-controls [data-binder-position] {
-  margin: 0;
-  color: var(--text-muted);
-  text-align: center;
-  font-variant-numeric: tabular-nums;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.binder-controls [data-binder-prev] {
+  grid-column: 1;
 }
 
 .binder-controls [data-binder-next] {
+  grid-column: 3;
   justify-self: end;
 }
 
@@ -105,20 +115,6 @@
 
 .binder[data-binder-ready="true"] .binder-controls [data-binder-next]:hover {
   transform: translateY(-50%) translateX(2px);
-}
-
-.binder[data-binder-ready="true"] .binder-controls [data-binder-position] {
-  position: absolute;
-  top: clamp(0.6rem, 1.8vw, 1.1rem);
-  left: 50%;
-  max-width: min(78vw, 28rem);
-  padding: 0.34rem 0.7rem;
-  border: 1px solid var(--border-faint);
-  border-radius: 999px;
-  background: color-mix(in oklch, var(--bg-primary) 88%, transparent);
-  box-shadow: 0 0.7rem 1.6rem -1.35rem oklch(0.04 0.02 285 / 0.9);
-  transform: translateX(-50%);
-  pointer-events: auto;
 }
 
 .binder-spread {
@@ -275,33 +271,6 @@ button.binder-pocket:focus-visible {
   text-transform: uppercase;
 }
 
-.binder-legend {
-  margin: 1.5rem 0 2.5rem;
-  padding: 0.85rem 1rem;
-  border-left: 2px solid var(--foil-cyan);
-  background: var(--bg-raised);
-}
-
-.binder-legend p {
-  margin: 0 0 0.35rem;
-  color: var(--text-primary);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.binder-legend ul {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem 1rem;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  color: var(--text-muted);
-  font-size: 0.82rem;
-}
-
 .binder-transition {
   display: grid;
   align-content: center;
@@ -414,11 +383,6 @@ button.binder-pocket:focus-visible {
 @media (max-width: 720px) {
   .binder[data-binder-ready="true"] .binder-stage {
     padding-inline: clamp(2.75rem, 10vw, 3.35rem);
-  }
-
-  .binder[data-binder-ready="true"] .binder-controls [data-binder-position] {
-    max-width: min(72vw, 24rem);
-    font-size: 0.76rem;
   }
 
   .binder-spread {
