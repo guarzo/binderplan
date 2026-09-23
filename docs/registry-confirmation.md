@@ -2,7 +2,7 @@
 
 Generated from `docs/card-registry.md` by `python3 scripts/check-registry.py docs/card-registry.md --worklist --write`. Every section below is recomputed from the registry except "4. Gaps and known issues", which is hand-written; regeneration reads the previous version of this document and carries that section forward automatically.
 
-**Honest numbers, recomputed from the current file.** 181 rows total. 9 `photo` (5.0%), 28 `uncertain` (15.5%). 170 rows have both `set` and `number` read (93.9%) — 2 have `number` only, 8 have `set` only, 1 have neither field. The confirmation queue (section 3) holds 28 rows across 23 species: 5 clusters (10 rows) and 18 singletons.
+**Honest numbers, recomputed from the current file.** 184 rows total. 9 `photo` (4.9%), 28 `uncertain` (15.2%). 173 rows have both `set` and `number` read (94.0%) — 2 have `number` only, 8 have `set` only, 1 have neither field. The confirmation queue (section 3) holds 28 rows across 23 species: 5 clusters (10 rows) and 18 singletons.
 
 ## 1. Blocked — species unreadable
 
@@ -12,7 +12,7 @@ None. The registry has no state for a card that was seen but never identified to
 
 **None found** — `python3 scripts/check-registry.py docs/card-registry.md` reports `duplicate printings: 0`.
 
-Take that as a weak result, not a clean bill of health. The check requires all four fields — `species`, `set`, `number`, `language` — to match on two rows, and only **170 of 181 rows (93.9%)** have both `set` and `number` read. The remaining 11 rows (6.1%) are missing one or both fields and are structurally invisible to this check: two physical duplicates sitting in the registry right now would not be flagged unless both happened to land among that same 170-row minority.
+Take that as a weak result, not a clean bill of health. The check requires all four fields — `species`, `set`, `number`, `language` — to match on two rows, and only **173 of 184 rows (94.0%)** have both `set` and `number` read. The remaining 11 rows (6.0%) are missing one or both fields and are structurally invisible to this check: two physical duplicates sitting in the registry right now would not be flagged unless both happened to land among that same 173-row minority.
 
 ## 3. Confirmation queue — clusters first
 

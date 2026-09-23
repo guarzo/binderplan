@@ -37,4 +37,7 @@ Checksums are recorded in `SHA256SUMS` and were verified after copying.
 - The complete photo/video sequence appears to show thirteen distinct binder pages. Repeated views include `IMG_7111.HEIC`/`IMG_7114.HEIC`, `IMG_7112.HEIC`/`IMG_7116.HEIC`/`image.jpg`/`IMG_7115.MOV`, and `IMG_7113.HEIC`/`IMG_7117.HEIC`.
 - The supplied checklist includes unchecked rows, question marks, strike-throughs, handwritten corrections, and apparent assignment changes. Photo reconciliation and owner confirmation are required before ambiguous decisions are added to durable records.
 - `IMG_7113.HEIC` is a valid archived original, but ImageMagick cannot decode it because an Apple depth-image item is referenced unusually. It was successfully viewed with `pillow-heif`; no repaired derivative is archived here.
-- These files establish partial physical-sort evidence. They do not by themselves establish that all 97 proposed assignments, Trade availability decisions, or Release decisions were executed.
+- The owner confirmed that the photographed 100-card roster is the authoritative current holding inventory and that the nine-pocket arrangement is interim staging.
+- Kirlia remains a Beautiful Misfit; Mewtwo EX and Torterra Lv.X are Keepers with subsection undecided.
+- No photographed card is currently confirmed available for Trade.
+- Yveltal — Steam Siege 65 was physically removed. No other Release action was executed.

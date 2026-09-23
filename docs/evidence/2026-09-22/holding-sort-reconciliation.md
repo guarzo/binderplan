@@ -4,7 +4,7 @@
 
 **Manifest compared:** [`Holding Pool Sorting Manifest`](../../2026-09-22-holding-pool-sorting-manifest.md)
 
-**Status:** Photographic reconciliation; unresolved owner decisions are not recorded as executed.
+**Status:** Reconciled with owner clarifications. The 100 photographed cards are authoritative current holdings; only explicitly confirmed classification and removal decisions are recorded as executed.
 
 ## Summary
 
@@ -108,13 +108,13 @@ The supplied sheets contain unchecked rows, question marks, strike-throughs, met
 
 These marks are evidence of reconsideration, not sufficient evidence of final classification by themselves.
 
-## Required owner decisions
+## Owner resolutions
 
-Before durable inventory or movement records are updated, confirm:
+The owner clarified:
 
-1. Whether the consolidated nine-pocket holding binder is the intended final physical organization or an interim staging arrangement.
-2. Whether the 100 photographed cards should replace the 97-entry manifest as the authoritative current holding inventory.
-3. Whether Kirlia was intentionally reassigned to Heritage.
-4. Whether Mewtwo EX and Torterra Lv.X were intentionally reassigned to a Keeper section.
-5. Whether the struck Yveltal row means release, trade, removal from consideration, or simply “not found.”
-6. Whether any photographed cards are actively available for Trade and whether any Release action was actually executed.
+1. The consolidated nine-pocket binder is interim staging, not the intended final organization.
+2. The 100 photographed cards replace the 97-entry proposal as the authoritative current holding inventory.
+3. Kirlia remains a Beautiful Misfit; its Heritage-page position only reflects that it was found later.
+4. Mewtwo EX (`HP-051`) and Torterra Lv.X (`HP-058`) are Keepers. Their Keeper subsection remains undecided.
+5. Yveltal — Steam Siege 65 (`HP-072`) was physically removed and is no longer a current holding.
+6. No photographed card is currently confirmed available for Trade, and no other Release action was executed.

@@ -90,7 +90,7 @@ Sections:
 
 Sequence visually inside each section by palette, scale, composition, or era rather than alphabetically.
 
-The proposed first sort contains 46 Keeper cards. Preserving section boundaries requires thirteen four-pocket pages (52 pockets), leaving six open pockets.
+The superseded first-sort proposal contained 46 Keeper cards. That historical capacity estimate remains useful for the proposed architecture, but the current 100-card inventory has not yet been fully reclassified. Preserving those historical section boundaries would require thirteen four-pocket pages (52 pockets), leaving six open pockets.
 
 ## 4. Trade binder: four-pocket
 
@@ -102,15 +102,17 @@ The Trade binder is portable and contains only cards explicitly available now.
 - EDGE Watch cards do not enter Trade without a fresh curatorial decision.
 - Unswapped event supplements return to their original Review sections.
 
-The proposed first sort contains ten Core Value cards: three four-pocket pages, leaving two open pockets.
+The superseded first-sort proposal contained ten Core Value candidates: three four-pocket pages, leaving two open pockets. The owner later confirmed that none of the photographed cards is currently designated available for Trade.
 
 ## 5. Release group
 
 Release is not a binder section. It is a separate, clearly labeled outbound group for cards that have no canonical path, permanent keeper reason, or value-based trade role.
 
-The proposed first sort contains three Release cards. Release is still a recommendation until physically executed.
+The superseded first-sort proposal contained three Release candidates. Only Yveltal — Steam Siege 65 was later confirmed physically removed; the other proposed Release cards remain in the photographed holding inventory.
 
-## First-sort capacity
+## Historical first-sort capacity
+
+These counts describe the superseded 97-entry proposal, not the authoritative 100-card photographed inventory.
 
 | Destination | Cards | Practical capacity |
 |---|---:|---:|
@@ -144,11 +146,11 @@ The proposed first sort contains three Release cards. Release is still a recomme
 
 ## Evidence and companion artifacts
 
-The proposed card-by-card assignments are in [`2026-09-22-holding-pool-sorting-manifest.md`](../../2026-09-22-holding-pool-sorting-manifest.md). They reconcile:
+The historical card-by-card proposal is in [`2026-09-22-holding-pool-sorting-manifest.md`](../../2026-09-22-holding-pool-sorting-manifest.md). It originally reconciled:
 
 - six holding photographs received 2026-09-20;
 - removed duplicate copies;
 - seven cards moved into canon on 2026-09-21;
 - seven cards displaced from canon into the current pool.
 
-The physical pool reconciles to 97 current inventory entries at the photograph/export level. Some exact printings and several photograph-to-export matches still require an in-hand check. The manifest is a recommendation, not evidence that the sort has been executed.
+That 97-entry estimate was superseded after the complete holding binder was photographed and reconciled. The authoritative current inventory is [`2026-09-22-holding-binder-inventory.md`](../../2026-09-22-holding-binder-inventory.md): 100 cards across 13 interim nine-pocket pages. The interim layout does not execute the separate Review, four-pocket Keeper, and four-pocket Trade architecture.

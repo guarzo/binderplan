@@ -1,6 +1,6 @@
 # Card registry
 
-Stable identifiers for every card in Volumes 1 and 2.
+Stable identifiers for every card in Volumes 1 and 2, plus any holding or released card cited in the curatorial ledger.
 
 This is not an inventory. It records what a card **is**, never where it sits. A card's ID is unchanged when it moves from one theme to another, unchanged when it goes to the holding box, and unchanged after release. To find where a card is now, grep `ledger.md` for its ID and read forward.
 
@@ -140,6 +140,7 @@ The column is left as recorded rather than rewritten: `first_seen` is provenance
 | mewtwo-02 | Mewtwo | Mewtwo EX | EN | BREAKthrough | 164/162 | confirmed | intimidation_1.webp 2026-08-01 | Shatter Shot/Damage Change EX card, distinct from mewtwo-01 |
 | mewtwo-03 | Mewtwo | Mewtwo | EN | SVP | 052 | confirmed | contemplation_1.webp 2026-08-01 | Scarlet & Violet promo, Reflective Barrier/Psyslash, distinct from mewtwo-01/02 |
 | mewtwo-04 | Mewtwo | Mewtwo | EN | Delta Species | 12/113 | confirmed | legendary_bearing_1.webp 2026-08-01 | delta species, Delta Switch/Energy Burst, distinct from mewtwo-01/02/03, set from owner's doubleholo export 2026-09-18; Delta Species has 113 cards, matching the /113 read |
+| mewtwo-05 | Mewtwo | Mewtwo EX | EN | BREAKthrough | 157/162 | confirmed | IMG_7113.HEIC 2026-09-22 | holding copy, full-art printing, distinct from mewtwo-01..04; owner confirmed Keeper status with subsection undecided |
 | mimikyu-01 | Mimikyu | 谜拟丘 | ZH | CSM2BC | 151/150 | confirmed | companions_1.webp 2026-08-01 | Ability 假扮 (Disguise), checked in hand 2026-09-19 |
 | misdreavus-01 | Misdreavus | ムウマ | JP | Awakening Legends | No.200 | uncertain | intimidation_1.webp 2026-08-01 | Pokédex-number print, set per owner's doubleholo export 2026-09-18 |
 | mudkip-01 | Mudkip | Mudkip | EN | Crystal Guardians | 58 | confirmed | enduring_presence_1.webp 2026-08-01 | Nap/Waterfall attacks, set/number from owner's doubleholo export 2026-09-18, denominator not recorded |
@@ -197,6 +198,7 @@ The column is left as recorded rather than rewritten: `first_seen` is provenance
 | togedemaru-01 | Togedemaru | Togedemaru | EN | Phantasmal Flames | 104/94 | confirmed | companions_2.webp 2026-08-01 | checked in hand 2026-09-19 |
 | togepi-01 | Togepi | トゲピー | JP | Rocket Gang Strikes Back | 56 | confirmed | enduring_presence_1.webp 2026-08-01 | set/number from owner's doubleholo export 2026-09-18, denominator not recorded |
 | torterra-01 | Torterra | Torterra | EN | Unleashed | 10/95 | confirmed | awakened_power_2.webp 2026-08-01 |  |
+| torterra-02 | Torterra | ドダイトス LV.X | JP | DP-P Promos | 076/DP-P | confirmed | IMG_7113.HEIC 2026-09-22 | holding copy; owner confirmed Keeper status with subsection undecided |
 | typhlosion-01 | Typhlosion | バクフーン | JP | Gold, Silver, New World | No.157 | uncertain | intimidation_1.webp 2026-08-01 | vintage Pokedex-number print, set per owner's doubleholo entry |
 | typhlosion-02 | Typhlosion | バクフーン | JP |  | No.157 | uncertain | legendary_bearing_1.webp 2026-08-01 | Lv.46 print, distinct from typhlosion-01, vintage Pokedex-number print, era not identifiable |
 | umbreon-01 | Umbreon | 月亮伊布VMAX | ZH | CS4AC | 085/132 | confirmed | awakened_power_1.webp 2026-08-01 | owner corrected set/number to CS4AC 085/132 and confirmed Chinese on completed checklist 2026-09-20; close rearing figure amid energy, not moon-and-tower artwork |
@@ -212,6 +214,7 @@ The column is left as recorded rather than rewritten: `first_seen` is provenance
 | walrein-01 | Walrein | トドゼルガex | JP | Mirage Forest | 29 | confirmed | awakened_power_1.webp 2026-08-01 | set/number from owner's doubleholo export 2026-09-18, denominator not recorded |
 | yveltal-01 | Yveltal | Yveltal EX | EN | XY | 79/146 | confirmed | on_attack_1.webp 2026-08-01 |  |
 | yveltal-02 | Yveltal | 伊裴尔塔尔 | ZH | CSV5C | 135/129 | confirmed | legendary_bearing_1.webp 2026-08-01 | distinct from yveltal-01, checked in hand 2026-09-19 |
+| yveltal-03 | Yveltal | Yveltal | EN | Steam Siege | 65/114 | confirmed | IMG_7082.jpeg 2026-09-20 | holding copy, distinct from yveltal-01/02; owner confirmed physical removal 2026-09-22 |
 | zapdos-01 | Zapdos | サンダー | JP | Mystery of the Fossils | No.145 | uncertain | IMG_6847.HEIC 2026-08-01 | vintage Pokedex-number print, number corrected from No.143 (misread): Zapdos is Pokédex #145, matching owner's doubleholo export 2026-09-18 |
 | zekrom-01 | Zekrom | Zekrom EX | EN | Black Bolt | 158/086 | confirmed | legendary_bearing_2.webp 2026-08-01 | Slash/Voltage Burst, checked in hand 2026-09-19 |
 | zygarde-01 | Zygarde | ジガルデ | JP | Awakening Psychic King | 040/078 | confirmed | threshold_1.webp 2026-08-01 | Aura Break attack, U rarity mark |
