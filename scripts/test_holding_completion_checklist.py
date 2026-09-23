@@ -63,6 +63,8 @@ def test_release_recommendations_require_separate_authorization():
     )
 
     assert recommended == authorized_rows
+    assert len(re.findall(r"^\\tradeauth$", text, re.MULTILINE)) == 6
+    assert "Signed authorization continuation attached" in text
     assert "Accepting a recommendation does not authorize Trade or physical Release" in text
 
 

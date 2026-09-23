@@ -55,6 +55,10 @@
     \checkbox\ Accept recommendation \quad \checkbox\ Change to: \blankline{22mm}}
   \end{tabularx}\par\vspace{0.42ex}%
 }
+\newcommand{\tradeauth}{%
+  \noindent\checkbox\ Trade authorized \quad \checkbox\ Available now \quad
+  ID: \blankline{18mm}\quad Card: \blankline{44mm}\par\vspace{0.25ex}%
+}
 \newcommand{\releaseauth}[2]{%
   \noindent\checkbox\ Release authorized \quad \checkbox\ Release executed \quad
   {\ttfamily\scriptsize #1}\quad #2\par\vspace{0.25ex}%
@@ -213,14 +217,22 @@
 
 \subsectiontitle{Explicit Trade and Release authorization}
 {\scriptsize Accepting a recommendation does not authorize Trade or physical Release. Record either action separately here.}\par\vspace{0.35ex}
-\checkitem{Trade authorized and available now --- card ID: \blankline{24mm} Card: \blankline{48mm}}
-\checkitem{Trade authorized and available now --- card ID: \blankline{24mm} Card: \blankline{48mm}}
+\tradeauth
+\tradeauth
+\tradeauth
+\tradeauth
+\tradeauth
+\tradeauth
 \releaseauth{HB-P09-05}{Eevee --- SVP 173}
 \releaseauth{HB-P09-09}{Piplup --- Manaphy \& Lucario}
 \releaseauth{HB-P10-02}{Misdreavus --- Japanese duplicate}
 \releaseauth{HB-P10-07}{Yveltal --- Celebrations}
 \releaseauth{HB-P10-08}{Emolga EX --- Japanese duplicate}
 \releaseauth{Additional: \blankline{15mm}}{Card: \blankline{45mm}}
+\releaseauth{Additional: \blankline{15mm}}{Card: \blankline{45mm}}
+\releaseauth{Additional: \blankline{15mm}}{Card: \blankline{45mm}}
+\releaseauth{Additional: \blankline{15mm}}{Card: \blankline{45mm}}
+\checkitem{Signed authorization continuation attached if additional Trade or Release rows are required.}
 
 \subsectiontitle{Final counts}
 \checkitem{Final Review count: \blankline{14mm}.}
