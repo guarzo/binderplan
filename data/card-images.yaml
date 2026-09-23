@@ -1364,6 +1364,10 @@ cards:
     reviewed: true
     reviewed_on: '2026-09-23'
     source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/78044/primary.webp
+    note: DoubleHolo labels 78044 as Togepi [1st Edition], but neither the provider
+      image nor the archived v2-06 leaf shows a visible lower-left 1EDITION mark;
+      curator selection is based on side-by-side image match and does not assert
+      a 1st Edition printing.
   torterra-01:
     provider: tcgdex
     upstream_id: hgss2-10
