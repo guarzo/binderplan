@@ -930,6 +930,8 @@ class _PublicBinderParser(HTMLParser):
         in_pocket = parent.get("in_pocket", False)
         stage_node = parent.get("stage_node")
         spreads_node = parent.get("spreads_node")
+        ancestor_stage_node = stage_node
+        ancestor_spreads_node = spreads_node
 
         if "data-binder" in attributes:
             root = {
@@ -957,6 +959,8 @@ class _PublicBinderParser(HTMLParser):
             in_pocket = False
             stage_node = None
             spreads_node = None
+            ancestor_stage_node = None
+            ancestor_spreads_node = None
 
         if root is not None:
             element_id = attributes.get("id")
@@ -966,19 +970,17 @@ class _PublicBinderParser(HTMLParser):
             if "data-binder-stage" in attributes:
                 attributes["__node_id"] = node_id
                 root["stages"].append(attributes)
-                stage_node = node_id
 
             if "data-binder-spreads" in attributes:
                 attributes["__node_id"] = node_id
-                attributes["__stage_node"] = stage_node
+                attributes["__stage_node"] = ancestor_stage_node
                 root["spreads_owners"].append(attributes)
-                spreads_node = node_id
 
             if "data-binder-spread" in attributes:
                 root["spread_count"] += 1
                 spread = root["spread_count"]
                 attributes["__spread_number"] = spread
-                attributes["__spreads_node"] = spreads_node
+                attributes["__spreads_node"] = ancestor_spreads_node
                 root["spread_elements"].append(attributes)
 
             if "data-binder-leaf" in attributes:
@@ -997,7 +999,7 @@ class _PublicBinderParser(HTMLParser):
                     leaf["pockets"] += 1
 
             if "data-binder-controls" in attributes:
-                attributes["__stage_node"] = stage_node
+                attributes["__stage_node"] = ancestor_stage_node
                 root["controls"].append(attributes)
             if "data-binder-prev" in attributes:
                 root["previous_controls"].append(attributes)
@@ -1022,6 +1024,11 @@ class _PublicBinderParser(HTMLParser):
                 self._record_image_urls(root, attributes)
                 if in_pocket:
                     self._record_card_image(root, leaf, spread, attributes)
+
+            if "data-binder-stage" in attributes:
+                stage_node = node_id
+            if "data-binder-spreads" in attributes:
+                spreads_node = node_id
 
         if tag not in HTML_VOID_ELEMENTS:
             self.stack.append({

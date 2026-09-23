@@ -3491,6 +3491,55 @@ def test_public_check_requires_spreads_inside_spreads_owner(tmp_path):
     assert any("binder spread 1 must be inside binder spreads owner" in error for error in errors)
 
 
+def test_public_check_rejects_controls_on_same_element_as_stage(tmp_path):
+    html = valid_public_binder_html().replace(
+        '<div class="binder-stage" data-binder-stage>'
+        '<nav class="binder-controls" data-binder-controls aria-label="Binder pages">',
+        '<nav class="binder-stage binder-controls" '
+        'data-binder-stage data-binder-controls aria-label="Binder pages">',
+        1,
+    ).replace('</div></div></div><dialog', '</div></div><dialog', 1)
+    write_html(tmp_path, html)
+
+    errors = digital_binder.validate_public_output(tmp_path)
+
+    assert any("binder controls navigation must be inside binder stage" in error for error in errors)
+
+
+def test_public_check_rejects_spreads_owner_on_same_element_as_stage(tmp_path):
+    html = valid_public_binder_html().replace(
+        '<div class="binder-stage" data-binder-stage>',
+        '<div class="binder-stage binder-spreads" data-binder-stage data-binder-spreads>',
+        1,
+    ).replace('<div class="binder-spreads" data-binder-spreads>', '', 1).replace(
+        '</div></div></div><dialog', '</div></div><dialog', 1
+    )
+    write_html(tmp_path, html)
+
+    errors = digital_binder.validate_public_output(tmp_path)
+
+    assert any("binder spreads owner must be inside binder stage" in error for error in errors)
+
+
+def test_public_check_rejects_spread_on_same_element_as_spreads_owner(tmp_path):
+    html = valid_public_binder_html().replace(
+        '<div class="binder-spreads" data-binder-spreads><div data-binder-spread="1">',
+        '<div class="binder-spreads" data-binder-spreads data-binder-spread="1">',
+        1,
+    )
+    write_html(tmp_path, html)
+
+    errors = digital_binder.validate_public_output(tmp_path)
+
+    assert any("binder spread 1 must be inside binder spreads owner" in error for error in errors)
+
+
+def test_public_check_accepts_stage_controls_spreads_as_nested_descendants(tmp_path):
+    write_valid_public_binder(tmp_path)
+
+    assert digital_binder.validate_public_output(tmp_path) == []
+
+
 def test_public_check_requires_arrow_control_accessible_labels(tmp_path):
     html = valid_public_binder_html().replace(' aria-label="Previous page"', "", 1)
     write_html(tmp_path, html)
