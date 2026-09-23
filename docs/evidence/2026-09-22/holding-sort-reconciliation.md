@@ -52,12 +52,12 @@ This does not establish a synchronized final count: the checklist's starting and
 12. Pikachu, 70 HP lightning/Volt Tackle artwork
 13. Pikachu, 60 HP field/Quick Attack artwork
 14. Pikachu, desk/room `Gnaw` artwork
-15. Pikachu, 80 HP `Overwhelming Bolt`
+15. Pikachu, 80 HP `Overwriting Bolt`
 16. Pikachu, 70 HP meadow/`Play Rough`
 17. Pikachu, rain/umbrella `Pika Dash`
 18. Pikachu, grass `Tail Slap` / `Quick Attack`
 19. Lt. Surge's Pikachu, Japanese
-20. Pikachu, Pokémon GO-stamped 020/078 `Wild Charge`
+20. Pikachu, 30th Celebration 046/128 `Get Some Air` / `Smash Kick`
 
 Eevee SVP 173 and the Japanese Misdreavus were named in prior duplicate-removal evidence; their visibility here does not establish whether the intended duplicate removals occurred.
 

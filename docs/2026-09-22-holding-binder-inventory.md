@@ -6,6 +6,8 @@
 
 **Physical arrangement:** Interim staging in one nine-pocket binder. It does not supersede the approved Review/Keeper/Trade architecture as a final organization.
 
+**Completion checklist:** [`2026-09-23-holding-sort-completion-checklist.pdf`](2026-09-23-holding-sort-completion-checklist.pdf)
+
 ## Scope and identifiers
 
 The latest photographed state contains **100 cards across 13 pages**. `HB-PNN-NN` values identify observations in this inventory only: page number plus occupied-card reading order. They are not permanent registry IDs and do not claim an exact pocket coordinate where empty pockets interrupt a row.
@@ -176,13 +178,13 @@ No photographed card is currently confirmed available for Trade.
 
 | Observation | Visible card | Prior reference |
 |---|---|---|
-| HB-P13-01 | Pikachu — Pokémon GO 028/078-style `Get Some Air` / `Smash Kick` | HP-048 |
-| HB-P13-02 | Pikachu — 80 HP full-art crowd, `Overwhelming Bolt` | — |
+| HB-P13-01 | Pikachu — 30th Celebration 046/128, `Get Some Air` / `Smash Kick` | — |
+| HB-P13-02 | Pikachu — 80 HP full-art crowd, `Overwriting Bolt` | — |
 | HB-P13-03 | Pikachu — 70 HP meadow, `Play Rough` | — |
 | HB-P13-04 | Pikachu — rain/umbrella, `Pika Dash` | — |
 | HB-P13-05 | Pikachu — grass, `Tail Slap` / `Quick Attack` | — |
 | HB-P13-06 | Lt. Surge's Pikachu — Japanese | — |
-| HB-P13-07 | Pikachu — Pokémon GO-stamped 020/078, `Wild Charge` | — |
+| HB-P13-07 | Pikachu — Pokémon GO 028/078, `Wild Charge` | HP-048 |
 | HB-P13-08 | Pikachu — Black Star Promo, `Growl` / `Thundershock` | HP-047 |
 
 ## Confirmed decisions accompanying this inventory

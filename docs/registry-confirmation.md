@@ -158,7 +158,7 @@ Yveltal (`yveltal-03`) has an explicit release record.
 | snorlax-02 | カビゴンVMAX (JP) | On the Attack | Charizard (`charizard-03`) | EDGE |
 | ursaring-02 | リングマ (JP) | On the Attack | Lucario (`lucario-02`) | EDGE |
 | ns-plan-01 | N's Plan (EN) | Legendary Bearing p2 | Blastoise (`blastoise-02`) | HERITAGE |
-| kirlia-01 | キルリア (JP) | — | — | Keeper · Beautiful Misfits |
+| kirlia-01 | キルリア (JP) | — | — | Beautiful Misfits |
 | mewtwo-05 | Mewtwo EX (EN) | — | — | Keeper · subsection undecided |
 | torterra-02 | ドダイトス LV.X (JP) | — | — | Keeper · subsection undecided |
 | yveltal-03 | Yveltal (EN) | — | — | RELEASE — physically removed 2026-09-22 |
