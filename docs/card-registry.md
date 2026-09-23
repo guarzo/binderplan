@@ -110,7 +110,7 @@ The column is left as recorded rather than rewritten: `first_seen` is provenance
 | joltik-02 | Joltik | Joltik | EN | Stellar Crown | 150/142 | confirmed | enduring_presence_2.webp 2026-08-01 | Jolting Charge attack, distinct from joltik-01, checked in hand 2026-09-19 |
 | joltik-03 | Joltik | バチュル | JP | sv11W | 113/086 | confirmed | contemplation_1.webp 2026-08-01 | AR rarity, checked in hand 2026-09-19 |
 | kabuto-01 | Kabuto | Kabuto | EN | Fossil | 50/62 | confirmed | IMG_6865.HEIC 2026-08-01 | Kabuto Armor ability, Scratch attack |
-| kangaskhan-01 | Kangaskhan | ガルーラ | JP | Jungle | No.115 | uncertain | IMG_6858.HEIC 2026-08-01 | vintage Pokedex-number print, set per owner's doubleholo entry |
+| kangaskhan-01 | Kangaskhan | ガルーラ | JP | Jungle | No.115 | photo | IMG_6858.HEIC 2026-08-01 | vintage Pokedex-number print, set per owner's doubleholo entry; 2026-09-23 visual-review/not-in-hand: identity established from the archived leaf and curator-approved DoubleHolo 22171, not an in-hand check |
 | kasumis-tears-01 | Kasumi's Tears | カスミのなみだ | JP | Leaders' Stadium |  | confirmed | IMG_6865.HEIC 2026-08-01 | Trainer card, no number printed, checked in hand 2026-09-19 |
 | kingdra-01 | Kingdra | キングドラ | JP | Awakening Legends | No.230 | photo | on_attack_1.webp 2026-08-01 | Lv.47, vintage Pokedex-number print, illustrator Mitsuhiro Arita, set per owner's doubleholo entry; 2026-09-22 visual-review matched authorized DoubleHolo identity, not checked in hand. |
 | kyogre-01 | Kyogre | Kyogre ex | EN | Crystal Guardians | 95 | confirmed | elemental_solitude_1.webp 2026-08-01 | set/number from owner's doubleholo export 2026-09-18, denominator not recorded |

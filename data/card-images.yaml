@@ -324,10 +324,18 @@ cards:
     provider: evidence-crop
     source_path: docs/evidence/2026-09-22/owner-supplied-card-images/chinese-espeon.webp
   flareon-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: doubleholo
+    upstream_id: '32571'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    identity_basis: curator visually confirmed printing; DoubleHolo set-name alias
+      differs from registry
+    classification: exact
+    asset_path: assets/images/cards/flareon-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-23'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/32571/primary.webp
+    note: Curator visually confirmed the Generations Radiant Collection RC28 printing
+      against the archived leaf.
   gardevoir-01:
     provider: doubleholo
     upstream_id: '78088'
@@ -534,10 +542,13 @@ cards:
     reviewed_on: '2026-09-22'
     source_url: https://assets.tcgdex.net/en/ecard/ecard1/113/high.webp
   houndour-02:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: tcgdex
+    upstream_id: SV3-115
+    classification: exact
+    asset_path: assets/images/cards/houndour-02.webp
+    reviewed: true
+    reviewed_on: '2026-09-23'
+    source_url: https://assets.tcgdex.net/ja/SV/SV3/115/high.webp
   imposter-professor-oaks-revenge-01:
     provider: doubleholo
     upstream_id: '46732'
@@ -581,10 +592,12 @@ cards:
     reviewed: false
     reviewed_on: ''
   joltik-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    classification: photo-crop
+    asset_path: assets/images/cards/joltik-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-23'
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/companions_2.webp
   joltik-02:
     classification: missing
     asset_path: ''
@@ -610,10 +623,17 @@ cards:
     reviewed: false
     reviewed_on: ''
   kangaskhan-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: doubleholo
+    upstream_id: '22171'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: exact
+    asset_path: assets/images/cards/kangaskhan-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-23'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/22171/primary.webp
+    note: '2026-09-23 visual-review/not-in-hand: curator approved DoubleHolo 22171
+      against the archived leaf; registry identity remains photo-based, not in-hand
+      confirmed.'
   kasumis-tears-01:
     classification: missing
     asset_path: ''
@@ -911,10 +931,15 @@ cards:
     reviewed_on: '2026-09-23'
     source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/32254/primary.webp
   pikachu-04:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: tcgdex
+    upstream_id: swsh10.5-027
+    classification: exact
+    asset_path: assets/images/cards/pikachu-04.webp
+    reviewed: true
+    reviewed_on: '2026-09-23'
+    source_url: https://assets.tcgdex.net/en/swsh/swsh10.5/027/high.webp
+    note: Curator approved the Pokémon GO 027/078 registry photo after inspecting
+      competing 027-numbered variants.
   pikachu-05:
     classification: missing
     asset_path: ''
@@ -947,15 +972,26 @@ cards:
     reviewed_on: '2026-09-22'
     source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/77937/primary.webp
   professor-elm-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: tcgdex
+    upstream_id: neo1-96
+    classification: exact
+    asset_path: assets/images/cards/professor-elm-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-23'
+    source_url: https://assets.tcgdex.net/en/neo/neo1/96/high.webp
   professors-research-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: doubleholo
+    upstream_id: '80007'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    identity_basis: curator visually confirmed printing; DoubleHolo set-name alias
+      differs from registry
+    classification: exact
+    asset_path: assets/images/cards/professors-research-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-23'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/80007/primary.webp
+    note: Curator visually confirmed DoubleHolo 80007 as the Professor Willow Professor's
+      Research S-P promo alias for the archived leaf.
   quaxly-01:
     provider: tcgdex
     upstream_id: sv02-206
@@ -1004,10 +1040,18 @@ cards:
     reviewed: false
     reviewed_on: ''
   rockets-trap-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: doubleholo
+    upstream_id: '39574'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    identity_basis: In-hand-confirmed unnumbered registry identity plus curator comparison
+      of DoubleHolo 39574 with the archived leaf.
+    classification: exact
+    asset_path: assets/images/cards/rockets-trap-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-23'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/39574/primary.webp
+    note: Curator visually confirmed the unnumbered Japanese Leaders' Stadium printing
+      against the archived leaf.
   sabrinas-gaze-01:
     provider: doubleholo
     upstream_id: '46839'
@@ -1222,10 +1266,13 @@ cards:
     note: Curator visually confirmed the DoubleHolo set-name alias and printing against
       the archived leaf.
   togedemaru-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: tcgdex
+    upstream_id: me02-104
+    classification: exact
+    asset_path: assets/images/cards/togedemaru-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-23'
+    source_url: https://assets.tcgdex.net/en/me/me02/104/high.webp
   togepi-01:
     classification: missing
     asset_path: ''
