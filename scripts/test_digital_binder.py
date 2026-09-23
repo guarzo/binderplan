@@ -292,6 +292,42 @@ def doubleholo_cached_candidate(
     }
 
 
+def doubleholo_live_object(
+        name="Abra", set_name="Pokemon Base Set", number="43", language="english",
+        image_url="https://supabase.example/abra.png", object_id="dh-43"):
+    return {
+        "objectID": object_id,
+        "name": name,
+        "set_name": set_name,
+        "number": number,
+        "language": language,
+        "image_url": image_url,
+        "image_url_small": None,
+    }
+
+
+def doubleholo_object_url(object_id="dh-43"):
+    return f"https://w5sf479zkl-dsn.algolia.net/1/indexes/production_cards/{object_id}"
+
+
+def patch_doubleholo_live_object(monkeypatch, **kwargs):
+    def fake_fetch(object_id, opener=None):
+        return doubleholo_live_object(object_id=object_id, **kwargs)
+
+    monkeypatch.setattr(manage_card_images, "_fetch_doubleholo_object", fake_fetch)
+
+
+def patch_doubleholo_live_candidate(monkeypatch, candidate):
+    original = dict(candidate.get("original") or {})
+
+    def fake_fetch(object_id, opener=None):
+        fetched = dict(original)
+        fetched["objectID"] = object_id
+        return fetched
+
+    monkeypatch.setattr(manage_card_images, "_fetch_doubleholo_object", fake_fetch)
+
+
 def seed_existing_proxy_image(root):
     asset_path = root / manage_card_images.CARD_ASSET_DIR / "abra-01.webp"
     write_image(asset_path, color=(9, 8, 7))
@@ -629,6 +665,26 @@ def test_doubleholo_exact_identity_requires_normalized_set_equality_not_substrin
     assert ranked[0]["exact_identity_match"] is False
 
 
+def test_doubleholo_exact_identity_requires_name_match_not_just_number_language_and_set():
+    row = {
+        "id": "abra-01", "species": "Abra", "card_name": "Abra",
+        "language": "EN", "set": "Base Set", "number": "43/102",
+    }
+    candidate = digital_binder.normalize_doubleholo_candidate({
+        "objectID": "wrong-species", "name": "Kadabra",
+        "set_name": "Pokemon Base Set", "number": "43", "language": "english",
+        "image_url": "https://example.invalid/kadabra.webp",
+    })
+
+    ranked = digital_binder.rank_doubleholo_candidates(row, [candidate])
+
+    assert ranked[0]["number_match"] is True
+    assert ranked[0]["language_match"] is True
+    assert ranked[0]["set_match"] is True
+    assert ranked[0]["name_match"] is False
+    assert ranked[0]["exact_identity_match"] is False
+
+
 def ranked_doubleholo_name_match(card_name, species, candidate_name, language="EN", hit_language="english"):
     row = {
         "id": "name-01", "species": species, "card_name": card_name,
@@ -670,12 +726,14 @@ def test_doubleholo_name_match_rejects_embedded_species_without_token_boundary()
     assert ranked_doubleholo_name_match("Abra", "Abra", "Kadabra") is False
 
 
-def test_search_doubleholo_skips_bad_hits_and_returns_empty_on_failed_or_malformed_response():
-    row = {
+def doubleholo_search_row():
+    return {
         "id": "abra-01", "species": "Abra", "card_name": "Abra",
         "language": "EN", "set": "Base Set", "number": "43/102",
     }
 
+
+def test_search_doubleholo_skips_bad_hits_but_keeps_valid_hits():
     def mixed_hits_opener(request, timeout):
         return FakeHTTPResponse({"results": [{"hits": [
             None,
@@ -684,18 +742,53 @@ def test_search_doubleholo_skips_bad_hits_and_returns_empty_on_failed_or_malform
             {"name": "missing object"},
         ]}]})
 
-    candidates = digital_binder.search_doubleholo(row, opener=mixed_hits_opener)
+    candidates = digital_binder.search_doubleholo(doubleholo_search_row(), opener=mixed_hits_opener)
+
     assert [candidate["provider_id"] for candidate in candidates] == ["ok"]
 
+
+def test_search_doubleholo_returns_empty_for_valid_no_hits():
+    def no_hits_opener(request, timeout):
+        return FakeHTTPResponse({"results": [{"hits": []}]})
+
+    assert digital_binder.search_doubleholo(doubleholo_search_row(), opener=no_hits_opener) == []
+
+
+def test_search_doubleholo_raises_clear_error_for_network_failure():
     def failed_opener(request, timeout):
         raise OSError("network down")
 
-    assert digital_binder.search_doubleholo(row, opener=failed_opener) == []
+    try:
+        digital_binder.search_doubleholo(doubleholo_search_row(), opener=failed_opener)
+    except ValueError as exc:
+        assert "DoubleHolo search failed" in str(exc)
+        assert "network down" in str(exc)
+    else:
+        raise AssertionError("DoubleHolo provider network failures must not become no-hit results")
 
+
+def test_search_doubleholo_raises_clear_error_for_bad_json():
     def malformed_opener(request, timeout):
         return FakeBinaryHTTPResponse(b"not json")
 
-    assert digital_binder.search_doubleholo(row, opener=malformed_opener) == []
+    try:
+        digital_binder.search_doubleholo(doubleholo_search_row(), opener=malformed_opener)
+    except ValueError as exc:
+        assert "DoubleHolo search returned invalid JSON" in str(exc)
+    else:
+        raise AssertionError("DoubleHolo provider JSON failures must not become no-hit results")
+
+
+def test_search_doubleholo_raises_clear_error_for_malformed_results_envelope():
+    def malformed_envelope_opener(request, timeout):
+        return FakeHTTPResponse({"results": {"hits": []}})
+
+    try:
+        digital_binder.search_doubleholo(doubleholo_search_row(), opener=malformed_envelope_opener)
+    except ValueError as exc:
+        assert "DoubleHolo search returned malformed results" in str(exc)
+    else:
+        raise AssertionError("DoubleHolo malformed envelopes must not become no-hit results")
 
 
 def test_cache_opener_keys_post_requests_by_body(tmp_path, monkeypatch):
@@ -763,6 +856,45 @@ def test_doubleholo_search_command_caches_under_doubleholo_review_dir(tmp_path, 
     assert cached["candidates"][0]["provider"] == "doubleholo"
 
 
+def test_doubleholo_search_command_preserves_existing_cache_and_exits_nonzero_on_provider_error(
+        tmp_path, monkeypatch, capsys):
+    root = project_fixture(tmp_path)
+    write_current_generated(root)
+    cache_path = root / "tmp/digital-binder-review/doubleholo/abra-01.json"
+    cache_path.parent.mkdir(parents=True)
+    cache_path.write_text('{"old": "cache"}\n', encoding="utf-8")
+
+    def failed_search(row, opener):
+        raise ValueError("DoubleHolo search failed: network down")
+
+    monkeypatch.chdir(root)
+    monkeypatch.setattr(manage_card_images.digital_binder, "search_doubleholo", failed_search)
+
+    assert manage_card_images.main(["search-doubleholo", "abra-01"]) == 1
+
+    assert cache_path.read_text(encoding="utf-8") == '{"old": "cache"}\n'
+    assert "DoubleHolo search failed: network down" in capsys.readouterr().err
+
+
+def test_doubleholo_search_command_writes_empty_cache_for_valid_no_hits(tmp_path, monkeypatch):
+    root = project_fixture(tmp_path)
+    write_current_generated(root)
+
+    def no_hits_search(row, opener):
+        return []
+
+    monkeypatch.chdir(root)
+    monkeypatch.setattr(manage_card_images.digital_binder, "search_doubleholo", no_hits_search)
+
+    assert manage_card_images.main(["search-doubleholo", "abra-01"]) == 0
+
+    cached = json.loads(
+        (root / "tmp/digital-binder-review/doubleholo/abra-01.json").read_text(encoding="utf-8")
+    )
+    assert cached["card_id"] == "abra-01"
+    assert cached["candidates"] == []
+
+
 def test_approve_doubleholo_rejects_file_candidate_url(tmp_path, monkeypatch):
     root = project_fixture(tmp_path)
     write_current_generated(root)
@@ -781,6 +913,7 @@ def test_approve_doubleholo_rejects_file_candidate_url(tmp_path, monkeypatch):
             "image_url_small": None,
         },
     }])
+    patch_doubleholo_live_object(monkeypatch, image_url="file:///tmp/abra.webp")
     monkeypatch.chdir(root)
 
     try:
@@ -789,6 +922,201 @@ def test_approve_doubleholo_rejects_file_candidate_url(tmp_path, monkeypatch):
         assert "HTTP(S)" in str(exc)
     else:
         raise AssertionError("approve-doubleholo should reject file: candidate URLs")
+
+    assert not (root / manage_card_images.CARD_ASSET_DIR / "abra-01.webp").exists()
+
+
+def test_approve_doubleholo_fetches_live_object_with_public_algolia_headers():
+    calls = []
+
+    def fake_opener(request, timeout):
+        calls.append((request, timeout))
+        return FakeHTTPResponse(doubleholo_live_object(object_id="dh-43"))
+
+    fetched = manage_card_images._fetch_doubleholo_object("dh-43", opener=fake_opener)
+
+    assert fetched["objectID"] == "dh-43"
+    request, timeout = calls[0]
+    assert request.full_url == doubleholo_object_url("dh-43")
+    assert request.get_method() == "GET"
+    assert request.headers["X-algolia-application-id"] == "W5SF479ZKL"
+    assert request.headers["X-algolia-api-key"] == "50fdd89ab8d777151bc000bba6097357"
+    assert "Cookie" not in request.headers
+    assert timeout == 20
+
+
+def test_approve_doubleholo_uses_live_object_not_tampered_cached_original_url_or_identity(
+        tmp_path, monkeypatch, capsys):
+    root = project_fixture(tmp_path)
+    write_current_generated(root)
+    write_doubleholo_candidate_cache(root, "abra-01", [{
+        "candidate_index": 0,
+        "provider_id": "dh-43",
+        "image_url": "https://attacker.example/cached.png",
+        "exact_identity_match": True,
+        "original": {
+            "objectID": "attacker-id",
+            "name": "Kadabra",
+            "set_name": "Pokemon Jungle",
+            "number": "64",
+            "language": "japanese",
+            "image_url": "https://attacker.example/cached.png",
+            "image_url_small": None,
+        },
+    }])
+    requested_urls = []
+
+    def fake_urlopen(request, timeout):
+        requested_urls.append(request.full_url)
+        if request.full_url == doubleholo_object_url("dh-43"):
+            return FakeHTTPResponse(doubleholo_live_object(object_id="dh-43"))
+        if request.full_url == "https://supabase.example/abra.png":
+            return FakeBinaryHTTPResponse(image_bytes("PNG"))
+        raise AssertionError(f"unexpected URL {request.full_url}")
+
+    monkeypatch.chdir(root)
+    monkeypatch.setattr(manage_card_images, "urlopen", fake_urlopen)
+
+    assert manage_card_images.approve_doubleholo_command(approve_args()) == 0
+
+    assert requested_urls == [doubleholo_object_url("dh-43"), "https://supabase.example/abra.png"]
+    assert "exact_identity_match does not verify edition/variant" in capsys.readouterr().out
+    record = load_images(root)["cards"]["abra-01"]
+    assert record["upstream_id"] == "dh-43"
+    assert record["source_url"] == "https://supabase.example/abra.png"
+
+
+def test_approve_doubleholo_rejects_live_wrong_species_even_when_number_language_and_set_match(
+        tmp_path, monkeypatch):
+    root = project_fixture(tmp_path)
+    write_current_generated(root)
+    write_doubleholo_candidate_cache(root, "abra-01", [doubleholo_cached_candidate()])
+    requested_urls = []
+
+    def fake_urlopen(request, timeout):
+        requested_urls.append(request.full_url)
+        if request.full_url == doubleholo_object_url("dh-43"):
+            return FakeHTTPResponse(doubleholo_live_object(name="Kadabra", object_id="dh-43"))
+        raise AssertionError("approval should reject before image download")
+
+    monkeypatch.chdir(root)
+    monkeypatch.setattr(manage_card_images, "urlopen", fake_urlopen)
+
+    try:
+        manage_card_images.approve_doubleholo_command(approve_args())
+    except ValueError as exc:
+        assert "exact identity" in str(exc)
+    else:
+        raise AssertionError("wrong species must not pass exact DoubleHolo approval")
+
+    assert requested_urls == [doubleholo_object_url("dh-43")]
+    assert not (root / manage_card_images.CARD_ASSET_DIR / "abra-01.webp").exists()
+
+
+def test_approve_doubleholo_proxy_uses_live_object_and_live_url(tmp_path, monkeypatch):
+    root = project_fixture(tmp_path)
+    write_current_generated(root)
+    write_doubleholo_candidate_cache(root, "abra-01", [{
+        "candidate_index": 0,
+        "provider_id": "live-proxy-id",
+        "image_url": "https://attacker.example/cached.png",
+        "exact_identity_match": False,
+        "original": {
+            "objectID": "cached-id",
+            "name": "Wrong cached card",
+            "set_name": "Pokemon Wrong Set",
+            "number": "999",
+            "language": "english",
+            "image_url": "https://attacker.example/cached.png",
+            "image_url_small": None,
+        },
+    }])
+    requested_urls = []
+
+    def fake_urlopen(request, timeout):
+        requested_urls.append(request.full_url)
+        if request.full_url == doubleholo_object_url("live-proxy-id"):
+            return FakeHTTPResponse(doubleholo_live_object(
+                object_id="live-proxy-id",
+                name="Kadabra",
+                set_name="Pokemon Jungle",
+                number="64",
+                image_url="https://supabase.example/proxy.png",
+            ))
+        if request.full_url == "https://supabase.example/proxy.png":
+            return FakeBinaryHTTPResponse(image_bytes("PNG"))
+        raise AssertionError(f"unexpected approval URL {request.full_url}")
+
+    monkeypatch.chdir(root)
+    monkeypatch.setattr(manage_card_images, "urlopen", fake_urlopen)
+
+    assert manage_card_images.approve_doubleholo_command(approve_args(
+        classification="proxy",
+        note="Proxy image: DoubleHolo live object does not match the registry identity.",
+    )) == 0
+
+    assert requested_urls == [
+        doubleholo_object_url("live-proxy-id"),
+        "https://supabase.example/proxy.png",
+    ]
+    record = load_images(root)["cards"]["abra-01"]
+    assert record["classification"] == "proxy"
+    assert record["upstream_id"] == "live-proxy-id"
+    assert record["source_url"] == "https://supabase.example/proxy.png"
+    assert record["note"] == "Proxy image: DoubleHolo live object does not match the registry identity."
+    assert "identity_basis" not in record
+
+
+def test_approve_doubleholo_live_fetch_failure_preserves_existing_yaml_asset_and_skips_download(
+        tmp_path, monkeypatch):
+    root = project_fixture(tmp_path)
+    write_current_generated(root)
+    original_yaml, original_asset, asset_path = seed_existing_proxy_image(root)
+    write_doubleholo_candidate_cache(root, "abra-01", [doubleholo_cached_candidate()])
+    requested_urls = []
+
+    def fake_urlopen(request, timeout):
+        requested_urls.append(request.full_url)
+        if request.full_url == doubleholo_object_url("dh-43"):
+            raise OSError("Algolia unavailable")
+        raise AssertionError("image download should not run after live object fetch failure")
+
+    monkeypatch.chdir(root)
+    monkeypatch.setattr(manage_card_images, "urlopen", fake_urlopen)
+
+    try:
+        manage_card_images.approve_doubleholo_command(approve_args())
+    except ValueError as exc:
+        assert "DoubleHolo object fetch failed" in str(exc)
+        assert "Algolia unavailable" in str(exc)
+    else:
+        raise AssertionError("live object fetch failure should reject approval")
+
+    assert requested_urls == [doubleholo_object_url("dh-43")]
+    assert (root / "data/card-images.yaml").read_bytes() == original_yaml
+    assert asset_path.read_bytes() == original_asset
+
+
+def test_approve_doubleholo_rejects_live_object_id_mismatch_before_download(tmp_path, monkeypatch):
+    root = project_fixture(tmp_path)
+    write_current_generated(root)
+    write_doubleholo_candidate_cache(root, "abra-01", [doubleholo_cached_candidate(object_id="dh-43")])
+
+    def fake_urlopen(request, timeout):
+        if request.full_url == doubleholo_object_url("dh-43"):
+            return FakeHTTPResponse(doubleholo_live_object(object_id="different-id"))
+        raise AssertionError("approval should reject before image download")
+
+    monkeypatch.chdir(root)
+    monkeypatch.setattr(manage_card_images, "urlopen", fake_urlopen)
+
+    try:
+        manage_card_images.approve_doubleholo_command(approve_args())
+    except ValueError as exc:
+        assert "objectID" in str(exc)
+        assert "dh-43" in str(exc)
+    else:
+        raise AssertionError("live object id mismatch should reject approval")
 
     assert not (root / manage_card_images.CARD_ASSET_DIR / "abra-01.webp").exists()
 
@@ -811,6 +1139,7 @@ def test_approve_doubleholo_rejects_tampered_cached_exact_identity_flag(tmp_path
             "image_url_small": None,
         },
     }])
+    patch_doubleholo_live_object(monkeypatch, set_name="Pokemon Jungle", image_url="https://example.invalid/abra.png")
 
     def fail_if_called(request, timeout):
         raise AssertionError("approval should reject before image download")
@@ -850,6 +1179,7 @@ def test_approve_doubleholo_recomputes_exact_identity_from_current_registry(tmp_
             "image_url_small": None,
         },
     }])
+    patch_doubleholo_live_object(monkeypatch, set_name="Pokemon Base Set", image_url="https://example.invalid/abra.png")
 
     def fail_if_called(request, timeout):
         raise AssertionError("approval should reject before image download")
@@ -905,6 +1235,7 @@ def test_approve_doubleholo_rejects_exact_when_candidate_identity_is_not_exact(t
             "image_url_small": None,
         },
     }])
+    patch_doubleholo_live_object(monkeypatch, set_name="Pokemon Jungle", image_url="https://example.invalid/abra.png")
     monkeypatch.chdir(root)
 
     try:
@@ -928,6 +1259,7 @@ def test_approve_doubleholo_confirm_unnumbered_accepts_provider_internal_number_
     write_doubleholo_candidate_cache(root, "abra-01", [
         doubleholo_cached_candidate(number="SEALED-5427857")
     ])
+    patch_doubleholo_live_object(monkeypatch, number="SEALED-5427857")
     requested_urls = []
 
     def fake_urlopen(request, timeout):
@@ -967,6 +1299,7 @@ def test_approve_doubleholo_confirm_unnumbered_accepts_blank_candidate_number(
     )
     write_current_generated(root)
     write_doubleholo_candidate_cache(root, "abra-01", [doubleholo_cached_candidate(number="")])
+    patch_doubleholo_live_object(monkeypatch, number="")
 
     def fake_urlopen(request, timeout):
         return FakeBinaryHTTPResponse(image_bytes("PNG"))
@@ -993,6 +1326,7 @@ def test_approve_doubleholo_without_confirm_unnumbered_rejects_unnumbered_exact_
     )
     write_current_generated(root)
     write_doubleholo_candidate_cache(root, "abra-01", [doubleholo_cached_candidate(number="")])
+    patch_doubleholo_live_object(monkeypatch, number="")
 
     def fail_if_called(request, timeout):
         raise AssertionError("default exact approval should reject before image download")
@@ -1105,6 +1439,7 @@ def test_approve_doubleholo_confirm_unnumbered_rejects_candidate_mismatches_befo
             downloads.append(request.full_url)
             raise AssertionError("approval should reject before image download")
 
+        patch_doubleholo_live_candidate(monkeypatch, candidate)
         monkeypatch.chdir(root)
         monkeypatch.setattr(manage_card_images, "urlopen", fail_if_called)
 
@@ -1162,6 +1497,7 @@ def test_approve_doubleholo_confirm_identity_accepts_set_alias_and_records_prove
     )
     write_current_generated(root)
     write_doubleholo_candidate_cache(root, "abra-01", [doubleholo_cached_candidate()])
+    patch_doubleholo_live_object(monkeypatch)
     requested_urls = []
 
     def fake_urlopen(request, timeout):
@@ -1265,6 +1601,7 @@ def test_approve_doubleholo_confirm_identity_rejects_wrong_number_language_or_na
             downloads.append(request.full_url)
             raise AssertionError("approval should reject before image download")
 
+        patch_doubleholo_live_candidate(monkeypatch, candidate)
         monkeypatch.chdir(root)
         monkeypatch.setattr(manage_card_images, "urlopen", fail_if_called)
 
@@ -1291,6 +1628,7 @@ def test_approve_doubleholo_confirm_identity_rejects_missing_image_before_downlo
     )
     write_current_generated(root)
     write_doubleholo_candidate_cache(root, "abra-01", [doubleholo_cached_candidate(image_url=None)])
+    patch_doubleholo_live_object(monkeypatch, image_url=None)
 
     def fail_if_called(request, timeout):
         raise AssertionError("approval should reject before image download")
@@ -1337,18 +1675,18 @@ def test_approve_doubleholo_curator_confirmation_flags_are_documented_only_on_do
     assert "--identity-basis" not in approve_help.stdout
 
 
-def test_approve_doubleholo_rejects_missing_raw_original_with_rerun_search_error(tmp_path, monkeypatch):
+def test_approve_doubleholo_rejects_stale_cache_without_provider_id_with_refetch_instruction(
+        tmp_path, monkeypatch):
     root = project_fixture(tmp_path)
     write_current_generated(root)
     write_doubleholo_candidate_cache(root, "abra-01", [{
         "candidate_index": 0,
-        "provider_id": "dh-43",
         "image_url": "https://supabase.example/abra.png",
         "exact_identity_match": True,
     }])
 
     def fail_if_called(request, timeout):
-        raise AssertionError("approval should reject before image download")
+        raise AssertionError("approval should reject before object fetch or image download")
 
     monkeypatch.chdir(root)
     monkeypatch.setattr(manage_card_images, "urlopen", fail_if_called)
@@ -1356,29 +1694,59 @@ def test_approve_doubleholo_rejects_missing_raw_original_with_rerun_search_error
     try:
         manage_card_images.approve_doubleholo_command(approve_args())
     except ValueError as exc:
-        assert "raw candidate fields" in str(exc)
+        assert "stale or malformed" in str(exc)
+        assert "provider_id" in str(exc)
         assert "rerun search-doubleholo" in str(exc)
     else:
-        raise AssertionError("missing raw DoubleHolo candidate fields should reject approval")
+        raise AssertionError("stale DoubleHolo candidate cache should reject approval")
 
     assert not (root / manage_card_images.CARD_ASSET_DIR / "abra-01.webp").exists()
 
 
-def test_approve_doubleholo_uses_recomputed_raw_url_and_upstream_id(tmp_path, monkeypatch, capsys):
+def test_approve_missing_candidate_cache_names_actual_recovery_commands(tmp_path, monkeypatch, capsys):
+    cases = [
+        (
+            "tcgdex",
+            ["approve", "abra-01", "--candidate-index", "0", "--classification", "exact"],
+            "run search abra-01 first",
+        ),
+        (
+            "doubleholo",
+            ["approve-doubleholo", "abra-01", "--candidate-index", "0", "--classification", "exact"],
+            "run search-doubleholo abra-01 first",
+        ),
+    ]
+    for label, argv, expected in cases:
+        root = tmp_path / label
+        root.mkdir()
+        project_fixture(root)
+        write_current_generated(root)
+        monkeypatch.chdir(root)
+
+        assert manage_card_images.main(argv) == 1
+
+        stderr = capsys.readouterr().err
+        assert expected in stderr
+        assert "run doubleholo search" not in stderr
+        assert "run tcgdex search" not in stderr
+
+
+def test_approve_doubleholo_uses_cached_provider_id_to_select_live_object(
+         tmp_path, monkeypatch, capsys):
     root = project_fixture(tmp_path)
     write_current_generated(root)
     write_doubleholo_candidate_cache(root, "abra-01", [{
         "candidate_index": 0,
-        "provider_id": "tampered-id",
+        "provider_id": "live-id",
         "image_url": "https://attacker.example/tampered.png",
         "exact_identity_match": True,
         "original": {
             "objectID": "dh-43",
-            "name": "Abra",
-            "set_name": "Pokemon Base Set",
-            "number": "43",
-            "language": "english",
-            "image_url": "https://supabase.example/abra.png",
+            "name": "Kadabra",
+            "set_name": "Pokemon Jungle",
+            "number": "64",
+            "language": "japanese",
+            "image_url": "https://attacker.example/tampered.png",
             "image_url_small": None,
         },
     }])
@@ -1386,22 +1754,26 @@ def test_approve_doubleholo_uses_recomputed_raw_url_and_upstream_id(tmp_path, mo
 
     def fake_urlopen(request, timeout):
         requested_urls.append(request.full_url)
-        if request.full_url != "https://supabase.example/abra.png":
-            raise AssertionError(f"unexpected approval download URL {request.full_url}")
-        return FakeBinaryHTTPResponse(image_bytes("PNG"))
+        if request.full_url == doubleholo_object_url("live-id"):
+            return FakeHTTPResponse(doubleholo_live_object(
+                object_id="live-id", image_url="https://supabase.example/live.png"
+            ))
+        if request.full_url == "https://supabase.example/live.png":
+            return FakeBinaryHTTPResponse(image_bytes("PNG"))
+        raise AssertionError(f"unexpected approval URL {request.full_url}")
 
     monkeypatch.chdir(root)
     monkeypatch.setattr(manage_card_images, "urlopen", fake_urlopen)
 
     assert manage_card_images.approve_doubleholo_command(approve_args()) == 0
 
-    assert requested_urls == ["https://supabase.example/abra.png"]
+    assert requested_urls == [doubleholo_object_url("live-id"), "https://supabase.example/live.png"]
     output = capsys.readouterr().out
     assert "exact_identity_match does not verify edition/variant" in output
     record = load_images(root)["cards"]["abra-01"]
     assert record["provider"] == "doubleholo"
-    assert record["upstream_id"] == "dh-43"
-    assert record["source_url"] == "https://supabase.example/abra.png"
+    assert record["upstream_id"] == "live-id"
+    assert record["source_url"] == "https://supabase.example/live.png"
 
 
 def test_approve_doubleholo_writes_authorized_provider_record(tmp_path, monkeypatch):
@@ -1422,6 +1794,7 @@ def test_approve_doubleholo_writes_authorized_provider_record(tmp_path, monkeypa
             "image_url_small": None,
         },
     }])
+    patch_doubleholo_live_object(monkeypatch)
 
     def fake_urlopen(request, timeout):
         return FakeBinaryHTTPResponse(image_bytes("PNG"))
@@ -1460,6 +1833,7 @@ def test_approve_doubleholo_preserves_existing_asset_and_yaml_when_manifest_writ
             "image_url_small": None,
         },
     }])
+    patch_doubleholo_live_object(monkeypatch)
 
     def fake_urlopen(request, timeout):
         return FakeBinaryHTTPResponse(image_bytes("PNG", color=(255, 0, 0)))
@@ -1480,6 +1854,134 @@ def test_approve_doubleholo_preserves_existing_asset_and_yaml_when_manifest_writ
 
     assert (root / "data/card-images.yaml").read_bytes() == original_yaml
     assert asset_path.read_bytes() == original_asset
+
+
+def test_merged_images_preserves_identity_basis_for_same_doubleholo_upstream_id(tmp_path):
+    root = project_fixture(tmp_path)
+    images = load_images(root)
+    images["cards"]["abra-01"] = {
+        "classification": "exact",
+        "asset_path": "assets/images/cards/abra-01.webp",
+        "reviewed": True,
+        "reviewed_on": "2026-09-22",
+        "provider": "doubleholo",
+        "upstream_id": "dh-43",
+        "source_url": "https://supabase.example/old.png",
+        "usage_basis": "Owner-authorized DoubleHolo card catalog image.",
+        "identity_basis": "Curator confirmed unnumbered printing.",
+    }
+    write_images(root, images)
+
+    merged = manage_card_images._merged_images(root, "abra-01", {
+        "classification": "exact",
+        "asset_path": "assets/images/cards/abra-01.webp",
+        "reviewed": True,
+        "reviewed_on": "2026-09-23",
+        "provider": "doubleholo",
+        "upstream_id": "dh-43",
+        "source_url": "https://supabase.example/new-render.png",
+        "usage_basis": "Owner-authorized DoubleHolo card catalog image.",
+    })
+
+    assert merged["cards"]["abra-01"]["identity_basis"] == "Curator confirmed unnumbered printing."
+
+
+def test_merged_images_preserves_identity_basis_for_same_provider_source_url_without_upstream_id(tmp_path):
+    root = project_fixture(tmp_path)
+    images = load_images(root)
+    images["cards"]["abra-01"] = {
+        "classification": "exact",
+        "asset_path": "assets/images/cards/abra-01.webp",
+        "reviewed": True,
+        "reviewed_on": "2026-09-22",
+        "provider": "local-file",
+        "source_url": "https://example.invalid/source.png",
+        "usage_basis": "Owner supplied scan.",
+        "identity_basis": "Curator confirmed unnumbered printing.",
+    }
+    write_images(root, images)
+
+    merged = manage_card_images._merged_images(root, "abra-01", {
+        "classification": "exact",
+        "asset_path": "assets/images/cards/abra-01.webp",
+        "reviewed": True,
+        "reviewed_on": "2026-09-23",
+        "provider": "local-file",
+        "source_url": "https://example.invalid/source.png",
+        "usage_basis": "Owner supplied scan.",
+    })
+
+    assert merged["cards"]["abra-01"]["identity_basis"] == "Curator confirmed unnumbered printing."
+
+
+def test_replace_reviewed_image_does_not_reuse_identity_basis_for_replaced_doubleholo_candidate(
+        tmp_path):
+    root = project_fixture(tmp_path)
+    (root / "docs" / "card-registry.md").write_text(
+        registry_doc(confidence="confirmed", set_="Base Set", number=""),
+        encoding="utf-8",
+    )
+    write_current_generated(root)
+    images = load_images(root)
+    images["cards"]["abra-01"] = {
+        "classification": "exact",
+        "asset_path": "assets/images/cards/abra-01.webp",
+        "reviewed": True,
+        "reviewed_on": "2026-09-22",
+        "provider": "doubleholo",
+        "upstream_id": "old-candidate",
+        "source_url": "https://supabase.example/old.png",
+        "usage_basis": "Owner-authorized DoubleHolo card catalog image.",
+        "identity_basis": "Old curator basis for old candidate.",
+    }
+    write_images(root, images)
+    staged_asset = root / "tmp/digital-binder-review/staged/abra-01.webp"
+    write_image(staged_asset)
+
+    try:
+        manage_card_images._replace_reviewed_image(root, "abra-01", {
+            "classification": "exact",
+            "asset_path": "assets/images/cards/abra-01.webp",
+            "reviewed": True,
+            "reviewed_on": "2026-09-23",
+            "provider": "doubleholo",
+            "upstream_id": "new-candidate",
+            "source_url": "https://supabase.example/new.png",
+            "usage_basis": "Owner-authorized DoubleHolo card catalog image.",
+        }, staged_asset)
+    except ValueError as exc:
+        assert "identity_basis" in str(exc)
+    else:
+        raise AssertionError("replaced DoubleHolo candidate must provide a fresh unnumbered identity basis")
+
+
+def test_merged_images_does_not_carry_identity_basis_across_providers(tmp_path):
+    root = project_fixture(tmp_path)
+    images = load_images(root)
+    images["cards"]["abra-01"] = {
+        "classification": "exact",
+        "asset_path": "assets/images/cards/abra-01.webp",
+        "reviewed": True,
+        "reviewed_on": "2026-09-22",
+        "provider": "local-file",
+        "source_url": "https://example.invalid/source.png",
+        "usage_basis": "Owner supplied scan.",
+        "identity_basis": "Old local-file basis.",
+    }
+    write_images(root, images)
+
+    merged = manage_card_images._merged_images(root, "abra-01", {
+        "classification": "exact",
+        "asset_path": "assets/images/cards/abra-01.webp",
+        "reviewed": True,
+        "reviewed_on": "2026-09-23",
+        "provider": "doubleholo",
+        "upstream_id": "dh-43",
+        "source_url": "https://supabase.example/abra.png",
+        "usage_basis": "Owner-authorized DoubleHolo card catalog image.",
+    })
+
+    assert "identity_basis" not in merged["cards"]["abra-01"]
 
 
 def test_candidate_without_image_remains_reviewable():

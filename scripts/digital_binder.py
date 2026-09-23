@@ -213,15 +213,21 @@ def search_doubleholo(row: dict, opener=urlopen) -> list[dict]:
     )
     try:
         with opener(request, timeout=20) as response:
-            data = json.loads(response.read().decode("utf-8"))
-    except (OSError, UnicodeDecodeError, json.JSONDecodeError, ValueError):
-        return []
+            raw_payload = response.read()
+    except OSError as exc:
+        raise ValueError(f"DoubleHolo search failed: {exc}") from exc
+    try:
+        data = json.loads(raw_payload.decode("utf-8"))
+    except UnicodeDecodeError as exc:
+        raise ValueError(f"DoubleHolo search returned invalid JSON: {exc}") from exc
+    except json.JSONDecodeError as exc:
+        raise ValueError(f"DoubleHolo search returned invalid JSON: {exc}") from exc
     results = data.get("results") if isinstance(data, dict) else None
     if not isinstance(results, list) or not results:
-        return []
+        raise ValueError("DoubleHolo search returned malformed results envelope")
     hits = results[0].get("hits") if isinstance(results[0], dict) else None
     if not isinstance(hits, list):
-        return []
+        raise ValueError("DoubleHolo search returned malformed results envelope")
     candidates = []
     for hit in hits:
         if not isinstance(hit, dict) or not hit.get("objectID"):
@@ -300,7 +306,7 @@ def rank_doubleholo_candidates(row: dict, candidates: list[dict]) -> list[dict]:
         item["language_match"] = language_match
         item["set_match"] = set_match
         item["name_match"] = name_match
-        item["exact_identity_match"] = number_match and language_match and set_match
+        item["exact_identity_match"] = number_match and language_match and set_match and name_match
         item["score"] = score
         item["review_state"] = "candidate"
         ranked.append(item)

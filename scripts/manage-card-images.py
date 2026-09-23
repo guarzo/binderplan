@@ -9,7 +9,7 @@ import json
 import sys
 from datetime import date
 from pathlib import Path
-from urllib.parse import urlparse
+from urllib.parse import quote, urlparse
 from urllib.request import Request, urlopen
 
 import yaml
@@ -296,6 +296,18 @@ def _check_classification(row: dict, classification: str, note: str | None) -> N
         raise ValueError("proxy approval requires --note")
 
 
+def _same_stable_image_source(existing: dict, record: dict) -> bool:
+    if existing.get("provider") != record.get("provider"):
+        return False
+    existing_upstream_id = str(existing.get("upstream_id") or "").strip()
+    record_upstream_id = str(record.get("upstream_id") or "").strip()
+    if existing_upstream_id or record_upstream_id:
+        return bool(existing_upstream_id and record_upstream_id and existing_upstream_id == record_upstream_id)
+    existing_source_url = str(existing.get("source_url") or "").strip()
+    record_source_url = str(record.get("source_url") or "").strip()
+    return bool(existing_source_url and record_source_url and existing_source_url == record_source_url)
+
+
 def _merged_images(root: Path, card_id: str, record: dict) -> dict:
     images = _load_images(root)
     existing = images.setdefault("cards", {}).get(card_id)
@@ -303,7 +315,8 @@ def _merged_images(root: Path, card_id: str, record: dict) -> dict:
             isinstance(existing, dict)
             and existing.get("identity_basis")
             and not record.get("identity_basis")
-            and record.get("classification") == "exact"):
+            and record.get("classification") == "exact"
+            and _same_stable_image_source(existing, record)):
         record["identity_basis"] = existing["identity_basis"]
     images["cards"][card_id] = record
     return images
@@ -392,9 +405,21 @@ def approve_local_command(args) -> int:
     return 0
 
 
+def _candidate_cache_recovery_command(source: str, card_id: str) -> str:
+    commands = {
+        "tcgdex": "search",
+        "doubleholo": "search-doubleholo",
+    }
+    command = commands.get(source, source)
+    return f"{command} {card_id}"
+
+
 def _load_candidate_from_path(path: Path, card_id: str, candidate_index: int, source: str) -> dict:
     if not path.exists():
-        raise ValueError(f"missing {source} candidate cache for {card_id}; run {source} search first")
+        recovery_command = _candidate_cache_recovery_command(source, card_id)
+        raise ValueError(
+            f"missing {source} candidate cache for {card_id}; run {recovery_command} first"
+        )
     data = json.loads(path.read_text(encoding="utf-8"))
     for candidate in data.get("candidates", []):
         if candidate.get("candidate_index") == candidate_index:
@@ -414,17 +439,46 @@ def _load_doubleholo_candidate(root: Path, card_id: str, candidate_index: int) -
     )
 
 
-def _doubleholo_raw_hit_from_candidate(candidate: dict) -> dict:
-    original = candidate.get("original")
-    if isinstance(original, dict) and original.get("objectID"):
-        return dict(original)
-    raise ValueError(
-        "DoubleHolo exact approval requires raw candidate fields; rerun search-doubleholo"
+def _fetch_doubleholo_object(object_id: str, opener=urlopen) -> dict:
+    clean_object_id = str(object_id or "").strip()
+    if not clean_object_id:
+        raise ValueError(
+            "DoubleHolo approval cache is stale or malformed: selected candidate lacks provider_id; "
+            "rerun search-doubleholo"
+        )
+    request = Request(
+        f"https://w5sf479zkl-dsn.algolia.net/1/indexes/production_cards/{quote(clean_object_id, safe='')}",
+        headers={
+            "User-Agent": digital_binder.TCGDEX_USER_AGENT,
+            "X-Algolia-Application-Id": digital_binder.DOUBLEHOLO_APPLICATION_ID,
+            "X-Algolia-API-Key": digital_binder.DOUBLEHOLO_SEARCH_ONLY_API_KEY,
+        },
+        method="GET",
     )
+    try:
+        with opener(request, timeout=20) as response:
+            payload = response.read()
+    except OSError as exc:
+        raise ValueError(f"DoubleHolo object fetch failed for {clean_object_id}: {exc}") from exc
+    try:
+        data = json.loads(payload.decode("utf-8"))
+    except UnicodeDecodeError as exc:
+        raise ValueError(f"DoubleHolo object fetch returned invalid JSON for {clean_object_id}: {exc}") from exc
+    except json.JSONDecodeError as exc:
+        raise ValueError(f"DoubleHolo object fetch returned invalid JSON for {clean_object_id}: {exc}") from exc
+    if not isinstance(data, dict):
+        raise ValueError(f"DoubleHolo object fetch returned malformed object for {clean_object_id}")
+    return data
 
 
-def _recomputed_doubleholo_candidate(row: dict, candidate: dict) -> dict:
-    raw = _doubleholo_raw_hit_from_candidate(candidate)
+def _recomputed_doubleholo_candidate(row: dict, candidate: dict, opener=urlopen) -> dict:
+    provider_id = str(candidate.get("provider_id") or "").strip()
+    raw = _fetch_doubleholo_object(provider_id, opener=opener)
+    if str(raw.get("objectID") or "") != provider_id:
+        raise ValueError(
+            f"DoubleHolo objectID mismatch for selected candidate: expected {provider_id}, "
+            f"got {raw.get('objectID')!r}"
+        )
     normalized = digital_binder.normalize_doubleholo_candidate(raw)
     ranked = digital_binder.rank_doubleholo_candidates(row, [normalized])
     if not ranked:
@@ -537,7 +591,7 @@ def approve_doubleholo_command(args) -> int:
     if confirm_unnumbered:
         _check_doubleholo_confirm_unnumbered_args(args, row)
     candidate = _load_doubleholo_candidate(root, args.card_id, args.candidate_index)
-    recomputed = _recomputed_doubleholo_candidate(row, candidate)
+    recomputed = _recomputed_doubleholo_candidate(row, candidate, opener=urlopen)
     identity_record = {}
     if confirm_identity:
         identity_record = _doubleholo_confirmed_identity_record(args, recomputed)
