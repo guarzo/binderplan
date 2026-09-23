@@ -17,7 +17,7 @@ This is not an inventory. It does not track where each card physically is, and i
 
 A card that obviously belonged where it went gets no entry.
 
-**Vocabulary.** Destinations use names that already exist — Volume 1 and Volume 2 sub-themes, and the holding-box sections from `content/guides/holding-box.md`: EDGE, REDUNDANT, HERITAGE, FUTURE SELF, RELEASE. No parallel naming scheme.
+**Vocabulary.** Destinations use names that already exist — Volume 1 and Volume 2 sub-themes; the historical holding-box sections from `content/guides/holding-box.md`; and the Review, Keeper, Trade, and Release architecture adopted in [`Review, Keeper, and Trade Binder Design`](superpowers/specs/2026-09-22-review-keeper-trade-binders-design.md). No parallel naming scheme.
 
 **Card IDs.** Entries cite cards by registry ID from [`card-registry.md`](card-registry.md), written as `Umbreon (umbreon-02)` — species alongside the ID for readability, neither alone. Species names by themselves are ambiguous: Umbreon appears five times across the binder, Mewtwo four, Pikachu seven. A card with no ID gets one at the moment it is first cited here — **except** a card that left the collection before the registry began on 2026-08-01. Those are named in prose without an ID and never receive one; registering a card nobody can produce would be the backfill this file forbids.
 
@@ -180,3 +180,25 @@ Three additional comparisons on the checklist were not executed:
 Those incumbents remain where they were. A comparison is not movement, so none of the three reserve cards receives a registry ID from this decision alone.
 
 No release is recorded. EDGE and HERITAGE are observed holding-box destinations, not disposal states.
+
+---
+
+## 2026-09-22 — Holding reshoot reconciled; Yveltal released
+
+Governing evidence: the complete [holding-sort photograph sequence](evidence/2026-09-22/README.md), its [100-card inventory](2026-09-22-holding-binder-inventory.md), and the owner's follow-up clarifications.
+
+The photographed nine-pocket binder is **interim staging**, not execution of the final Review/Keeper/Trade binder architecture. The 100 photographed cards supersede the earlier 97-entry inventory proposal. No photographed card is currently confirmed available for Trade.
+
+### Mewtwo EX (`mewtwo-05`) and Torterra Lv.X (`torterra-02`) → Keeper, subsection undecided
+
+The superseded proposal placed both cards in Review/REDUNDANT under Awakened Power. The owner instead confirmed permanent Keeper status but deliberately left the Keeper subsection undecided. This is a classification decision, not evidence of final four-pocket Keeper placement.
+
+### Kirlia (`kirlia-01`) remains Beautiful Misfits
+
+The photographed Kirlia sits among Heritage cards because it was found later. The owner explicitly declined a Heritage reassignment; its Beautiful Misfits classification remains unchanged. Its exact set and number remain unresolved, but the photographed physical identity now has a permanent registry ID.
+
+### Yveltal (`yveltal-03`) → RELEASE
+
+The English Steam Siege 65/114 holding copy was physically removed. This is the only Release action confirmed from the sort. It is distinct from Yveltal EX (`yveltal-01`) and Chinese Yveltal (`yveltal-02`) in the thematic binders.
+
+The earlier proposed releases of Yveltal Celebrations, Pokémon Communication, and Piplup from Manaphy & Lucario were **not** executed; all three remain visible in the authoritative holding photographs.

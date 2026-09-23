@@ -366,7 +366,7 @@ def render_worklist(rows, previous=None):
         f"read. The remaining {missing} rows ({_pct(missing, total):.1f}%) are missing one or "
         "both fields and are structurally invisible to this check: two physical duplicates "
         "sitting in the registry right now would not be flagged unless both happened to land "
-        f"among that same {both}-row minority."
+        f"among those {both} fully identified rows."
     )
     lines.append("")
     lines.append("## 3. Confirmation queue — clusters first")

@@ -2,7 +2,7 @@
 
 Generated from `docs/card-registry.md` by `python3 scripts/check-registry.py docs/card-registry.md --worklist --write`. Every section below is recomputed from the registry except "4. Gaps and known issues", which is hand-written; regeneration reads the previous version of this document and carries that section forward automatically.
 
-**Honest numbers, recomputed from the current file.** 181 rows total. 9 `photo` (5.0%), 28 `uncertain` (15.5%). 170 rows have both `set` and `number` read (93.9%) — 2 have `number` only, 8 have `set` only, 1 have neither field. The confirmation queue (section 3) holds 28 rows across 23 species: 5 clusters (10 rows) and 18 singletons.
+**Honest numbers, recomputed from the current file.** 185 rows total. 9 `photo` (4.9%), 29 `uncertain` (15.7%). 173 rows have both `set` and `number` read (93.5%) — 2 have `number` only, 8 have `set` only, 2 have neither field. The confirmation queue (section 3) holds 29 rows across 24 species: 5 clusters (10 rows) and 19 singletons.
 
 ## 1. Blocked — species unreadable
 
@@ -12,11 +12,11 @@ None. The registry has no state for a card that was seen but never identified to
 
 **None found** — `python3 scripts/check-registry.py docs/card-registry.md` reports `duplicate printings: 0`.
 
-Take that as a weak result, not a clean bill of health. The check requires all four fields — `species`, `set`, `number`, `language` — to match on two rows, and only **170 of 181 rows (93.9%)** have both `set` and `number` read. The remaining 11 rows (6.1%) are missing one or both fields and are structurally invisible to this check: two physical duplicates sitting in the registry right now would not be flagged unless both happened to land among that same 170-row minority.
+Take that as a weak result, not a clean bill of health. The check requires all four fields — `species`, `set`, `number`, `language` — to match on two rows, and only **173 of 185 rows (93.5%)** have both `set` and `number` read. The remaining 12 rows (6.5%) are missing one or both fields and are structurally invisible to this check: two physical duplicates sitting in the registry right now would not be flagged unless both happened to land among those 173 fully identified rows.
 
 ## 3. Confirmation queue — clusters first
 
-28 rows, 23 species. **5 species (10 rows) hold two or more unresolved rows** and lead the list, because that is where an undetected duplicate printing could hide. The remaining 18 species have a single unresolved row each.
+29 rows, 24 species. **5 species (10 rows) hold two or more unresolved rows** and lead the list, because that is where an undetected duplicate printing could hide. The remaining 19 species have a single unresolved row each.
 
 The "Unreadable" column is the row's own `notes` field: what specifically blocked the read.
 
@@ -57,7 +57,7 @@ The "Unreadable" column is the row's own `notes` field: what specifically blocke
 | umbreon-02 | ブラッキー (JP) | contemplation_1.webp | vintage Pokedex-number print, distinct from umbreon-01, set per owner's doubleholo entry |
 | umbreon-03 | Umbreon (EN) | elemental_solitude_1.webp | Confuse Ray/Shadow Shutdown, distinct from umbreon-01/02, set code not textual |
 
-### Singletons (18 species, one unresolved row each)
+### Singletons (19 species, one unresolved row each)
 
 | ID | Card name | Source image | Unreadable |
 |---|---|---|---|
@@ -67,6 +67,7 @@ The "Unreadable" column is the row's own `notes` field: what specifically blocke
 | espeon-01 | わるいエーフィ (JP) | elemental_solitude_1.webp | Dark Espeon, vintage-style print, Pokédex-number print, set per owner's doubleholo export 2026-09-18 |
 | kangaskhan-01 | ガルーラ (JP) | IMG_6858.HEIC | vintage Pokedex-number print, set per owner's doubleholo entry |
 | kingdra-01 | キングドラ (JP) | on_attack_1.webp | Lv.47, vintage Pokedex-number print, illustrator Mitsuhiro Arita, set per owner's doubleholo entry |
+| kirlia-01 | キルリア (JP) | IMG_7119.HEIC | holding copy; exact set and number unresolved; owner confirmed Beautiful Misfits classification |
 | litleo-01 | Litleo (EN) | IMG_7082.jpeg | holding photo R1C5; set/number from holding export plus artwork match, not a legible footer; doorway illustration rare; entered Threshold in verified 2026-09-21 swap |
 | lucario-02 | Lucario LV.X (EN) | IMG_7081.jpeg | holding photo R4C4; set/number from holding export plus artwork match, not a legible footer; entered On the Attack in verified 2026-09-21 swap |
 | lugia-01 | ルギア (JP) | awakened_power_1.webp | vintage Pokedex-number print, set per owner's doubleholo entry |
@@ -132,16 +133,18 @@ correct: a naming error in the photo pipeline could not corrupt the registry, on
 downstream of it. Those captions have since been corrected, and the residue is confined to
 `first_seen`, where it is intentional and `PAGE_ORDER` accounts for it.
 
-The registry currently holds 181 rows: the 171 cards in the binder plus 10 physical identities
-recorded from earlier occupancy that are now outside it. The rows remain by design: the registry
-records identity, not current location.
+The registry currently holds 185 rows: the 171 cards in the thematic binders plus 14 identities
+tracked outside them. Ten are confirmed in the holding inventory, three have no observed current
+destination, and one has a confirmed release. The rows remain by design: the registry records
+identity, not current location.
 
 Radiant Collection Ursaring (`ursaring-01`) is no longer a departed card. The owner identified the
 RC16/RC25 card entering Companions on 2026-09-21 as that same physical identity, so it keeps its ID
 and re-enters without a new row.
 
-**Ten registered cards are currently outside the thematic binder.** Their latest observed holding
-destinations come from the ledger; absence from the binder does not establish release.
+**Fourteen registered identities are currently outside the thematic binders.** Their latest states
+come from the ledger. Absence from the thematic binders does not establish release; only
+Yveltal (`yveltal-03`) has an explicit release record.
 
 | ID | Card | Former page | Replaced by | Latest recorded state |
 |---|---|---|---|---|
@@ -155,6 +158,10 @@ destinations come from the ledger; absence from the binder does not establish re
 | snorlax-02 | カビゴンVMAX (JP) | On the Attack | Charizard (`charizard-03`) | EDGE |
 | ursaring-02 | リングマ (JP) | On the Attack | Lucario (`lucario-02`) | EDGE |
 | ns-plan-01 | N's Plan (EN) | Legendary Bearing p2 | Blastoise (`blastoise-02`) | HERITAGE |
+| kirlia-01 | キルリア (JP) | — | — | Beautiful Misfits |
+| mewtwo-05 | Mewtwo EX (EN) | — | — | Keeper · subsection undecided |
+| torterra-02 | ドダイトス LV.X (JP) | — | — | Keeper · subsection undecided |
+| yveltal-03 | Yveltal (EN) | — | — | RELEASE — physically removed 2026-09-22 |
 
 **One binder page had never been photographed at all**, and was entirely absent from pass 1 —
 9 cards, seeded from the reshoot as `dawns-stadium-01` through the rest of the `IMG_6865.HEIC`
@@ -283,4 +290,10 @@ Photographs record what was on a page when the shoot happened, so a card since s
 | ID | Card name | Unreadable |
 |---|---|---|
 | charizard-03 | Charizard VSTAR (EN) | holding photo R2C2; set/number from holding export plus artwork match, not a legible footer; entered On the Attack in verified 2026-09-21 swap |
+
+### Unmapped source image · IMG_7119.HEIC
+
+| ID | Card name | Unreadable |
+|---|---|---|
+| kirlia-01 | キルリア (JP) | holding copy; exact set and number unresolved; owner confirmed Beautiful Misfits classification |
 

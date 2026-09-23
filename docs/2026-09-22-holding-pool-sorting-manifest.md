@@ -1,19 +1,22 @@
 # Holding Pool Sorting Manifest
 
 **Date:** 2026-09-22
-**Status:** Proposed first sort; no physical movement is asserted by this document.
+**Status:** Superseded inventory proposal. Retained for decision history; do not use its 97 rows as the current holding count.
+
+**Current inventory:** [`Photographed Holding Binder Inventory`](2026-09-22-holding-binder-inventory.md) — 100 photographed cards confirmed by the owner.
+
 **Design:** [`Review, Keeper, and Trade Binder Design`](superpowers/specs/2026-09-22-review-keeper-trade-binders-design.md)
 
-## Reconciliation
+## Historical reconciliation
 
-The current pool contains **97 physical cards**:
+This proposal estimated **97 physical cards** before the complete holding-binder reshoot was reconciled:
 
 - 102 occupied positions in the preserved 2026-09-20 holding photographs;
 - minus five removed duplicate copies;
 - minus seven cards moved into the canonical binders on 2026-09-21;
 - plus seven cards displaced from canon by those movements.
 
-Every current inventory entry appears exactly once below. `HP-NNN` values are neutral sorting IDs assigned by this manifest; they are not claims about photograph pocket coordinates or permanent registry IDs. Locate cards by the printed card label during the in-hand sort. Low-confidence identities should be checked before final placement.
+Each entry in the superseded proposal appears once below. `HP-NNN` values are historical sorting IDs, not current inventory identifiers, photograph pocket coordinates, or permanent registry IDs. Complete photographs later established that some rows were identity/reconciliation artifacts and that other physical cards were omitted.
 
 ## Card-by-card assignments
 
