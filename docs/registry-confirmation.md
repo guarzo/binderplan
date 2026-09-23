@@ -134,8 +134,9 @@ downstream of it. Those captions have since been corrected, and the residue is c
 `first_seen`, where it is intentional and `PAGE_ORDER` accounts for it.
 
 The registry currently holds 185 rows: the 171 cards in the thematic binders plus 14 identities
-tracked outside them. Thirteen remain in the holding inventory and one has a confirmed release.
-The rows remain by design: the registry records identity, not current location.
+tracked outside them. Ten are confirmed in the holding inventory, three have no observed current
+destination, and one has a confirmed release. The rows remain by design: the registry records
+identity, not current location.
 
 Radiant Collection Ursaring (`ursaring-01`) is no longer a departed card. The owner identified the
 RC16/RC25 card entering Companions on 2026-09-21 as that same physical identity, so it keeps its ID
