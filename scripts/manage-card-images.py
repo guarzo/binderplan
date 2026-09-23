@@ -8,6 +8,7 @@ import html
 import json
 import sys
 from datetime import date
+from http.client import IncompleteRead
 from pathlib import Path
 from urllib.parse import quote, urlparse
 from urllib.request import Request, urlopen
@@ -458,7 +459,7 @@ def _fetch_doubleholo_object(object_id: str, opener=urlopen) -> dict:
     try:
         with opener(request, timeout=20) as response:
             payload = response.read()
-    except OSError as exc:
+    except (OSError, IncompleteRead) as exc:
         raise ValueError(f"DoubleHolo object fetch failed for {clean_object_id}: {exc}") from exc
     try:
         data = json.loads(payload.decode("utf-8"))

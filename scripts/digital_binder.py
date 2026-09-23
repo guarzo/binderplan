@@ -9,6 +9,7 @@ import re
 import subprocess
 import unicodedata
 from functools import lru_cache
+from http.client import IncompleteRead
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import quote, urlencode, unquote, urlsplit
@@ -214,7 +215,7 @@ def search_doubleholo(row: dict, opener=urlopen) -> list[dict]:
     try:
         with opener(request, timeout=20) as response:
             raw_payload = response.read()
-    except OSError as exc:
+    except (OSError, IncompleteRead) as exc:
         raise ValueError(f"DoubleHolo search failed: {exc}") from exc
     try:
         data = json.loads(raw_payload.decode("utf-8"))

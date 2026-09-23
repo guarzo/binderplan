@@ -3,6 +3,7 @@ import importlib.util
 import json
 import re
 import shutil
+from http.client import IncompleteRead
 import subprocess
 import sys
 from html.parser import HTMLParser
@@ -767,6 +768,18 @@ def test_search_doubleholo_raises_clear_error_for_network_failure():
         raise AssertionError("DoubleHolo provider network failures must not become no-hit results")
 
 
+def test_search_doubleholo_raises_clear_error_for_truncated_response():
+    def truncated_opener(request, timeout):
+        raise IncompleteRead(b"partial", 20)
+
+    try:
+        digital_binder.search_doubleholo(doubleholo_search_row(), opener=truncated_opener)
+    except ValueError as exc:
+        assert "DoubleHolo search failed" in str(exc)
+    else:
+        raise AssertionError("truncated provider responses must use controlled error handling")
+
+
 def test_search_doubleholo_raises_clear_error_for_bad_json():
     def malformed_opener(request, timeout):
         return FakeBinaryHTTPResponse(b"not json")
@@ -943,6 +956,18 @@ def test_approve_doubleholo_fetches_live_object_with_public_algolia_headers():
     assert request.headers["X-algolia-api-key"] == "50fdd89ab8d777151bc000bba6097357"
     assert "Cookie" not in request.headers
     assert timeout == 20
+
+
+def test_approve_doubleholo_object_fetch_wraps_truncated_response():
+    def truncated_opener(request, timeout):
+        raise IncompleteRead(b"partial", 20)
+
+    try:
+        manage_card_images._fetch_doubleholo_object("dh-43", opener=truncated_opener)
+    except ValueError as exc:
+        assert "DoubleHolo object fetch failed for dh-43" in str(exc)
+    else:
+        raise AssertionError("truncated object responses must use controlled error handling")
 
 
 def test_approve_doubleholo_uses_live_object_not_tampered_cached_original_url_or_identity(
