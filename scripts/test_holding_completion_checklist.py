@@ -15,7 +15,7 @@ def inventory_observations() -> set[str]:
 
 def checklist_observations() -> list[str]:
     text = CHECKLIST.read_text(encoding="utf-8")
-    return re.findall(r"\\(?:settledrow|decisionrow)\{[^}]*\}\{(HB-P\d{2}-\d{2})\}", text)
+    return re.findall(r"\\(?:settledrow|recommendrow)\{[^}]*\}\{(HB-P\d{2}-\d{2})\}", text)
 
 
 def test_checklist_covers_every_current_card_exactly_once():
@@ -35,13 +35,48 @@ def test_checklist_preserves_owner_safeguards():
     assert "interim staging" in text
 
 
-def test_checklist_has_unfinished_decisions_and_closeout():
+def test_checklist_recommends_every_previously_open_decision():
+    text = CHECKLIST.read_text(encoding="utf-8")
+    rows = re.findall(
+        r"^\\recommendrow\{([^}]*)\}\{(HB-P\d{2}-\d{2})\}\{([^}]*)\}"
+        r"\{([^}]*)\}\{([^}]*)\}\{([^}]*)\}",
+        text,
+        re.MULTILINE,
+    )
+
+    assert len(rows) == 53
+    assert not re.search(r"^\\decisionrow\{", text, re.MULTILINE)
+    for recommendation, _observation, _type, _card, reason, alternative in rows:
+        assert recommendation.strip()
+        assert recommendation not in {"Classify", "Classify Pikachu", "Choose destination"}
+        assert len(reason.strip()) >= 20
+        assert alternative.strip()
+
+
+def test_release_recommendations_require_separate_authorization():
+    text = CHECKLIST.read_text(encoding="utf-8")
+    recommended = set(
+        re.findall(r"^\\recommendrow\{Release\}\{(HB-P\d{2}-\d{2})\}", text, re.MULTILINE)
+    )
+    authorized_rows = set(
+        re.findall(r"^\\releaseauth\{(HB-P\d{2}-\d{2})\}", text, re.MULTILINE)
+    )
+
+    assert len(recommended) == 5
+    assert recommended == authorized_rows
+    assert len(re.findall(r"^\\tradeauth$", text, re.MULTILINE)) == 6
+    assert "Signed authorization continuation attached" in text
+    assert "Accepting a recommendation does not authorize Trade or physical Release" in text
+
+
+def test_checklist_has_confirmation_and_closeout():
     text = CHECKLIST.read_text(encoding="utf-8")
 
-    assert re.search(r"^\\decisionrow\{[^}]+\}\{HB-P", text, re.MULTILINE)
     assert "Confirm marked destination" in text
     assert "a photographed interim position alone is not a final classification" in text
-    assert r"\textbf{Final:}" in text
+    assert "Accept recommendation" in text
+    assert "Strongest alternative" in text
+    assert r"\checkbox\ Change to: \blankline{0.78\textwidth}" in text
     assert "Final Review count" in text
     assert "Final Keeper count" in text
     assert "Grand total reconciled" in text
