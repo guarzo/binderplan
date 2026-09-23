@@ -144,16 +144,15 @@ cards:
     source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/21592/primary.webp
   charmander-03:
     provider: doubleholo
-    upstream_id: '3023'
+    upstream_id: '3097'
     usage_basis: Owner-authorized DoubleHolo card catalog image.
     classification: exact
     asset_path: assets/images/cards/charmander-03.webp
     reviewed: true
     reviewed_on: '2026-09-23'
-    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/3023/primary.webp
-    note: Curator selected DoubleHolo 3023 after variant inspection; competing 3097
-      is the Reverse Holo variant, while the archived v2-05 pocket matches the non-reverse
-      Expedition 98 printing.
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/3097/primary.webp
+    note: Archived leaf shows the reverse-holo printing; selected DoubleHolo 3097
+      over normal 3023.
   cinccino-01:
     classification: missing
     asset_path: ''
@@ -276,15 +275,16 @@ cards:
     upstream_id: base5-53
     source_url: https://assets.tcgdex.net/en/base/base5/53/high.webp
   dratini-02:
-    provider: tcgdex
-    upstream_id: base1-26
+    provider: doubleholo
+    upstream_id: '23318'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
     classification: exact
     asset_path: assets/images/cards/dratini-02.webp
     reviewed: true
     reviewed_on: '2026-09-23'
-    source_url: https://assets.tcgdex.net/en/base/base1/26/high.webp
-    note: Curator selected TCGdex base1-26 after inspecting the competing number-26
-      Dratini variant ex3-26; archived identity is Base Set 26/102, not EX Dragon.
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/23318/primary.webp
+    note: Archived leaf shows no 1st Edition stamp and matches normal unlimited DoubleHolo
+      23318; rejected 23328 1st Edition, 23345 Shadowless, and 53527 1999-2000 variants.
   eevee-01:
     provider: tcgdex
     upstream_id: svp-173
@@ -986,15 +986,15 @@ cards:
     reviewed: false
     reviewed_on: ''
   piplup-01:
-    provider: tcgdex
-    upstream_id: pop6-15
+    provider: doubleholo
+    upstream_id: '66329'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
     classification: exact
     asset_path: assets/images/cards/piplup-01.webp
     reviewed: true
     reviewed_on: '2026-09-23'
-    source_url: https://assets.tcgdex.net/en/pop/pop6/15/high.webp
-    note: Curator selected TCGdex pop6-15 after inspecting the competing number-15
-      Piplup variant pop8-15; archived identity is POP Series 6 number 15.
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/66329/primary.webp
+    note: Archived leaf shows holo finish; selected DoubleHolo 66329 Piplup [Holo].
   plusle-01:
     provider: doubleholo
     upstream_id: '77937'
@@ -1278,16 +1278,15 @@ cards:
     source_url: https://assets.tcgdex.net/en/sv/sv07/148/high.webp
   squirtle-02:
     provider: doubleholo
-    upstream_id: '3026'
+    upstream_id: '3069'
     usage_basis: Owner-authorized DoubleHolo card catalog image.
     classification: exact
     asset_path: assets/images/cards/squirtle-02.webp
     reviewed: true
     reviewed_on: '2026-09-23'
-    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/3026/primary.webp
-    note: Curator selected DoubleHolo 3026 after variant inspection; competing 3069
-      is the Reverse Holo variant, while the archived v2-05 pocket matches the non-reverse
-      Expedition 131 printing.
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/3069/primary.webp
+    note: Archived leaf shows the reverse-holo printing; selected DoubleHolo 3069
+      over normal 3026.
   squirtle-03:
     classification: missing
     asset_path: ''
