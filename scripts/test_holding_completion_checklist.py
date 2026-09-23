@@ -38,7 +38,7 @@ def test_checklist_preserves_owner_safeguards():
 def test_checklist_has_unfinished_decisions_and_closeout():
     text = CHECKLIST.read_text(encoding="utf-8")
 
-    assert text.count(r"\decisionrow") > 0
+    assert re.search(r"^\\decisionrow\{[^}]+\}\{HB-P", text, re.MULTILINE)
     assert "Confirm marked destination" in text
     assert "a photographed interim position alone is not a final classification" in text
     assert r"\textbf{Final:}" in text
