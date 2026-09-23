@@ -72,7 +72,7 @@ The column is left as recorded rather than rewritten: `first_seen` is provenance
 | electrode-01 | Electrode | マルマイン | JP | sm1 | 037/095 | photo | companions_2.webp 2026-08-01 |  |
 | emolga-01 | Emolga | エモンガ | JP | sv11B | 116/086 | confirmed | joyful_action_1.webp 2026-08-01 | checked in hand 2026-09-19 |
 | entei-01 | Entei | 結晶塔のエンテイ | JP | 10th Movie Commemoration Promo |  | confirmed | legendary_bearing_1.webp 2026-08-01 | No.244 dex entry, holo, no card number recorded, no number printed, checked in hand 2026-09-19 |
-| espeon-01 | Espeon | わるいエーフィ | JP | Darkness, and to Light | No.196 | uncertain | elemental_solitude_1.webp 2026-08-01 | Dark Espeon, vintage-style print, Pokédex-number print, set per owner's doubleholo export 2026-09-18 |
+| espeon-01 | Espeon | わるいエーフィ | JP | Darkness, and to Light | No.196 | photo | elemental_solitude_1.webp 2026-08-01 | Dark Espeon, vintage-style print, Pokédex-number print, set per owner's DoubleHolo export 2026-09-18; 2026-09-22 visual review matched authorized DoubleHolo 30801 identity from archived photo, not checked in hand |
 | espeon-02 | Espeon | 太阳伊布GX | ZH | CSM1AC | 195/151 | confirmed | legendary_bearing_2.webp 2026-08-01 | GX card, SSR rarity mark, distinct from espeon-01, 太阳伊布 is Espeon's Chinese localized name, checked in hand 2026-09-19 |
 | flareon-01 | Flareon | Flareon EX | EN | Radiant Collection | RC28/RC32 | confirmed | companions_2.webp 2026-08-01 | checked in hand 2026-09-19 |
 | gardevoir-01 | Gardevoir | ザーナイトex | JP | Miracle of the Desert | 28 | confirmed | legendary_bearing_2.webp 2026-08-01 | ex card, Breakdown/Psycho Storm, set/number from owner's doubleholo export 2026-09-18, denominator not recorded |

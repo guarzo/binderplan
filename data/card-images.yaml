@@ -9,13 +9,14 @@ cards:
     upstream_id: xyp-XY178
     source_url: https://assets.tcgdex.net/en/xy/xyp/XY178/high.webp
   ampharos-01:
-    classification: photo-crop
+    provider: doubleholo
+    upstream_id: '45885'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: exact
     asset_path: assets/images/cards/ampharos-01.webp
     reviewed: true
     reviewed_on: '2026-09-22'
-    provider: evidence-crop
-    source_path: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/elemental_solitude_1.webp
-    note: Pilot fallback; re-search stock or sourced scan before Volume I publication.
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/45885/primary.webp
   arcanine-01:
     classification: missing
     asset_path: ''
@@ -287,13 +288,14 @@ cards:
     note: Curator visually confirmed the unnumbered 10th Movie Commemoration Promo
       printing against the archived leaf.
   espeon-01:
-    classification: photo-crop
+    provider: doubleholo
+    upstream_id: '30801'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: exact
     asset_path: assets/images/cards/espeon-01.webp
     reviewed: true
     reviewed_on: '2026-09-22'
-    provider: evidence-crop
-    source_path: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/elemental_solitude_1.webp
-    note: Pilot fallback; re-search stock or sourced scan before Volume I publication.
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/30801/primary.webp
   espeon-02:
     classification: photo-crop
     asset_path: assets/images/cards/espeon-02.webp
@@ -596,13 +598,17 @@ cards:
     upstream_id: SV7a-070
     source_url: https://assets.tcgdex.net/ja/SV/SV7a/070/high.webp
   latios-02:
-    classification: photo-crop
+    provider: doubleholo
+    upstream_id: '34886'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: exact
     asset_path: assets/images/cards/latios-02.webp
     reviewed: true
     reviewed_on: '2026-09-22'
-    provider: evidence-crop
-    source_path: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/elemental_solitude_1.webp
-    note: Pilot fallback; re-search stock or sourced scan before Volume I publication.
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/34886/primary.webp
+    note: '2026-09-22 variant inspection: selected DoubleHolo 34886 over 80893
+      after side-by-side visual comparison with the archived/current crop; no unsupported
+      edition, finish, or stamp distinction is asserted.'
   latios-03:
     provider: doubleholo
     upstream_id: '66514'
