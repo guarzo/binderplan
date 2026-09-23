@@ -274,9 +274,21 @@ def _contains_token_sequence(candidate_value: str | None, wanted_value: str | No
                for index in range(len(candidate_tokens) - width + 1))
 
 
+def _doubleholo_name_alias_matches(candidate_value: str | None, wanted_value: str | None) -> bool:
+    candidate_tokens = _doubleholo_name_tokens(candidate_value)
+    wanted_tokens = _doubleholo_name_tokens(wanted_value)
+    # DoubleHolo titles the Japanese Rocket Gang trainer as "Imposter Oak's Revenge";
+    # the registry keeps the commonly translated full name "Imposter Professor Oak's Revenge".
+    return (
+        candidate_tokens == ["imposter", "oak", "s", "revenge"]
+        and wanted_tokens == ["imposter", "professor", "oak", "s", "revenge"]
+    )
+
+
 def _doubleholo_name_matches(row: dict, candidate: dict) -> bool:
     return any(
         _contains_token_sequence(candidate.get("name"), raw_name)
+        or _doubleholo_name_alias_matches(candidate.get("name"), raw_name)
         for raw_name in (row.get("card_name"), row.get("species"))
     )
 

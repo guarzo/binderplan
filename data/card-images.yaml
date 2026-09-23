@@ -36,10 +36,18 @@ cards:
     note: Curator visually confirmed Black Bolt is the sv11B set-name alias and the
       printing matches the archived leaf.
   beldum-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: doubleholo
+    upstream_id: '29038'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    identity_basis: curator visually confirmed printing; DoubleHolo set-name alias
+      differs from registry
+    classification: exact
+    asset_path: assets/images/cards/beldum-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-23'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/29038/primary.webp
+    note: Curator visually confirmed DoubleHolo 29038 is the Steven's Beldum/SVP full-name
+      and set-name alias for the archived leaf; variant and printing match.
   bewear-01:
     provider: tcgdex
     upstream_id: SV6a-076
@@ -100,10 +108,18 @@ cards:
       matches the archived v1-15 pocket; returned 77382 is Charizard G number 1, and
       returned 82789 metadata is EN with image URL HTTP 400 during inspection.'
   charizard-02:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: doubleholo
+    upstream_id: '37650'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    identity_basis: curator visually confirmed printing; DoubleHolo set-name alias
+      differs from registry
+    classification: exact
+    asset_path: assets/images/cards/charizard-02.webp
+    reviewed: true
+    reviewed_on: '2026-09-23'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/37650/primary.webp
+    note: Curator visually confirmed DoubleHolo 37650 is the VMAX Climax/s8b set-name
+      alias for the archived Charizard leaf; variant and printing match.
   charmander-01:
     provider: doubleholo
     upstream_id: '30829'
@@ -322,10 +338,14 @@ cards:
     reviewed_on: '2026-09-22'
     source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/78088/primary.webp
   gardevoir-02:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: doubleholo
+    upstream_id: '31913'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: exact
+    asset_path: assets/images/cards/gardevoir-02.webp
+    reviewed: true
+    reviewed_on: '2026-09-23'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/31913/primary.webp
   gengar-01:
     classification: photo-crop
     asset_path: assets/images/cards/gengar-01.webp
@@ -353,10 +373,18 @@ cards:
     reviewed_on: '2026-09-22'
     source_url: https://assets.tcgdex.net/en/xy/xy4/35/high.webp
   gengar-04:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: doubleholo
+    upstream_id: '33919'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    identity_basis: curator visually confirmed printing; DoubleHolo set-name alias
+      differs from registry
+    classification: exact
+    asset_path: assets/images/cards/gengar-04.webp
+    reviewed: true
+    reviewed_on: '2026-09-23'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/33919/primary.webp
+    note: Curator visually confirmed DoubleHolo 33919 is the Dark Phantasma/s10a set-name
+      alias for the archived Gengar leaf; variant and printing match.
   gengar-05:
     classification: missing
     asset_path: ''
@@ -409,10 +437,18 @@ cards:
     reviewed_on: '2026-09-22'
     source_url: https://assets.tcgdex.net/en/sv/sv01/214/high.webp
   grotle-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: doubleholo
+    upstream_id: '38052'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    identity_basis: curator visually confirmed printing; DoubleHolo set-name alias
+      differs from registry
+    classification: exact
+    asset_path: assets/images/cards/grotle-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-23'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/38052/primary.webp
+    note: Curator visually confirmed DoubleHolo 38052 is the Wild Force/sv5K set-name
+      alias for the archived Grotle leaf; variant and printing match.
   groudon-01:
     provider: tcgdex
     upstream_id: ex5-102
@@ -503,10 +539,18 @@ cards:
     reviewed: false
     reviewed_on: ''
   imposter-professor-oaks-revenge-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: doubleholo
+    upstream_id: '46732'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    identity_basis: In-hand-confirmed unnumbered registry identity plus curator comparison
+      of DoubleHolo 46732 with the archived leaf.
+    classification: exact
+    asset_path: assets/images/cards/imposter-professor-oaks-revenge-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-23'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/46732/primary.webp
+    note: Curator visually confirmed the unnumbered Japanese Rocket Gang printing
+      against the archived leaf.
   jirachi-01:
     provider: tcgdex
     upstream_id: xyp-XY67a
@@ -616,8 +660,8 @@ cards:
     reviewed: true
     reviewed_on: '2026-09-22'
     source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/34886/primary.webp
-    note: '2026-09-22 variant inspection: selected DoubleHolo 34886 over 80893
-      after side-by-side visual comparison with the archived/current crop; no unsupported
+    note: '2026-09-22 variant inspection: selected DoubleHolo 34886 over 80893 after
+      side-by-side visual comparison with the archived/current crop; no unsupported
       edition, finish, or stamp distinction is asserted.'
   latios-03:
     provider: doubleholo
@@ -687,9 +731,9 @@ cards:
     reviewed: true
     reviewed_on: '2026-09-22'
     source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/34977/primary.webp
-    note: Both DoubleHolo candidates 34977 and 34978 show 1st Edition; curator
-      selected 34977 after side-by-side visual comparison with the archived leaf,
-      without asserting an unsupported finish or edition distinction.
+    note: Both DoubleHolo candidates 34977 and 34978 show 1st Edition; curator selected
+      34977 after side-by-side visual comparison with the archived leaf, without asserting
+      an unsupported finish or edition distinction.
   master-ball-01:
     classification: missing
     asset_path: ''
@@ -766,10 +810,12 @@ cards:
     reviewed_on: '2026-09-22'
     source_url: https://assets.tcgdex.net/en/ex/ex11/12/high.webp
   mimikyu-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    classification: photo-crop
+    asset_path: assets/images/cards/mimikyu-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-23'
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-23/owner-supplied-card-images/mimikyu-chinese.webp
   misdreavus-01:
     provider: doubleholo
     upstream_id: '33213'
@@ -856,10 +902,14 @@ cards:
     reviewed_on: '2026-09-22'
     source_url: https://assets.tcgdex.net/en/xy/xy12/111/high.webp
   pikachu-03:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: doubleholo
+    upstream_id: '32254'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: exact
+    asset_path: assets/images/cards/pikachu-03.webp
+    reviewed: true
+    reviewed_on: '2026-09-23'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/32254/primary.webp
   pikachu-04:
     classification: missing
     asset_path: ''
@@ -936,10 +986,18 @@ cards:
     reviewed: false
     reviewed_on: ''
   reshiram-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: doubleholo
+    upstream_id: '33345'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    identity_basis: curator visually confirmed printing; DoubleHolo set-name alias
+      differs from registry
+    classification: exact
+    asset_path: assets/images/cards/reshiram-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-23'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/33345/primary.webp
+    note: Curator visually confirmed DoubleHolo 33345 is the N's Reshiram/sv9 full-name
+      and set-name alias for the archived leaf; variant and printing match.
   reshiram-02:
     classification: missing
     asset_path: ''

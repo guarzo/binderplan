@@ -722,6 +722,13 @@ def test_doubleholo_name_match_accepts_qualified_english_species_token_sequence(
     ) is True
 
 
+def test_doubleholo_name_match_accepts_imposter_oak_full_name_alias():
+    assert ranked_doubleholo_name_match(
+        "にせオーキドの逆襲", "Imposter Professor Oak's Revenge", "Imposter Oak's Revenge",
+        language="JP", hit_language="japanese"
+    ) is True
+
+
 def test_doubleholo_name_match_rejects_embedded_species_without_token_boundary():
     assert ranked_doubleholo_name_match("Mew", "Mew", "Mewtwo") is False
     assert ranked_doubleholo_name_match("Abra", "Abra", "Kadabra") is False
