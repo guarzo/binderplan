@@ -18,10 +18,13 @@ cards:
     reviewed_on: '2026-09-22'
     source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/45885/primary.webp
   arcanine-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: tcgdex
+    upstream_id: neo4-12
+    classification: exact
+    asset_path: assets/images/cards/arcanine-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-23'
+    source_url: https://assets.tcgdex.net/en/neo/neo4/12/high.webp
   audino-01:
     provider: doubleholo
     upstream_id: '31392'
@@ -82,10 +85,13 @@ cards:
     reviewed: false
     reviewed_on: ''
   celebi-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: tcgdex
+    upstream_id: neo3-16
+    classification: exact
+    asset_path: assets/images/cards/celebi-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-23'
+    source_url: https://assets.tcgdex.net/en/neo/neo3/16/high.webp
   chansey-01:
     provider: tcgdex
     upstream_id: SV6-113
@@ -154,10 +160,19 @@ cards:
     note: Archived leaf shows the reverse-holo printing; selected DoubleHolo 3097
       over normal 3023.
   cinccino-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: doubleholo
+    upstream_id: '38050'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    identity_basis: curator visually confirmed printing; DoubleHolo set-name alias
+      differs from registry
+    classification: exact
+    asset_path: assets/images/cards/cinccino-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-23'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/38050/primary.webp
+    note: Curator visually confirmed DoubleHolo 38050 is the Wild Force/sv5K set-name
+      alias for the archived v2-06 Cinccino AR; artwork, JP language, and 083/071
+      number match, with no competing DoubleHolo variants returned.
   cubone-01:
     provider: doubleholo
     upstream_id: '49932'
@@ -236,15 +251,31 @@ cards:
     reviewed_on: '2026-09-22'
     source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/78164/primary.webp
   ditto-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: doubleholo
+    upstream_id: '29308'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    identity_basis: curator visually confirmed printing; DoubleHolo set-name alias
+      differs from registry
+    classification: exact
+    asset_path: assets/images/cards/ditto-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-23'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/29308/primary.webp
+    note: Curator visually confirmed DoubleHolo 29308 is the XY Promos/XY set-name
+      alias for the archived v2-06 Ditto; Metamorphosis Gene/Stick On art and promo
+      number XY40 match, with no competing DoubleHolo variants returned.
   dragonair-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: doubleholo
+    upstream_id: '39559'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: exact
+    asset_path: assets/images/cards/dragonair-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-23'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/39559/primary.webp
+    note: '2026-09-23 visual-review/not-in-hand: curator-approved DoubleHolo 39559
+      exact image after comparison with the archived v2-06 leaf; identity remains
+      photo-based, not in-hand confirmed.'
   dragonite-01:
     provider: doubleholo
     upstream_id: '22198'
@@ -864,10 +895,13 @@ cards:
     note: 2026-09-22 image review matched authorized DoubleHolo identity; registry
       identity is photo/not-in-hand.
   mudkip-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: tcgdex
+    upstream_id: ex14-58
+    classification: exact
+    asset_path: assets/images/cards/mudkip-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-23'
+    source_url: https://assets.tcgdex.net/en/ex/ex14/58/high.webp
   muk-01:
     classification: missing
     asset_path: ''
@@ -1226,10 +1260,13 @@ cards:
       s1H set-name alias for this カビゴンVMAX printing; identity remains photo-based/not
       in-hand confirmed.
   snorlax-03:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: tcgdex
+    upstream_id: ex6-15
+    classification: exact
+    asset_path: assets/images/cards/snorlax-03.webp
+    reviewed: true
+    reviewed_on: '2026-09-23'
+    source_url: https://assets.tcgdex.net/en/ex/ex6/15/high.webp
   spheal-01:
     provider: doubleholo
     upstream_id: '37220'
@@ -1319,10 +1356,14 @@ cards:
     reviewed_on: '2026-09-23'
     source_url: https://assets.tcgdex.net/en/me/me02/104/high.webp
   togepi-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: doubleholo
+    upstream_id: '78044'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: exact
+    asset_path: assets/images/cards/togepi-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-23'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/78044/primary.webp
   torterra-01:
     provider: tcgdex
     upstream_id: hgss2-10
@@ -1372,10 +1413,17 @@ cards:
     reviewed_on: '2026-09-22'
     source_url: https://assets.tcgdex.net/en/hgss/hgss3/10/high.webp
   umbreon-05:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: doubleholo
+    upstream_id: '45939'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: exact
+    asset_path: assets/images/cards/umbreon-05.webp
+    reviewed: true
+    reviewed_on: '2026-09-23'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/45939/primary.webp
+    note: Archived v2-06 leaf shows the non-1st-Edition Japanese Magma Vs Aqua Two
+      Ambitions Umbreon; selected DoubleHolo 45939 and rejected competing DoubleHolo
+      46117 [1st Edition] variant.
   ursaring-02:
     provider: doubleholo
     upstream_id: '46382'

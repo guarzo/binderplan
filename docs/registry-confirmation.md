@@ -2,7 +2,7 @@
 
 Generated from `docs/card-registry.md` by `python3 scripts/check-registry.py docs/card-registry.md --worklist --write`. Every section below is recomputed from the registry except "4. Gaps and known issues", which is hand-written; regeneration reads the previous version of this document and carries that section forward automatically.
 
-**Honest numbers, recomputed from the current file.** 175 rows total. 23 `photo` (13.1%), 9 `uncertain` (5.1%). 165 rows have both `set` and `number` read (94.3%) — 2 have `number` only, 8 have `set` only, 0 have neither field. The confirmation queue (section 3) holds 9 rows across 9 species: 0 clusters (0 rows) and 9 singletons.
+**Honest numbers, recomputed from the current file.** 175 rows total. 24 `photo` (13.7%), 8 `uncertain` (4.6%). 165 rows have both `set` and `number` read (94.3%) — 2 have `number` only, 8 have `set` only, 0 have neither field. The confirmation queue (section 3) holds 8 rows across 8 species: 0 clusters (0 rows) and 8 singletons.
 
 ## 1. Blocked — species unreadable
 
@@ -16,17 +16,16 @@ Take that as a weak result, not a clean bill of health. The check requires all f
 
 ## 3. Confirmation queue — clusters first
 
-9 rows, 9 species. **0 species (0 rows) hold two or more unresolved rows** and lead the list, because that is where an undetected duplicate printing could hide. The remaining 9 species have a single unresolved row each.
+8 rows, 8 species. **0 species (0 rows) hold two or more unresolved rows** and lead the list, because that is where an undetected duplicate printing could hide. The remaining 8 species have a single unresolved row each.
 
 The "Unreadable" column is the row's own `notes` field: what specifically blocked the read.
 
-### Singletons (9 species, one unresolved row each)
+### Singletons (8 species, one unresolved row each)
 
 | ID | Card name | Source image | Unreadable |
 |---|---|---|---|
 | blastoise-01 | カメックス (JP) | enduring_presence_2.webp | Lv.52 HP100, vintage Pokedex-number print, set per owner's doubleholo entry |
 | bulbasaur-02 | フシギダネ (JP) | joyful_action_1.webp | set supplied by owner 2026-09-20; character and printed Pokedex number checked in hand, no blanket set/printing verification from checklist ticks |
-| dragonair-01 | エリカのハクリュー (JP) | enduring_presence_1.webp | Erika's Dragonair, Lv.32, vintage Pokedex-number print, set per owner's doubleholo entry |
 | gengar-05 | わるいゲンガー (JP) | enduring_presence_2.webp | Dark Gengar, HP70, distinct from gengar-01..04, Pokédex-number print, set per owner's doubleholo export 2026-09-18 |
 | mew-05 | ミュウ (JP) | threshold_1.webp | Psywave/Recover-Beam attacks, distinct from mew-01..04, Pokédex-number print, set per owner's doubleholo export 2026-09-18 |
 | muk-01 | ベトベトン (JP) | enduring_presence_2.webp | Grimer evolution Lv.34, HP70, vintage Pokedex-number print, set per owner's doubleholo entry |
@@ -133,12 +132,6 @@ Photographs record what was on a page when the shoot happened, so a card since s
 | ID | Card name | Unreadable |
 |---|---|---|
 | umbreon-03 | Umbreon (EN) | Confuse Ray/Shadow Shutdown, distinct from umbreon-01/02, set code not textual |
-
-### V2 · Quiet Familiarity p2
-
-| ID | Card name | Unreadable |
-|---|---|---|
-| dragonair-01 | エリカのハクリュー (JP) | Erika's Dragonair, Lv.32, vintage Pokedex-number print, set per owner's doubleholo entry |
 
 ### V2 · Enduring Presence p1
 
