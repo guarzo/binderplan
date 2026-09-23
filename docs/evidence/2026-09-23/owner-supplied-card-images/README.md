@@ -7,7 +7,8 @@ Original download URLs were not supplied for these files. They establish the exa
 | Original filename | Proposed card ID | Format and dimensions | Review status / verification limit |
 |---|---|---|---|
 | `mimikyu-chinese.webp` | `mimikyu-01` | WebP, 299×418 | Visually matches the confirmed Chinese Mimikyu in the archived leaf. |
-| `joltik.jpg` | `joltik-01` | JPEG, 355×500 | **Not approved:** image is Japanese `108/102`; archived physical card and registry are Chinese `132/129`. Awaiting owner clarification whether this is a future replacement or an incorrect download. |
+| `joltik.jpg` | `joltik-01` | JPEG, 355×500 | **Not approved:** first alternative is Japanese `108/102`; archived physical card and registry are Chinese `CSV5C 132/129`. |
+| `chinese-joltik.webp` | `joltik-01` | WebP, 960×960 | **Not approved:** second alternative is Chinese but visibly marked `CBB5C 1507/07` with a 2026 copyright, so it is still a different printing from the physical `CSV5C 132/129` card. Preserve as a proposed alternative only; use requires an explicitly confirmed physical replacement or proxy status. |
 | `dawnstatdium.jpg` | `dawns-stadium-01` | JPEG, 172×240 | Visually matches the unnumbered Japanese Dawn's Stadium identity; original filename spelling retained. |
 | `jirachi-temple.webp` | `jirachi-04` | WebP, 1135×1600 | Visually matches the Japanese Temple of Anger Jirachi; includes outside white margin and requires cropping. |
 | `professor-oak.jpg` | `imposter-professor-oaks-revenge-01` | JPEG, 250×350 | **Not selected:** this file is the English printing; owner instead supplied the exact Japanese DoubleHolo source below. Preserved as received rather than silently discarded. |
@@ -24,6 +25,7 @@ These URLs were supplied in the same review response and are preferred over loca
 ## SHA-256
 
 ```text
+25dbfa22ee988b9c8e0ad04f82f8285d11d55ae9ea00294b20b8aaa466f006d6  chinese-joltik.webp
 5ee08e7942cb01fadbf59294900207ad3d53bd523a2196aee6c48a3e05eba401  dawnstatdium.jpg
 5cd8b23e4516d63641e05da3ccd24cc4767d792054763d49ac5c52e89ce777c0  jirachi-temple.webp
 d12974455ce3ad8d75d41a7a303e659ae19048f2cdf88690218a2dde18d4c7de  joltik.jpg
