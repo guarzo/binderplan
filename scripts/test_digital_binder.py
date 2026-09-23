@@ -2273,7 +2273,6 @@ def test_rendered_draft_pilot_uses_binder_markup_without_remote_card_images(tmp_
     assert 'data-inspector-src="' in html
     assert html.count('data-initial-binder-image') == html.count('loading="eager"')
     assert 'loading="lazy"' in html
-    assert 'Image unavailable' in html
 
     elements = rendered_elements(html)
     controls = [attrs for tag, attrs in elements

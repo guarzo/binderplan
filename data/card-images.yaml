@@ -86,10 +86,18 @@ cards:
     reviewed_on: '2026-09-22'
     source_url: https://assets.tcgdex.net/ja/SV/SV6/113/high.webp
   charizard-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: doubleholo
+    upstream_id: '77383'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: exact
+    asset_path: assets/images/cards/charizard-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/77383/primary.webp
+    note: '2026-09-22 variant inspection: selected DoubleHolo 77383 because it is
+      the returned JP Charizard G Lv.X number 2 Charizard Half Deck image and visually
+      matches the archived v1-15 pocket; returned 77382 is Charizard G number 1, and
+      returned 82789 metadata is EN with image URL HTTP 400 during inspection.'
   charizard-02:
     classification: missing
     asset_path: ''
@@ -331,10 +339,13 @@ cards:
     note: 2026-09-22 image review matched authorized DoubleHolo identity; registry
       identity is photo/not-in-hand.
   gengar-03:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: tcgdex
+    upstream_id: xy4-35
+    classification: exact
+    asset_path: assets/images/cards/gengar-03.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://assets.tcgdex.net/en/xy/xy4/35/high.webp
   gengar-04:
     classification: missing
     asset_path: ''
@@ -452,10 +463,13 @@ cards:
     reviewed_on: '2026-09-22'
     source_url: https://assets.tcgdex.net/en/swsh/swsh5/179/high.webp
   houndoom-02:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: tcgdex
+    upstream_id: SV6a-066
+    classification: exact
+    asset_path: assets/images/cards/houndoom-02.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://assets.tcgdex.net/ja/SV/SV6a/066/high.webp
   houndoom-03:
     classification: exact
     asset_path: assets/images/cards/houndoom-03.webp
@@ -550,10 +564,14 @@ cards:
     reviewed: false
     reviewed_on: ''
   kingdra-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: doubleholo
+    upstream_id: '22490'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: exact
+    asset_path: assets/images/cards/kingdra-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/22490/primary.webp
   kyogre-01:
     classification: exact
     asset_path: assets/images/cards/kyogre-01.webp
@@ -616,10 +634,13 @@ cards:
     reviewed_on: '2026-09-22'
     source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/22462/primary.webp
   lugia-02:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: tcgdex
+    upstream_id: S12-079
+    classification: exact
+    asset_path: assets/images/cards/lugia-02.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://assets.tcgdex.net/ja/S/S12/079/high.webp
   lugia-03:
     provider: tcgdex
     upstream_id: neo3-20
@@ -1028,10 +1049,19 @@ cards:
     reviewed_on: '2026-09-22'
     source_url: https://assets.tcgdex.net/ja/SV/SV2a/181/high.webp
   snorlax-02:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: doubleholo
+    upstream_id: '36502'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    identity_basis: curator visually confirmed printing; DoubleHolo set-name alias
+      differs from registry
+    classification: exact
+    asset_path: assets/images/cards/snorlax-02.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/36502/primary.webp
+    note: 2026-09-22 visual review treated DoubleHolo Pokemon Japanese Shield as the
+      s1H set-name alias for this カビゴンVMAX printing; identity remains photo-based/not
+      in-hand confirmed.
   snorlax-03:
     classification: missing
     asset_path: ''
@@ -1051,10 +1081,14 @@ cards:
     note: Curator visually confirmed Super Electric Breaker is the sv8 set-name alias
       and the 111/106 AR printing matches the archived leaf.
   spheal-02:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: doubleholo
+    upstream_id: '76938'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: exact
+    asset_path: assets/images/cards/spheal-02.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/76938/primary.webp
   spheal-03:
     classification: exact
     asset_path: assets/images/cards/spheal-03.webp
@@ -1167,10 +1201,14 @@ cards:
     reviewed: false
     reviewed_on: ''
   ursaring-02:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: doubleholo
+    upstream_id: '46382'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: exact
+    asset_path: assets/images/cards/ursaring-02.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/46382/primary.webp
   victini-01:
     provider: tcgdex
     upstream_id: sm11-26
@@ -1202,10 +1240,13 @@ cards:
     reviewed_on: '2026-09-22'
     source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/77632/primary.webp
   yveltal-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: tcgdex
+    upstream_id: xy1-79
+    classification: exact
+    asset_path: assets/images/cards/yveltal-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-22'
+    source_url: https://assets.tcgdex.net/en/xy/xy1/79/high.webp
   yveltal-02:
     classification: photo-crop
     asset_path: assets/images/cards/yveltal-02.webp

@@ -112,7 +112,7 @@ The column is left as recorded rather than rewritten: `first_seen` is provenance
 | kabuto-01 | Kabuto | Kabuto | EN | Fossil | 50/62 | confirmed | IMG_6865.HEIC 2026-08-01 | Kabuto Armor ability, Scratch attack |
 | kangaskhan-01 | Kangaskhan | ガルーラ | JP | Jungle | No.115 | uncertain | IMG_6858.HEIC 2026-08-01 | vintage Pokedex-number print, set per owner's doubleholo entry |
 | kasumis-tears-01 | Kasumi's Tears | カスミのなみだ | JP | Leaders' Stadium |  | confirmed | IMG_6865.HEIC 2026-08-01 | Trainer card, no number printed, checked in hand 2026-09-19 |
-| kingdra-01 | Kingdra | キングドラ | JP | Awakening Legends | No.230 | uncertain | on_attack_1.webp 2026-08-01 | Lv.47, vintage Pokedex-number print, illustrator Mitsuhiro Arita, set per owner's doubleholo entry |
+| kingdra-01 | Kingdra | キングドラ | JP | Awakening Legends | No.230 | photo | on_attack_1.webp 2026-08-01 | Lv.47, vintage Pokedex-number print, illustrator Mitsuhiro Arita, set per owner's doubleholo entry; 2026-09-22 visual-review matched authorized DoubleHolo identity, not checked in hand. |
 | kyogre-01 | Kyogre | Kyogre ex | EN | Crystal Guardians | 95 | confirmed | elemental_solitude_1.webp 2026-08-01 | set/number from owner's doubleholo export 2026-09-18, denominator not recorded |
 | latias-01 | Latias | Latias | EN | Latias & Latios 2015 | 30/30 | confirmed | joyful_action_1.webp 2026-08-01 | XY Trainer Kit card, owner checked in hand 2026-09-18; earlier 35/30 was a misread |
 | latios-01 | Latios | ラティオス | JP | sv7a | 070/064 | confirmed | contemplation_1.webp 2026-08-01 | AR rarity |
@@ -199,7 +199,7 @@ The column is left as recorded rather than rewritten: `first_seen` is provenance
 | umbreon-04 | Umbreon | Umbreon | EN | Undaunted | 10/90 | confirmed | legendary_bearing_2.webp 2026-08-01 | Moonlight Fang/Quick Blow, RH holo mark, distinct from umbreon-01/02/03, checked in hand 2026-09-19 |
 | umbreon-05 | Umbreon | ブラッキー | JP | Magma Vs Aqua Two Ambitions | 062/080 | confirmed | enduring_presence_1.webp 2026-08-01 | distinct from umbreon-01..04, checked in hand 2026-09-19 |
 | ursaring-01 | Ursaring | Ursaring | EN | Radiant Collection | RC16/RC25 | photo | at_rest_1.webp 2026-08-01 | artist Sonosuke Sakuma |
-| ursaring-02 | Ursaring | リングマ | JP | Crossing The Ruins | No.217 | uncertain | on_attack_1.webp 2026-08-01 | Lv.43 print, distinct from ursaring-01, vintage Pokedex-number print, set per owner's doubleholo entry |
+| ursaring-02 | Ursaring | リングマ | JP | Crossing The Ruins | No.217 | photo | on_attack_1.webp 2026-08-01 | Lv.43 print, distinct from ursaring-01, vintage Pokedex-number print, set per owner's doubleholo entry; 2026-09-22 visual-review matched authorized DoubleHolo identity, not checked in hand. |
 | victini-01 | Victini | Victini | EN | Unified Minds | 26 | confirmed | joyful_action_1.webp 2026-08-01 | set/number from owner's doubleholo export 2026-09-18, denominator not recorded |
 | victini-02 | Victini | Victini | EN | SVP | 208 | confirmed | contemplation_1.webp 2026-08-01 | Scarlet & Violet promo, V-Force attack, distinct from victini-01 |
 | vulpix-01 | Vulpix | Vulpix | EN | Aquapolis | 116/147 | confirmed | enduring_presence_2.webp 2026-08-01 | Collect Fire attack, e-Card era stamp, checked in hand 2026-09-19 |
