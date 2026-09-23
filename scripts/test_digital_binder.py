@@ -2821,6 +2821,85 @@ def binder_owners(html):
     return parser.owners
 
 
+class ArrowControlTextParser(HTMLParser):
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.stack = []
+        self.text = {"previous": "", "next": ""}
+        self.hidden_spans = {"previous": 0, "next": 0}
+
+    def handle_starttag(self, tag, attrs):
+        attributes = dict(attrs)
+        current = self.stack[-1] if self.stack else None
+        if "data-binder-prev" in attributes:
+            current = "previous"
+        elif "data-binder-next" in attributes:
+            current = "next"
+        if current and tag == "span" and attributes.get("aria-hidden") == "true":
+            self.hidden_spans[current] += 1
+        if tag not in BinderOwnershipParser.VOID_ELEMENTS:
+            self.stack.append(current)
+
+    def handle_data(self, data):
+        current = self.stack[-1] if self.stack else None
+        if current:
+            self.text[current] += data
+
+    def handle_endtag(self, tag):
+        if self.stack:
+            self.stack.pop()
+
+
+def arrow_control_text(html):
+    parser = ArrowControlTextParser()
+    parser.feed(html)
+    return {key: value.strip() for key, value in parser.text.items()}, parser.hidden_spans
+
+
+def matching_brace(source, open_index):
+    depth = 1
+    for index in range(open_index + 1, len(source)):
+        if source[index] == "{":
+            depth += 1
+        elif source[index] == "}":
+            depth -= 1
+            if depth == 0:
+                return index
+    raise AssertionError("unmatched CSS brace")
+
+
+def iter_css_rules(source, active_media=None):
+    position = 0
+    while True:
+        open_index = source.find("{", position)
+        if open_index == -1:
+            return
+        selector = source[position:open_index].strip()
+        close_index = matching_brace(source, open_index)
+        body = source[open_index + 1:close_index]
+        if selector.startswith("@media"):
+            yield from iter_css_rules(body, selector)
+        else:
+            yield active_media, selector, body
+        position = close_index + 1
+
+
+def css_declarations(source, selector, *, media=None):
+    merged = {}
+    for active_media, selector_text, body in iter_css_rules(source):
+        selector_parts = [part.strip() for part in selector_text.split(",")]
+        if active_media == media and selector in selector_parts:
+            merged.update({
+                name.strip(): value.strip()
+                for declaration in body.split(";")
+                if ":" in declaration
+                for name, value in [declaration.split(":", 1)]
+            })
+    if merged:
+        return merged
+    raise AssertionError(f"missing CSS rule for {selector!r} in {media!r}")
+
+
 def test_rendered_public_volume_routes_use_binder_markup_without_remote_card_images(tmp_path):
     root = Path(__file__).parents[1]
     destination = tmp_path / "public"
@@ -2891,11 +2970,12 @@ def test_rendered_public_volume_routes_use_binder_markup_without_remote_card_ima
         ]
         assert len(control_links) == 2
         assert {link["href"] for link in control_links} == expected["controls"]
-        assert {link["aria-label"] for link in control_links} == {"Previous spread", "Next spread"}
+        assert {link["aria-label"] for link in control_links} == {"Previous page", "Next page"}
         assert html.count("data-binder-prev") == 1
         assert html.count("data-binder-next") == 1
-        assert '<span aria-hidden="true">&#8249;</span>' in html
-        assert '<span aria-hidden="true">&#8250;</span>' in html
+        arrow_text, hidden_spans = arrow_control_text(html)
+        assert arrow_text == {"previous": "‹", "next": "›"}
+        assert hidden_spans == {"previous": 1, "next": 1}
         assert any(tag == "p" and "data-binder-position" in attrs
                    and attrs.get("aria-live") == "polite" for tag, attrs in elements)
 
@@ -2998,52 +3078,58 @@ def test_binder_interaction_assets_declare_accessible_contract():
     assert "transition: none !important" in stylesheet
     assert ".binder-stage" in stylesheet
     assert ".binder-spreads" in stylesheet
-    assert re.search(
-        r"\.binder-controls \[data-binder-prev\],[^{]+\.binder-controls \[data-binder-next\] \{[^}]*min-width: 2\.75rem;[^}]*min-height: 2\.75rem;",
-        stylesheet,
-        re.S,
+
+    prev_base = css_declarations(stylesheet, ".binder-controls [data-binder-prev]")
+    next_base = css_declarations(stylesheet, ".binder-controls [data-binder-next]")
+    for declarations in (prev_base, next_base):
+        assert declarations["min-width"] == "2.75rem"
+        assert declarations["min-height"] == "2.75rem"
+
+    focus = css_declarations(stylesheet, ".binder-controls a:focus-visible")
+    assert focus["outline"].startswith("3px solid")
+
+    ready_controls = css_declarations(
+        stylesheet, '.binder[data-binder-ready="true"] .binder-controls'
     )
-    assert re.search(r"\.binder-controls a:focus-visible \{[^}]*outline:", stylesheet, re.S)
-    assert re.search(
-        r"\.binder\[data-binder-ready=\"true\"\] \.binder-controls \{[^}]*position: absolute;",
-        stylesheet,
-        re.S,
+    assert ready_controls["position"] == "absolute"
+    assert ready_controls["inset"] == "0"
+    assert ready_controls["pointer-events"] == "none"
+    assert "position" not in css_declarations(stylesheet, ".binder-controls")
+
+    ready_prev = css_declarations(
+        stylesheet, '.binder[data-binder-ready="true"] .binder-controls [data-binder-prev]'
     )
-    base_controls = re.search(r"^\.binder-controls \{(?P<body>[^}]*)\}", stylesheet, re.M)
-    assert base_controls
-    assert "position: absolute" not in base_controls.group("body")
-    assert re.search(
-        r"\.binder\[data-binder-ready=\"true\"\] \.binder-stage \{[^}]*padding-inline:",
-        stylesheet,
-        re.S,
+    ready_next = css_declarations(
+        stylesheet, '.binder[data-binder-ready="true"] .binder-controls [data-binder-next]'
     )
-    assert re.search(
-        r"\.binder\[data-binder-ready=\"true\"\] \.binder-controls \[data-binder-prev\],[^{]+\.binder\[data-binder-ready=\"true\"\] \.binder-controls \[data-binder-next\] \{[^}]*position: absolute;[^}]*top: 50%;[^}]*transform: translateY\(-50%\);",
-        stylesheet,
-        re.S,
+    for declarations in (ready_prev, ready_next):
+        assert declarations["position"] == "absolute"
+        assert declarations["top"] == "50%"
+        assert declarations["transform"] == "translateY(-50%)"
+        assert declarations["pointer-events"] == "auto"
+    assert ready_prev["left"] == "0"
+    assert ready_next["right"] == "0"
+
+    position_copy = css_declarations(
+        stylesheet, '.binder[data-binder-ready="true"] .binder-controls [data-binder-position]'
     )
-    assert re.search(
-        r"\.binder\[data-binder-ready=\"true\"\] \.binder-controls \[data-binder-prev\] \{[^}]*left: 0;",
+    assert position_copy["left"] == "50%"
+    assert position_copy["transform"] == "translateX(-50%)"
+
+    stage = css_declarations(stylesheet, '.binder[data-binder-ready="true"] .binder-stage')
+    assert stage["padding-inline"] == "clamp(3.5rem, 6vw, 5rem)"
+    tablet_stage = css_declarations(
         stylesheet,
-        re.S,
+        '.binder[data-binder-ready="true"] .binder-stage',
+        media="@media (max-width: 900px)",
     )
-    assert re.search(
-        r"\.binder\[data-binder-ready=\"true\"\] \.binder-controls \[data-binder-next\] \{[^}]*right: 0;",
+    assert tablet_stage["padding-inline"] == "clamp(3rem, 7vw, 4rem)"
+    mobile_stage = css_declarations(
         stylesheet,
-        re.S,
+        '.binder[data-binder-ready="true"] .binder-stage',
+        media="@media (max-width: 720px)",
     )
-    assert "transform: translateY(-50%) translateX(-2px);" in stylesheet
-    assert "transform: translateY(-50%) translateX(2px);" in stylesheet
-    assert re.search(
-        r"@media \(max-width: 900px\) \{[^}]*\.binder\[data-binder-ready=\"true\"\] \.binder-stage",
-        stylesheet,
-        re.S,
-    )
-    assert re.search(
-        r"@media \(max-width: 720px\) \{[^}]*\.binder\[data-binder-ready=\"true\"\] \.binder-stage",
-        stylesheet,
-        re.S,
-    )
+    assert mobile_stage["padding-inline"] == "clamp(2.75rem, 10vw, 3.35rem)"
 
 
 def test_rendered_synthetic_binder_marks_only_first_spread_images_eager(tmp_path):
@@ -3222,10 +3308,10 @@ def valid_public_binder_html(volume_id="volume-1", leaf_prefix="v1") -> str:
         f'<div data-binder="{volume_id}">'
         '<div class="binder-stage" data-binder-stage>'
         '<nav class="binder-controls" data-binder-controls aria-label="Binder pages">'
-        f'<a data-binder-prev href="#leaf-{leaf_prefix}-01" aria-label="Previous spread">'
+        f'<a data-binder-prev href="#leaf-{leaf_prefix}-01" aria-label="Previous page">'
         '<span aria-hidden="true">&#8249;</span></a>'
         '<p data-binder-position aria-live="polite"></p>'
-        f'<a data-binder-next href="#leaf-{leaf_prefix}-03" aria-label="Next spread">'
+        f'<a data-binder-next href="#leaf-{leaf_prefix}-03" aria-label="Next page">'
         '<span aria-hidden="true">&#8250;</span></a>'
         '</nav>'
         '<div class="binder-spreads" data-binder-spreads>'
@@ -3362,8 +3448,51 @@ def test_public_check_requires_binder_stage_and_spreads_owner(tmp_path):
     assert any("binder spreads" in error for error in errors)
 
 
+def test_public_check_requires_controls_and_spreads_inside_stage(tmp_path):
+    html = valid_public_binder_html().replace(
+        '<div class="binder-stage" data-binder-stage>'
+        '<nav class="binder-controls" data-binder-controls aria-label="Binder pages">',
+        '<nav class="binder-controls" data-binder-controls aria-label="Binder pages">',
+        1,
+    ).replace(
+        '</nav><div class="binder-spreads" data-binder-spreads>',
+        '</nav><div class="binder-stage" data-binder-stage>'
+        '<div class="binder-spreads" data-binder-spreads>',
+        1,
+    )
+    write_html(tmp_path, html)
+
+    errors = digital_binder.validate_public_output(tmp_path)
+
+    assert any("binder controls navigation must be inside binder stage" in error for error in errors)
+
+    html = valid_public_binder_html().replace(
+        '</nav><div class="binder-spreads" data-binder-spreads>',
+        '</nav></div><div class="binder-spreads" data-binder-spreads>',
+        1,
+    )
+    write_html(tmp_path, html)
+
+    errors = digital_binder.validate_public_output(tmp_path)
+
+    assert any("binder spreads owner must be inside binder stage" in error for error in errors)
+
+
+def test_public_check_requires_spreads_inside_spreads_owner(tmp_path):
+    html = valid_public_binder_html().replace(
+        '<div class="binder-spreads" data-binder-spreads><div data-binder-spread="1">',
+        '<div class="binder-spreads" data-binder-spreads></div><div data-binder-spread="1">',
+        1,
+    )
+    write_html(tmp_path, html)
+
+    errors = digital_binder.validate_public_output(tmp_path)
+
+    assert any("binder spread 1 must be inside binder spreads owner" in error for error in errors)
+
+
 def test_public_check_requires_arrow_control_accessible_labels(tmp_path):
-    html = valid_public_binder_html().replace(' aria-label="Previous spread"', "", 1)
+    html = valid_public_binder_html().replace(' aria-label="Previous page"', "", 1)
     write_html(tmp_path, html)
 
     errors = digital_binder.validate_public_output(tmp_path)

@@ -917,14 +917,19 @@ class _PublicBinderParser(HTMLParser):
         self.page_path = page_path
         self.binders: list[dict] = []
         self.stack: list[dict] = []
+        self.next_node_id = 1
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         attributes = dict(attrs)
+        node_id = self.next_node_id
+        self.next_node_id += 1
         parent = self.stack[-1] if self.stack else {}
         root = parent.get("root")
         spread = parent.get("spread")
         leaf = parent.get("leaf")
         in_pocket = parent.get("in_pocket", False)
+        stage_node = parent.get("stage_node")
+        spreads_node = parent.get("spreads_node")
 
         if "data-binder" in attributes:
             root = {
@@ -934,6 +939,7 @@ class _PublicBinderParser(HTMLParser):
                 "ids": [],
                 "stages": [],
                 "spreads_owners": [],
+                "spread_elements": [],
                 "controls": [],
                 "previous_controls": [],
                 "next_controls": [],
@@ -949,6 +955,8 @@ class _PublicBinderParser(HTMLParser):
             spread = None
             leaf = None
             in_pocket = False
+            stage_node = None
+            spreads_node = None
 
         if root is not None:
             element_id = attributes.get("id")
@@ -956,14 +964,22 @@ class _PublicBinderParser(HTMLParser):
                 root["ids"].append(element_id)
 
             if "data-binder-stage" in attributes:
+                attributes["__node_id"] = node_id
                 root["stages"].append(attributes)
+                stage_node = node_id
 
             if "data-binder-spreads" in attributes:
+                attributes["__node_id"] = node_id
+                attributes["__stage_node"] = stage_node
                 root["spreads_owners"].append(attributes)
+                spreads_node = node_id
 
             if "data-binder-spread" in attributes:
                 root["spread_count"] += 1
                 spread = root["spread_count"]
+                attributes["__spread_number"] = spread
+                attributes["__spreads_node"] = spreads_node
+                root["spread_elements"].append(attributes)
 
             if "data-binder-leaf" in attributes:
                 leaf = {
@@ -981,6 +997,7 @@ class _PublicBinderParser(HTMLParser):
                     leaf["pockets"] += 1
 
             if "data-binder-controls" in attributes:
+                attributes["__stage_node"] = stage_node
                 root["controls"].append(attributes)
             if "data-binder-prev" in attributes:
                 root["previous_controls"].append(attributes)
@@ -1013,6 +1030,8 @@ class _PublicBinderParser(HTMLParser):
                 "spread": spread,
                 "leaf": leaf,
                 "in_pocket": in_pocket,
+                "stage_node": stage_node,
+                "spreads_node": spreads_node,
             })
 
     def handle_startendtag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
@@ -1106,10 +1125,26 @@ def _validate_public_binder(public_dir: Path, root: dict) -> list[str]:
         if leaf["kind"] == "transition" and leaf["pockets"]:
             errors.append(f"{label}: transition leaf {leaf['name']} must not contain pockets")
 
+    stage_id = None
+    spreads_id = None
     if len(root["stages"]) != 1:
         errors.append(f"{label}: must contain exactly one binder stage")
+    else:
+        stage_id = root["stages"][0].get("__node_id")
     if len(root["spreads_owners"]) != 1:
         errors.append(f"{label}: must contain exactly one binder spreads owner")
+    else:
+        spreads_owner = root["spreads_owners"][0]
+        spreads_id = spreads_owner.get("__node_id")
+        if stage_id is not None and spreads_owner.get("__stage_node") != stage_id:
+            errors.append(f"{label}: binder spreads owner must be inside binder stage")
+    if spreads_id is not None:
+        for spread_element in root["spread_elements"]:
+            if spread_element.get("__spreads_node") != spreads_id:
+                errors.append(
+                    f"{label}: binder spread {spread_element.get('__spread_number')} "
+                    "must be inside binder spreads owner"
+                )
 
     if len(root["controls"]) != 1:
         errors.append(f"{label}: must contain exactly one binder controls navigation")
@@ -1117,7 +1152,9 @@ def _validate_public_binder(public_dir: Path, root: dict) -> list[str]:
         controls = root["controls"][0]
         if not (controls.get("aria-label") or controls.get("aria-labelledby")):
             errors.append(f"{label}: binder controls navigation needs an accessible label")
-    expected_labels = {"previous": "Previous spread", "next": "Next spread"}
+        if stage_id is not None and controls.get("__stage_node") != stage_id:
+            errors.append(f"{label}: binder controls navigation must be inside binder stage")
+    expected_labels = {"previous": "Previous page", "next": "Next page"}
     for direction, key in (("previous", "previous_controls"), ("next", "next_controls")):
         controls = root[key]
         if len(controls) != 1:
