@@ -166,7 +166,7 @@ function buildBinder() {
   return { document, root, previous, position, next };
 }
 
-function runScenario({ mobile }) {
+function runScenario({ mobile, directHash, directEvent }) {
   const { document, root, previous, position, next } = buildBinder();
   const location = { hash: "" };
   const mediaQuery = {
@@ -174,6 +174,7 @@ function runScenario({ mobile }) {
     addEventListener() {},
     addListener() {},
   };
+  const windowListeners = new Map();
   const window = {
     location,
     history: {
@@ -181,7 +182,14 @@ function runScenario({ mobile }) {
       replaceState(_state, _title, hash) { location.hash = hash; },
     },
     matchMedia() { return mediaQuery; },
-    addEventListener() {},
+    addEventListener(type, listener) {
+      if (!windowListeners.has(type)) windowListeners.set(type, []);
+      windowListeners.get(type).push(listener);
+    },
+    dispatchEvent(event) {
+      event.target ??= this;
+      for (const listener of windowListeners.get(event.type) || []) listener(event);
+    },
   };
 
   const context = vm.createContext({
@@ -191,7 +199,7 @@ function runScenario({ mobile }) {
     console,
   });
   vm.runInContext(binderScript, context, { filename: "assets/js/binder.js" });
-  window.initBinder(root);
+  document.dispatchEvent({ type: "DOMContentLoaded", target: document });
 
   const snapshot = () => ({
     status: position.textContent,
@@ -207,16 +215,20 @@ function runScenario({ mobile }) {
   const left = keyboardEvent("ArrowLeft", root);
   document.dispatchEvent(left);
   const afterLeft = snapshot();
+  location.hash = directHash;
+  window.dispatchEvent({ type: directEvent, target: window });
+  const afterLocationEvent = snapshot();
 
   assert.equal(right.defaultPrevented, true, "ArrowRight should be handled");
   assert.equal(left.defaultPrevented, true, "ArrowLeft should be handled");
-  assert.notEqual(initial.status, "", "initial live status should be nonempty");
+  assert.notEqual(initial.status, "", "bootstrap should populate initial live status");
   assert.notEqual(afterRight.status, "", "navigated live status should be nonempty");
+  assert.notEqual(afterLocationEvent.status, "", "location event status should be nonempty");
 
-  return { initial, afterRight, afterLeft };
+  return { initial, afterRight, afterLeft, afterLocationEvent };
 }
 
-const desktop = runScenario({ mobile: false });
+const desktop = runScenario({ mobile: false, directHash: "#leaf-v1-03", directEvent: "hashchange" });
 assert.deepEqual(desktop.initial, {
   status: "Spread 1 of 2 · leaves 1–2",
   hash: "#leaf-v1-01",
@@ -230,8 +242,9 @@ assert.deepEqual(desktop.afterRight, {
   nextHref: "#leaf-v1-03",
 });
 assert.deepEqual(desktop.afterLeft, desktop.initial);
+assert.deepEqual(desktop.afterLocationEvent, desktop.afterRight);
 
-const mobile = runScenario({ mobile: true });
+const mobile = runScenario({ mobile: true, directHash: "#leaf-v1-04", directEvent: "popstate" });
 assert.deepEqual(mobile.initial, {
   status: "Leaf 1 of 4 · spread 1 of 2",
   hash: "#leaf-v1-01",
@@ -245,3 +258,9 @@ assert.deepEqual(mobile.afterRight, {
   nextHref: "#leaf-v1-03",
 });
 assert.deepEqual(mobile.afterLeft, mobile.initial);
+assert.deepEqual(mobile.afterLocationEvent, {
+  status: "Leaf 4 of 4 · spread 2 of 2",
+  hash: "#leaf-v1-04",
+  previousHref: "#leaf-v1-03",
+  nextHref: "#leaf-v1-04",
+});
