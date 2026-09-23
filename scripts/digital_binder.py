@@ -932,6 +932,8 @@ class _PublicBinderParser(HTMLParser):
                 "page_path": self.page_path,
                 "leaves": [],
                 "ids": [],
+                "stages": [],
+                "spreads_owners": [],
                 "controls": [],
                 "previous_controls": [],
                 "next_controls": [],
@@ -952,6 +954,12 @@ class _PublicBinderParser(HTMLParser):
             element_id = attributes.get("id")
             if element_id:
                 root["ids"].append(element_id)
+
+            if "data-binder-stage" in attributes:
+                root["stages"].append(attributes)
+
+            if "data-binder-spreads" in attributes:
+                root["spreads_owners"].append(attributes)
 
             if "data-binder-spread" in attributes:
                 root["spread_count"] += 1
@@ -1098,12 +1106,18 @@ def _validate_public_binder(public_dir: Path, root: dict) -> list[str]:
         if leaf["kind"] == "transition" and leaf["pockets"]:
             errors.append(f"{label}: transition leaf {leaf['name']} must not contain pockets")
 
+    if len(root["stages"]) != 1:
+        errors.append(f"{label}: must contain exactly one binder stage")
+    if len(root["spreads_owners"]) != 1:
+        errors.append(f"{label}: must contain exactly one binder spreads owner")
+
     if len(root["controls"]) != 1:
         errors.append(f"{label}: must contain exactly one binder controls navigation")
     else:
         controls = root["controls"][0]
         if not (controls.get("aria-label") or controls.get("aria-labelledby")):
             errors.append(f"{label}: binder controls navigation needs an accessible label")
+    expected_labels = {"previous": "Previous spread", "next": "Next spread"}
     for direction, key in (("previous", "previous_controls"), ("next", "next_controls")):
         controls = root[key]
         if len(controls) != 1:
@@ -1112,6 +1126,10 @@ def _validate_public_binder(public_dir: Path, root: dict) -> list[str]:
         target = controls[0].get("href") or ""
         if not target.startswith("#") or target[1:] not in leaf_anchors:
             errors.append(f"{label}: {direction} control must link to a binder leaf anchor")
+        if controls[0].get("aria-label") != expected_labels[direction]:
+            errors.append(
+                f"{label}: {direction} control needs aria-label={expected_labels[direction]!r}"
+            )
     if len(root["positions"]) != 1:
         errors.append(f"{label}: must contain exactly one binder position control")
 

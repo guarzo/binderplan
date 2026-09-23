@@ -2785,7 +2785,11 @@ class BinderOwnershipParser(HTMLParser):
         "link", "meta", "param", "source", "track", "wbr",
     }
     OWNED_ATTRIBUTES = {
-        "data-binder-controls", "data-binder-legend", "data-card-inspector",
+        "data-binder-stage",
+        "data-binder-spreads",
+        "data-binder-controls",
+        "data-binder-legend",
+        "data-card-inspector",
     }
 
     def __init__(self):
@@ -2868,15 +2872,30 @@ def test_rendered_public_volume_routes_use_binder_markup_without_remote_card_ima
         assert 'loading="lazy"' in html
 
         elements = rendered_elements(html)
+        stages = [attrs for tag, attrs in elements
+                  if tag == "div" and "data-binder-stage" in attrs]
+        assert len(stages) == 1
+        assert "binder-stage" in stages[0].get("class", "")
+        spread_owners = [attrs for tag, attrs in elements
+                         if tag == "div" and "data-binder-spreads" in attrs]
+        assert len(spread_owners) == 1
+        assert "binder-spreads" in spread_owners[0].get("class", "")
         controls = [attrs for tag, attrs in elements
                     if tag == "nav" and "data-binder-controls" in attrs]
         assert len(controls) == 1
+        assert "binder-controls" in controls[0].get("class", "")
         control_links = [
             attrs for tag, attrs in elements
             if tag == "a"
             and ("data-binder-prev" in attrs or "data-binder-next" in attrs)
         ]
+        assert len(control_links) == 2
         assert {link["href"] for link in control_links} == expected["controls"]
+        assert {link["aria-label"] for link in control_links} == {"Previous spread", "Next spread"}
+        assert html.count("data-binder-prev") == 1
+        assert html.count("data-binder-next") == 1
+        assert '<span aria-hidden="true">&#8249;</span>' in html
+        assert '<span aria-hidden="true">&#8250;</span>' in html
         assert any(tag == "p" and "data-binder-position" in attrs
                    and attrs.get("aria-live") == "polite" for tag, attrs in elements)
 
@@ -2907,7 +2926,9 @@ def test_rendered_public_volume_routes_use_binder_markup_without_remote_card_ima
                    and "hidden" in attrs for tag, attrs in elements)
         assert any(tag == "dialog" and "data-card-inspector" in attrs for tag, attrs in elements)
         assert binder_owners(html) == [
+            ("data-binder-stage", volume_id),
             ("data-binder-controls", volume_id),
+            ("data-binder-spreads", volume_id),
             ("data-binder-legend", volume_id),
             ("data-card-inspector", volume_id),
         ]
@@ -2975,6 +2996,54 @@ def test_binder_interaction_assets_declare_accessible_contract():
     assert "@media (max-width: 720px)" in stylesheet
     assert "@media (prefers-reduced-motion: reduce)" in stylesheet
     assert "transition: none !important" in stylesheet
+    assert ".binder-stage" in stylesheet
+    assert ".binder-spreads" in stylesheet
+    assert re.search(
+        r"\.binder-controls \[data-binder-prev\],[^{]+\.binder-controls \[data-binder-next\] \{[^}]*min-width: 2\.75rem;[^}]*min-height: 2\.75rem;",
+        stylesheet,
+        re.S,
+    )
+    assert re.search(r"\.binder-controls a:focus-visible \{[^}]*outline:", stylesheet, re.S)
+    assert re.search(
+        r"\.binder\[data-binder-ready=\"true\"\] \.binder-controls \{[^}]*position: absolute;",
+        stylesheet,
+        re.S,
+    )
+    base_controls = re.search(r"^\.binder-controls \{(?P<body>[^}]*)\}", stylesheet, re.M)
+    assert base_controls
+    assert "position: absolute" not in base_controls.group("body")
+    assert re.search(
+        r"\.binder\[data-binder-ready=\"true\"\] \.binder-stage \{[^}]*padding-inline:",
+        stylesheet,
+        re.S,
+    )
+    assert re.search(
+        r"\.binder\[data-binder-ready=\"true\"\] \.binder-controls \[data-binder-prev\],[^{]+\.binder\[data-binder-ready=\"true\"\] \.binder-controls \[data-binder-next\] \{[^}]*position: absolute;[^}]*top: 50%;[^}]*transform: translateY\(-50%\);",
+        stylesheet,
+        re.S,
+    )
+    assert re.search(
+        r"\.binder\[data-binder-ready=\"true\"\] \.binder-controls \[data-binder-prev\] \{[^}]*left: 0;",
+        stylesheet,
+        re.S,
+    )
+    assert re.search(
+        r"\.binder\[data-binder-ready=\"true\"\] \.binder-controls \[data-binder-next\] \{[^}]*right: 0;",
+        stylesheet,
+        re.S,
+    )
+    assert "transform: translateY(-50%) translateX(-2px);" in stylesheet
+    assert "transform: translateY(-50%) translateX(2px);" in stylesheet
+    assert re.search(
+        r"@media \(max-width: 900px\) \{[^}]*\.binder\[data-binder-ready=\"true\"\] \.binder-stage",
+        stylesheet,
+        re.S,
+    )
+    assert re.search(
+        r"@media \(max-width: 720px\) \{[^}]*\.binder\[data-binder-ready=\"true\"\] \.binder-stage",
+        stylesheet,
+        re.S,
+    )
 
 
 def test_rendered_synthetic_binder_marks_only_first_spread_images_eager(tmp_path):
@@ -3151,11 +3220,15 @@ def valid_public_binder_html(volume_id="volume-1", leaf_prefix="v1") -> str:
     return (
         '<!doctype html><html><body>'
         f'<div data-binder="{volume_id}">'
-        '<nav data-binder-controls aria-label="Binder pages">'
-        f'<a data-binder-prev href="#leaf-{leaf_prefix}-01">Previous</a>'
+        '<div class="binder-stage" data-binder-stage>'
+        '<nav class="binder-controls" data-binder-controls aria-label="Binder pages">'
+        f'<a data-binder-prev href="#leaf-{leaf_prefix}-01" aria-label="Previous spread">'
+        '<span aria-hidden="true">&#8249;</span></a>'
         '<p data-binder-position aria-live="polite"></p>'
-        f'<a data-binder-next href="#leaf-{leaf_prefix}-03">Next</a>'
+        f'<a data-binder-next href="#leaf-{leaf_prefix}-03" aria-label="Next spread">'
+        '<span aria-hidden="true">&#8250;</span></a>'
         '</nav>'
+        '<div class="binder-spreads" data-binder-spreads>'
         '<div data-binder-spread="1">'
         f'{card_leaf(f"{leaf_prefix}-01", "one.webp", initial=True)}'
         f'{card_leaf(f"{leaf_prefix}-02", "two.webp", initial=True)}'
@@ -3163,6 +3236,8 @@ def valid_public_binder_html(volume_id="volume-1", leaf_prefix="v1") -> str:
         '<div data-binder-spread="2">'
         f'{card_leaf(f"{leaf_prefix}-03", "three.webp", initial=False)}'
         f'<section id="leaf-{leaf_prefix}-04" data-binder-leaf="{leaf_prefix}-04" data-kind="transition"></section>'
+        '</div>'
+        '</div>'
         '</div>'
         f'<dialog id="card-inspector-{volume_id}" data-card-inspector>'
         '<button data-card-inspector-close>Close</button>'
@@ -3261,8 +3336,8 @@ def test_public_check_requires_direct_link_leaf_anchors(tmp_path):
 
 def test_public_check_requires_dialog_and_labelled_controls(tmp_path):
     html = valid_public_binder_html().replace(
-        '<nav data-binder-controls aria-label="Binder pages">',
-        '<nav data-binder-controls>',
+        '<nav class="binder-controls" data-binder-controls aria-label="Binder pages">',
+        '<nav class="binder-controls" data-binder-controls>',
     ).replace(
         '<dialog id="card-inspector-volume-1" data-card-inspector>',
         '<div>',
@@ -3273,6 +3348,27 @@ def test_public_check_requires_dialog_and_labelled_controls(tmp_path):
 
     assert any("dialog" in error for error in errors)
     assert any("controls" in error and "label" in error for error in errors)
+
+
+def test_public_check_requires_binder_stage_and_spreads_owner(tmp_path):
+    html = valid_public_binder_html().replace(" data-binder-stage", "", 1).replace(
+        " data-binder-spreads", "", 1
+    )
+    write_html(tmp_path, html)
+
+    errors = digital_binder.validate_public_output(tmp_path)
+
+    assert any("binder stage" in error for error in errors)
+    assert any("binder spreads" in error for error in errors)
+
+
+def test_public_check_requires_arrow_control_accessible_labels(tmp_path):
+    html = valid_public_binder_html().replace(' aria-label="Previous spread"', "", 1)
+    write_html(tmp_path, html)
+
+    errors = digital_binder.validate_public_output(tmp_path)
+
+    assert any("previous control" in error and "aria-label" in error for error in errors)
 
 
 def test_public_check_requires_previous_and_next_controls(tmp_path):
