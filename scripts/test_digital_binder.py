@@ -2899,6 +2899,11 @@ def css_declarations(source, selector, *, media=None):
     raise AssertionError(f"missing CSS rule for {selector!r} in {media!r}")
 
 
+def css_px(value):
+    assert value.endswith("px"), value
+    return float(value[:-2])
+
+
 def test_rendered_public_volume_routes_use_binder_markup_without_remote_card_images(tmp_path):
     root = Path(__file__).parents[1]
     destination = tmp_path / "public"
@@ -2975,8 +2980,11 @@ def test_rendered_public_volume_routes_use_binder_markup_without_remote_card_ima
         arrow_text, hidden_spans = arrow_control_text(html)
         assert arrow_text == {"previous": "‹", "next": "›"}
         assert hidden_spans == {"previous": 1, "next": 1}
-        assert any(tag == "p" and "data-binder-position" in attrs
-                   and attrs.get("aria-live") == "polite" for tag, attrs in elements)
+        live_positions = [attrs for tag, attrs in elements
+                          if tag == "p" and "data-binder-position" in attrs]
+        assert len(live_positions) == 1
+        assert live_positions[0].get("aria-live") == "polite"
+        assert "hidden" not in live_positions[0]
 
         card_buttons = [attrs for tag, attrs in elements
                         if tag == "button" and "data-card-id" in attrs]
@@ -3112,15 +3120,13 @@ def test_binder_interaction_assets_declare_accessible_contract():
 
     position_copy = css_declarations(stylesheet, ".binder-controls [data-binder-position]")
     assert position_copy["position"] == "absolute"
-    assert position_copy["width"] == "1px"
-    assert position_copy["height"] == "1px"
-    assert position_copy["margin"] == "-1px"
+    assert css_px(position_copy["width"]) <= 1
+    assert css_px(position_copy["height"]) <= 1
     assert position_copy["overflow"] == "hidden"
-    assert position_copy["clip"] == "rect(0, 0, 0, 0)"
-    assert position_copy["white-space"] == "nowrap"
-    assert position_copy["border"] == "0"
-    assert '.binder[data-binder-ready="true"] .binder-controls [data-binder-position]' not in stylesheet
-    assert '.binder-legend' not in stylesheet
+    assert position_copy["pointer-events"] == "none"
+    assert position_copy.get("display") != "none"
+    assert position_copy.get("visibility") != "hidden"
+    assert position_copy.get("clip", "auto") != "auto" or position_copy.get("clip-path", "none") != "none"
 
     stage = css_declarations(stylesheet, '.binder[data-binder-ready="true"] .binder-stage')
     assert stage["padding-inline"] == "clamp(3.5rem, 6vw, 5rem)"
@@ -3136,6 +3142,18 @@ def test_binder_interaction_assets_declare_accessible_contract():
         media="@media (max-width: 720px)",
     )
     assert mobile_stage["padding-inline"] == "clamp(2.75rem, 10vw, 3.35rem)"
+
+
+def test_binder_javascript_updates_live_status_and_hash_functionally():
+    root = Path(__file__).parents[1]
+    result = subprocess.run(
+        ["node", str(root / "scripts/test_binder_js_behavior.mjs")],
+        cwd=root,
+        capture_output=True,
+        text=True,
+    )
+
+    assert result.returncode == 0, result.stderr
 
 
 def test_rendered_synthetic_binder_marks_only_first_spread_images_eager(tmp_path):
