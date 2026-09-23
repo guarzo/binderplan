@@ -179,7 +179,7 @@ No photographed card is currently confirmed available for Trade.
 | Observation | Visible card | Prior reference |
 |---|---|---|
 | HB-P13-01 | Pikachu — 30th Celebration 046/128, `Get Some Air` / `Smash Kick` | — |
-| HB-P13-02 | Pikachu — 80 HP full-art crowd, `Overwriting Bolt` | — |
+| HB-P13-02 | Pikachu — 80 HP full-art floral treatment, `Overwriting Bolt` | — |
 | HB-P13-03 | Pikachu — 70 HP meadow, `Play Rough` | — |
 | HB-P13-04 | Pikachu — rain/umbrella, `Pika Dash` | — |
 | HB-P13-05 | Pikachu — grass, `Tail Slap` / `Quick Attack` | — |
