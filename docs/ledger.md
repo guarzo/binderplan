@@ -193,9 +193,9 @@ The photographed nine-pocket binder is **interim staging**, not execution of the
 
 The superseded proposal placed both cards in Review/REDUNDANT under Awakened Power. The owner instead confirmed permanent Keeper status but deliberately left the Keeper subsection undecided. This is a classification decision, not evidence of final four-pocket Keeper placement.
 
-### Kirlia remains Beautiful Misfits
+### Kirlia (`kirlia-01`) remains Beautiful Misfits
 
-The photographed Kirlia sits among Heritage cards because it was found later. The owner explicitly declined a Heritage reassignment; its Beautiful Misfits classification remains unchanged. Its exact export-to-photo identity remains an inventory issue, so no permanent registry ID is assigned by this clarification alone.
+The photographed Kirlia sits among Heritage cards because it was found later. The owner explicitly declined a Heritage reassignment; its Beautiful Misfits classification remains unchanged. Its exact set and number remain unresolved, but the photographed physical identity now has a permanent registry ID.
 
 ### Yveltal (`yveltal-03`) → RELEASE
 

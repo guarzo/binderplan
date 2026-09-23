@@ -116,6 +116,7 @@ The column is left as recorded rather than rewritten: `first_seen` is provenance
 | kangaskhan-01 | Kangaskhan | ガルーラ | JP | Jungle | No.115 | uncertain | IMG_6858.HEIC 2026-08-01 | vintage Pokedex-number print, set per owner's doubleholo entry |
 | kasumis-tears-01 | Kasumi's Tears | カスミのなみだ | JP | Leaders' Stadium |  | confirmed | IMG_6865.HEIC 2026-08-01 | Trainer card, no number printed, checked in hand 2026-09-19 |
 | kingdra-01 | Kingdra | キングドラ | JP | Awakening Legends | No.230 | uncertain | on_attack_1.webp 2026-08-01 | Lv.47, vintage Pokedex-number print, illustrator Mitsuhiro Arita, set per owner's doubleholo entry |
+| kirlia-01 | Kirlia | キルリア | JP |  |  | uncertain | IMG_7119.HEIC 2026-09-22 | holding copy; exact set and number unresolved; owner confirmed Beautiful Misfits classification |
 | kyogre-01 | Kyogre | Kyogre ex | EN | Crystal Guardians | 95 | confirmed | elemental_solitude_1.webp 2026-08-01 | set/number from owner's doubleholo export 2026-09-18, denominator not recorded |
 | latias-01 | Latias | Latias | EN | Latias & Latios 2015 | 30/30 | confirmed | joyful_action_1.webp 2026-08-01 | XY Trainer Kit card, owner checked in hand 2026-09-18; earlier 35/30 was a misread |
 | latios-01 | Latios | ラティオス | JP | sv7a | 070/064 | confirmed | contemplation_1.webp 2026-08-01 | AR rarity |

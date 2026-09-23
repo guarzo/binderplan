@@ -108,7 +108,7 @@ The superseded first-sort proposal contained ten Core Value candidates: three fo
 
 Release is not a binder section. It is a separate, clearly labeled outbound group for cards that have no canonical path, permanent keeper reason, or value-based trade role.
 
-The superseded first-sort proposal contained three Release candidates. Only Yveltal — Steam Siege 65 was later confirmed physically removed; the other proposed Release cards remain in the photographed holding inventory.
+The superseded first-sort proposal contained three Release candidates. None of those three proposed releases was executed; all remain in the photographed holding inventory. A different card, Yveltal — Steam Siege 65, was later confirmed physically removed.
 
 ## Historical first-sort capacity
 
@@ -120,9 +120,11 @@ These counts describe the superseded 97-entry proposal, not the authoritative 10
 | Keeper | 46 | Thirteen four-pocket pages / 52 pockets with section boundaries |
 | Trade Core | 10 | Three four-pocket pages / 12 pockets |
 | Release | 3 | Separate outbound group |
-| **Total current pool** | **97** | Reconciled from photographed holding cards and executed swaps |
+| **Historical proposal total** | **97** | Superseded estimate from incomplete photo/export reconciliation |
 
-## Physical sorting sequence
+## Historical physical sorting sequence
+
+Do not execute these steps against the current inventory. They are retained to explain the superseded 97-card proposal; the authoritative 100-card inventory has not been fully reclassified and has no active Trade designations.
 
 1. Prepare dividers and empty pages before removing cards from the current box.
 2. Pull the three Release cards into a separate review envelope.
