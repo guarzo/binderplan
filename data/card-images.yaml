@@ -60,10 +60,17 @@ cards:
     reviewed_on: '2026-09-22'
     source_url: https://assets.tcgdex.net/ja/SV/SV6a/076/high.webp
   blastoise-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: doubleholo
+    upstream_id: '23310'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: exact
+    asset_path: assets/images/cards/blastoise-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-23'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/23310/primary.webp
+    note: '2026-09-23 variant inspection: curator-approved DoubleHolo 23310 selected
+      over same-score 23346 No Rarity variant; identity remains visual-review/not-in-hand
+      from archived leaf.'
   bulbasaur-01:
     provider: tcgdex
     upstream_id: ex14-45
@@ -80,10 +87,17 @@ cards:
     provider: evidence-crop
     source_path: docs/evidence/2026-09-22/owner-supplied-card-images/bulbasaur-corocoro.webp
   bulbasaur-03:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: doubleholo
+    upstream_id: '3029'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: exact
+    asset_path: assets/images/cards/bulbasaur-03.webp
+    reviewed: true
+    reviewed_on: '2026-09-23'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/3029/primary.webp
+    note: '2026-09-23 finish inspection: curator-approved DoubleHolo 3029 selected
+      over same-score 3088 Reverse Holo; archived leaf and TCGdex ecard1-95 show the
+      non-reverse Expedition 95 printing.'
   celebi-01:
     provider: tcgdex
     upstream_id: neo3-16
@@ -437,10 +451,16 @@ cards:
     note: Curator visually confirmed DoubleHolo 33919 is the Dark Phantasma/s10a set-name
       alias for the archived Gengar leaf; variant and printing match.
   gengar-05:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: doubleholo
+    upstream_id: '22469'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: exact
+    asset_path: assets/images/cards/gengar-05.webp
+    reviewed: true
+    reviewed_on: '2026-09-23'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/22469/primary.webp
+    note: '2026-09-23 visual-review/not-in-hand: curator-approved DoubleHolo 22469
+      selected from archived v2-08 leaf; no competing DoubleHolo variants returned.'
   gengar-mimikyu-01:
     provider: doubleholo
     upstream_id: '32261'
@@ -517,10 +537,13 @@ cards:
     reviewed_on: '2026-09-22'
     source_url: https://assets.tcgdex.net/en/sv/sv08.5/049/high.webp
   groudon-03:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: tcgdex
+    upstream_id: xy5-84
+    classification: exact
+    asset_path: assets/images/cards/groudon-03.webp
+    reviewed: true
+    reviewed_on: '2026-09-23'
+    source_url: https://assets.tcgdex.net/en/xy/xy5/84/high.webp
   gyarados-01:
     provider: tcgdex
     upstream_id: base5-25
@@ -625,10 +648,14 @@ cards:
     note: Planned English SWSH299 replacement selected by curator; physical Chinese
       card swap remains unconfirmed.
   jirachi-03:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: doubleholo
+    upstream_id: '35931'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: exact
+    asset_path: assets/images/cards/jirachi-03.webp
+    reviewed: true
+    reviewed_on: '2026-09-23'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/35931/primary.webp
   jirachi-04:
     classification: missing
     asset_path: ''
@@ -642,10 +669,13 @@ cards:
     provider: evidence-crop
     source_path: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/companions_2.webp
   joltik-02:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: tcgdex
+    upstream_id: sv07-150
+    classification: exact
+    asset_path: assets/images/cards/joltik-02.webp
+    reviewed: true
+    reviewed_on: '2026-09-23'
+    source_url: https://assets.tcgdex.net/en/sv/sv07/150/high.webp
   joltik-03:
     provider: doubleholo
     upstream_id: '37962'
@@ -903,10 +933,16 @@ cards:
     reviewed_on: '2026-09-23'
     source_url: https://assets.tcgdex.net/en/ex/ex14/58/high.webp
   muk-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: doubleholo
+    upstream_id: '22212'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: exact
+    asset_path: assets/images/cards/muk-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-23'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/22212/primary.webp
+    note: '2026-09-23 visual-review/not-in-hand: curator-approved DoubleHolo 22212
+      selected from archived v2-08 leaf; no competing DoubleHolo variants returned.'
   ninetales-01:
     provider: doubleholo
     upstream_id: '23327'
@@ -1330,10 +1366,17 @@ cards:
     reviewed: false
     reviewed_on: ''
   steelix-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: doubleholo
+    upstream_id: '22478'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: exact
+    asset_path: assets/images/cards/steelix-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-23'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/22478/primary.webp
+    note: '2026-09-23 variant inspection: curator-approved DoubleHolo 22478 selected
+      over same-score 34775 [LV.57]; archived leaf shows the standard No.208 Lv.64
+      artwork/attacks matching 22478.'
   stufful-01:
     provider: doubleholo
     upstream_id: '35391'
@@ -1460,10 +1503,13 @@ cards:
       side-by-side comparison with archived/current v1-18 crop; DoubleHolo set-name
       alias differs from registry code/full set name.'
   vulpix-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: tcgdex
+    upstream_id: ecard2-116
+    classification: exact
+    asset_path: assets/images/cards/vulpix-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-23'
+    source_url: https://assets.tcgdex.net/en/ecard/ecard2/116/high.webp
   walrein-01:
     provider: doubleholo
     upstream_id: '77632'
