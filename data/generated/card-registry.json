@@ -62,6 +62,15 @@
     "number": "No.009",
     "confidence": "photo"
   },
+  "blastoise-02": {
+    "id": "blastoise-02",
+    "species": "Blastoise",
+    "card_name": "水箭龟VMAX",
+    "language": "ZH",
+    "set": "",
+    "number": "",
+    "confidence": "uncertain"
+  },
   "bulbasaur-01": {
     "id": "bulbasaur-01",
     "species": "Bulbasaur",
@@ -124,6 +133,15 @@
     "set": "s8b",
     "number": "187",
     "confidence": "confirmed"
+  },
+  "charizard-03": {
+    "id": "charizard-03",
+    "species": "Charizard",
+    "card_name": "Charizard VSTAR",
+    "language": "EN",
+    "set": "SWSH Promos",
+    "number": "SWSH262",
+    "confidence": "uncertain"
   },
   "charmander-01": {
     "id": "charmander-01",
@@ -286,6 +304,15 @@
     "set": "Rulers of the Heavens",
     "number": "038/054",
     "confidence": "confirmed"
+  },
+  "dragonite-03": {
+    "id": "dragonite-03",
+    "species": "Dragonite",
+    "card_name": "Dragonite",
+    "language": "EN",
+    "set": "WoTC Promos",
+    "number": "5",
+    "confidence": "uncertain"
   },
   "dratini-01": {
     "id": "dratini-01",
@@ -710,6 +737,15 @@
     "number": "No.230",
     "confidence": "photo"
   },
+  "kirlia-01": {
+    "id": "kirlia-01",
+    "species": "Kirlia",
+    "card_name": "キルリア",
+    "language": "JP",
+    "set": "",
+    "number": "",
+    "confidence": "uncertain"
+  },
   "kyogre-01": {
     "id": "kyogre-01",
     "species": "Kyogre",
@@ -755,6 +791,15 @@
     "number": "30/30",
     "confidence": "confirmed"
   },
+  "litleo-01": {
+    "id": "litleo-01",
+    "species": "Litleo",
+    "card_name": "Litleo",
+    "language": "EN",
+    "set": "Mega Evolution",
+    "number": "139/132",
+    "confidence": "uncertain"
+  },
   "lucario-01": {
     "id": "lucario-01",
     "species": "Lucario",
@@ -763,6 +808,15 @@
     "set": "s12a",
     "number": "226/172",
     "confidence": "confirmed"
+  },
+  "lucario-02": {
+    "id": "lucario-02",
+    "species": "Lucario",
+    "card_name": "Lucario LV.X",
+    "language": "EN",
+    "set": "Mysterious Treasures",
+    "number": "122/123",
+    "confidence": "uncertain"
   },
   "lugia-01": {
     "id": "lugia-01",
@@ -908,6 +962,15 @@
     "number": "12/113",
     "confidence": "confirmed"
   },
+  "mewtwo-05": {
+    "id": "mewtwo-05",
+    "species": "Mewtwo",
+    "card_name": "Mewtwo EX",
+    "language": "EN",
+    "set": "BREAKthrough",
+    "number": "157/162",
+    "confidence": "confirmed"
+  },
   "mimikyu-01": {
     "id": "mimikyu-01",
     "species": "Mimikyu",
@@ -934,6 +997,15 @@
     "set": "Crystal Guardians",
     "number": "58",
     "confidence": "confirmed"
+  },
+  "mudkip-02": {
+    "id": "mudkip-02",
+    "species": "Mudkip",
+    "card_name": "ミズゴロウ",
+    "language": "JP",
+    "set": "Tidal Storm",
+    "number": "012/070",
+    "confidence": "uncertain"
   },
   "muk-01": {
     "id": "muk-01",
@@ -1412,6 +1484,15 @@
     "number": "10/95",
     "confidence": "confirmed"
   },
+  "torterra-02": {
+    "id": "torterra-02",
+    "species": "Torterra",
+    "card_name": "ドダイトス LV.X",
+    "language": "JP",
+    "set": "DP-P Promos",
+    "number": "076/DP-P",
+    "confidence": "confirmed"
+  },
   "typhlosion-01": {
     "id": "typhlosion-01",
     "species": "Typhlosion",
@@ -1545,6 +1626,15 @@
     "language": "ZH",
     "set": "CSV5C",
     "number": "135/129",
+    "confidence": "confirmed"
+  },
+  "yveltal-03": {
+    "id": "yveltal-03",
+    "species": "Yveltal",
+    "card_name": "Yveltal",
+    "language": "EN",
+    "set": "Steam Siege",
+    "number": "65/114",
     "confidence": "confirmed"
   },
   "zapdos-01": {

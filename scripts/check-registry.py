@@ -366,7 +366,7 @@ def render_worklist(rows, previous=None):
         f"read. The remaining {missing} rows ({_pct(missing, total):.1f}%) are missing one or "
         "both fields and are structurally invisible to this check: two physical duplicates "
         "sitting in the registry right now would not be flagged unless both happened to land "
-        f"among that same {both}-row minority."
+        f"among those {both} fully identified rows."
     )
     lines.append("")
     lines.append("## 3. Confirmation queue — clusters first")
@@ -433,9 +433,8 @@ def render_worklist(rows, previous=None):
     lines.append("")
     lines.append(
         "Photographs record what was on a page when the shoot happened, so a card since "
-        "swapped out still appears under its old page. `ursaring-01`, `typhlosion-02` and "
-        "`umbreon-03` are the known cases; check `ledger.md` before hunting for a card that "
-        "is not there."
+        "swapped out can still appear under its old page. Multiple movements are now recorded; "
+        "check `ledger.md` before hunting for a card that is no longer there."
     )
     lines.append("")
     for label, group in page_groups(rows):

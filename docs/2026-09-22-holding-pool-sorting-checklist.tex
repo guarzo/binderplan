@@ -1,0 +1,296 @@
+\documentclass[9pt,a4paper]{extarticle}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{needspace}
+\usepackage{fancyhdr}
+\usepackage{microtype}
+
+\geometry{
+  left=12mm,
+  right=12mm,
+  top=17mm,
+  bottom=15mm,
+  headheight=12pt,
+  headsep=3mm,
+  footskip=8mm
+}
+
+\definecolor{rulegray}{gray}{0.68}
+\definecolor{headinggray}{gray}{0.20}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.08}
+\emergencystretch=1.5em
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\footnotesize Holding Pool Sorting Checklist}
+\fancyhead[R]{\footnotesize 22 September 2026}
+\fancyfoot[C]{\footnotesize Page \thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\newcommand{\checkbox}{%
+  \raisebox{-0.15ex}{\fbox{\rule{0pt}{1.25ex}\rule{1.25ex}{0pt}}}%
+}
+\newcommand{\blankline}[1]{\rule{#1}{0.35pt}}
+\newcommand{\typebadge}[1]{{\footnotesize\bfseries\MakeUppercase{#1}}\enspace}
+\newcommand{\checkitem}[1]{\noindent\checkbox\ #1\par\vspace{0.55ex}}
+\newcommand{\sectiontitle}[1]{%
+  \Needspace{4\baselineskip}%
+  \vspace{1.0ex}%
+  {\large\bfseries\color{headinggray}#1}\par
+  \vspace{0.25ex}\color{rulegray}\hrule\color{black}\vspace{0.8ex}%
+}
+\newcommand{\subsectiontitle}[1]{%
+  \Needspace{3\baselineskip}%
+  \vspace{0.65ex}{\bfseries #1}\par\vspace{0.35ex}%
+}
+\newcommand{\cardrow}[3]{%
+  \Needspace{2.2\baselineskip}%
+  \noindent\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.255\textwidth}>{\raggedright\arraybackslash\ttfamily\footnotesize}p{0.19\textwidth}>{\raggedright\arraybackslash}X@{}}
+    \checkbox\ \textbf{#1} & #2 & #3
+  \end{tabularx}\par\vspace{0.25ex}%
+}
+\newcommand{\comparisonrow}[5]{%
+  \Needspace{4.4\baselineskip}%
+  \noindent\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.255\textwidth}>{\raggedright\arraybackslash\ttfamily\footnotesize}p{0.19\textwidth}>{\raggedright\arraybackslash}X@{}}
+    \checkbox\ \textbf{EDGE: #1} & #2 & \textbf{#3}\newline
+    {\footnotesize Compare with \textbf{#4}. #5}
+  \end{tabularx}\par\vspace{0.45ex}%
+}
+\newcommand{\tradecard}[2]{%
+  \Needspace{2.2\baselineskip}%
+  \noindent\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.31\textwidth}>{\raggedright\arraybackslash\ttfamily\footnotesize}p{0.19\textwidth}>{\raggedright\arraybackslash}X@{}}
+    \checkbox\ \textbf{Trade}\quad\checkbox\ Available now & #1 & #2
+  \end{tabularx}\par\vspace{0.25ex}%
+}
+\newcommand{\releasecard}[2]{%
+  \Needspace{2.2\baselineskip}%
+  \noindent\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.34\textwidth}>{\raggedright\arraybackslash\ttfamily\footnotesize}p{0.19\textwidth}>{\raggedright\arraybackslash}X@{}}
+    \checkbox\ \textbf{Release}\quad\checkbox\ Release executed & #1 & #2
+  \end{tabularx}\par\vspace{0.25ex}%
+}
+
+\begin{document}
+
+{\LARGE\bfseries Holding Pool Sorting Checklist}\par
+\vspace{0.35ex}
+{\small Physical sort for the approved 97-card manifest. HP-NNN values are neutral sorting IDs, not photo-pocket coordinates or registry IDs. Locate each card by its printed label. Bold uppercase labels show the printed TCG type; Trainer cards are marked TRAINER. Treat every assignment as proposed until checked in hand.}\par
+\vspace{0.8ex}
+
+\sectiontitle{1. Setup and count reconciliation}
+\checkitem{Working surface cleared; Review, Keeper, Trade, and Release areas labelled.}
+\checkitem{Starting physical count: \blankline{13mm} cards. Expected: \textbf{97}.}
+\checkitem{Manifest count reconciled: Review \textbf{38} + Keeper \textbf{46} + Trade \textbf{10} + Release \textbf{3} = \textbf{97}.}
+\checkitem{Review binder ready: seven nine-pocket pages, including one empty Event Staging page.}
+\checkitem{Keeper binder ready: thirteen four-pocket pages. Trade binder ready: three four-pocket pages.}
+\checkitem{Low-confidence identities will be checked in hand before final placement.}
+
+\sectiontitle{2. Review --- EDGE Watches}
+\subsectiontitle{Unease (2)}
+\cardrow{Review: Unease}{HP-011}{\typebadge{Colorless} Porygon-Z Lv.X}
+\cardrow{Review: Unease}{HP-036}{\typebadge{Psychic} Dhelmise --- JP Abyss Eye 88}
+
+\subsectiontitle{Environmental Momentum (4)}
+\cardrow{Review: Env. Momentum}{HP-001}{\typebadge{Darkness} Houndour --- Aquapolis 87}
+\cardrow{Review: Env. Momentum}{HP-043}{\typebadge{Darkness} Dark Dragonair --- Team Rocket Returns 31}
+\cardrow{Review: Env. Momentum}{HP-069}{\typebadge{Water} Pelipper --- Deoxys reverse holo 21}
+\cardrow{Review: Env. Momentum}{HP-081}{\typebadge{Water} Mudkip --- EX Dragon 65}
+\checkitem{Three deliberate empty pockets remain on the EDGE Watches page.}
+
+\clearpage
+\sectiontitle{3. Review --- Existing-theme EDGE, including named incumbents}
+{\small Keep a candidate in EDGE only while its named comparison is genuinely open.}\par\vspace{0.7ex}
+
+\comparisonrow{Calm in Nature}{HP-056}{\typebadge{Lightning} Dedenne --- Perfect Order 93}{Plusle (plusle-01)}{Does the autumn setting add enough seasonal range to beat the existing foliage role?}
+\comparisonrow{Elemental Solitude}{HP-038}{\typebadge{Lightning} Ampharos --- Chaos Rising 90}{Cyndaquil (cyndaquil-02)}{Does self-lit isolation create more environmental scale than the incumbent?}
+\comparisonrow{Intimidation}{HP-084}{\typebadge{Darkness} Galarian Obstagoon --- JP 209}{Misdreavus (misdreavus-01)}{Does the confrontational posture communicate restrained threat more clearly?}
+\comparisonrow{World of People}{HP-045}{\typebadge{Lightning} Pikachu --- McDonald's 020/M-P artwork}{Ralts (ralts-01)}{Does the restaurant setting express human society more clearly under the environmental-emphasis rule?}
+\comparisonrow{World of People}{HP-070}{\typebadge{Darkness} Alolan Meowth --- JP 115}{Greavard (greavard-01)}{Does the inhabited nighttime architecture contribute more than the incumbent street scene?}
+\checkitem{Four deliberate empty pockets remain on the Existing-theme EDGE page.}
+
+\sectiontitle{4. Review --- REDUNDANT by target theme}
+\subsectiontitle{Awakened Power (2)}
+\cardrow{Review: REDUNDANT}{HP-051}{\typebadge{Psychic} Mewtwo EX --- BREAKthrough 157 slot}
+\cardrow{Review: REDUNDANT}{HP-058}{\typebadge{Grass} Torterra Lv.X --- JP promo 76}
+
+\subsectiontitle{Calm in Nature (3)}
+\cardrow{Review: REDUNDANT}{HP-061}{\typebadge{Lightning} Mareep --- Expedition 119}
+\cardrow{Review: REDUNDANT}{HP-073}{\typebadge{Grass} Shaymin --- Vivid Voltage 15}
+\cardrow{Review: REDUNDANT}{HP-085}{\typebadge{Water} Mudkip --- JP Sky-Splitting Charisma 21}
+
+\subsectiontitle{Companions (1)}
+\cardrow{Review: REDUNDANT}{HP-060}{\typebadge{Lightning} Electrode --- JP Tag Bolt 37}
+
+\subsectiontitle{Contemplation (1)}
+\cardrow{Review: REDUNDANT}{HP-016}{\typebadge{Metal} Genesect --- Dream Shine Collection 29}
+
+\subsectiontitle{Elemental Solitude (4)}
+\cardrow{Review: REDUNDANT}{HP-020}{\typebadge{Water} Suicune --- Pikachu Libre deck 14}
+\cardrow{Review: REDUNDANT}{HP-039}{\typebadge{Water} Kyogre --- JP Storm Emeralda 80}
+\cardrow{Review: REDUNDANT}{HP-044}{\typebadge{Darkness} Umbreon --- Dark Explorers 61}
+\cardrow{Review: REDUNDANT}{HP-062}{\typebadge{Lightning} Ampharos --- Steam Siege 40}
+
+\subsectiontitle{Enduring Presence (2)}
+\cardrow{Review: REDUNDANT}{HP-041}{\typebadge{Water} Swampert --- Great Encounters 9}
+\cardrow{Review: REDUNDANT}{HP-055}{\typebadge{Fighting} Golem --- Rising Rivals 23}
+
+\subsectiontitle{Intimidation (2)}
+\cardrow{Review: REDUNDANT}{HP-021}{\typebadge{Darkness} Mightyena --- JP Holon Research 70}
+\cardrow{Review: REDUNDANT}{HP-050}{\typebadge{Darkness} Darkrai --- DP24}
+
+\subsectiontitle{Joyful Action (1)}
+\cardrow{Review: REDUNDANT}{HP-040}{\typebadge{Fire} Victini --- JP premium deck 41}
+
+\subsectiontitle{Legendary Bearing (4)}
+\cardrow{Review: REDUNDANT}{HP-019}{\typebadge{Fighting} Zygarde --- XY152}
+\cardrow{Review: REDUNDANT}{HP-032}{\typebadge{Metal} Dialga --- Platinum 6}
+\cardrow{Review: REDUNDANT}{HP-037}{\typebadge{Fighting} Groudon --- printing unresolved}
+\cardrow{Review: REDUNDANT}{HP-052}{\typebadge{Water} Lugia --- Call of Legends 15}
+
+\subsectiontitle{On the Attack (4)}
+\cardrow{Review: REDUNDANT}{HP-072}{\typebadge{Darkness} Yveltal --- Steam Siege 65}
+\cardrow{Review: REDUNDANT}{HP-091}{\typebadge{Psychic} Hoopa EX --- Ancient Origins 36/98}
+\cardrow{Review: REDUNDANT}{HP-095}{\typebadge{Colorless} Snorlax VMAX --- JP s1H 046/060}
+\cardrow{Review: REDUNDANT}{HP-096}{\typebadge{Colorless} Ursaring --- JP No.217}
+
+\Needspace{5\baselineskip}
+\subsectiontitle{World of People (2)}
+\cardrow{Review: REDUNDANT}{HP-046}{\typebadge{Lightning} Pikachu --- Pika Charge artwork}
+\cardrow{Review: REDUNDANT}{HP-048}{\typebadge{Lightning} Pikachu --- Pok\'emon GO 28 artwork}
+
+\sectiontitle{5. Review --- FUTURE SELF and empty Event Staging reminder}
+\cardrow{Review: FUTURE SELF}{HP-049}{\typebadge{Lightning} Pikachu --- tree artwork, mapping unresolved}
+\checkitem{FUTURE SELF page retains eight open pockets; do not fill them with other Review categories.}
+\checkitem{Event Staging page is installed at the back and is completely empty.}
+\checkitem{No card enters Event Staging until an event is scheduled; any unswapped supplement returns to its exact Review section.}
+
+\sectiontitle{6. Keeper --- Personal Keepers}
+\cardrow{Keeper: Personal}{HP-009}{\typebadge{Darkness} M Houndoom EX --- full art}
+\cardrow{Keeper: Personal}{HP-059}{\typebadge{Colorless} Kecleon --- JP promo/artwork}
+\checkitem{One four-pocket page used; two pockets remain open.}
+
+\sectiontitle{7. Keeper --- Beautiful Misfits}
+\cardrow{Keeper: Misfits}{HP-017}{\typebadge{Colorless} Azurill --- JP Storm Emeralda 86}
+\cardrow{Keeper: Misfits}{HP-027}{\typebadge{Psychic} Kirlia pictured; Ralts export slot}
+\cardrow{Keeper: Misfits}{HP-054}{\typebadge{Fighting} Rock-line card / Ditto-Geodude export slot}
+\cardrow{Keeper: Misfits}{HP-071}{\typebadge{Colorless} Ditto --- 30th Celebration promo 106}
+\cardrow{Keeper: Misfits}{HP-075}{\typebadge{Fire} Numel [Ditto] --- Pok\'emon GO 13}
+\cardrow{Keeper: Misfits}{HP-083}{\typebadge{Colorless} Shaymin EX --- Legendary Treasures RC21}
+\checkitem{Two four-pocket pages used; two pockets remain open.}
+
+\sectiontitle{8. Keeper --- Heritage}
+\cardrow{Keeper: Heritage}{HP-012}{\typebadge{Fire} Ninetales --- JP 20th Anniversary 15}
+\cardrow{Keeper: Heritage}{HP-013}{\typebadge{Grass} Nidoking --- Base Set 11}
+\cardrow{Keeper: Heritage}{HP-018}{\typebadge{Fighting} Graveler --- EX Dragon reverse holo 29}
+\cardrow{Keeper: Heritage}{HP-022}{\typebadge{Fire} Charizard --- Secret Wonders 3}
+\cardrow{Keeper: Heritage}{HP-023}{\typebadge{Psychic} Gastly --- Base Set 50}
+\cardrow{Keeper: Heritage}{HP-031}{\typebadge{Fire} Gardevoir EX --- Dragon Frontiers 93}
+\cardrow{Keeper: Heritage}{HP-033}{\typebadge{Water} Dark Blastoise --- Team Rocket 20}
+\cardrow{Keeper: Heritage}{HP-034}{\typebadge{Water} Suicune --- POP Series 2 \#4}
+\cardrow{Keeper: Heritage}{HP-042}{\typebadge{Water} Feraligatr Prime --- HGSS 108}
+\cardrow{Keeper: Heritage}{HP-047}{\typebadge{Lightning} Pikachu --- WoTC Promo 1}
+\cardrow{Keeper: Heritage}{HP-053}{\typebadge{Fighting} Sandshrew --- JP McDonald's 16}
+\cardrow{Keeper: Heritage}{HP-057}{\typebadge{Darkness} Rocket's Zapdos ex --- export slot}
+\cardrow{Keeper: Heritage}{HP-063}{\typebadge{Fire} Cyndaquil --- JP SoulSilver Collection 14}
+\cardrow{Keeper: Heritage}{HP-067}{\typebadge{Grass} Erika's Bulbasaur --- CoroCoro-era artwork}
+\cardrow{Keeper: Heritage}{HP-068}{\typebadge{Grass} Venusaur ex --- JP, exact set unresolved}
+\cardrow{Keeper: Heritage}{HP-076}{\typebadge{Psychic} Mewtwo --- JP 049/DPt-P artwork}
+\cardrow{Keeper: Heritage}{HP-078}{\typebadge{Fighting} Dark Primeape --- Team Rocket 43, 1st Edition}
+\cardrow{Keeper: Heritage}{HP-080}{\typebadge{Water} Piplup --- JP Inferno X 85}
+\cardrow{Keeper: Heritage}{HP-082}{\typebadge{Fire} Charmander --- Team Rocket 50}
+\cardrow{Keeper: Heritage}{HP-092}{\typebadge{Trainer} Kasumi's Tears --- JP Leaders' Stadium}
+\cardrow{Keeper: Heritage}{HP-093}{\typebadge{Colorless} Dratini --- Base Set 26/102}
+\cardrow{Keeper: Heritage}{HP-094}{\typebadge{Trainer} Rocket's Trap --- JP Leaders' Stadium}
+\cardrow{Keeper: Heritage}{HP-097}{\typebadge{Trainer} N's Plan --- Black Bolt 163/086}
+\checkitem{Six four-pocket pages used; one pocket remains open.}
+
+\clearpage
+\sectiontitle{9. Keeper --- Species Studies}
+\cardrow{Keeper: Species}{HP-002}{\typebadge{Darkness} Houndour --- JP silver-border copy}
+\cardrow{Keeper: Species}{HP-003}{\typebadge{Darkness} Houndour --- JP Megalo Cannon-era copy}
+\cardrow{Keeper: Species}{HP-004}{\typebadge{Fire} Houndoom G --- one retained copy}
+\cardrow{Keeper: Species}{HP-005}{\typebadge{Fire} Houndour --- Great Encounters 69}
+\cardrow{Keeper: Species}{HP-006}{\typebadge{Darkness} Houndour --- JP No.228}
+\cardrow{Keeper: Species}{HP-007}{\typebadge{Fire} Dark Houndoom --- Team Rocket Returns reverse holo}
+\cardrow{Keeper: Species}{HP-008}{\typebadge{Darkness} Houndour --- Neo Discovery 39}
+\cardrow{Keeper: Species}{HP-010}{\typebadge{Fire} Houndour --- Skyridge 66}
+\cardrow{Keeper: Species}{HP-024}{\typebadge{Psychic} Gengar --- Legend Maker 5}
+\cardrow{Keeper: Species}{HP-025}{\typebadge{Psychic} Gengar EX --- dark full-art treatment}
+\cardrow{Keeper: Species}{HP-026}{\typebadge{Psychic} Gengar ex --- modern full-art treatment}
+\cardrow{Keeper: Species}{HP-028}{\typebadge{Psychic} Gengar --- Diamond \& Pearl 27}
+\cardrow{Keeper: Species}{HP-064}{\typebadge{Psychic} M Gengar EX --- Phantom Forces 121 slot}
+\cardrow{Keeper: Species}{HP-074}{\typebadge{Psychic} Gengar EX --- printing unresolved}
+\cardrow{Keeper: Species}{HP-090}{\typebadge{Psychic} Gengar ex --- modern multicolor treatment}
+\checkitem{Four four-pocket pages used; one pocket remains open.}
+
+\sectiontitle{10. Trade --- Core Value}
+{\small Check \textbf{Available now} only after confirming that the card is actively available for trade.}\par\vspace{0.7ex}
+\tradecard{HP-014}{\typebadge{Colorless} Rayquaza EX --- JP constructed-deck artwork}
+\tradecard{HP-029}{\typebadge{Trainer} N --- BW100 export slot/full art}
+\tradecard{HP-030}{\typebadge{Trainer} N --- Fates Collide 105a export slot}
+\tradecard{HP-035}{\typebadge{Darkness} Yveltal ex --- JP Nihil Zero 98}
+\tradecard{HP-065}{\typebadge{Darkness} Yveltal ex --- JP full-art copy}
+\tradecard{HP-066}{\typebadge{Colorless} Shaymin EX --- Roaring Skies 106}
+\tradecard{HP-086}{\typebadge{Psychic} Mewtwo EX --- full-art copy}
+\tradecard{HP-087}{\typebadge{Fighting} Groudon EX --- Crystal Guardians 93}
+\tradecard{HP-088}{\typebadge{Colorless} Shaymin EX --- full-art treatment, exact printing unresolved}
+\tradecard{HP-089}{\typebadge{Colorless} Rayquaza EX --- JP constructed-deck artwork}
+\checkitem{Three four-pocket pages used; two event-supplement pockets remain open.}
+
+\sectiontitle{11. Release}
+{\small Do not check \textbf{Release executed} until the owner explicitly executes the decision.}\par\vspace{0.7ex}
+\releasecard{HP-015}{\typebadge{Darkness} Yveltal --- Celebrations 19}
+\releasecard{HP-077}{\typebadge{Trainer} Pok\'emon Communication --- English}
+\releasecard{HP-079}{\typebadge{Water} Piplup --- Manaphy \& Lucario 5}
+
+\clearpage
+\sectiontitle{12. In-hand identity checks}
+\checkitem{Confirm which physical Houndoom G is the one retained copy; archived evidence does not identify which duplicate was removed.}
+\checkitem{Reconcile the pictured Kirlia with the exported Ralts slot. Result: \blankline{47mm}}
+\checkitem{Compare the unresolved Groudon footer and finish in hand. Record result: \blankline{65mm}}
+\checkitem{Reconcile the IMG\_7081 Pikachu positions using artwork descriptions. Notes: \blankline{58mm}}
+\checkitem{Resolve the photographed rock-line card versus the Ditto-Geodude export entry. Notes: \blankline{51mm}}
+\checkitem{Confirm the Rocket's Zapdos assignment. Notes: \blankline{75mm}}
+\checkitem{Map physically distinct Gengar cards to exact export rows where possible. Notes: \blankline{49mm}}
+\checkitem{Confirm moved Tidal Storm Mudkip and retained Sky-Splitting Charisma Mudkip are separate cards.}
+\checkitem{Confirm Team Rocket Charmander remains and the removed duplicate was SVP44.}
+\checkitem{Confirm Galarian Obstagoon remains and the adjacent Japanese Misdreavus was the removed duplicate.}
+\checkitem{Locate Dedenne, Zygarde, Dhelmise, Ditto, Mightyena, and other export-derived entries by card label rather than an inferred photo coordinate.}
+\vspace{1.0ex}
+\textbf{Additional identity notes}\par\vspace{0.7ex}
+\blankline{\textwidth}\par\vspace{2.5ex}
+\blankline{\textwidth}\par\vspace{2.5ex}
+\blankline{\textwidth}
+
+\sectiontitle{13. Final count and section-photo close-out}
+\checkitem{Final Review count: \blankline{12mm} / 38.}
+\checkitem{Final Keeper count: \blankline{12mm} / 46.}
+\checkitem{Final Trade count: \blankline{12mm} / 10.}
+\checkitem{Final Release count: \blankline{12mm} / 3.}
+\checkitem{Grand total reconciled: \blankline{12mm} / 97, with no card counted twice or left unassigned.}
+\vspace{0.5ex}
+\textbf{Section photos}\par\vspace{0.55ex}
+\checkitem{Review: EDGE Watches photographed.}
+\checkitem{Review: Existing-theme EDGE photographed.}
+\checkitem{Review: REDUNDANT photographed by challenged theme.}
+\checkitem{Review: FUTURE SELF and empty Event Staging photographed.}
+\checkitem{Keeper: Personal Keepers photographed.}
+\checkitem{Keeper: Beautiful Misfits photographed.}
+\checkitem{Keeper: Heritage photographed.}
+\checkitem{Keeper: Species Studies photographed.}
+\checkitem{Trade: Core Value photographed.}
+\checkitem{Only executed classification decisions appended to durable records.}
+\vspace{0.8ex}
+Completed by: \blankline{55mm}\hfill Date: \blankline{35mm}
+
+\end{document}

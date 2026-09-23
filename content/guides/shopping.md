@@ -1,11 +1,11 @@
 ---
 title: "Current Watchlist"
-description: "Current page needs and visual targets, updated August 2026"
+description: "Current page needs and visual targets, updated September 2026"
 aliases:
   - "/guides/watchlist/"
 ---
 
-*Updated 2 August 2026.*
+*Updated 21 September 2026.*
 
 The [Buying Checklist](../buying/) is the permanent decision process. This page is the changing part: the images and page needs I am actively watching for now. The reasoning behind the Volume II work lives in the [July 2026 collection notes](../volume-2-refinement/), whose Enduring Presence sections were superseded on 2 August 2026 — the Quiet Familiarity and Threshold audits there still stand.
 
@@ -17,7 +17,7 @@ Volume II is the active volume, and it has room — but the room is in new theme
 
 Every theme already in the binder is full: 19 pages, 171 cards, no open pockets. Placing into one is a **challenge, not an addition** — a card enters only by displacing a named incumbent, which then leaves the binder. A new theme that passes the expansion tests adds pages instead, so its cards evict nothing. That is the only additive path.
 
-Two exceptions are coming: the pulls still owed on Quiet Familiarity and Threshold will open genuine pockets.
+The 21 September refinement is complete: Litleo and Mudkip entered Threshold, Dragonite entered Quiet Familiarity, and Ursaring entered Companions. Those pages are full again; every further placement requires a named eviction.
 
 ### Threshold
 
@@ -27,9 +27,11 @@ Look for art where the *setting* does most of the work and the Pokemon is passin
 
 Skip cards where the Pokemon is merely flying, running, or looking dramatic. Motion is not passage unless a boundary is present.
 
+Litleo's doorway and Mudkip's sheltered opening are now the clearest literal crossings alongside Dawn's Stadium and Squirtle's shoreline. Future challengers should meet that standard rather than relying on motion or lore.
+
 ### Enduring Presence — settled, no pulls owed
 
-Both pages were ratified on 2 August 2026 under the current definition, so unlike Quiet Familiarity and Threshold this theme has no vacancies coming. A card enters only by displacing a named incumbent.
+Both pages were ratified on 2 August 2026 under the current definition. Like every existing theme after the September refinement, Enduring Presence is full; a card enters only by displacing a named incumbent.
 
 Pokemon shown complete and self-contained — finished rather than becoming, power held rather than spent, the pose suggesting continuity. Stillness without spectacle, force implied but not discharged, and containment: sealed, ringed, or self-enclosed.
 
@@ -54,7 +56,7 @@ Look for Pokemon in routines, kitchens, living rooms, gardens, workplaces, or fa
 
 Useful evidence includes furniture, tools, food, laundry, books, toys, a tended garden, a familiar route, or repeated work. A peaceful outdoor portrait usually fits Calm in Nature instead.
 
-The theme works best when the warmth comes from familiarity rather than spectacle.
+The theme works best when the warmth comes from familiarity rather than spectacle. Special Delivery Dragonite now supplies one clear repeated-work signal; additional challengers still need equally visible routine rather than peaceful outdoor atmosphere.
 
 ---
 
@@ -125,10 +127,10 @@ This is the one route by which the binder grows rather than churns: a theme that
 
 ## Quick Decision Guide
 
-Found a card with great art? Ask what signal it carries. Quiet Familiarity and Threshold have pulls owed, so a match there fills a pocket that is opening. Everywhere else the theme is full and a match means *challenge a named incumbent*, not *add*:
+Found a card with great art? Ask what signal it carries. Every existing theme is full, so a match means *challenge a named incumbent*, not *add*:
 
-- **Domestic warmth, routine, an inhabited place** — Volume II: Quiet Familiarity, into a pocket the owed pulls are opening
-- **A visible edge, departure, or arrival** — Volume II: Threshold, into a pocket the owed pulls are opening
+- **Domestic warmth, routine, an inhabited place** — Volume II: Quiet Familiarity — full, name the incumbent to challenge
+- **A visible edge, departure, or arrival** — Volume II: Threshold — full, name the incumbent to challenge
 - **Bond that shapes the image** — Volume II: Companions — full, name the incumbent to challenge
 - **Power held whole, contained, self-enclosed** — Volume II: Enduring Presence — full, name the incumbent to challenge
 - **Power gathering, transition** — Volume I: Awakened Power — full, name the incumbent to challenge

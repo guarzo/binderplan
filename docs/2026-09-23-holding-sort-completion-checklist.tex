@@ -1,0 +1,221 @@
+\documentclass[8pt,a4paper]{extarticle}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{needspace}
+\usepackage{fancyhdr}
+\usepackage{microtype}
+
+\geometry{left=11mm,right=11mm,top=16mm,bottom=14mm,headheight=11pt,headsep=2mm,footskip=7mm}
+\definecolor{rulegray}{gray}{0.68}
+\definecolor{headinggray}{gray}{0.20}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\tabcolsep}{2.5pt}
+\renewcommand{\arraystretch}{1.04}
+\emergencystretch=1.5em
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\footnotesize Holding Sort Completion Checklist}
+\fancyhead[R]{\footnotesize 23 September 2026}
+\fancyfoot[C]{\footnotesize Page \thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\newcommand{\checkbox}{\raisebox{-0.15ex}{\fbox{\rule{0pt}{1.2ex}\rule{1.2ex}{0pt}}}}
+\newcommand{\blankline}[1]{\rule{#1}{0.35pt}}
+\newcommand{\typebadge}[1]{{\scriptsize\bfseries\MakeUppercase{#1}}\enspace}
+\newcommand{\checkitem}[1]{\noindent\checkbox\ #1\par\vspace{0.4ex}}
+\newcommand{\sectiontitle}[1]{%
+  \Needspace{4\baselineskip}\vspace{0.8ex}%
+  {\large\bfseries\color{headinggray}#1}\par
+  \vspace{0.2ex}\color{rulegray}\hrule\color{black}\vspace{0.55ex}%
+}
+\newcommand{\subsectiontitle}[1]{%
+  \Needspace{3\baselineskip}\vspace{0.5ex}{\bfseries #1}\par\vspace{0.25ex}%
+}
+\newcommand{\settledrow}[4]{%
+  \Needspace{2.6\baselineskip}%
+  \noindent\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.26\textwidth}>{\ttfamily\scriptsize}p{0.12\textwidth}>{\raggedright\arraybackslash}X@{}}
+    \checkbox\ \textbf{#1} & #2 & \typebadge{#3}\textbf{#4}\newline
+    {\scriptsize \checkbox\ Confirm marked destination \quad \checkbox\ Change to: \blankline{25mm}}
+  \end{tabularx}\par\vspace{0.22ex}%
+}
+\newcommand{\decisionrow}[5]{%
+  \Needspace{3.2\baselineskip}%
+  \noindent\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.24\textwidth}>{\ttfamily\scriptsize}p{0.12\textwidth}>{\raggedright\arraybackslash}X@{}}
+    \checkbox\ \textbf{#1} & #2 & \typebadge{#3}\textbf{#4}\newline
+    {\scriptsize #5\quad \textbf{Final:}\ \blankline{18mm}}
+  \end{tabularx}\par\vspace{0.32ex}%
+}
+
+\begin{document}
+
+{\LARGE\bfseries Holding Sort Completion Checklist}\par
+\vspace{0.3ex}
+{\small Completion pass for the authoritative 100-card photographed inventory. The current nine-pocket binder is interim staging; use the page locator to find each card, then move it only after its destination is settled.}\par
+\vspace{0.6ex}
+
+\sectiontitle{1. Baseline and safeguards}
+\checkitem{Starting count confirmed: \blankline{12mm} / \textbf{100} photographed current cards.}
+\checkitem{Current binder treated as interim staging, not final section order.}
+\checkitem{Yveltal --- Steam Siege 65/114 was already removed and is not part of the 100-card starting count.}
+\checkitem{No card is currently authorized for Trade. A Trade choice below requires a fresh owner checkmark.}
+\checkitem{No additional Release is authorized. A Release choice below requires a fresh owner checkmark before physical removal.}
+\checkitem{Prepare final Review and Keeper destinations; leave Event Staging empty.}
+
+\sectiontitle{2. Owner-marked Review choices --- confirm, then move}
+{\scriptsize These destinations come from clear marks on the incomplete paper checklist. Confirm each one here; a photographed interim position alone is not a final classification.}\par\vspace{0.4ex}
+\subsectiontitle{EDGE Watches and Existing-theme EDGE}
+\settledrow{Review · Unease}{HB-P01-01}{Colorless}{Porygon-Z Lv.X}
+\settledrow{Review · Unease}{HB-P01-02}{Psychic}{Dhelmise --- Japanese}
+\settledrow{Review · Env. Momentum}{HB-P01-05}{Darkness}{Dark Dragonair --- Team Rocket Returns}
+\settledrow{Review · Env. Momentum}{HB-P01-06}{Water}{Pelipper --- Deoxys reverse holo}
+\settledrow{Review · Env. Momentum}{HB-P01-07}{Water}{Mudkip --- EX Dragon}
+\settledrow{Review · Existing EDGE}{HB-P03-03}{Darkness}{Galarian Obstagoon --- Japanese}
+
+\subsectiontitle{REDUNDANT}
+\settledrow{Review · REDUNDANT}{HB-P02-04}{Lightning}{Electrode --- Japanese}
+\settledrow{Review · REDUNDANT}{HB-P02-05}{Metal}{Genesect --- Japanese}
+\settledrow{Review · REDUNDANT}{HB-P02-06}{Water}{Suicune --- Pikachu Libre deck}
+\settledrow{Review · REDUNDANT}{HB-P02-07}{Water}{Kyogre --- Japanese Storm Emeralda}
+\settledrow{Review · REDUNDANT}{HB-P02-09}{Lightning}{Ampharos --- Steam Siege}
+\settledrow{Review · REDUNDANT}{HB-P03-01}{Water}{Swampert --- Great Encounters}
+\settledrow{Review · REDUNDANT}{HB-P03-04}{Darkness}{Darkrai --- DP24}
+\settledrow{Review · REDUNDANT}{HB-P03-05}{Fire}{Victini --- Japanese}
+\settledrow{Review · REDUNDANT}{HB-P03-06}{Metal}{Dialga --- Platinum}
+\settledrow{Review · REDUNDANT}{HB-P03-07}{Fighting}{Groudon --- printing unresolved}
+\settledrow{Review · REDUNDANT}{HB-P03-08}{Water}{Lugia --- Call of Legends}
+\settledrow{Review · REDUNDANT}{HB-P04-01}{Psychic}{Hoopa EX}
+\settledrow{Review · REDUNDANT}{HB-P04-02}{Colorless}{Snorlax VMAX --- Japanese}
+\settledrow{Review · REDUNDANT}{HB-P04-03}{Colorless}{Ursaring --- Japanese No.217}
+
+\clearpage
+\sectiontitle{3. Owner-marked Keeper choices --- confirm, then move}
+{\scriptsize Confirm each marked destination before moving the card. Kirlia's Beautiful Misfits decision was separately confirmed by the owner.}\par\vspace{0.4ex}
+\subsectiontitle{Personal Keepers and Beautiful Misfits}
+\settledrow{Keeper · Personal}{HB-P05-01}{Colorless}{Kecleon --- Japanese forest artwork}
+\settledrow{Beautiful Misfits}{HB-P05-02}{Fighting}{Ditto --- English Delta Species 62/113}
+\settledrow{Beautiful Misfits}{HB-P05-03}{Colorless}{Ditto --- Japanese multiple-Ditto artwork}
+\settledrow{Beautiful Misfits}{HB-P05-04}{Fire}{Numel [Ditto] --- Pokémon GO}
+\settledrow{Beautiful Misfits}{HB-P07-07}{Psychic}{Kirlia --- Japanese}
+\settledrow{Beautiful Misfits}{HB-P09-04}{Colorless}{Azurill --- Japanese}
+\settledrow{Beautiful Misfits}{HB-P09-07}{Grass}{Shaymin EX --- Legendary Treasures RC21}
+
+\subsectiontitle{Heritage}
+\settledrow{Keeper · Heritage}{HB-P06-02}{Grass}{Nidoking --- Base Set}
+\settledrow{Keeper · Heritage}{HB-P06-03}{Fighting}{Graveler --- EX Dragon reverse holo}
+\settledrow{Keeper · Heritage}{HB-P06-04}{Fire}{Charizard --- Secret Wonders}
+\settledrow{Keeper · Heritage}{HB-P06-05}{Psychic}{Gastly --- Base Set}
+\settledrow{Keeper · Heritage}{HB-P06-06}{Fire}{Gardevoir EX --- Dragon Frontiers}
+\settledrow{Keeper · Heritage}{HB-P06-07}{Water}{Dark Blastoise --- Team Rocket}
+\settledrow{Keeper · Heritage}{HB-P06-08}{Water}{Suicune --- POP Series 2}
+\settledrow{Keeper · Heritage}{HB-P06-09}{Water}{Feraligatr Prime}
+\settledrow{Keeper · Heritage}{HB-P07-02}{Darkness}{Rocket's Zapdos ex --- Japanese}
+\settledrow{Keeper · Heritage}{HB-P07-03}{Fire}{Cyndaquil --- Japanese SoulSilver Collection}
+\settledrow{Keeper · Heritage}{HB-P07-04}{Grass}{Erika's Bulbasaur}
+\settledrow{Keeper · Heritage}{HB-P07-05}{Grass}{Venusaur ex --- older Japanese treatment}
+\settledrow{Keeper · Heritage}{HB-P07-06}{Psychic}{Mewtwo --- Japanese promo artwork}
+\settledrow{Keeper · Heritage}{HB-P07-08}{Fighting}{Dark Primeape --- 1st Edition}
+\settledrow{Keeper · Heritage}{HB-P07-09}{Water}{Piplup --- Japanese Inferno X}
+\settledrow{Keeper · Heritage}{HB-P08-01}{Fire}{Charmander --- Team Rocket}
+\settledrow{Keeper · Heritage}{HB-P08-02}{Trainer}{Kasumi's Tears}
+\settledrow{Keeper · Heritage}{HB-P08-03}{Colorless}{Dratini --- Base Set}
+\settledrow{Keeper · Heritage}{HB-P08-04}{Trainer}{Rocket's Trap}
+\settledrow{Keeper · Heritage}{HB-P08-05}{Trainer}{N's Plan}
+
+\sectiontitle{4. Unfinished prior decisions}
+{\scriptsize For each row, mark one final destination. `Trade` and `Release` are inactive unless their authorization box is checked here.}\par\vspace{0.4ex}
+\decisionrow{Choose destination}{HB-P01-03}{Darkness}{Houndour --- Aquapolis}{\checkbox\ Review/Env. Momentum \quad \checkbox\ Species Studies \quad \checkbox\ Other: \blankline{25mm}}
+\decisionrow{Choose destination}{HB-P01-04}{Darkness}{Houndour --- Japanese silver-border artwork}{\checkbox\ Species Studies \quad \checkbox\ Review \quad \checkbox\ Other: \blankline{25mm}}
+\decisionrow{Confirm prior Review}{HB-P02-01}{Lightning}{Mareep --- Expedition}{\checkbox\ Review/Calm in Nature \quad \checkbox\ Keeper: \blankline{25mm} \quad \checkbox\ Other}
+\decisionrow{Confirm prior Review}{HB-P02-02}{Grass}{Shaymin --- Vivid Voltage}{\checkbox\ Review/Calm in Nature \quad \checkbox\ Keeper: \blankline{25mm} \quad \checkbox\ Other}
+\decisionrow{Confirm prior Review}{HB-P02-03}{Water}{Mudkip --- Japanese Sky-Splitting Charisma}{\checkbox\ Review/Calm in Nature \quad \checkbox\ Keeper: \blankline{25mm} \quad \checkbox\ Other}
+\decisionrow{Resolve metadata/destination}{HB-P02-08}{Darkness}{Umbreon --- Dark Explorers artwork}{\checkbox\ Review/Elemental Solitude \quad \checkbox\ Keeper: \blankline{22mm} \quad Printing: \blankline{25mm}}
+\decisionrow{Confirm prior Review}{HB-P03-02}{Fighting}{Golem --- Rising Rivals}{\checkbox\ Review/Enduring Presence \quad \checkbox\ Keeper: \blankline{25mm} \quad \checkbox\ Other}
+\decisionrow{Former Trade candidate}{HB-P05-05}{Colorless}{Shaymin EX --- Roaring Skies full art}{\checkbox\ Review \quad \checkbox\ Keeper: \blankline{20mm} \quad \checkbox\ Trade authorized \quad \checkbox\ Release authorized}
+\decisionrow{Choose Keeper subsection}{HB-P05-06}{Grass}{Torterra Lv.X --- Japanese}{\checkbox\ Personal \quad \checkbox\ Beautiful Misfits \quad \checkbox\ Heritage \quad \checkbox\ Species Studies}
+\decisionrow{Choose Keeper subsection}{HB-P05-07}{Psychic}{Mewtwo EX --- BREAKthrough full art}{\checkbox\ Personal \quad \checkbox\ Beautiful Misfits \quad \checkbox\ Heritage \quad \checkbox\ Species Studies}
+\decisionrow{Resolve metadata/destination}{HB-P06-01}{Fire}{Ninetales --- Japanese vintage printing}{\checkbox\ Heritage \quad \checkbox\ Other: \blankline{22mm} \quad Set/number: \blankline{30mm}}
+\decisionrow{Confirm destination}{HB-P07-01}{Fighting}{Sandshrew --- Japanese McDonald's}{\checkbox\ Heritage \quad \checkbox\ Beautiful Misfits \quad \checkbox\ Other: \blankline{25mm}}
+
+\sectiontitle{5. Cards omitted from or unresolved by the old manifest}
+\subsectiontitle{Page 9}
+\decisionrow{Classify}{HB-P09-01}{Dragon}{Rayquaza --- English, Dragon Pulse/Shred}{\checkbox\ Review \quad \checkbox\ Keeper: \blankline{20mm} \quad \checkbox\ Trade authorized \quad \checkbox\ Release authorized}
+\decisionrow{Classify}{HB-P09-02}{Colorless}{Kecleon --- Japanese Lv.38/tongue artwork}{\checkbox\ Personal \quad \checkbox\ Beautiful Misfits \quad \checkbox\ Species Studies \quad \checkbox\ Other}
+\decisionrow{Classify}{HB-P09-03}{Colorless}{Ditto --- Japanese SV151-style}{\checkbox\ Beautiful Misfits \quad \checkbox\ Species Studies \quad \checkbox\ Review \quad \checkbox\ Other}
+\decisionrow{Classify}{HB-P09-05}{Colorless}{Eevee --- SVP 173}{\checkbox\ Review \quad \checkbox\ Keeper: \blankline{20mm} \quad \checkbox\ Release authorized \quad \checkbox\ Other}
+\decisionrow{Classify}{HB-P09-06}{Grass}{Venusaur ex --- modern Japanese full art}{\checkbox\ Heritage \quad \checkbox\ Beautiful Misfits \quad \checkbox\ Trade authorized \quad \checkbox\ Other}
+\decisionrow{Classify}{HB-P09-08}{Fighting}{Aerodactyl --- Japanese vintage}{\checkbox\ Heritage \quad \checkbox\ Beautiful Misfits \quad \checkbox\ Review \quad \checkbox\ Other}
+\decisionrow{Prior Release not executed}{HB-P09-09}{Water}{Piplup --- Manaphy \& Lucario}{\checkbox\ Keeper: \blankline{20mm} \quad \checkbox\ Review \quad \checkbox\ Release authorized}
+
+\subsectiontitle{Page 10}
+\decisionrow{Classify}{HB-P10-01}{Fire}{Typhlosion --- Japanese}{\checkbox\ Heritage \quad \checkbox\ Beautiful Misfits \quad \checkbox\ Review \quad \checkbox\ Other}
+\decisionrow{Classify}{HB-P10-02}{Psychic}{Misdreavus --- Japanese}{\checkbox\ Heritage \quad \checkbox\ Beautiful Misfits \quad \checkbox\ Review \quad \checkbox\ Other}
+\decisionrow{Prior Release not executed}{HB-P10-03}{Trainer}{Pokémon Communication --- English}{\checkbox\ Keeper: \blankline{20mm} \quad \checkbox\ Review \quad \checkbox\ Release authorized}
+\decisionrow{Former Trade candidate}{HB-P10-04}{Trainer}{N --- Japanese non-full-art}{\checkbox\ Heritage \quad \checkbox\ Beautiful Misfits \quad \checkbox\ Trade authorized \quad \checkbox\ Other}
+\decisionrow{Former Trade candidate}{HB-P10-05}{Trainer}{N --- English full art}{\checkbox\ Heritage \quad \checkbox\ Beautiful Misfits \quad \checkbox\ Trade authorized \quad \checkbox\ Other}
+\decisionrow{Former Trade candidate}{HB-P10-06}{Darkness}{Yveltal ex --- Japanese red full art}{\checkbox\ Review \quad \checkbox\ Keeper: \blankline{20mm} \quad \checkbox\ Trade authorized \quad \checkbox\ Release authorized}
+\decisionrow{Prior Release not executed}{HB-P10-07}{Darkness}{Yveltal --- Celebrations}{\checkbox\ Keeper: \blankline{20mm} \quad \checkbox\ Review \quad \checkbox\ Release authorized}
+\decisionrow{Classify}{HB-P10-08}{Lightning}{Emolga EX --- Japanese}{\checkbox\ Personal \quad \checkbox\ Beautiful Misfits \quad \checkbox\ Species Studies \quad \checkbox\ Other}
+
+\sectiontitle{6. Species-study and personal-run decisions}
+\subsectiontitle{Houndour/Houndoom and Gengar page}
+\decisionrow{Confirm Species Studies}{HB-P11-01}{Darkness}{Houndour --- Japanese No.228}{\checkbox\ Species Studies \quad \checkbox\ Other: \blankline{35mm}}
+\decisionrow{Confirm Species Studies}{HB-P11-02}{Fire}{Team Magma's Houndour --- reverse holo}{\checkbox\ Species Studies \quad \checkbox\ Other: \blankline{35mm}}
+\decisionrow{Confirm Species Studies}{HB-P11-03}{Fire}{Houndoom G}{\checkbox\ Species Studies \quad \checkbox\ Other: \blankline{35mm}}
+\decisionrow{Confirm Species Studies}{HB-P11-04}{Darkness}{Houndour --- Japanese Megalo Cannon-era candidate}{\checkbox\ Species Studies \quad \checkbox\ Other: \blankline{35mm}}
+\decisionrow{Choose Keeper subsection}{HB-P11-05}{Fire}{Houndoom EX --- full art}{\checkbox\ Personal \quad \checkbox\ Species Studies \quad \checkbox\ Beautiful Misfits \quad \checkbox\ Other}
+\decisionrow{Confirm Species Studies}{HB-P11-06}{Fire}{Houndour --- Skyridge}{\checkbox\ Species Studies \quad \checkbox\ Other: \blankline{35mm}}
+\decisionrow{Confirm Species Studies}{HB-P11-07}{Fire}{Houndour --- Great Encounters}{\checkbox\ Species Studies \quad \checkbox\ Other: \blankline{35mm}}
+\decisionrow{Confirm Species Studies}{HB-P11-08}{Fire}{Dark Houndoom --- Team Rocket Returns}{\checkbox\ Species Studies \quad \checkbox\ Other: \blankline{35mm}}
+\decisionrow{Confirm Species Studies}{HB-P11-09}{Psychic}{Gengar --- Diamond \& Pearl}{\checkbox\ Species Studies \quad \checkbox\ Other: \blankline{35mm}}
+\decisionrow{Confirm Species Studies}{HB-P12-01}{Darkness}{Gengar ex --- modern 280 HP treatment}{\checkbox\ Species Studies \quad \checkbox\ Other: \blankline{35mm}}
+\decisionrow{Confirm Species Studies}{HB-P12-02}{Psychic}{Gengar --- Legend Maker}{\checkbox\ Species Studies \quad \checkbox\ Other: \blankline{35mm}}
+\decisionrow{Confirm Species Studies}{HB-P12-03}{Psychic}{Gengar EX --- Night Attack/Dark Corridor}{\checkbox\ Species Studies \quad \checkbox\ Other: \blankline{35mm}}
+
+\subsectiontitle{Pikachu decisions --- page 12}
+\decisionrow{Classify Pikachu}{HB-P12-04}{Lightning}{Multiple-Pikachu group artwork}{\checkbox\ Species Studies \quad \checkbox\ Beautiful Misfits \quad \checkbox\ Review \quad \checkbox\ Release authorized}
+\decisionrow{Classify Pikachu}{HB-P12-05}{Lightning}{Pika Ball/Thundershock artwork}{\checkbox\ Review/World of People \quad \checkbox\ Species Studies \quad \checkbox\ Keeper: \blankline{18mm}}
+\decisionrow{Classify Pikachu}{HB-P12-06}{Lightning}{Tree artwork}{\checkbox\ FUTURE SELF \quad \checkbox\ Species Studies \quad \checkbox\ Keeper: \blankline{18mm}}
+\decisionrow{Classify Pikachu}{HB-P12-07}{Lightning}{70 HP lightning/Volt Tackle artwork}{\checkbox\ Species Studies \quad \checkbox\ Beautiful Misfits \quad \checkbox\ Review \quad \checkbox\ Release authorized}
+\decisionrow{Classify Pikachu}{HB-P12-08}{Lightning}{60 HP field/Quick Attack artwork}{\checkbox\ Species Studies \quad \checkbox\ Beautiful Misfits \quad \checkbox\ Review \quad \checkbox\ Release authorized}
+\decisionrow{Classify Pikachu}{HB-P12-09}{Lightning}{Desk/room Gnaw artwork}{\checkbox\ World of People \quad \checkbox\ Species Studies \quad \checkbox\ Beautiful Misfits \quad \checkbox\ Other}
+
+\sectiontitle{7. Pikachu decisions --- page 13}
+\decisionrow{Classify Pikachu}{HB-P13-01}{Lightning}{30th Celebration 046/128 --- Get Some Air/Smash Kick}{\checkbox\ World of People \quad \checkbox\ Species Studies \quad \checkbox\ Beautiful Misfits \quad \checkbox\ Other}
+\decisionrow{Classify Pikachu}{HB-P13-02}{Lightning}{80 HP full-art crowd/Overwriting Bolt}{\checkbox\ World of People \quad \checkbox\ Species Studies \quad \checkbox\ Beautiful Misfits \quad \checkbox\ Other}
+\decisionrow{Classify Pikachu}{HB-P13-03}{Lightning}{70 HP meadow/Play Rough}{\checkbox\ Calm in Nature \quad \checkbox\ Species Studies \quad \checkbox\ Beautiful Misfits \quad \checkbox\ Other}
+\decisionrow{Classify Pikachu}{HB-P13-04}{Lightning}{Rain/umbrella Pika Dash artwork}{\checkbox\ World of People \quad \checkbox\ Species Studies \quad \checkbox\ Beautiful Misfits \quad \checkbox\ Other}
+\decisionrow{Classify Pikachu}{HB-P13-05}{Lightning}{Grass Tail Slap/Quick Attack artwork}{\checkbox\ Calm in Nature \quad \checkbox\ Species Studies \quad \checkbox\ Beautiful Misfits \quad \checkbox\ Other}
+\decisionrow{Classify Pikachu}{HB-P13-06}{Lightning}{Lt. Surge's Pikachu --- Japanese}{\checkbox\ Heritage \quad \checkbox\ Species Studies \quad \checkbox\ Beautiful Misfits \quad \checkbox\ Other}
+\decisionrow{Classify Pikachu}{HB-P13-07}{Lightning}{Pokémon GO 028/078 --- Wild Charge}{\checkbox\ Heritage \quad \checkbox\ Species Studies \quad \checkbox\ Beautiful Misfits \quad \checkbox\ Other}
+\decisionrow{Classify Pikachu}{HB-P13-08}{Lightning}{Black Star Promo Growl/Thundershock}{\checkbox\ Heritage \quad \checkbox\ Species Studies \quad \checkbox\ Beautiful Misfits \quad \checkbox\ Other}
+
+\sectiontitle{8. Final physical execution}
+\checkitem{Every decision row above has exactly one destination selected.}
+\checkitem{Review cards placed by section: EDGE Watches, Existing-theme EDGE, REDUNDANT, FUTURE SELF.}
+\checkitem{Event Staging page installed empty at the back of Review.}
+\checkitem{Keeper cards placed by section: Personal, Beautiful Misfits, Heritage, Species Studies.}
+\checkitem{Any Trade card has a fresh `Trade authorized` checkmark and is actively available now.}
+\checkitem{Any new Release card has a fresh `Release authorized` checkmark and explicit owner execution.}
+
+\subsectiontitle{Final counts}
+\checkitem{Final Review count: \blankline{14mm}.}
+\checkitem{Final Keeper count: \blankline{14mm}.}
+\checkitem{Final Trade count: \blankline{14mm}.}
+\checkitem{Newly authorized Release count from this 100-card pool: \blankline{14mm}.}
+\checkitem{Grand total reconciled: Review + Keeper + Trade + newly authorized Release = \blankline{14mm} / \textbf{100}.}
+\checkitem{Section photographs complete: Review \checkbox\quad Keeper \checkbox\quad Trade, if used \checkbox\quad Release, if used \checkbox}
+\checkitem{Only executed decisions appended to durable inventory and ledger records.}
+
+\vspace{0.8ex}
+Completed by: \blankline{55mm}\hfill Date: \blankline{35mm}
+
+\end{document}

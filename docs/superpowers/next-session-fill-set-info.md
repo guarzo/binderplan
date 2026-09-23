@@ -146,9 +146,10 @@ number.
   `Black Bolt` to `SV11B`) is a translation of that reading, not a lookup — but check the result
   against the owner's set name. TCGdex matches on name and number, and a vintage card's Pokédex
   number can hit a modern card with the same number (`mew-05` briefly landed in the 151 set).
-- Four cards in the registry are no longer in the binder (`ursaring-01`, `typhlosion-02`,
-  `umbreon-03`, `electrode-01`). They still have rows, correctly. Do not hunt for them; if you want
-  to confirm them, they are in the holding box.
+- Registry rows persist when cards move or leave, so the current outside-binder population changes
+  over time. Do not infer occupancy from this historical worklist. Read `docs/ledger.md` forward and
+  consult `docs/registry-confirmation.md` §4 for the latest reconciled summary. In particular,
+  `ursaring-01` re-entered the binder in Companions on 2026-09-21.
 
 ## Reference
 
