@@ -143,10 +143,17 @@ cards:
     reviewed_on: '2026-09-22'
     source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/21592/primary.webp
   charmander-03:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: doubleholo
+    upstream_id: '3023'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: exact
+    asset_path: assets/images/cards/charmander-03.webp
+    reviewed: true
+    reviewed_on: '2026-09-23'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/3023/primary.webp
+    note: Curator selected DoubleHolo 3023 after variant inspection; competing 3097
+      is the Reverse Holo variant, while the archived v2-05 pocket matches the non-reverse
+      Expedition 98 printing.
   cinccino-01:
     classification: missing
     asset_path: ''
@@ -269,10 +276,15 @@ cards:
     upstream_id: base5-53
     source_url: https://assets.tcgdex.net/en/base/base5/53/high.webp
   dratini-02:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: tcgdex
+    upstream_id: base1-26
+    classification: exact
+    asset_path: assets/images/cards/dratini-02.webp
+    reviewed: true
+    reviewed_on: '2026-09-23'
+    source_url: https://assets.tcgdex.net/en/base/base1/26/high.webp
+    note: Curator selected TCGdex base1-26 after inspecting the competing number-26
+      Dratini variant ex3-26; archived identity is Base Set 26/102, not EX Dragon.
   eevee-01:
     provider: tcgdex
     upstream_id: svp-173
@@ -785,10 +797,14 @@ cards:
     reviewed_on: '2026-09-22'
     source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/556/primary.webp
   mew-04:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: doubleholo
+    upstream_id: '77672'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: exact
+    asset_path: assets/images/cards/mew-04.webp
+    reviewed: true
+    reviewed_on: '2026-09-23'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/77672/primary.webp
   mew-05:
     classification: missing
     asset_path: ''
@@ -885,10 +901,19 @@ cards:
     reviewed_on: '2026-09-22'
     source_url: https://assets.tcgdex.net/en/sv/sv10.5b/163/high.webp
   numel-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: doubleholo
+    upstream_id: '4334'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    identity_basis: curator visually confirmed printing; DoubleHolo set-name alias
+      differs from registry
+    classification: exact
+    asset_path: assets/images/cards/numel-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-23'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/4334/primary.webp
+    note: Curator visually confirmed DoubleHolo 4334 uses Pokemon Dragon as DoubleHolo's
+      set-name alias for EX Dragon; Firebreathing/Tackle e-Card-era image and printing
+      match the archived v2-05 pocket.
   oshawott-01:
     provider: tcgdex
     upstream_id: sv10.5w-105
@@ -941,10 +966,13 @@ cards:
     note: Curator approved the Pokémon GO 027/078 registry photo after inspecting
       competing 027-numbered variants.
   pikachu-05:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: tcgdex
+    upstream_id: ecard3-84
+    classification: exact
+    asset_path: assets/images/cards/pikachu-05.webp
+    reviewed: true
+    reviewed_on: '2026-09-23'
+    source_url: https://assets.tcgdex.net/en/ecard/ecard3/84/high.webp
   pikachu-06:
     classification: photo-crop
     asset_path: assets/images/cards/pikachu-06.webp
@@ -958,10 +986,15 @@ cards:
     reviewed: false
     reviewed_on: ''
   piplup-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: tcgdex
+    upstream_id: pop6-15
+    classification: exact
+    asset_path: assets/images/cards/piplup-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-23'
+    source_url: https://assets.tcgdex.net/en/pop/pop6/15/high.webp
+    note: Curator selected TCGdex pop6-15 after inspecting the competing number-15
+      Piplup variant pop8-15; archived identity is POP Series 6 number 15.
   plusle-01:
     provider: doubleholo
     upstream_id: '77937'
@@ -1120,10 +1153,13 @@ cards:
     reviewed_on: '2026-09-22'
     source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/76899/primary.webp
   shaymin-03:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: tcgdex
+    upstream_id: sv10-185
+    classification: exact
+    asset_path: assets/images/cards/shaymin-03.webp
+    reviewed: true
+    reviewed_on: '2026-09-23'
+    source_url: https://assets.tcgdex.net/en/sv/sv10/185/high.webp
   shaymin-04:
     classification: missing
     asset_path: ''
@@ -1160,10 +1196,13 @@ cards:
       side-by-side comparison with archived/current v1-18 crop; DoubleHolo set-name
       alias differs from registry code/full set name.'
   snivy-03:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: tcgdex
+    upstream_id: bw11-6
+    classification: exact
+    asset_path: assets/images/cards/snivy-03.webp
+    reviewed: true
+    reviewed_on: '2026-09-23'
+    source_url: https://assets.tcgdex.net/en/bw/bw11/6/high.webp
   snorlax-01:
     provider: tcgdex
     upstream_id: SV2a-181
@@ -1238,10 +1277,17 @@ cards:
     reviewed_on: '2026-09-22'
     source_url: https://assets.tcgdex.net/en/sv/sv07/148/high.webp
   squirtle-02:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: doubleholo
+    upstream_id: '3026'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: exact
+    asset_path: assets/images/cards/squirtle-02.webp
+    reviewed: true
+    reviewed_on: '2026-09-23'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/3026/primary.webp
+    note: Curator selected DoubleHolo 3026 after variant inspection; competing 3069
+      is the Reverse Holo variant, while the archived v2-05 pocket matches the non-reverse
+      Expedition 131 printing.
   squirtle-03:
     classification: missing
     asset_path: ''
