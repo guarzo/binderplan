@@ -224,13 +224,17 @@ cards:
     reviewed: false
     reviewed_on: ''
   dragonite-01:
-    classification: photo-crop
+    provider: doubleholo
+    upstream_id: '22198'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: exact
     asset_path: assets/images/cards/dragonite-01.webp
     reviewed: true
     reviewed_on: '2026-09-22'
-    provider: evidence-crop
-    source_path: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/contemplation_1.webp
-    note: Pilot fallback; re-search stock or sourced scan before Volume I publication.
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/22198/primary.webp
+    note: '2026-09-22 visual-review/not-in-hand: curator-approved exact DoubleHolo
+      scan after side-by-side comparison with archived/current v1-18 crop; identity
+      remains photo-based, not in-hand confirmed.'
   dragonite-02:
     provider: doubleholo
     upstream_id: '77949'
@@ -543,13 +547,19 @@ cards:
     reviewed: false
     reviewed_on: ''
   joltik-03:
-    classification: photo-crop
+    provider: doubleholo
+    upstream_id: '37962'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    identity_basis: curator visually confirmed printing; DoubleHolo set-name alias
+      differs from registry
+    classification: exact
     asset_path: assets/images/cards/joltik-03.webp
     reviewed: true
     reviewed_on: '2026-09-22'
-    provider: evidence-crop
-    source_path: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/contemplation_1.webp
-    note: Pilot fallback; re-search stock or sourced scan before Volume I publication.
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/37962/primary.webp
+    note: '2026-09-22 visual review: curator-approved exact DoubleHolo scan after
+      side-by-side comparison with archived/current v1-18 crop; DoubleHolo set-name
+      alias differs from registry code/full set name.'
   kabuto-01:
     classification: missing
     asset_path: ''
@@ -1034,13 +1044,19 @@ cards:
     reviewed_on: '2026-09-22'
     source_url: https://assets.tcgdex.net/en/bw/bwp/BW06/high.webp
   snivy-02:
-    classification: photo-crop
+    provider: doubleholo
+    upstream_id: '31383'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    identity_basis: curator visually confirmed printing; DoubleHolo set-name alias
+      differs from registry
+    classification: exact
     asset_path: assets/images/cards/snivy-02.webp
     reviewed: true
     reviewed_on: '2026-09-22'
-    provider: evidence-crop
-    source_path: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/contemplation_1.webp
-    note: Pilot fallback; re-search stock or sourced scan before Volume I publication.
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/31383/primary.webp
+    note: '2026-09-22 visual review: curator-approved exact DoubleHolo scan after
+      side-by-side comparison with archived/current v1-18 crop; DoubleHolo set-name
+      alias differs from registry code/full set name.'
   snivy-03:
     classification: missing
     asset_path: ''
@@ -1186,13 +1202,17 @@ cards:
     reviewed_on: '2026-09-22'
     source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/32179/primary.webp
   umbreon-02:
-    classification: photo-crop
+    provider: doubleholo
+    upstream_id: '46359'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: exact
     asset_path: assets/images/cards/umbreon-02.webp
     reviewed: true
     reviewed_on: '2026-09-22'
-    provider: evidence-crop
-    source_path: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/contemplation_1.webp
-    note: Pilot fallback; re-search stock or sourced scan before Volume I publication.
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/46359/primary.webp
+    note: '2026-09-22 visual-review/not-in-hand: curator-approved exact DoubleHolo
+      scan after side-by-side comparison with archived/current v1-18 crop; identity
+      remains photo-based, not in-hand confirmed.'
   umbreon-04:
     provider: tcgdex
     upstream_id: hgss3-10
@@ -1224,13 +1244,19 @@ cards:
     reviewed_on: '2026-09-22'
     source_url: https://assets.tcgdex.net/en/sm/sm11/26/high.webp
   victini-02:
-    classification: photo-crop
+    provider: doubleholo
+    upstream_id: '30833'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    identity_basis: curator visually confirmed printing; DoubleHolo set-name alias
+      differs from registry
+    classification: exact
     asset_path: assets/images/cards/victini-02.webp
     reviewed: true
     reviewed_on: '2026-09-22'
-    provider: evidence-crop
-    source_path: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/contemplation_1.webp
-    note: Pilot fallback; re-search stock or sourced scan before Volume I publication.
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/30833/primary.webp
+    note: '2026-09-22 visual review: curator-approved exact DoubleHolo scan after
+      side-by-side comparison with archived/current v1-18 crop; DoubleHolo set-name
+      alias differs from registry code/full set name.'
   vulpix-01:
     classification: missing
     asset_path: ''
