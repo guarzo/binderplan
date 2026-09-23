@@ -553,10 +553,18 @@ cards:
     reviewed_on: '2026-09-22'
     source_url: https://assets.tcgdex.net/en/base/base5/25/high.webp
   hoopa-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: doubleholo
+    upstream_id: '385'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    identity_basis: curator visually confirmed printing; DoubleHolo set-name alias
+      differs from registry
+    classification: exact
+    asset_path: assets/images/cards/hoopa-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-23'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/385/primary.webp
+    note: Curator visually confirmed DoubleHolo 385 is the XY Promos/XY-P set-name
+      alias for the archived leaf; variant and printing match.
   hoopa-02:
     classification: missing
     asset_path: ''
@@ -595,10 +603,13 @@ cards:
     upstream_id: neo3-8
     source_url: https://assets.tcgdex.net/en/neo/neo3/8/high.webp
   houndoom-04:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: tcgdex
+    upstream_id: neo2-23
+    classification: exact
+    asset_path: assets/images/cards/houndoom-04.webp
+    reviewed: true
+    reviewed_on: '2026-09-23'
+    source_url: https://assets.tcgdex.net/en/neo/neo2/23/high.webp
   houndour-01:
     provider: tcgdex
     upstream_id: ecard1-113
@@ -803,10 +814,13 @@ cards:
     reviewed_on: '2026-09-22'
     source_url: https://assets.tcgdex.net/en/neo/neo3/20/high.webp
   machop-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: tcgdex
+    upstream_id: swsh11-086
+    classification: exact
+    asset_path: assets/images/cards/machop-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-23'
+    source_url: https://assets.tcgdex.net/en/swsh/swsh11/086/high.webp
   marill-01:
     provider: tcgdex
     upstream_id: neo1-66
@@ -828,10 +842,18 @@ cards:
       34977 after side-by-side visual comparison with the archived leaf, without asserting
       an unsupported finish or edition distinction.
   master-ball-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: doubleholo
+    upstream_id: '81058'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    identity_basis: In-hand-confirmed unnumbered registry identity plus curator comparison
+      of DoubleHolo 81058 with the archived leaf.
+    classification: exact
+    asset_path: assets/images/cards/master-ball-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-23'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/81058/primary.webp
+    note: Curator visually confirmed the unnumbered Japanese City Gym Decks printing
+      against the archived leaf.
   mew-01:
     provider: tcgdex
     upstream_id: svp-053
@@ -867,10 +889,17 @@ cards:
     reviewed_on: '2026-09-23'
     source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/77672/primary.webp
   mew-05:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: doubleholo
+    upstream_id: '22199'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: exact
+    asset_path: assets/images/cards/mew-05.webp
+    reviewed: true
+    reviewed_on: '2026-09-23'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/22199/primary.webp
+    note: '2026-09-23 visual-review/not-in-hand: curator-approved DoubleHolo 22199
+      after comparison with the archived leaf; identity remains photo-based, not in-hand
+      confirmed.'
   mewtwo-01:
     provider: doubleholo
     upstream_id: '2767'
@@ -1138,10 +1167,13 @@ cards:
     note: Curator visually confirmed DoubleHolo 33345 is the N's Reshiram/sv9 full-name
       and set-name alias for the archived leaf; variant and printing match.
   reshiram-02:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: tcgdex
+    upstream_id: bw1-113
+    classification: exact
+    asset_path: assets/images/cards/reshiram-02.webp
+    reviewed: true
+    reviewed_on: '2026-09-23'
+    source_url: https://assets.tcgdex.net/en/bw/bw1/113/high.webp
   rockets-trap-01:
     provider: doubleholo
     upstream_id: '39574'
@@ -1185,10 +1217,13 @@ cards:
     reviewed_on: '2026-09-22'
     source_url: https://assets.tcgdex.net/en/ex/ex7/74/high.webp
   sandshrew-02:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: tcgdex
+    upstream_id: ex11-82
+    classification: exact
+    asset_path: assets/images/cards/sandshrew-02.webp
+    reviewed: true
+    reviewed_on: '2026-09-23'
+    source_url: https://assets.tcgdex.net/en/ex/ex11/82/high.webp
   scyther-01:
     provider: doubleholo
     upstream_id: '22164'
@@ -1231,10 +1266,13 @@ cards:
     reviewed_on: '2026-09-23'
     source_url: https://assets.tcgdex.net/en/sv/sv10/185/high.webp
   shaymin-04:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: tcgdex
+    upstream_id: hgss2-8
+    classification: exact
+    asset_path: assets/images/cards/shaymin-04.webp
+    reviewed: true
+    reviewed_on: '2026-09-23'
+    source_url: https://assets.tcgdex.net/en/hgss/hgss2/8/high.webp
   slowpoke-01:
     provider: tcgdex
     upstream_id: SV1V-082
@@ -1409,8 +1447,8 @@ cards:
     source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/78044/primary.webp
     note: DoubleHolo labels 78044 as Togepi [1st Edition], but neither the provider
       image nor the archived v2-06 leaf shows a visible lower-left 1EDITION mark;
-      curator selection is based on side-by-side image match and does not assert
-      a 1st Edition printing.
+      curator selection is based on side-by-side image match and does not assert a
+      1st Edition printing.
   torterra-01:
     provider: tcgdex
     upstream_id: hgss2-10
@@ -1554,7 +1592,11 @@ cards:
     reviewed_on: '2026-09-22'
     source_url: https://assets.tcgdex.net/en/sv/sv10.5b/158/high.webp
   zygarde-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: doubleholo
+    upstream_id: '75724'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: exact
+    asset_path: assets/images/cards/zygarde-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-23'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/75724/primary.webp

@@ -2,7 +2,7 @@
 
 Generated from `docs/card-registry.md` by `python3 scripts/check-registry.py docs/card-registry.md --worklist --write`. Every section below is recomputed from the registry except "4. Gaps and known issues", which is hand-written; regeneration reads the previous version of this document and carries that section forward automatically.
 
-**Honest numbers, recomputed from the current file.** 175 rows total. 29 `photo` (16.6%), 4 `uncertain` (2.3%). 165 rows have both `set` and `number` read (94.3%) — 2 have `number` only, 8 have `set` only, 0 have neither field. The confirmation queue (section 3) holds 4 rows across 4 species: 0 clusters (0 rows) and 4 singletons.
+**Honest numbers, recomputed from the current file.** 175 rows total. 30 `photo` (17.1%), 3 `uncertain` (1.7%). 165 rows have both `set` and `number` read (94.3%) — 2 have `number` only, 8 have `set` only, 0 have neither field. The confirmation queue (section 3) holds 3 rows across 3 species: 0 clusters (0 rows) and 3 singletons.
 
 ## 1. Blocked — species unreadable
 
@@ -16,16 +16,15 @@ Take that as a weak result, not a clean bill of health. The check requires all f
 
 ## 3. Confirmation queue — clusters first
 
-4 rows, 4 species. **0 species (0 rows) hold two or more unresolved rows** and lead the list, because that is where an undetected duplicate printing could hide. The remaining 4 species have a single unresolved row each.
+3 rows, 3 species. **0 species (0 rows) hold two or more unresolved rows** and lead the list, because that is where an undetected duplicate printing could hide. The remaining 3 species have a single unresolved row each.
 
 The "Unreadable" column is the row's own `notes` field: what specifically blocked the read.
 
-### Singletons (4 species, one unresolved row each)
+### Singletons (3 species, one unresolved row each)
 
 | ID | Card name | Source image | Unreadable |
 |---|---|---|---|
 | bulbasaur-02 | フシギダネ (JP) | joyful_action_1.webp | set supplied by owner 2026-09-20; character and printed Pokedex number checked in hand, no blanket set/printing verification from checklist ticks |
-| mew-05 | ミュウ (JP) | threshold_1.webp | Psywave/Recover-Beam attacks, distinct from mew-01..04, Pokédex-number print, set per owner's doubleholo export 2026-09-18 |
 | typhlosion-02 | バクフーン (JP) | legendary_bearing_1.webp | Lv.46 print, distinct from typhlosion-01, vintage Pokedex-number print, era not identifiable |
 | umbreon-03 | Umbreon (EN) | elemental_solitude_1.webp | Confuse Ray/Shadow Shutdown, distinct from umbreon-01/02, set code not textual |
 
@@ -128,10 +127,4 @@ Photographs record what was on a page when the shoot happened, so a card since s
 | ID | Card name | Unreadable |
 |---|---|---|
 | umbreon-03 | Umbreon (EN) | Confuse Ray/Shadow Shutdown, distinct from umbreon-01/02, set code not textual |
-
-### V2 · Enduring Presence p2
-
-| ID | Card name | Unreadable |
-|---|---|---|
-| mew-05 | ミュウ (JP) | Psywave/Recover-Beam attacks, distinct from mew-01..04, Pokédex-number print, set per owner's doubleholo export 2026-09-18 |
 
