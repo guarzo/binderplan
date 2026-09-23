@@ -1,4 +1,5 @@
 import argparse
+import hashlib
 import importlib.util
 import json
 import re
@@ -2738,18 +2739,29 @@ def test_seeded_repository_has_expected_leaf_and_card_counts():
 def test_public_cutover_removes_only_photographed_volume_sources():
     root = Path(__file__).parents[1]
     photographed = root / "static/images/binder"
-    evidence = root / "docs/evidence/2026-09-22/digital-binder-migration/published-gallery"
+    evidence_root = root / "docs/evidence/2026-09-22/digital-binder-migration"
+    published = evidence_root / "published-gallery"
 
     assert not (photographed / "volume-1").exists()
     assert not (photographed / "volume-2").exists()
-    assert sorted(path.name for path in photographed.iterdir() if path.is_dir()) == [
-        "emolga-masterset",
-        "stamped-cards",
-        "waifu",
-    ]
+    assert {"emolga-masterset", "stamped-cards", "waifu"} <= {
+        path.name for path in photographed.iterdir() if path.is_dir()
+    }
     assert (root / "static/images/slabs").is_dir()
-    assert len(list((evidence / "volume-1").glob("*"))) == 19
-    assert len(list((evidence / "volume-2").glob("*"))) == 11
+
+    expected_hashes = {}
+    for line in (evidence_root / "SHA256SUMS").read_text(encoding="utf-8").splitlines():
+        digest, relative = line.split(maxsplit=1)
+        assert relative.startswith("published-gallery/")
+        expected_hashes[relative] = digest
+    assert len(expected_hashes) == 30
+
+    for relative, digest in expected_hashes.items():
+        archived = evidence_root / relative
+        assert archived.is_file(), f"missing archived evidence file: {relative}"
+        assert hashlib.sha256(archived.read_bytes()).hexdigest() == digest
+    assert len(list((published / "volume-1").glob("*"))) == 19
+    assert len(list((published / "volume-2").glob("*"))) == 11
 
 
 class RenderedElementParser(HTMLParser):
@@ -3106,13 +3118,17 @@ def test_rendered_synthetic_binder_marks_only_first_spread_images_eager(tmp_path
     assert 'Placement pending' in html
 
 
-def write_html(root: Path, body: str) -> None:
-    page = root / "gallery/volume-1/index.html"
+def write_html_at(root: Path, relative_path: str, body: str) -> None:
+    page = root / relative_path
     page.parent.mkdir(parents=True, exist_ok=True)
     page.write_text(body, encoding="utf-8")
 
 
-def valid_public_binder_html() -> str:
+def write_html(root: Path, body: str) -> None:
+    write_html_at(root, "gallery/volume-1/index.html", body)
+
+
+def valid_public_binder_html(volume_id="volume-1", leaf_prefix="v1") -> str:
     def card_leaf(leaf_id: str, image_name: str, *, initial: bool) -> str:
         loading = "eager" if initial else "lazy"
         initial_attribute = " data-initial-binder-image" if initial else ""
@@ -3134,21 +3150,21 @@ def valid_public_binder_html() -> str:
 
     return (
         '<!doctype html><html><body>'
-        '<div data-binder="volume-1">'
+        f'<div data-binder="{volume_id}">'
         '<nav data-binder-controls aria-label="Binder pages">'
-        '<a data-binder-prev href="#leaf-v1-01">Previous</a>'
+        f'<a data-binder-prev href="#leaf-{leaf_prefix}-01">Previous</a>'
         '<p data-binder-position aria-live="polite"></p>'
-        '<a data-binder-next href="#leaf-v1-03">Next</a>'
+        f'<a data-binder-next href="#leaf-{leaf_prefix}-03">Next</a>'
         '</nav>'
         '<div data-binder-spread="1">'
-        f'{card_leaf("v1-01", "one.webp", initial=True)}'
-        f'{card_leaf("v1-02", "two.webp", initial=True)}'
+        f'{card_leaf(f"{leaf_prefix}-01", "one.webp", initial=True)}'
+        f'{card_leaf(f"{leaf_prefix}-02", "two.webp", initial=True)}'
         '</div>'
         '<div data-binder-spread="2">'
-        f'{card_leaf("v1-03", "three.webp", initial=False)}'
-        '<section id="leaf-v1-04" data-binder-leaf="v1-04" data-kind="transition"></section>'
+        f'{card_leaf(f"{leaf_prefix}-03", "three.webp", initial=False)}'
+        f'<section id="leaf-{leaf_prefix}-04" data-binder-leaf="{leaf_prefix}-04" data-kind="transition"></section>'
         '</div>'
-        '<dialog id="card-inspector-volume-1" data-card-inspector>'
+        f'<dialog id="card-inspector-{volume_id}" data-card-inspector>'
         '<button data-card-inspector-close>Close</button>'
         '<button data-card-inspector-previous>Previous card</button>'
         '<button data-card-inspector-next>Next card</button>'
@@ -3158,12 +3174,30 @@ def valid_public_binder_html() -> str:
     )
 
 
-def write_valid_public_binder(root: Path) -> None:
-    write_html(root, valid_public_binder_html())
+def write_public_card_assets(root: Path) -> None:
     for name in ("one.webp", "two.webp", "three.webp"):
         asset = root / "images/cards" / name
         asset.parent.mkdir(parents=True, exist_ok=True)
         asset.write_bytes(b"fixture image")
+
+
+def write_valid_public_binder(root: Path) -> None:
+    write_html(root, valid_public_binder_html())
+    write_public_card_assets(root)
+
+
+def write_valid_strict_public_binders(root: Path) -> None:
+    write_html_at(
+        root,
+        "gallery/volume-1/index.html",
+        valid_public_binder_html("volume-1", "v1"),
+    )
+    write_html_at(
+        root,
+        "gallery/volume-2/index.html",
+        valid_public_binder_html("volume-2", "v2"),
+    )
+    write_public_card_assets(root)
 
 
 def test_public_check_rejects_remote_card_image_url(tmp_path):
@@ -3330,7 +3364,97 @@ def test_public_check_accepts_valid_binder_output(tmp_path):
     assert digital_binder.validate_public_output(tmp_path) == []
 
 
-def test_public_check_accepts_zero_binders_and_unrelated_site_images(tmp_path):
+def test_strict_public_check_accepts_cutover_volume_routes(tmp_path):
+    write_valid_strict_public_binders(tmp_path)
+
+    assert digital_binder.validate_public_output(
+        tmp_path, require_public_volumes=True
+    ) == []
+
+
+def test_strict_public_check_rejects_missing_public_volume_route(tmp_path):
+    write_valid_public_binder(tmp_path)
+
+    errors = digital_binder.validate_public_output(
+        tmp_path, require_public_volumes=True
+    )
+
+    assert any("gallery/volume-2/index.html" in error and "missing" in error
+               for error in errors)
+
+
+def test_strict_public_check_rejects_wrong_binder_root(tmp_path):
+    write_html_at(
+        tmp_path,
+        "gallery/volume-1/index.html",
+        valid_public_binder_html("volume-2", "v2"),
+    )
+    write_html_at(
+        tmp_path,
+        "gallery/volume-2/index.html",
+        valid_public_binder_html("volume-2", "v2"),
+    )
+    write_public_card_assets(tmp_path)
+
+    errors = digital_binder.validate_public_output(
+        tmp_path, require_public_volumes=True
+    )
+
+    assert any("gallery/volume-1/index.html" in error
+               and "expected exactly one volume-1" in error for error in errors)
+    assert any("gallery/volume-1/index.html" in error
+               and "unexpected binder root" in error and "volume-2" in error
+               for error in errors)
+
+
+def test_strict_public_check_rejects_multiple_binder_roots(tmp_path):
+    write_valid_strict_public_binders(tmp_path)
+    volume_one = tmp_path / "gallery/volume-1/index.html"
+    volume_one.write_text(
+        volume_one.read_text(encoding="utf-8").replace(
+            "</body>", f"{valid_public_binder_html('volume-1', 'v1')}</body>", 1
+        ),
+        encoding="utf-8",
+    )
+
+    errors = digital_binder.validate_public_output(
+        tmp_path, require_public_volumes=True
+    )
+
+    assert any("gallery/volume-1/index.html" in error
+               and "expected exactly one volume-1" in error
+               and "found 2" in error for error in errors)
+
+
+def test_strict_public_check_rejects_pilot_output(tmp_path):
+    write_valid_strict_public_binders(tmp_path)
+    write_html_at(tmp_path, "gallery/digital-binder-pilot/index.html", "<main>Pilot</main>")
+
+    errors = digital_binder.validate_public_output(
+        tmp_path, require_public_volumes=True
+    )
+
+    assert any("digital-binder-pilot" in error and "must not be present" in error
+               for error in errors)
+
+
+def test_strict_public_check_rejects_legacy_photographed_volume_refs(tmp_path):
+    write_valid_strict_public_binders(tmp_path)
+    write_html_at(
+        tmp_path,
+        "gallery/side/index.html",
+        '<img src="/images/binder/volume-1/calm_nature_1.webp" alt="Old photo">',
+    )
+
+    errors = digital_binder.validate_public_output(
+        tmp_path, require_public_volumes=True
+    )
+
+    assert any("legacy photographed binder image reference" in error
+               and "images/binder/volume-1/" in error for error in errors)
+
+
+def test_public_check_accepts_zero_binders_and_unrelated_site_images_in_component_mode(tmp_path):
     write_html(
         tmp_path,
         '<main><img src="https://example.com/gallery-photo.webp" alt="Gallery photo"></main>',
@@ -3370,6 +3494,18 @@ def test_check_public_cli_prints_all_errors_and_exits_one(tmp_path, capsys):
     assert rc == 1
     assert "alt text" in output
     assert "dialog" in output
+    assert "gallery/volume-2/index.html" in output
+
+
+def test_check_public_cli_uses_strict_cutover_mode(tmp_path, capsys):
+    write_valid_public_binder(tmp_path)
+
+    rc = digital_binder.main(["--check-public", str(tmp_path)])
+
+    output = capsys.readouterr().out
+    assert rc == 1
+    assert "gallery/volume-2/index.html" in output
+    assert "missing" in output
 
 
 def test_check_ignores_absent_previous_ref_environment(tmp_path, monkeypatch, capsys):
@@ -3440,6 +3576,12 @@ def test_rendered_draft_and_production_outputs_pass_public_validation(tmp_path):
     )
 
     assert draft.returncode == 0, draft.stderr
-    assert digital_binder.validate_public_output(draft_destination) == []
+    assert digital_binder.validate_public_output(
+        draft_destination, require_public_volumes=True
+    ) == []
+    assert digital_binder.main(["--check-public", str(draft_destination)]) == 0
     assert production.returncode == 0, production.stderr
-    assert digital_binder.validate_public_output(production_destination) == []
+    assert digital_binder.validate_public_output(
+        production_destination, require_public_volumes=True
+    ) == []
+    assert digital_binder.main(["--check-public", str(production_destination)]) == 0

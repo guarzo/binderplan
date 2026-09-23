@@ -55,6 +55,15 @@ DOUBLEHOLO_NAME_SYMBOLS = {"♀", "♂"}
 SAFE_REF_RE = re.compile(r"^(?!-)[A-Za-z0-9._/@+-]+$")
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 INITIAL_BINDER_IMAGE_BUDGET = 1_572_864
+PUBLIC_VOLUME_ROUTES = {
+    "volume-1": Path("gallery/volume-1/index.html"),
+    "volume-2": Path("gallery/volume-2/index.html"),
+}
+PILOT_ROUTE = Path("gallery/digital-binder-pilot/index.html")
+LEGACY_PHOTOGRAPHED_VOLUME_PATHS = (
+    "images/binder/volume-1/",
+    "images/binder/volume-2/",
+)
 HTML_VOID_ELEMENTS = {
     "area", "base", "br", "col", "embed", "hr", "img", "input",
     "link", "meta", "param", "source", "track", "wbr",
@@ -1158,23 +1167,69 @@ def _validate_public_binder(public_dir: Path, root: dict) -> list[str]:
     return errors
 
 
-def validate_public_output(public_dir: Path) -> list[str]:
-    """Validate only rendered roots that opt into the digital binder contract."""
+def _validate_public_cutover_routes(public_dir: Path, binders_by_page: dict[Path, list[dict]]) -> list[str]:
+    errors: list[str] = []
+    pilot_path = public_dir / PILOT_ROUTE
+    if pilot_path.exists():
+        errors.append(f"{PILOT_ROUTE}: draft pilot output must not be present")
+
+    for volume_id, route in PUBLIC_VOLUME_ROUTES.items():
+        page_path = public_dir / route
+        if not page_path.is_file():
+            errors.append(f"{route}: missing public {volume_id} binder route")
+            continue
+        roots = binders_by_page.get(route, [])
+        matching = [root for root in roots if root["name"] == volume_id]
+        if len(matching) != 1:
+            errors.append(
+                f"{route}: expected exactly one {volume_id} binder root "
+                f"(found {len(matching)})"
+            )
+        unexpected = sorted({root["name"] for root in roots if root["name"] != volume_id})
+        if unexpected:
+            errors.append(
+                f"{route}: unexpected binder root(s): {', '.join(unexpected)}; "
+                f"expected {volume_id}"
+            )
+    return errors
+
+
+def validate_public_output(public_dir: Path, require_public_volumes: bool = False) -> list[str]:
+    """Validate rendered binder roots.
+
+    By default this is component-oriented and validates only roots that opt into
+    the binder contract. In strict cutover mode it also verifies the public
+    Volume I/II routes and absence of removed photographed-gallery artifacts.
+    """
     public_dir = Path(public_dir)
     if not public_dir.is_dir():
         return [f"public output directory does not exist: {public_dir}"]
 
     errors: list[str] = []
+    binders_by_page: dict[Path, list[dict]] = {}
     for page_path in sorted(public_dir.rglob("*.html")):
+        relative_page = page_path.relative_to(public_dir)
         parser = _PublicBinderParser(page_path)
         try:
-            parser.feed(page_path.read_text(encoding="utf-8"))
+            html = page_path.read_text(encoding="utf-8")
+            parser.feed(html)
             parser.close()
         except (OSError, UnicodeError) as exc:
-            errors.append(f"{page_path.relative_to(public_dir)}: cannot read HTML: {exc}")
+            errors.append(f"{relative_page}: cannot read HTML: {exc}")
             continue
+        binders_by_page[relative_page] = parser.binders
+        if require_public_volumes:
+            for legacy_path in LEGACY_PHOTOGRAPHED_VOLUME_PATHS:
+                if legacy_path in html:
+                    errors.append(
+                        f"{relative_page}: legacy photographed binder image reference "
+                        f"is not allowed: {legacy_path}"
+                    )
         for root in parser.binders:
             errors.extend(_validate_public_binder(public_dir, root))
+
+    if require_public_volumes:
+        errors.extend(_validate_public_cutover_routes(public_dir, binders_by_page))
     return errors
 
 
@@ -1219,7 +1274,7 @@ def main(argv=None) -> int:
     previous_ref = _normalize_previous_ref(args.previous_ref)
     if args.check_public is not None:
         public_dir = _root_path(root, args.check_public)
-        errors = validate_public_output(public_dir)
+        errors = validate_public_output(public_dir, require_public_volumes=True)
         for error in errors:
             print(error, flush=True)
         return 1 if errors else 0
