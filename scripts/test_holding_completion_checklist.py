@@ -62,6 +62,7 @@ def test_release_recommendations_require_separate_authorization():
         re.findall(r"^\\releaseauth\{(HB-P\d{2}-\d{2})\}", text, re.MULTILINE)
     )
 
+    assert len(recommended) == 5
     assert recommended == authorized_rows
     assert len(re.findall(r"^\\tradeauth$", text, re.MULTILINE)) == 6
     assert "Signed authorization continuation attached" in text
@@ -75,6 +76,7 @@ def test_checklist_has_confirmation_and_closeout():
     assert "a photographed interim position alone is not a final classification" in text
     assert "Accept recommendation" in text
     assert "Strongest alternative" in text
+    assert r"\checkbox\ Change to: \blankline{0.78\textwidth}" in text
     assert "Final Review count" in text
     assert "Final Keeper count" in text
     assert "Grand total reconciled" in text

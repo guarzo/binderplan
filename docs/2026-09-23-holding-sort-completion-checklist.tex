@@ -48,12 +48,13 @@
   \end{tabularx}\par\vspace{0.22ex}%
 }
 \newcommand{\recommendrow}[6]{%
-  \Needspace{4.2\baselineskip}%
+  \Needspace{5.2\baselineskip}%
   \noindent\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.27\textwidth}>{\ttfamily\scriptsize}p{0.12\textwidth}>{\raggedright\arraybackslash}X@{}}
     \checkbox\ \textbf{Recommend: #1} & #2 & \typebadge{#3}\textbf{#4}\newline
-    {\scriptsize #5\newline\textbf{Strongest alternative:} #6\newline
-    \checkbox\ Accept recommendation \quad \checkbox\ Change to: \blankline{22mm}}
-  \end{tabularx}\par\vspace{0.42ex}%
+    {\scriptsize #5\newline\textbf{Strongest alternative:} #6}
+  \end{tabularx}\par
+  {\scriptsize\noindent\checkbox\ Accept recommendation\par
+  \noindent\checkbox\ Change to: \blankline{0.78\textwidth}}\par\vspace{0.42ex}%
 }
 \newcommand{\tradeauth}{%
   \noindent\checkbox\ Trade authorized \quad \checkbox\ Available now \quad
@@ -166,7 +167,7 @@
 
 \subsectiontitle{Page 10}
 \recommendrow{Keeper · Heritage}{HB-P10-01}{Fire}{Typhlosion --- Japanese}{The older Japanese printing supplies a durable Heritage role despite extensive thematic Typhlosion coverage.}{Keeper · Beautiful Misfits if the exact era cannot be established.}
-\recommendrow{Release}{HB-P10-02}{Psychic}{Misdreavus --- Japanese}{The evidence shows an additional copy of the same Japanese No.200 printing already represented canonically, with no separate Keeper role.}{Keeper · Personal, only if owning a second physical copy is intentional.}
+\recommendrow{Release}{HB-P10-02}{Psychic}{Misdreavus --- Japanese}{The photographs show the same artwork, layout, and No.200 presentation as the canonical copy; confirm the set symbol and finish match in hand before authorizing Release.}{Keeper · Heritage if the printing or finish differs from the canonical copy.}
 \recommendrow{Review · Existing EDGE · World of People}{HB-P10-03}{Trainer}{Pokémon Communication --- English}{The communication terminal and screen make human technology central enough to test against Ralts (ralts-01).}{Release if the device-led scene feels too literal to challenge the canonical page.}
 \recommendrow{Keeper · Heritage}{HB-P10-04}{Trainer}{N --- Japanese non-full-art}{Language and release variation give the trainer pair a stable provenance-based role.}{Keeper · Beautiful Misfits if the artwork, not the printing, drives retention.}
 \recommendrow{Keeper · Beautiful Misfits}{HB-P10-05}{Trainer}{N --- English full art}{The premium full-art treatment is attractive but has no canonical narrative role.}{Trade, only if explicitly made available.}
@@ -225,7 +226,7 @@
 \tradeauth
 \releaseauth{HB-P09-05}{Eevee --- SVP 173}
 \releaseauth{HB-P09-09}{Piplup --- Manaphy \& Lucario}
-\releaseauth{HB-P10-02}{Misdreavus --- Japanese duplicate}
+\releaseauth{HB-P10-02}{Misdreavus --- authorize only after set-symbol/finish match}
 \releaseauth{HB-P10-07}{Yveltal --- Celebrations}
 \releaseauth{HB-P10-08}{Emolga EX --- Japanese duplicate}
 \releaseauth{Additional: \blankline{15mm}}{Card: \blankline{45mm}}
