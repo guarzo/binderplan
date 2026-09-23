@@ -277,12 +277,14 @@ def _contains_token_sequence(candidate_value: str | None, wanted_value: str | No
 def _doubleholo_name_alias_matches(candidate_value: str | None, wanted_value: str | None) -> bool:
     candidate_tokens = _doubleholo_name_tokens(candidate_value)
     wanted_tokens = _doubleholo_name_tokens(wanted_value)
-    # DoubleHolo titles the Japanese Rocket Gang trainer as "Imposter Oak's Revenge";
-    # the registry keeps the commonly translated full name "Imposter Professor Oak's Revenge".
-    return (
-        candidate_tokens == ["imposter", "oak", "s", "revenge"]
-        and wanted_tokens == ["imposter", "professor", "oak", "s", "revenge"]
-    )
+    aliases = {
+        # DoubleHolo titles the Japanese Rocket Gang trainer as "Imposter Oak's Revenge";
+        # the registry keeps the commonly translated full name "Imposter Professor Oak's Revenge".
+        (("imposter", "oak", "s", "revenge"), ("imposter", "professor", "oak", "s", "revenge")),
+        # DoubleHolo uses the official English character name while the registry preserves Kasumi.
+        (("misty", "s", "tears"), ("kasumi", "s", "tears")),
+    }
+    return (tuple(candidate_tokens), tuple(wanted_tokens)) in aliases
 
 
 def _doubleholo_name_matches(row: dict, candidate: dict) -> bool:

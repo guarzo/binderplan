@@ -729,6 +729,13 @@ def test_doubleholo_name_match_accepts_imposter_oak_full_name_alias():
     ) is True
 
 
+def test_doubleholo_name_match_accepts_misty_as_kasumi_trainer_alias():
+    assert ranked_doubleholo_name_match(
+        "カスミのなみだ", "Kasumi's Tears", "Misty's Tears",
+        language="JP", hit_language="japanese"
+    ) is True
+
+
 def test_doubleholo_name_match_rejects_embedded_species_without_token_boundary():
     assert ranked_doubleholo_name_match("Mew", "Mew", "Mewtwo") is False
     assert ranked_doubleholo_name_match("Abra", "Abra", "Kadabra") is False

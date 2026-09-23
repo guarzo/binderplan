@@ -246,15 +246,20 @@ cards:
     reviewed_on: '2026-09-22'
     source_url: https://assets.tcgdex.net/en/xy/xyp/XY114/high.webp
   dawns-stadium-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    classification: photo-crop
+    asset_path: assets/images/cards/dawns-stadium-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-23'
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-23/owner-supplied-card-images/dawnstatdium.jpg
   deoxys-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: tcgdex
+    upstream_id: col1-SL1
+    classification: exact
+    asset_path: assets/images/cards/deoxys-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-23'
+    source_url: https://assets.tcgdex.net/en/col/col1/SL1/high.webp
   dialga-01:
     provider: doubleholo
     upstream_id: '78164'
@@ -566,10 +571,13 @@ cards:
     note: Curator visually confirmed DoubleHolo 385 is the XY Promos/XY-P set-name
       alias for the archived leaf; variant and printing match.
   hoopa-02:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: tcgdex
+    upstream_id: xy7-36
+    classification: exact
+    asset_path: assets/images/cards/hoopa-02.webp
+    reviewed: true
+    reviewed_on: '2026-09-23'
+    source_url: https://assets.tcgdex.net/en/xy/xy7/36/high.webp
   horsea-01:
     provider: tcgdex
     upstream_id: ecard2-84
@@ -668,10 +676,12 @@ cards:
     reviewed_on: '2026-09-23'
     source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/35931/primary.webp
   jirachi-04:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    classification: photo-crop
+    asset_path: assets/images/cards/jirachi-04.webp
+    reviewed: true
+    reviewed_on: '2026-09-23'
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-23/owner-supplied-card-images/jirachi-temple.webp
   joltik-01:
     classification: photo-crop
     asset_path: assets/images/cards/joltik-01.webp
@@ -702,10 +712,13 @@ cards:
       side-by-side comparison with archived/current v1-18 crop; DoubleHolo set-name
       alias differs from registry code/full set name.'
   kabuto-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: tcgdex
+    upstream_id: base3-50
+    classification: exact
+    asset_path: assets/images/cards/kabuto-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-23'
+    source_url: https://assets.tcgdex.net/en/base/base3/50/high.webp
   kangaskhan-01:
     provider: doubleholo
     upstream_id: '22171'
@@ -719,10 +732,18 @@ cards:
       against the archived leaf; registry identity remains photo-based, not in-hand
       confirmed.'
   kasumis-tears-01:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: doubleholo
+    upstream_id: '39556'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    identity_basis: In-hand-confirmed unnumbered registry identity plus curator comparison
+      of DoubleHolo 39556 with archived evidence.
+    classification: exact
+    asset_path: assets/images/cards/kasumis-tears-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-23'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/39556/primary.webp
+    note: Curator visually confirmed the unnumbered Japanese Leaders' Stadium printing
+      against the archived evidence.
   kingdra-01:
     provider: doubleholo
     upstream_id: '22490'
@@ -1080,10 +1101,16 @@ cards:
     provider: evidence-crop
     source_path: docs/evidence/2026-09-22/owner-supplied-card-images/pikachu-illustration-contest.webp
   pikachu-07:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: tcgdex
+    upstream_id: pop5-12
+    classification: exact
+    asset_path: assets/images/cards/pikachu-07.webp
+    reviewed: true
+    reviewed_on: '2026-09-23'
+    source_url: https://assets.tcgdex.net/en/pop/pop5/12/high.webp
+    note: '2026-09-23 variant review: selected TCGdex pop5-12; competing TCGdex results
+      included Nintendo Black Star np-12 and POP Series 5 delta pop5-13, which do
+      not match the registry set/name.'
   piplup-01:
     provider: doubleholo
     upstream_id: '66329'
@@ -1149,10 +1176,16 @@ cards:
     reviewed_on: '2026-09-22'
     source_url: https://assets.tcgdex.net/en/swsh/swsh4/138/high.webp
   rayquaza-02:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: doubleholo
+    upstream_id: '29589'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: exact
+    asset_path: assets/images/cards/rayquaza-02.webp
+    reviewed: true
+    reviewed_on: '2026-09-23'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/29589/primary.webp
+    note: '2026-09-23 variant review: selected DoubleHolo 29589; no competing DoubleHolo
+      variants were returned by the fresh search.'
   reshiram-01:
     provider: doubleholo
     upstream_id: '33345'
@@ -1399,10 +1432,16 @@ cards:
     note: Archived leaf shows the reverse-holo printing; selected DoubleHolo 3069
       over normal 3026.
   squirtle-03:
-    classification: missing
-    asset_path: ''
-    reviewed: false
-    reviewed_on: ''
+    provider: doubleholo
+    upstream_id: '528'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: exact
+    asset_path: assets/images/cards/squirtle-03.webp
+    reviewed: true
+    reviewed_on: '2026-09-23'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/528/primary.webp
+    note: '2026-09-23 variant review: selected DoubleHolo 528; competing DoubleHolo
+      result 562 is Japanese and does not match the English registry printing.'
   steelix-01:
     provider: doubleholo
     upstream_id: '22478'
