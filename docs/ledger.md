@@ -2,7 +2,7 @@
 
 An append-only record of **contested** placement decisions and **every** release.
 
-This is not an inventory. It does not track where each card physically is, and it says nothing about cards whose placement was never in doubt. It exists to answer one question: *why does this card sit where it sits?* — so that periodic audits under `CURATORIAL_AUDIT_PROMPT.md` do not re-litigate calls that were already argued out.
+This is not an inventory. It does not track routine, uncontested placement, and it says nothing about cards whose placement was never in doubt. The binder manifests answer intended current pocket placement and whether that placement has been physically confirmed. `first_seen` remains immutable provenance, and this ledger remains the history and reasoning for contested moves, corrections, and releases. It exists to answer one question: *why does this card sit where it sits?* — so that periodic audits under `CURATORIAL_AUDIT_PROMPT.md` do not re-litigate calls that were already argued out.
 
 ## How to use this file
 
@@ -15,7 +15,7 @@ This is not an inventory. It does not track where each card physically is, and i
 - Every release, contested or not. Letting a card go is the one action that cannot be undone.
 - Theme proposals, accepted or rejected, with the §8 test that decided it
 
-A card that obviously belonged where it went gets no entry.
+A card that obviously belonged where it went gets no entry; routine uncontested placement remains absent from this ledger.
 
 **Vocabulary.** Destinations use names that already exist — Volume 1 and Volume 2 sub-themes, and the holding-box sections from `content/guides/holding-box.md`: EDGE, REDUNDANT, HERITAGE, FUTURE SELF, RELEASE. No parallel naming scheme.
 

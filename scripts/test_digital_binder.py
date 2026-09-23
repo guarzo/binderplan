@@ -2728,10 +2728,28 @@ def test_seeded_repository_has_expected_leaf_and_card_counts():
         pocket for leaf in card_leaves for pocket in leaf["pockets"]
         if "card_id" in pocket
     ]
+    assert [volume["publication_status"] for volume in volumes] == ["published", "published"]
     assert len(leaves) == 30
     assert len(card_leaves) == 19
     assert len(occupied) == 171
     assert len({pocket["card_id"] for pocket in occupied}) == 171
+
+
+def test_public_cutover_removes_only_photographed_volume_sources():
+    root = Path(__file__).parents[1]
+    photographed = root / "static/images/binder"
+    evidence = root / "docs/evidence/2026-09-22/digital-binder-migration/published-gallery"
+
+    assert not (photographed / "volume-1").exists()
+    assert not (photographed / "volume-2").exists()
+    assert sorted(path.name for path in photographed.iterdir() if path.is_dir()) == [
+        "emolga-masterset",
+        "stamped-cards",
+        "waifu",
+    ]
+    assert (root / "static/images/slabs").is_dir()
+    assert len(list((evidence / "volume-1").glob("*"))) == 19
+    assert len(list((evidence / "volume-2").glob("*"))) == 11
 
 
 class RenderedElementParser(HTMLParser):
@@ -2787,7 +2805,7 @@ def binder_owners(html):
     return parser.owners
 
 
-def test_rendered_draft_pilot_uses_binder_markup_without_remote_card_images(tmp_path):
+def test_rendered_public_volume_routes_use_binder_markup_without_remote_card_images(tmp_path):
     root = Path(__file__).parents[1]
     destination = tmp_path / "public"
 
@@ -2799,95 +2817,119 @@ def test_rendered_draft_pilot_uses_binder_markup_without_remote_card_images(tmp_
     )
 
     assert result.returncode == 0, result.stderr
-    html = (destination / "gallery/digital-binder-pilot/index.html").read_text(
-        encoding="utf-8"
-    )
-    assert 'data-binder="volume-1"' in html
-    assert html.count('data-binder-leaf="') == 19
-    assert 'data-binder-leaf="v1-17"' in html
-    assert 'data-pocket-position="1"' in html
-    assert '<dialog' in html
-    assert not re.search(r'(?:src|srcset)="https://assets\.tcgdex\.net', html)
-    assert 'srcset="' in html
-    assert re.search(r'srcset="[^"]+ 360w, [^"]+ 900w"', html)
-    assert 'sizes="(max-width: 860px) 30vw, 180px"' in html
-    assert 'data-inspector-src="' in html
-    assert html.count('data-initial-binder-image') == html.count('loading="eager"')
-    assert 'loading="lazy"' in html
+    assert not (destination / "gallery/digital-binder-pilot/index.html").exists()
 
-    elements = rendered_elements(html)
-    controls = [attrs for tag, attrs in elements
-                if tag == "nav" and "data-binder-controls" in attrs]
-    assert len(controls) == 1
-    control_links = [
-        attrs for tag, attrs in elements
-        if tag == "a"
-        and ("data-binder-prev" in attrs or "data-binder-next" in attrs)
-    ]
-    assert {link["href"] for link in control_links} == {"#leaf-v1-01", "#leaf-v1-03"}
-    assert any(tag == "p" and "data-binder-position" in attrs
-               and attrs.get("aria-live") == "polite" for tag, attrs in elements)
-
-    card_buttons = [attrs for tag, attrs in elements
-                    if tag == "button" and "data-card-id" in attrs]
-    assert card_buttons
-    for button in card_buttons:
-        assert button["data-card-name"]
-        assert button["data-card-language"]
-        assert button["data-card-set"]
-        assert "data-card-number" in button
-        assert button["data-leaf-theme"]
-        assert button["data-pocket-position"]
-        assert button["data-classification"] in {"exact", "photo-crop", "proxy", "missing"}
-        assert button["data-placement-status"] in {"confirmed", "pending"}
-        assert "data-image-provenance" in button
-        assert "data-image-source" in button
-        assert "data-image-note" in button
-        assert "data-placement-observed-card-id" in button
-        assert "data-placement-physical-state" in button
-        assert "data-inspector-src" in button
-        if button["data-classification"] == "missing":
-            assert button["data-inspector-src"] == ""
-        else:
-            assert button["data-inspector-src"].startswith("/")
-
-    assert any(tag == "aside" and "data-binder-legend" in attrs
-               and "hidden" in attrs for tag, attrs in elements)
-    assert any(tag == "dialog" and "data-card-inspector" in attrs for tag, attrs in elements)
-    assert binder_owners(html) == [
-        ("data-binder-controls", "volume-1"),
-        ("data-binder-legend", "volume-1"),
-        ("data-card-inspector", "volume-1"),
-    ]
-    inspector_fields = {
-        attrs.get("data-card-inspector-field")
-        for tag, attrs in elements
-        if attrs.get("data-card-inspector-field")
+    volume_expectations = {
+        "volume-1": {
+            "intro": "Volume I is where it all started.",
+            "leaf_count": 19,
+            "last_leaf": "v1-17",
+            "controls": {"#leaf-v1-01", "#leaf-v1-03"},
+        },
+        "volume-2": {
+            "intro": "Volume II is less about action and more about memory",
+            "leaf_count": 11,
+            "last_leaf": "v2-11",
+            "controls": {"#leaf-v2-01", "#leaf-v2-03"},
+        },
     }
-    assert inspector_fields == {
-        "language",
-        "set-number",
-        "theme-pocket",
-        "image-classification",
-        "image-source",
-        "image-note",
-        "placement",
-    }
-    assert any(tag == "img" and "data-card-inspector-image" in attrs
-               and "hidden" in attrs and "src" not in attrs for tag, attrs in elements)
-    assert any(tag == "script" and "data-binder-script" in attrs and "defer" in attrs
-               for tag, attrs in elements)
+    for volume_id, expected in volume_expectations.items():
+        html = (destination / f"gallery/{volume_id}/index.html").read_text(
+            encoding="utf-8"
+        )
+        assert expected["intro"] in html
+        assert 'unofficial fan project' in html
+        assert 'TCGdex' in html
+        assert 'DoubleHolo' in html
+        assert f'data-binder="{volume_id}"' in html
+        assert html.count('data-binder-leaf="') == expected["leaf_count"]
+        assert f'data-binder-leaf="{expected["last_leaf"]}"' in html
+        assert 'data-pocket-position="1"' in html
+        assert '<dialog' in html
+        assert '/images/binder/volume-' not in html
+        assert not re.search(r'(?:src|srcset)="https://assets\.tcgdex\.net', html)
+        assert 'srcset="' in html
+        assert re.search(r'srcset="[^"]+ 360w, [^"]+ 900w"', html)
+        assert 'sizes="(max-width: 860px) 30vw, 180px"' in html
+        assert 'data-inspector-src="' in html
+        assert html.count('data-initial-binder-image') == html.count('loading="eager"')
+        assert 'loading="lazy"' in html
 
-    production_destination = tmp_path / "production-public"
-    production = subprocess.run(
-        ["hugo", "--destination", str(production_destination)],
-        cwd=root,
-        capture_output=True,
-        text=True,
-    )
+        elements = rendered_elements(html)
+        controls = [attrs for tag, attrs in elements
+                    if tag == "nav" and "data-binder-controls" in attrs]
+        assert len(controls) == 1
+        control_links = [
+            attrs for tag, attrs in elements
+            if tag == "a"
+            and ("data-binder-prev" in attrs or "data-binder-next" in attrs)
+        ]
+        assert {link["href"] for link in control_links} == expected["controls"]
+        assert any(tag == "p" and "data-binder-position" in attrs
+                   and attrs.get("aria-live") == "polite" for tag, attrs in elements)
 
-    assert production.returncode == 0, production.stderr
-    assert not (production_destination / "gallery/digital-binder-pilot/index.html").exists()
+        card_buttons = [attrs for tag, attrs in elements
+                        if tag == "button" and "data-card-id" in attrs]
+        assert card_buttons
+        for button in card_buttons:
+            assert button["data-card-name"]
+            assert button["data-card-language"]
+            assert button["data-card-set"]
+            assert "data-card-number" in button
+            assert button["data-leaf-theme"]
+            assert button["data-pocket-position"]
+            assert button["data-classification"] in {"exact", "photo-crop", "proxy", "missing"}
+            assert button["data-placement-status"] in {"confirmed", "pending"}
+            assert "data-image-provenance" in button
+            assert "data-image-source" in button
+            assert "data-image-note" in button
+            assert "data-placement-observed-card-id" in button
+            assert "data-placement-physical-state" in button
+            assert "data-inspector-src" in button
+            if button["data-classification"] == "missing":
+                assert button["data-inspector-src"] == ""
+            else:
+                assert button["data-inspector-src"].startswith("/")
+
+        assert any(tag == "aside" and "data-binder-legend" in attrs
+                   and "hidden" in attrs for tag, attrs in elements)
+        assert any(tag == "dialog" and "data-card-inspector" in attrs for tag, attrs in elements)
+        assert binder_owners(html) == [
+            ("data-binder-controls", volume_id),
+            ("data-binder-legend", volume_id),
+            ("data-card-inspector", volume_id),
+        ]
+        inspector_fields = {
+            attrs.get("data-card-inspector-field")
+            for tag, attrs in elements
+            if attrs.get("data-card-inspector-field")
+        }
+        assert inspector_fields == {
+            "language",
+            "set-number",
+            "theme-pocket",
+            "image-classification",
+            "image-source",
+            "image-note",
+            "placement",
+        }
+        assert any(tag == "img" and "data-card-inspector-image" in attrs
+                   and "hidden" in attrs and "src" not in attrs for tag, attrs in elements)
+        assert any(tag == "script" and "data-binder-script" in attrs and "defer" in attrs
+                   for tag, attrs in elements)
+
+    side_html = (destination / "gallery/waifu/index.html").read_text(encoding="utf-8")
+    assert 'data-binder="' not in side_html
+    assert 'data-binder-script' not in side_html
+    assert 'unofficial fan project' not in side_html
+    assert 'id="lightbox"' in side_html
+    assert '../../images/binder/waifu/waifu_1.jpg' in side_html
+
+    slab_html = (destination / "gallery/touchstones/index.html").read_text(encoding="utf-8")
+    assert 'data-binder="' not in slab_html
+    assert 'data-binder-script' not in slab_html
+    assert 'unofficial fan project' not in slab_html
+    assert '../../images/slabs/touchstone_celebi_gold_star.jpg' in slab_html
 
 
 def test_binder_interaction_assets_declare_accessible_contract():

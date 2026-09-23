@@ -1,5 +1,8 @@
 <footer class="site-footer">
   <p>A personal Pokemon card collection, arranged one page at a time.</p>
+  {{ if .Params.binder }}
+    <p>This is an unofficial fan project. Pokemon card artwork belongs to its respective rights holders; card metadata and reference scans come from TCGdex and authorized DoubleHolo where identified by the card inspector.</p>
+  {{ end }}
 </footer>
 
 <script>

@@ -6,6 +6,11 @@
   </header>
 
   {{ if .Params.binder }}
+    {{ with .Content }}
+      <div class="gallery-content binder-intro">
+        {{ . }}
+      </div>
+    {{ end }}
     {{ partial "binder.html" . }}
   {{ else }}
     <div class="gallery-content">
