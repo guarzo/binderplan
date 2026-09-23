@@ -122,7 +122,7 @@ The column is left as recorded rather than rewritten: `first_seen` is provenance
 | lugia-01 | Lugia | ルギア | JP | Gold, Silver, New World | No.249 | photo | awakened_power_1.webp 2026-08-01 | vintage Pokedex-number print, set per owner's doubleholo entry; 2026-09-22 identity was visually established from the archived photo and DoubleHolo provider image, not an in-hand check. |
 | lugia-02 | Lugia | ルギアV | JP | s12 | 079/098 | confirmed | on_attack_1.webp 2026-08-01 | V card, distinct from lugia-01 |
 | lugia-03 | Lugia | Lugia | EN | Neo Revelation | 20/64 | confirmed | legendary_bearing_1.webp 2026-08-01 | Aerowing attack, No.249 dex entry, vintage print, distinct from lugia-01/02, checked in hand 2026-09-19 |
-| machop-01 | Machop | Machop | EN | Lost Origin | 086/136 | confirmed | threshold_1.webp 2026-08-01 | Punch attack |
+| machop-01 | Machop | Machop | EN | Lost Origin | 086/196 | photo | threshold_1.webp 2026-08-01 | Punch attack; number corrected from 086/136 to 086/196 during 2026-09-23 image review; photo/provider comparison, not in-hand confirmation. |
 | marill-01 | Marill | Marill | EN | Neo Genesis | 66/111 | confirmed | joyful_action_1.webp 2026-08-01 | vintage-style print, number legible, set name not shown, checked in hand 2026-09-19 |
 | marowak-01 | Marowak | ガラガラ | JP | Holon Research | 58 | confirmed | intimidation_1.webp 2026-08-01 | delta species print, distinct from cubone-02 (the カラカラ), set/number from owner's doubleholo export 2026-09-18, denominator not recorded |
 | master-ball-01 | Master Ball | マスターボール | JP | City Gym Decks |  | confirmed | threshold_1.webp 2026-08-01 | Trainer item card, no number printed, checked in hand 2026-09-19 |

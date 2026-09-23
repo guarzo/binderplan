@@ -2,7 +2,7 @@
 
 Generated from `docs/card-registry.md` by `python3 scripts/check-registry.py docs/card-registry.md --worklist --write`. Every section below is recomputed from the registry except "4. Gaps and known issues", which is hand-written; regeneration reads the previous version of this document and carries that section forward automatically.
 
-**Honest numbers, recomputed from the current file.** 175 rows total. 30 `photo` (17.1%), 3 `uncertain` (1.7%). 165 rows have both `set` and `number` read (94.3%) — 2 have `number` only, 8 have `set` only, 0 have neither field. The confirmation queue (section 3) holds 3 rows across 3 species: 0 clusters (0 rows) and 3 singletons.
+**Honest numbers, recomputed from the current file.** 175 rows total. 31 `photo` (17.7%), 3 `uncertain` (1.7%). 165 rows have both `set` and `number` read (94.3%) — 2 have `number` only, 8 have `set` only, 0 have neither field. The confirmation queue (section 3) holds 3 rows across 3 species: 0 clusters (0 rows) and 3 singletons.
 
 ## 1. Blocked — species unreadable
 
