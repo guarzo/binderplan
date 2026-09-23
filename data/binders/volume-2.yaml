@@ -1,6 +1,6 @@
 version: 1
 volume_id: volume-2
-publication_status: draft
+publication_status: published
 leaves:
 - id: v2-01
   kind: transition
