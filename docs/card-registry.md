@@ -90,7 +90,7 @@ The column is left as recorded rather than rewritten: `first_seen` is provenance
 | grotle-01 | Grotle | ハヤシガメ | JP | sv5K | 072/071 | confirmed | companions_1.webp 2026-08-01 | checked in hand 2026-09-19 |
 | groudon-01 | Groudon | Groudon | EN | Hidden Legends | 102 | confirmed | awakened_power_1.webp 2026-08-01 | denominator not recorded, checked in hand 2026-09-19 |
 | groudon-02 | Groudon | Groudon | EN | Prismatic Evolutions | 049/131 | confirmed | legendary_bearing_1.webp 2026-08-01 | Swelling Power/Magma Purge, distinct from groudon-01, checked in hand 2026-09-19 |
-| groudon-03 | Groudon | Groudon | EN | Primal Clash | 84/100 | confirmed | enduring_presence_2.webp 2026-08-01 | Rock Smash/Break Ground attacks, AR rarity mark |
+| groudon-03 | Groudon | Groudon | EN | Primal Clash | 84/160 | photo | enduring_presence_2.webp 2026-08-01 | Rock Smash/Break Ground attacks; number corrected from 84/100 to 84/160 during 2026-09-23 image review; photo/provider comparison, not in-hand confirmation |
 | gyarados-01 | Gyarados | Dark Gyarados | EN | Team Rocket | 25 | confirmed | awakened_power_1.webp 2026-08-01 | Team Rocket-era print with PRERELEASE stamp, set/number from owner's doubleholo export 2026-09-18, denominator not recorded |
 | hoopa-01 | Hoopa | フーパ | JP | XY-P | 155/XY-P | confirmed | threshold_1.webp 2026-08-01 | full-art secret rare, set/number from owner's doubleholo export 2026-09-18 |
 | hoopa-02 | Hoopa | Hoopa EX | EN | Ancient Origins | 36/98 | confirmed | IMG_6865.HEIC 2026-08-01 | Scoundrel Ring ability, Hyperspace Fury attack, distinct from hoopa-01, checked in hand 2026-09-19 |
