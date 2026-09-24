@@ -23,6 +23,8 @@
           {{ if not $card }}
             {{ errorf "missing card registry data for %q on binder leaf %q" .card_id $leaf.id }}
           {{ end }}
+          {{ $displayName := $card.card_name }}
+          {{ if ne $card.language "EN" }}{{ $displayName = printf "%s · %s" $card.species $card.card_name }}{{ end }}
           {{ $mapping := index (index $.images "cards") .card_id }}
           {{ if not $mapping }}
             {{ errorf "missing card image mapping for %q on binder leaf %q" .card_id $leaf.id }}
@@ -55,7 +57,8 @@
           <button class="binder-pocket" type="button" data-pocket
                   data-pocket-position="{{ .position }}"
                   data-card-id="{{ .card_id }}"
-                  data-card-name="{{ $card.card_name }}"
+                  data-card-name="{{ $displayName }}"
+                  data-card-english-name="{{ $card.species }}" data-card-printed-name="{{ if ne $card.language "EN" }}{{ $card.card_name }}{{ end }}"
                   data-card-language="{{ $card.language }}"
                   data-card-set="{{ $card.set }}"
                   data-card-number="{{ $card.number }}"
@@ -68,9 +71,9 @@
                   data-placement-observed-card-id="{{ .placement.observed_card_id }}"
                   data-placement-physical-state="{{ if .placement.physical_state_unknown }}unknown{{ end }}"
                   data-inspector-src="{{ $inspectorSrc }}"
-                  aria-label="Inspect {{ $card.card_name }}, {{ $leaf.theme }} pocket {{ .position }}{{ if eq $classification "proxy" }}, reference image{{ end }}{{ if eq $classification "missing" }}, image unavailable{{ end }}{{ if eq .placement.status "pending" }}, placement pending{{ end }}">
+                  aria-label="Inspect {{ $displayName }}, {{ $leaf.theme }} pocket {{ .position }}{{ if eq $classification "proxy" }}, reference image{{ end }}{{ if eq $classification "missing" }}, image unavailable{{ end }}{{ if eq .placement.status "pending" }}, placement pending{{ end }}">
             {{ if eq $classification "missing" }}
-              <span class="binder-missing">{{ $card.card_name }}<small>Image unavailable</small></span>
+              <span class="binder-missing">{{ $displayName }}<small>Image unavailable</small></span>
             {{ else }}
               {{ $assetPath := $mapping.asset_path }}
               {{ if not $assetPath }}
@@ -93,7 +96,7 @@
                    srcset="{{ $thumb.RelPermalink }} {{ $thumb.Width }}w{{ if ne $large.Width $thumb.Width }}, {{ $large.RelPermalink }} {{ $large.Width }}w{{ end }}"
                    sizes="(max-width: 860px) 30vw, 180px"
                    width="{{ $thumb.Width }}" height="{{ $thumb.Height }}"
-                   alt="{{ $card.card_name }}, {{ $card.set }} {{ $card.number }}"
+                   alt="{{ $displayName }}, {{ $card.set }} {{ $card.number }}"
                    loading="{{ if $.eager }}eager{{ else }}lazy{{ end }}"
                    {{ if $.eager }}data-initial-binder-image{{ end }}>
             {{ end }}

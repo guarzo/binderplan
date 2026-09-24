@@ -13,6 +13,7 @@ from urllib.parse import parse_qs
 
 from PIL import Image
 import yaml
+import pytest
 
 spec = importlib.util.spec_from_file_location(
     "digital_binder", Path(__file__).parent / "digital_binder.py"
@@ -3042,6 +3043,29 @@ def test_card_leaf_requires_nine_pockets(tmp_path):
     assert any("exactly 9 pockets" in error for error in errors)
 
 
+def test_card_leaf_accepts_declared_two_by_four_geometry(tmp_path):
+    root = project_fixture(
+        tmp_path,
+        pockets=[confirmed_pocket("abra-01")] + [empty_pocket(i) for i in range(2, 9)],
+    )
+    volume = load_volume(root)
+    volume["pocket_layout"] = {"rows": 2, "columns": 4}
+    write_volume(root, volume)
+    write_current_generated(root)
+
+    assert digital_binder.validate_project(root) == []
+
+
+def test_card_leaf_rejects_invalid_declared_geometry(tmp_path):
+    root = project_fixture(tmp_path)
+    volume = load_volume(root)
+    volume["pocket_layout"] = {"rows": True, "columns": 4}
+    write_volume(root, volume)
+
+    errors = digital_binder.validate_project(root)
+    assert any("pocket_layout.rows" in error and "positive integer" in error for error in errors)
+
+
 def test_transition_leaf_rejects_pockets(tmp_path):
     root = project_fixture(tmp_path, transition_pockets=[empty_pocket()])
     errors = digital_binder.validate_project(root)
@@ -4350,7 +4374,8 @@ def test_binder_javascript_updates_live_status_and_hash_functionally():
     assert result.returncode == 0, result.stderr
 
 
-def test_rendered_synthetic_binder_marks_only_first_spread_images_eager(tmp_path):
+@pytest.mark.parametrize("rows, columns", [(3, 3), (2, 4)])
+def test_rendered_synthetic_binder_marks_only_first_spread_images_eager(tmp_path, rows, columns):
     root = Path(__file__).parents[1]
     site = tmp_path / "site"
     destination = tmp_path / "public"
@@ -4437,7 +4462,7 @@ def test_rendered_synthetic_binder_marks_only_first_spread_images_eager(tmp_path
             missing = confirmed_pocket("missing-card")
             missing["position"] = 2
             pockets.append(missing)
-        pockets.extend(empty_pocket(position) for position in range(len(pockets) + 1, 10))
+        pockets.extend(empty_pocket(position) for position in range(len(pockets) + 1, rows * columns + 1))
         leaves.append({
             "id": f"leaf-{index}",
             "kind": "cards",
@@ -4453,6 +4478,7 @@ def test_rendered_synthetic_binder_marks_only_first_spread_images_eager(tmp_path
             "version": 1,
             "volume_id": "volume-1",
             "publication_status": "draft",
+            "pocket_layout": {"rows": rows, "columns": columns},
             "leaves": leaves,
         }, sort_keys=False),
         encoding="utf-8",
@@ -4469,6 +4495,12 @@ def test_rendered_synthetic_binder_marks_only_first_spread_images_eager(tmp_path
     html = (destination / "gallery/digital-binder-pilot/index.html").read_text(
         encoding="utf-8"
     )
+    elements = rendered_elements(html)
+    binder = next(attrs for _, attrs in elements if attrs.get("data-binder") == "volume-1")
+    assert binder["data-pocket-rows"] == str(rows)
+    assert binder["data-pocket-columns"] == str(columns)
+    assert binder["style"] == f"--binder-pocket-columns: {columns}; --binder-pocket-rows: {rows}"
+    assert len([attrs for _, attrs in elements if "data-pocket" in attrs]) == 3 * rows * columns
     first = re.search(
         r'data-card-id="first-leaf-card"(?P<body>.*?)</button>', html, re.S
     ).group("body")
@@ -4623,6 +4655,41 @@ def test_public_check_requires_nine_pockets_per_card_leaf(tmp_path):
     errors = digital_binder.validate_public_output(tmp_path)
 
     assert any("9 pockets" in error for error in errors)
+
+
+def test_public_check_accepts_declared_two_by_four_geometry(tmp_path):
+    html = valid_public_binder_html().replace(
+        'data-binder="volume-1"',
+        'data-binder="volume-1" data-pocket-rows="2" data-pocket-columns="4"',
+    ).replace('<div data-pocket data-pocket-position="9"></div>', '')
+    write_html(tmp_path, html)
+    write_public_card_assets(tmp_path)
+
+    assert digital_binder.validate_public_output(tmp_path) == []
+
+
+def test_public_check_rejects_wrong_count_for_declared_geometry(tmp_path):
+    html = valid_public_binder_html().replace(
+        'data-binder="volume-1"',
+        'data-binder="volume-1" data-pocket-rows="2" data-pocket-columns="4"',
+    )
+    write_html(tmp_path, html)
+    write_public_card_assets(tmp_path)
+
+    errors = digital_binder.validate_public_output(tmp_path)
+    assert any("exactly 8 pockets" in error for error in errors)
+
+
+def test_public_check_rejects_invalid_geometry(tmp_path):
+    html = valid_public_binder_html().replace(
+        'data-binder="volume-1"',
+        'data-binder="volume-1" data-pocket-rows="0" data-pocket-columns="4"',
+    )
+    write_html(tmp_path, html)
+    write_public_card_assets(tmp_path)
+
+    errors = digital_binder.validate_public_output(tmp_path)
+    assert any("data-pocket-rows" in error for error in errors)
 
 
 def test_public_check_requires_unique_leaf_ids(tmp_path):

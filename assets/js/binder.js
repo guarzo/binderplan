@@ -13,7 +13,7 @@
 
   function initBinder(root) {
     const leaves = Array.from(root.querySelectorAll("[data-binder-leaf]"));
-    if (!leaves.length) return;
+    if (!leaves.length && !root.hasAttribute("data-home-exhibits")) return;
 
     const controls = root.querySelector("[data-binder-controls]");
     const previous = controls && controls.querySelector("[data-binder-prev]");
@@ -111,7 +111,9 @@
 
     window.addEventListener("hashchange", renderHashDestination);
     window.addEventListener("popstate", renderHashDestination);
-    const onMediaChange = () => render(binderRoots.length === 1 || ownsCurrentHash());
+    const onMediaChange = () => {
+      if (leaves.length) render(binderRoots.length === 1 || ownsCurrentHash());
+    };
     if (mobile.addEventListener) {
       mobile.addEventListener("change", onMediaChange);
     } else {
@@ -119,6 +121,7 @@
     }
 
     document.addEventListener("keydown", (event) => {
+      if (!leaves.length) return;
       const eventRoot = event.target instanceof Element && event.target.closest("[data-binder]");
       const belongsToRoot = eventRoot ? eventRoot === root : binderRoots.length === 1;
       if (!belongsToRoot || document.querySelector("dialog[open]")
@@ -186,7 +189,16 @@
           ? document.activeElement
           : null;
         inspectedIndex = pocketButtons.indexOf(button);
-        name.textContent = button.dataset.cardName;
+        name.replaceChildren();
+        name.textContent = button.dataset.cardPrintedName
+          ? button.dataset.cardEnglishName
+          : button.dataset.cardName;
+        if (button.dataset.cardPrintedName) {
+          const printed = document.createElement("span");
+          printed.setAttribute("lang", button.dataset.cardLanguage === "JP" ? "ja" : "zh-Hans");
+          printed.textContent = " · " + button.dataset.cardPrintedName;
+          name.append(printed);
+        }
         setField("language", button.dataset.cardLanguage);
         const setNumber = [button.dataset.cardSet, button.dataset.cardNumber]
           .filter((value) => value && value.trim())
@@ -227,7 +239,11 @@
         if (adjacent) openInspector(adjacent);
       }
 
-      pocketButtons.forEach((button) => button.addEventListener("click", () => openInspector(button)));
+      pocketButtons.forEach((button) => {
+        button.addEventListener("click", () => openInspector(button));
+        if (root.hasAttribute("data-home-exhibits")) button.disabled = false;
+      });
+      if (root.hasAttribute("data-home-exhibits")) root.dataset.homeReady = "true";
       close.addEventListener("click", () => dialog.close());
       priorCard.addEventListener("click", () => showAdjacent(-1));
       nextCard.addEventListener("click", () => showAdjacent(1));
@@ -270,11 +286,11 @@
       });
     }
 
-    render(binderRoots.length === 1 || !window.location.hash || ownsCurrentHash());
+    if (leaves.length) render(binderRoots.length === 1 || !window.location.hash || ownsCurrentHash());
   }
 
   window.initBinder = initBinder;
   document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll("[data-binder]").forEach(initBinder);
+    document.querySelectorAll("[data-binder], [data-home-exhibits]").forEach(initBinder);
   });
 }());

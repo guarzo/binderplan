@@ -52,6 +52,12 @@ class FakeElement {
     });
   }
 
+  replaceChildren(...children) {
+    this.children = [];
+    this.textContent = "";
+    this.append(...children);
+  }
+
   setAttribute(name, value = "") {
     const stringValue = String(value);
     this.attributes.set(name, stringValue);
@@ -125,6 +131,7 @@ class FakeDocument extends FakeElement {
   constructor() {
     super("document");
   }
+  createElement(tagName) { return new FakeElement(tagName); }
 }
 
 function keyboardEvent(key, target) {
@@ -264,3 +271,56 @@ assert.deepEqual(mobile.afterLocationEvent, {
   previousHref: "#leaf-v1-03",
   nextHref: "#leaf-v1-04",
 });
+
+// The homepage wall uses the same inspector details without adding binder leaves.
+{
+  const document = new FakeDocument();
+  const wall = new FakeElement("section", { "data-home-exhibits": "" });
+  const cards = ["Sandshrew", "Audino · タブンネ"].map((cardName) => new FakeElement("button", {
+    "data-card-id": cardName,
+    "data-card-name": cardName,
+    "data-card-english-name": cardName.split(" · ")[0],
+    "data-card-printed-name": cardName.includes(" · ") ? "タブンネ" : "",
+    "data-card-language": "JP",
+    "data-card-set": "sv11B",
+    "data-card-number": "156/086",
+    "data-leaf-theme": "Calm in Nature",
+    "data-pocket-position": "1",
+    "data-classification": "exact",
+    "data-image-provenance": "Reviewed image",
+    "data-placement-status": "confirmed",
+    "data-inspector-src": "/images/test.webp",
+  }));
+  const dialog = new FakeElement("dialog", { "data-card-inspector": "" });
+  const close = new FakeElement("button", { "data-card-inspector-close": "" });
+  const previous = new FakeElement("button", { "data-card-inspector-previous": "" });
+  const next = new FakeElement("button", { "data-card-inspector-next": "" });
+  const image = new FakeElement("img", { "data-card-inspector-image": "" });
+  const name = new FakeElement("h2", { "data-card-inspector-name": "" });
+  const fields = ["language", "set-number", "theme-pocket", "image-classification", "image-source", "image-note", "placement"]
+    .map((field) => new FakeElement("dd", { "data-card-inspector-field": field }));
+  dialog.showModal = () => { dialog.open = true; };
+  dialog.close = () => { dialog.open = false; dialog.dispatchEvent({ type: "close" }); };
+  image.removeAttribute = (attribute) => image.attributes.delete(attribute);
+  [close, previous, next, ...cards].forEach((element) => {
+    element.focus = () => { document.activeElement = element; };
+    element.isConnected = true;
+  });
+  dialog.append(close, previous, next, image, name, ...fields);
+  wall.append(...cards, dialog);
+  document.append(wall);
+  const window = { location: { hash: "" }, matchMedia() { return { matches: false, addEventListener() {} }; }, addEventListener() {} };
+  vm.runInContext(binderScript, vm.createContext({ window, document, Element: FakeElement, console }));
+  document.dispatchEvent({ type: "DOMContentLoaded" });
+  assert.equal(cards[0].disabled, false, "the wall frames are enabled when inspector JS is ready");
+  cards[0].dispatchEvent({ type: "click" });
+  assert.equal(dialog.open, true, "a frame opens the shared inspector");
+  assert.equal(name.textContent, "Sandshrew");
+  assert.equal(document.activeElement, close);
+  next.dispatchEvent({ type: "click" });
+  assert.equal(name.textContent, "Audino");
+  assert.equal(name.children[0].getAttribute("lang"), "ja");
+  assert.equal(name.children[0].textContent, " · タブンネ");
+  close.dispatchEvent({ type: "click" });
+  assert.equal(document.activeElement, cards[0], "closing returns focus to the opening frame");
+}

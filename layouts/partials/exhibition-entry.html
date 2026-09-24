@@ -1,0 +1,16 @@
+{{ $item := .item }}
+{{ $variant := .variant }}
+{{ $class := printf "exhibition-entry exhibition-entry--%s exhibition-entry--%s" $variant $item.kind }}
+{{ if $item.slug }}
+  {{ $path := printf "/gallery/%s" $item.slug }}
+  {{ if not (site.GetPage $path) }}{{ errorf "exhibition destination %q does not exist" $path }}{{ end }}
+  <a class="{{ $class }}" href="{{ printf "gallery/%s/" $item.slug | relURL }}">
+    <span class="exhibition-entry-title">{{ $item.title }}</span>
+    {{ if eq $variant "directory" }}<span class="exhibition-entry-description">{{ $item.description }}</span>{{ end }}
+  </a>
+{{ else }}
+  <span class="{{ $class }}" aria-label="{{ $item.title }}, in progress">
+    <span class="exhibition-entry-title">{{ $item.title }}</span>
+    <span class="exhibition-entry-description">In progress</span>
+  </span>
+{{ end }}

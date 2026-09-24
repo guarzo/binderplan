@@ -193,7 +193,8 @@
 
 .binder-pockets {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(var(--binder-pocket-columns, 3), minmax(0, 1fr));
+  grid-template-rows: repeat(var(--binder-pocket-rows, 3), auto);
   gap: var(--binder-pocket-gap);
 }
 

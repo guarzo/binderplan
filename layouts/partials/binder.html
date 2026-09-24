@@ -14,8 +14,10 @@
 {{ if not (index $images "cards") }}
   {{ errorf "missing card image records" }}
 {{ end }}
+{{ $layout := $volume.pocket_layout | default (dict "rows" 3 "columns" 3) }}
+{{ $rows := $layout.rows }}
+{{ $columns := $layout.columns }}
 {{ $leaves := $volume.leaves }}
-{{ $inspectorTitleID := printf "card-inspector-title-%s" $binderID }}
 {{ if not $leaves }}
   {{ errorf "binder %q has no leaves" $binderID }}
 {{ end }}
@@ -28,7 +30,9 @@
   {{ $nextLeaf = index $leaves 1 }}
 {{ end }}
 
-<div class="binder" data-binder="{{ $binderID }}" data-publication-status="{{ $volume.publication_status }}">
+<div class="binder" data-binder="{{ $binderID }}" data-publication-status="{{ $volume.publication_status }}"
+     data-pocket-rows="{{ $rows }}" data-pocket-columns="{{ $columns }}"
+     style="--binder-pocket-columns: {{ $columns }}; --binder-pocket-rows: {{ $rows }}">
   <div class="binder-stage" data-binder-stage>
     <nav class="binder-controls" data-binder-controls aria-label="Binder pages">
       <a data-binder-prev href="#leaf-{{ $firstLeaf.id }}" aria-label="Previous page"><span aria-hidden="true">&#8249;</span></a>
@@ -52,24 +56,5 @@
     </div>
   </div>
 
-  <dialog class="card-inspector" data-card-inspector aria-labelledby="{{ $inspectorTitleID }}">
-    <div class="card-inspector-controls">
-      <button type="button" data-card-inspector-close>Close</button>
-      <button type="button" data-card-inspector-previous>Previous card</button>
-      <button type="button" data-card-inspector-next>Next card</button>
-    </div>
-    <img data-card-inspector-image alt="" hidden>
-    <div class="card-inspector-copy">
-      <h2 id="{{ $inspectorTitleID }}" data-card-inspector-name></h2>
-      <dl>
-        <div><dt>Language</dt><dd data-card-inspector-field="language"></dd></div>
-        <div><dt>Set / number</dt><dd data-card-inspector-field="set-number"></dd></div>
-        <div><dt>Binder location</dt><dd data-card-inspector-field="theme-pocket"></dd></div>
-        <div><dt>Image fidelity</dt><dd data-card-inspector-field="image-classification"></dd></div>
-        <div><dt>Image source</dt><dd data-card-inspector-field="image-source"></dd></div>
-        <div><dt>Image notes</dt><dd data-card-inspector-field="image-note"></dd></div>
-        <div><dt>Placement</dt><dd data-card-inspector-field="placement"></dd></div>
-      </dl>
-    </div>
-  </dialog>
+  {{ partial "card-inspector.html" (dict "id" $binderID) }}
 </div>

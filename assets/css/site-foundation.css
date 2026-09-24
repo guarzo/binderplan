@@ -1,0 +1,229 @@
+/* Stage 2 exhibition language. The room is an entry point; the art remains the subject. */
+:root {
+  --room-wall: oklch(0.245 0.018 300);
+  --room-warmth: oklch(0.57 0.043 62);
+  --room-wood: oklch(0.34 0.035 58);
+  --room-paper: oklch(0.86 0.025 80);
+  --font-cjk-jp: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', 'Droid Sans Fallback', sans-serif;
+  --font-cjk-sc: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', 'Droid Sans Fallback', sans-serif;
+}
+:lang(ja) { font-family: var(--font-cjk-jp); font-style: normal; }
+:lang(zh), :lang(zh-Hans) { font-family: var(--font-cjk-sc); font-style: normal; }
+body { font-kerning: normal; }
+.site-footer p + p { max-width: 70ch; margin: 1.2rem auto 0; font: 400 0.88rem/1.6 'Source Sans 3', sans-serif; }
+p { text-wrap: pretty; }
+h1, h2, h3 { text-wrap: balance; }
+:where(a, button, [role='button']):focus-visible {
+  outline: 3px solid var(--foil-cyan);
+  outline-offset: 4px;
+}
+.skip-link {
+  position: fixed;
+  z-index: 1100;
+  top: 0.75rem;
+  left: 0.75rem;
+  transform: translateY(-150%);
+  background: var(--bg-raised);
+  color: var(--text-primary);
+  padding: 0.65rem 1rem;
+  border: 1px solid var(--text-primary);
+}
+.skip-link:focus { transform: none; }
+.site-header { backdrop-filter: none; background: var(--bg-deep); }
+.site-nav a { display: inline-flex; align-items: center; min-height: 2.75rem; padding: 0.35rem 0; }
+.site-nav a::after { bottom: 0.3rem; }
+
+/* The wall: actual published card images, not a graphic of an imaginary binder. */
+.content:has(.room) { max-width: none; padding: 0; }
+.room { position: relative; overflow: hidden; }
+.room-intro {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: clamp(2rem, 4vw, 3rem) clamp(1.3rem, 4vw, 3rem) 1rem;
+}
+.room-intro .eyebrow { color: var(--text-muted); }
+.room-intro h1 { max-width: none; font-size: clamp(3.1rem, 5vw, 4.7rem); margin: 0 0 0.15em; }
+.room-intro > p:last-child { color: var(--text-muted); max-width: 48ch; font-size: clamp(1.05rem, 1.8vw, 1.3rem); }
+.room-wall {
+  background: radial-gradient(ellipse 65% 80% at 48% 28%, oklch(0.32 0.02 295), var(--room-wall) 75%);
+  border-block: 1px solid var(--border);
+  padding: clamp(1.5rem, 4vw, 3.5rem) clamp(1.3rem, 4vw, 3rem) 1.5rem;
+}
+.room-wall-art {
+  max-width: 1020px;
+  min-height: clamp(17rem, 25vw, 22rem);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.75rem, 6vw, 5rem);
+}
+.exhibit-frame {
+  display: grid;
+  justify-items: center;
+  gap: 0.85rem;
+  min-width: 0;
+  border: 0;
+  padding: 0;
+  color: var(--text-primary);
+  background: none;
+  cursor: zoom-in;
+  font: inherit;
+  transition: transform 0.35s var(--ease-out-expo);
+}
+.exhibit-frame:first-child { transform: translateY(-1.25rem) rotate(-3deg); }
+.exhibit-frame:nth-child(2) { transform: translateY(1rem) rotate(1.2deg); }
+.exhibit-frame:nth-child(3) { transform: translateY(-0.6rem) rotate(2.5deg); }
+.exhibit-frame:hover:not(:disabled), .exhibit-frame:focus-visible { transform: translateY(-0.45rem) rotate(0); }
+.exhibit-frame:disabled { cursor: default; }
+.exhibit-frame-mat {
+  display: block;
+  padding: clamp(0.65rem, 1.6vw, 1.1rem);
+  border: clamp(0.35rem, 0.85vw, 0.65rem) ridge var(--room-warmth);
+  background: oklch(0.19 0.015 280);
+  box-shadow: 0 1rem 1.6rem oklch(0.08 0.01 285 / 0.45);
+}
+.exhibit-frame img { display: block; width: auto; height: clamp(9rem, 19vw, 15rem); max-width: 100%; object-fit: contain; }
+.exhibit-frame-label { font-size: 0.89rem; line-height: 1.4; color: var(--text-primary); }
+.exhibit-frame-label :lang(ja), .exhibit-frame-label :lang(zh-Hans) { display: block; font-size: 0.82rem; color: var(--text-muted); }
+.room-wall-note { display: none; max-width: 1020px; margin: 1.5rem auto 0; text-align: right; font-size: 0.86rem; color: var(--text-muted); }
+.room[data-home-ready] .room-wall-note { display: block; }
+
+/* Shelves vary in thickness and spines; their labels are real navigable text. */
+.room-bookcase {
+  position: relative;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: clamp(3.5rem, 7vw, 7rem) clamp(1.3rem, 4vw, 3rem) 6rem;
+}
+.room-bookcase-intro { display: flex; justify-content: space-between; gap: 1.5rem; align-items: baseline; margin-bottom: 2.5rem; }
+.room-bookcase-intro h2 { margin: 0; font-size: clamp(2.1rem, 4vw, 3.2rem); }
+.room-bookcase-intro p { max-width: 34ch; color: var(--text-muted); margin: 0; }
+.room-shelf { margin-bottom: clamp(2.5rem, 5vw, 4.5rem); }
+.room-shelf h3 { color: var(--text-muted); font-size: 0.9rem; font-weight: 500; margin: 0 0 0.8rem; letter-spacing: 0.08em; }
+.room-shelf-books {
+  display: flex;
+  align-items: end;
+  gap: 0.4rem;
+  min-height: 11rem;
+  padding: 0 1rem 0.3rem;
+  border-bottom: 0.9rem solid var(--room-wood);
+  box-shadow: 0 0.65rem 0.75rem -0.55rem oklch(0.04 0.01 285 / 0.8);
+}
+.exhibition-entry--shelf {
+  display: grid;
+  place-items: center;
+  flex: 0 0 clamp(4.4rem, 7vw, 6rem);
+  min-width: 0;
+  height: clamp(8.5rem, 15vw, 11.5rem);
+  padding: 0.6rem;
+  border-radius: 0.2rem 0.1rem 0.1rem 0.2rem;
+  border: 1px solid oklch(0.52 0.03 280);
+  background: oklch(0.31 0.035 245);
+  box-shadow: inset 0.4rem 0 oklch(0.75 0.025 245 / 0.13), 0.3rem 0.25rem 0.45rem oklch(0.06 0.01 285 / 0.35);
+  color: var(--text-primary);
+  text-align: center;
+  transition: transform 0.3s var(--ease-out-expo), background 0.3s;
+}
+.exhibition-entry--shelf .exhibition-entry-title { font: 400 clamp(1rem, 1.5vw, 1.2rem)/1.15 'DM Serif Display', serif; writing-mode: vertical-rl; transform: rotate(180deg); overflow-wrap: anywhere; }
+.exhibition-entry--shelf:hover, .exhibition-entry--shelf:focus-visible { color: var(--text-primary); transform: translateY(-0.6rem); }
+.exhibition-entry--shelf.exhibition-entry--binder { background: oklch(0.34 0.04 12); border-color: oklch(0.51 0.044 12); }
+.exhibition-entry--shelf.exhibition-entry--catalogue { flex-basis: clamp(3.8rem, 6vw, 4.8rem); height: clamp(7rem, 12vw, 9rem); background: oklch(0.32 0.026 288); border-color: oklch(0.48 0.025 288); }
+.exhibition-entry--shelf.exhibition-entry--pending { flex-basis: clamp(5rem, 8vw, 6.5rem); background: oklch(0.25 0.013 285); border-style: dashed; border-color: var(--text-muted); color: var(--text-primary); box-shadow: none; }
+.exhibition-entry--pending .exhibition-entry-description { color: var(--text-muted); font-size: 0.82rem; }
+.room-watchlist {
+  display: block;
+  width: fit-content;
+  margin: 0 0 0 auto;
+  padding: 0.7rem 1rem;
+  background: var(--room-paper);
+  color: oklch(0.22 0.02 80);
+  font-size: 0.9rem;
+  box-shadow: 0.3rem 0.3rem 0 oklch(0.45 0.026 65 / 0.55);
+  transform: rotate(2deg);
+}
+.room-watchlist:hover { color: oklch(0.22 0.02 80); transform: rotate(0); }
+.room-approach {
+  display: grid;
+  gap: 1rem;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: clamp(3.5rem, 7vw, 7rem) clamp(1.3rem, 4vw, 3rem);
+  color: var(--text-primary);
+  border-top: 1px solid var(--border);
+}
+.room-approach-title { font: 400 clamp(2.5rem, 5vw, 4.5rem)/1.16 'DM Serif Display', serif; max-width: 14ch; }
+.room-approach-cta { color: var(--accent); font-size: 1rem; }
+.room-approach:hover .room-approach-cta { color: var(--foil-cyan); }
+
+/* The directory is a finding aid, not a second theatrical room. */
+.gallery-directory { max-width: 1120px; margin: 0 auto; }
+.directory-intro { padding-bottom: clamp(2.5rem, 5vw, 4.5rem); }
+.directory-intro h1 { margin: 0.2em 0; }
+.directory-intro > p:last-child { max-width: 52ch; color: var(--text-muted); font-size: 1.2rem; }
+.directory-section { display: grid; grid-template-columns: minmax(12rem, 0.8fr) minmax(0, 2fr); gap: clamp(2rem, 5vw, 5rem); border-top: 1px solid var(--border); padding: 2.75rem 0 3rem; }
+.directory-section-intro h2 { font-size: clamp(1.7rem, 2.7vw, 2.4rem); margin-bottom: 0.4rem; }
+.directory-section-intro p { color: var(--text-muted); font-size: 0.93rem; max-width: 30ch; }
+.directory-entries { display: grid; }
+.exhibition-entry--directory { display: grid; grid-template-columns: minmax(0, 1fr) minmax(12rem, 1fr) auto; gap: 1.5rem; align-items: baseline; padding: 1rem 0; border-bottom: 1px solid var(--border-faint); color: var(--text-primary); }
+.exhibition-entry--directory:first-child { border-top: 1px solid var(--border-faint); }
+.exhibition-entry--directory .exhibition-entry-title { font: 400 1.45rem/1.25 'DM Serif Display', serif; }
+.exhibition-entry--directory .exhibition-entry-description { color: var(--text-muted); font-size: 0.94rem; }
+a.exhibition-entry--directory::after { content: '↗'; color: var(--accent); }
+a.exhibition-entry--directory:hover .exhibition-entry-title { color: var(--foil-cyan); }
+.exhibition-entry--directory.exhibition-entry--pending { background: none; border-color: var(--border-faint); }
+.directory-note { max-width: 65ch; margin: 2rem 0 0; font-size: 0.9rem; color: var(--text-muted); }
+
+/* An even reading rhythm for existing reconstructed and photographed galleries. */
+.gallery-page .single-header { max-width: 54rem; margin-bottom: clamp(1.3rem, 3vw, 2.5rem); }
+.gallery-page .single-header h1 { font-size: clamp(2.5rem, 4.5vw, 4.2rem); line-height: 1.16; margin-bottom: 0.32em; }
+.gallery-page .single-header .description { max-width: 56ch; font-size: 1.1rem; }
+.gallery-content > p { max-width: 65ch; line-height: 1.7; }
+.gallery-content > h2 { border-top: 1px solid var(--border-faint); margin-top: 3.5rem; padding-top: 1.25rem; }
+.gallery-content > h2::before { display: none; }
+.gallery-item figcaption { font-size: 0.95rem; line-height: 1.55; }
+.gallery-item figcaption strong { font-family: 'Source Sans 3', sans-serif; font-weight: 600; font-size: 1rem; }
+.binder-intro { margin-bottom: 1.4rem; }
+.binder .binder-leaf-label h2 { font-size: clamp(1.45rem, 2.5vw, 1.85rem); line-height: 1.2; }
+.binder .binder-leaf-caption { font-size: 0.96rem; line-height: 1.55; }
+.binder .binder-transition h2 { font-size: clamp(2rem, 4.5vw, 3.5rem); }
+.binder .binder-spread:first-child .binder-transition h2 { font-size: clamp(1.7rem, 2.5vw, 2.2rem); }
+
+@media (max-width: 900px) {
+  .directory-section { grid-template-columns: 1fr; gap: 0.7rem; }
+  .directory-section-intro p { max-width: 60ch; }
+}
+@media (max-width: 640px) {
+  .header-inner { padding: 0.55rem 1.25rem 0.35rem; gap: 0.1rem; }
+  .site-title { font-size: 1.1rem; }
+  .site-nav { width: 100%; }
+  .site-nav ul { width: 100%; gap: clamp(0.5rem, 3vw, 1.3rem); flex-wrap: nowrap; justify-content: space-between; }
+  .site-nav a { font-size: clamp(0.72rem, 3vw, 0.82rem); letter-spacing: 0.015em; min-height: 2.75rem; }
+  .room-intro { padding-top: 3rem; }
+  .room-intro h1 { max-width: 12ch; font-size: clamp(2.8rem, 11vw, 4rem); }
+  .room-wall-art { min-height: 16rem; gap: 0.55rem; }
+  .exhibit-frame { gap: 0.55rem; }
+  .exhibit-frame-mat { padding: 0.35rem; border-width: 0.3rem; }
+  .exhibit-frame img { height: clamp(6rem, 28vw, 9rem); }
+  .exhibit-frame-label { font-size: 0.75rem; overflow-wrap: anywhere; }
+  .exhibit-frame-label :lang(ja), .exhibit-frame-label :lang(zh-Hans) { font-size: 0.7rem; }
+  .room-wall-note { text-align: left; }
+  .room-bookcase-intro { display: block; }
+  .room-bookcase-intro p { margin-top: 0.4rem; }
+  .room-shelf-books { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: stretch; gap: 0.6rem; padding: 0 0 0.8rem; }
+  .exhibition-entry--shelf { width: 100%; height: auto; min-height: 4.5rem; padding: 0.8rem; border-radius: 0.2rem; text-align: left; justify-items: start; }
+  .exhibition-entry--shelf .exhibition-entry-title { font-size: 1.12rem; writing-mode: horizontal-tb; transform: none; }
+  .exhibition-entry--shelf.exhibition-entry--catalogue { min-height: 4rem; height: auto; }
+  .exhibition-entry--directory { grid-template-columns: minmax(0, 1fr) auto; gap: 0.25rem 0.6rem; align-items: center; padding: 0.9rem 0; }
+  .exhibition-entry--directory .exhibition-entry-description { grid-column: 1; grid-row: 2; }
+  .exhibition-entry--directory::after { grid-column: 2; grid-row: 1 / span 2; }
+  .gallery-page .single-header h1 { font-size: clamp(2.4rem, 9vw, 3.3rem); }
+  .gallery-page .single-header .description { font-size: 1.02rem; }
+}
+@media (max-width: 360px) {
+  .site-nav a { font-size: 0.7rem; letter-spacing: 0; }
+  .room-shelf-books { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .exhibit-frame, .exhibition-entry--shelf { transition: none; }
+}

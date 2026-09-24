@@ -1,37 +1,36 @@
 {{ define "main" }}
-<section class="home-hero">
-  <div class="home-hero-copy">
-    <p class="eyebrow">A personal Pokemon card collection</p>
-    <h1 class="home-wordmark">Pages built around how the art <span class="foil">feels.</span></h1>
-    <p class="tagline">{{ .Site.Params.description }}</p>
+<section class="room" data-home-exhibits aria-labelledby="room-title">
+  <div class="room-intro">
+    <p class="eyebrow">A personal Pokémon card collection</p>
+    <h1 id="room-title">Come in. Turn a page.</h1>
+    <p>Cards collected for what their art makes me feel, arranged one page at a time.</p>
   </div>
-  <a class="home-emolga" href="{{ "gallery/emolga-masterset/" | relURL }}" aria-label="Browse the Emolga masterset">
-    <img src="{{ "images/slabs/personal_emolga_carnival.jpg" | relURL }}" alt="Emolga Summer Carnival promotional card in a graded case">
-    <span>One particular favorite</span>
-  </a>
+  <div class="room-wall" aria-label="Selected cards">
+    <div class="room-wall-art">
+      {{ range $index, $id := (index .Site.Data "home-exhibits").cards }}{{ partial "home-exhibit.html" (dict "id" $id "eager" (eq $index 0)) }}{{ end }}
+    </div>
+    <p class="room-wall-note">A few pieces from the collection. Select a frame to look closer.</p>
+  </div>
+  <div class="room-bookcase">
+    <div class="room-bookcase-intro">
+      <h2>On the shelves</h2>
+      <p>Each collection opens a different way of looking.</p>
+    </div>
+    {{ range .Site.Data.exhibition.groups }}
+      <section class="room-shelf" aria-label="{{ .title }}">
+        <h3>{{ .title }}</h3>
+        <div class="room-shelf-books">
+          {{ range .collections }}{{ partial "exhibition-entry.html" (dict "item" . "variant" "shelf") }}{{ end }}
+        </div>
+      </section>
+    {{ end }}
+    <a class="room-watchlist" href="{{ "guides/shopping/" | relURL }}" aria-label="Current Watchlist: cards I am looking for">Current Watchlist <span aria-hidden="true">↗</span></a>
+  </div>
+  {{ partial "card-inspector.html" (dict "id" "home") }}
 </section>
-
-<div class="home-manifesto">
-  <div class="list-content">
-    {{ .Content }}
-  </div>
-</div>
-
-<nav class="explore-index" aria-label="Explore the collection">
-  <a href="{{ "philosophy/" | relURL }}" class="explore-row">
-    <h3>Approach</h3>
-    <p>How mood, sequence, and page composition guide the binder.</p>
-    <span class="go" aria-hidden="true">&rarr;</span>
-  </a>
-  <a href="{{ "gallery/" | relURL }}" class="explore-row">
-    <h3>Gallery</h3>
-    <p>Binder spreads, slabs, and a steadily growing Emolga masterset.</p>
-    <span class="go" aria-hidden="true">&rarr;</span>
-  </a>
-  <a href="{{ "guides/" | relURL }}" class="explore-row">
-    <h3>Guides</h3>
-    <p>Practical habits for buying, curating, and letting go.</p>
-    <span class="go" aria-hidden="true">&rarr;</span>
-  </a>
-</nav>
+<a class="room-approach" href="{{ "philosophy/" | relURL }}">
+  <span class="eyebrow">A way of looking</span>
+  <span class="room-approach-title">Why these pages belong together</span>
+  <span class="room-approach-cta">Read the approach <span aria-hidden="true">↗</span></span>
+</a>
 {{ end }}
