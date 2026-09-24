@@ -52,6 +52,14 @@ def test_recommended_counts_are_precomputed():
     top_level = Counter(recommendation.split(" · ", 1)[0] for *_, recommendation, _reason in rows)
 
     assert top_level == Counter({"Keeper": 63, "Review": 32, "Release": 5})
+    keeper_subsections = Counter(
+        recommendation.split(" · ", 1)[1]
+        for *_prefix, recommendation, _reason in rows
+        if recommendation.startswith("Keeper · ")
+    )
+    assert keeper_subsections == Counter(
+        {"Personal": 3, "Beautiful Misfits": 12, "Heritage": 32, "Species Studies": 16}
+    )
 
     text = CHECKLIST.read_text(encoding="utf-8")
     assert "Recommended Review count: 32" in text
@@ -114,6 +122,7 @@ def test_checklist_preserves_owner_safeguards():
 
     assert "No card is currently authorized for Trade" in text
     assert "No additional Release is authorized" in text
+    assert "Done means moved to Release-pending, not removed from the collection" in text
     assert "For every Trade authorization, record an override from the recommended destination to Trade" in text
     assert "For every recommended Release not authorized, record an override to Review or Keeper" in text
     assert "Yveltal --- Steam Siege 65/114 was already removed" in text
