@@ -578,7 +578,8 @@ def _load_previous_manifests(root: Path, previous_ref: str, errors: list[str]) -
         volume_id: f"data/binders/{volume_id}.yaml"
         for volume_id in VOLUME_IDS
     }
-    for path in manifest_paths.values():
+    present_paths = {}
+    for volume_id, path in manifest_paths.items():
         try:
             listed = subprocess.run(
                 ["git", "ls-tree", "--name-only", commit, path],
@@ -593,8 +594,17 @@ def _load_previous_manifests(root: Path, previous_ref: str, errors: list[str]) -
                 f"{_git_error_context(exc)}"
             )
             return None
-        if not listed.stdout.strip():
-            return None
+        present_paths[volume_id] = bool(listed.stdout.strip())
+
+    if not any(present_paths.values()):
+        return None
+    missing = [volume_id for volume_id, present in present_paths.items() if not present]
+    if missing:
+        errors.append(
+            f"previous_ref {previous_ref!r} has incomplete binder manifests; missing: "
+            + ", ".join(missing)
+        )
+        return None
 
     manifests = {}
     for volume_id, path in manifest_paths.items():

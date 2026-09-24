@@ -3516,6 +3516,25 @@ def test_validate_project_skips_valid_previous_commit_with_absent_manifest_but_k
     assert not any("previous" in error for error in errors)
 
 
+def test_validate_project_rejects_partially_missing_previous_manifests(tmp_path, monkeypatch):
+    root = project_fixture(tmp_path)
+
+    def partial_manifests(command, check, capture_output, text, cwd):
+        if command[:3] == ["git", "rev-parse", "--verify"]:
+            return subprocess.CompletedProcess(command, 0, stdout="abc123\n", stderr="")
+        if command[:3] == ["git", "ls-tree", "--name-only"]:
+            output = command[4] + "\n" if command[4].endswith("volume-1.yaml") else ""
+            return subprocess.CompletedProcess(command, 0, stdout=output, stderr="")
+        raise AssertionError(f"unexpected git command: {command}")
+
+    monkeypatch.setattr(digital_binder.subprocess, "run", partial_manifests)
+
+    errors = digital_binder.validate_project(root, previous_ref="main")
+
+    assert any("incomplete binder manifests" in error and "volume-2" in error
+               for error in errors)
+
+
 def test_validate_project_fails_closed_when_previous_tree_inspection_fails(tmp_path, monkeypatch):
     root = project_fixture(tmp_path)
 
