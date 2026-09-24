@@ -141,7 +141,7 @@ def test_checklist_preserves_owner_safeguards():
     assert release_ids == authorized_rows
     assert len(re.findall(r"^\\tradeauth$", text, re.MULTILINE)) == 6
     assert "Signed authorization continuation attached" in text
-    assert "Release authorization approved by" in text
+    assert "Trade/Release authorization approved by" in text
     assert "Emolga EX must match the master-set copy's card number and finish in hand" in text
 
 
