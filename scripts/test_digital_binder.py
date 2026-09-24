@@ -3668,6 +3668,37 @@ def test_seeded_repository_has_expected_leaf_and_card_counts():
     assert len({pocket["card_id"] for pocket in occupied}) == 171
 
 
+def test_printable_exact_image_checklist_matches_published_non_exact_cards():
+    root = Path(__file__).parents[1]
+    images = digital_binder.load_yaml(root / "data/card-images.yaml")["cards"]
+    expected_by_volume = {}
+    for volume_id in ("volume-1", "volume-2"):
+        volume = digital_binder.load_yaml(root / f"data/binders/{volume_id}.yaml")
+        expected_by_volume[volume_id] = [
+            pocket["card_id"]
+            for leaf in volume["leaves"]
+            for pocket in leaf.get("pockets", [])
+            if pocket.get("card_id")
+            and images[pocket["card_id"]]["classification"] != "exact"
+        ]
+
+    checklist = (
+        root / "docs/2026-09-24-digital-binder-exact-image-checklist.tex"
+    ).read_text(encoding="utf-8")
+    listed_ids = re.findall(r"\\cardrow\{([^}]+)\}", checklist)
+
+    assert expected_by_volume == {
+        "volume-1": listed_ids[:10],
+        "volume-2": listed_ids[10:],
+    }
+    assert len(listed_ids) == len(set(listed_ids)) == 18
+    assert sum(
+        images[card_id]["classification"] == "photo-crop" for card_id in listed_ids
+    ) == 17
+    assert sum(images[card_id]["classification"] == "proxy" for card_id in listed_ids) == 1
+    assert not any(images[card_id]["classification"] == "missing" for card_id in listed_ids)
+
+
 def test_seeded_repository_reflects_september_ledger_swaps():
     root = Path(__file__).parents[1]
     volumes = {
