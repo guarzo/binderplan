@@ -105,6 +105,7 @@ def test_checklist_preserves_owner_safeguards():
     assert release_ids == authorized_rows
     assert len(re.findall(r"^\\tradeauth$", text, re.MULTILINE)) == 6
     assert "Signed authorization continuation attached" in text
+    assert "Release authorization approved by" in text
 
 
 def test_checklist_has_capacity_adjustment_and_closeout_sections():
