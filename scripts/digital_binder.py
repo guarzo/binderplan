@@ -162,10 +162,19 @@ def _write_atomic(path: Path, content: str) -> None:
     tmp.replace(path)
 
 
-def _tcgdex_json(url: str, opener=urlopen):
+def _tcgdex_json(url: str, opener=urlopen, context: str = "request"):
     request = Request(url, headers={"User-Agent": TCGDEX_USER_AGENT})
-    with opener(request, timeout=20) as response:
-        return json.loads(response.read().decode("utf-8"))
+    try:
+        with opener(request, timeout=20) as response:
+            payload = response.read()
+    except (OSError, IncompleteRead) as exc:
+        raise ValueError(f"TCGdex {context} failed: {exc}") from exc
+    try:
+        return json.loads(payload.decode("utf-8"))
+    except UnicodeDecodeError as exc:
+        raise ValueError(f"TCGdex {context} returned invalid JSON: {exc}") from exc
+    except json.JSONDecodeError as exc:
+        raise ValueError(f"TCGdex {context} returned invalid JSON: {exc}") from exc
 
 
 def _local_number(number: str | None) -> str:
@@ -409,18 +418,23 @@ def search_tcgdex(row: dict, opener=urlopen) -> list[dict]:
         return []
     query = quote(str(row.get("card_name") or ""))
     search_url = f"{TCGDEX_API_ROOT}/{language}/cards?name={query}"
-    summaries = _tcgdex_json(search_url, opener=opener)
+    summaries = _tcgdex_json(search_url, opener=opener, context="search")
     if not isinstance(summaries, list):
-        return []
+        raise ValueError("TCGdex search returned malformed results envelope")
 
     candidates = []
     for summary in summaries:
         if not isinstance(summary, dict) or not summary.get("id"):
             continue
-        detail_url = f"{TCGDEX_API_ROOT}/{language}/cards/{quote(str(summary['id']))}"
+        provider_id = str(summary["id"])
+        detail_url = f"{TCGDEX_API_ROOT}/{language}/cards/{quote(provider_id)}"
         try:
-            detail = _tcgdex_json(detail_url, opener=opener)
-        except (OSError, ValueError, json.JSONDecodeError) as exc:
+            detail = _tcgdex_json(
+                detail_url,
+                opener=opener,
+                context=f"detail fetch for {provider_id}",
+            )
+        except ValueError as exc:
             candidate = normalize_tcgdex_candidate(summary)
             candidate["image_url"] = None
             candidate["detail_error"] = str(exc)
@@ -431,7 +445,9 @@ def search_tcgdex(row: dict, opener=urlopen) -> list[dict]:
         else:
             candidate = normalize_tcgdex_candidate(summary)
             candidate["image_url"] = None
-            candidate["detail_error"] = "detail response was not a JSON object"
+            candidate["detail_error"] = (
+                f"TCGdex detail fetch for {provider_id} returned malformed object"
+            )
             candidates.append(candidate)
     return candidates
 

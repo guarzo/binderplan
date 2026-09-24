@@ -139,8 +139,14 @@ def _search_candidates(root: Path, card_id: str) -> dict:
         row,
         digital_binder.search_tcgdex(row, opener=_cache_opener(root)),
     )
+    if candidates and all(candidate.get("detail_error") for candidate in candidates):
+        detail_errors = "; ".join(
+            str(candidate.get("detail_error")) for candidate in candidates if candidate.get("detail_error")
+        )
+        raise ValueError(f"all TCGdex detail fetches failed for {card_id}: {detail_errors}")
     report = {
         "card_id": card_id,
+        "provider": "tcgdex",
         "registry": row,
         "candidates": [
             {"candidate_index": index, **candidate}
@@ -158,6 +164,8 @@ def _print_candidate_summary(report: dict) -> None:
                 f"[{candidate['candidate_index']}] {candidate.get('provider_id')} "
                 f"score={candidate.get('score')} image={candidate.get('image_url') or 'none'}"
             )
+            if candidate.get("detail_error"):
+                print(f"  detail_error={candidate.get('detail_error')}")
     else:
         print(f"no candidates for {report['card_id']}")
 
@@ -240,7 +248,9 @@ def _render_review_html(leaf_id: str, reports: list[dict]) -> str:
                 f"{html.escape(str(candidate.get('provider_id', '')))}</h3>"
             )
             parts.append("<dl>")
-            for field in ("name", "set_id", "set_name", "local_id", "score", "review_state"):
+            for field in (
+                    "name", "set_id", "set_name", "local_id", "score", "review_state",
+                    "detail_error"):
                 value = html.escape(str(candidate.get(field, "")))
                 parts.append(f"<dt>{field}</dt><dd>{value}</dd>")
             parts.append("</dl>")
@@ -431,16 +441,139 @@ def _load_candidate_from_path(path: Path, card_id: str, candidate_index: int, so
     raise ValueError(f"candidate index {candidate_index} not found for {card_id}")
 
 
+def _validate_tcgdex_candidate_cache(data: dict, card_id: str, current_row: dict) -> None:
+    if not isinstance(data, dict):
+        raise ValueError(f"tcgdex candidate cache for {card_id} is stale or malformed")
+    if data.get("card_id") != card_id:
+        raise ValueError(
+            f"tcgdex candidate cache card_id mismatch for {card_id}: got {data.get('card_id')!r}"
+        )
+    if data.get("provider") != "tcgdex":
+        raise ValueError(
+            f"tcgdex candidate cache provider mismatch for {card_id}: got {data.get('provider')!r}"
+        )
+    if data.get("registry") != current_row:
+        raise ValueError(
+            f"tcgdex candidate cache for {card_id} is stale for the current registry identity; "
+            "rerun search"
+        )
+    if not isinstance(data.get("candidates"), list):
+        raise ValueError(f"tcgdex candidate cache for {card_id} is stale or malformed")
+
+
+def _load_tcgdex_candidate(root: Path, card_id: str, candidate_index: int, current_row: dict) -> dict:
+    path = _candidate_cache_path(root, card_id)
+    if not path.exists():
+        recovery_command = _candidate_cache_recovery_command("tcgdex", card_id)
+        raise ValueError(
+            f"missing tcgdex candidate cache for {card_id}; run {recovery_command} first"
+        )
+    data = json.loads(path.read_text(encoding="utf-8"))
+    _validate_tcgdex_candidate_cache(data, card_id, current_row)
+    for candidate in data["candidates"]:
+        if isinstance(candidate, dict) and candidate.get("candidate_index") == candidate_index:
+            candidate_provider = candidate.get("provider")
+            if candidate_provider is not None and candidate_provider != "tcgdex":
+                raise ValueError(
+                    f"tcgdex candidate cache provider mismatch for {card_id}: "
+                    f"candidate {candidate_index} has {candidate_provider!r}"
+                )
+            if not str(candidate.get("provider_id") or "").strip():
+                raise ValueError(
+                    f"tcgdex candidate cache for {card_id} is stale or malformed: "
+                    "selected candidate lacks provider_id; rerun search"
+                )
+            return candidate
+    raise ValueError(f"candidate index {candidate_index} not found for {card_id}")
+
+
 def _load_candidate(root: Path, card_id: str, candidate_index: int) -> dict:
-    return _load_candidate_from_path(
-        _candidate_cache_path(root, card_id), card_id, candidate_index, "tcgdex"
-    )
+    row = _require_card(root, card_id)
+    return _load_tcgdex_candidate(root, card_id, candidate_index, row)
 
 
 def _load_doubleholo_candidate(root: Path, card_id: str, candidate_index: int) -> dict:
     return _load_candidate_from_path(
         _doubleholo_candidate_cache_path(root, card_id), card_id, candidate_index, "doubleholo"
     )
+
+
+def _fetch_tcgdex_object(row: dict, provider_id: str, opener=urlopen) -> dict:
+    clean_provider_id = str(provider_id or "").strip()
+    if not clean_provider_id:
+        raise ValueError(
+            "TCGdex approval cache is stale or malformed: selected candidate lacks provider_id; "
+            "rerun search"
+        )
+    language = digital_binder.TCGDEX_LANGUAGE.get(row.get("language"))
+    if not language:
+        raise ValueError(f"TCGdex approval does not support language {row.get('language')!r}")
+    request = Request(
+        f"{digital_binder.TCGDEX_API_ROOT}/{language}/cards/{quote(clean_provider_id, safe='')}",
+        headers={"User-Agent": digital_binder.TCGDEX_USER_AGENT},
+        method="GET",
+    )
+    try:
+        with opener(request, timeout=20) as response:
+            payload = response.read()
+    except (OSError, IncompleteRead) as exc:
+        raise ValueError(f"TCGdex object fetch failed for {clean_provider_id}: {exc}") from exc
+    try:
+        data = json.loads(payload.decode("utf-8"))
+    except UnicodeDecodeError as exc:
+        raise ValueError(
+            f"TCGdex object fetch returned invalid JSON for {clean_provider_id}: {exc}"
+        ) from exc
+    except json.JSONDecodeError as exc:
+        raise ValueError(
+            f"TCGdex object fetch returned invalid JSON for {clean_provider_id}: {exc}"
+        ) from exc
+    if not isinstance(data, dict):
+        raise ValueError(f"TCGdex object fetch returned malformed object for {clean_provider_id}")
+    return data
+
+
+def _tcgdex_exact_identity(row: dict, candidate: dict) -> dict:
+    wanted_number = digital_binder._fold_identity(digital_binder._local_number(row.get("number")))
+    wanted_set = digital_binder._fold_identity(row.get("set"))
+    wanted_name = digital_binder._fold_identity(row.get("card_name"))
+    number_match = bool(
+        wanted_number and digital_binder._fold_identity(candidate.get("local_id")) == wanted_number
+    )
+    set_match = bool(
+        wanted_set and (
+            digital_binder._fold_identity(candidate.get("set_id")) == wanted_set
+            or digital_binder._fold_identity(candidate.get("set_name")) == wanted_set
+        )
+    )
+    name_match = bool(
+        wanted_name and digital_binder._fold_identity(candidate.get("name")) == wanted_name
+    )
+    language_match = bool(digital_binder.TCGDEX_LANGUAGE.get(row.get("language")))
+    return {
+        "number_match": number_match,
+        "set_match": set_match,
+        "name_match": name_match,
+        "language_match": language_match,
+        "exact_identity_match": number_match and set_match and name_match and language_match,
+    }
+
+
+def _recomputed_tcgdex_candidate(row: dict, candidate: dict, opener=urlopen) -> dict:
+    provider_id = str(candidate.get("provider_id") or "").strip()
+    raw = _fetch_tcgdex_object(row, provider_id, opener=opener)
+    if str(raw.get("id") or "") != provider_id:
+        raise ValueError(
+            f"TCGdex card id mismatch for selected candidate: expected {provider_id}, "
+            f"got {raw.get('id')!r}"
+        )
+    normalized = digital_binder.normalize_tcgdex_candidate(raw)
+    ranked = digital_binder.rank_candidates(row, [normalized])
+    if not ranked:
+        raise ValueError("selected TCGdex candidate could not be ranked")
+    recomputed = ranked[0]
+    recomputed.update(_tcgdex_exact_identity(row, recomputed))
+    return recomputed
 
 
 def _fetch_doubleholo_object(object_id: str, opener=urlopen) -> dict:
@@ -571,10 +704,13 @@ def approve_command(args) -> int:
     root = Path.cwd()
     row = _require_card(root, args.card_id)
     _check_classification(row, args.classification, args.note)
-    candidate = _load_candidate(root, args.card_id, args.candidate_index)
-    _approve_remote_candidate(root, args, candidate, {
+    candidate = _load_tcgdex_candidate(root, args.card_id, args.candidate_index, row)
+    recomputed = _recomputed_tcgdex_candidate(row, candidate, opener=urlopen)
+    if args.classification == "exact" and recomputed.get("exact_identity_match") is not True:
+        raise ValueError("exact TCGdex approval requires a recomputed exact identity match")
+    _approve_remote_candidate(root, args, recomputed, {
         "provider": "tcgdex",
-        "upstream_id": candidate.get("provider_id") or "",
+        "upstream_id": recomputed.get("provider_id") or "",
     }, "tcgdex")
     print(f"approved candidate {args.candidate_index} for {args.card_id}")
     return 0

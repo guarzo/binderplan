@@ -263,8 +263,14 @@ def image_bytes(format_="PNG", size=(12, 10), color=(64, 128, 192)):
 def write_candidate_cache(root, card_id, candidates):
     path = root / "tmp/digital-binder-review/candidates" / f"{card_id}.json"
     path.parent.mkdir(parents=True, exist_ok=True)
+    registry = digital_binder.load_registry(root / "docs" / "card-registry.md").get(card_id, {})
     path.write_text(
-        json.dumps({"card_id": card_id, "registry": {}, "candidates": candidates}),
+        json.dumps({
+            "card_id": card_id,
+            "provider": "tcgdex",
+            "registry": registry,
+            "candidates": candidates,
+        }),
         encoding="utf-8",
     )
 
@@ -314,6 +320,22 @@ def doubleholo_live_object(
 
 def doubleholo_object_url(object_id="dh-43"):
     return f"https://w5sf479zkl-dsn.algolia.net/1/indexes/production_cards/{object_id}"
+
+
+def tcgdex_live_object(
+        name="Abra", set_id="base1", set_name="Base Set", local_id="43",
+        image_url="https://assets.tcgdex.net/en/base/base1/43", object_id="base1-43"):
+    return {
+        "id": object_id,
+        "localId": local_id,
+        "name": name,
+        "image": image_url,
+        "set": {"id": set_id, "name": set_name},
+    }
+
+
+def tcgdex_object_url(object_id="base1-43", language="en"):
+    return f"https://api.tcgdex.net/v2/{language}/cards/{object_id}"
 
 
 def patch_doubleholo_live_object(monkeypatch, **kwargs):
@@ -485,6 +507,46 @@ def test_search_tcgdex_keeps_summary_when_one_detail_fetch_fails():
     assert "404 not found" in candidates[0]["detail_error"]
     assert "detail_error" not in candidates[1]
     assert candidates[1]["image_url"] == "https://assets.tcgdex.net/en/base/base1/44/high.webp"
+
+
+def test_search_tcgdex_rejects_malformed_top_level_json_envelope():
+    def malformed_opener(request, timeout):
+        return FakeHTTPResponse({"error": "provider rate limit"})
+
+    row = {
+        "id": "abra-01", "card_name": "Abra", "language": "EN",
+        "set": "Base Set", "number": "43/102", "confidence": "confirmed",
+    }
+
+    try:
+        digital_binder.search_tcgdex(row, opener=malformed_opener)
+    except ValueError as exc:
+        assert "TCGdex search returned malformed results envelope" in str(exc)
+    else:
+        raise AssertionError("malformed TCGdex search envelopes must not become no-hit results")
+
+
+def test_search_tcgdex_marks_every_failed_detail_explicitly():
+    def fake_opener(request, timeout):
+        if request.full_url.endswith("/en/cards?name=Abra"):
+            return FakeHTTPResponse([
+                {"id": "base1-43", "localId": "43", "name": "Abra"},
+                {"id": "base1-44", "localId": "44", "name": "Abra"},
+            ])
+        if request.full_url.endswith(("/en/cards/base1-43", "/en/cards/base1-44")):
+            raise OSError("detail service unavailable")
+        raise AssertionError(f"unexpected URL {request.full_url}")
+
+    row = {
+        "id": "abra-01", "card_name": "Abra", "language": "EN",
+        "set": "Base Set", "number": "43/102", "confidence": "confirmed",
+    }
+
+    candidates = digital_binder.search_tcgdex(row, opener=fake_opener)
+
+    assert [candidate["provider_id"] for candidate in candidates] == ["base1-43", "base1-44"]
+    assert all(candidate["image_url"] is None for candidate in candidates)
+    assert all("detail service unavailable" in candidate["detail_error"] for candidate in candidates)
 
 
 def test_search_doubleholo_posts_public_algolia_query_shape():
@@ -846,6 +908,120 @@ def test_cache_opener_keys_post_requests_by_body(tmp_path, monkeypatch):
         assert response.read() == b"second"
 
     assert calls == [b"first", b"second"]
+
+
+def test_tcgdex_search_command_preserves_existing_cache_and_exits_nonzero_on_provider_error(
+        tmp_path, monkeypatch, capsys):
+    root = project_fixture(tmp_path)
+    write_current_generated(root)
+    cache_path = root / "tmp/digital-binder-review/candidates/abra-01.json"
+    cache_path.parent.mkdir(parents=True)
+    cache_path.write_text('{"old": "cache"}\n', encoding="utf-8")
+
+    def failed_search(row, opener):
+        raise ValueError("TCGdex search failed: network down")
+
+    monkeypatch.chdir(root)
+    monkeypatch.setattr(manage_card_images.digital_binder, "search_tcgdex", failed_search)
+
+    assert manage_card_images.main(["search", "abra-01"]) == 1
+
+    assert cache_path.read_text(encoding="utf-8") == '{"old": "cache"}\n'
+    assert "TCGdex search failed: network down" in capsys.readouterr().err
+
+
+def test_tcgdex_search_command_preserves_existing_cache_when_all_detail_fetches_fail(
+        tmp_path, monkeypatch, capsys):
+    root = project_fixture(tmp_path)
+    write_current_generated(root)
+    cache_path = root / "tmp/digital-binder-review/candidates/abra-01.json"
+    cache_path.parent.mkdir(parents=True)
+    cache_path.write_text('{"old": "cache"}\n', encoding="utf-8")
+
+    def all_details_failed(row, opener):
+        return [
+            {
+                "provider": "tcgdex", "provider_id": "base1-43", "name": "Abra",
+                "set_id": "base1", "local_id": "43", "image_url": None,
+                "detail_error": "detail service unavailable",
+            },
+            {
+                "provider": "tcgdex", "provider_id": "base1-44", "name": "Abra",
+                "set_id": "base1", "local_id": "44", "image_url": None,
+                "detail_error": "detail service unavailable",
+            },
+        ]
+
+    monkeypatch.chdir(root)
+    monkeypatch.setattr(manage_card_images.digital_binder, "search_tcgdex", all_details_failed)
+
+    assert manage_card_images.main(["search", "abra-01"]) == 1
+
+    assert cache_path.read_text(encoding="utf-8") == '{"old": "cache"}\n'
+    stderr = capsys.readouterr().err
+    assert "all TCGdex detail fetches failed" in stderr
+    assert "detail service unavailable" in stderr
+
+
+def test_tcgdex_search_command_caches_and_prints_partial_detail_errors(
+        tmp_path, monkeypatch, capsys):
+    root = project_fixture(tmp_path)
+    write_current_generated(root)
+
+    def partial_detail_failure(row, opener):
+        return [
+            {
+                "provider": "tcgdex", "provider_id": "base1-43", "name": "Abra",
+                "set_id": "base1", "set_name": "Base Set", "local_id": "43", "image_url": None,
+                "detail_error": "404 not found",
+            },
+            {
+                "provider": "tcgdex", "provider_id": "base1-44", "name": "Abra",
+                "set_id": "base1", "set_name": "Base Set", "local_id": "44",
+                "image_url": "https://assets.tcgdex.net/en/base/base1/44/high.webp",
+            },
+        ]
+
+    monkeypatch.chdir(root)
+    monkeypatch.setattr(manage_card_images.digital_binder, "search_tcgdex", partial_detail_failure)
+
+    assert manage_card_images.main(["search", "abra-01"]) == 0
+
+    cached = json.loads(
+        (root / "tmp/digital-binder-review/candidates/abra-01.json").read_text(encoding="utf-8")
+    )
+    assert cached["provider"] == "tcgdex"
+    assert cached["registry"]["id"] == "abra-01"
+    assert "404 not found" in cached["candidates"][0]["detail_error"]
+    assert "detail_error=404 not found" in capsys.readouterr().out
+
+
+def test_tcgdex_review_html_includes_per_candidate_detail_error(tmp_path, monkeypatch):
+    root = project_fixture(tmp_path)
+    write_current_generated(root)
+
+    def partial_detail_failure(row, opener):
+        return [
+            {
+                "provider": "tcgdex", "provider_id": "base1-43", "name": "Abra",
+                "set_id": "base1", "set_name": "Base Set", "local_id": "43", "image_url": None,
+                "detail_error": "detail timeout",
+            },
+            {
+                "provider": "tcgdex", "provider_id": "base1-44", "name": "Abra",
+                "set_id": "base1", "set_name": "Base Set", "local_id": "44",
+                "image_url": "https://assets.tcgdex.net/en/base/base1/44/high.webp",
+            },
+        ]
+
+    monkeypatch.chdir(root)
+    monkeypatch.setattr(manage_card_images.digital_binder, "search_tcgdex", partial_detail_failure)
+
+    assert manage_card_images.review_command(argparse.Namespace(page="leaf-1")) == 0
+
+    html = (root / "tmp/digital-binder-review/pages/leaf-1.html").read_text(encoding="utf-8")
+    assert "detail_error" in html
+    assert "detail timeout" in html
 
 
 def test_doubleholo_search_command_prints_variant_confirmation_warning(tmp_path, monkeypatch, capsys):
@@ -2159,15 +2335,345 @@ def test_approve_local_cli_requires_http_source_url_and_usage_basis(tmp_path):
     assert not (root / "assets/images/cards/abra-01.webp").exists()
 
 
+def test_approve_rejects_tcgdex_cache_missing_trust_metadata(tmp_path, monkeypatch):
+    root = project_fixture(tmp_path)
+    write_current_generated(root)
+    cache_path = root / "tmp/digital-binder-review/candidates/abra-01.json"
+    cache_path.parent.mkdir(parents=True)
+    cache_path.write_text(json.dumps({
+        "card_id": "abra-01",
+        "registry": {},
+        "candidates": [{
+            "candidate_index": 0,
+            "provider_id": "base1-43",
+            "image_url": "https://attacker.example/cached.png",
+            "exact_identity_match": True,
+        }],
+    }), encoding="utf-8")
+
+    def fail_if_called(request, timeout):
+        raise AssertionError("approval should reject before live fetch or image download")
+
+    monkeypatch.chdir(root)
+    monkeypatch.setattr(manage_card_images, "urlopen", fail_if_called)
+
+    try:
+        manage_card_images.approve_command(approve_args())
+    except ValueError as exc:
+        assert "tcgdex candidate cache" in str(exc)
+        assert "provider" in str(exc)
+    else:
+        raise AssertionError("TCGdex approval must reject caches without trust metadata")
+
+    assert not (root / manage_card_images.CARD_ASSET_DIR / "abra-01.webp").exists()
+
+
+def test_approve_rejects_tcgdex_cache_for_wrong_card_or_provider(tmp_path, monkeypatch):
+    cases = [
+        ("wrong-card", {"card_id": "kadabra-01", "provider": "tcgdex"}, "card_id"),
+        ("wrong-provider", {"card_id": "abra-01", "provider": "doubleholo"}, "provider"),
+    ]
+    for label, overrides, expected in cases:
+        root = tmp_path / label
+        root.mkdir()
+        project_fixture(root)
+        write_current_generated(root)
+        current_registry = digital_binder.load_registry(root / "docs" / "card-registry.md")["abra-01"]
+        cache_path = root / "tmp/digital-binder-review/candidates/abra-01.json"
+        cache_path.parent.mkdir(parents=True)
+        payload = {
+            "card_id": "abra-01",
+            "provider": "tcgdex",
+            "registry": current_registry,
+            "candidates": [{
+                "candidate_index": 0,
+                "provider_id": "base1-43",
+                "image_url": "https://attacker.example/cached.png",
+            }],
+        }
+        payload.update(overrides)
+        cache_path.write_text(json.dumps(payload), encoding="utf-8")
+
+        def fail_if_called(request, timeout):
+            raise AssertionError("approval should reject before live fetch or image download")
+
+        monkeypatch.chdir(root)
+        monkeypatch.setattr(manage_card_images, "urlopen", fail_if_called)
+
+        try:
+            manage_card_images.approve_command(approve_args())
+        except ValueError as exc:
+            assert expected in str(exc)
+        else:
+            raise AssertionError(f"TCGdex approval must reject {label} cache")
+
+        assert not (root / manage_card_images.CARD_ASSET_DIR / "abra-01.webp").exists()
+
+
+def test_approve_rejects_tcgdex_cache_stale_against_current_registry(tmp_path, monkeypatch):
+    root = project_fixture(tmp_path)
+    write_current_generated(root)
+    write_candidate_cache(root, "abra-01", [{
+        "candidate_index": 0,
+        "provider_id": "base1-43",
+        "image_url": "https://attacker.example/cached.png",
+    }])
+    (root / "docs" / "card-registry.md").write_text(
+        registry_doc(confidence="confirmed", set_="Jungle", number="43/64"),
+        encoding="utf-8",
+    )
+    write_current_generated(root)
+
+    def fail_if_called(request, timeout):
+        raise AssertionError("approval should reject before live fetch or image download")
+
+    monkeypatch.chdir(root)
+    monkeypatch.setattr(manage_card_images, "urlopen", fail_if_called)
+
+    try:
+        manage_card_images.approve_command(approve_args())
+    except ValueError as exc:
+        assert "stale" in str(exc)
+        assert "registry" in str(exc)
+    else:
+        raise AssertionError("TCGdex approval must reject cache from stale registry identity")
+
+    assert not (root / manage_card_images.CARD_ASSET_DIR / "abra-01.webp").exists()
+
+
+def test_approve_tcgdex_uses_live_object_not_cached_url_or_exact_flag(tmp_path, monkeypatch):
+    root = project_fixture(tmp_path)
+    write_current_generated(root)
+    write_candidate_cache(root, "abra-01", [{
+        "candidate_index": 0,
+        "provider_id": "base1-43",
+        "image_url": "https://attacker.example/cached.png",
+        "exact_identity_match": False,
+    }])
+    requested_urls = []
+
+    def fake_urlopen(request, timeout):
+        requested_urls.append(request.full_url)
+        if request.full_url == tcgdex_object_url("base1-43"):
+            return FakeHTTPResponse(tcgdex_live_object(
+                object_id="base1-43",
+                image_url="https://assets.tcgdex.net/en/base/base1/43-live",
+            ))
+        if request.full_url == "https://assets.tcgdex.net/en/base/base1/43-live/high.webp":
+            return FakeBinaryHTTPResponse(image_bytes("PNG"))
+        raise AssertionError(f"unexpected approval URL {request.full_url}")
+
+    monkeypatch.chdir(root)
+    monkeypatch.setattr(manage_card_images, "urlopen", fake_urlopen)
+
+    assert manage_card_images.approve_command(approve_args()) == 0
+
+    assert requested_urls == [
+        tcgdex_object_url("base1-43"),
+        "https://assets.tcgdex.net/en/base/base1/43-live/high.webp",
+    ]
+    record = load_images(root)["cards"]["abra-01"]
+    assert record["provider"] == "tcgdex"
+    assert record["upstream_id"] == "base1-43"
+    assert record["source_url"] == "https://assets.tcgdex.net/en/base/base1/43-live/high.webp"
+
+
+def test_approve_tcgdex_rejects_cached_provider_id_tamper_by_recomputing_identity(
+        tmp_path, monkeypatch):
+    root = project_fixture(tmp_path)
+    write_current_generated(root)
+    write_candidate_cache(root, "abra-01", [{
+        "candidate_index": 0,
+        "provider_id": "base1-44",
+        "image_url": "https://attacker.example/cached.png",
+        "exact_identity_match": True,
+    }])
+    requested_urls = []
+
+    def fake_urlopen(request, timeout):
+        requested_urls.append(request.full_url)
+        if request.full_url == tcgdex_object_url("base1-44"):
+            return FakeHTTPResponse(tcgdex_live_object(object_id="base1-44", local_id="44"))
+        raise AssertionError("approval should reject before image download")
+
+    monkeypatch.chdir(root)
+    monkeypatch.setattr(manage_card_images, "urlopen", fake_urlopen)
+
+    try:
+        manage_card_images.approve_command(approve_args())
+    except ValueError as exc:
+        assert "exact TCGdex approval requires a recomputed exact identity match" in str(exc)
+    else:
+        raise AssertionError("tampered TCGdex provider_id must not pass exact approval")
+
+    assert requested_urls == [tcgdex_object_url("base1-44")]
+    assert not (root / manage_card_images.CARD_ASSET_DIR / "abra-01.webp").exists()
+
+
+def test_approve_tcgdex_rejects_live_id_mismatch_before_download(tmp_path, monkeypatch):
+    root = project_fixture(tmp_path)
+    write_current_generated(root)
+    write_candidate_cache(root, "abra-01", [{
+        "candidate_index": 0,
+        "provider_id": "base1-43",
+        "image_url": "https://attacker.example/cached.png",
+    }])
+
+    def fake_urlopen(request, timeout):
+        if request.full_url == tcgdex_object_url("base1-43"):
+            return FakeHTTPResponse(tcgdex_live_object(object_id="different-id"))
+        raise AssertionError("approval should reject before image download")
+
+    monkeypatch.chdir(root)
+    monkeypatch.setattr(manage_card_images, "urlopen", fake_urlopen)
+
+    try:
+        manage_card_images.approve_command(approve_args())
+    except ValueError as exc:
+        assert "TCGdex card id mismatch" in str(exc)
+        assert "base1-43" in str(exc)
+    else:
+        raise AssertionError("live TCGdex id mismatch should reject approval")
+
+    assert not (root / manage_card_images.CARD_ASSET_DIR / "abra-01.webp").exists()
+
+
+def test_approve_tcgdex_rejects_live_identity_mismatch_before_download(tmp_path, monkeypatch):
+    root = project_fixture(tmp_path)
+    write_current_generated(root)
+    write_candidate_cache(root, "abra-01", [{
+        "candidate_index": 0,
+        "provider_id": "base1-43",
+        "image_url": "https://attacker.example/cached.png",
+        "exact_identity_match": True,
+    }])
+    requested_urls = []
+
+    def fake_urlopen(request, timeout):
+        requested_urls.append(request.full_url)
+        if request.full_url == tcgdex_object_url("base1-43"):
+            return FakeHTTPResponse(tcgdex_live_object(object_id="base1-43", name="Kadabra"))
+        raise AssertionError("approval should reject before image download")
+
+    monkeypatch.chdir(root)
+    monkeypatch.setattr(manage_card_images, "urlopen", fake_urlopen)
+
+    try:
+        manage_card_images.approve_command(approve_args())
+    except ValueError as exc:
+        assert "exact TCGdex approval requires a recomputed exact identity match" in str(exc)
+    else:
+        raise AssertionError("wrong live TCGdex identity must not pass exact approval")
+
+    assert requested_urls == [tcgdex_object_url("base1-43")]
+    assert not (root / manage_card_images.CARD_ASSET_DIR / "abra-01.webp").exists()
+
+
+def test_approve_tcgdex_live_fetch_failures_preserve_existing_yaml_asset_and_skip_download(
+        tmp_path, monkeypatch):
+    cases = [
+        ("network", "TCGdex object fetch failed", OSError("TCGdex unavailable")),
+        ("json", "TCGdex object fetch returned invalid JSON", b"{not json"),
+        ("envelope", "TCGdex object fetch returned malformed object", ["not an object"]),
+    ]
+    for label, expected, response in cases:
+        root = tmp_path / label
+        root.mkdir()
+        project_fixture(root)
+        write_current_generated(root)
+        original_yaml, original_asset, asset_path = seed_existing_proxy_image(root)
+        write_candidate_cache(root, "abra-01", [{
+            "candidate_index": 0,
+            "provider_id": "base1-43",
+            "image_url": "https://attacker.example/cached.png",
+        }])
+        requested_urls = []
+
+        def fake_urlopen(request, timeout):
+            requested_urls.append(request.full_url)
+            if request.full_url == tcgdex_object_url("base1-43"):
+                if isinstance(response, OSError):
+                    raise response
+                if isinstance(response, bytes):
+                    return FakeBinaryHTTPResponse(response)
+                return FakeHTTPResponse(response)
+            raise AssertionError("image download should not run after live object fetch failure")
+
+        monkeypatch.chdir(root)
+        monkeypatch.setattr(manage_card_images, "urlopen", fake_urlopen)
+
+        try:
+            manage_card_images.approve_command(approve_args())
+        except ValueError as exc:
+            assert expected in str(exc)
+        else:
+            raise AssertionError(f"{label} live object fetch failure should reject approval")
+
+        assert requested_urls == [tcgdex_object_url("base1-43")]
+        assert (root / "data/card-images.yaml").read_bytes() == original_yaml
+        assert asset_path.read_bytes() == original_asset
+
+
+def test_approve_tcgdex_proxy_uses_live_object_and_preserves_note_requirement(
+        tmp_path, monkeypatch):
+    root = project_fixture(tmp_path)
+    write_current_generated(root)
+    write_candidate_cache(root, "abra-01", [{
+        "candidate_index": 0,
+        "provider_id": "base1-64",
+        "image_url": "https://attacker.example/cached.png",
+        "exact_identity_match": False,
+    }])
+    requested_urls = []
+
+    def fake_urlopen(request, timeout):
+        requested_urls.append(request.full_url)
+        if request.full_url == tcgdex_object_url("base1-64"):
+            return FakeHTTPResponse(tcgdex_live_object(
+                object_id="base1-64",
+                name="Kadabra",
+                local_id="64",
+                image_url="https://assets.tcgdex.net/en/base/base1/64",
+            ))
+        if request.full_url == "https://assets.tcgdex.net/en/base/base1/64/high.webp":
+            return FakeBinaryHTTPResponse(image_bytes("PNG"))
+        raise AssertionError(f"unexpected approval URL {request.full_url}")
+
+    monkeypatch.chdir(root)
+    monkeypatch.setattr(manage_card_images, "urlopen", fake_urlopen)
+
+    assert manage_card_images.approve_command(approve_args(
+        classification="proxy",
+        note="Proxy image: live TCGdex card does not match the registry identity.",
+    )) == 0
+
+    assert requested_urls == [
+        tcgdex_object_url("base1-64"),
+        "https://assets.tcgdex.net/en/base/base1/64/high.webp",
+    ]
+    record = load_images(root)["cards"]["abra-01"]
+    assert record["classification"] == "proxy"
+    assert record["upstream_id"] == "base1-64"
+    assert record["source_url"] == "https://assets.tcgdex.net/en/base/base1/64/high.webp"
+    assert record["note"] == "Proxy image: live TCGdex card does not match the registry identity."
+
+
 def test_approve_rejects_file_candidate_url(tmp_path, monkeypatch):
     root = project_fixture(tmp_path)
     write_current_generated(root)
     write_candidate_cache(root, "abra-01", [{
         "candidate_index": 0,
         "provider_id": "base1-43",
-        "image_url": "file:///tmp/abra.webp",
+        "image_url": "https://attacker.example/cached.png",
     }])
+
+    def fake_urlopen(request, timeout):
+        if request.full_url == tcgdex_object_url("base1-43"):
+            return FakeHTTPResponse(tcgdex_live_object(object_id="base1-43", image_url="file:///tmp/abra"))
+        raise AssertionError("approval should reject live file: URL before image download")
+
     monkeypatch.chdir(root)
+    monkeypatch.setattr(manage_card_images, "urlopen", fake_urlopen)
 
     try:
         manage_card_images.approve_command(approve_args())
@@ -2185,11 +2691,17 @@ def test_approve_rejects_invalid_image_payload(tmp_path, monkeypatch):
     write_candidate_cache(root, "abra-01", [{
         "candidate_index": 0,
         "provider_id": "base1-43",
-        "image_url": "https://example.invalid/not-image.webp",
+        "image_url": "https://attacker.example/cached.png",
     }])
 
     def fake_urlopen(request, timeout):
-        return FakeBinaryHTTPResponse(b"not an image")
+        if request.full_url == tcgdex_object_url("base1-43"):
+            return FakeHTTPResponse(tcgdex_live_object(
+                object_id="base1-43", image_url="https://example.invalid/not-image"
+            ))
+        if request.full_url == "https://example.invalid/not-image/high.webp":
+            return FakeBinaryHTTPResponse(b"not an image")
+        raise AssertionError(f"unexpected approval URL {request.full_url}")
 
     monkeypatch.chdir(root)
     monkeypatch.setattr(manage_card_images, "urlopen", fake_urlopen)
@@ -2210,11 +2722,17 @@ def test_approve_reencodes_valid_candidate_image_to_webp(tmp_path, monkeypatch):
     write_candidate_cache(root, "abra-01", [{
         "candidate_index": 0,
         "provider_id": "base1-43",
-        "image_url": "https://example.invalid/abra.png",
+        "image_url": "https://attacker.example/cached.png",
     }])
 
     def fake_urlopen(request, timeout):
-        return FakeBinaryHTTPResponse(image_bytes("PNG"))
+        if request.full_url == tcgdex_object_url("base1-43"):
+            return FakeHTTPResponse(tcgdex_live_object(
+                object_id="base1-43", image_url="https://example.invalid/abra"
+            ))
+        if request.full_url == "https://example.invalid/abra/high.webp":
+            return FakeBinaryHTTPResponse(image_bytes("PNG"))
+        raise AssertionError(f"unexpected approval URL {request.full_url}")
 
     monkeypatch.chdir(root)
     monkeypatch.setattr(manage_card_images, "urlopen", fake_urlopen)
@@ -2227,7 +2745,7 @@ def test_approve_reencodes_valid_candidate_image_to_webp(tmp_path, monkeypatch):
     record = load_images(root)["cards"]["abra-01"]
     assert record["provider"] == "tcgdex"
     assert record["upstream_id"] == "base1-43"
-    assert record["source_url"] == "https://example.invalid/abra.png"
+    assert record["source_url"] == "https://example.invalid/abra/high.webp"
 
 
 def test_approve_preserves_existing_asset_and_yaml_when_validation_rejects(tmp_path, monkeypatch):
@@ -2244,8 +2762,13 @@ def test_approve_preserves_existing_asset_and_yaml_when_validation_rejects(tmp_p
         "image_url": "https://example.invalid/abra.png",
     }])
 
+    requested_urls = []
+
     def fake_urlopen(request, timeout):
-        return FakeBinaryHTTPResponse(image_bytes("PNG", color=(255, 0, 0)))
+        requested_urls.append(request.full_url)
+        if request.full_url == tcgdex_object_url("base1-43"):
+            return FakeHTTPResponse(tcgdex_live_object(object_id="base1-43"))
+        raise AssertionError("approval should reject before image download")
 
     monkeypatch.chdir(root)
     monkeypatch.setattr(manage_card_images, "urlopen", fake_urlopen)
@@ -2253,10 +2776,11 @@ def test_approve_preserves_existing_asset_and_yaml_when_validation_rejects(tmp_p
     try:
         manage_card_images.approve_command(approve_args())
     except ValueError as exc:
-        assert "exact" in str(exc) and "set and number" in str(exc)
+        assert "exact TCGdex approval requires a recomputed exact identity match" in str(exc)
     else:
         raise AssertionError("invalid exact approval should be rejected")
 
+    assert requested_urls == [tcgdex_object_url("base1-43")]
     assert (root / "data/card-images.yaml").read_bytes() == original_yaml
     assert asset_path.read_bytes() == original_asset
 
