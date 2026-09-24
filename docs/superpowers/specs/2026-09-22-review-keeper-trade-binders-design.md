@@ -90,7 +90,7 @@ Sections:
 
 Sequence visually inside each section by palette, scale, composition, or era rather than alphabetically.
 
-The superseded first-sort proposal contained 46 Keeper cards. That historical capacity estimate remains useful for the proposed architecture, but the current 100-card inventory has not yet been fully reclassified. Preserving those historical section boundaries would require thirteen four-pocket pages (52 pockets), leaving six open pockets.
+The superseded first-sort proposal contained 46 Keeper cards and required thirteen four-pocket pages (52 pockets) with its section boundaries. The [completed 2026-09-24 classification](../../2026-09-24-holding-sort-current-inventory.md) instead has 64 Keepers across four sections (1, 8, 28, 27); keeping each section on separate four-pocket pages requires **17 pages / 68 pockets**, not merely 16 pages by aggregate occupancy. The photographed nine-pocket pages do not verify that these final section pages have been installed.
 
 ## 4. Trade binder: four-pocket
 
@@ -102,7 +102,7 @@ The Trade binder is portable and contains only cards explicitly available now.
 - EDGE Watch cards do not enter Trade without a fresh curatorial decision.
 - Unswapped event supplements return to their original Review sections.
 
-The superseded first-sort proposal contained ten Core Value candidates: three four-pocket pages, leaving two open pockets. The owner later confirmed that none of the photographed cards is currently designated available for Trade.
+The superseded first-sort proposal contained ten Core Value candidates: three four-pocket pages, leaving two open pockets. At the time of that proposal, the owner confirmed none of the then-photographed cards available for Trade. This was superseded by the [2026-09-24 completed sort](../../2026-09-24-holding-sort-current-inventory.md), which explicitly makes five cards available now.
 
 ## 5. Release group
 
@@ -124,7 +124,7 @@ These counts describe the superseded 97-entry proposal, not the authoritative 10
 
 ## Historical physical sorting sequence
 
-Do not execute these steps against the current inventory. They are retained to explain the superseded 97-card proposal; the authoritative 100-card inventory has not been fully reclassified and has no active Trade designations.
+Do not execute these steps against the current inventory. They explain the superseded 97-card proposal; the [2026-09-24 completed sort](../../2026-09-24-holding-sort-current-inventory.md) records 105 current physical cards and five active Trade designations.
 
 1. Prepare dividers and empty pages before removing cards from the current box.
 2. Pull the three Release cards into a separate review envelope.
@@ -155,4 +155,4 @@ The historical card-by-card proposal is in [`2026-09-22-holding-pool-sorting-man
 - seven cards moved into canon on 2026-09-21;
 - seven cards displaced from canon into the current pool.
 
-That 97-entry estimate was superseded after the complete holding binder was photographed and reconciled. The authoritative current inventory is [`2026-09-22-holding-binder-inventory.md`](../../2026-09-22-holding-binder-inventory.md): 100 cards across 13 interim nine-pocket pages. The interim layout does not execute the separate Review, four-pocket Keeper, and four-pocket Trade architecture.
+That 97-entry estimate was superseded after the complete holding binder was photographed and reconciled. The [`2026-09-22-holding-binder-inventory.md`](../../2026-09-22-holding-binder-inventory.md) roster is the authoritative *pre-sort* 100-card snapshot across 13 interim nine-pocket pages. The [2026-09-24 current inventory](../../2026-09-24-holding-sort-current-inventory.md) records 105 owned cards after reconciliation. The photographed nine-pocket layout does not by itself prove execution of the separate four-pocket Keeper and Trade architecture.

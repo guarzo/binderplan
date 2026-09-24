@@ -8,7 +8,7 @@
 
 ## Written destination overrides
 
-“Species” is transcribed as `Keeper · Species Studies`.
+“Species” is transcribed as `Keeper · Species Studies`. The scan itself has ten handwritten overrides. A further Numel subsection change and five Trade classifications were confirmed in the owner's subsequent messages, not written on the scan.
 
 | Observation | Card | Printed recommendation | Handwritten final destination |
 |---|---|---|---|
@@ -23,7 +23,7 @@
 | HB-P13-07 | Pikachu — Pokémon GO 028/078 | Keeper · Heritage | Keeper · Species Studies |
 | HB-P13-08 | Pikachu — Black Star Promo | Keeper · Heritage | Keeper · Species Studies |
 
-## Written totals after overrides
+## Scan-only totals after written overrides
 
 | Destination | Recommended | Override effect | Written final total |
 |---|---:|---:|---:|
@@ -48,7 +48,7 @@
 - Heritage: 28
 - Species Studies: 26
 
-Numel `[Ditto]` remains counted under Beautiful Misfits because no written override is present. Its physical placement is documented separately below.
+These subsection figures describe only what is written on the scan. The owner's subsequent confirmation moves Numel `[Ditto]` to Species Studies, yielding **Personal 1, Beautiful Misfits 8, Heritage 28, Species Studies 27** for the current 64 Keeper cards.
 
 ## Rows without a visible Done mark
 
@@ -86,40 +86,54 @@ The following twelve boxes are unmarked in the scan. Each card appears in the po
 | IMG_7143.HEIC | 9 | Houndour/Houndoom Species Studies. |
 | IMG_7144.HEIC | 7 | Gengar/Pikachu Species Studies. |
 | IMG_7145.HEIC | 6 | Pikachu Species Studies. |
-| IMG_7146.HEIC | 4 | Ditto group: three written Species Studies cards plus Numel `[Ditto]`. |
-| IMG_7147.HEIC | 5 loose cards | The five Release-selected cards, retained in top loaders and currently staged in the Trade binder. |
+| IMG_7146.HEIC | 4 | Ditto group: three written Species Studies cards plus Numel `[Ditto]`, later explicitly confirmed as Species Studies. |
+| IMG_7147.HEIC | 5 loose cards | Five initially Release-recommended cards, retained in top loaders in the Trade binder; owner subsequently confirmed all five actively available for Trade. |
 
 `IMG_7133.HEIC`–`IMG_7146.HEIC` show 100 occupied pockets: 95 cards from the checklist roster plus five additional cards. `IMG_7147.HEIC` accounts for the remaining five checklist cards outside those pockets.
 
 ## Five additional observed cards
 
-These cards were not among the 100 checklist rows. Their photographs establish current physical presence but do not, by themselves, authorize final classifications.
+These cards were not among the 100 checklist rows. Their photographs establish current physical presence; the owner subsequently confirmed the earlier proposed Review roles for each. The earlier HP references are historical matching aids, not permanent IDs or proof of printing.
 
 | Card | Photograph | Earlier proposal reference | Current limit |
 |---|---|---|---|
-| Dedenne — Perfect Order-era card | IMG_7134.HEIC | HP-056 | Earlier proposal suggested Existing-theme EDGE / Calm in Nature. |
-| Ampharos — Chaos Rising-era card | IMG_7134.HEIC | HP-038 | Earlier proposal suggested Existing-theme EDGE / Elemental Solitude. |
-| McDonald’s Pikachu burger artwork | IMG_7134.HEIC | HP-045 | Earlier proposal suggested Existing-theme EDGE / World of People. |
-| Alolan Meowth — English 139/128 | IMG_7134.HEIC | no safe one-to-one match | Earlier HP-070 described a Japanese 115 printing; identity must not be forced. |
-| Mightyena — Japanese HP70 | IMG_7136.HEIC | probable HP-021 | Exact printing remains unconfirmed. |
+| Dedenne — Perfect Order-era card | IMG_7134.HEIC | HP-056 | Review · Existing-theme EDGE · Calm in Nature. |
+| Ampharos — Chaos Rising-era card | IMG_7134.HEIC | HP-038 | Review · Existing-theme EDGE · Elemental Solitude. |
+| McDonald’s Pikachu burger artwork | IMG_7134.HEIC | HP-045 | Review · Existing-theme EDGE · World of People. |
+| Alolan Meowth — English 139/128 | IMG_7134.HEIC | no safe one-to-one match | Review · Existing-theme EDGE · World of People. HP-070 described a Japanese 115 printing; identity must not be forced. |
+| Mightyena — Japanese HP70 | IMG_7136.HEIC | probable HP-021 | Review · REDUNDANT · Intimidation. Exact printing remains unconfirmed. |
 
-## Release-selected cards and current state
+## Owner-confirmed final disposition of the five Release recommendations
 
-| Observation | Card | Evidence-supported state |
+The printed checklist proposed Release; its authorization page is absent from the scan. The owner subsequently **authorized all five for active Trade** and confirmed their physical location in the Trade binder. This is a classification change, not execution of Release or proof of sale, exchange, donation, disposal, or transfer out of possession.
+
+| Observation | Card | Current state |
 |---|---|---|
-| HB-P09-05 | Eevee — SVP 173 | Selected for Release; physically staged in Trade binder; still owned. |
-| HB-P09-09 | Piplup — Manaphy & Lucario | Selected for Release; physically staged in Trade binder; still owned. |
-| HB-P10-02 | Misdreavus — Japanese | Selected for Release; physically staged in Trade binder; still owned; set-symbol/finish match not separately documented. |
-| HB-P10-07 | Yveltal — Celebrations | Selected for Release; physically staged in Trade binder; still owned. |
-| HB-P10-08 | Emolga EX — Japanese | Selected for Release; physically staged in Trade binder; still owned; card-number/finish match not separately documented. |
+| HB-P09-05 | Eevee — SVP 173 | Trade · available now, still owned. |
+| HB-P09-09 | Piplup — printed 93/130 (checklist label: “Manaphy & Lucario”) | Trade · available now, still owned. |
+| HB-P10-02 | Misdreavus — Japanese | Trade · available now, still owned; owner confirmed canonical set-symbol/finish match in hand. |
+| HB-P10-07 | Yveltal — Celebrations | Trade · available now, still owned. |
+| HB-P10-08 | Emolga EX — Japanese | Trade · available now, still owned; owner confirmed master-set card-number/finish match in hand. |
 
-The owner’s statement establishes physical staging in the Trade binder. It does **not** automatically establish active Trade availability or a completed sale, exchange, donation, disposal, or transfer out of possession.
+## Current reconciled inventory — 105 physical cards
 
-## Decisions still requiring owner confirmation
+The 2026-09-22 inventory remains a dated 100-card baseline, not the latest physical count. Its rows remain valid observations; use the ten written overrides above, the owner's Numel decision, and the five Trade decisions to derive today's destinations. Add the five newly observed Review cards above. **No card in this 105-card state is confirmed disposed of.**
 
-1. Does physical staging in the Trade binder mean these five are actively available for Trade, or is the binder only temporary storage for Release-selected cards?
-2. Should Numel `[Ditto]` remain `Keeper · Beautiful Misfits` as written, or was its placement with the Ditto cards intended as an unrecorded `Keeper · Species Studies` override?
-3. What are the intended destinations of the five additional observed cards?
-4. Were the Misdreavus set-symbol/finish and Emolga EX card-number/finish duplicate checks completed in hand?
+| Destination | From original 100 | Additional five | Current total |
+|---|---:|---:|---:|
+| Review | 31 | 5 | **36** |
+| Keeper | 64 | 0 | **64** |
+| Trade · available now | 5 | 0 | **5** |
+| Release / disposed | 0 | 0 | **0** |
+| **Physical total** | **100** | **5** | **105** |
 
-Until those answers are recorded, physical location, curatorial classification, Trade availability, and disposal remain separate states.
+Review groups: EDGE Watches **6**, Existing-theme EDGE **6**, REDUNDANT **24**, FUTURE SELF **0**, Event Staging **0**. Keeper subsections: Personal **1**, Beautiful Misfits **8**, Heritage **28**, Species Studies **27**. These are classifications, not a claim that the photographed mixed nine-pocket pages implement the final separated section architecture.
+
+The twelve unmarked Done boxes remain unmarked in the scan; the photographs independently establish the cards' physical presence. The missing authorization page remains missing. Neither is backfilled as a mark or signature. The previously removed Steam Siege Yveltal (`yveltal-03`) is outside this 105-card inventory.
+
+### Remaining identity limits
+
+- The English Alolan Meowth 139/128 is **not** asserted to be the Japanese HP-070 card; the owner approved its Review role, not an identity match.
+- Mightyena's exact Japanese printing remains unresolved; the Review destination does not establish set or number.
+- `IMG_7147.HEIC` visibly shows **93/130** and a Diamond & Pearl set symbol on Piplup; the earlier checklist’s “Manaphy & Lucario” label is historical shorthand, not a verified printing. No claimed product origin is inferred from it.
+- For other cards with unresolved set/number, preserve the uncertainty in the dated inventory and registry. The owner-confirmed in-hand duplicate checks above establish comparison outcomes only, not new set metadata.
