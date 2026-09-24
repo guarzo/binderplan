@@ -10,6 +10,9 @@
     {{ $available = eq $manifest.publication_status "published" }}
   {{ end }}
 {{ end }}
+{{ if and (not $available) (ne $item.kind "pending") }}
+  {{ $class = printf "%s exhibition-entry--pending" $class }}
+{{ end }}
 {{ if $available }}
   {{ $path := printf "/gallery/%s" $item.slug }}
   {{ if not (site.GetPage $path) }}{{ errorf "exhibition destination %q does not exist" $path }}{{ end }}

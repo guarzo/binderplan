@@ -108,6 +108,7 @@ def test_draft_volume_is_not_a_link_on_home_or_directory(tmp_path):
         links.feed(path.read_text())
         assert not any("/gallery/volume-2/" in href for href in links.hrefs if href)
         assert "Volume II" in path.read_text() and "In progress" in path.read_text()
+        assert 'exhibition-entry--volume exhibition-entry--pending' in path.read_text()
 
 
 def test_photo_gallery_viewer_is_a_native_modal(site):
