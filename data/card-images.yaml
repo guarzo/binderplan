@@ -17,6 +17,8 @@ cards:
     reviewed: true
     reviewed_on: '2026-09-22'
     source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/45885/primary.webp
+    note: 2026-09-24 local derivative cropped to remove provider framing (source crop
+      box [46, 51, 331, 446]).
   arcanine-01:
     provider: tcgdex
     upstream_id: neo4-12
@@ -155,19 +157,18 @@ cards:
     note: Curator visually confirmed DoubleHolo 37650 is the VMAX Climax/s8b set-name
       alias for the archived Charizard leaf; variant and printing match.
   charizard-03:
-    classification: photo-crop
+    provider: doubleholo
+    upstream_id: '30828'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    identity_basis: curator visually confirmed printing; DoubleHolo set-name alias
+      differs from registry
+    classification: exact
     asset_path: assets/images/cards/charizard-03.webp
     reviewed: true
-    reviewed_on: '2026-09-23'
-    provider: evidence-crop
-    source_path: docs/evidence/2026-09-21/after/IMG_7102.jpeg
-    crop_box:
-    - 168
-    - 205
-    - 305
-    - 390
-    note: Crop from verified 2026-09-21 after photo; registry footer identity remains
-      uncertain.
+    reviewed_on: '2026-09-24'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/30828/primary.webp
+    note: Curator selected DoubleHolo 30828 and visually matched the supplied Charizard
+      VSTAR SWSH262 URL; provider set name is an alias for SWSH Promos.
   charmander-01:
     provider: doubleholo
     upstream_id: '30829'
@@ -345,19 +346,14 @@ cards:
     reviewed_on: '2026-09-22'
     source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/77949/primary.webp
   dragonite-03:
-    classification: photo-crop
+    provider: doubleholo
+    upstream_id: '30862'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: exact
     asset_path: assets/images/cards/dragonite-03.webp
     reviewed: true
-    reviewed_on: '2026-09-23'
-    provider: evidence-crop
-    source_path: docs/evidence/2026-09-21/after/IMG_7105.jpeg
-    crop_box:
-    - 315
-    - 200
-    - 462
-    - 395
-    note: Crop from verified 2026-09-21 after photo; registry footer identity remains
-      uncertain.
+    reviewed_on: '2026-09-24'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/30862/primary.webp
   dratini-01:
     classification: exact
     asset_path: assets/images/cards/dratini-01.webp
@@ -725,17 +721,19 @@ cards:
     provider: evidence-crop
     source_path: docs/evidence/2026-09-23/owner-supplied-card-images/jirachi-temple.webp
   joltik-01:
-    classification: photo-crop
+    classification: exact
     asset_path: assets/images/cards/joltik-01.webp
     reviewed: true
-    reviewed_on: '2026-09-23'
+    reviewed_on: '2026-09-24'
     provider: evidence-crop
-    source_path: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/companions_2.webp
+    source_path: docs/evidence/2026-09-24/owner-supplied-card-images/joltik-chinese.jpg
     crop_box:
-    - 795
-    - 1060
-    - 1110
-    - 1500
+    - 0
+    - 0
+    - 165
+    - 240
+    note: Owner-supplied Chinese CSV5C 132/129 scan archived 2026-09-24; replaces
+      the archived-page crop.
   joltik-02:
     provider: tcgdex
     upstream_id: sv07-150
@@ -849,19 +847,14 @@ cards:
     note: Curator visually confirmed Latias & Latios 2015 is the trainer-kit set-name
       alias and the Latios 30/30 printing matches the archived leaf.
   litleo-01:
-    classification: photo-crop
+    provider: doubleholo
+    upstream_id: '31512'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: exact
     asset_path: assets/images/cards/litleo-01.webp
     reviewed: true
-    reviewed_on: '2026-09-23'
-    provider: evidence-crop
-    source_path: docs/evidence/2026-09-21/after/IMG_7104.jpeg
-    crop_box:
-    - 315
-    - 400
-    - 462
-    - 625
-    note: Crop from verified 2026-09-21 after photo; registry footer identity remains
-      uncertain.
+    reviewed_on: '2026-09-24'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/31512/primary.webp
   lucario-01:
     provider: tcgdex
     upstream_id: S12a-226
@@ -871,19 +864,14 @@ cards:
     reviewed_on: '2026-09-22'
     source_url: https://assets.tcgdex.net/ja/S/S12a/226/high.webp
   lucario-02:
-    classification: photo-crop
+    provider: doubleholo
+    upstream_id: '7329'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: exact
     asset_path: assets/images/cards/lucario-02.webp
     reviewed: true
-    reviewed_on: '2026-09-23'
-    provider: evidence-crop
-    source_path: docs/evidence/2026-09-21/after/IMG_7102.jpeg
-    crop_box:
-    - 168
-    - 400
-    - 305
-    - 625
-    note: Crop from verified 2026-09-21 after photo; registry footer identity remains
-      uncertain.
+    reviewed_on: '2026-09-24'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/7329/primary.webp
   lugia-01:
     provider: doubleholo
     upstream_id: '22462'
@@ -926,17 +914,19 @@ cards:
     reviewed_on: '2026-09-22'
     source_url: https://assets.tcgdex.net/en/neo/neo1/66/high.webp
   marowak-01:
-    provider: doubleholo
-    upstream_id: '34977'
-    usage_basis: Owner-authorized DoubleHolo card catalog image.
     classification: exact
     asset_path: assets/images/cards/marowak-01.webp
     reviewed: true
-    reviewed_on: '2026-09-22'
-    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/34977/primary.webp
-    note: Both DoubleHolo candidates 34977 and 34978 show 1st Edition; curator selected
-      34977 after side-by-side visual comparison with the archived leaf, without asserting
-      an unsupported finish or edition distinction.
+    reviewed_on: '2026-09-24'
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-24/owner-supplied-card-images/marowak.webp
+    crop_box:
+    - 0
+    - 0
+    - 500
+    - 702
+    note: Clean owner-supplied scan archived 2026-09-24; replaces the visually poor
+      catalog crop.
   master-ball-01:
     provider: doubleholo
     upstream_id: '81058'
@@ -1058,19 +1048,14 @@ cards:
     reviewed_on: '2026-09-23'
     source_url: https://assets.tcgdex.net/en/ex/ex14/58/high.webp
   mudkip-02:
-    classification: photo-crop
+    provider: doubleholo
+    upstream_id: '76339'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: exact
     asset_path: assets/images/cards/mudkip-02.webp
     reviewed: true
-    reviewed_on: '2026-09-23'
-    provider: evidence-crop
-    source_path: docs/evidence/2026-09-21/after/IMG_7104.jpeg
-    crop_box:
-    - 5
-    - 400
-    - 148
-    - 625
-    note: Crop from verified 2026-09-21 after photo; registry footer identity remains
-      uncertain.
+    reviewed_on: '2026-09-24'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/76339/primary.webp
   muk-01:
     provider: doubleholo
     upstream_id: '22212'
@@ -1636,21 +1621,23 @@ cards:
     source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/45939/primary.webp
     note: Archived v2-06 leaf shows the non-1st-Edition Japanese Magma Vs Aqua Two
       Ambitions Umbreon; selected DoubleHolo 45939 and rejected competing DoubleHolo
-      46117 [1st Edition] variant.
+      46117 [1st Edition] variant.; 2026-09-24 local derivative cropped to remove
+      provider framing (source crop box [47, 51, 330, 446]).
   ursaring-01:
-    classification: photo-crop
+    provider: doubleholo
+    upstream_id: '38276'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    identity_basis: curator visually confirmed printing; DoubleHolo set-name alias
+      differs from registry
+    classification: exact
     asset_path: assets/images/cards/ursaring-01.webp
     reviewed: true
-    reviewed_on: '2026-09-23'
-    provider: evidence-crop
-    source_path: docs/evidence/2026-09-21/after/IMG_7106.jpeg
-    crop_box:
-    - 5
-    - 400
-    - 148
-    - 625
-    note: Crop from verified 2026-09-21 after photo; physical identity continuity
-      with ursaring-01 is ledger-recorded.
+    reviewed_on: '2026-09-24'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/38276/primary.webp
+    note: Curator selected DoubleHolo 38276 and visually matched the physical Radiant
+      Collection RC16/RC25 Ursaring; provider set name is an alias for Radiant Collection;
+      local derivative cropped 2026-09-24 to remove provider framing (source crop
+      box [95, 125, 1107, 1525]).
   ursaring-02:
     provider: doubleholo
     upstream_id: '46382'

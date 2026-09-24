@@ -3688,15 +3688,49 @@ def test_printable_exact_image_checklist_matches_published_non_exact_cards():
     listed_ids = re.findall(r"\\cardrow\{([^}]+)\}", checklist)
 
     assert expected_by_volume == {
-        "volume-1": listed_ids[:10],
-        "volume-2": listed_ids[10:],
+        "volume-1": listed_ids[:8],
+        "volume-2": listed_ids[8:],
     }
-    assert len(listed_ids) == len(set(listed_ids)) == 18
+    assert len(listed_ids) == len(set(listed_ids)) == 11
     assert sum(
         images[card_id]["classification"] == "photo-crop" for card_id in listed_ids
-    ) == 17
+    ) == 10
     assert sum(images[card_id]["classification"] == "proxy" for card_id in listed_ids) == 1
     assert not any(images[card_id]["classification"] == "missing" for card_id in listed_ids)
+
+
+def test_seeded_repository_has_curator_replacement_images_and_clean_crops():
+    root = Path(__file__).parents[1]
+    images = digital_binder.load_yaml(root / "data/card-images.yaml")["cards"]
+    expected_doubleholo = {
+        "charizard-03": "30828",
+        "lucario-02": "7329",
+        "ursaring-01": "38276",
+        "dragonite-03": "30862",
+        "mudkip-02": "76339",
+        "litleo-01": "31512",
+    }
+    for card_id, upstream_id in expected_doubleholo.items():
+        record = images[card_id]
+        assert record["classification"] == "exact"
+        assert record["provider"] == "doubleholo"
+        assert record["upstream_id"] == upstream_id
+        assert record["usage_basis"] == "Owner-authorized DoubleHolo card catalog image."
+
+    for card_id, source_name in {
+        "marowak-01": "marowak.webp",
+        "joltik-01": "joltik-chinese.jpg",
+    }.items():
+        record = images[card_id]
+        assert record["classification"] == "exact"
+        assert record["provider"] == "evidence-crop"
+        assert record["source_path"].endswith(source_name)
+        assert record["crop_box"]
+
+    for card_id in ("ampharos-01", "umbreon-05", "ursaring-01"):
+        record = images[card_id]
+        assert record["classification"] == "exact"
+        assert "cropped" in record["note"].casefold()
 
 
 def test_seeded_repository_reflects_september_ledger_swaps():
@@ -3821,9 +3855,13 @@ def test_seeded_repository_uses_source_specific_evidence_dates_and_crop_boxes():
             "observed_on": "2026-09-21",
         }
         record = images["cards"][card_id]
-        assert record["provider"] == "evidence-crop"
-        assert record["source_path"] == source
-        assert record["crop_box"] == crop_box
+        if card_id == "blastoise-02":
+            assert record["provider"] == "evidence-crop"
+            assert record["source_path"] == source
+            assert record["crop_box"] == crop_box
+        else:
+            assert record["provider"] == "doubleholo"
+            assert record["classification"] == "exact"
 
 
 def parse_sha256sums(text):

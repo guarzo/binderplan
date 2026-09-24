@@ -2,7 +2,7 @@
 
 Generated from `docs/card-registry.md` by `python3 scripts/check-registry.py docs/card-registry.md --worklist --write`. Every section below is recomputed from the registry except "4. Gaps and known issues", which is hand-written; regeneration reads the previous version of this document and carries that section forward automatically.
 
-**Honest numbers, recomputed from the current file.** 185 rows total. 31 `photo` (16.8%), 10 `uncertain` (5.4%). 173 rows have both `set` and `number` read (93.5%) — 2 have `number` only, 8 have `set` only, 2 have neither field. The confirmation queue (section 3) holds 10 rows across 10 species: 0 clusters (0 rows) and 10 singletons.
+**Honest numbers, recomputed from the current file.** 185 rows total. 36 `photo` (19.5%), 5 `uncertain` (2.7%). 173 rows have both `set` and `number` read (93.5%) — 2 have `number` only, 8 have `set` only, 2 have neither field. The confirmation queue (section 3) holds 5 rows across 5 species: 0 clusters (0 rows) and 5 singletons.
 
 ## 1. Blocked — species unreadable
 
@@ -16,22 +16,17 @@ Take that as a weak result, not a clean bill of health. The check requires all f
 
 ## 3. Confirmation queue — clusters first
 
-10 rows, 10 species. **0 species (0 rows) hold two or more unresolved rows** and lead the list, because that is where an undetected duplicate printing could hide. The remaining 10 species have a single unresolved row each.
+5 rows, 5 species. **0 species (0 rows) hold two or more unresolved rows** and lead the list, because that is where an undetected duplicate printing could hide. The remaining 5 species have a single unresolved row each.
 
 The "Unreadable" column is the row's own `notes` field: what specifically blocked the read.
 
-### Singletons (10 species, one unresolved row each)
+### Singletons (5 species, one unresolved row each)
 
 | ID | Card name | Source image | Unreadable |
 |---|---|---|---|
 | blastoise-02 | 水箭龟VMAX (ZH) | IMG_7080.jpeg | holding photo R1C5; Chinese-language VMAX using SWSH103 artwork; exact Chinese set and number unresolved; entered Legendary Bearing p2 in verified 2026-09-21 swap |
 | bulbasaur-02 | フシギダネ (JP) | joyful_action_1.webp | set supplied by owner 2026-09-20; character and printed Pokedex number checked in hand, no blanket set/printing verification from checklist ticks |
-| charizard-03 | Charizard VSTAR (EN) | IMG_7088.jpeg | holding photo R2C2; set/number from holding export plus artwork match, not a legible footer; entered On the Attack in verified 2026-09-21 swap |
-| dragonite-03 | Dragonite (EN) | IMG_7081.jpeg | holding photo R4C2; set/number from holding export plus artwork match, not a legible footer; Special Delivery artwork; entered Quiet Familiarity p1 in verified 2026-09-21 swap |
 | kirlia-01 | キルリア (JP) | IMG_7119.HEIC | holding copy; exact set and number unresolved; owner confirmed Beautiful Misfits classification |
-| litleo-01 | Litleo (EN) | IMG_7082.jpeg | holding photo R1C5; set/number from holding export plus artwork match, not a legible footer; doorway illustration rare; entered Threshold in verified 2026-09-21 swap |
-| lucario-02 | Lucario LV.X (EN) | IMG_7081.jpeg | holding photo R4C4; set/number from holding export plus artwork match, not a legible footer; entered On the Attack in verified 2026-09-21 swap |
-| mudkip-02 | ミズゴロウ (JP) | IMG_7080.jpeg | holding photo R4C2; set/number from holding export plus artwork match, not a legible footer; sheltered-opening artwork; entered Threshold in verified 2026-09-21 swap |
 | typhlosion-02 | バクフーン (JP) | legendary_bearing_1.webp | Lv.46 print, distinct from typhlosion-01, vintage Pokedex-number print, era not identifiable |
 | umbreon-03 | Umbreon (EN) | elemental_solitude_1.webp | Confuse Ray/Shadow Shutdown, distinct from umbreon-01/02, set code not textual |
 
@@ -155,26 +150,6 @@ Photographs record what was on a page when the shoot happened, so a card since s
 | ID | Card name | Unreadable |
 |---|---|---|
 | blastoise-02 | 水箭龟VMAX (ZH) | holding photo R1C5; Chinese-language VMAX using SWSH103 artwork; exact Chinese set and number unresolved; entered Legendary Bearing p2 in verified 2026-09-21 swap |
-| mudkip-02 | ミズゴロウ (JP) | holding photo R4C2; set/number from holding export plus artwork match, not a legible footer; sheltered-opening artwork; entered Threshold in verified 2026-09-21 swap |
-
-### Unmapped source image · IMG_7081.jpeg
-
-| ID | Card name | Unreadable |
-|---|---|---|
-| dragonite-03 | Dragonite (EN) | holding photo R4C2; set/number from holding export plus artwork match, not a legible footer; Special Delivery artwork; entered Quiet Familiarity p1 in verified 2026-09-21 swap |
-| lucario-02 | Lucario LV.X (EN) | holding photo R4C4; set/number from holding export plus artwork match, not a legible footer; entered On the Attack in verified 2026-09-21 swap |
-
-### Unmapped source image · IMG_7082.jpeg
-
-| ID | Card name | Unreadable |
-|---|---|---|
-| litleo-01 | Litleo (EN) | holding photo R1C5; set/number from holding export plus artwork match, not a legible footer; doorway illustration rare; entered Threshold in verified 2026-09-21 swap |
-
-### Unmapped source image · IMG_7088.jpeg
-
-| ID | Card name | Unreadable |
-|---|---|---|
-| charizard-03 | Charizard VSTAR (EN) | holding photo R2C2; set/number from holding export plus artwork match, not a legible footer; entered On the Attack in verified 2026-09-21 swap |
 
 ### Unmapped source image · IMG_7119.HEIC
 
