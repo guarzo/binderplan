@@ -18,6 +18,12 @@
           <div class="binder-pocket is-empty" data-pocket data-pocket-position="{{ .position }}">
             <span>Empty pocket</span>
           </div>
+        {{ else if .placeholder }}
+          <div class="binder-pocket is-placeholder" data-pocket data-pocket-position="{{ .position }}"
+               data-placeholder-wanted="{{ .wanted_id }}" data-ownership="unowned"
+               aria-label="Pocket {{ .position }}: {{ .wanted_id }} reference print, not owned">
+            <span>Reference print<small>{{ .wanted_id }}<br>Not owned</small></span>
+          </div>
         {{ else }}
           {{ $card := index $.cards .card_id }}
           {{ if not $card }}
@@ -57,6 +63,8 @@
           <button class="binder-pocket" type="button" data-pocket
                   data-pocket-position="{{ .position }}"
                   data-card-id="{{ .card_id }}"
+                  data-ownership="owned"
+                  data-card-confidence="{{ $card.confidence }}"
                   data-card-name="{{ $displayName }}"
                   data-card-english-name="{{ $card.species }}" data-card-printed-name="{{ if ne $card.language "EN" }}{{ $card.card_name }}{{ end }}"
                   data-card-language="{{ $card.language }}"
@@ -100,10 +108,11 @@
                    loading="{{ if $.eager }}eager{{ else }}lazy{{ end }}"
                    {{ if $.eager }}data-initial-binder-image{{ end }}>
             {{ end }}
-            {{ if or (eq $classification "proxy") (eq .placement.status "pending") }}
+            {{ if or (eq $classification "proxy") (eq .placement.status "pending") (eq $card.confidence "uncertain") }}
               <span class="pocket-states">
                 {{ if eq $classification "proxy" }}<span class="pocket-state">Reference image</span>{{ end }}
                 {{ if eq .placement.status "pending" }}<span class="pocket-state">Placement pending</span>{{ end }}
+                {{ if eq $card.confidence "uncertain" }}<span class="pocket-state">Printing uncertain</span>{{ end }}
               </span>
             {{ end }}
           </button>

@@ -359,6 +359,384 @@
     "number": "116/086",
     "confidence": "confirmed"
   },
+  "emolga-02": {
+    "id": "emolga-02",
+    "species": "Emolga",
+    "card_name": "Emolga",
+    "language": "EN",
+    "set": "",
+    "number": "32/98",
+    "confidence": "uncertain"
+  },
+  "emolga-03": {
+    "id": "emolga-03",
+    "species": "Emolga",
+    "card_name": "エモンガ",
+    "language": "JP",
+    "set": "BW1",
+    "number": "021/053",
+    "confidence": "photo"
+  },
+  "emolga-04": {
+    "id": "emolga-04",
+    "species": "Emolga",
+    "card_name": "Emolga",
+    "language": "EN",
+    "set": "",
+    "number": "6/12",
+    "confidence": "uncertain"
+  },
+  "emolga-05": {
+    "id": "emolga-05",
+    "species": "Emolga",
+    "card_name": "Emolga",
+    "language": "EN",
+    "set": "",
+    "number": "37/101",
+    "confidence": "uncertain"
+  },
+  "emolga-06": {
+    "id": "emolga-06",
+    "species": "Emolga",
+    "card_name": "エモンガ",
+    "language": "JP",
+    "set": "",
+    "number": "006/021",
+    "confidence": "uncertain"
+  },
+  "emolga-07": {
+    "id": "emolga-07",
+    "species": "Emolga",
+    "card_name": "Emolga",
+    "language": "EN",
+    "set": "",
+    "number": "49/98",
+    "confidence": "uncertain"
+  },
+  "emolga-08": {
+    "id": "emolga-08",
+    "species": "Emolga",
+    "card_name": "エモンガ",
+    "language": "JP",
+    "set": "BK2",
+    "number": "007/018",
+    "confidence": "photo"
+  },
+  "emolga-09": {
+    "id": "emolga-09",
+    "species": "Emolga",
+    "card_name": "Emolga",
+    "language": "EN",
+    "set": "",
+    "number": "45/124",
+    "confidence": "uncertain"
+  },
+  "emolga-10": {
+    "id": "emolga-10",
+    "species": "Emolga",
+    "card_name": "エモンガ",
+    "language": "JP",
+    "set": "",
+    "number": "017/050",
+    "confidence": "uncertain"
+  },
+  "emolga-11": {
+    "id": "emolga-11",
+    "species": "Emolga",
+    "card_name": "エモンガ",
+    "language": "JP",
+    "set": "",
+    "number": "010/046",
+    "confidence": "uncertain"
+  },
+  "emolga-12": {
+    "id": "emolga-12",
+    "species": "Emolga",
+    "card_name": "Emolga",
+    "language": "EN",
+    "set": "",
+    "number": "49/113",
+    "confidence": "uncertain"
+  },
+  "emolga-13": {
+    "id": "emolga-13",
+    "species": "Emolga",
+    "card_name": "エモンガ",
+    "language": "JP",
+    "set": "EBB",
+    "number": "041/093",
+    "confidence": "photo"
+  },
+  "emolga-14": {
+    "id": "emolga-14",
+    "species": "Emolga",
+    "card_name": "Emolga",
+    "language": "EN",
+    "set": "",
+    "number": "",
+    "confidence": "uncertain"
+  },
+  "emolga-15": {
+    "id": "emolga-15",
+    "species": "Emolga",
+    "card_name": "エモンガ",
+    "language": "JP",
+    "set": "",
+    "number": "023/020",
+    "confidence": "uncertain"
+  },
+  "emolga-16": {
+    "id": "emolga-16",
+    "species": "Emolga",
+    "card_name": "エモンガ",
+    "language": "JP",
+    "set": "BW-P",
+    "number": "236/BW-P",
+    "confidence": "photo"
+  },
+  "emolga-17": {
+    "id": "emolga-17",
+    "species": "Emolga",
+    "card_name": "Emolga",
+    "language": "EN",
+    "set": "",
+    "number": "35/111",
+    "confidence": "uncertain"
+  },
+  "emolga-18": {
+    "id": "emolga-18",
+    "species": "Emolga",
+    "card_name": "エモンガ",
+    "language": "JP",
+    "set": "",
+    "number": "019/059",
+    "confidence": "uncertain"
+  },
+  "emolga-19": {
+    "id": "emolga-19",
+    "species": "Emolga",
+    "card_name": "エモンガ",
+    "language": "JP",
+    "set": "",
+    "number": "039/131",
+    "confidence": "uncertain"
+  },
+  "emolga-20": {
+    "id": "emolga-20",
+    "species": "Emolga",
+    "card_name": "Emolga",
+    "language": "EN",
+    "set": "",
+    "number": "46/181",
+    "confidence": "uncertain"
+  },
+  "emolga-21": {
+    "id": "emolga-21",
+    "species": "Emolga",
+    "card_name": "エモンガ",
+    "language": "JP",
+    "set": "",
+    "number": "009/052",
+    "confidence": "uncertain"
+  },
+  "emolga-22": {
+    "id": "emolga-22",
+    "species": "Emolga",
+    "card_name": "Emolga",
+    "language": "EN",
+    "set": "",
+    "number": "057/203",
+    "confidence": "uncertain"
+  },
+  "emolga-23": {
+    "id": "emolga-23",
+    "species": "Emolga",
+    "card_name": "エモンガ",
+    "language": "JP",
+    "set": "",
+    "number": "023/070",
+    "confidence": "uncertain"
+  },
+  "emolga-24": {
+    "id": "emolga-24",
+    "species": "Emolga",
+    "card_name": "Emolga",
+    "language": "EN",
+    "set": "",
+    "number": "059/195",
+    "confidence": "uncertain"
+  },
+  "emolga-25": {
+    "id": "emolga-25",
+    "species": "Emolga",
+    "card_name": "エモンガ",
+    "language": "JP",
+    "set": "",
+    "number": "038/100",
+    "confidence": "uncertain"
+  },
+  "emolga-26": {
+    "id": "emolga-26",
+    "species": "Emolga",
+    "card_name": "Emolga",
+    "language": "EN",
+    "set": "",
+    "number": "069/167",
+    "confidence": "uncertain"
+  },
+  "emolga-27": {
+    "id": "emolga-27",
+    "species": "Emolga",
+    "card_name": "エモンガ",
+    "language": "JP",
+    "set": "",
+    "number": "042/101",
+    "confidence": "uncertain"
+  },
+  "emolga-28": {
+    "id": "emolga-28",
+    "species": "Emolga",
+    "card_name": "Emolga",
+    "language": "EN",
+    "set": "",
+    "number": "029/086",
+    "confidence": "uncertain"
+  },
+  "emolga-29": {
+    "id": "emolga-29",
+    "species": "Emolga",
+    "card_name": "エモンガ",
+    "language": "JP",
+    "set": "",
+    "number": "032/086",
+    "confidence": "uncertain"
+  },
+  "emolga-30": {
+    "id": "emolga-30",
+    "species": "Emolga",
+    "card_name": "Emolga",
+    "language": "EN",
+    "set": "",
+    "number": "077/086",
+    "confidence": "uncertain"
+  },
+  "emolga-31": {
+    "id": "emolga-31",
+    "species": "Emolga",
+    "card_name": "エモンガ",
+    "language": "JP",
+    "set": "sv11B",
+    "number": "116/086",
+    "confidence": "photo"
+  },
+  "emolga-32": {
+    "id": "emolga-32",
+    "species": "Emolga",
+    "card_name": "Emolga EX",
+    "language": "EN",
+    "set": "",
+    "number": "46/146",
+    "confidence": "uncertain"
+  },
+  "emolga-33": {
+    "id": "emolga-33",
+    "species": "Emolga",
+    "card_name": "エモンガEX",
+    "language": "JP",
+    "set": "",
+    "number": "023/060",
+    "confidence": "uncertain"
+  },
+  "emolga-34": {
+    "id": "emolga-34",
+    "species": "Emolga",
+    "card_name": "Emolga EX",
+    "language": "EN",
+    "set": "",
+    "number": "143/146",
+    "confidence": "uncertain"
+  },
+  "emolga-35": {
+    "id": "emolga-35",
+    "species": "Emolga",
+    "card_name": "エモンガEX",
+    "language": "JP",
+    "set": "",
+    "number": "062/060",
+    "confidence": "uncertain"
+  },
+  "emolga-36": {
+    "id": "emolga-36",
+    "species": "Emolga",
+    "card_name": "电飞鼠",
+    "language": "ZH",
+    "set": "",
+    "number": "KD LEV-105",
+    "confidence": "uncertain"
+  },
+  "emolga-37": {
+    "id": "emolga-37",
+    "species": "Emolga",
+    "card_name": "Emolga",
+    "language": "EN",
+    "set": "",
+    "number": "46/181",
+    "confidence": "uncertain"
+  },
+  "emolga-38": {
+    "id": "emolga-38",
+    "species": "Emolga",
+    "card_name": "电飞鼠",
+    "language": "ZH",
+    "set": "SM-P",
+    "number": "041/SM-P",
+    "confidence": "photo"
+  },
+  "emolga-39": {
+    "id": "emolga-39",
+    "species": "Emolga",
+    "card_name": "Emolga",
+    "language": "EN",
+    "set": "",
+    "number": "32/98",
+    "confidence": "uncertain"
+  },
+  "emolga-40": {
+    "id": "emolga-40",
+    "species": "Emolga",
+    "card_name": "Emolga",
+    "language": "EN",
+    "set": "",
+    "number": "057/203",
+    "confidence": "uncertain"
+  },
+  "emolga-41": {
+    "id": "emolga-41",
+    "species": "Emolga",
+    "card_name": "エモンガ",
+    "language": "JP",
+    "set": "",
+    "number": "006/021",
+    "confidence": "uncertain"
+  },
+  "emolga-42": {
+    "id": "emolga-42",
+    "species": "Emolga",
+    "card_name": "电飞鼠",
+    "language": "ZH",
+    "set": "",
+    "number": "066/131",
+    "confidence": "uncertain"
+  },
+  "emolga-43": {
+    "id": "emolga-43",
+    "species": "Emolga",
+    "card_name": "电飞鼠",
+    "language": "ZH",
+    "set": "SM-P",
+    "number": "041/SM-P",
+    "confidence": "photo"
+  },
   "entei-01": {
     "id": "entei-01",
     "species": "Entei",

@@ -533,7 +533,9 @@ def write_image_manifest_atomically(root: Path, images: dict) -> None:
 
 def _load_project_manifests(root: Path, errors: list[str]) -> dict[str, dict]:
     manifests = {}
-    for volume_id in VOLUME_IDS:
+    optional = "emolga-masterset"
+    ids = (*VOLUME_IDS, optional) if (root / "data" / "binders" / f"{optional}.yaml").is_file() else VOLUME_IDS
+    for volume_id in ids:
         path = root / "data" / "binders" / f"{volume_id}.yaml"
         try:
             manifest = load_yaml(path)
@@ -722,9 +724,29 @@ def _validate_volume_manifest(root: Path, volume_id: str, manifest: dict, regist
             else:
                 seen_positions.add(position)
 
+            if "placeholder" in pocket and pocket["placeholder"] is not True:
+                errors.append(f"{volume_id} {leaf_label} pocket {position}: placeholder must be true")
             if pocket.get("empty") is True:
+                if "card_id" in pocket or "placeholder" in pocket:
+                    errors.append(f"{volume_id} {leaf_label} pocket {position}: empty pocket has card_id or placeholder")
+                continue
+
+            if pocket.get("placeholder") is True:
+                label = f"{volume_id} {leaf_label} pocket {position}: placeholder"
                 if "card_id" in pocket:
-                    errors.append(f"{volume_id} {leaf_label} pocket {position}: empty pocket has card_id")
+                    errors.append(f"{label} must not have card_id")
+                if not isinstance(pocket.get("wanted_id"), str) or not pocket["wanted_id"].strip():
+                    errors.append(f"{label} needs wanted_id")
+                evidence = pocket.get("evidence")
+                if not isinstance(evidence, dict):
+                    errors.append(f"{label} needs evidence")
+                else:
+                    if not isinstance(evidence.get("type"), str) or not evidence["type"].strip():
+                        errors.append(f"{label} evidence needs type")
+                    _validate_existing_relative_file(root, evidence.get("source"), f"{label} evidence source", errors,
+                                                     required_prefix="docs/evidence")
+                    if not _valid_date(evidence.get("observed_on")):
+                        errors.append(f"{label} evidence observed_on must be YYYY-MM-DD")
                 continue
 
             card_id = pocket.get("card_id")
@@ -973,7 +995,9 @@ def _validate_exact_image(card_id: str, record: dict, registry_row: dict, errors
 def validate_transition(previous: dict, current: dict) -> list[str]:
     errors: list[str] = []
     previous_pockets = _physical_pockets(previous)
-    current_pockets = _physical_pockets(current)
+    # A newly introduced binder has no earlier physical state to transition from.
+    current_pockets = _physical_pockets({binder_id: manifest for binder_id, manifest in current.items()
+                                         if binder_id in previous})
     for pocket_key in sorted(set(previous_pockets) | set(current_pockets)):
         previous_pocket = previous_pockets.get(pocket_key)
         current_pocket = current_pockets.get(pocket_key)

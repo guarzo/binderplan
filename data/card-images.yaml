@@ -394,6 +394,384 @@ cards:
     source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/31409/primary.webp
     note: Curator visually confirmed Black Bolt is the sv11B set-name alias and the
       116/086 AR printing matches the archived leaf.
+  emolga-02:
+    classification: photo-crop
+    asset_path: assets/images/cards/emolga-masterset-01-1.webp
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_1.webp
+    crop_box: [15, 170, 540, 910]
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    note: Published page photo, not a camera original; sleeve and printing details remain photo-limited.
+  emolga-03:
+    classification: photo-crop
+    asset_path: assets/images/cards/emolga-masterset-01-2.webp
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_1.webp
+    crop_box: [580, 170, 1115, 910]
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    note: Published page photo; exact variant not verified in hand.
+  emolga-04:
+    classification: photo-crop
+    asset_path: assets/images/cards/emolga-masterset-01-4.webp
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_1.webp
+    crop_box: [580, 940, 1115, 1730]
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    note: Published page photo; sleeve reflections limit printing assessment.
+  emolga-05:
+    classification: photo-crop
+    asset_path: assets/images/cards/emolga-masterset-02-2.webp
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_2.webp
+    crop_box: [580, 235, 1115, 950]
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    note: Published page photo; no in-hand printing verification.
+  emolga-06:
+    classification: photo-crop
+    asset_path: assets/images/cards/emolga-masterset-02-3.webp
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_2.webp
+    crop_box: [15, 970, 540, 1710]
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    note: Published page photo; set and pink mark not independently verified.
+  emolga-07:
+    classification: photo-crop
+    asset_path: assets/images/cards/emolga-masterset-02-4.webp
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_2.webp
+    crop_box: [580, 970, 1115, 1710]
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    note: Published page photo; finish not verified in hand.
+  emolga-08:
+    classification: photo-crop
+    asset_path: assets/images/cards/emolga-masterset-03-1.webp
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_3.webp
+    crop_box: [15, 220, 540, 950]
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    note: Published page photo; printing not verified in hand.
+  emolga-09:
+    classification: photo-crop
+    asset_path: assets/images/cards/emolga-masterset-03-2.webp
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_3.webp
+    crop_box: [580, 220, 1115, 950]
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    note: Published page photo; printing not verified in hand.
+  emolga-10:
+    classification: photo-crop
+    asset_path: assets/images/cards/emolga-masterset-03-3.webp
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_3.webp
+    crop_box: [15, 975, 540, 1750]
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    note: Published page photo; set uncertain.
+  emolga-11:
+    classification: photo-crop
+    asset_path: assets/images/cards/emolga-masterset-03-4.webp
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_3.webp
+    crop_box: [580, 975, 1115, 1750]
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    note: Published page photo; set uncertain.
+  emolga-12:
+    classification: photo-crop
+    asset_path: assets/images/cards/emolga-masterset-04-1.webp
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_4.webp
+    crop_box: [15, 240, 540, 965]
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    note: Published page photo; printing not verified in hand.
+  emolga-13:
+    classification: photo-crop
+    asset_path: assets/images/cards/emolga-masterset-04-2.webp
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_4.webp
+    crop_box: [580, 240, 1115, 965]
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    note: Published page photo; printing not verified in hand.
+  emolga-14:
+    classification: photo-crop
+    asset_path: assets/images/cards/emolga-masterset-04-3.webp
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_4.webp
+    crop_box: [15, 980, 540, 1705]
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    note: Published page photo; text overlaid on illustration, footer unreadable.
+  emolga-15:
+    classification: photo-crop
+    asset_path: assets/images/cards/emolga-masterset-04-4.webp
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_4.webp
+    crop_box: [580, 980, 1115, 1705]
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    note: Published page photo; exact finish not verified.
+  emolga-16:
+    classification: photo-crop
+    asset_path: assets/images/cards/emolga-masterset-05-1.webp
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_5.webp
+    crop_box: [15, 205, 540, 945]
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    note: Published page photo; visible championship stamp, not an authenticity check.
+  emolga-17:
+    classification: photo-crop
+    asset_path: assets/images/cards/emolga-masterset-05-2.webp
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_5.webp
+    crop_box: [580, 205, 1115, 945]
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    note: Published page photo; printing not verified in hand.
+  emolga-18:
+    classification: photo-crop
+    asset_path: assets/images/cards/emolga-masterset-05-3.webp
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_5.webp
+    crop_box: [15, 960, 540, 1755]
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    note: Published page photo; footer and set require in-hand check.
+  emolga-19:
+    classification: photo-crop
+    asset_path: assets/images/cards/emolga-masterset-05-4.webp
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_5.webp
+    crop_box: [580, 960, 1115, 1755]
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    note: Published page photo; footer and set require in-hand check.
+  emolga-20:
+    classification: photo-crop
+    asset_path: assets/images/cards/emolga-masterset-06-1.webp
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_6.webp
+    crop_box: [15, 205, 540, 945]
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    note: Published page photo; printing not verified in hand.
+  emolga-21:
+    classification: photo-crop
+    asset_path: assets/images/cards/emolga-masterset-06-2.webp
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_6.webp
+    crop_box: [580, 205, 1115, 945]
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    note: Published page photo; set code not confirmed.
+  emolga-22:
+    classification: photo-crop
+    asset_path: assets/images/cards/emolga-masterset-06-3.webp
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_6.webp
+    crop_box: [15, 965, 540, 1750]
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    note: Published page photo; printing not verified in hand.
+  emolga-23:
+    classification: photo-crop
+    asset_path: assets/images/cards/emolga-masterset-06-4.webp
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_6.webp
+    crop_box: [580, 965, 1115, 1750]
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    note: Published page photo; set code not confirmed.
+  emolga-24:
+    classification: photo-crop
+    asset_path: assets/images/cards/emolga-masterset-07-1.webp
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_7.webp
+    crop_box: [15, 220, 540, 950]
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    note: Published page photo; printing not verified in hand.
+  emolga-25:
+    classification: photo-crop
+    asset_path: assets/images/cards/emolga-masterset-07-2.webp
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_7.webp
+    crop_box: [580, 220, 1115, 950]
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    note: Published page photo; printing not verified in hand.
+  emolga-26:
+    classification: photo-crop
+    asset_path: assets/images/cards/emolga-masterset-07-3.webp
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_7.webp
+    crop_box: [15, 965, 540, 1760]
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    note: Published page photo; printing not verified in hand.
+  emolga-27:
+    classification: photo-crop
+    asset_path: assets/images/cards/emolga-masterset-07-4.webp
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_7.webp
+    crop_box: [580, 965, 1115, 1760]
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    note: Published page photo; printing not verified in hand.
+  emolga-28:
+    classification: photo-crop
+    asset_path: assets/images/cards/emolga-masterset-08-1.webp
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_8.webp
+    crop_box: [15, 55, 540, 790]
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    note: Published page photo; printing not verified in hand.
+  emolga-29:
+    classification: photo-crop
+    asset_path: assets/images/cards/emolga-masterset-08-2.webp
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_8.webp
+    crop_box: [580, 55, 1115, 790]
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    note: Published page photo; printing not verified in hand.
+  emolga-30:
+    classification: photo-crop
+    asset_path: assets/images/cards/emolga-masterset-08-3.webp
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_8.webp
+    crop_box: [15, 795, 540, 1585]
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    note: Published page photo; glare limits finish and footer assessment.
+  emolga-31:
+    classification: photo-crop
+    asset_path: assets/images/cards/emolga-masterset-08-4.webp
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_8.webp
+    crop_box: [580, 795, 1115, 1585]
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    note: Published page photo; distinct pocket from Volume I copy; printing not checked in hand.
+  emolga-32:
+    classification: photo-crop
+    asset_path: assets/images/cards/emolga-masterset-09-1.webp
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_9.webp
+    crop_box: [15, 220, 540, 955]
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    note: Published page photo; printing not verified in hand.
+  emolga-33:
+    classification: photo-crop
+    asset_path: assets/images/cards/emolga-masterset-09-2.webp
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_9.webp
+    crop_box: [580, 220, 1115, 955]
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    note: Published page photo; printing not verified in hand.
+  emolga-34:
+    classification: photo-crop
+    asset_path: assets/images/cards/emolga-masterset-09-3.webp
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_9.webp
+    crop_box: [15, 970, 540, 1740]
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    note: Published page photo; full-art finish not verified in hand.
+  emolga-35:
+    classification: photo-crop
+    asset_path: assets/images/cards/emolga-masterset-09-4.webp
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_9.webp
+    crop_box: [580, 970, 1115, 1740]
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    note: Published page photo; full-art finish not verified in hand.
+  emolga-36:
+    classification: photo-crop
+    asset_path: assets/images/cards/emolga-masterset-10-1.webp
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_10.webp
+    crop_box: [15, 195, 540, 965]
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    note: Published page photo; Chinese stat-style card is not established as an official TCG printing.
+  emolga-37:
+    classification: photo-crop
+    asset_path: assets/images/cards/emolga-masterset-10-2.webp
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_10.webp
+    crop_box: [580, 195, 1115, 965]
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    note: Published page photo; glare and sleeves limit variant identification.
+  emolga-38:
+    classification: photo-crop
+    asset_path: assets/images/cards/emolga-masterset-10-3.webp
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_10.webp
+    crop_box: [15, 975, 540, 1755]
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    note: Published page photo; language and printed number visible, authenticity unverified.
+  emolga-39:
+    classification: photo-crop
+    asset_path: assets/images/cards/emolga-masterset-10-4.webp
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_10.webp
+    crop_box: [580, 975, 1115, 1755]
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    note: Published page photo; separate copy from page 1.
+  emolga-40:
+    classification: photo-crop
+    asset_path: assets/images/cards/emolga-masterset-11-1.webp
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_11.webp
+    crop_box: [15, 190, 540, 955]
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    note: Published page photo; glare limits finish assessment.
+  emolga-41:
+    classification: photo-crop
+    asset_path: assets/images/cards/emolga-masterset-11-2.webp
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_11.webp
+    crop_box: [580, 190, 1115, 955]
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    note: Published page photo; sleeve and reflective card face limit variant assessment.
+  emolga-42:
+    classification: photo-crop
+    asset_path: assets/images/cards/emolga-masterset-11-3.webp
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_11.webp
+    crop_box: [15, 975, 540, 1750]
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    note: Published page photo; Chinese-language footer and printing not verified in hand.
+  emolga-43:
+    classification: photo-crop
+    asset_path: assets/images/cards/emolga-masterset-11-4.webp
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_11.webp
+    crop_box: [580, 975, 1115, 1750]
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    note: Published page photo; distinct pocket from page 10; authenticity unverified.
   entei-01:
     provider: doubleholo
     upstream_id: '32699'

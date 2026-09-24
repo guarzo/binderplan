@@ -1,0 +1,218 @@
+version: 1
+volume_id: emolga-masterset
+publication_status: draft
+pocket_layout:
+  rows: 2
+  columns: 2
+leaves:
+- id: em-01
+  kind: cards
+  physical_leaf: 1
+  chapter: Emolga Masterset
+  chapter_order: 1
+  theme: Page 1
+  pockets:
+  - position: 1
+    card_id: emolga-02
+    placement: {status: confirmed, evidence: {type: published-photo, source: 'docs/evidence/2026-09-24/emolga-masterset/emolga_1.webp', observed_on: '2026-09-24'}}
+  - position: 2
+    card_id: emolga-03
+    placement: {status: confirmed, evidence: {type: published-photo, source: 'docs/evidence/2026-09-24/emolga-masterset/emolga_1.webp', observed_on: '2026-09-24'}}
+  - position: 3
+    placeholder: true
+    wanted_id: '081/BW-P'
+    evidence: {type: published-photo, source: 'docs/evidence/2026-09-24/emolga-masterset/emolga_1.webp', observed_on: '2026-09-24'}
+  - position: 4
+    card_id: emolga-04
+    placement: {status: confirmed, evidence: {type: published-photo, source: 'docs/evidence/2026-09-24/emolga-masterset/emolga_1.webp', observed_on: '2026-09-24'}}
+- id: em-02
+  kind: cards
+  physical_leaf: 2
+  chapter: Emolga Masterset
+  chapter_order: 1
+  theme: Page 2
+  pockets:
+  - position: 1
+    placeholder: true
+    wanted_id: '025/BW-P'
+    evidence: {type: published-photo, source: 'docs/evidence/2026-09-24/emolga-masterset/emolga_2.webp', observed_on: '2026-09-24'}
+  - position: 2
+    card_id: emolga-05
+    placement: {status: confirmed, evidence: {type: published-photo, source: 'docs/evidence/2026-09-24/emolga-masterset/emolga_2.webp', observed_on: '2026-09-24'}}
+  - position: 3
+    card_id: emolga-06
+    placement: {status: confirmed, evidence: {type: published-photo, source: 'docs/evidence/2026-09-24/emolga-masterset/emolga_2.webp', observed_on: '2026-09-24'}}
+  - position: 4
+    card_id: emolga-07
+    placement: {status: confirmed, evidence: {type: published-photo, source: 'docs/evidence/2026-09-24/emolga-masterset/emolga_2.webp', observed_on: '2026-09-24'}}
+- id: em-03
+  kind: cards
+  physical_leaf: 3
+  chapter: Emolga Masterset
+  chapter_order: 1
+  theme: Page 3
+  pockets:
+  - position: 1
+    card_id: emolga-08
+    placement: {status: confirmed, evidence: {type: published-photo, source: 'docs/evidence/2026-09-24/emolga-masterset/emolga_3.webp', observed_on: '2026-09-24'}}
+  - position: 2
+    card_id: emolga-09
+    placement: {status: confirmed, evidence: {type: published-photo, source: 'docs/evidence/2026-09-24/emolga-masterset/emolga_3.webp', observed_on: '2026-09-24'}}
+  - position: 3
+    card_id: emolga-10
+    placement: {status: confirmed, evidence: {type: published-photo, source: 'docs/evidence/2026-09-24/emolga-masterset/emolga_3.webp', observed_on: '2026-09-24'}}
+  - position: 4
+    card_id: emolga-11
+    placement: {status: confirmed, evidence: {type: published-photo, source: 'docs/evidence/2026-09-24/emolga-masterset/emolga_3.webp', observed_on: '2026-09-24'}}
+- id: em-04
+  kind: cards
+  physical_leaf: 4
+  chapter: Emolga Masterset
+  chapter_order: 1
+  theme: Page 4
+  pockets:
+  - position: 1
+    card_id: emolga-12
+    placement: {status: confirmed, evidence: {type: published-photo, source: 'docs/evidence/2026-09-24/emolga-masterset/emolga_4.webp', observed_on: '2026-09-24'}}
+  - position: 2
+    card_id: emolga-13
+    placement: {status: confirmed, evidence: {type: published-photo, source: 'docs/evidence/2026-09-24/emolga-masterset/emolga_4.webp', observed_on: '2026-09-24'}}
+  - position: 3
+    card_id: emolga-14
+    placement: {status: confirmed, evidence: {type: published-photo, source: 'docs/evidence/2026-09-24/emolga-masterset/emolga_4.webp', observed_on: '2026-09-24'}}
+  - position: 4
+    card_id: emolga-15
+    placement: {status: confirmed, evidence: {type: published-photo, source: 'docs/evidence/2026-09-24/emolga-masterset/emolga_4.webp', observed_on: '2026-09-24'}}
+- id: em-05
+  kind: cards
+  physical_leaf: 5
+  chapter: Emolga Masterset
+  chapter_order: 1
+  theme: Page 5
+  pockets:
+  - position: 1
+    card_id: emolga-16
+    placement: {status: confirmed, evidence: {type: published-photo, source: 'docs/evidence/2026-09-24/emolga-masterset/emolga_5.webp', observed_on: '2026-09-24'}}
+  - position: 2
+    card_id: emolga-17
+    placement: {status: confirmed, evidence: {type: published-photo, source: 'docs/evidence/2026-09-24/emolga-masterset/emolga_5.webp', observed_on: '2026-09-24'}}
+  - position: 3
+    card_id: emolga-18
+    placement: {status: confirmed, evidence: {type: published-photo, source: 'docs/evidence/2026-09-24/emolga-masterset/emolga_5.webp', observed_on: '2026-09-24'}}
+  - position: 4
+    card_id: emolga-19
+    placement: {status: confirmed, evidence: {type: published-photo, source: 'docs/evidence/2026-09-24/emolga-masterset/emolga_5.webp', observed_on: '2026-09-24'}}
+- id: em-06
+  kind: cards
+  physical_leaf: 6
+  chapter: Emolga Masterset
+  chapter_order: 1
+  theme: Page 6
+  pockets:
+  - position: 1
+    card_id: emolga-20
+    placement: {status: confirmed, evidence: {type: published-photo, source: 'docs/evidence/2026-09-24/emolga-masterset/emolga_6.webp', observed_on: '2026-09-24'}}
+  - position: 2
+    card_id: emolga-21
+    placement: {status: confirmed, evidence: {type: published-photo, source: 'docs/evidence/2026-09-24/emolga-masterset/emolga_6.webp', observed_on: '2026-09-24'}}
+  - position: 3
+    card_id: emolga-22
+    placement: {status: confirmed, evidence: {type: published-photo, source: 'docs/evidence/2026-09-24/emolga-masterset/emolga_6.webp', observed_on: '2026-09-24'}}
+  - position: 4
+    card_id: emolga-23
+    placement: {status: confirmed, evidence: {type: published-photo, source: 'docs/evidence/2026-09-24/emolga-masterset/emolga_6.webp', observed_on: '2026-09-24'}}
+- id: em-07
+  kind: cards
+  physical_leaf: 7
+  chapter: Emolga Masterset
+  chapter_order: 1
+  theme: Page 7
+  pockets:
+  - position: 1
+    card_id: emolga-24
+    placement: {status: confirmed, evidence: {type: published-photo, source: 'docs/evidence/2026-09-24/emolga-masterset/emolga_7.webp', observed_on: '2026-09-24'}}
+  - position: 2
+    card_id: emolga-25
+    placement: {status: confirmed, evidence: {type: published-photo, source: 'docs/evidence/2026-09-24/emolga-masterset/emolga_7.webp', observed_on: '2026-09-24'}}
+  - position: 3
+    card_id: emolga-26
+    placement: {status: confirmed, evidence: {type: published-photo, source: 'docs/evidence/2026-09-24/emolga-masterset/emolga_7.webp', observed_on: '2026-09-24'}}
+  - position: 4
+    card_id: emolga-27
+    placement: {status: confirmed, evidence: {type: published-photo, source: 'docs/evidence/2026-09-24/emolga-masterset/emolga_7.webp', observed_on: '2026-09-24'}}
+- id: em-08
+  kind: cards
+  physical_leaf: 8
+  chapter: Emolga Masterset
+  chapter_order: 1
+  theme: Page 8
+  pockets:
+  - position: 1
+    card_id: emolga-28
+    placement: {status: confirmed, evidence: {type: published-photo, source: 'docs/evidence/2026-09-24/emolga-masterset/emolga_8.webp', observed_on: '2026-09-24'}}
+  - position: 2
+    card_id: emolga-29
+    placement: {status: confirmed, evidence: {type: published-photo, source: 'docs/evidence/2026-09-24/emolga-masterset/emolga_8.webp', observed_on: '2026-09-24'}}
+  - position: 3
+    card_id: emolga-30
+    placement: {status: confirmed, evidence: {type: published-photo, source: 'docs/evidence/2026-09-24/emolga-masterset/emolga_8.webp', observed_on: '2026-09-24'}}
+  - position: 4
+    card_id: emolga-31
+    placement: {status: confirmed, evidence: {type: published-photo, source: 'docs/evidence/2026-09-24/emolga-masterset/emolga_8.webp', observed_on: '2026-09-24'}}
+- id: em-09
+  kind: cards
+  physical_leaf: 9
+  chapter: Emolga Masterset
+  chapter_order: 1
+  theme: Page 9
+  pockets:
+  - position: 1
+    card_id: emolga-32
+    placement: {status: confirmed, evidence: {type: published-photo, source: 'docs/evidence/2026-09-24/emolga-masterset/emolga_9.webp', observed_on: '2026-09-24'}}
+  - position: 2
+    card_id: emolga-33
+    placement: {status: confirmed, evidence: {type: published-photo, source: 'docs/evidence/2026-09-24/emolga-masterset/emolga_9.webp', observed_on: '2026-09-24'}}
+  - position: 3
+    card_id: emolga-34
+    placement: {status: confirmed, evidence: {type: published-photo, source: 'docs/evidence/2026-09-24/emolga-masterset/emolga_9.webp', observed_on: '2026-09-24'}}
+  - position: 4
+    card_id: emolga-35
+    placement: {status: confirmed, evidence: {type: published-photo, source: 'docs/evidence/2026-09-24/emolga-masterset/emolga_9.webp', observed_on: '2026-09-24'}}
+- id: em-10
+  kind: cards
+  physical_leaf: 10
+  chapter: Emolga Masterset
+  chapter_order: 1
+  theme: Page 10
+  pockets:
+  - position: 1
+    card_id: emolga-36
+    placement: {status: confirmed, evidence: {type: published-photo, source: 'docs/evidence/2026-09-24/emolga-masterset/emolga_10.webp', observed_on: '2026-09-24'}}
+  - position: 2
+    card_id: emolga-37
+    placement: {status: confirmed, evidence: {type: published-photo, source: 'docs/evidence/2026-09-24/emolga-masterset/emolga_10.webp', observed_on: '2026-09-24'}}
+  - position: 3
+    card_id: emolga-38
+    placement: {status: confirmed, evidence: {type: published-photo, source: 'docs/evidence/2026-09-24/emolga-masterset/emolga_10.webp', observed_on: '2026-09-24'}}
+  - position: 4
+    card_id: emolga-39
+    placement: {status: confirmed, evidence: {type: published-photo, source: 'docs/evidence/2026-09-24/emolga-masterset/emolga_10.webp', observed_on: '2026-09-24'}}
+- id: em-11
+  kind: cards
+  physical_leaf: 11
+  chapter: Emolga Masterset
+  chapter_order: 1
+  theme: Page 11
+  pockets:
+  - position: 1
+    card_id: emolga-40
+    placement: {status: confirmed, evidence: {type: published-photo, source: 'docs/evidence/2026-09-24/emolga-masterset/emolga_11.webp', observed_on: '2026-09-24'}}
+  - position: 2
+    card_id: emolga-41
+    placement: {status: confirmed, evidence: {type: published-photo, source: 'docs/evidence/2026-09-24/emolga-masterset/emolga_11.webp', observed_on: '2026-09-24'}}
+  - position: 3
+    card_id: emolga-42
+    placement: {status: confirmed, evidence: {type: published-photo, source: 'docs/evidence/2026-09-24/emolga-masterset/emolga_11.webp', observed_on: '2026-09-24'}}
+  - position: 4
+    card_id: emolga-43
+    placement: {status: confirmed, evidence: {type: published-photo, source: 'docs/evidence/2026-09-24/emolga-masterset/emolga_11.webp', observed_on: '2026-09-24'}}
