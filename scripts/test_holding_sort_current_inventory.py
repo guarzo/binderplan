@@ -1,5 +1,6 @@
 """Reconcile the dated sort decisions without changing the historical checklist."""
 
+import hashlib
 import re
 from collections import Counter
 from pathlib import Path
@@ -95,5 +96,12 @@ def test_original_evidence_is_complete():
     originals = [EVIDENCE / "Holding.pdf", *(EVIDENCE / f"IMG_{i}.HEIC" for i in range(7133, 7148))]
     assert all(path.is_file() for path in originals)
     checksums = (EVIDENCE / "SHA256SUMS").read_text(encoding="utf-8")
-    assert len(checksums.splitlines()) == len(originals)
-    assert all(str(path.relative_to(ROOT)) in checksums for path in originals)
+    entries = dict(
+        (relative_path, digest)
+        for digest, relative_path in (line.split("  ", 1) for line in checksums.splitlines())
+    )
+    assert len(entries) == len(originals)
+    assert set(entries) == {str(path.relative_to(ROOT)) for path in originals}
+    for relative_path, digest in entries.items():
+        assert re.fullmatch(r"[0-9a-f]{64}", digest)
+        assert hashlib.sha256((ROOT / relative_path).read_bytes()).hexdigest() == digest
