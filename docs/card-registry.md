@@ -103,9 +103,9 @@ The column is left as recorded rather than rewritten: `first_seen` is provenance
 | emolga-28 | Emolga | Emolga | EN | Black Bolt | 029/086 | uncertain | emolga_8.webp 2026-09-24 | Perched in a tree holding leaves; Call for Family. |
 | emolga-29 | Emolga | エモンガ | JP | Black Bolt | 032/086 | uncertain | emolga_8.webp 2026-09-24 | Tree-perch artwork; similar to English counterpart, distinct card. |
 | emolga-30 | Emolga | Emolga | EN | Black Bolt | 112/086 | uncertain | emolga_8.webp 2026-09-24 | Leafy illustration across card face; glare limits finish assessment. |
-| emolga-31 | Emolga | エモンガ | JP | sv11B | 116/086 | photo | emolga_8.webp 2026-09-24 | Leafy illustration rare artwork; another physical copy, not Volume I emolga-01. |
+| emolga-31 | Emolga | エモンガ | JP | sv11B | 116/086 | photo | emolga_8.webp 2026-09-24 | Leafy illustration rare artwork, AR on photographed footer; another physical copy, not Volume I emolga-01. |
 | emolga-32 | Emolga | Emolga EX | EN | XY | 46/146 | uncertain | emolga_9.webp 2026-09-24 | EX card flying toward viewer; energy glide artwork. |
-| emolga-33 | Emolga | エモンガEX | JP | Collection Y | 023/060 | uncertain | emolga_9.webp 2026-09-24 | Matching EX artwork with Japanese text; footer number visible. |
+| emolga-33 | Emolga | エモンガEX | JP | Collection Y | 023/060 | uncertain | emolga_9.webp 2026-09-24 | Matching EX artwork with Japanese text; 023/060 RR mark visible in photo, exact finish not verified. |
 | emolga-34 | Emolga | Emolga EX | EN | XY | 143/146 | uncertain | emolga_9.webp 2026-09-24 | Close-up full-art EX; exact finish unverified. |
 | emolga-35 | Emolga | エモンガEX | JP | Collection Y | 062/060 | uncertain | emolga_9.webp 2026-09-24 | Close-up full-art EX with Japanese text and SR mark. |
 | emolga-36 | Emolga | 电飞鼠 | ZH |  | KD LEV-105 | uncertain | emolga_10.webp 2026-09-24 | Chinese-language stat-style Emolga print, SR; not established as a standard Pokémon TCG card. |
