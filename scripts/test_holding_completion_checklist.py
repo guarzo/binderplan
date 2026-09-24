@@ -114,6 +114,7 @@ def test_checklist_preserves_owner_safeguards():
 
     assert "No card is currently authorized for Trade" in text
     assert "No additional Release is authorized" in text
+    assert "For every Trade authorization, record an override from the recommended destination to Trade" in text
     assert "For every recommended Release not authorized, record an override to Review or Keeper" in text
     assert "Yveltal --- Steam Siege 65/114 was already removed" in text
     assert "interim staging" in text
