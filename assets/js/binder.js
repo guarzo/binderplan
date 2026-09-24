@@ -189,7 +189,6 @@
           ? document.activeElement
           : null;
         inspectedIndex = pocketButtons.indexOf(button);
-        name.replaceChildren();
         name.textContent = button.dataset.cardPrintedName
           ? button.dataset.cardEnglishName
           : button.dataset.cardName;

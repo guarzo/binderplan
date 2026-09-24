@@ -4394,7 +4394,8 @@ def test_rendered_synthetic_binder_marks_only_first_spread_images_eager(tmp_path
     (site / "hugo.toml").write_text(
         "baseURL = 'https://example.invalid/'\n"
         "languageCode = 'en-us'\n"
-        "title = 'Synthetic Binder'\n",
+        "title = 'Synthetic Binder'\n"
+        "disableKinds = ['home']\n",
         encoding="utf-8",
     )
 
@@ -4492,6 +4493,7 @@ def test_rendered_synthetic_binder_marks_only_first_spread_images_eager(tmp_path
     )
 
     assert result.returncode == 0, result.stderr
+    assert not (destination / "index.html").exists()
     html = (destination / "gallery/digital-binder-pilot/index.html").read_text(
         encoding="utf-8"
     )

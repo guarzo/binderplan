@@ -52,10 +52,13 @@ class FakeElement {
     });
   }
 
-  replaceChildren(...children) {
+  get textContent() {
+    return this._textContent + this.children.map((child) => child.textContent).join("");
+  }
+
+  set textContent(value) {
+    this._textContent = String(value);
     this.children = [];
-    this.textContent = "";
-    this.append(...children);
   }
 
   setAttribute(name, value = "") {
@@ -318,9 +321,12 @@ assert.deepEqual(mobile.afterLocationEvent, {
   assert.equal(name.textContent, "Sandshrew");
   assert.equal(document.activeElement, close);
   next.dispatchEvent({ type: "click" });
-  assert.equal(name.textContent, "Audino");
+  assert.equal(name.textContent, "Audino · タブンネ");
   assert.equal(name.children[0].getAttribute("lang"), "ja");
   assert.equal(name.children[0].textContent, " · タブンネ");
+  previous.dispatchEvent({ type: "click" });
+  assert.equal(name.textContent, "Sandshrew");
+  assert.equal(name.children.length, 0, "switching to an English card removes the prior original-script span");
   close.dispatchEvent({ type: "click" });
   assert.equal(document.activeElement, cards[0], "closing returns focus to the opening frame");
 }

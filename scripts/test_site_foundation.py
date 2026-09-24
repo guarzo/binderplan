@@ -35,8 +35,14 @@ class Links(HTMLParser):
 
 @pytest.fixture(scope="module")
 def site(tmp_path_factory):
-    output = tmp_path_factory.mktemp("stage2-site")
-    subprocess.run(["hugo", "--destination", str(output), "--quiet"], cwd=ROOT, check=True)
+    scratch = tmp_path_factory.mktemp("stage2-site")
+    override = scratch / "override.toml"
+    override.write_text(f'resourceDir = "{scratch / "resources"}"\n')
+    output = scratch / "public"
+    subprocess.run(
+        ["hugo", "--config", f"hugo.toml,{override}", "--destination", str(output), "--quiet"],
+        cwd=ROOT, check=True,
+    )
     return output
 
 
