@@ -71,6 +71,15 @@ cards:
     note: '2026-09-23 variant inspection: curator-approved DoubleHolo 23310 selected
       over same-score 23346 No Rarity variant; identity remains visual-review/not-in-hand
       from archived leaf.'
+  blastoise-02:
+    classification: photo-crop
+    asset_path: assets/images/cards/blastoise-02.webp
+    reviewed: true
+    reviewed_on: '2026-09-23'
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-21/after/IMG_7103.jpeg
+    note: Crop from verified 2026-09-21 after photo; registry footer identity remains
+      uncertain.
   bulbasaur-01:
     provider: tcgdex
     upstream_id: ex14-45
@@ -140,6 +149,15 @@ cards:
     source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/37650/primary.webp
     note: Curator visually confirmed DoubleHolo 37650 is the VMAX Climax/s8b set-name
       alias for the archived Charizard leaf; variant and printing match.
+  charizard-03:
+    classification: photo-crop
+    asset_path: assets/images/cards/charizard-03.webp
+    reviewed: true
+    reviewed_on: '2026-09-23'
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-21/after/IMG_7102.jpeg
+    note: Crop from verified 2026-09-21 after photo; registry footer identity remains
+      uncertain.
   charmander-01:
     provider: doubleholo
     upstream_id: '30829'
@@ -316,6 +334,15 @@ cards:
     reviewed: true
     reviewed_on: '2026-09-22'
     source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/77949/primary.webp
+  dragonite-03:
+    classification: photo-crop
+    asset_path: assets/images/cards/dragonite-03.webp
+    reviewed: true
+    reviewed_on: '2026-09-23'
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-21/after/IMG_7105.jpeg
+    note: Crop from verified 2026-09-21 after photo; registry footer identity remains
+      uncertain.
   dratini-01:
     classification: exact
     asset_path: assets/images/cards/dratini-01.webp
@@ -801,6 +828,15 @@ cards:
     source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/66514/primary.webp
     note: Curator visually confirmed Latias & Latios 2015 is the trainer-kit set-name
       alias and the Latios 30/30 printing matches the archived leaf.
+  litleo-01:
+    classification: photo-crop
+    asset_path: assets/images/cards/litleo-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-23'
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-21/after/IMG_7104.jpeg
+    note: Crop from verified 2026-09-21 after photo; registry footer identity remains
+      uncertain.
   lucario-01:
     provider: tcgdex
     upstream_id: S12a-226
@@ -809,6 +845,15 @@ cards:
     reviewed: true
     reviewed_on: '2026-09-22'
     source_url: https://assets.tcgdex.net/ja/S/S12a/226/high.webp
+  lucario-02:
+    classification: photo-crop
+    asset_path: assets/images/cards/lucario-02.webp
+    reviewed: true
+    reviewed_on: '2026-09-23'
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-21/after/IMG_7102.jpeg
+    note: Crop from verified 2026-09-21 after photo; registry footer identity remains
+      uncertain.
   lugia-01:
     provider: doubleholo
     upstream_id: '22462'
@@ -982,6 +1027,15 @@ cards:
     reviewed: true
     reviewed_on: '2026-09-23'
     source_url: https://assets.tcgdex.net/en/ex/ex14/58/high.webp
+  mudkip-02:
+    classification: photo-crop
+    asset_path: assets/images/cards/mudkip-02.webp
+    reviewed: true
+    reviewed_on: '2026-09-23'
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-21/after/IMG_7104.jpeg
+    note: Crop from verified 2026-09-21 after photo; registry footer identity remains
+      uncertain.
   muk-01:
     provider: doubleholo
     upstream_id: '22212'
@@ -1548,6 +1602,15 @@ cards:
     note: Archived v2-06 leaf shows the non-1st-Edition Japanese Magma Vs Aqua Two
       Ambitions Umbreon; selected DoubleHolo 45939 and rejected competing DoubleHolo
       46117 [1st Edition] variant.
+  ursaring-01:
+    classification: photo-crop
+    asset_path: assets/images/cards/ursaring-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-23'
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-21/after/IMG_7106.jpeg
+    note: Crop from verified 2026-09-21 after photo; physical identity continuity
+      with ursaring-01 is ledger-recorded.
   ursaring-02:
     provider: doubleholo
     upstream_id: '46382'

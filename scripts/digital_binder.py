@@ -15,7 +15,7 @@ from pathlib import Path
 from urllib.parse import quote, urlencode, unquote, urlsplit
 from urllib.request import Request, urlopen
 
-from PIL import Image
+from PIL import Image, ImageOps
 import yaml
 
 GENERATED_FIELDS = (
@@ -417,7 +417,8 @@ def rank_candidates(row: dict, candidates: list[dict]) -> list[dict]:
 
 def crop_evidence_photo(source: Path, box: tuple[int, int, int, int], target: Path) -> None:
     left, top, right, bottom = box
-    with Image.open(source) as image:
+    with Image.open(source) as opened:
+        image = ImageOps.exif_transpose(opened)
         width, height = image.size
         if not (0 <= left < right <= width and 0 <= top < bottom <= height):
             raise ValueError(

@@ -2095,6 +2095,25 @@ def test_crop_evidence_photo_writes_webp(tmp_path):
         assert image.size == (7, 7)
 
 
+def test_crop_evidence_photo_applies_exif_orientation_before_bounds(tmp_path):
+    source = tmp_path / "source.jpg"
+    target = tmp_path / "crop.webp"
+    image = Image.new("RGB", (80, 40), (0, 0, 255))
+    image.paste((255, 0, 0), (0, 0, 40, 40))
+    exif = image.getexif()
+    exif[274] = 6
+    image.save(source, quality=100, subsampling=0, exif=exif)
+
+    digital_binder.crop_evidence_photo(source, (0, 0, 40, 40), target)
+
+    with Image.open(target) as cropped:
+        assert cropped.format == "WEBP"
+        assert cropped.size == (40, 40)
+        red, _green, blue = cropped.resize((1, 1)).getpixel((0, 0))
+        assert red > 240
+        assert blue < 15
+
+
 def test_external_photo_record_requires_source_url_and_usage_basis(tmp_path):
     root = project_fixture(tmp_path, image_classification="exact")
     images = load_images(root)
@@ -2736,6 +2755,90 @@ def test_seeded_repository_has_expected_leaf_and_card_counts():
     assert len({pocket["card_id"] for pocket in occupied}) == 171
 
 
+def test_seeded_repository_reflects_september_ledger_swaps():
+    root = Path(__file__).parents[1]
+    volumes = {
+        "volume-1": digital_binder.load_yaml(root / "data/binders/volume-1.yaml"),
+        "volume-2": digital_binder.load_yaml(root / "data/binders/volume-2.yaml"),
+    }
+    expected = {
+        ("volume-1", 12, 2): ("blastoise-02", "docs/evidence/2026-09-21/after/IMG_7103.jpeg"),
+        ("volume-1", 15, 5): ("charizard-03", "docs/evidence/2026-09-21/after/IMG_7102.jpeg"),
+        ("volume-1", 15, 8): ("lucario-02", "docs/evidence/2026-09-21/after/IMG_7102.jpeg"),
+        ("volume-2", 4, 7): ("ursaring-01", "docs/evidence/2026-09-21/after/IMG_7106.jpeg"),
+        ("volume-2", 5, 6): ("dragonite-03", "docs/evidence/2026-09-21/after/IMG_7105.jpeg"),
+        ("volume-2", 11, 7): ("mudkip-02", "docs/evidence/2026-09-21/after/IMG_7104.jpeg"),
+        ("volume-2", 11, 9): ("litleo-01", "docs/evidence/2026-09-21/after/IMG_7104.jpeg"),
+    }
+    outgoing = {
+        "ns-plan-01", "snorlax-02", "ursaring-02", "rockets-trap-01",
+        "dratini-02", "kasumis-tears-01", "hoopa-02",
+    }
+    occupied = {}
+    for volume_id, volume in volumes.items():
+        for leaf in volume["leaves"]:
+            if leaf["kind"] != "cards":
+                continue
+            for pocket in leaf["pockets"]:
+                if "card_id" not in pocket:
+                    continue
+                key = (volume_id, leaf["physical_leaf"], pocket["position"])
+                occupied[key] = pocket
+
+    assert set(expected) <= set(occupied)
+    for key, (card_id, source) in expected.items():
+        pocket = occupied[key]
+        evidence = pocket["placement"]["evidence"]
+        assert pocket["card_id"] == card_id
+        assert pocket["placement"]["status"] == "confirmed"
+        assert evidence == {
+            "type": "verified-after-photo",
+            "source": source,
+            "observed_on": "2026-09-21",
+        }
+    assert outgoing.isdisjoint({pocket["card_id"] for pocket in occupied.values()})
+
+
+def test_seeded_repository_dates_refreshed_september_page_evidence():
+    root = Path(__file__).parents[1]
+    volumes = {
+        "volume-1": digital_binder.load_yaml(root / "data/binders/volume-1.yaml"),
+        "volume-2": digital_binder.load_yaml(root / "data/binders/volume-2.yaml"),
+    }
+    affected_leaves = {
+        ("volume-1", "v1-12"),
+        ("volume-1", "v1-15"),
+        ("volume-2", "v2-04"),
+        ("volume-2", "v2-05"),
+        ("volume-2", "v2-11"),
+    }
+    affected_derivatives = {
+        "docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/legendary_bearing_2.webp",
+        "docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/on_attack_1.webp",
+        "docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/companions_2.webp",
+        "docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/quiet_familiarity_1.webp",
+        "docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/threshold_1.webp",
+    }
+
+    dated_sources = []
+    affected_pocket_count = 0
+    for volume_id, volume in volumes.items():
+        for leaf in volume["leaves"]:
+            if (volume_id, leaf["id"]) not in affected_leaves:
+                continue
+            for pocket in leaf["pockets"]:
+                evidence = pocket["placement"]["evidence"]
+                affected_pocket_count += 1
+                assert evidence["observed_on"] == "2026-09-21"
+                dated_sources.append((evidence["source"], evidence["observed_on"]))
+
+    assert affected_pocket_count == 45
+    assert not [
+        source for source, observed_on in dated_sources
+        if source in affected_derivatives and observed_on == "2026-08-01"
+    ]
+
+
 def test_public_cutover_removes_only_photographed_volume_sources():
     root = Path(__file__).parents[1]
     photographed = root / "static/images/binder"
@@ -2992,7 +3095,7 @@ def test_rendered_public_volume_routes_use_binder_markup_without_remote_card_ima
         for button in card_buttons:
             assert button["data-card-name"]
             assert button["data-card-language"]
-            assert button["data-card-set"]
+            assert "data-card-set" in button
             assert "data-card-number" in button
             assert button["data-leaf-theme"]
             assert button["data-pocket-position"]
@@ -3064,6 +3167,7 @@ def test_binder_interaction_assets_declare_accessible_contract():
     assert syntax.returncode == 0, syntax.stderr
     assert ".innerHTML" not in javascript
     assert "textContent" in javascript
+    assert 'setField("set-number", setNumber || "Unresolved")' in javascript
     assert 'window.matchMedia("(max-width: 720px)")' in javascript
     assert 'dialog.showModal()' in javascript
     assert 'dialog.addEventListener("cancel"' in javascript

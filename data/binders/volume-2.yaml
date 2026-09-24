@@ -154,8 +154,7 @@ leaves:
   - position: 7
     card_id: ursaring-01
     placement:
-      status: pending
-      observed_card_id: rockets-trap-01
+      status: confirmed
       evidence:
         type: verified-after-photo
         source: docs/evidence/2026-09-21/after/IMG_7106.jpeg
@@ -228,8 +227,7 @@ leaves:
   - position: 6
     card_id: dragonite-03
     placement:
-      status: pending
-      observed_card_id: dratini-02
+      status: confirmed
       evidence:
         type: verified-after-photo
         source: docs/evidence/2026-09-21/after/IMG_7105.jpeg
@@ -574,8 +572,7 @@ leaves:
   - position: 7
     card_id: mudkip-02
     placement:
-      status: pending
-      observed_card_id: kasumis-tears-01
+      status: confirmed
       evidence:
         type: verified-after-photo
         source: docs/evidence/2026-09-21/after/IMG_7104.jpeg
@@ -591,8 +588,7 @@ leaves:
   - position: 9
     card_id: litleo-01
     placement:
-      status: pending
-      observed_card_id: hoopa-02
+      status: confirmed
       evidence:
         type: verified-after-photo
         source: docs/evidence/2026-09-21/after/IMG_7104.jpeg

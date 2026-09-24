@@ -608,8 +608,7 @@ leaves:
   - position: 2
     card_id: blastoise-02
     placement:
-      status: pending
-      observed_card_id: ns-plan-01
+      status: confirmed
       evidence:
         type: verified-after-photo
         source: docs/evidence/2026-09-21/after/IMG_7103.jpeg
@@ -799,8 +798,7 @@ leaves:
   - position: 5
     card_id: charizard-03
     placement:
-      status: pending
-      observed_card_id: snorlax-02
+      status: confirmed
       evidence:
         type: verified-after-photo
         source: docs/evidence/2026-09-21/after/IMG_7102.jpeg
@@ -824,8 +822,7 @@ leaves:
   - position: 8
     card_id: lucario-02
     placement:
-      status: pending
-      observed_card_id: ursaring-02
+      status: confirmed
       evidence:
         type: verified-after-photo
         source: docs/evidence/2026-09-21/after/IMG_7102.jpeg

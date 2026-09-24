@@ -171,7 +171,10 @@
         inspectedIndex = pocketButtons.indexOf(button);
         name.textContent = button.dataset.cardName;
         setField("language", button.dataset.cardLanguage);
-        setField("set-number", button.dataset.cardSet + " · " + button.dataset.cardNumber);
+        const setNumber = [button.dataset.cardSet, button.dataset.cardNumber]
+          .filter((value) => value && value.trim())
+          .join(" · ");
+        setField("set-number", setNumber || "Unresolved");
         setField("theme-pocket", button.dataset.leafTheme + " · pocket " + button.dataset.pocketPosition);
         setField("image-classification", classificationText(button.dataset.classification));
         setField("image-source", button.dataset.imageProvenance

@@ -1,22 +1,24 @@
 # Digital binder migration evidence — archived 2026-09-22
 
-This directory preserves the Volume I and Volume II gallery images exactly as they were published at the moment the digital binder migration began, so that later manifest work can cite a page that will not move or be deleted underneath it.
+This directory preserves the Volume I and Volume II gallery images as the stable public-gallery evidence baseline for the digital binder migration, so that later manifest work can cite a page that will not move or be deleted underneath it.
 
 The archive date is the date these copies were taken. It is not a photograph capture date.
 
 ## What these files are
 
-`published-gallery/volume-1/` and `published-gallery/volume-2/` are byte-for-byte copies of `static/images/binder/volume-1/` and `static/images/binder/volume-2/` as committed at `2587c3d` ("Preserve audit evidence and apply owner validation (#18)"), the last commit to touch those directories before this migration.
+Most files in `published-gallery/volume-1/` and `published-gallery/volume-2/` remain byte-for-byte copies of `static/images/binder/volume-1/` and `static/images/binder/volume-2/` as committed at `2587c3d` ("Preserve audit evidence and apply owner validation (#18)"), the last commit to touch those directories before this migration.
 
-**These are the published WebP derivatives, not camera originals.** The originals from the 2026-08-01 reshoot are not available in this repository, and this archive does not recover them. Every page is a resized, re-encoded WebP: the nine-pocket pages are 1125 × 1500, and `vol1_contents.webp` (736 × 1064) and `vol2_contents.webp` (498 × 723) are smaller still. Fine print — set symbols, collector numbers, copyright footers — is frequently unreadable at that resolution.
+Five files are later final pre-cutover public derivatives refreshed from verified 2026-09-21 movements: `volume-1/legendary_bearing_2.webp`, `volume-1/on_attack_1.webp`, `volume-2/companions_2.webp`, `volume-2/quiet_familiarity_1.webp`, and `volume-2/threshold_1.webp`. Their camera originals are preserved under `docs/evidence/2026-09-21/after/`; this directory retains only the public WebP derivatives.
+
+**These are the published WebP derivatives, not camera originals.** The originals from the 2026-08-01 reshoot are not available in this repository, and this archive does not recover them. The 2026-09-21 camera originals for the five refreshed pages are available in the 2026-09-21 evidence directory, not here. Every page in this archive is a resized, re-encoded WebP: the nine-pocket pages are 1125 × 1500, and `vol1_contents.webp` (736 × 1064) and `vol2_contents.webp` (498 × 723) are smaller still. Fine print — set symbols, collector numbers, copyright footers — is frequently unreadable at that resolution.
 
 | Location | Files | Source / status |
 |---|---:|---|
-| `published-gallery/volume-1/` | 19 | Byte-for-byte copy of the published Volume I gallery at `2587c3d`. Twelve nine-pocket card pages, five chapter dividers, a contents card, and a closing "Fin" card. |
-| `published-gallery/volume-2/` | 11 | Byte-for-byte copy of the published Volume II gallery at `2587c3d`. Seven nine-pocket card pages, three chapter dividers, and a contents card. |
+| `published-gallery/volume-1/` | 19 | Stable published Volume I gallery evidence. Seventeen files are byte-for-byte copies from `2587c3d`; `legendary_bearing_2.webp` and `on_attack_1.webp` are final pre-cutover public derivatives refreshed from verified 2026-09-21 movements. |
+| `published-gallery/volume-2/` | 11 | Stable published Volume II gallery evidence. Eight files are byte-for-byte copies from `2587c3d`; `companions_2.webp`, `quiet_familiarity_1.webp`, and `threshold_1.webp` are final pre-cutover public derivatives refreshed from verified 2026-09-21 movements. |
 | `SHA256SUMS` | 1 | Integrity hashes of all 30 archived files, relative to this directory. |
 
-Verification performed at archive time: `diff -r` against each live directory reported no differences, and a `sha256sum` cross-check of all 30 files matched. The GNU `cmp` utility has no `-r` option, so `diff -r` was used for the recursive byte comparison.
+Verification performed at archive time: `diff -r` against each live directory reported no differences, and a `sha256sum` cross-check of all 30 files matched. After the five refreshed derivatives were merged, `SHA256SUMS` was regenerated for all 30 archived files. The GNU `cmp` utility has no `-r` option, so `diff -r` was used for the recursive byte comparison.
 
 Incidental files such as `desktop.ini` are not present. These archived copies live outside Hugo's `content/` and `static/` trees: they are retained in the repository, not republished as gallery assets.
 
@@ -28,7 +30,7 @@ Incidental files such as `desktop.ini` are not present. These archived copies li
 
 **They do not prove a card is still in that pocket today.** A photograph records a page at the moment of the shoot. Movement lives in [`docs/ledger.md`](../../../ledger.md), which must be consulted alongside any page cited here.
 
-**Observation date.** All thirty pages are cited with `observed_on: 2026-08-01`. That is the observation date carried by every `first_seen` value in `docs/card-registry.md` for these pages, and the date `content/gallery/volume-2/_index.md` states for the Volume II shoot. The five 2026-08-01 swap-in cards recorded in `docs/ledger.md` carry the same date.
+**Observation date.** Twenty-five archived derivatives preserve the 2026-08-01 public baseline. Five refreshed page derivatives — `volume-1/legendary_bearing_2.webp`, `volume-1/on_attack_1.webp`, `volume-2/companions_2.webp`, `volume-2/quiet_familiarity_1.webp`, and `volume-2/threshold_1.webp` — depict the verified 2026-09-21 after pages. Binder manifests should cite the source-specific observation date: 2026-08-01 for untouched baseline pages and 2026-09-21 for refreshed affected pages. Registry `first_seen` values remain historical provenance and are not rewritten to match later derivative refreshes.
 
 ## Known naming correction in Volume II
 
@@ -38,4 +40,4 @@ Incidental files such as `desktop.ini` are not present. These archived copies li
 
 ## Related evidence
 
-See [`docs/evidence/2026-09-20/README.md`](../../2026-09-20/README.md) for the September audit inputs, the owner's completed validation checklist, and the verification limits recorded there. That directory is the reference for what the owner has and has not confirmed; nothing in this archive supersedes it, and in particular the owner's "no moves" and "Review Holding First" rulings recorded there still stand.
+See [`docs/evidence/2026-09-20/README.md`](../../2026-09-20/README.md) for the September audit inputs, the owner's completed validation checklist, and the verification limits recorded there. That directory governed the collection state at that time: its "no moves" and "Review Holding First" rulings remain important context, while the seven later verified 2026-09-21 movements supersede them only for the listed swaps. The declined September comparisons remain non-moves.
