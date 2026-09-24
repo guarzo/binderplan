@@ -1,0 +1,86 @@
+\documentclass[9pt,a4paper]{extarticle}
+
+\usepackage{fontspec}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{needspace}
+\usepackage{fancyhdr}
+\usepackage{microtype}
+
+\setmainfont{DejaVu Sans}
+\newfontfamily\cjkfont{Droid Sans Fallback}
+\geometry{left=12mm,right=12mm,top=17mm,bottom=15mm,headheight=12pt,headsep=3mm,footskip=8mm}
+\definecolor{rulegray}{gray}{0.68}
+\definecolor{headinggray}{gray}{0.20}
+\definecolor{badgegray}{gray}{0.92}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.08}
+\emergencystretch=1.5em
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\footnotesize Digital Binder Exact-Image Checklist}
+\fancyhead[R]{\footnotesize 24 September 2026}
+\fancyfoot[C]{\footnotesize Page \thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\newcommand{\checkbox}{\raisebox{-0.15ex}{\fbox{\rule{0pt}{1.25ex}\rule{1.25ex}{0pt}}}}
+\newcommand{\statusbadge}[1]{\colorbox{badgegray}{\scriptsize\bfseries #1}}
+\newcommand{\sectiontitle}[1]{%
+  \Needspace{4\baselineskip}\vspace{0.9ex}%
+  {\Large\bfseries\color{headinggray}#1}\par
+  \vspace{0.25ex}\color{rulegray}\hrule\color{black}\vspace{0.7ex}%
+}
+\newcommand{\cardrow}[6]{%
+  \Needspace{4.2\baselineskip}%
+  \noindent\begin{tabularx}{\textwidth}{@{}p{5mm}>{\raggedright\arraybackslash}p{0.29\textwidth}>{\raggedright\arraybackslash}p{0.25\textwidth}>{\raggedright\arraybackslash}X@{}}
+    \checkbox & \textbf{#2}\newline{\scriptsize\ttfamily #1}\newline{\small #3} & #4 & #5\newline\statusbadge{#6}
+  \end{tabularx}\par
+  \vspace{0.15ex}\hspace{8mm}{\scriptsize\checkbox\ Exact scan found\quad \checkbox\ Printing/variant matched\quad \checkbox\ Approved and added}\par
+  \vspace{0.65ex}%
+}
+
+\begin{document}
+
+{\LARGE\bfseries Digital Binder Exact-Image Checklist}\par
+\vspace{0.35ex}
+{\small Cards in Volumes I and II that do not yet use an exact local scan. A \textbf{photo crop} depicts the physical card from archived binder evidence; a \textbf{reference image} is a different printing and has the highest replacement priority. Before approval, match language, set, collector number, edition, stamp, holo treatment, and print variant.}\par
+\vspace{0.8ex}
+
+\sectiontitle{Volume I --- 10 cards}
+\cardrow{pikachu-06}{Pikachu}{{\cjkfont ピカチュウ}}{JP · SVP · 242}{Leaf 5 · At Rest · pocket 6}{PHOTO CROP}
+\cardrow{bulbasaur-02}{Bulbasaur}{{\cjkfont フシギダネ}}{JP · Corocoro Promo · No.001}{Leaf 7 · Joyful Action · pocket 3}{PHOTO CROP}
+\cardrow{latias-01}{Latias}{Latias}{EN · Latias \& Latios 2015 · 30/30}{Leaf 7 · Joyful Action · pocket 9}{PHOTO CROP}
+\cardrow{jirachi-02}{Jirachi}{{\cjkfont 基拉祈}V}{ZH · CS5.5C · 36/66}{Leaf 9 · Awakened Power · pocket 8}{REFERENCE IMAGE}
+\cardrow{gengar-01}{Gengar}{{\cjkfont 耿鬼}VMAX}{ZH · s6c · 072/172}{Leaf 10 · Awakened Power · pocket 1}{PHOTO CROP}
+\cardrow{yveltal-02}{Yveltal}{{\cjkfont 伊裴尔塔尔}}{ZH · CSV5C · 135/129}{Leaf 11 · Legendary Bearing · pocket 3}{PHOTO CROP}
+\cardrow{blastoise-02}{Blastoise}{{\cjkfont 水箭龟}VMAX}{ZH · set/number unresolved}{Leaf 12 · Legendary Bearing · pocket 2}{PHOTO CROP}
+\cardrow{espeon-02}{Espeon}{{\cjkfont 太阳伊布}GX}{ZH · CSM1AC · 195/151}{Leaf 12 · Legendary Bearing · pocket 9}{PHOTO CROP}
+\cardrow{charizard-03}{Charizard}{Charizard VSTAR}{EN · SWSH Promos · SWSH262}{Leaf 15 · On the Attack · pocket 5}{PHOTO CROP}
+\cardrow{lucario-02}{Lucario}{Lucario LV.X}{EN · Mysterious Treasures · 122/123}{Leaf 15 · On the Attack · pocket 8}{PHOTO CROP}
+
+\clearpage
+\sectiontitle{Volume II --- 8 cards}
+\cardrow{mimikyu-01}{Mimikyu}{{\cjkfont 谜拟丘}}{ZH · CSM2BC · 151/150}{Leaf 3 · Companions · pocket 1}{PHOTO CROP}
+\cardrow{ursaring-01}{Ursaring}{Ursaring}{EN · Radiant Collection · RC16/RC25}{Leaf 4 · Companions · pocket 7}{PHOTO CROP}
+\cardrow{joltik-01}{Joltik}{{\cjkfont 电电虫}}{ZH · CSV5C · 132/129}{Leaf 4 · Companions · pocket 9}{PHOTO CROP}
+\cardrow{dragonite-03}{Dragonite}{Dragonite}{EN · WoTC Promos · 5}{Leaf 5 · Quiet Familiarity · pocket 6}{PHOTO CROP}
+\cardrow{dawns-stadium-01}{Dawn's Stadium}{{\cjkfont 夜明けのスタジアム}}{JP · Dawn Dash · no printed number}{Leaf 11 · Threshold · pocket 1}{PHOTO CROP}
+\cardrow{jirachi-04}{Jirachi}{{\cjkfont 七夜のジラーチ}}{JP · Temple of Anger · no printed number}{Leaf 11 · Threshold · pocket 6}{PHOTO CROP}
+\cardrow{mudkip-02}{Mudkip}{{\cjkfont ミズゴロウ}}{JP · Tidal Storm · 012/070}{Leaf 11 · Threshold · pocket 7}{PHOTO CROP}
+\cardrow{litleo-01}{Litleo}{Litleo}{EN · Mega Evolution · 139/132}{Leaf 11 · Threshold · pocket 9}{PHOTO CROP}
+
+\vfill
+{\small\textbf{Completion check}}\par\vspace{0.3ex}
+\checkbox\ All 18 rows resolved or explicitly deferred.\quad
+\checkbox\ Registry identity updated only when evidence supports it.\quad
+\checkbox\ Site rebuilt and checked.\par
+\vspace{1.2ex}
+{\scriptsize Snapshot source: \texttt{data/binders/volume-1.yaml}, \texttt{data/binders/volume-2.yaml}, and \texttt{data/card-images.yaml}. Included classifications: \texttt{photo-crop}, \texttt{proxy}, and \texttt{missing}; exact images are excluded.}\par
+
+\end{document}
