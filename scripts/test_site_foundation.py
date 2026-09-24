@@ -2,6 +2,7 @@
 
 from html.parser import HTMLParser
 from pathlib import Path
+import re
 import shutil
 import subprocess
 from urllib.parse import urljoin, urlparse
@@ -44,6 +45,23 @@ def site(tmp_path_factory):
         cwd=ROOT, check=True,
     )
     return output
+
+
+def test_navigation_marks_only_the_exact_page_current(site):
+    def menu_link(page, route):
+        html = (site / page / "index.html").read_text() if page else (site / "index.html").read_text()
+        match = re.search(r'<a href="' + re.escape(route) + r'"[^>]*>', html)
+        assert match, route
+        return match.group(0)
+
+    assert 'class="active" aria-current="page"' in menu_link("", "/")
+    assert 'class="active" aria-current="page"' in menu_link("gallery", "/gallery/")
+    volume_gallery = menu_link("gallery/volume-1", "/gallery/")
+    assert 'class="active"' in volume_gallery
+    assert "aria-current" not in volume_gallery
+    shopping_guides = menu_link("guides/shopping", "/guides/")
+    assert 'class="active"' in shopping_guides
+    assert "aria-current" not in shopping_guides
 
 
 def test_home_shelf_links_existing_collections_but_not_unpublished_binders(site):

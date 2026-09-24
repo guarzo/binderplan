@@ -3,9 +3,13 @@
     <a href="{{ .Site.BaseURL }}" class="site-title">{{ .Site.Title }}</a>
     <nav class="site-nav" aria-label="Main navigation">
       <ul>
+        {{ $homeURL := "/" | relURL }}
         {{ range .Site.Menus.main }}
+        {{ $url := .URL | relURL }}
+        {{ $exact := eq $.RelPermalink $url }}
+        {{ $ancestor := and (ne $url $homeURL) (strings.HasPrefix $.RelPermalink $url) }}
         <li>
-          <a href="{{ .URL | relURL }}"{{ if or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .) }} class="active" aria-current="page"{{ end }}>
+          <a href="{{ $url }}"{{ if or $exact $ancestor }} class="active"{{ end }}{{ if $exact }} aria-current="page"{{ end }}>
             {{ .Name }}
           </a>
         </li>
