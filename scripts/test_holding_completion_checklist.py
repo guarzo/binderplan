@@ -25,9 +25,11 @@ def checklist_rows() -> list[tuple[str, str, str, str, str]]:
 
 
 def test_checklist_covers_every_current_card_exactly_once():
+    text = CHECKLIST.read_text(encoding="utf-8")
     rows = checklist_rows()
     observations = [row[0] for row in rows]
 
+    assert len(re.findall(r"^\\cardrow", text, re.MULTILINE)) == 100
     assert len(observations) == 100
     assert len(set(observations)) == 100
     assert set(observations) == inventory_observations()
