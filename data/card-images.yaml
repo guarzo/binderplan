@@ -78,6 +78,11 @@ cards:
     reviewed_on: '2026-09-23'
     provider: evidence-crop
     source_path: docs/evidence/2026-09-21/after/IMG_7103.jpeg
+    crop_box:
+    - 168
+    - 0
+    - 305
+    - 195
     note: Crop from verified 2026-09-21 after photo; registry footer identity remains
       uncertain.
   bulbasaur-01:
@@ -156,6 +161,11 @@ cards:
     reviewed_on: '2026-09-23'
     provider: evidence-crop
     source_path: docs/evidence/2026-09-21/after/IMG_7102.jpeg
+    crop_box:
+    - 168
+    - 205
+    - 305
+    - 390
     note: Crop from verified 2026-09-21 after photo; registry footer identity remains
       uncertain.
   charmander-01:
@@ -341,6 +351,11 @@ cards:
     reviewed_on: '2026-09-23'
     provider: evidence-crop
     source_path: docs/evidence/2026-09-21/after/IMG_7105.jpeg
+    crop_box:
+    - 315
+    - 200
+    - 462
+    - 395
     note: Crop from verified 2026-09-21 after photo; registry footer identity remains
       uncertain.
   dratini-01:
@@ -835,6 +850,11 @@ cards:
     reviewed_on: '2026-09-23'
     provider: evidence-crop
     source_path: docs/evidence/2026-09-21/after/IMG_7104.jpeg
+    crop_box:
+    - 315
+    - 400
+    - 462
+    - 625
     note: Crop from verified 2026-09-21 after photo; registry footer identity remains
       uncertain.
   lucario-01:
@@ -852,6 +872,11 @@ cards:
     reviewed_on: '2026-09-23'
     provider: evidence-crop
     source_path: docs/evidence/2026-09-21/after/IMG_7102.jpeg
+    crop_box:
+    - 168
+    - 400
+    - 305
+    - 625
     note: Crop from verified 2026-09-21 after photo; registry footer identity remains
       uncertain.
   lugia-01:
@@ -1034,6 +1059,11 @@ cards:
     reviewed_on: '2026-09-23'
     provider: evidence-crop
     source_path: docs/evidence/2026-09-21/after/IMG_7104.jpeg
+    crop_box:
+    - 5
+    - 400
+    - 148
+    - 625
     note: Crop from verified 2026-09-21 after photo; registry footer identity remains
       uncertain.
   muk-01:
@@ -1609,6 +1639,11 @@ cards:
     reviewed_on: '2026-09-23'
     provider: evidence-crop
     source_path: docs/evidence/2026-09-21/after/IMG_7106.jpeg
+    crop_box:
+    - 5
+    - 400
+    - 148
+    - 625
     note: Crop from verified 2026-09-21 after photo; physical identity continuity
       with ursaring-01 is ledger-recorded.
   ursaring-02:

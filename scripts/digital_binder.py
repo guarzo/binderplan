@@ -756,6 +756,20 @@ def _validate_images(root: Path, images: dict, registry: dict[str, dict],
             errors.append(f"published binder uses unreviewed image for {card_id}")
 
 
+def _validate_crop_box(card_id: str, record: dict, errors: list[str]) -> None:
+    if "crop_box" not in record or record.get("crop_box") is None:
+        return
+    box = record.get("crop_box")
+    if not isinstance(box, list) or len(box) != 4 or not all(type(value) is int for value in box):
+        errors.append(f"image record {card_id}: crop_box must be [left, top, right, bottom] integers")
+        return
+    left, top, right, bottom = box
+    if not (0 <= left < right and 0 <= top < bottom):
+        errors.append(
+            f"image record {card_id}: crop_box must satisfy 0 <= left < right and 0 <= top < bottom"
+        )
+
+
 def _validate_non_missing_image_source(card_id: str, record: dict, errors: list[str]) -> None:
     provider = record.get("provider")
     if not isinstance(provider, str) or not provider.strip():
@@ -765,6 +779,7 @@ def _validate_non_missing_image_source(card_id: str, record: dict, errors: list[
         source_path = record.get("source_path")
         if not isinstance(source_path, str) or not source_path.startswith("docs/evidence/"):
             errors.append(f"image record {card_id}: evidence crop requires source_path under docs/evidence")
+        _validate_crop_box(card_id, record, errors)
         return
     source_url = record.get("source_url")
     if not isinstance(source_url, str) or not source_url.startswith(("http://", "https://")):

@@ -110,7 +110,7 @@ leaves:
       evidence:
         type: published-photo
         source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/companions_2.webp
-        observed_on: '2026-09-21'
+        observed_on: '2026-08-01'
   - position: 2
     card_id: pikachu-04
     placement:
@@ -118,7 +118,7 @@ leaves:
       evidence:
         type: published-photo
         source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/companions_2.webp
-        observed_on: '2026-09-21'
+        observed_on: '2026-08-01'
   - position: 3
     card_id: togedemaru-01
     placement:
@@ -126,7 +126,7 @@ leaves:
       evidence:
         type: published-photo
         source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/companions_2.webp
-        observed_on: '2026-09-21'
+        observed_on: '2026-08-01'
   - position: 4
     card_id: flareon-01
     placement:
@@ -134,7 +134,7 @@ leaves:
       evidence:
         type: published-photo
         source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/companions_2.webp
-        observed_on: '2026-09-21'
+        observed_on: '2026-08-01'
   - position: 5
     card_id: kangaskhan-01
     placement:
@@ -142,7 +142,7 @@ leaves:
       evidence:
         type: published-photo
         source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/companions_2.webp
-        observed_on: '2026-09-21'
+        observed_on: '2026-08-01'
   - position: 6
     card_id: professors-research-01
     placement:
@@ -150,7 +150,7 @@ leaves:
       evidence:
         type: published-photo
         source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/companions_2.webp
-        observed_on: '2026-09-21'
+        observed_on: '2026-08-01'
   - position: 7
     card_id: ursaring-01
     placement:
@@ -166,7 +166,7 @@ leaves:
       evidence:
         type: published-photo
         source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/companions_2.webp
-        observed_on: '2026-09-21'
+        observed_on: '2026-08-01'
   - position: 9
     card_id: joltik-01
     placement:
@@ -174,7 +174,7 @@ leaves:
       evidence:
         type: published-photo
         source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/companions_2.webp
-        observed_on: '2026-09-21'
+        observed_on: '2026-08-01'
 - id: v2-05
   kind: cards
   physical_leaf: 5
@@ -191,7 +191,7 @@ leaves:
       evidence:
         type: published-photo
         source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/quiet_familiarity_1.webp
-        observed_on: '2026-09-21'
+        observed_on: '2026-08-01'
   - position: 2
     card_id: mew-04
     placement:
@@ -199,7 +199,7 @@ leaves:
       evidence:
         type: published-photo
         source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/quiet_familiarity_1.webp
-        observed_on: '2026-09-21'
+        observed_on: '2026-08-01'
   - position: 3
     card_id: snivy-03
     placement:
@@ -207,7 +207,7 @@ leaves:
       evidence:
         type: published-photo
         source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/quiet_familiarity_1.webp
-        observed_on: '2026-09-21'
+        observed_on: '2026-08-01'
   - position: 4
     card_id: pikachu-05
     placement:
@@ -215,7 +215,7 @@ leaves:
       evidence:
         type: published-photo
         source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/quiet_familiarity_1.webp
-        observed_on: '2026-09-21'
+        observed_on: '2026-08-01'
   - position: 5
     card_id: numel-01
     placement:
@@ -223,7 +223,7 @@ leaves:
       evidence:
         type: published-photo
         source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/quiet_familiarity_1.webp
-        observed_on: '2026-09-21'
+        observed_on: '2026-08-01'
   - position: 6
     card_id: dragonite-03
     placement:
@@ -239,7 +239,7 @@ leaves:
       evidence:
         type: published-photo
         source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/quiet_familiarity_1.webp
-        observed_on: '2026-09-21'
+        observed_on: '2026-08-01'
   - position: 8
     card_id: shaymin-03
     placement:
@@ -247,7 +247,7 @@ leaves:
       evidence:
         type: published-photo
         source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/quiet_familiarity_1.webp
-        observed_on: '2026-09-21'
+        observed_on: '2026-08-01'
   - position: 9
     card_id: squirtle-02
     placement:
@@ -255,7 +255,7 @@ leaves:
       evidence:
         type: published-photo
         source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/quiet_familiarity_1.webp
-        observed_on: '2026-09-21'
+        observed_on: '2026-08-01'
 - id: v2-06
   kind: cards
   physical_leaf: 6
@@ -528,7 +528,7 @@ leaves:
       evidence:
         type: published-photo
         source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/threshold_1.webp
-        observed_on: '2026-09-21'
+        observed_on: '2026-08-01'
   - position: 2
     card_id: pikachu-07
     placement:
@@ -536,7 +536,7 @@ leaves:
       evidence:
         type: published-photo
         source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/threshold_1.webp
-        observed_on: '2026-09-21'
+        observed_on: '2026-08-01'
   - position: 3
     card_id: squirtle-03
     placement:
@@ -544,7 +544,7 @@ leaves:
       evidence:
         type: published-photo
         source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/threshold_1.webp
-        observed_on: '2026-09-21'
+        observed_on: '2026-08-01'
   - position: 4
     card_id: rayquaza-02
     placement:
@@ -552,7 +552,7 @@ leaves:
       evidence:
         type: published-photo
         source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/threshold_1.webp
-        observed_on: '2026-09-21'
+        observed_on: '2026-08-01'
   - position: 5
     card_id: deoxys-01
     placement:
@@ -560,7 +560,7 @@ leaves:
       evidence:
         type: published-photo
         source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/threshold_1.webp
-        observed_on: '2026-09-21'
+        observed_on: '2026-08-01'
   - position: 6
     card_id: jirachi-04
     placement:
@@ -568,7 +568,7 @@ leaves:
       evidence:
         type: published-photo
         source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/threshold_1.webp
-        observed_on: '2026-09-21'
+        observed_on: '2026-08-01'
   - position: 7
     card_id: mudkip-02
     placement:
@@ -584,7 +584,7 @@ leaves:
       evidence:
         type: published-photo
         source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/threshold_1.webp
-        observed_on: '2026-09-21'
+        observed_on: '2026-08-01'
   - position: 9
     card_id: litleo-01
     placement:

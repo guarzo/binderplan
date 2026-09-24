@@ -2386,7 +2386,45 @@ def test_crop_evidence_cli_writes_photo_crop_mapping(tmp_path):
     assert record["classification"] == "photo-crop"
     assert record["provider"] == "evidence-crop"
     assert record["source_path"] == "docs/evidence/2026-09-22/crop-source.png"
+    assert record["crop_box"] == [1, 1, 8, 9]
     assert record["reviewed_on"] == "2026-09-22"
+
+
+def test_image_manifest_allows_legacy_evidence_crop_without_crop_box(tmp_path):
+    root = project_fixture(tmp_path, image_classification="photo-crop")
+    images = load_images(root)
+    images["cards"]["abra-01"].update({
+        "provider": "evidence-crop",
+        "source_path": EVIDENCE_SOURCE,
+    })
+    images["cards"]["abra-01"].pop("source_url", None)
+    errors = digital_binder.validate_image_manifest(root, images)
+
+    assert errors == []
+
+
+def test_image_manifest_rejects_malformed_evidence_crop_box(tmp_path):
+    root = project_fixture(tmp_path, image_classification="photo-crop")
+    images = load_images(root)
+    record = images["cards"]["abra-01"]
+    record.update({
+        "provider": "evidence-crop",
+        "source_path": EVIDENCE_SOURCE,
+    })
+    record.pop("source_url", None)
+
+    bad_boxes = [
+        [0, 0, 5],
+        [0, 0, 0, 5],
+        [0, 0, 5, 0],
+        [0, 0, 5, 5.5],
+        [0, False, 5, 5],
+        [-1, 0, 5, 5],
+    ]
+    for box in bad_boxes:
+        record["crop_box"] = box
+        errors = digital_binder.validate_image_manifest(root, images)
+        assert any("crop_box" in error for error in errors), box
 
 
 def test_image_manifest_write_validates_before_replacing(tmp_path):
@@ -2799,12 +2837,13 @@ def test_seeded_repository_reflects_september_ledger_swaps():
     assert outgoing.isdisjoint({pocket["card_id"] for pocket in occupied.values()})
 
 
-def test_seeded_repository_dates_refreshed_september_page_evidence():
+def test_seeded_repository_uses_source_specific_evidence_dates_and_crop_boxes():
     root = Path(__file__).parents[1]
     volumes = {
         "volume-1": digital_binder.load_yaml(root / "data/binders/volume-1.yaml"),
         "volume-2": digital_binder.load_yaml(root / "data/binders/volume-2.yaml"),
     }
+    images = digital_binder.load_yaml(root / "data/card-images.yaml")
     affected_leaves = {
         ("volume-1", "v1-12"),
         ("volume-1", "v1-15"),
@@ -2812,31 +2851,132 @@ def test_seeded_repository_dates_refreshed_september_page_evidence():
         ("volume-2", "v2-05"),
         ("volume-2", "v2-11"),
     }
-    affected_derivatives = {
-        "docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/legendary_bearing_2.webp",
-        "docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/on_attack_1.webp",
-        "docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/companions_2.webp",
-        "docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/quiet_familiarity_1.webp",
-        "docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/threshold_1.webp",
+    incoming = {
+        ("volume-1", 12, 2): (
+            "blastoise-02", "docs/evidence/2026-09-21/after/IMG_7103.jpeg", [168, 0, 305, 195]
+        ),
+        ("volume-1", 15, 5): (
+            "charizard-03", "docs/evidence/2026-09-21/after/IMG_7102.jpeg", [168, 205, 305, 390]
+        ),
+        ("volume-1", 15, 8): (
+            "lucario-02", "docs/evidence/2026-09-21/after/IMG_7102.jpeg", [168, 400, 305, 625]
+        ),
+        ("volume-2", 4, 7): (
+            "ursaring-01", "docs/evidence/2026-09-21/after/IMG_7106.jpeg", [5, 400, 148, 625]
+        ),
+        ("volume-2", 5, 6): (
+            "dragonite-03", "docs/evidence/2026-09-21/after/IMG_7105.jpeg", [315, 200, 462, 395]
+        ),
+        ("volume-2", 11, 7): (
+            "mudkip-02", "docs/evidence/2026-09-21/after/IMG_7104.jpeg", [5, 400, 148, 625]
+        ),
+        ("volume-2", 11, 9): (
+            "litleo-01", "docs/evidence/2026-09-21/after/IMG_7104.jpeg", [315, 400, 462, 625]
+        ),
     }
+    migration_prefix = "docs/evidence/2026-09-22/digital-binder-migration/published-gallery/"
 
-    dated_sources = []
-    affected_pocket_count = 0
+    pockets_by_key = {}
+    affected_migration_pockets = 0
+    all_migration_pockets = 0
+    after_photo_pockets = 0
     for volume_id, volume in volumes.items():
         for leaf in volume["leaves"]:
-            if (volume_id, leaf["id"]) not in affected_leaves:
+            if leaf["kind"] != "cards":
                 continue
             for pocket in leaf["pockets"]:
+                if "card_id" not in pocket:
+                    continue
+                key = (volume_id, leaf["physical_leaf"], pocket["position"])
+                pockets_by_key[key] = pocket
                 evidence = pocket["placement"]["evidence"]
-                affected_pocket_count += 1
-                assert evidence["observed_on"] == "2026-09-21"
-                dated_sources.append((evidence["source"], evidence["observed_on"]))
+                if evidence["source"].startswith(migration_prefix):
+                    all_migration_pockets += 1
+                    assert evidence["type"] == "published-photo"
+                    assert evidence["observed_on"] == "2026-08-01"
+                    if (volume_id, leaf["id"]) in affected_leaves:
+                        affected_migration_pockets += 1
+                elif evidence["source"].startswith("docs/evidence/2026-09-21/after/"):
+                    after_photo_pockets += 1
+                    assert evidence["type"] == "verified-after-photo"
+                    assert evidence["observed_on"] == "2026-09-21"
 
-    assert affected_pocket_count == 45
-    assert not [
-        source for source, observed_on in dated_sources
-        if source in affected_derivatives and observed_on == "2026-08-01"
-    ]
+    assert all_migration_pockets == 164
+    assert affected_migration_pockets == 38
+    assert after_photo_pockets == 7
+    assert set(incoming) <= set(pockets_by_key)
+    for key, (card_id, source, crop_box) in incoming.items():
+        pocket = pockets_by_key[key]
+        assert pocket["card_id"] == card_id
+        assert pocket["placement"]["status"] == "confirmed"
+        assert pocket["placement"]["evidence"] == {
+            "type": "verified-after-photo",
+            "source": source,
+            "observed_on": "2026-09-21",
+        }
+        record = images["cards"][card_id]
+        assert record["provider"] == "evidence-crop"
+        assert record["source_path"] == source
+        assert record["crop_box"] == crop_box
+
+
+def parse_sha256sums(text):
+    hashes = {}
+    for line in text.splitlines():
+        digest, relative = line.split(maxsplit=1)
+        hashes[relative] = digest
+    return hashes
+
+
+IMMUTABLE_MIGRATION_SHA256SUMS = """8f1937eca91396c3bd76f4347a8d98d37183d0b94323670e9aeb211f9c4d80db  published-gallery/volume-1/at_rest_1.webp
+fa29aead511286a22e6847f0f7ac4101278965455c3b2d8b8244db70783c432c  published-gallery/volume-1/awakened_power_1.webp
+09f24a9c69ada502ce35621382a495496fc36dfd1a53c84ad4ddab61da8e110c  published-gallery/volume-1/awakened_power_2.webp
+5879a76c5fdee0a933e90a289a9e4f8e31397f78c61fee1c75c864dae5a11fb5  published-gallery/volume-1/calm_nature_1.webp
+87f4e9999eadb9affe2d82b342ed12da343aeed26902e83b7adca88232380d26  published-gallery/volume-1/ch1_belonging_safety.webp
+7bb6a322499f4c5b1bf9d78e2ead50575a14c0841f1d41a2c9cacdd2a073388e  published-gallery/volume-1/ch2_motion_life.webp
+973b5ba5f3f25b8520553d85877c52bf10689edddd4d2629f00cf97c446192b0  published-gallery/volume-1/ch3_power_awakening.webp
+0d3fb4e2cf74c0b9bf861250db4ebdd9968e2eccd5c6540e3496360c07fd89f2  published-gallery/volume-1/ch4_threat_conflict.webp
+3f39b6fae093b30021c5d8f7983213a74484813c0332ced8ac216f349f44ce7c  published-gallery/volume-1/ch5_isolation_reflection.webp
+34ebd1827758dc5d52a5dda8418df861fe18e6f717a0203c4ba186410590d3c7  published-gallery/volume-1/contemplation_1.webp
+e21cacb2be02890748be8ab7bc790ca3fd86b93877c9bb4c87690dabf992b897  published-gallery/volume-1/elemental_solitude_1.webp
+8780aa165eeb984c5f060cec02f5e331fa7b1b83f0d7462d8092c6cd34b70dca  published-gallery/volume-1/intimidation_1.webp
+5b4889711d98d818e8ae1aa94a9b6a08c6a48d62d6407b6961d9d69cca4ee447  published-gallery/volume-1/joyful_action_1.webp
+eb7bd2aba987e8820e077badeb6f135bc2176f2d7522da1a46c0fb7e15c32dd3  published-gallery/volume-1/legendary_bearing_1.webp
+7ea94889faf9475c5798199691db3ec8455da42aeba7ed0a41e74d3eef6de26e  published-gallery/volume-1/legendary_bearing_2.webp
+2c0faac7a7accbda5f0c7dddd58628844d80f0eb45a5f731736a788b141f33dc  published-gallery/volume-1/on_attack_1.webp
+36e4d337510ab590b1033d3b1bb7b0254fad6ac52e2a56c45ac8f958ad42c06c  published-gallery/volume-1/vol1_contents.webp
+f0851daf53dc7b92efb01b3d850a3ac6b158f5439e598799aa700126813a681a  published-gallery/volume-1/vol1_fin.webp
+a3737b3a9e8cbbc34d641ac068aaa8f60b144feac8a30b49dbfe874c24c973fc  published-gallery/volume-1/world_people_1.webp
+e49fde074a150c5928bcb5ed898bc385d0caa433d279a7d26d38e3827160d0d8  published-gallery/volume-2/ch1_nearness.webp
+909302a345b0f184b6c7eacfcd9cac5cae1cf55525f271e72a1b735d24ac3046  published-gallery/volume-2/ch2_permanence.webp
+ca9cd86eecf5f5f90e5faf6f2ccc9f17ebf3873c72c18e665bf805f5dc1f1868  published-gallery/volume-2/ch3_passage.webp
+f43eb19b0afdb1486bc500f151b7bdffa092a1f9e67f4a2166027fdac9b53060  published-gallery/volume-2/companions_1.webp
+f6b4607428f2255c70a52b51e202969a19051530510e546304d0ddbae9d639e5  published-gallery/volume-2/companions_2.webp
+24a6b4f992595477e6f7878535a9f08fc57675dbd708c3d995d356c551058a7a  published-gallery/volume-2/enduring_presence_1.webp
+4804f00ae33d69b08788ac81142a9f94afd321d12c1ce37bd7c9e697ff984066  published-gallery/volume-2/enduring_presence_2.webp
+1212af60c8ae97afa1e090c0762c2d9f0a1f373deb9c98689dfac849e430b8b8  published-gallery/volume-2/quiet_familiarity_1.webp
+c32bffb7ed6e1fe1a4045ec4aa87c49822a2780fd61c1d131c19789620ad0b87  published-gallery/volume-2/quiet_familiarity_2.webp
+a5f6d2cefc323885e460fe2371dd99470ea3892fbd948c251575db90caca413b  published-gallery/volume-2/threshold_1.webp
+ae52fcf0abc53c83e969a8b57763144c0e203c7e02af8d7d371df95594a729fe  published-gallery/volume-2/vol2_contents.webp
+"""
+
+REFRESHED_DERIVATIVE_SHA256SUMS = """6a09eabbfd0505df138e16ca058606a7ac9b4bf49ec9931614e42d126a5c968f  volume-1/legendary_bearing_2.webp
+caeb04f62979c8c8e3553ebf8ecf3a32dd2abf12f10126cd76f2bc58f2098b14  volume-1/on_attack_1.webp
+a20eb34db21c3ad4f70a4f1bbac059e6ecfb7c1e88554fabdd36c4d04ad3d0a4  volume-2/companions_2.webp
+c812d60961f586d890f23880366f05cd50d5cbf552fc20a7288779e599997819  volume-2/quiet_familiarity_1.webp
+73804c46cfdce1ebbd5bafa45e77497abd213a425a8721e3bf90dc93fc2175ec  volume-2/threshold_1.webp
+"""
+
+
+def assert_archive_hashes(root, expected_text):
+    expected_hashes = parse_sha256sums(expected_text)
+    sha_path = root / "SHA256SUMS"
+    assert sha_path.read_text(encoding="utf-8") == expected_text
+    assert parse_sha256sums(sha_path.read_text(encoding="utf-8")) == expected_hashes
+    for relative, digest in expected_hashes.items():
+        archived = root / relative
+        assert archived.is_file(), f"missing archived evidence file: {relative}"
+        assert hashlib.sha256(archived.read_bytes()).hexdigest() == digest
 
 
 def test_public_cutover_removes_only_photographed_volume_sources():
@@ -2852,19 +2992,23 @@ def test_public_cutover_removes_only_photographed_volume_sources():
     }
     assert (root / "static/images/slabs").is_dir()
 
-    expected_hashes = {}
-    for line in (evidence_root / "SHA256SUMS").read_text(encoding="utf-8").splitlines():
-        digest, relative = line.split(maxsplit=1)
-        assert relative.startswith("published-gallery/")
-        expected_hashes[relative] = digest
-    assert len(expected_hashes) == 30
-
-    for relative, digest in expected_hashes.items():
-        archived = evidence_root / relative
-        assert archived.is_file(), f"missing archived evidence file: {relative}"
-        assert hashlib.sha256(archived.read_bytes()).hexdigest() == digest
+    assert_archive_hashes(evidence_root, IMMUTABLE_MIGRATION_SHA256SUMS)
     assert len(list((published / "volume-1").glob("*"))) == 19
     assert len(list((published / "volume-2").glob("*"))) == 11
+
+
+def test_refreshed_public_derivatives_are_preserved_separately_from_migration_archive():
+    root = Path(__file__).parents[1]
+    evidence_root = root / "docs/evidence/2026-09-21"
+    derivative_root = evidence_root / "published-gallery"
+    readme = (derivative_root / "README.md").read_text(encoding="utf-8")
+
+    assert "final public WebP derivatives" in readme
+    assert "not camera originals" in readme
+    assert "../after/" in readme
+    assert_archive_hashes(derivative_root, REFRESHED_DERIVATIVE_SHA256SUMS)
+    assert len(list((derivative_root / "volume-1").glob("*"))) == 2
+    assert len(list((derivative_root / "volume-2").glob("*"))) == 3
 
 
 class RenderedElementParser(HTMLParser):

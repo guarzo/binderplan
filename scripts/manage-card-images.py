@@ -274,6 +274,9 @@ def _parse_box(raw: str) -> tuple[int, int, int, int]:
         raise ValueError("box must be LEFT,TOP,RIGHT,BOTTOM") from exc
     if len(parts) != 4:
         raise ValueError("box must be LEFT,TOP,RIGHT,BOTTOM")
+    left, top, right, bottom = parts
+    if not (0 <= left < right and 0 <= top < bottom):
+        raise ValueError("box must satisfy 0 <= LEFT < RIGHT and 0 <= TOP < BOTTOM")
     return parts
 
 
@@ -630,7 +633,8 @@ def crop_evidence_command(args) -> int:
     reviewed_on = _validate_date(args.reviewed_on)
     source, source_rel = _source_under_evidence(root, Path(args.source))
     staged_asset = _stage_path(root, args.card_id)
-    digital_binder.crop_evidence_photo(source, _parse_box(args.box), staged_asset)
+    box = _parse_box(args.box)
+    digital_binder.crop_evidence_photo(source, box, staged_asset)
     record = {
         "classification": "photo-crop",
         "asset_path": _asset_record_path(args.card_id),
@@ -638,6 +642,7 @@ def crop_evidence_command(args) -> int:
         "reviewed_on": reviewed_on,
         "provider": "evidence-crop",
         "source_path": source_rel,
+        "crop_box": list(box),
     }
     _replace_reviewed_image(root, args.card_id, record, staged_asset)
     print(f"cropped evidence image for {args.card_id}")
