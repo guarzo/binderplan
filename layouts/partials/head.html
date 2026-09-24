@@ -434,6 +434,15 @@ hr {
   {{ $siteCSS := . | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $siteCSS.RelPermalink }}" integrity="{{ $siteCSS.Data.Integrity }}">
 {{ end }}
+{{ if eq .Layout "holding-preview" }}
+  <meta name="robots" content="noindex, nofollow">
+  {{ with resources.Get "css/holding-preview.css" }}
+    {{ $holdingCSS := . | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $holdingCSS.RelPermalink }}" integrity="{{ $holdingCSS.Data.Integrity }}">
+  {{ else }}
+    {{ errorf "missing Holding preview stylesheet" }}
+  {{ end }}
+{{ end }}
 {{ if or .Params.binder .IsHome }}
   {{ with resources.Get "css/binder.css" }}
     {{ $binderCSS := . | minify | fingerprint }}

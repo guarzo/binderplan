@@ -112,7 +112,7 @@
     window.addEventListener("hashchange", renderHashDestination);
     window.addEventListener("popstate", renderHashDestination);
     const onMediaChange = () => {
-      if (leaves.length) render(binderRoots.length === 1 || ownsCurrentHash());
+      if (leaves.length) render(!window.location.hash || ownsCurrentHash());
     };
     if (mobile.addEventListener) {
       mobile.addEventListener("change", onMediaChange);
@@ -198,17 +198,24 @@
           printed.textContent = " · " + button.dataset.cardPrintedName;
           name.append(printed);
         }
-        setField("language", button.dataset.cardLanguage);
+        setField("language", button.dataset.cardLanguage || "Not catalogued");
         const setNumber = [button.dataset.cardSet, button.dataset.cardNumber]
           .filter((value) => value && value.trim())
           .join(" · ");
-        setField("set-number", setNumber || "Unresolved");
+        setField("set-number", setNumber || "Not catalogued");
         setField("theme-pocket", button.dataset.leafTheme + " · pocket " + button.dataset.pocketPosition);
         setField("image-classification", classificationText(button.dataset.classification));
         setField("image-source", button.dataset.imageProvenance
           + (button.dataset.imageSource ? " · " + button.dataset.imageSource : ""));
         setField("image-note", button.dataset.imageNote || "None");
         setField("placement", placementText(button));
+        if (button.dataset.sortStatus) {
+          setField("sort-status", button.dataset.sortStatus
+            + (button.dataset.sortSubsection ? " · " + button.dataset.sortSubsection : ""));
+        }
+        if (button.dataset.identityConfidence) {
+          setField("identity-confidence", button.dataset.identityConfidence);
+        }
         image.removeAttribute("src");
         image.alt = [button.dataset.cardName, setNumber]
           .filter((value) => value && value.trim())
@@ -285,7 +292,7 @@
       });
     }
 
-    if (leaves.length) render(binderRoots.length === 1 || !window.location.hash || ownsCurrentHash());
+    if (leaves.length) render(!window.location.hash || ownsCurrentHash());
   }
 
   window.initBinder = initBinder;
