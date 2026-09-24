@@ -54,6 +54,14 @@ def test_recommended_counts_are_precomputed():
     top_level = Counter(recommendation.split(" · ", 1)[0] for *_, recommendation, _reason in rows)
 
     assert top_level == Counter({"Keeper": 63, "Review": 32, "Release": 5})
+    review_groups = Counter(
+        recommendation.split(" · ")[1]
+        for *_prefix, recommendation, _reason in rows
+        if recommendation.startswith("Review · ")
+    )
+    assert review_groups == Counter(
+        {"EDGE Watches": 6, "Existing-theme EDGE": 2, "REDUNDANT": 23, "FUTURE SELF": 1}
+    )
     keeper_subsections = Counter(
         recommendation.split(" · ", 1)[1]
         for *_prefix, recommendation, _reason in rows
