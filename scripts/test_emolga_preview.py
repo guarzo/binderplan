@@ -109,6 +109,55 @@ def test_draft_preview_preserves_page_order_ownership_and_public_photo_gallery(t
     assert not digital_binder.validate_public_output(tmp_path / "public", require_public_volumes=True)
 
 
+def test_catalog_matches_visible_card_numbers_without_certifying_variants():
+    # Cross-checked against the photographed footers and Bulbapedia's Emolga (TCG) list.
+    expected = {
+        "emolga-02": ("Emerging Powers", "32/98"),
+        "emolga-03": ("BW1", "021/053"),
+        "emolga-04": ("McDonald's Collection 2012", "6/12"),
+        "emolga-05": ("Noble Victories", "37/101"),
+        "emolga-06": ("Victini Formation Deck", "006/021"),
+        "emolga-07": ("Next Destinies", "49/99"),
+        "emolga-08": ("BK2", "007/018"),
+        "emolga-09": ("Dragons Exalted", "45/124"),
+        "emolga-10": ("Dragon Blade", "017/050"),
+        "emolga-11": ("Master Deck Build Box EX", "010/046"),
+        "emolga-12": ("Legendary Treasures", "49/113"),
+        "emolga-13": ("EBB", "041/093"),
+        "emolga-14": ("Legendary Treasures", "RC23/RC25"),
+        "emolga-15": ("Shiny Collection", "023/020"),
+        "emolga-16": ("BW-P", "236/BW-P"),
+        "emolga-17": ("Crimson Invasion", "35/111"),
+        "emolga-18": ("Awakened Heroes", "019/050"),
+        "emolga-19": ("GX Starter Decks", "039/131"),
+        "emolga-20": ("Team Up", "46/181"),
+        "emolga-21": ("Dark Order", "009/052"),
+        "emolga-22": ("Evolving Skies", "057/203"),
+        "emolga-23": ("Jet-Black Spirit", "023/070"),
+        "emolga-24": ("Silver Tempest", "054/195"),
+        "emolga-25": ("Lost Abyss", "038/100"),
+        "emolga-26": ("Twilight Masquerade", "069/167"),
+        "emolga-27": ("Transformation Mask", "042/101"),
+        "emolga-28": ("Black Bolt", "029/086"),
+        "emolga-29": ("Black Bolt", "032/086"),
+        "emolga-30": ("Black Bolt", "112/086"),
+        "emolga-31": ("sv11B", "116/086"),
+        "emolga-32": ("XY", "46/146"),
+        "emolga-33": ("Collection Y", "023/060"),
+        "emolga-34": ("XY", "143/146"),
+        "emolga-35": ("Collection Y", "062/060"),
+        "emolga-37": ("Team Up", "46/181"),
+        "emolga-39": ("Emerging Powers", "32/98"),
+        "emolga-40": ("Evolving Skies", "057/203"),
+        "emolga-41": ("Victini Formation Deck", "006/021"),
+    }
+    rows = digital_binder.load_registry(ROOT / "docs/card-registry.md")
+    for card_id, (set_name, number) in expected.items():
+        assert (rows[card_id]["set"], rows[card_id]["number"]) == (set_name, number), card_id
+    assert len(expected) == 38
+    assert rows["emolga-36"]["confidence"] == "uncertain"  # Chinese stat-style object, not catalogued TCG printing.
+
+
 def test_crops_are_traced_to_unchanged_archived_photographs():
     manifest = yaml.safe_load((ROOT / "data/binders/emolga-masterset.yaml").read_text())
     images = yaml.safe_load((ROOT / "data/card-images.yaml").read_text())["cards"]
