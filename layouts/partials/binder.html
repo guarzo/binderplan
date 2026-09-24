@@ -1,0 +1,75 @@
+{{ $binderID := .Params.binder }}
+{{ $volume := index .Site.Data.binders $binderID }}
+{{ if not $volume }}
+  {{ errorf "missing binder data for %q" $binderID }}
+{{ end }}
+{{ $cards := index .Site.Data.generated "card-registry" }}
+{{ if not $cards }}
+  {{ errorf "missing generated card registry data" }}
+{{ end }}
+{{ $images := index .Site.Data "card-images" }}
+{{ if not $images }}
+  {{ errorf "missing card image mapping data" }}
+{{ end }}
+{{ if not (index $images "cards") }}
+  {{ errorf "missing card image records" }}
+{{ end }}
+{{ $leaves := $volume.leaves }}
+{{ $inspectorTitleID := printf "card-inspector-title-%s" $binderID }}
+{{ if not $leaves }}
+  {{ errorf "binder %q has no leaves" $binderID }}
+{{ end }}
+
+{{ $firstLeaf := index $leaves 0 }}
+{{ $nextLeaf := $firstLeaf }}
+{{ if gt (len $leaves) 2 }}
+  {{ $nextLeaf = index $leaves 2 }}
+{{ else if gt (len $leaves) 1 }}
+  {{ $nextLeaf = index $leaves 1 }}
+{{ end }}
+
+<div class="binder" data-binder="{{ $binderID }}" data-publication-status="{{ $volume.publication_status }}">
+  <div class="binder-stage" data-binder-stage>
+    <nav class="binder-controls" data-binder-controls aria-label="Binder pages">
+      <a data-binder-prev href="#leaf-{{ $firstLeaf.id }}" aria-label="Previous page"><span aria-hidden="true">&#8249;</span></a>
+      <p data-binder-position aria-live="polite"></p>
+      <a data-binder-next href="#leaf-{{ $nextLeaf.id }}" aria-label="Next page"><span aria-hidden="true">&#8250;</span></a>
+    </nav>
+
+    <div class="binder-spreads" data-binder-spreads>
+      {{ range $index, $leaf := $leaves }}
+        {{ if eq (mod $index 2) 0 }}
+          {{ $nextIndex := add $index 1 }}
+          <div class="binder-spread" data-binder-spread="{{ add (div $index 2) 1 }}">
+            {{ partial "binder-leaf.html" (dict "leaf" $leaf "cards" $cards "images" $images "eager" (lt $index 2)) }}
+            {{ if lt $nextIndex (len $leaves) }}
+              {{ $nextLeaf := index $leaves $nextIndex }}
+              {{ partial "binder-leaf.html" (dict "leaf" $nextLeaf "cards" $cards "images" $images "eager" (lt $nextIndex 2)) }}
+            {{ end }}
+          </div>
+        {{ end }}
+      {{ end }}
+    </div>
+  </div>
+
+  <dialog class="card-inspector" data-card-inspector aria-labelledby="{{ $inspectorTitleID }}">
+    <div class="card-inspector-controls">
+      <button type="button" data-card-inspector-close>Close</button>
+      <button type="button" data-card-inspector-previous>Previous card</button>
+      <button type="button" data-card-inspector-next>Next card</button>
+    </div>
+    <img data-card-inspector-image alt="" hidden>
+    <div class="card-inspector-copy">
+      <h2 id="{{ $inspectorTitleID }}" data-card-inspector-name></h2>
+      <dl>
+        <div><dt>Language</dt><dd data-card-inspector-field="language"></dd></div>
+        <div><dt>Set / number</dt><dd data-card-inspector-field="set-number"></dd></div>
+        <div><dt>Binder location</dt><dd data-card-inspector-field="theme-pocket"></dd></div>
+        <div><dt>Image fidelity</dt><dd data-card-inspector-field="image-classification"></dd></div>
+        <div><dt>Image source</dt><dd data-card-inspector-field="image-source"></dd></div>
+        <div><dt>Image notes</dt><dd data-card-inspector-field="image-note"></dd></div>
+        <div><dt>Placement</dt><dd data-card-inspector-field="placement"></dd></div>
+      </dl>
+    </div>
+  </dialog>
+</div>

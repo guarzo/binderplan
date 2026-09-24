@@ -1,0 +1,595 @@
+version: 1
+volume_id: volume-2
+publication_status: published
+leaves:
+- id: v2-01
+  kind: transition
+  physical_leaf: 1
+  role: volume-opening
+  heading: Volume II
+  copy: Memory, Presence, and Passage.
+- id: v2-02
+  kind: transition
+  physical_leaf: 2
+  role: chapter
+  heading: Chapter I — Nearness
+- id: v2-03
+  kind: cards
+  physical_leaf: 3
+  chapter: Nearness
+  chapter_order: 1
+  theme: Companions
+  theme_page: 1
+  caption: Chosen Bonds. Partnerships defined by loyalty, recognition, and shared history.
+  pockets:
+  - position: 1
+    card_id: mimikyu-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/companions_1.webp
+        observed_on: '2026-08-01'
+  - position: 2
+    card_id: grotle-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/companions_1.webp
+        observed_on: '2026-08-01'
+  - position: 3
+    card_id: imposter-professor-oaks-revenge-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/companions_1.webp
+        observed_on: '2026-08-01'
+  - position: 4
+    card_id: beldum-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/companions_1.webp
+        observed_on: '2026-08-01'
+  - position: 5
+    card_id: reshiram-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/companions_1.webp
+        observed_on: '2026-08-01'
+  - position: 6
+    card_id: pikachu-03
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/companions_1.webp
+        observed_on: '2026-08-01'
+  - position: 7
+    card_id: gardevoir-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/companions_1.webp
+        observed_on: '2026-08-01'
+  - position: 8
+    card_id: charizard-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/companions_1.webp
+        observed_on: '2026-08-01'
+  - position: 9
+    card_id: gengar-04
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/companions_1.webp
+        observed_on: '2026-08-01'
+- id: v2-04
+  kind: cards
+  physical_leaf: 4
+  chapter: Nearness
+  chapter_order: 1
+  theme: Companions
+  theme_page: 2
+  caption: Care in Practice. Affection expressed through teaching, protection, work, and ordinary attention.
+  pockets:
+  - position: 1
+    card_id: professor-elm-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/companions_2.webp
+        observed_on: '2026-08-01'
+  - position: 2
+    card_id: pikachu-04
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/companions_2.webp
+        observed_on: '2026-08-01'
+  - position: 3
+    card_id: togedemaru-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/companions_2.webp
+        observed_on: '2026-08-01'
+  - position: 4
+    card_id: flareon-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/companions_2.webp
+        observed_on: '2026-08-01'
+  - position: 5
+    card_id: kangaskhan-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/companions_2.webp
+        observed_on: '2026-08-01'
+  - position: 6
+    card_id: professors-research-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/companions_2.webp
+        observed_on: '2026-08-01'
+  - position: 7
+    card_id: ursaring-01
+    placement:
+      status: confirmed
+      evidence:
+        type: verified-after-photo
+        source: docs/evidence/2026-09-21/after/IMG_7106.jpeg
+        observed_on: '2026-09-21'
+  - position: 8
+    card_id: houndour-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/companions_2.webp
+        observed_on: '2026-08-01'
+  - position: 9
+    card_id: joltik-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/companions_2.webp
+        observed_on: '2026-08-01'
+- id: v2-05
+  kind: cards
+  physical_leaf: 5
+  chapter: Nearness
+  chapter_order: 1
+  theme: Quiet Familiarity
+  theme_page: 1
+  caption: Gentle Company. Calm companionship across gardens, paths, and shared outdoor spaces.
+  pockets:
+  - position: 1
+    card_id: charmander-03
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/quiet_familiarity_1.webp
+        observed_on: '2026-08-01'
+  - position: 2
+    card_id: mew-04
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/quiet_familiarity_1.webp
+        observed_on: '2026-08-01'
+  - position: 3
+    card_id: snivy-03
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/quiet_familiarity_1.webp
+        observed_on: '2026-08-01'
+  - position: 4
+    card_id: pikachu-05
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/quiet_familiarity_1.webp
+        observed_on: '2026-08-01'
+  - position: 5
+    card_id: numel-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/quiet_familiarity_1.webp
+        observed_on: '2026-08-01'
+  - position: 6
+    card_id: dragonite-03
+    placement:
+      status: confirmed
+      evidence:
+        type: verified-after-photo
+        source: docs/evidence/2026-09-21/after/IMG_7105.jpeg
+        observed_on: '2026-09-21'
+  - position: 7
+    card_id: piplup-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/quiet_familiarity_1.webp
+        observed_on: '2026-08-01'
+  - position: 8
+    card_id: shaymin-03
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/quiet_familiarity_1.webp
+        observed_on: '2026-08-01'
+  - position: 9
+    card_id: squirtle-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/quiet_familiarity_1.webp
+        observed_on: '2026-08-01'
+- id: v2-06
+  kind: cards
+  physical_leaf: 6
+  chapter: Nearness
+  chapter_order: 1
+  theme: Quiet Familiarity
+  theme_page: 2
+  caption: Domestic Scale. A sleeping Snorlax, a Ditto among scattered toys, a Cinccino behind a shop
+    counter — the page where the theme comes closest to itself.
+  pockets:
+  - position: 1
+    card_id: umbreon-05
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/quiet_familiarity_2.webp
+        observed_on: '2026-08-01'
+  - position: 2
+    card_id: ditto-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/quiet_familiarity_2.webp
+        observed_on: '2026-08-01'
+  - position: 3
+    card_id: snorlax-03
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/quiet_familiarity_2.webp
+        observed_on: '2026-08-01'
+  - position: 4
+    card_id: arcanine-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/quiet_familiarity_2.webp
+        observed_on: '2026-08-01'
+  - position: 5
+    card_id: dragonair-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/quiet_familiarity_2.webp
+        observed_on: '2026-08-01'
+  - position: 6
+    card_id: celebi-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/quiet_familiarity_2.webp
+        observed_on: '2026-08-01'
+  - position: 7
+    card_id: togepi-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/quiet_familiarity_2.webp
+        observed_on: '2026-08-01'
+  - position: 8
+    card_id: mudkip-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/quiet_familiarity_2.webp
+        observed_on: '2026-08-01'
+  - position: 9
+    card_id: cinccino-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/quiet_familiarity_2.webp
+        observed_on: '2026-08-01'
+- id: v2-07
+  kind: transition
+  physical_leaf: 7
+  role: chapter
+  heading: Chapter II — Permanence
+- id: v2-08
+  kind: cards
+  physical_leaf: 8
+  chapter: Permanence
+  chapter_order: 2
+  theme: Enduring Presence
+  theme_page: 1
+  caption: Standing Whole. Finished forms holding their power rather than spending it, each presented
+    complete rather than mid-action.
+  pockets:
+  - position: 1
+    card_id: muk-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/enduring_presence_1.webp
+        observed_on: '2026-08-01'
+  - position: 2
+    card_id: vulpix-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/enduring_presence_1.webp
+        observed_on: '2026-08-01'
+  - position: 3
+    card_id: groudon-03
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/enduring_presence_1.webp
+        observed_on: '2026-08-01'
+  - position: 4
+    card_id: steelix-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/enduring_presence_1.webp
+        observed_on: '2026-08-01'
+  - position: 5
+    card_id: blastoise-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/enduring_presence_1.webp
+        observed_on: '2026-08-01'
+  - position: 6
+    card_id: jirachi-03
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/enduring_presence_1.webp
+        observed_on: '2026-08-01'
+  - position: 7
+    card_id: joltik-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/enduring_presence_1.webp
+        observed_on: '2026-08-01'
+  - position: 8
+    card_id: gengar-05
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/enduring_presence_1.webp
+        observed_on: '2026-08-01'
+  - position: 9
+    card_id: bulbasaur-03
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/enduring_presence_1.webp
+        observed_on: '2026-08-01'
+- id: v2-09
+  kind: cards
+  physical_leaf: 9
+  chapter: Permanence
+  chapter_order: 2
+  theme: Enduring Presence
+  theme_page: 2
+  caption: Contained Power. Force held rather than spent — sealed in a Master Ball, ringed by Hoopa, or
+    simply standing whole.
+  pockets:
+  - position: 1
+    card_id: machop-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/enduring_presence_2.webp
+        observed_on: '2026-08-01'
+  - position: 2
+    card_id: mew-05
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/enduring_presence_2.webp
+        observed_on: '2026-08-01'
+  - position: 3
+    card_id: zygarde-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/enduring_presence_2.webp
+        observed_on: '2026-08-01'
+  - position: 4
+    card_id: reshiram-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/enduring_presence_2.webp
+        observed_on: '2026-08-01'
+  - position: 5
+    card_id: hoopa-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/enduring_presence_2.webp
+        observed_on: '2026-08-01'
+  - position: 6
+    card_id: master-ball-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/enduring_presence_2.webp
+        observed_on: '2026-08-01'
+  - position: 7
+    card_id: sandshrew-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/enduring_presence_2.webp
+        observed_on: '2026-08-01'
+  - position: 8
+    card_id: houndoom-04
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/enduring_presence_2.webp
+        observed_on: '2026-08-01'
+  - position: 9
+    card_id: shaymin-04
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/enduring_presence_2.webp
+        observed_on: '2026-08-01'
+- id: v2-10
+  kind: transition
+  physical_leaf: 10
+  role: chapter
+  heading: Chapter III — Passage
+  copy: Space between moments.
+- id: v2-11
+  kind: cards
+  physical_leaf: 11
+  chapter: Passage
+  chapter_order: 3
+  theme: Threshold
+  caption: At the Edge. Dawn, shoreline, deep space, and the fossil carried out of one age into another.
+  pockets:
+  - position: 1
+    card_id: dawns-stadium-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/threshold_1.webp
+        observed_on: '2026-08-01'
+  - position: 2
+    card_id: pikachu-07
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/threshold_1.webp
+        observed_on: '2026-08-01'
+  - position: 3
+    card_id: squirtle-03
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/threshold_1.webp
+        observed_on: '2026-08-01'
+  - position: 4
+    card_id: rayquaza-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/threshold_1.webp
+        observed_on: '2026-08-01'
+  - position: 5
+    card_id: deoxys-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/threshold_1.webp
+        observed_on: '2026-08-01'
+  - position: 6
+    card_id: jirachi-04
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/threshold_1.webp
+        observed_on: '2026-08-01'
+  - position: 7
+    card_id: mudkip-02
+    placement:
+      status: confirmed
+      evidence:
+        type: verified-after-photo
+        source: docs/evidence/2026-09-21/after/IMG_7104.jpeg
+        observed_on: '2026-09-21'
+  - position: 8
+    card_id: kabuto-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2/threshold_1.webp
+        observed_on: '2026-08-01'
+  - position: 9
+    card_id: litleo-01
+    placement:
+      status: confirmed
+      evidence:
+        type: verified-after-photo
+        source: docs/evidence/2026-09-21/after/IMG_7104.jpeg
+        observed_on: '2026-09-21'

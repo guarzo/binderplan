@@ -1,0 +1,1009 @@
+version: 1
+volume_id: volume-1
+publication_status: published
+leaves:
+- id: v1-01
+  kind: transition
+  physical_leaf: 1
+  role: volume-opening
+  heading: Volume I
+  copy: Lived Experience — how Pokemon exist in the world.
+- id: v1-02
+  kind: transition
+  physical_leaf: 2
+  role: chapter
+  heading: Chapter I — Belonging & Safety
+- id: v1-03
+  kind: cards
+  physical_leaf: 3
+  chapter: Belonging & Safety
+  chapter_order: 1
+  theme: Calm in Nature
+  caption: Ease in the Wild. Pokemon held comfortably by landscape, weather, and open space.
+  pockets:
+  - position: 1
+    card_id: sandshrew-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/calm_nature_1.webp
+        observed_on: '2026-08-01'
+  - position: 2
+    card_id: noibat-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/calm_nature_1.webp
+        observed_on: '2026-08-01'
+  - position: 3
+    card_id: audino-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/calm_nature_1.webp
+        observed_on: '2026-08-01'
+  - position: 4
+    card_id: horsea-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/calm_nature_1.webp
+        observed_on: '2026-08-01'
+  - position: 5
+    card_id: bulbasaur-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/calm_nature_1.webp
+        observed_on: '2026-08-01'
+  - position: 6
+    card_id: plusle-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/calm_nature_1.webp
+        observed_on: '2026-08-01'
+  - position: 7
+    card_id: pikachu-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/calm_nature_1.webp
+        observed_on: '2026-08-01'
+  - position: 8
+    card_id: snivy-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/calm_nature_1.webp
+        observed_on: '2026-08-01'
+  - position: 9
+    card_id: cyndaquil-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/calm_nature_1.webp
+        observed_on: '2026-08-01'
+- id: v1-04
+  kind: cards
+  physical_leaf: 4
+  chapter: Belonging & Safety
+  chapter_order: 1
+  theme: World of People
+  caption: Shared Worlds. Daily human spaces made fuller by Pokemon participation and coexistence.
+  pockets:
+  - position: 1
+    card_id: mew-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/world_people_1.webp
+        observed_on: '2026-08-01'
+  - position: 2
+    card_id: ralts-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/world_people_1.webp
+        observed_on: '2026-08-01'
+  - position: 3
+    card_id: greavard-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/world_people_1.webp
+        observed_on: '2026-08-01'
+  - position: 4
+    card_id: chansey-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/world_people_1.webp
+        observed_on: '2026-08-01'
+  - position: 5
+    card_id: squirtle-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/world_people_1.webp
+        observed_on: '2026-08-01'
+  - position: 6
+    card_id: slowpoke-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/world_people_1.webp
+        observed_on: '2026-08-01'
+  - position: 7
+    card_id: quaxly-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/world_people_1.webp
+        observed_on: '2026-08-01'
+  - position: 8
+    card_id: charmander-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/world_people_1.webp
+        observed_on: '2026-08-01'
+  - position: 9
+    card_id: cubone-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/world_people_1.webp
+        observed_on: '2026-08-01'
+- id: v1-05
+  kind: cards
+  physical_leaf: 5
+  chapter: Belonging & Safety
+  chapter_order: 1
+  theme: At Rest
+  caption: Guard Lowered. Sleep, recovery, and the vulnerability of complete disengagement.
+  pockets:
+  - position: 1
+    card_id: mew-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/at_rest_1.webp
+        observed_on: '2026-08-01'
+  - position: 2
+    card_id: stufful-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/at_rest_1.webp
+        observed_on: '2026-08-01'
+  - position: 3
+    card_id: shaymin-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/at_rest_1.webp
+        observed_on: '2026-08-01'
+  - position: 4
+    card_id: eevee-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/at_rest_1.webp
+        observed_on: '2026-08-01'
+  - position: 5
+    card_id: snorlax-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/at_rest_1.webp
+        observed_on: '2026-08-01'
+  - position: 6
+    card_id: pikachu-06
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/at_rest_1.webp
+        observed_on: '2026-08-01'
+  - position: 7
+    card_id: sprigatito-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/at_rest_1.webp
+        observed_on: '2026-08-01'
+  - position: 8
+    card_id: oshawott-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/at_rest_1.webp
+        observed_on: '2026-08-01'
+  - position: 9
+    card_id: cubone-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/at_rest_1.webp
+        observed_on: '2026-08-01'
+- id: v1-06
+  kind: transition
+  physical_leaf: 6
+  role: chapter
+  heading: Chapter II — Motion & Life
+  copy: Energy with nothing dangerous attached to it.
+- id: v1-07
+  kind: cards
+  physical_leaf: 7
+  chapter: Motion & Life
+  chapter_order: 2
+  theme: Joyful Action
+  caption: Play in Motion. Movement powered by delight rather than urgency, threat, or force.
+  pockets:
+  - position: 1
+    card_id: emolga-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/joyful_action_1.webp
+        observed_on: '2026-08-01'
+  - position: 2
+    card_id: marill-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/joyful_action_1.webp
+        observed_on: '2026-08-01'
+  - position: 3
+    card_id: bulbasaur-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/joyful_action_1.webp
+        observed_on: '2026-08-01'
+  - position: 4
+    card_id: jirachi-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/joyful_action_1.webp
+        observed_on: '2026-08-01'
+  - position: 5
+    card_id: charmander-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/joyful_action_1.webp
+        observed_on: '2026-08-01'
+  - position: 6
+    card_id: spheal-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/joyful_action_1.webp
+        observed_on: '2026-08-01'
+  - position: 7
+    card_id: victini-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/joyful_action_1.webp
+        observed_on: '2026-08-01'
+  - position: 8
+    card_id: pikachu-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/joyful_action_1.webp
+        observed_on: '2026-08-01'
+  - position: 9
+    card_id: latias-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/joyful_action_1.webp
+        observed_on: '2026-08-01'
+- id: v1-08
+  kind: transition
+  physical_leaf: 8
+  role: chapter
+  heading: Chapter III — Power Awakening
+  copy: The moment before release.
+- id: v1-09
+  kind: cards
+  physical_leaf: 9
+  chapter: Power Awakening
+  chapter_order: 3
+  theme: Awakened Power
+  theme_page: 1
+  caption: Gathering. Energy collecting around Pokemon at the moment before release.
+  pockets:
+  - position: 1
+    card_id: walrein-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/awakened_power_1.webp
+        observed_on: '2026-08-01'
+  - position: 2
+    card_id: umbreon-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/awakened_power_1.webp
+        observed_on: '2026-08-01'
+  - position: 3
+    card_id: lugia-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/awakened_power_1.webp
+        observed_on: '2026-08-01'
+  - position: 4
+    card_id: houndoom-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/awakened_power_1.webp
+        observed_on: '2026-08-01'
+  - position: 5
+    card_id: gengar-mimikyu-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/awakened_power_1.webp
+        observed_on: '2026-08-01'
+  - position: 6
+    card_id: darkrai-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/awakened_power_1.webp
+        observed_on: '2026-08-01'
+  - position: 7
+    card_id: gyarados-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/awakened_power_1.webp
+        observed_on: '2026-08-01'
+  - position: 8
+    card_id: jirachi-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/awakened_power_1.webp
+        observed_on: '2026-08-01'
+  - position: 9
+    card_id: groudon-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/awakened_power_1.webp
+        observed_on: '2026-08-01'
+- id: v1-10
+  kind: cards
+  physical_leaf: 10
+  chapter: Power Awakening
+  chapter_order: 3
+  theme: Awakened Power
+  theme_page: 2
+  caption: Becoming. Transformation, escalation, and power crossing toward inevitability.
+  pockets:
+  - position: 1
+    card_id: gengar-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/awakened_power_2.webp
+        observed_on: '2026-08-01'
+  - position: 2
+    card_id: torterra-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/awakened_power_2.webp
+        observed_on: '2026-08-01'
+  - position: 3
+    card_id: rayquaza-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/awakened_power_2.webp
+        observed_on: '2026-08-01'
+  - position: 4
+    card_id: scyther-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/awakened_power_2.webp
+        observed_on: '2026-08-01'
+  - position: 5
+    card_id: palkia-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/awakened_power_2.webp
+        observed_on: '2026-08-01'
+  - position: 6
+    card_id: mewtwo-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/awakened_power_2.webp
+        observed_on: '2026-08-01'
+  - position: 7
+    card_id: salamence-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/awakened_power_2.webp
+        observed_on: '2026-08-01'
+  - position: 8
+    card_id: shaymin-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/awakened_power_2.webp
+        observed_on: '2026-08-01'
+  - position: 9
+    card_id: golem-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/awakened_power_2.webp
+        observed_on: '2026-08-01'
+- id: v1-11
+  kind: cards
+  physical_leaf: 11
+  chapter: Power Awakening
+  chapter_order: 3
+  theme: Legendary Bearing
+  theme_page: 1
+  caption: Mythic Authority. Complete forces presented as rulers, guardians, and objects of awe.
+  pockets:
+  - position: 1
+    card_id: mewtwo-04
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/legendary_bearing_1.webp
+        observed_on: '2026-08-01'
+  - position: 2
+    card_id: groudon-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/legendary_bearing_1.webp
+        observed_on: '2026-08-01'
+  - position: 3
+    card_id: yveltal-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/legendary_bearing_1.webp
+        observed_on: '2026-08-01'
+  - position: 4
+    card_id: latios-03
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/legendary_bearing_1.webp
+        observed_on: '2026-08-01'
+  - position: 5
+    card_id: lugia-03
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/legendary_bearing_1.webp
+        observed_on: '2026-08-01'
+  - position: 6
+    card_id: entei-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/legendary_bearing_1.webp
+        observed_on: '2026-08-01'
+  - position: 7
+    card_id: darkrai-03
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/legendary_bearing_1.webp
+        observed_on: '2026-08-01'
+  - position: 8
+    card_id: dialga-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/legendary_bearing_1.webp
+        observed_on: '2026-08-01'
+  - position: 9
+    card_id: zapdos-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/legendary_bearing_1.webp
+        observed_on: '2026-08-01'
+- id: v1-12
+  kind: cards
+  physical_leaf: 12
+  chapter: Power Awakening
+  chapter_order: 3
+  theme: Legendary Bearing
+  theme_page: 2
+  caption: The Encounter. Power made immediate through commanding posture, scale, and revelation.
+  pockets:
+  - position: 1
+    card_id: umbreon-04
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/legendary_bearing_2.webp
+        observed_on: '2026-08-01'
+  - position: 2
+    card_id: blastoise-02
+    placement:
+      status: confirmed
+      evidence:
+        type: verified-after-photo
+        source: docs/evidence/2026-09-21/after/IMG_7103.jpeg
+        observed_on: '2026-09-21'
+  - position: 3
+    card_id: mew-03
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/legendary_bearing_2.webp
+        observed_on: '2026-08-01'
+  - position: 4
+    card_id: gardevoir-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/legendary_bearing_2.webp
+        observed_on: '2026-08-01'
+  - position: 5
+    card_id: dragonite-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/legendary_bearing_2.webp
+        observed_on: '2026-08-01'
+  - position: 6
+    card_id: golem-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/legendary_bearing_2.webp
+        observed_on: '2026-08-01'
+  - position: 7
+    card_id: zekrom-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/legendary_bearing_2.webp
+        observed_on: '2026-08-01'
+  - position: 8
+    card_id: ninetales-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/legendary_bearing_2.webp
+        observed_on: '2026-08-01'
+  - position: 9
+    card_id: espeon-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/legendary_bearing_2.webp
+        observed_on: '2026-08-01'
+- id: v1-13
+  kind: transition
+  physical_leaf: 13
+  role: chapter
+  heading: Chapter IV — Threat & Conflict
+  copy: Pressure, then action.
+- id: v1-14
+  kind: cards
+  physical_leaf: 14
+  chapter: Threat & Conflict
+  chapter_order: 4
+  theme: Intimidation
+  caption: Before the Strike. Menace communicated through presence, gaze, and restraint alone.
+  pockets:
+  - position: 1
+    card_id: mewtwo-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/intimidation_1.webp
+        observed_on: '2026-08-01'
+  - position: 2
+    card_id: sabrinas-gaze-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/intimidation_1.webp
+        observed_on: '2026-08-01'
+  - position: 3
+    card_id: typhlosion-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/intimidation_1.webp
+        observed_on: '2026-08-01'
+  - position: 4
+    card_id: misdreavus-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/intimidation_1.webp
+        observed_on: '2026-08-01'
+  - position: 5
+    card_id: lucario-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/intimidation_1.webp
+        observed_on: '2026-08-01'
+  - position: 6
+    card_id: houndour-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/intimidation_1.webp
+        observed_on: '2026-08-01'
+  - position: 7
+    card_id: bewear-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/intimidation_1.webp
+        observed_on: '2026-08-01'
+  - position: 8
+    card_id: marowak-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/intimidation_1.webp
+        observed_on: '2026-08-01'
+  - position: 9
+    card_id: gengar-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/intimidation_1.webp
+        observed_on: '2026-08-01'
+- id: v1-15
+  kind: cards
+  physical_leaf: 15
+  chapter: Threat & Conflict
+  chapter_order: 4
+  theme: On the Attack
+  caption: Commitment to Force. The instant hesitation ends and action becomes irreversible.
+  pockets:
+  - position: 1
+    card_id: gengar-03
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/on_attack_1.webp
+        observed_on: '2026-08-01'
+  - position: 2
+    card_id: lugia-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/on_attack_1.webp
+        observed_on: '2026-08-01'
+  - position: 3
+    card_id: spheal-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/on_attack_1.webp
+        observed_on: '2026-08-01'
+  - position: 4
+    card_id: kingdra-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/on_attack_1.webp
+        observed_on: '2026-08-01'
+  - position: 5
+    card_id: charizard-03
+    placement:
+      status: confirmed
+      evidence:
+        type: verified-after-photo
+        source: docs/evidence/2026-09-21/after/IMG_7102.jpeg
+        observed_on: '2026-09-21'
+  - position: 6
+    card_id: yveltal-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/on_attack_1.webp
+        observed_on: '2026-08-01'
+  - position: 7
+    card_id: charizard-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/on_attack_1.webp
+        observed_on: '2026-08-01'
+  - position: 8
+    card_id: lucario-02
+    placement:
+      status: confirmed
+      evidence:
+        type: verified-after-photo
+        source: docs/evidence/2026-09-21/after/IMG_7102.jpeg
+        observed_on: '2026-09-21'
+  - position: 9
+    card_id: houndoom-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/on_attack_1.webp
+        observed_on: '2026-08-01'
+- id: v1-16
+  kind: transition
+  physical_leaf: 16
+  role: chapter
+  heading: Chapter V — Isolation & Reflection
+  copy: Scale, silence, and awareness.
+- id: v1-17
+  kind: cards
+  physical_leaf: 17
+  chapter: Isolation & Reflection
+  chapter_order: 5
+  theme: Elemental Solitude
+  caption: Alone with the Element. Solitary Pokemon defined by water, fire, weather, and environmental
+    scale.
+  pockets:
+  - position: 1
+    card_id: absol-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/elemental_solitude_1.webp
+        observed_on: '2026-08-01'
+  - position: 2
+    card_id: espeon-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/elemental_solitude_1.webp
+        observed_on: '2026-08-01'
+  - position: 3
+    card_id: houndoom-03
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/elemental_solitude_1.webp
+        observed_on: '2026-08-01'
+  - position: 4
+    card_id: kyogre-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/elemental_solitude_1.webp
+        observed_on: '2026-08-01'
+  - position: 5
+    card_id: cyndaquil-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/elemental_solitude_1.webp
+        observed_on: '2026-08-01'
+  - position: 6
+    card_id: ampharos-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/elemental_solitude_1.webp
+        observed_on: '2026-08-01'
+  - position: 7
+    card_id: darkrai-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/elemental_solitude_1.webp
+        observed_on: '2026-08-01'
+  - position: 8
+    card_id: glaceon-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/elemental_solitude_1.webp
+        observed_on: '2026-08-01'
+  - position: 9
+    card_id: latios-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/elemental_solitude_1.webp
+        observed_on: '2026-08-01'
+- id: v1-18
+  kind: cards
+  physical_leaf: 18
+  chapter: Isolation & Reflection
+  chapter_order: 5
+  theme: Contemplation
+  caption: Inner Weather. Awake, motionless attention directed toward something beyond the frame.
+  pockets:
+  - position: 1
+    card_id: dragonite-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/contemplation_1.webp
+        observed_on: '2026-08-01'
+  - position: 2
+    card_id: latios-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/contemplation_1.webp
+        observed_on: '2026-08-01'
+  - position: 3
+    card_id: mewtwo-03
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/contemplation_1.webp
+        observed_on: '2026-08-01'
+  - position: 4
+    card_id: joltik-03
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/contemplation_1.webp
+        observed_on: '2026-08-01'
+  - position: 5
+    card_id: victini-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/contemplation_1.webp
+        observed_on: '2026-08-01'
+  - position: 6
+    card_id: umbreon-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/contemplation_1.webp
+        observed_on: '2026-08-01'
+  - position: 7
+    card_id: spheal-03
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/contemplation_1.webp
+        observed_on: '2026-08-01'
+  - position: 8
+    card_id: snivy-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/contemplation_1.webp
+        observed_on: '2026-08-01'
+  - position: 9
+    card_id: dratini-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/contemplation_1.webp
+        observed_on: '2026-08-01'
+- id: v1-19
+  kind: transition
+  physical_leaf: 19
+  role: volume-closing
+  heading: Fin

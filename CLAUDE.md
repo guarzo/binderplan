@@ -23,7 +23,10 @@ Production builds use `hugo --gc --minify --baseURL <url>` via GitHub Actions.
 **Hugo Static Site Generator** with:
 - `content/` - Markdown content organized into philosophy, gallery, and guides sections
 - `layouts/` - Go HTML templates (`_default/`, `partials/`, `gallery/`)
-- `static/images/` - Gallery images (binder spreads and slabs)
+- `assets/images/cards/` - Reviewed per-card assets for the reconstructed Volume I/II binders
+- `static/images/` - Photo-based side-binder and slab gallery images
+- `data/binders/` - Volume leaf order, pocket placement, and placement evidence
+- `data/card-images.yaml` - Card-image fidelity and provenance metadata
 - `hugo.toml` - Site configuration with menu structure
 
 **Template Hierarchy:**
@@ -46,16 +49,20 @@ Production builds use `hugo --gc --minify --baseURL <url>` via GitHub Actions.
 
 ## Adding Gallery Images
 
-Binder spreads are organized by volume:
-- Volume I: Add to `static/images/binder/volume-1/`, reference in `content/gallery/volume-1/_index.md`
-- Volume II: Add to `static/images/binder/volume-2/`, reference in `content/gallery/volume-2/_index.md`
+For the reconstructed thematic binders:
 
-Slabs: Add to `static/images/slabs/`, reference in `content/gallery/slabs/_index.md`
+- Put reviewed card assets at `assets/images/cards/<card_id>.webp` using `scripts/manage-card-images.py`.
+- Record image fidelity and provenance in `data/card-images.yaml`.
+- Record Volume I/II leaf and pocket placement in `data/binders/volume-1.yaml` or `data/binders/volume-2.yaml`.
+- Keep identity-only metadata in `docs/card-registry.md`; do not add pocket location there.
+- Do not add photographed Volume I/II spreads back to `static/images/binder/` or inline gallery markup in the volume `_index.md` files.
 
-Image markup pattern:
+Photo-based side binders remain under their existing `static/images/binder/<gallery>/` directories and use inline gallery markup. Slabs remain under `static/images/slabs/`.
+
+Photo-gallery markup pattern:
 ```html
 <figure class="gallery-item">
-  <img src="../../images/binder/volume-1/filename.png" alt="Description" loading="lazy">
+  <img src="../../images/binder/waifu/filename.jpg" alt="Description" loading="lazy">
   <figcaption>Caption</figcaption>
 </figure>
 ```

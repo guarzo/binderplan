@@ -2,7 +2,7 @@
 
 Generated from `docs/card-registry.md` by `python3 scripts/check-registry.py docs/card-registry.md --worklist --write`. Every section below is recomputed from the registry except "4. Gaps and known issues", which is hand-written; regeneration reads the previous version of this document and carries that section forward automatically.
 
-**Honest numbers, recomputed from the current file.** 185 rows total. 9 `photo` (4.9%), 29 `uncertain` (15.7%). 173 rows have both `set` and `number` read (93.5%) — 2 have `number` only, 8 have `set` only, 2 have neither field. The confirmation queue (section 3) holds 29 rows across 24 species: 5 clusters (10 rows) and 19 singletons.
+**Honest numbers, recomputed from the current file.** 185 rows total. 31 `photo` (16.8%), 10 `uncertain` (5.4%). 173 rows have both `set` and `number` read (93.5%) — 2 have `number` only, 8 have `set` only, 2 have neither field. The confirmation queue (section 3) holds 10 rows across 10 species: 0 clusters (0 rows) and 10 singletons.
 
 ## 1. Blocked — species unreadable
 
@@ -16,70 +16,24 @@ Take that as a weak result, not a clean bill of health. The check requires all f
 
 ## 3. Confirmation queue — clusters first
 
-29 rows, 24 species. **5 species (10 rows) hold two or more unresolved rows** and lead the list, because that is where an undetected duplicate printing could hide. The remaining 19 species have a single unresolved row each.
+10 rows, 10 species. **0 species (0 rows) hold two or more unresolved rows** and lead the list, because that is where an undetected duplicate printing could hide. The remaining 10 species have a single unresolved row each.
 
 The "Unreadable" column is the row's own `notes` field: what specifically blocked the read.
 
-### Clusters (species with 2+ unresolved rows)
-
-**blastoise** (2)
+### Singletons (10 species, one unresolved row each)
 
 | ID | Card name | Source image | Unreadable |
 |---|---|---|---|
-| blastoise-01 | カメックス (JP) | enduring_presence_2.webp | Lv.52 HP100, vintage Pokedex-number print, set per owner's doubleholo entry |
 | blastoise-02 | 水箭龟VMAX (ZH) | IMG_7080.jpeg | holding photo R1C5; Chinese-language VMAX using SWSH103 artwork; exact Chinese set and number unresolved; entered Legendary Bearing p2 in verified 2026-09-21 swap |
-
-**dragonite** (2)
-
-| ID | Card name | Source image | Unreadable |
-|---|---|---|---|
-| dragonite-01 | カイリュー (JP) | contemplation_1.webp | Lv.45 print, vintage Pokedex-number print, set per owner's doubleholo entry |
-| dragonite-03 | Dragonite (EN) | IMG_7081.jpeg | holding photo R4C2; set/number from holding export plus artwork match, not a legible footer; Special Delivery artwork; entered Quiet Familiarity p1 in verified 2026-09-21 swap |
-
-**gengar** (2)
-
-| ID | Card name | Source image | Unreadable |
-|---|---|---|---|
-| gengar-02 | ゲンガー (JP) | intimidation_1.webp | Lv.38 print, distinct from gengar-01 and gengar-mimikyu-01, Pokédex-number print, set per owner's doubleholo export 2026-09-18 |
-| gengar-05 | わるいゲンガー (JP) | enduring_presence_2.webp | Dark Gengar, HP70, distinct from gengar-01..04, Pokédex-number print, set per owner's doubleholo export 2026-09-18 |
-
-**typhlosion** (2)
-
-| ID | Card name | Source image | Unreadable |
-|---|---|---|---|
-| typhlosion-01 | バクフーン (JP) | intimidation_1.webp | vintage Pokedex-number print, set per owner's doubleholo entry |
-| typhlosion-02 | バクフーン (JP) | legendary_bearing_1.webp | Lv.46 print, distinct from typhlosion-01, vintage Pokedex-number print, era not identifiable |
-
-**umbreon** (2)
-
-| ID | Card name | Source image | Unreadable |
-|---|---|---|---|
-| umbreon-02 | ブラッキー (JP) | contemplation_1.webp | vintage Pokedex-number print, distinct from umbreon-01, set per owner's doubleholo entry |
-| umbreon-03 | Umbreon (EN) | elemental_solitude_1.webp | Confuse Ray/Shadow Shutdown, distinct from umbreon-01/02, set code not textual |
-
-### Singletons (19 species, one unresolved row each)
-
-| ID | Card name | Source image | Unreadable |
-|---|---|---|---|
 | bulbasaur-02 | フシギダネ (JP) | joyful_action_1.webp | set supplied by owner 2026-09-20; character and printed Pokedex number checked in hand, no blanket set/printing verification from checklist ticks |
 | charizard-03 | Charizard VSTAR (EN) | IMG_7088.jpeg | holding photo R2C2; set/number from holding export plus artwork match, not a legible footer; entered On the Attack in verified 2026-09-21 swap |
-| dragonair-01 | エリカのハクリュー (JP) | enduring_presence_1.webp | Erika's Dragonair, Lv.32, vintage Pokedex-number print, set per owner's doubleholo entry |
-| espeon-01 | わるいエーフィ (JP) | elemental_solitude_1.webp | Dark Espeon, vintage-style print, Pokédex-number print, set per owner's doubleholo export 2026-09-18 |
-| kangaskhan-01 | ガルーラ (JP) | IMG_6858.HEIC | vintage Pokedex-number print, set per owner's doubleholo entry |
-| kingdra-01 | キングドラ (JP) | on_attack_1.webp | Lv.47, vintage Pokedex-number print, illustrator Mitsuhiro Arita, set per owner's doubleholo entry |
+| dragonite-03 | Dragonite (EN) | IMG_7081.jpeg | holding photo R4C2; set/number from holding export plus artwork match, not a legible footer; Special Delivery artwork; entered Quiet Familiarity p1 in verified 2026-09-21 swap |
 | kirlia-01 | キルリア (JP) | IMG_7119.HEIC | holding copy; exact set and number unresolved; owner confirmed Beautiful Misfits classification |
 | litleo-01 | Litleo (EN) | IMG_7082.jpeg | holding photo R1C5; set/number from holding export plus artwork match, not a legible footer; doorway illustration rare; entered Threshold in verified 2026-09-21 swap |
 | lucario-02 | Lucario LV.X (EN) | IMG_7081.jpeg | holding photo R4C4; set/number from holding export plus artwork match, not a legible footer; entered On the Attack in verified 2026-09-21 swap |
-| lugia-01 | ルギア (JP) | awakened_power_1.webp | vintage Pokedex-number print, set per owner's doubleholo entry |
-| mew-05 | ミュウ (JP) | threshold_1.webp | Psywave/Recover-Beam attacks, distinct from mew-01..04, Pokédex-number print, set per owner's doubleholo export 2026-09-18 |
-| misdreavus-01 | ムウマ (JP) | intimidation_1.webp | Pokédex-number print, set per owner's doubleholo export 2026-09-18 |
 | mudkip-02 | ミズゴロウ (JP) | IMG_7080.jpeg | holding photo R4C2; set/number from holding export plus artwork match, not a legible footer; sheltered-opening artwork; entered Threshold in verified 2026-09-21 swap |
-| muk-01 | ベトベトン (JP) | enduring_presence_2.webp | Grimer evolution Lv.34, HP70, vintage Pokedex-number print, set per owner's doubleholo entry |
-| ninetales-01 | キュウコン (JP) | legendary_bearing_2.webp | Lv.32, vintage Pokedex-number print, set per owner's doubleholo entry |
-| scyther-01 | ストライク (JP) | awakened_power_2.webp | vintage Pokedex-number print, set per owner's doubleholo entry |
-| steelix-01 | ハガネール (JP) | enduring_presence_2.webp | vintage Pokedex-number print, number corrected from No.205 (misread): Steelix is Pokédex #208, matching owner's doubleholo export 2026-09-18 |
-| ursaring-02 | リングマ (JP) | on_attack_1.webp | Lv.43 print, distinct from ursaring-01, vintage Pokedex-number print, set per owner's doubleholo entry |
-| zapdos-01 | サンダー (JP) | IMG_6847.HEIC | vintage Pokedex-number print, number corrected from No.143 (misread): Zapdos is Pokédex #145, matching owner's doubleholo export 2026-09-18 |
+| typhlosion-02 | バクフーン (JP) | legendary_bearing_1.webp | Lv.46 print, distinct from typhlosion-01, vintage Pokedex-number print, era not identifiable |
+| umbreon-03 | Umbreon (EN) | elemental_solitude_1.webp | Confuse Ray/Shadow Shutdown, distinct from umbreon-01/02, set code not textual |
 
 ## 4. Gaps and known issues
 
@@ -184,86 +138,17 @@ Photographs record what was on a page when the shoot happened, so a card since s
 |---|---|---|
 | bulbasaur-02 | フシギダネ (JP) | set supplied by owner 2026-09-20; character and printed Pokedex number checked in hand, no blanket set/printing verification from checklist ticks |
 
-### V1 · Awakened Power p1
-
-| ID | Card name | Unreadable |
-|---|---|---|
-| lugia-01 | ルギア (JP) | vintage Pokedex-number print, set per owner's doubleholo entry |
-
-### V1 · Awakened Power p2
-
-| ID | Card name | Unreadable |
-|---|---|---|
-| scyther-01 | ストライク (JP) | vintage Pokedex-number print, set per owner's doubleholo entry |
-
 ### V1 · Legendary Bearing p1
 
 | ID | Card name | Unreadable |
 |---|---|---|
 | typhlosion-02 | バクフーン (JP) | Lv.46 print, distinct from typhlosion-01, vintage Pokedex-number print, era not identifiable |
-| zapdos-01 | サンダー (JP) | vintage Pokedex-number print, number corrected from No.143 (misread): Zapdos is Pokédex #145, matching owner's doubleholo export 2026-09-18 |
-
-### V1 · Legendary Bearing p2
-
-| ID | Card name | Unreadable |
-|---|---|---|
-| ninetales-01 | キュウコン (JP) | Lv.32, vintage Pokedex-number print, set per owner's doubleholo entry |
-
-### V1 · Intimidation
-
-| ID | Card name | Unreadable |
-|---|---|---|
-| gengar-02 | ゲンガー (JP) | Lv.38 print, distinct from gengar-01 and gengar-mimikyu-01, Pokédex-number print, set per owner's doubleholo export 2026-09-18 |
-| misdreavus-01 | ムウマ (JP) | Pokédex-number print, set per owner's doubleholo export 2026-09-18 |
-| typhlosion-01 | バクフーン (JP) | vintage Pokedex-number print, set per owner's doubleholo entry |
-
-### V1 · On the Attack
-
-| ID | Card name | Unreadable |
-|---|---|---|
-| kingdra-01 | キングドラ (JP) | Lv.47, vintage Pokedex-number print, illustrator Mitsuhiro Arita, set per owner's doubleholo entry |
-| ursaring-02 | リングマ (JP) | Lv.43 print, distinct from ursaring-01, vintage Pokedex-number print, set per owner's doubleholo entry |
 
 ### V1 · Elemental Solitude
 
 | ID | Card name | Unreadable |
 |---|---|---|
-| espeon-01 | わるいエーフィ (JP) | Dark Espeon, vintage-style print, Pokédex-number print, set per owner's doubleholo export 2026-09-18 |
 | umbreon-03 | Umbreon (EN) | Confuse Ray/Shadow Shutdown, distinct from umbreon-01/02, set code not textual |
-
-### V1 · Contemplation
-
-| ID | Card name | Unreadable |
-|---|---|---|
-| dragonite-01 | カイリュー (JP) | Lv.45 print, vintage Pokedex-number print, set per owner's doubleholo entry |
-| umbreon-02 | ブラッキー (JP) | vintage Pokedex-number print, distinct from umbreon-01, set per owner's doubleholo entry |
-
-### V2 · Companions p2
-
-| ID | Card name | Unreadable |
-|---|---|---|
-| kangaskhan-01 | ガルーラ (JP) | vintage Pokedex-number print, set per owner's doubleholo entry |
-
-### V2 · Quiet Familiarity p2
-
-| ID | Card name | Unreadable |
-|---|---|---|
-| dragonair-01 | エリカのハクリュー (JP) | Erika's Dragonair, Lv.32, vintage Pokedex-number print, set per owner's doubleholo entry |
-
-### V2 · Enduring Presence p1
-
-| ID | Card name | Unreadable |
-|---|---|---|
-| blastoise-01 | カメックス (JP) | Lv.52 HP100, vintage Pokedex-number print, set per owner's doubleholo entry |
-| gengar-05 | わるいゲンガー (JP) | Dark Gengar, HP70, distinct from gengar-01..04, Pokédex-number print, set per owner's doubleholo export 2026-09-18 |
-| muk-01 | ベトベトン (JP) | Grimer evolution Lv.34, HP70, vintage Pokedex-number print, set per owner's doubleholo entry |
-| steelix-01 | ハガネール (JP) | vintage Pokedex-number print, number corrected from No.205 (misread): Steelix is Pokédex #208, matching owner's doubleholo export 2026-09-18 |
-
-### V2 · Enduring Presence p2
-
-| ID | Card name | Unreadable |
-|---|---|---|
-| mew-05 | ミュウ (JP) | Psywave/Recover-Beam attacks, distinct from mew-01..04, Pokédex-number print, set per owner's doubleholo export 2026-09-18 |
 
 ### Unmapped source image · IMG_7080.jpeg
 

@@ -1,0 +1,113 @@
+{{ $leaf := .leaf }}
+{{ if eq $leaf.kind "transition" }}
+  <section id="leaf-{{ $leaf.id }}" class="binder-leaf binder-transition" data-binder-leaf="{{ $leaf.id }}" data-kind="transition">
+    <p class="binder-transition-role">{{ $leaf.role }}</p>
+    <h2>{{ $leaf.heading }}</h2>
+    {{ with $leaf.copy }}<p>{{ . }}</p>{{ end }}
+  </section>
+{{ else if eq $leaf.kind "cards" }}
+  <section id="leaf-{{ $leaf.id }}" class="binder-leaf binder-card-leaf" data-binder-leaf="{{ $leaf.id }}" data-kind="cards">
+    <header class="binder-leaf-label">
+      <p>{{ $leaf.chapter }}</p>
+      <h2>{{ $leaf.theme }}</h2>
+      {{ with $leaf.caption }}<p class="binder-leaf-caption">{{ . }}</p>{{ end }}
+    </header>
+    <div class="binder-pockets">
+      {{ range $leaf.pockets }}
+        {{ if .empty }}
+          <div class="binder-pocket is-empty" data-pocket data-pocket-position="{{ .position }}">
+            <span>Empty pocket</span>
+          </div>
+        {{ else }}
+          {{ $card := index $.cards .card_id }}
+          {{ if not $card }}
+            {{ errorf "missing card registry data for %q on binder leaf %q" .card_id $leaf.id }}
+          {{ end }}
+          {{ $mapping := index (index $.images "cards") .card_id }}
+          {{ if not $mapping }}
+            {{ errorf "missing card image mapping for %q on binder leaf %q" .card_id $leaf.id }}
+          {{ end }}
+          {{ $classification := $mapping.classification }}
+          {{ if not (in (slice "exact" "photo-crop" "proxy" "missing") $classification) }}
+            {{ errorf "unknown image classification %q for card %q" $classification .card_id }}
+          {{ end }}
+          {{ $provenance := $mapping.provider }}
+          {{ if not $provenance }}{{ $provenance = "No source recorded" }}{{ end }}
+          {{ $sourceAttribution := $mapping.source_url }}
+          {{ if not $sourceAttribution }}{{ $sourceAttribution = $mapping.source_path }}{{ end }}
+          {{ $inspectorSrc := "" }}
+          {{ if ne $classification "missing" }}
+            {{ $assetPath := $mapping.asset_path }}
+            {{ if not $assetPath }}
+              {{ errorf "missing asset path for card %q" .card_id }}
+            {{ end }}
+            {{ $resourcePath := strings.TrimPrefix "assets/" $assetPath }}
+            {{ $source := resources.Get $resourcePath }}
+            {{ if not $source }}
+              {{ errorf "missing image resource %q for card %q" $resourcePath .card_id }}
+            {{ end }}
+            {{ $inspectorImage := $source }}
+            {{ if gt $source.Width 900 }}
+              {{ $inspectorImage = $source.Resize "900x webp q84" }}
+            {{ end }}
+            {{ $inspectorSrc = $inspectorImage.RelPermalink }}
+          {{ end }}
+          <button class="binder-pocket" type="button" data-pocket
+                  data-pocket-position="{{ .position }}"
+                  data-card-id="{{ .card_id }}"
+                  data-card-name="{{ $card.card_name }}"
+                  data-card-language="{{ $card.language }}"
+                  data-card-set="{{ $card.set }}"
+                  data-card-number="{{ $card.number }}"
+                  data-leaf-theme="{{ $leaf.theme }}"
+                  data-classification="{{ $classification }}"
+                  data-image-provenance="{{ $provenance }}"
+                  data-image-source="{{ $sourceAttribution }}"
+                  data-image-note="{{ $mapping.note }}"
+                  data-placement-status="{{ .placement.status }}"
+                  data-placement-observed-card-id="{{ .placement.observed_card_id }}"
+                  data-placement-physical-state="{{ if .placement.physical_state_unknown }}unknown{{ end }}"
+                  data-inspector-src="{{ $inspectorSrc }}"
+                  aria-label="Inspect {{ $card.card_name }}, {{ $leaf.theme }} pocket {{ .position }}{{ if eq $classification "proxy" }}, reference image{{ end }}{{ if eq $classification "missing" }}, image unavailable{{ end }}{{ if eq .placement.status "pending" }}, placement pending{{ end }}">
+            {{ if eq $classification "missing" }}
+              <span class="binder-missing">{{ $card.card_name }}<small>Image unavailable</small></span>
+            {{ else }}
+              {{ $assetPath := $mapping.asset_path }}
+              {{ if not $assetPath }}
+                {{ errorf "missing asset path for card %q" .card_id }}
+              {{ end }}
+              {{ $resourcePath := strings.TrimPrefix "assets/" $assetPath }}
+              {{ $source := resources.Get $resourcePath }}
+              {{ if not $source }}
+                {{ errorf "missing image resource %q for card %q" $resourcePath .card_id }}
+              {{ end }}
+              {{ $thumb := $source }}
+              {{ if gt $source.Width 360 }}
+                {{ $thumb = $source.Resize "360x webp q80" }}
+              {{ end }}
+              {{ $large := $source }}
+              {{ if gt $source.Width 900 }}
+                {{ $large = $source.Resize "900x webp q84" }}
+              {{ end }}
+              <img src="{{ $thumb.RelPermalink }}"
+                   srcset="{{ $thumb.RelPermalink }} {{ $thumb.Width }}w{{ if ne $large.Width $thumb.Width }}, {{ $large.RelPermalink }} {{ $large.Width }}w{{ end }}"
+                   sizes="(max-width: 860px) 30vw, 180px"
+                   width="{{ $thumb.Width }}" height="{{ $thumb.Height }}"
+                   alt="{{ $card.card_name }}, {{ $card.set }} {{ $card.number }}"
+                   loading="{{ if $.eager }}eager{{ else }}lazy{{ end }}"
+                   {{ if $.eager }}data-initial-binder-image{{ end }}>
+            {{ end }}
+            {{ if or (eq $classification "proxy") (eq .placement.status "pending") }}
+              <span class="pocket-states">
+                {{ if eq $classification "proxy" }}<span class="pocket-state">Reference image</span>{{ end }}
+                {{ if eq .placement.status "pending" }}<span class="pocket-state">Placement pending</span>{{ end }}
+              </span>
+            {{ end }}
+          </button>
+        {{ end }}
+      {{ end }}
+    </div>
+  </section>
+{{ else }}
+  {{ errorf "unknown binder leaf kind %q" $leaf.kind }}
+{{ end }}
