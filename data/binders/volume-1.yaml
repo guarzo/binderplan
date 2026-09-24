@@ -604,15 +604,16 @@ leaves:
       evidence:
         type: published-photo
         source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/legendary_bearing_2.webp
-        observed_on: '2026-08-01'
+        observed_on: '2026-09-21'
   - position: 2
-    card_id: ns-plan-01
+    card_id: blastoise-02
     placement:
-      status: confirmed
+      status: pending
+      observed_card_id: ns-plan-01
       evidence:
-        type: published-photo
-        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/legendary_bearing_2.webp
-        observed_on: '2026-08-01'
+        type: verified-after-photo
+        source: docs/evidence/2026-09-21/after/IMG_7103.jpeg
+        observed_on: '2026-09-21'
   - position: 3
     card_id: mew-03
     placement:
@@ -620,7 +621,7 @@ leaves:
       evidence:
         type: published-photo
         source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/legendary_bearing_2.webp
-        observed_on: '2026-08-01'
+        observed_on: '2026-09-21'
   - position: 4
     card_id: gardevoir-01
     placement:
@@ -628,7 +629,7 @@ leaves:
       evidence:
         type: published-photo
         source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/legendary_bearing_2.webp
-        observed_on: '2026-08-01'
+        observed_on: '2026-09-21'
   - position: 5
     card_id: dragonite-02
     placement:
@@ -636,7 +637,7 @@ leaves:
       evidence:
         type: published-photo
         source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/legendary_bearing_2.webp
-        observed_on: '2026-08-01'
+        observed_on: '2026-09-21'
   - position: 6
     card_id: golem-02
     placement:
@@ -644,7 +645,7 @@ leaves:
       evidence:
         type: published-photo
         source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/legendary_bearing_2.webp
-        observed_on: '2026-08-01'
+        observed_on: '2026-09-21'
   - position: 7
     card_id: zekrom-01
     placement:
@@ -652,7 +653,7 @@ leaves:
       evidence:
         type: published-photo
         source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/legendary_bearing_2.webp
-        observed_on: '2026-08-01'
+        observed_on: '2026-09-21'
   - position: 8
     card_id: ninetales-01
     placement:
@@ -660,7 +661,7 @@ leaves:
       evidence:
         type: published-photo
         source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/legendary_bearing_2.webp
-        observed_on: '2026-08-01'
+        observed_on: '2026-09-21'
   - position: 9
     card_id: espeon-02
     placement:
@@ -668,7 +669,7 @@ leaves:
       evidence:
         type: published-photo
         source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/legendary_bearing_2.webp
-        observed_on: '2026-08-01'
+        observed_on: '2026-09-21'
 - id: v1-13
   kind: transition
   physical_leaf: 13
@@ -770,7 +771,7 @@ leaves:
       evidence:
         type: published-photo
         source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/on_attack_1.webp
-        observed_on: '2026-08-01'
+        observed_on: '2026-09-21'
   - position: 2
     card_id: lugia-02
     placement:
@@ -778,7 +779,7 @@ leaves:
       evidence:
         type: published-photo
         source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/on_attack_1.webp
-        observed_on: '2026-08-01'
+        observed_on: '2026-09-21'
   - position: 3
     card_id: spheal-02
     placement:
@@ -786,7 +787,7 @@ leaves:
       evidence:
         type: published-photo
         source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/on_attack_1.webp
-        observed_on: '2026-08-01'
+        observed_on: '2026-09-21'
   - position: 4
     card_id: kingdra-01
     placement:
@@ -794,15 +795,16 @@ leaves:
       evidence:
         type: published-photo
         source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/on_attack_1.webp
-        observed_on: '2026-08-01'
+        observed_on: '2026-09-21'
   - position: 5
-    card_id: snorlax-02
+    card_id: charizard-03
     placement:
-      status: confirmed
+      status: pending
+      observed_card_id: snorlax-02
       evidence:
-        type: published-photo
-        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/on_attack_1.webp
-        observed_on: '2026-08-01'
+        type: verified-after-photo
+        source: docs/evidence/2026-09-21/after/IMG_7102.jpeg
+        observed_on: '2026-09-21'
   - position: 6
     card_id: yveltal-01
     placement:
@@ -810,7 +812,7 @@ leaves:
       evidence:
         type: published-photo
         source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/on_attack_1.webp
-        observed_on: '2026-08-01'
+        observed_on: '2026-09-21'
   - position: 7
     card_id: charizard-01
     placement:
@@ -818,15 +820,16 @@ leaves:
       evidence:
         type: published-photo
         source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/on_attack_1.webp
-        observed_on: '2026-08-01'
+        observed_on: '2026-09-21'
   - position: 8
-    card_id: ursaring-02
+    card_id: lucario-02
     placement:
-      status: confirmed
+      status: pending
+      observed_card_id: ursaring-02
       evidence:
-        type: published-photo
-        source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/on_attack_1.webp
-        observed_on: '2026-08-01'
+        type: verified-after-photo
+        source: docs/evidence/2026-09-21/after/IMG_7102.jpeg
+        observed_on: '2026-09-21'
   - position: 9
     card_id: houndoom-02
     placement:
@@ -834,7 +837,7 @@ leaves:
       evidence:
         type: published-photo
         source: docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1/on_attack_1.webp
-        observed_on: '2026-08-01'
+        observed_on: '2026-09-21'
 - id: v1-16
   kind: transition
   physical_leaf: 16
