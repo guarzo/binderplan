@@ -199,7 +199,9 @@
         setField("image-note", button.dataset.imageNote || "None");
         setField("placement", placementText(button));
         image.removeAttribute("src");
-        image.alt = button.dataset.cardName + ", " + button.dataset.cardSet + " " + button.dataset.cardNumber;
+        image.alt = [button.dataset.cardName, setNumber]
+          .filter((value) => value && value.trim())
+          .join(", ");
         image.hidden = !button.dataset.inspectorSrc;
         if (button.dataset.inspectorSrc) image.src = button.dataset.inspectorSrc;
         priorCard.disabled = inspectedIndex <= 0;

@@ -684,8 +684,13 @@ def _approve_remote_candidate(root: Path, args, candidate: dict, record: dict, c
         raise ValueError("selected candidate has no image_url")
     _require_http_url(image_url, f"approve {context} candidate image")
     request = Request(image_url, headers={"User-Agent": digital_binder.TCGDEX_USER_AGENT})
-    with urlopen(request, timeout=20) as response:
-        payload = response.read()
+    try:
+        with urlopen(request, timeout=20) as response:
+            payload = response.read()
+    except (OSError, IncompleteRead) as exc:
+        raise ValueError(
+            f"approve {context} candidate image download failed for {image_url}: {exc}"
+        ) from exc
     staged_asset = _stage_path(root, args.card_id)
     _save_image_payload_as_webp(payload, staged_asset)
     record.update({

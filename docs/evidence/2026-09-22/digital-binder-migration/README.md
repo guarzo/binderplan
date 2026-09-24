@@ -26,7 +26,7 @@ Incidental files such as `desktop.ini` are not present. These archived copies li
 
 **They do not independently prove every printing.** The resolution above is too low to read set symbols and collector numbers reliably on most cards, so these images cannot promote a registry row's `confidence`. Identity remains owned by `docs/card-registry.md` and its own evidence semantics; a pocket citation here is a placement observation, not an identity confirmation.
 
-**They do not prove a card is still in that pocket today.** A photograph records a page at the moment of the shoot. Movement lives in [`docs/ledger.md`](../../../ledger.md), which must be consulted alongside any page cited here.
+**They do not prove a card is still in that pocket today.** A photograph records a page at the moment of the shoot. Current intended pocket placement and confirmed/pending state live in `data/binders/*.yaml`; [`docs/ledger.md`](../../../ledger.md) records the reasoning and history for contested moves, corrections, and releases rather than every routine placement.
 
 **Observation date.** All thirty pages are cited with `observed_on: 2026-08-01`. That is the documented date of the original Volume II shoot and the observation date carried by every `first_seen` value in `docs/card-registry.md` for these pages. The five 2026-08-01 swap-in cards recorded in `docs/ledger.md` carry the same date.
 

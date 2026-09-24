@@ -372,8 +372,8 @@ mkdir -p docs/evidence/2026-09-22/digital-binder-migration/published-gallery
 a=docs/evidence/2026-09-22/digital-binder-migration/published-gallery
 cp -a static/images/binder/volume-1 "$a/volume-1"
 cp -a static/images/binder/volume-2 "$a/volume-2"
-cmp -r static/images/binder/volume-1 "$a/volume-1"
-cmp -r static/images/binder/volume-2 "$a/volume-2"
+diff -qr static/images/binder/volume-1 "$a/volume-1"
+diff -qr static/images/binder/volume-2 "$a/volume-2"
 ```
 
 Write the README to state that these are the current published WebP derivatives, not the unavailable camera originals; name commit `2587c3d` as the source baseline; explain that they establish page composition and pocket order but do not independently prove every printing; and link `docs/evidence/2026-09-20/README.md` for later owner verification limits.
@@ -1141,10 +1141,10 @@ Add the same ownership boundary to `docs/ledger.md`. Do not add location columns
 - [ ] **Step 4: Remove public photographed derivatives only after evidence comparison**
 
 ```bash
-cmp -r static/images/binder/volume-1 \
-  docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1
-cmp -r static/images/binder/volume-2 \
-  docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2
+diff -qr static/images/binder/volume-1 \
+  docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-1 &&
+diff -qr static/images/binder/volume-2 \
+  docs/evidence/2026-09-22/digital-binder-migration/published-gallery/volume-2 &&
 rm -rf static/images/binder/volume-1 static/images/binder/volume-2
 ```
 

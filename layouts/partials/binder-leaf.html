@@ -46,7 +46,10 @@
             {{ if not $source }}
               {{ errorf "missing image resource %q for card %q" $resourcePath .card_id }}
             {{ end }}
-            {{ $inspectorImage := $source.Resize "900x webp q84" }}
+            {{ $inspectorImage := $source }}
+            {{ if gt $source.Width 900 }}
+              {{ $inspectorImage = $source.Resize "900x webp q84" }}
+            {{ end }}
             {{ $inspectorSrc = $inspectorImage.RelPermalink }}
           {{ end }}
           <button class="binder-pocket" type="button" data-pocket
@@ -65,7 +68,7 @@
                   data-placement-observed-card-id="{{ .placement.observed_card_id }}"
                   data-placement-physical-state="{{ if .placement.physical_state_unknown }}unknown{{ end }}"
                   data-inspector-src="{{ $inspectorSrc }}"
-                  aria-label="Inspect {{ $card.card_name }}, {{ $leaf.theme }} pocket {{ .position }}">
+                  aria-label="Inspect {{ $card.card_name }}, {{ $leaf.theme }} pocket {{ .position }}{{ if eq $classification "proxy" }}, reference image{{ end }}{{ if eq $classification "missing" }}, image unavailable{{ end }}{{ if eq .placement.status "pending" }}, placement pending{{ end }}">
             {{ if eq $classification "missing" }}
               <span class="binder-missing">{{ $card.card_name }}<small>Image unavailable</small></span>
             {{ else }}
@@ -78,10 +81,16 @@
               {{ if not $source }}
                 {{ errorf "missing image resource %q for card %q" $resourcePath .card_id }}
               {{ end }}
-              {{ $thumb := $source.Resize "360x webp q80" }}
-              {{ $large := $source.Resize "900x webp q84" }}
+              {{ $thumb := $source }}
+              {{ if gt $source.Width 360 }}
+                {{ $thumb = $source.Resize "360x webp q80" }}
+              {{ end }}
+              {{ $large := $source }}
+              {{ if gt $source.Width 900 }}
+                {{ $large = $source.Resize "900x webp q84" }}
+              {{ end }}
               <img src="{{ $thumb.RelPermalink }}"
-                   srcset="{{ $thumb.RelPermalink }} 360w, {{ $large.RelPermalink }} 900w"
+                   srcset="{{ $thumb.RelPermalink }} {{ $thumb.Width }}w{{ if ne $large.Width $thumb.Width }}, {{ $large.RelPermalink }} {{ $large.Width }}w{{ end }}"
                    sizes="(max-width: 860px) 30vw, 180px"
                    width="{{ $thumb.Width }}" height="{{ $thumb.Height }}"
                    alt="{{ $card.card_name }}, {{ $card.set }} {{ $card.number }}"

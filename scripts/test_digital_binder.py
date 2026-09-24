@@ -252,6 +252,27 @@ class FakeBinaryHTTPResponse:
         return self.payload
 
 
+def test_remote_candidate_image_download_failure_has_controlled_context(tmp_path, monkeypatch):
+    image_url = "https://example.invalid/card.webp"
+
+    def fail_download(request, timeout):
+        raise IncompleteRead(b"partial", 20)
+
+    monkeypatch.setattr(manage_card_images, "urlopen", fail_download)
+    args = argparse.Namespace(card_id="abra-01", classification="exact", note=None)
+
+    try:
+        manage_card_images._approve_remote_candidate(
+            tmp_path, args, {"image_url": image_url}, {}, "tcgdex"
+        )
+    except ValueError as exc:
+        assert "tcgdex" in str(exc)
+        assert image_url in str(exc)
+        assert "download failed" in str(exc)
+    else:
+        raise AssertionError("truncated image download should fail with controlled context")
+
+
 def image_bytes(format_="PNG", size=(12, 10), color=(64, 128, 192)):
     from io import BytesIO
 
@@ -4049,7 +4070,7 @@ def test_rendered_public_volume_routes_use_binder_markup_without_remote_card_ima
         assert '/images/binder/volume-' not in html
         assert not re.search(r'(?:src|srcset)="https://assets\.tcgdex\.net', html)
         assert 'srcset="' in html
-        assert re.search(r'srcset="[^"]+ 360w, [^"]+ 900w"', html)
+        assert re.search(r'srcset="[^"]+ \d+w(?:, [^"]+ \d+w)?"', html)
         assert 'sizes="(max-width: 860px) 30vw, 180px"' in html
         assert 'data-inspector-src="' in html
         assert html.count('data-initial-binder-image') == html.count('loading="eager"')
@@ -4401,6 +4422,8 @@ def test_rendered_synthetic_binder_marks_only_first_spread_images_eager(tmp_path
     assert 'Placement pending' in html
     assert second.count('class="pocket-states"') == 1
     assert second.count('class="pocket-state"') == 2
+    assert "reference image" in second
+    assert "placement pending" in second
 
 
 def write_html_at(root: Path, relative_path: str, body: str) -> None:
