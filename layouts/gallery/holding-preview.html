@@ -48,12 +48,17 @@
                   {{ $image := $card.image }}
                   {{ $source := resources.Get (strings.TrimPrefix "assets/" $image.asset_path) }}
                   {{ if not $source }}{{ errorf "missing Holding image for %q" $card.id }}{{ end }}
+                  {{ $language := $card.language | default "Not catalogued" }}
+                  {{ if eq $language "Not catalogued" }}
+                    {{ if in $card.name "Japanese" }}{{ $language = "JP" }}
+                    {{ else if in $card.name "English" }}{{ $language = "EN" }}{{ end }}
+                  {{ end }}
                   {{ $thumb := $source }}{{ if gt $source.Width 360 }}{{ $thumb = $source.Resize "360x webp q80" }}{{ end }}
                   {{ $large := $source }}{{ if gt $source.Width 900 }}{{ $large = $source.Resize "900x webp q84" }}{{ end }}
                   <button class="binder-pocket" type="button" data-pocket
                           data-pocket-position="{{ .position }}" data-card-id="{{ $card.id }}"
                           data-card-name="{{ $card.name }}" data-card-english-name="{{ $card.name }}"
-                          data-card-language="{{ $card.language | default "Not catalogued" }}"
+                          data-card-language="{{ $language }}"
                           data-card-set="{{ $card.set }}" data-card-number="{{ $card.number }}"
                           data-leaf-theme="Photographed page {{ $page.id }}"
                           data-classification="{{ $image.classification }}"

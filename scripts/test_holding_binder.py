@@ -128,7 +128,7 @@ def test_write_refuses_partial_regeneration_when_late_row_is_invalid(monkeypatch
     data = yaml.safe_load(MANIFEST.read_text())
     data["top_loaders"][-1]["card"]["observation_ref"] = "HB-P01-01"
     writes = []
-    monkeypatch.setattr(Path, "write_bytes", lambda self, content: writes.append(self))
+    monkeypatch.setattr(Path, "replace", lambda self, target: writes.append(target))
     with pytest.raises(ValueError):
         load_validator().validate(data, ROOT, check_assets=False, write_assets=True)
     assert writes == []

@@ -8,6 +8,7 @@ Usage: python scripts/holding_binder.py --check|--write
 import argparse
 import hashlib
 import re
+import tempfile
 from collections import Counter
 from pathlib import Path
 
@@ -136,7 +137,15 @@ def validate(data, root=ROOT, *, check_assets=True, write_assets=False):
     require(len([ref for ref in seen_refs if ref.startswith("observed-")]) == 5, "expected five new observed keys")
     for path, encoded in generated:
         path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_bytes(encoded)
+        temporary_path = None
+        try:
+            with tempfile.NamedTemporaryFile(dir=path.parent, prefix=".holding-", suffix=".webp", delete=False) as temporary:
+                temporary_path = Path(temporary.name)
+                temporary.write(encoded)
+            temporary_path.replace(path)
+        finally:
+            if temporary_path is not None:
+                temporary_path.unlink(missing_ok=True)
     return len(rows)
 
 

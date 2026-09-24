@@ -94,6 +94,7 @@ def test_page_navigation_and_images_are_local(builds):
     assert 'data-card-inspector-field="identity-confidence"' in html
     assert 'data-card-name="Alolan Meowth — English 139/128"' in html
     assert re.search(r'data-card-name="Alolan Meowth — English 139/128"[^>]*data-card-language="EN"[^>]*data-card-number="139/128"', html)
+    assert re.search(r'data-card-name="Dhelmise — Japanese"[^>]*data-card-language="JP"', html)
 
 
 def test_production_does_not_publish_or_link_draft(builds):

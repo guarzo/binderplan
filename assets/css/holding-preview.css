@@ -22,8 +22,10 @@
 .holding-page-links a { display: inline-flex; align-items: center; justify-content: center; min-width: 3.3rem; min-height: 2.75rem; border: 1px solid var(--border); border-radius: 0.3rem; color: var(--text-primary); font-size: 0.82rem; }
 .holding-page-links a:hover, .holding-page-links a:focus-visible { border-color: var(--foil-cyan); color: var(--foil-cyan); }
 
+.holding-preview .binder:not([data-binder-ready="true"]) .binder-controls { display: none; }
 .holding-preview .binder-leaf-label h2 { font-size: clamp(1.25rem, 2vw, 1.7rem); }
 .holding-preview .binder-leaf { align-self: start; }
+.holding-preview [data-card-inspector] dt { color: var(--text-muted); }
 .holding-page-key { margin-top: 1rem; color: var(--text-muted); font-size: 0.82rem; }
 .holding-page-key summary { cursor: pointer; width: fit-content; min-height: 2rem; color: var(--text-primary); }
 .holding-page-key summary:focus-visible, .holding-trade a:focus-visible { outline: 3px solid var(--foil-cyan); outline-offset: 4px; }
