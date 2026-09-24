@@ -92,6 +92,15 @@ def test_checklist_is_walked_by_physical_page_without_visible_locator_instructio
     assert "page locator" not in text
     assert "HB-PNN" not in text
 
+    cardrow_body = text.split(r"\newcommand{\cardrow}", 1)[1].split(
+        r"\newcommand{\tradeauth}", 1
+    )[0]
+    releaseauth_body = text.split(r"\newcommand{\releaseauth}", 1)[1].split(
+        r"\begin{document}", 1
+    )[0]
+    assert "#1" not in cardrow_body
+    assert "#1" not in releaseauth_body
+
     current_page = None
     observed_counts = Counter()
     for match in re.finditer(
@@ -149,6 +158,7 @@ def test_checklist_has_capacity_adjustment_and_closeout_sections():
     text = CHECKLIST.read_text(encoding="utf-8")
 
     assert "Seven nine-pocket Review pages" in text
+    assert "prepare one additional nine-pocket page for that affected group" in text
     assert "Sixteen four-pocket Keeper pages" in text
     assert "prepare one additional four-pocket page for that affected section" in text
     assert "Override adjustment log" in text
