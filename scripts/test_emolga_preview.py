@@ -1,11 +1,12 @@
 """The Emolga draft must never turn pictured placeholders into owned cards."""
 
+import hashlib
 import importlib.util
 import re
 import subprocess
 from pathlib import Path
 
-import pytest
+from PIL import Image
 import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -57,6 +58,17 @@ def test_physical_placeholder_requires_wanted_identity_and_evidence_not_card_id(
     errors = []
     digital_binder._validate_volume_manifest(tmp_path, "emolga-masterset", manifest, {}, errors)
     assert any("placeholder" in error for error in errors)
+    manifest["leaves"][0]["pockets"][0] = {**pocket, "evidence": {**pocket["evidence"], "observed_on": "20260924"}}
+    errors = []
+    digital_binder._validate_volume_manifest(tmp_path, "emolga-masterset", manifest, {}, errors)
+    assert any("observed_on" in error for error in errors)
+
+
+def test_previous_revision_includes_existing_optional_binder():
+    errors = []
+    previous = digital_binder._load_previous_manifests(ROOT, "HEAD", errors)
+    assert errors == []
+    assert "emolga-masterset" in previous
 
 
 def test_new_binder_does_not_require_prior_pending_placements():
@@ -113,7 +125,11 @@ def test_crops_are_traced_to_unchanged_archived_photographs():
             assert record["provider"] == "evidence-crop"
             assert (ROOT / record["source_path"]).is_file()
             assert (ROOT / record["asset_path"]).is_file()
-    import hashlib
+            left, top, right, bottom = record["crop_box"]
+            with Image.open(ROOT / record["source_path"]) as source, Image.open(ROOT / record["asset_path"]) as crop:
+                assert 0 <= left < right <= source.width
+                assert 0 <= top < bottom <= source.height
+                assert crop.size == (right - left, bottom - top)
     for source in (ROOT / "static/images/binder/emolga-masterset").iterdir():
         if source.is_file():
             assert hashlib.sha256(source.read_bytes()).digest() == hashlib.sha256((archive / source.name).read_bytes()).digest()

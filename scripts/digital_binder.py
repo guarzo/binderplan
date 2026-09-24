@@ -108,7 +108,7 @@ def _is_int(value: object) -> bool:
 
 
 def _valid_date(value: object) -> bool:
-    if not isinstance(value, str):
+    if not isinstance(value, str) or not DATE_RE.fullmatch(value):
         return False
     try:
         date.fromisoformat(value)
@@ -580,6 +580,9 @@ def _load_previous_manifests(root: Path, previous_ref: str, errors: list[str]) -
         volume_id: f"data/binders/{volume_id}.yaml"
         for volume_id in VOLUME_IDS
     }
+    optional = "emolga-masterset"
+    if (root / "data" / "binders" / f"{optional}.yaml").is_file():
+        manifest_paths[optional] = f"data/binders/{optional}.yaml"
     present_paths = {}
     for volume_id, path in manifest_paths.items():
         try:
@@ -600,7 +603,7 @@ def _load_previous_manifests(root: Path, previous_ref: str, errors: list[str]) -
 
     if not any(present_paths.values()):
         return None
-    missing = [volume_id for volume_id, present in present_paths.items() if not present]
+    missing = [volume_id for volume_id in VOLUME_IDS if not present_paths[volume_id]]
     if missing:
         errors.append(
             f"previous_ref {previous_ref!r} has incomplete binder manifests; missing: "
@@ -610,6 +613,8 @@ def _load_previous_manifests(root: Path, previous_ref: str, errors: list[str]) -
 
     manifests = {}
     for volume_id, path in manifest_paths.items():
+        if not present_paths[volume_id]:
+            continue
         try:
             result = subprocess.run(
                 ["git", "show", f"{commit}:{path}"],
