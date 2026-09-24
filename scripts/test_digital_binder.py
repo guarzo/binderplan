@@ -4380,6 +4380,8 @@ def test_rendered_synthetic_binder_marks_only_first_spread_images_eager(tmp_path
     assert 'Reference image' in html
     assert 'Image unavailable' in html
     assert 'Placement pending' in html
+    assert second.count('class="pocket-states"') == 1
+    assert second.count('class="pocket-state"') == 2
 
 
 def write_html_at(root: Path, relative_path: str, body: str) -> None:

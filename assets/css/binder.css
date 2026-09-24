@@ -258,9 +258,15 @@ button.binder-pocket:focus-visible {
   text-transform: uppercase;
 }
 
-.pocket-state {
+.pocket-states {
   position: absolute;
   inset: auto 0.35rem 0.35rem;
+  display: grid;
+  gap: 0.25rem;
+  justify-items: stretch;
+}
+
+.pocket-state {
   padding: 0.2rem 0.35rem;
   border: 1px solid var(--border-faint);
   border-radius: 999px;
