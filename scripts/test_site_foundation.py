@@ -63,21 +63,51 @@ def test_gallery_directory_shares_published_routes_and_marks_future_binders(site
     assert "Each spread is photographed" not in html
 
 
-def test_home_refuses_to_show_a_card_from_an_unpublished_volume(tmp_path):
+def render_with_volume(tmp_path, volume_id, change):
     data_dir = tmp_path / "data"
     shutil.copytree(ROOT / "data", data_dir)
-    manifest_path = data_dir / "binders" / "volume-1.yaml"
+    manifest_path = data_dir / "binders" / f"{volume_id}.yaml"
     manifest = yaml.safe_load(manifest_path.read_text())
-    manifest["publication_status"] = "draft"
+    change(manifest)
     manifest_path.write_text(yaml.safe_dump(manifest, allow_unicode=True))
     override = tmp_path / "override.toml"
     override.write_text(f'dataDir = "{data_dir}"\nresourceDir = "{tmp_path / "resources"}"\n')
+    output = tmp_path / "public"
     result = subprocess.run(
-        ["hugo", "--config", f"hugo.toml,{override}", "--destination", str(tmp_path / "public")],
+        ["hugo", "--config", f"hugo.toml,{override}", "--destination", str(output)],
         cwd=ROOT, text=True, capture_output=True,
     )
+    return result, output
+
+
+def test_home_refuses_to_show_a_card_from_an_unpublished_volume(tmp_path):
+    result, _ = render_with_volume(tmp_path, "volume-1", lambda manifest: manifest.update(publication_status="draft"))
     assert result.returncode != 0
     assert "published volume leaf" in result.stderr
+
+
+def test_home_frame_discloses_pending_placement_without_inspector(tmp_path):
+    def mark_pending(manifest):
+        for leaf in manifest["leaves"]:
+            for pocket in leaf.get("pockets", []):
+                if pocket.get("card_id") == "sandshrew-01":
+                    pocket["placement"] = {"status": "pending", "physical_state_unknown": True}
+
+    result, output = render_with_volume(tmp_path, "volume-1", mark_pending)
+    assert result.returncode == 0, result.stderr
+    html = (output / "index.html").read_text()
+    assert '<span class="exhibit-frame-state">Placement pending</span>' in html
+    assert 'Inspect Sandshrew, placement pending' in html
+
+
+def test_draft_volume_is_not_a_link_on_home_or_directory(tmp_path):
+    result, output = render_with_volume(tmp_path, "volume-2", lambda manifest: manifest.update(publication_status="draft"))
+    assert result.returncode == 0, result.stderr
+    for path in (output / "index.html", output / "gallery" / "index.html"):
+        links = Links()
+        links.feed(path.read_text())
+        assert not any("/gallery/volume-2/" in href for href in links.hrefs if href)
+        assert "Volume II" in path.read_text() and "In progress" in path.read_text()
 
 
 def test_photo_gallery_viewer_is_a_native_modal(site):

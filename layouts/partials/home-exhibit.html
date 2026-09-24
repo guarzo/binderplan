@@ -39,7 +39,9 @@
         data-placement-observed-card-id="{{ ($location.Get "placement").observed_card_id }}"
         data-placement-physical-state="{{ if ($location.Get "placement").physical_state_unknown }}unknown{{ end }}"
         data-inspector-src="{{ $large.RelPermalink }}"
-        aria-label="Inspect {{ $display }}{{ if eq $image.classification "proxy" }}, reference image{{ end }}">
+        aria-label="Inspect {{ $display }}{{ if eq $image.classification "proxy" }}, reference image{{ end }}{{ if eq ($location.Get "placement").status "pending" }}, placement pending{{ end }}">
   <span class="exhibit-frame-mat"><img src="{{ $thumb.RelPermalink }}" width="{{ $thumb.Width }}" height="{{ $thumb.Height }}" alt="" loading="{{ if $.eager }}eager{{ else }}lazy{{ end }}"></span>
   <span class="exhibit-frame-label">{{ $card.species }}{{ if ne $card.language "EN" }} <span lang="{{ if eq $card.language "JP" }}ja{{ else if eq $card.language "ZH" }}zh-Hans{{ end }}">{{ $printed }}</span>{{ end }}</span>
+  {{ if eq $image.classification "proxy" }}<span class="exhibit-frame-state">Reference image</span>{{ end }}
+  {{ if eq ($location.Get "placement").status "pending" }}<span class="exhibit-frame-state">Placement pending</span>{{ end }}
 </button>
