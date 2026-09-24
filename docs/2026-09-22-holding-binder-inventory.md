@@ -2,7 +2,7 @@
 
 **Evidence date:** 2026-09-22
 
-**Status:** Authoritative current holding inventory, confirmed by the owner from the complete photograph sequence.
+**Status:** Authoritative **2026-09-22 pre-sort snapshot**, confirmed by the owner from the complete photograph sequence. For the later 105-card state, see the [2026-09-24 current inventory](2026-09-24-holding-sort-current-inventory.md).
 
 **Physical arrangement:** Interim staging in one nine-pocket binder. It does not supersede the approved Review/Keeper/Trade architecture as a final organization.
 
@@ -10,7 +10,7 @@
 
 ## Scope and identifiers
 
-The latest photographed state contains **100 cards across 13 pages**. `HB-PNN-NN` values identify observations in this inventory only: page number plus occupied-card reading order. They are not permanent registry IDs and do not claim an exact pocket coordinate where empty pockets interrupt a row.
+This 2026-09-22 photographed state contains **100 cards across 13 pages**. `HB-PNN-NN` values identify observations in this inventory only: page number plus occupied-card reading order. They are not permanent registry IDs and do not claim an exact pocket coordinate where empty pockets interrupt a row.
 
 The `Prior reference` column links a photographed card to the superseded 97-entry sorting proposal where defensible. A dash means the photographed card had no defensible row in that proposal. Cluster references remain unresolved rather than forcing one-to-one identities.
 
@@ -144,7 +144,7 @@ Kirlia remains classified as a Beautiful Misfit. The owner confirmed that its ph
 | HB-P10-07 | Yveltal — Celebrations | HP-015 |
 | HB-P10-08 | Emolga EX — Japanese | — |
 
-No photographed card is currently confirmed available for Trade.
+As of this 2026-09-22 snapshot, no photographed card was confirmed available for Trade.
 
 ## Page 11 — 9 cards
 
@@ -190,18 +190,18 @@ No photographed card is currently confirmed available for Trade.
 ## Confirmed decisions accompanying this inventory
 
 - The photographed binder is interim staging, not the final Review/Keeper/Trade arrangement.
-- These 100 photographed cards replace the earlier 97-entry proposal as the authoritative current holding inventory.
+- These 100 cards superseded the earlier 97-entry proposal as the authoritative **2026-09-22 pre-sort snapshot**; the [2026-09-24 inventory](2026-09-24-holding-sort-current-inventory.md) now records 105.
 - Kirlia remains `Keeper · Beautiful Misfits`; its observed page position is incidental.
 - Mewtwo EX and Torterra Lv.X are Keepers with subsection undecided.
-- No card is currently confirmed available for Trade.
-- Yveltal — Steam Siege 65 was physically removed and is not among these 100 current cards.
+- As of 2026-09-22, no card was confirmed available for Trade; this was superseded by the [completed sort](2026-09-24-holding-sort-current-inventory.md).
+- Yveltal — Steam Siege 65 was physically removed and is not among these 100 photographed cards.
 
 ## Superseded proposal rows
 
-Seventeen rows from the earlier 97-entry proposal lack a visible counterpart in the current authoritative inventory. They are retained in the superseded proposal for history and must not be counted as current holdings:
+Seventeen rows from the earlier 97-entry proposal lacked a visible counterpart in **this 2026-09-22 snapshot**. They are retained below for history, not counted among these 100 cards. Five cards matching or resembling some of those rows were later photographed and reconciled in the [2026-09-24 inventory](2026-09-24-holding-sort-current-inventory.md):
 
 - HP-008, HP-014, HP-019, HP-021, HP-025, HP-038, HP-045, HP-056, HP-064, HP-070, HP-072, HP-086, HP-087, HP-088, and HP-089
 - one of HP-026 / HP-090
 - one of HP-035 / HP-065
 
-Only HP-072 is confirmed as a physical removal. The other absent proposal rows reflect prior reconciliation or identity failures unless future evidence establishes otherwise.
+At this snapshot, only HP-072 was confirmed as a physical removal. Absence from this photograph sequence did not prove removal; later evidence established five additional owned cards. See the dated reconciliation for printing and identity limits.

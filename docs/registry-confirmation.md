@@ -83,34 +83,40 @@ downstream of it. Those captions have since been corrected, and the residue is c
 `first_seen`, where it is intentional and `PAGE_ORDER` accounts for it.
 
 The registry currently holds 185 rows: the 171 cards in the thematic binders plus 14 identities
-tracked outside them. Ten are confirmed in the holding inventory, three have no observed current
-destination, and one has a confirmed release. The rows remain by design: the registry records
+tracked outside them. The [2026-09-24 sort](2026-09-24-holding-sort-current-inventory.md)
+photographs confirm 13 of those identities still owned outside the thematic binders;
+one has a previously confirmed removal. The rows remain by design: the registry records
 identity, not current location.
 
 Radiant Collection Ursaring (`ursaring-01`) is no longer a departed card. The owner identified the
 RC16/RC25 card entering Companions on 2026-09-21 as that same physical identity, so it keeps its ID
 and re-enters without a new row.
 
-**Fourteen registered identities are currently outside the thematic binders.** Their latest states
-come from the ledger. Absence from the thematic binders does not establish release; only
-Yveltal (`yveltal-03`) has an explicit release record.
+**Fourteen registered identities are outside the thematic binders.** The latest states below
+combine the append-only ledger with the dated [post-sort evidence](evidence/2026-09-24/README.md).
+Absence from the thematic binders does not establish release; only Steam Siege
+Yveltal (`yveltal-03`) has an executed removal record. The five newly available Trade cards
+are distinct physical copies, not aliases of existing registry rows.
 
 | ID | Card | Former page | Replaced by | Latest recorded state |
 |---|---|---|---|---|
-| typhlosion-02 | バクフーン (JP) | Legendary Bearing p1 | Zapdos (`zapdos-01`) | outside binder; no active follow-up |
-| umbreon-03 | Umbreon (EN) | Elemental Solitude | Ampharos (`ampharos-01`) | outside binder; no active follow-up |
-| electrode-01 | マルマイン (JP) | Companions p2 | Kangaskhan (`kangaskhan-01`) | outside binder; no active follow-up |
-| hoopa-02 | Hoopa EX (EN) | Threshold | Litleo (`litleo-01`) | EDGE |
-| kasumis-tears-01 | カスミのなみだ (JP) | Threshold | Mudkip (`mudkip-02`) | HERITAGE |
-| dratini-02 | Dratini (EN) | Quiet Familiarity p1 | Dragonite (`dragonite-03`) | HERITAGE |
-| rockets-trap-01 | ロケット団のワナ (JP) | Companions p2 | Ursaring (`ursaring-01`) | HERITAGE |
-| snorlax-02 | カビゴンVMAX (JP) | On the Attack | Charizard (`charizard-03`) | EDGE |
-| ursaring-02 | リングマ (JP) | On the Attack | Lucario (`lucario-02`) | EDGE |
-| ns-plan-01 | N's Plan (EN) | Legendary Bearing p2 | Blastoise (`blastoise-02`) | HERITAGE |
+| typhlosion-02 | バクフーン (JP) | Legendary Bearing p1 | Zapdos (`zapdos-01`) | Keeper · Heritage; IMG_7137 |
+| umbreon-03 | Umbreon (EN) | Elemental Solitude | Ampharos (`ampharos-01`) | Review · REDUNDANT; IMG_7135 |
+| electrode-01 | マルマイン (JP) | Companions p2 | Kangaskhan (`kangaskhan-01`) | Review · REDUNDANT; IMG_7135 |
+| hoopa-02 | Hoopa EX (EN) | Threshold | Litleo (`litleo-01`) | Review · REDUNDANT; IMG_7137 |
+| kasumis-tears-01 | カスミのなみだ (JP) | Threshold | Mudkip (`mudkip-02`) | Keeper · Heritage; IMG_7141 |
+| dratini-02 | Dratini (EN) | Quiet Familiarity p1 | Dragonite (`dragonite-03`) | Keeper · Heritage; IMG_7141 |
+| rockets-trap-01 | ロケット団のワナ (JP) | Companions p2 | Ursaring (`ursaring-01`) | Keeper · Heritage; IMG_7141 |
+| snorlax-02 | カビゴンVMAX (JP) | On the Attack | Charizard (`charizard-03`) | Review · REDUNDANT; IMG_7137 |
+| ursaring-02 | リングマ (JP) | On the Attack | Lucario (`lucario-02`) | Review · REDUNDANT; IMG_7137 |
+| ns-plan-01 | N's Plan (EN) | Legendary Bearing p2 | Blastoise (`blastoise-02`) | Keeper · Heritage; IMG_7141 |
 | kirlia-01 | キルリア (JP) | — | — | Beautiful Misfits |
-| mewtwo-05 | Mewtwo EX (EN) | — | — | Keeper · subsection undecided |
-| torterra-02 | ドダイトス LV.X (JP) | — | — | Keeper · subsection undecided |
+| mewtwo-05 | Mewtwo EX (EN) | — | — | Keeper · Beautiful Misfits; IMG_7138 |
+| torterra-02 | ドダイトス LV.X (JP) | — | — | Keeper · Heritage; IMG_7140 |
 | yveltal-03 | Yveltal (EN) | — | — | RELEASE — physically removed 2026-09-22 |
+
+Kirlia's Beautiful Misfits classification is physically corroborated by `IMG_7138.HEIC`;
+its exact set and number remain unresolved.
 
 **One binder page had never been photographed at all**, and was entirely absent from pass 1 —
 9 cards, seeded from the reshoot as `dawns-stadium-01` through the rest of the `IMG_6865.HEIC`

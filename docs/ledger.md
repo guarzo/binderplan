@@ -202,3 +202,33 @@ The photographed Kirlia sits among Heritage cards because it was found later. Th
 The English Steam Siege 65/114 holding copy was physically removed. This is the only Release action confirmed from the sort. It is distinct from Yveltal EX (`yveltal-01`) and Chinese Yveltal (`yveltal-02`) in the thematic binders.
 
 The earlier proposed releases of Yveltal Celebrations, Pokémon Communication, and Piplup from Manaphy & Lucario were **not** executed; all three remain visible in the authoritative holding photographs.
+
+---
+
+## 2026-09-24 — Holding sort executed; five Release proposals redirected to active Trade
+
+Governing evidence: the [six scanned checklist pages and fifteen photographs](evidence/2026-09-24/README.md), the [row-level reconciliation](evidence/2026-09-24/holding-sort-reconciliation.md), and explicit follow-up owner confirmation. The scan's final authorization/count page is absent; the photographs and later owner decisions establish physical placement and classification, not reconstructed checkmarks or a signed scan. The current owned inventory is [105 cards](2026-09-24-holding-sort-current-inventory.md): 36 Review, 64 Keeper, and five actively available in the Trade binder. **No new disposal or exchange is recorded.** The Steam Siege Yveltal (`yveltal-03`) removed on 2026-09-22 remains outside these 105 cards.
+
+### Resolved placements of already-registered identities
+
+The earlier holding-box destinations were provisional. The photographed post-sort state and owner-approved plan now establish:
+
+| Card | Earlier state | Current state / evidence |
+|---|---|---|
+| Typhlosion (`typhlosion-02`) | outside thematic binder; no destination | Keeper · Heritage, `IMG_7137.HEIC` |
+| Umbreon (`umbreon-03`) | outside thematic binder; no destination | Review · REDUNDANT, `IMG_7135.HEIC` |
+| Electrode (`electrode-01`) | outside thematic binder; no destination | Review · REDUNDANT, `IMG_7135.HEIC` |
+| Hoopa EX (`hoopa-02`) | EDGE after the Threshold swap | Review · REDUNDANT, `IMG_7137.HEIC` |
+| Snorlax (`snorlax-02`) | EDGE after the On the Attack swap | Review · REDUNDANT, `IMG_7137.HEIC` |
+| Ursaring (`ursaring-02`) | EDGE after the On the Attack swap | Review · REDUNDANT, `IMG_7137.HEIC` |
+| Kasumi's Tears (`kasumis-tears-01`) | HERITAGE after the Threshold swap | Keeper · Heritage, `IMG_7141.HEIC` |
+| Dratini (`dratini-02`) | HERITAGE after the Quiet Familiarity swap | Keeper · Heritage, `IMG_7141.HEIC` |
+| Rocket's Trap (`rockets-trap-01`) | HERITAGE after the Companions swap | Keeper · Heritage, `IMG_7141.HEIC` |
+| N's Plan (`ns-plan-01`) | HERITAGE after the Legendary Bearing swap | Keeper · Heritage, `IMG_7141.HEIC` |
+| Kirlia (`kirlia-01`) | Keeper · Beautiful Misfits, subsection reaffirmed | Keeper · Beautiful Misfits, `IMG_7138.HEIC` |
+| Mewtwo EX (`mewtwo-05`) | Keeper, subsection undecided | Keeper · Beautiful Misfits, `IMG_7138.HEIC` |
+| Torterra Lv.X (`torterra-02`) | Keeper, subsection undecided | Keeper · Heritage, `IMG_7140.HEIC` |
+
+The remaining contested subsection decisions and the five unregistered cards newly visible in Review are itemized by dated photographic observation in the reconciliation; this ledger does not invent registry identities from a group photograph. The five cards initially recommended for Release remain owned, and the owner's explicit confirmation makes each **available for Trade now**. Their physical presence in `IMG_7147.HEIC` is not an executed Release. Misdreavus and Emolga EX duplicate comparisons were confirmed in hand by the owner; that does not supply otherwise unread printing metadata.
+
+**Piplup label correction:** the earlier 2026-09-22 entry and the printed checklist called the held Piplup “from Manaphy & Lucario.” `IMG_7147.HEIC` shows **93/130 with a Diamond & Pearl set symbol**. The old product label is retained in its historical entries, not adopted as verified printing or provenance.
