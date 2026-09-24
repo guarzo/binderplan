@@ -141,7 +141,7 @@
     "language": "EN",
     "set": "SWSH Promos",
     "number": "SWSH262",
-    "confidence": "uncertain"
+    "confidence": "photo"
   },
   "charmander-01": {
     "id": "charmander-01",
@@ -312,7 +312,7 @@
     "language": "EN",
     "set": "WoTC Promos",
     "number": "5",
-    "confidence": "uncertain"
+    "confidence": "photo"
   },
   "dratini-01": {
     "id": "dratini-01",
@@ -798,7 +798,7 @@
     "language": "EN",
     "set": "Mega Evolution",
     "number": "139/132",
-    "confidence": "uncertain"
+    "confidence": "photo"
   },
   "lucario-01": {
     "id": "lucario-01",
@@ -816,7 +816,7 @@
     "language": "EN",
     "set": "Mysterious Treasures",
     "number": "122/123",
-    "confidence": "uncertain"
+    "confidence": "photo"
   },
   "lugia-01": {
     "id": "lugia-01",
@@ -1005,7 +1005,7 @@
     "language": "JP",
     "set": "Tidal Storm",
     "number": "012/070",
-    "confidence": "uncertain"
+    "confidence": "photo"
   },
   "muk-01": {
     "id": "muk-01",
