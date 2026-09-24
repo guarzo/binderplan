@@ -1,4 +1,4 @@
-\documentclass[8pt,a4paper]{extarticle}
+\documentclass[8pt,a4paper,landscape]{extarticle}
 
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -11,13 +11,13 @@
 \usepackage{fancyhdr}
 \usepackage{microtype}
 
-\geometry{left=11mm,right=11mm,top=16mm,bottom=14mm,headheight=11pt,headsep=2mm,footskip=7mm}
+\geometry{left=9mm,right=9mm,top=14mm,bottom=12mm,headheight=11pt,headsep=2mm,footskip=6mm}
 \definecolor{rulegray}{gray}{0.68}
 \definecolor{headinggray}{gray}{0.20}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}
 \setlength{\tabcolsep}{2.5pt}
-\renewcommand{\arraystretch}{1.04}
+\renewcommand{\arraystretch}{1.12}
 \emergencystretch=1.5em
 
 \pagestyle{fancy}
@@ -30,194 +30,181 @@
 
 \newcommand{\checkbox}{\raisebox{-0.15ex}{\fbox{\rule{0pt}{1.2ex}\rule{1.2ex}{0pt}}}}
 \newcommand{\blankline}[1]{\rule{#1}{0.35pt}}
-\newcommand{\typebadge}[1]{{\scriptsize\bfseries\MakeUppercase{#1}}\enspace}
-\newcommand{\checkitem}[1]{\noindent\checkbox\ #1\par\vspace{0.4ex}}
+\newcommand{\typebadge}[1]{{\scriptsize\bfseries\MakeUppercase{#1}}}
+\newcommand{\checkitem}[1]{\noindent\checkbox\ #1\par\vspace{0.35ex}}
 \newcommand{\sectiontitle}[1]{%
-  \Needspace{4\baselineskip}\vspace{0.8ex}%
+  \Needspace{4\baselineskip}\vspace{0.7ex}%
   {\large\bfseries\color{headinggray}#1}\par
-  \vspace{0.2ex}\color{rulegray}\hrule\color{black}\vspace{0.55ex}%
+  \vspace{0.15ex}\color{rulegray}\hrule\color{black}\vspace{0.45ex}%
 }
-\newcommand{\subsectiontitle}[1]{%
-  \Needspace{3\baselineskip}\vspace{0.5ex}{\bfseries #1}\par\vspace{0.25ex}%
+\newcommand{\binderpage}[2]{%
+  \Needspace{\dimexpr #2\baselineskip + #2\baselineskip + 4\baselineskip\relax}\vspace{0.65ex}%
+  {\large\bfseries Current binder page #1 of 13}\par\vspace{0.25ex}%
+  \begin{tabularx}{\textwidth}{@{}p{0.035\textwidth}p{0.075\textwidth}>{\raggedright\arraybackslash}p{0.245\textwidth}>{\raggedright\arraybackslash}p{0.205\textwidth}>{\raggedright\arraybackslash}p{0.285\textwidth}>{\raggedright\arraybackslash}X@{}}
+  \textbf{Done} & \textbf{Type} & \textbf{Card} & \textbf{Recommendation} & \textbf{Why} & \textbf{Override, if any}\\\hline
+  \end{tabularx}\vspace{0.1ex}%
 }
-\newcommand{\settledrow}[4]{%
-  \Needspace{2.6\baselineskip}%
-  \noindent\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.26\textwidth}>{\ttfamily\scriptsize}p{0.12\textwidth}>{\raggedright\arraybackslash}X@{}}
-    \checkbox\ \textbf{#1} & #2 & \typebadge{#3}\textbf{#4}\newline
-    {\scriptsize \checkbox\ Confirm marked destination \quad \checkbox\ Change to: \blankline{25mm}}
-  \end{tabularx}\par\vspace{0.22ex}%
-}
-\newcommand{\recommendrow}[6]{%
-  \Needspace{5.2\baselineskip}%
-  \noindent\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.27\textwidth}>{\ttfamily\scriptsize}p{0.12\textwidth}>{\raggedright\arraybackslash}X@{}}
-    \checkbox\ \textbf{Recommend: #1} & #2 & \typebadge{#3}\textbf{#4}\newline
-    {\scriptsize #5\newline\textbf{Strongest alternative:} #6}
-  \end{tabularx}\par
-  {\scriptsize\noindent\checkbox\ Accept recommendation\par
-  \noindent\checkbox\ Change to: \blankline{0.78\textwidth}}\par\vspace{0.42ex}%
+\newcommand{\cardrow}[5]{%
+  \Needspace{2.5\baselineskip}%
+  \noindent\begin{tabularx}{\textwidth}{@{}p{0.035\textwidth}p{0.075\textwidth}>{\raggedright\arraybackslash}p{0.245\textwidth}>{\raggedright\arraybackslash}p{0.205\textwidth}>{\raggedright\arraybackslash}p{0.285\textwidth}>{\raggedright\arraybackslash}X@{}}
+  \checkbox & \typebadge{#2} & \textbf{#3} & \textbf{#4} & {\scriptsize #5} & \blankline{\linewidth}\\\hline
+  \end{tabularx}%
 }
 \newcommand{\tradeauth}{%
   \noindent\checkbox\ Trade authorized \quad \checkbox\ Available now \quad
-  ID: \blankline{18mm}\quad Card: \blankline{44mm}\par\vspace{0.25ex}%
+  Card: \blankline{60mm}\par\vspace{0.2ex}%
 }
 \newcommand{\releaseauth}[2]{%
-  \noindent\checkbox\ Release authorized \quad \checkbox\ Release executed \quad
-  {\ttfamily\scriptsize #1}\quad #2\par\vspace{0.25ex}%
+  \noindent\checkbox\ Release authorized \quad \checkbox\ Release executed \quad #2\par\vspace{0.2ex}%
 }
 
 \begin{document}
 
 {\LARGE\bfseries Holding Sort Completion Checklist}\par
-\vspace{0.3ex}
-{\small Completion pass for the authoritative 100-card photographed inventory. The current nine-pocket binder is interim staging; use the page locator to find each card, then move it only after its destination is settled.}\par
-\vspace{0.6ex}
+\vspace{0.25ex}
+{\small Start at the first occupied page of the interim holding binder. Process cards left-to-right, then top-to-bottom; turn the page and continue. Card names and printed TCG types identify each card. The bold destination is the recommendation. Check Done after placing it there, or write one replacement destination in Override.}\par
+\vspace{0.45ex}
 
-\sectiontitle{1. Baseline and safeguards}
-\checkitem{Starting count confirmed: \blankline{12mm} / \textbf{100} photographed current cards.}
-\checkitem{Current binder treated as interim staging, not final section order.}
-\checkitem{Yveltal --- Steam Siege 65/114 was already removed and is not part of the 100-card starting count.}
-\checkitem{No card is currently authorized for Trade. A Trade choice below requires a fresh owner checkmark.}
-\checkitem{No additional Release is authorized. A Release choice below requires a fresh owner checkmark before physical removal.}
-\checkitem{Prepare final Review and Keeper destinations; leave Event Staging empty.}
-
-\sectiontitle{2. Owner-marked Review choices --- confirm, then move}
-{\scriptsize These destinations come from clear marks on the incomplete paper checklist. Confirm each one here; a photographed interim position alone is not a final classification.}\par\vspace{0.4ex}
-\subsectiontitle{EDGE Watches and Existing-theme EDGE}
-\settledrow{Review · Unease}{HB-P01-01}{Colorless}{Porygon-Z Lv.X}
-\settledrow{Review · Unease}{HB-P01-02}{Psychic}{Dhelmise --- Japanese}
-\settledrow{Review · Env. Momentum}{HB-P01-05}{Darkness}{Dark Dragonair --- Team Rocket Returns}
-\settledrow{Review · Env. Momentum}{HB-P01-06}{Water}{Pelipper --- Deoxys reverse holo}
-\settledrow{Review · Env. Momentum}{HB-P01-07}{Water}{Mudkip --- EX Dragon}
-\settledrow{Review · Existing EDGE}{HB-P03-03}{Darkness}{Galarian Obstagoon --- Japanese}
-
-\subsectiontitle{REDUNDANT}
-\settledrow{Review · REDUNDANT}{HB-P02-04}{Lightning}{Electrode --- Japanese}
-\settledrow{Review · REDUNDANT}{HB-P02-05}{Metal}{Genesect --- Japanese}
-\settledrow{Review · REDUNDANT}{HB-P02-06}{Water}{Suicune --- Pikachu Libre deck}
-\settledrow{Review · REDUNDANT}{HB-P02-07}{Water}{Kyogre --- Japanese Storm Emeralda}
-\settledrow{Review · REDUNDANT}{HB-P02-09}{Lightning}{Ampharos --- Steam Siege}
-\settledrow{Review · REDUNDANT}{HB-P03-01}{Water}{Swampert --- Great Encounters}
-\settledrow{Review · REDUNDANT}{HB-P03-04}{Darkness}{Darkrai --- DP24}
-\settledrow{Review · REDUNDANT}{HB-P03-05}{Fire}{Victini --- Japanese}
-\settledrow{Review · REDUNDANT}{HB-P03-06}{Metal}{Dialga --- Platinum}
-\settledrow{Review · REDUNDANT}{HB-P03-07}{Fighting}{Groudon --- printing unresolved}
-\settledrow{Review · REDUNDANT}{HB-P03-08}{Water}{Lugia --- Call of Legends}
-\settledrow{Review · REDUNDANT}{HB-P04-01}{Psychic}{Hoopa EX}
-\settledrow{Review · REDUNDANT}{HB-P04-02}{Colorless}{Snorlax VMAX --- Japanese}
-\settledrow{Review · REDUNDANT}{HB-P04-03}{Colorless}{Ursaring --- Japanese No.217}
-
+\sectiontitle{1. Recommended plan and prepared capacity}
+\begin{tabularx}{\textwidth}{@{}>{\bfseries}p{0.22\textwidth}p{0.18\textwidth}X@{}}
+Recommended Review count: 32 & Seven nine-pocket Review pages & EDGE Watches 6; Existing-theme EDGE 2; REDUNDANT 23; FUTURE SELF 1; Event Staging 0.\\
+Recommended Keeper count: 63 & Sixteen four-pocket Keeper pages & Personal 3; Beautiful Misfits 12; Heritage 32; Species Studies 16.\\
+Recommended Trade count: 0 & No Trade pages required & No card is currently authorized for Trade.\\
+Recommended Release count: 5 & Separate authorization group & No additional Release is authorized until the final authorization page is signed.\\
+Recommended total: 100 & Starting photographed inventory & Yveltal --- Steam Siege 65/114 was already removed and is outside this count.\\
+\end{tabularx}
+\checkitem{Current nine-pocket binder treated as interim staging, not final section order.}
+\checkitem{Prepare seven nine-pocket Review pages, including empty Event Staging.}
+\checkitem{Prepare sixteen four-pocket Keeper pages; recommended occupancy is 63 of 64 pockets.}
+\binderpage{1}{7}
+\cardrow{HB-P01-01}{Colorless}{Porygon-Z Lv.X}{Review · Unease}{Owner marked this Review destination on the original checklist.}
+\cardrow{HB-P01-02}{Psychic}{Dhelmise --- Japanese}{Review · Unease}{Owner marked this Review destination on the original checklist.}
+\cardrow{HB-P01-03}{Darkness}{Houndour --- Aquapolis}{Review · Env. Momentum}{Wind and terrain visibly drive the subject, so this tests the live Environmental Momentum hypothesis.}
+\cardrow{HB-P01-04}{Darkness}{Houndour --- Japanese silver-border artwork}{Keeper · Species Studies}{It is a distinct treatment in an owner-significant line, while its scene has no stronger named Review challenge.}
+\cardrow{HB-P01-05}{Darkness}{Dark Dragonair --- Team Rocket Returns}{Review · Env. Momentum}{Owner marked this Review destination on the original checklist.}
+\cardrow{HB-P01-06}{Water}{Pelipper --- Deoxys reverse holo}{Review · Env. Momentum}{Owner marked this Review destination on the original checklist.}
+\cardrow{HB-P01-07}{Water}{Mudkip --- EX Dragon}{Review · Env. Momentum}{Owner marked this Review destination on the original checklist.}
+\binderpage{2}{9}
+\cardrow{HB-P02-01}{Lightning}{Mareep --- Expedition}{Review · REDUNDANT · Calm in Nature}{The card expresses natural ease cleanly but does not currently displace a canonical Calm in Nature card.}
+\cardrow{HB-P02-02}{Grass}{Shaymin --- Vivid Voltage}{Review · REDUNDANT · Calm in Nature}{The peaceful natural scene fits the theme, but the existing page already tells the idea more strongly.}
+\cardrow{HB-P02-03}{Water}{Mudkip --- Japanese Sky-Splitting Charisma}{Review · REDUNDANT · Calm in Nature}{Its natural setting supports Calm in Nature, while the weak movement signal keeps it out of Environmental Momentum.}
+\cardrow{HB-P02-04}{Lightning}{Electrode --- Japanese}{Review · REDUNDANT}{Owner marked this Review destination on the original checklist.}
+\cardrow{HB-P02-05}{Metal}{Genesect --- Japanese}{Review · REDUNDANT}{Owner marked this Review destination on the original checklist.}
+\cardrow{HB-P02-06}{Water}{Suicune --- Pikachu Libre deck}{Review · REDUNDANT}{Owner marked this Review destination on the original checklist.}
+\cardrow{HB-P02-07}{Water}{Kyogre --- Japanese Storm Emeralda}{Review · REDUNDANT}{Owner marked this Review destination on the original checklist.}
+\cardrow{HB-P02-08}{Darkness}{Umbreon --- Dark Explorers artwork}{Review · REDUNDANT · Elemental Solitude}{It remains a valid isolation image that has already lost to stronger Elemental Solitude incumbents.}
+\cardrow{HB-P02-09}{Lightning}{Ampharos --- Steam Siege}{Review · REDUNDANT}{Owner marked this Review destination on the original checklist.}
+\binderpage{3}{8}
+\cardrow{HB-P03-01}{Water}{Swampert --- Great Encounters}{Review · REDUNDANT}{Owner marked this Review destination on the original checklist.}
+\cardrow{HB-P03-02}{Fighting}{Golem --- Rising Rivals}{Keeper · Heritage}{The forward-lunging artwork expresses action rather than Enduring Presence's held power, while the older printing supplies a durable Keeper role.}
+\cardrow{HB-P03-03}{Darkness}{Galarian Obstagoon --- Japanese}{Review · Existing EDGE}{Owner marked this Review destination on the original checklist.}
+\cardrow{HB-P03-04}{Darkness}{Darkrai --- DP24}{Review · REDUNDANT}{Owner marked this Review destination on the original checklist.}
+\cardrow{HB-P03-05}{Fire}{Victini --- Japanese}{Review · REDUNDANT}{Owner marked this Review destination on the original checklist.}
+\cardrow{HB-P03-06}{Metal}{Dialga --- Platinum}{Review · REDUNDANT}{Owner marked this Review destination on the original checklist.}
+\cardrow{HB-P03-07}{Fighting}{Groudon --- printing unresolved}{Review · REDUNDANT}{Owner marked this Review destination on the original checklist.}
+\cardrow{HB-P03-08}{Water}{Lugia --- Call of Legends}{Review · REDUNDANT}{Owner marked this Review destination on the original checklist.}
+\binderpage{4}{3}
+\cardrow{HB-P04-01}{Psychic}{Hoopa EX}{Review · REDUNDANT}{Owner marked this Review destination on the original checklist.}
+\cardrow{HB-P04-02}{Colorless}{Snorlax VMAX --- Japanese}{Review · REDUNDANT}{Owner marked this Review destination on the original checklist.}
+\cardrow{HB-P04-03}{Colorless}{Ursaring --- Japanese No.217}{Review · REDUNDANT}{Owner marked this Review destination on the original checklist.}
+\binderpage{5}{7}
+\cardrow{HB-P05-01}{Colorless}{Kecleon --- Japanese forest artwork}{Keeper · Personal}{Owner marked this Keeper destination on the original checklist.}
+\cardrow{HB-P05-02}{Fighting}{Ditto --- English Delta Species 62/113}{Keeper · Beautiful Misfits}{Owner marked this Keeper destination on the original checklist.}
+\cardrow{HB-P05-03}{Colorless}{Ditto --- Japanese multiple-Ditto artwork}{Keeper · Beautiful Misfits}{Owner marked this Keeper destination on the original checklist.}
+\cardrow{HB-P05-04}{Fire}{Numel [Ditto] --- Pokémon GO}{Keeper · Beautiful Misfits}{Owner marked this Keeper destination on the original checklist.}
+\cardrow{HB-P05-05}{Colorless}{Shaymin EX --- Roaring Skies full art}{Keeper · Beautiful Misfits}{The premium full art is visually worth keeping but has no active thematic or Trade role.}
+\cardrow{HB-P05-06}{Grass}{Torterra Lv.X --- Japanese}{Keeper · Heritage}{The Japanese Lv.X promo context gives it a durable era-and-release reason to stay.}
+\cardrow{HB-P05-07}{Psychic}{Mewtwo EX --- BREAKthrough full art}{Keeper · Beautiful Misfits}{The full-art treatment is worth retaining while extensive Mewtwo coverage leaves no thematic need.}
+\binderpage{6}{9}
+\cardrow{HB-P06-01}{Fire}{Ninetales --- Japanese vintage printing}{Keeper · Heritage}{The vintage Japanese presentation is a direct Heritage rationale even while exact metadata remains unresolved.}
+\cardrow{HB-P06-02}{Grass}{Nidoking --- Base Set}{Keeper · Heritage}{Owner marked this Keeper destination on the original checklist.}
+\cardrow{HB-P06-03}{Fighting}{Graveler --- EX Dragon reverse holo}{Keeper · Heritage}{Owner marked this Keeper destination on the original checklist.}
+\cardrow{HB-P06-04}{Fire}{Charizard --- Secret Wonders}{Keeper · Heritage}{Owner marked this Keeper destination on the original checklist.}
+\cardrow{HB-P06-05}{Psychic}{Gastly --- Base Set}{Keeper · Heritage}{Owner marked this Keeper destination on the original checklist.}
+\cardrow{HB-P06-06}{Fire}{Gardevoir EX --- Dragon Frontiers}{Keeper · Heritage}{Owner marked this Keeper destination on the original checklist.}
+\cardrow{HB-P06-07}{Water}{Dark Blastoise --- Team Rocket}{Keeper · Heritage}{Owner marked this Keeper destination on the original checklist.}
+\cardrow{HB-P06-08}{Water}{Suicune --- POP Series 2}{Keeper · Heritage}{Owner marked this Keeper destination on the original checklist.}
+\cardrow{HB-P06-09}{Water}{Feraligatr Prime}{Keeper · Heritage}{Owner marked this Keeper destination on the original checklist.}
+\binderpage{7}{9}
+\cardrow{HB-P07-01}{Fighting}{Sandshrew --- Japanese McDonald's}{Keeper · Heritage}{The regional McDonald's promo context is historically specific and durable.}
+\cardrow{HB-P07-02}{Darkness}{Rocket's Zapdos ex --- Japanese}{Keeper · Heritage}{Owner marked this Keeper destination on the original checklist.}
+\cardrow{HB-P07-03}{Fire}{Cyndaquil --- Japanese SoulSilver Collection}{Keeper · Heritage}{Owner marked this Keeper destination on the original checklist.}
+\cardrow{HB-P07-04}{Grass}{Erika's Bulbasaur}{Keeper · Heritage}{Owner marked this Keeper destination on the original checklist.}
+\cardrow{HB-P07-05}{Grass}{Venusaur ex --- older Japanese treatment}{Keeper · Heritage}{Owner marked this Keeper destination on the original checklist.}
+\cardrow{HB-P07-06}{Psychic}{Mewtwo --- Japanese promo artwork}{Keeper · Heritage}{Owner marked this Keeper destination on the original checklist.}
+\cardrow{HB-P07-07}{Psychic}{Kirlia --- Japanese}{Keeper · Beautiful Misfits}{Owner marked this Keeper destination on the original checklist.}
+\cardrow{HB-P07-08}{Fighting}{Dark Primeape --- 1st Edition}{Keeper · Heritage}{Owner marked this Keeper destination on the original checklist.}
+\cardrow{HB-P07-09}{Water}{Piplup --- Japanese Inferno X}{Keeper · Heritage}{Owner marked this Keeper destination on the original checklist.}
+\binderpage{8}{5}
+\cardrow{HB-P08-01}{Fire}{Charmander --- Team Rocket}{Keeper · Heritage}{Owner marked this Keeper destination on the original checklist.}
+\cardrow{HB-P08-02}{Trainer}{Kasumi's Tears}{Keeper · Heritage}{Owner marked this Keeper destination on the original checklist.}
+\cardrow{HB-P08-03}{Colorless}{Dratini --- Base Set}{Keeper · Heritage}{Owner marked this Keeper destination on the original checklist.}
+\cardrow{HB-P08-04}{Trainer}{Rocket's Trap}{Keeper · Heritage}{Owner marked this Keeper destination on the original checklist.}
+\cardrow{HB-P08-05}{Trainer}{N's Plan}{Keeper · Heritage}{Owner marked this Keeper destination on the original checklist.}
+\binderpage{9}{9}
+\cardrow{HB-P09-01}{Dragon}{Rayquaza --- English, Dragon Pulse/Shred}{Keeper · Heritage}{The older Legendary Treasures printing supplies a clearer permanent role than another Legendary Review candidate.}
+\cardrow{HB-P09-02}{Colorless}{Kecleon --- Japanese Lv.38/tongue artwork}{Keeper · Personal}{Kecleon already has established personal significance, and this is a distinct second treatment.}
+\cardrow{HB-P09-03}{Colorless}{Ditto --- Japanese SV151-style}{Keeper · Species Studies}{It strengthens the bounded Ditto run without pretending the disguise motif is a new theme.}
+\cardrow{HB-P09-04}{Colorless}{Azurill --- Japanese}{Keeper · Beautiful Misfits}{Owner marked this Keeper destination on the original checklist.}
+\cardrow{HB-P09-05}{Colorless}{Eevee --- SVP 173}{Release}{This is an extra copy of a card already represented canonically and has no distinct Keeper or Review role.}
+\cardrow{HB-P09-06}{Grass}{Venusaur ex --- modern Japanese full art}{Keeper · Beautiful Misfits}{The premium modern treatment is visually strong but lacks a specific theme hypothesis.}
+\cardrow{HB-P09-07}{Grass}{Shaymin EX --- Legendary Treasures RC21}{Keeper · Beautiful Misfits}{Owner marked this Keeper destination on the original checklist.}
+\cardrow{HB-P09-08}{Fighting}{Aerodactyl --- Japanese vintage}{Keeper · Heritage}{The vintage Japanese presentation gives it a stable historical reason to remain.}
+\cardrow{HB-P09-09}{Water}{Piplup --- Manaphy \& Lucario}{Release}{The plain treatment has no canonical path or durable Keeper rationale in the current collection.}
+\binderpage{10}{8}
+\cardrow{HB-P10-01}{Fire}{Typhlosion --- Japanese}{Keeper · Heritage}{The older Japanese printing supplies a durable Heritage role despite extensive thematic Typhlosion coverage.}
+\cardrow{HB-P10-02}{Psychic}{Misdreavus --- Japanese}{Release}{The photographs show the same artwork, layout, and No.200 presentation as the canonical copy; confirm the set symbol and finish match in hand before authorizing Release.}
+\cardrow{HB-P10-03}{Trainer}{Pokémon Communication --- English}{Review · Existing EDGE · World of People}{The communication terminal and screen make human technology central enough to test against the Ralts incumbent.}
+\cardrow{HB-P10-04}{Trainer}{N --- Japanese non-full-art}{Keeper · Heritage}{Language and release variation give the trainer pair a stable provenance-based role.}
+\cardrow{HB-P10-05}{Trainer}{N --- English full art}{Keeper · Beautiful Misfits}{The premium full-art treatment is attractive but has no canonical narrative role.}
+\cardrow{HB-P10-06}{Darkness}{Yveltal ex --- Japanese red full art}{Keeper · Beautiful Misfits}{The premium treatment is worth retaining while existing Yveltal coverage blocks a thematic role.}
+\cardrow{HB-P10-07}{Darkness}{Yveltal --- Celebrations}{Release}{The treatment is weak relative to existing Yveltal coverage and adds no separate Keeper rationale.}
+\cardrow{HB-P10-08}{Lightning}{Emolga EX --- Japanese}{Release}{This appears to duplicate the 062/060 copy already represented in the Emolga master set, so it does not expand that run.}
+\binderpage{11}{9}
+\cardrow{HB-P11-01}{Darkness}{Houndour --- Japanese No.228}{Keeper · Species Studies}{The vintage Japanese treatment broadens the owner-significant Houndour chronology.}
+\cardrow{HB-P11-02}{Fire}{Team Magma's Houndour --- reverse holo}{Keeper · Species Studies}{The stamped reverse treatment is a materially distinct Houndour study entry.}
+\cardrow{HB-P11-03}{Fire}{Houndoom G}{Keeper · Species Studies}{The SP-era form is a distinct representative within the Houndour/Houndoom run.}
+\cardrow{HB-P11-04}{Darkness}{Houndour --- Japanese Megalo Cannon-era candidate}{Keeper · Species Studies}{The candidate printing is visually distinct enough for the bounded species run even before exact metadata is resolved.}
+\cardrow{HB-P11-05}{Fire}{Houndoom EX --- full art}{Keeper · Personal}{The full-art Houndoom directly supports the owner's established personal attachment to the line.}
+\cardrow{HB-P11-06}{Fire}{Houndour --- Skyridge}{Keeper · Species Studies}{The e-Card-era artwork and treatment add meaningful chronological range to the run.}
+\cardrow{HB-P11-07}{Fire}{Houndour --- Great Encounters}{Keeper · Species Studies}{This printing adds a distinct era and composition to the personal species study.}
+\cardrow{HB-P11-08}{Fire}{Dark Houndoom --- Team Rocket Returns}{Keeper · Species Studies}{The Dark treatment is a major visual variant in an owner-significant evolution line.}
+\cardrow{HB-P11-09}{Psychic}{Gengar --- Diamond \& Pearl}{Keeper · Species Studies}{The older standard treatment broadens the chronology of the established Gengar study.}
+\binderpage{12}{9}
+\cardrow{HB-P12-01}{Darkness}{Gengar ex --- modern 280 HP treatment}{Keeper · Species Studies}{The modern Darkness-type ex is a materially different Gengar treatment.}
+\cardrow{HB-P12-02}{Psychic}{Gengar --- Legend Maker}{Keeper · Species Studies}{The close, red-eyed older artwork is a distinctive anchor for the Gengar chronology.}
+\cardrow{HB-P12-03}{Psychic}{Gengar EX --- Night Attack/Dark Corridor}{Keeper · Species Studies}{The separate EX treatment adds clear visual and mechanical variety to the Gengar run.}
+\cardrow{HB-P12-04}{Lightning}{Pikachu --- multiple-Pikachu group artwork}{Keeper · Species Studies}{The species-group novelty supports a bounded Pikachu study more than an emotional theme.}
+\cardrow{HB-P12-05}{Lightning}{Pikachu --- Pika Ball/Thundershock artwork}{Keeper · Species Studies}{The abstract lightning field provides no visible human-made setting or named thematic challenge.}
+\cardrow{HB-P12-06}{Lightning}{Pikachu --- tree artwork}{Review · FUTURE SELF}{This was singled out for personal reassessment without a current canonical challenge.}
+\cardrow{HB-P12-07}{Lightning}{Pikachu --- 70 HP lightning/Volt Tackle artwork}{Review · REDUNDANT · On the Attack}{The expressed lightning action reads as attack energy but does not beat the current page.}
+\cardrow{HB-P12-08}{Lightning}{Pikachu --- 60 HP field/Quick Attack artwork}{Review · REDUNDANT · Calm in Nature}{The field setting carries natural ease more strongly than the printed attack name.}
+\cardrow{HB-P12-09}{Lightning}{Pikachu --- desk/room Gnaw artwork}{Review · REDUNDANT · World of People}{The inhabited interior and human objects are central to the scene.}
+\binderpage{13}{8}
+\cardrow{HB-P13-01}{Lightning}{Pikachu --- 30th Celebration 046/128, Get Some Air/Smash Kick}{Review · REDUNDANT · Calm in Nature}{The quiet rocky setting reads as natural ease despite the celebratory treatment.}
+\cardrow{HB-P13-02}{Lightning}{Pikachu --- 80 HP full-art floral/Overwriting Bolt}{Keeper · Heritage}{The solitary celebratory treatment does not show a human-made environment, while the 30th Celebration printing supplies a clear historical role.}
+\cardrow{HB-P13-03}{Lightning}{Pikachu --- 70 HP meadow/Play Rough}{Review · REDUNDANT · Joyful Action}{The airborne, exuberant pose reads as play and motion, which Calm in Nature explicitly excludes.}
+\cardrow{HB-P13-04}{Lightning}{Pikachu --- rain/umbrella Pika Dash artwork}{Keeper · Beautiful Misfits}{The unusual rainy composition is attractive, but an umbrella alone does not establish the human-made setting required by World of People.}
+\cardrow{HB-P13-05}{Lightning}{Pikachu --- grass Tail Slap/Quick Attack artwork}{Keeper · Species Studies}{The tense forward pose is not calm, and the artwork does not show enough explicit attack action for a thematic Review role.}
+\cardrow{HB-P13-06}{Lightning}{Pikachu --- Lt. Surge’s Pikachu, Japanese}{Keeper · Heritage}{The vintage character-card context gives it a clear historical role.}
+\cardrow{HB-P13-07}{Lightning}{Pikachu --- Pokémon GO 028/078, Wild Charge}{Keeper · Heritage}{The outdoor cap artwork does not visibly establish human activity, while the Pokémon GO-stamped release context gives it a clear Keeper role.}
+\cardrow{HB-P13-08}{Lightning}{Pikachu --- Black Star Promo, Growl/Thundershock}{Keeper · Heritage}{The foundational Black Star promo status is a direct Heritage rationale.}
 \clearpage
-\sectiontitle{3. Owner-marked Keeper choices --- confirm, then move}
-{\scriptsize Confirm each marked destination before moving the card. Kirlia's Beautiful Misfits decision was separately confirmed by the owner.}\par\vspace{0.4ex}
-\subsectiontitle{Personal Keepers and Beautiful Misfits}
-\settledrow{Keeper · Personal}{HB-P05-01}{Colorless}{Kecleon --- Japanese forest artwork}
-\settledrow{Beautiful Misfits}{HB-P05-02}{Fighting}{Ditto --- English Delta Species 62/113}
-\settledrow{Beautiful Misfits}{HB-P05-03}{Colorless}{Ditto --- Japanese multiple-Ditto artwork}
-\settledrow{Beautiful Misfits}{HB-P05-04}{Fire}{Numel [Ditto] --- Pokémon GO}
-\settledrow{Beautiful Misfits}{HB-P07-07}{Psychic}{Kirlia --- Japanese}
-\settledrow{Beautiful Misfits}{HB-P09-04}{Colorless}{Azurill --- Japanese}
-\settledrow{Beautiful Misfits}{HB-P09-07}{Grass}{Shaymin EX --- Legendary Treasures RC21}
+\sectiontitle{2. Override adjustment log}
+{\small The recommended counts are already calculated. Record only changes. For each override, subtract one from From and add one to To; then write the adjusted totals below.}\par\vspace{0.5ex}
+\begin{tabularx}{\textwidth}{@{}p{0.28\textwidth}p{0.25\textwidth}p{0.25\textwidth}X@{}}
+\textbf{Card} & \textbf{From recommended destination} & \textbf{To final destination} & \textbf{Done}\\\hline
+\blankline{\linewidth} & \blankline{\linewidth} & \blankline{\linewidth} & \checkbox\\
+\blankline{\linewidth} & \blankline{\linewidth} & \blankline{\linewidth} & \checkbox\\
+\blankline{\linewidth} & \blankline{\linewidth} & \blankline{\linewidth} & \checkbox\\
+\blankline{\linewidth} & \blankline{\linewidth} & \blankline{\linewidth} & \checkbox\\
+\blankline{\linewidth} & \blankline{\linewidth} & \blankline{\linewidth} & \checkbox\\
+\blankline{\linewidth} & \blankline{\linewidth} & \blankline{\linewidth} & \checkbox\\
+\end{tabularx}
+\checkitem{Signed override continuation attached if more than six recommendations change.}
 
-\subsectiontitle{Heritage}
-\settledrow{Keeper · Heritage}{HB-P06-02}{Grass}{Nidoking --- Base Set}
-\settledrow{Keeper · Heritage}{HB-P06-03}{Fighting}{Graveler --- EX Dragon reverse holo}
-\settledrow{Keeper · Heritage}{HB-P06-04}{Fire}{Charizard --- Secret Wonders}
-\settledrow{Keeper · Heritage}{HB-P06-05}{Psychic}{Gastly --- Base Set}
-\settledrow{Keeper · Heritage}{HB-P06-06}{Fire}{Gardevoir EX --- Dragon Frontiers}
-\settledrow{Keeper · Heritage}{HB-P06-07}{Water}{Dark Blastoise --- Team Rocket}
-\settledrow{Keeper · Heritage}{HB-P06-08}{Water}{Suicune --- POP Series 2}
-\settledrow{Keeper · Heritage}{HB-P06-09}{Water}{Feraligatr Prime}
-\settledrow{Keeper · Heritage}{HB-P07-02}{Darkness}{Rocket's Zapdos ex --- Japanese}
-\settledrow{Keeper · Heritage}{HB-P07-03}{Fire}{Cyndaquil --- Japanese SoulSilver Collection}
-\settledrow{Keeper · Heritage}{HB-P07-04}{Grass}{Erika's Bulbasaur}
-\settledrow{Keeper · Heritage}{HB-P07-05}{Grass}{Venusaur ex --- older Japanese treatment}
-\settledrow{Keeper · Heritage}{HB-P07-06}{Psychic}{Mewtwo --- Japanese promo artwork}
-\settledrow{Keeper · Heritage}{HB-P07-08}{Fighting}{Dark Primeape --- 1st Edition}
-\settledrow{Keeper · Heritage}{HB-P07-09}{Water}{Piplup --- Japanese Inferno X}
-\settledrow{Keeper · Heritage}{HB-P08-01}{Fire}{Charmander --- Team Rocket}
-\settledrow{Keeper · Heritage}{HB-P08-02}{Trainer}{Kasumi's Tears}
-\settledrow{Keeper · Heritage}{HB-P08-03}{Colorless}{Dratini --- Base Set}
-\settledrow{Keeper · Heritage}{HB-P08-04}{Trainer}{Rocket's Trap}
-\settledrow{Keeper · Heritage}{HB-P08-05}{Trainer}{N's Plan}
-
-\sectiontitle{4. Recommendations for unfinished prior decisions}
-{\scriptsize Each row now gives a curatorial recommendation, why it is the best fit, and the strongest defensible alternative. Trade and Release remain inactive unless explicitly chosen and authorized.}\par\vspace{0.4ex}
-\recommendrow{Review · Env. Momentum}{HB-P01-03}{Darkness}{Houndour --- Aquapolis}{Wind and terrain visibly drive the subject, so this tests the live Environmental Momentum hypothesis.}{Keeper · Species Studies, if the Houndour run matters more than the scene.}
-\recommendrow{Keeper · Species Studies}{HB-P01-04}{Darkness}{Houndour --- Japanese silver-border artwork}{It is a distinct treatment in an owner-significant line, while its scene has no stronger named Review challenge.}{Review · Env. Momentum, if movement in the setting is persuasive in hand.}
-\recommendrow{Review · REDUNDANT · Calm in Nature}{HB-P02-01}{Lightning}{Mareep --- Expedition}{The card expresses natural ease cleanly but does not currently displace a canonical Calm in Nature card.}{Keeper · Heritage for its e-Card-era printing.}
-\recommendrow{Review · REDUNDANT · Calm in Nature}{HB-P02-02}{Grass}{Shaymin --- Vivid Voltage}{The peaceful natural scene fits the theme, but the existing page already tells the idea more strongly.}{Keeper · Beautiful Misfits if the artwork is wanted without rotation intent.}
-\recommendrow{Review · REDUNDANT · Calm in Nature}{HB-P02-03}{Water}{Mudkip --- Japanese Sky-Splitting Charisma}{Its natural setting supports Calm in Nature, while the weak movement signal keeps it out of Environmental Momentum.}{Keeper · Heritage for the Japanese set context.}
-\recommendrow{Review · REDUNDANT · Elemental Solitude}{HB-P02-08}{Darkness}{Umbreon --- Dark Explorers artwork}{It remains a valid isolation image that has already lost to stronger Elemental Solitude incumbents.}{Keeper · Heritage if rotation is not genuinely desired.}
-\recommendrow{Keeper · Heritage}{HB-P03-02}{Fighting}{Golem --- Rising Rivals}{The forward-lunging artwork expresses action rather than Enduring Presence's held power, while the older printing supplies a durable Keeper role.}{Review · REDUNDANT · On the Attack, only if the radiating force reads as an explicit attack in hand.}
-\recommendrow{Keeper · Beautiful Misfits}{HB-P05-05}{Colorless}{Shaymin EX --- Roaring Skies full art}{The premium full art is visually worth keeping but has no active thematic or Trade role.}{Trade, only if explicitly made available later.}
-\recommendrow{Keeper · Heritage}{HB-P05-06}{Grass}{Torterra Lv.X --- Japanese}{The Japanese Lv.X promo context gives it a durable era-and-release reason to stay.}{Keeper · Beautiful Misfits if the visual treatment matters more than provenance.}
-\recommendrow{Keeper · Beautiful Misfits}{HB-P05-07}{Psychic}{Mewtwo EX --- BREAKthrough full art}{The full-art treatment is worth retaining while extensive Mewtwo coverage leaves no thematic need.}{Keeper · Personal if this specific Mewtwo has personal significance.}
-\recommendrow{Keeper · Heritage}{HB-P06-01}{Fire}{Ninetales --- Japanese vintage printing}{The vintage Japanese presentation is a direct Heritage rationale even while exact metadata remains unresolved.}{Keeper · Beautiful Misfits if age is not the actual reason for keeping it.}
-\recommendrow{Keeper · Heritage}{HB-P07-01}{Fighting}{Sandshrew --- Japanese McDonald's}{The regional McDonald's promo context is historically specific and durable.}{Keeper · Beautiful Misfits if the appeal is primarily the artwork.}
-
-\sectiontitle{5. Recommendations for cards omitted from the old manifest}
-\subsectiontitle{Page 9}
-\recommendrow{Keeper · Heritage}{HB-P09-01}{Dragon}{Rayquaza --- English, Dragon Pulse/Shred}{The older Legendary Treasures printing supplies a clearer permanent role than another Legendary Review candidate.}{Review · REDUNDANT · Legendary Bearing if deliberate rotation is desired.}
-\recommendrow{Keeper · Personal}{HB-P09-02}{Colorless}{Kecleon --- Japanese Lv.38/tongue artwork}{Kecleon already has established personal significance, and this is a distinct second treatment.}{Keeper · Heritage for the vintage Japanese printing.}
-\recommendrow{Keeper · Species Studies}{HB-P09-03}{Colorless}{Ditto --- Japanese SV151-style}{It strengthens the bounded Ditto run without pretending the disguise motif is a new theme.}{Keeper · Beautiful Misfits if the run should remain smaller.}
-\recommendrow{Release}{HB-P09-05}{Colorless}{Eevee --- SVP 173}{This is an extra copy of a card already represented canonically and has no distinct Keeper or Review role.}{Keeper · Beautiful Misfits if this physical copy has independent appeal.}
-\recommendrow{Keeper · Beautiful Misfits}{HB-P09-06}{Grass}{Venusaur ex --- modern Japanese full art}{The premium modern treatment is visually strong but lacks a specific theme hypothesis.}{Trade, only if explicitly made available.}
-\recommendrow{Keeper · Heritage}{HB-P09-08}{Fighting}{Aerodactyl --- Japanese vintage}{The vintage Japanese presentation gives it a stable historical reason to remain.}{Keeper · Beautiful Misfits if provenance is not the real attachment.}
-\recommendrow{Release}{HB-P09-09}{Water}{Piplup --- Manaphy \& Lucario}{The plain treatment has no canonical path or durable Keeper rationale in the current collection.}{Keeper · Heritage only if the product-specific release context matters personally.}
-
-\subsectiontitle{Page 10}
-\recommendrow{Keeper · Heritage}{HB-P10-01}{Fire}{Typhlosion --- Japanese}{The older Japanese printing supplies a durable Heritage role despite extensive thematic Typhlosion coverage.}{Keeper · Beautiful Misfits if the exact era cannot be established.}
-\recommendrow{Release}{HB-P10-02}{Psychic}{Misdreavus --- Japanese}{The photographs show the same artwork, layout, and No.200 presentation as the canonical copy; confirm the set symbol and finish match in hand before authorizing Release.}{Keeper · Heritage if the printing or finish differs from the canonical copy.}
-\recommendrow{Review · Existing EDGE · World of People}{HB-P10-03}{Trainer}{Pokémon Communication --- English}{The communication terminal and screen make human technology central enough to test against Ralts (ralts-01).}{Release if the device-led scene feels too literal to challenge the canonical page.}
-\recommendrow{Keeper · Heritage}{HB-P10-04}{Trainer}{N --- Japanese non-full-art}{Language and release variation give the trainer pair a stable provenance-based role.}{Keeper · Beautiful Misfits if the artwork, not the printing, drives retention.}
-\recommendrow{Keeper · Beautiful Misfits}{HB-P10-05}{Trainer}{N --- English full art}{The premium full-art treatment is attractive but has no canonical narrative role.}{Trade, only if explicitly made available.}
-\recommendrow{Keeper · Beautiful Misfits}{HB-P10-06}{Darkness}{Yveltal ex --- Japanese red full art}{The premium treatment is worth retaining while existing Yveltal coverage blocks a thematic role.}{Trade, only if explicitly made available.}
-\recommendrow{Release}{HB-P10-07}{Darkness}{Yveltal --- Celebrations}{The treatment is weak relative to existing Yveltal coverage and adds no separate Keeper rationale.}{Keeper · Heritage if Celebrations nostalgia matters.}
-\recommendrow{Release}{HB-P10-08}{Lightning}{Emolga EX --- Japanese}{This appears to duplicate the 062/060 copy already represented in the Emolga master set, so it does not expand that run.}{Trade, if the premium duplicate is explicitly made available.}
-
-\sectiontitle{6. Recommendations for species and personal runs}
-\subsectiontitle{Houndour/Houndoom and Gengar}
-\recommendrow{Keeper · Species Studies}{HB-P11-01}{Darkness}{Houndour --- Japanese No.228}{The vintage Japanese treatment broadens the owner-significant Houndour chronology.}{Keeper · Heritage if it should be separated from the species run.}
-\recommendrow{Keeper · Species Studies}{HB-P11-02}{Fire}{Team Magma's Houndour --- reverse holo}{The stamped reverse treatment is a materially distinct Houndour study entry.}{Keeper · Heritage for its EX-era treatment.}
-\recommendrow{Keeper · Species Studies}{HB-P11-03}{Fire}{Houndoom G}{The SP-era form is a distinct representative within the Houndour/Houndoom run.}{Keeper · Heritage for its Platinum-era context.}
-\recommendrow{Keeper · Species Studies}{HB-P11-04}{Darkness}{Houndour --- Japanese Megalo Cannon-era candidate}{The candidate printing is visually distinct enough for the bounded species run even before exact metadata is resolved.}{Keeper · Heritage after an in-hand printing confirmation.}
-\recommendrow{Keeper · Personal}{HB-P11-05}{Fire}{Houndoom EX --- full art}{The full-art Houndoom directly supports the owner's established personal attachment to the line.}{Keeper · Species Studies if one unified Houndour/Houndoom run is preferred.}
-\recommendrow{Keeper · Species Studies}{HB-P11-06}{Fire}{Houndour --- Skyridge}{The e-Card-era artwork and treatment add meaningful chronological range to the run.}{Keeper · Heritage for the same era-specific reason.}
-\recommendrow{Keeper · Species Studies}{HB-P11-07}{Fire}{Houndour --- Great Encounters}{This printing adds a distinct era and composition to the personal species study.}{Keeper · Heritage if the run needs a stricter size cap.}
-\recommendrow{Keeper · Species Studies}{HB-P11-08}{Fire}{Dark Houndoom --- Team Rocket Returns}{The Dark treatment is a major visual variant in an owner-significant evolution line.}{Keeper · Heritage for its EX-era reverse treatment.}
-\recommendrow{Keeper · Species Studies}{HB-P11-09}{Psychic}{Gengar --- Diamond \& Pearl}{The older standard treatment broadens the chronology of the established Gengar study.}{Keeper · Heritage if the Gengar run is capped more tightly.}
-\recommendrow{Keeper · Species Studies}{HB-P12-01}{Darkness}{Gengar ex --- modern 280 HP treatment}{The modern Darkness-type ex is a materially different Gengar treatment.}{Keeper · Beautiful Misfits if the species run should exclude modern duplicates.}
-\recommendrow{Keeper · Species Studies}{HB-P12-02}{Psychic}{Gengar --- Legend Maker}{The close, red-eyed older artwork is a distinctive anchor for the Gengar chronology.}{Keeper · Heritage for its EX-era printing.}
-\recommendrow{Keeper · Species Studies}{HB-P12-03}{Psychic}{Gengar EX --- Night Attack/Dark Corridor}{The separate EX treatment adds clear visual and mechanical variety to the Gengar run.}{Keeper · Beautiful Misfits if the exact printing remains unresolved.}
-
-\subsectiontitle{Pikachu --- page 12}
-\recommendrow{Keeper · Species Studies}{HB-P12-04}{Lightning}{Multiple-Pikachu group artwork}{The species-group novelty supports a bounded Pikachu study more than an emotional theme.}{Keeper · Beautiful Misfits if no Pikachu run is wanted.}
-\recommendrow{Keeper · Species Studies}{HB-P12-05}{Lightning}{Pika Ball/Thundershock artwork}{The abstract lightning field provides no visible human-made setting or named thematic challenge.}{Keeper · Beautiful Misfits if no bounded Pikachu study is wanted.}
-\recommendrow{Review · FUTURE SELF}{HB-P12-06}{Lightning}{Tree artwork}{This was singled out for personal reassessment without a current canonical challenge.}{Keeper · Species Studies if no future reassessment is intended.}
-\recommendrow{Review · REDUNDANT · On the Attack}{HB-P12-07}{Lightning}{70 HP lightning/Volt Tackle artwork}{The expressed lightning action reads as attack energy but does not beat the current page.}{Keeper · Species Studies if the artwork is less forceful in hand.}
-\recommendrow{Review · REDUNDANT · Calm in Nature}{HB-P12-08}{Lightning}{60 HP field/Quick Attack artwork}{The field setting carries natural ease more strongly than the printed attack name.}{Keeper · Species Studies if the scene feels generic in hand.}
-\recommendrow{Review · REDUNDANT · World of People}{HB-P12-09}{Lightning}{Desk/room Gnaw artwork}{The inhabited interior and human objects are central to the scene.}{Keeper · Species Studies if the environment is not legible enough.}
-
-\sectiontitle{7. Pikachu recommendations --- page 13}
-\recommendrow{Review · REDUNDANT · Calm in Nature}{HB-P13-01}{Lightning}{30th Celebration 046/128 --- Get Some Air/Smash Kick}{The quiet rocky setting reads as natural ease despite the celebratory treatment.}{Keeper · Heritage for the 30th Celebration release context.}
-\recommendrow{Keeper · Heritage}{HB-P13-02}{Lightning}{80 HP full-art floral/Overwriting Bolt}{The solitary celebratory treatment does not show a human-made environment, while the 30th Celebration printing supplies a clear historical role.}{Keeper · Beautiful Misfits if the artwork matters more than release context.}
-\recommendrow{Review · REDUNDANT · Joyful Action}{HB-P13-03}{Lightning}{70 HP meadow/Play Rough}{The airborne, exuberant pose reads as play and motion, which Calm in Nature explicitly excludes.}{Keeper · Species Studies if rotation stock is not worth retaining.}
-\recommendrow{Keeper · Beautiful Misfits}{HB-P13-04}{Lightning}{Rain/umbrella Pika Dash artwork}{The unusual rainy composition is attractive, but an umbrella alone does not establish the human-made setting required by World of People.}{Keeper · Species Studies if the Pikachu run is intentionally broadened.}
-\recommendrow{Keeper · Species Studies}{HB-P13-05}{Lightning}{Grass Tail Slap/Quick Attack artwork}{The tense forward pose is not calm, and the artwork does not show enough explicit attack action for a thematic Review role.}{Keeper · Beautiful Misfits if no bounded Pikachu study is wanted.}
-\recommendrow{Keeper · Heritage}{HB-P13-06}{Lightning}{Lt. Surge's Pikachu --- Japanese}{The vintage character-card context gives it a clear historical role.}{Keeper · Species Studies if all Pikachu are intentionally kept together.}
-\recommendrow{Keeper · Heritage}{HB-P13-07}{Lightning}{Pokémon GO 028/078 --- Wild Charge}{The outdoor cap artwork does not visibly establish human activity, while the Pokémon GO-stamped release context gives it a clear Keeper role.}{Keeper · Species Studies if the Pikachu run is intentionally kept together.}
-\recommendrow{Keeper · Heritage}{HB-P13-08}{Lightning}{Black Star Promo Growl/Thundershock}{The foundational Black Star promo status is a direct Heritage rationale.}{Keeper · Species Studies if promo history is not the retention reason.}
-
-\sectiontitle{8. Final physical execution}
-\checkitem{Every recommendation row is either accepted or changed to one explicit final destination.}
-\checkitem{Review cards placed by section: EDGE Watches, Existing-theme EDGE, REDUNDANT, FUTURE SELF.}
-\checkitem{Event Staging page installed empty at the back of Review.}
-\checkitem{Keeper cards placed by section: Personal, Beautiful Misfits, Heritage, Species Studies.}
-\checkitem{Any Trade card has a fresh `Trade authorized` checkmark and is actively available now.}
-\checkitem{Any new Release card has a fresh `Release authorized` checkmark and explicit owner execution.}
-
-\subsectiontitle{Explicit Trade and Release authorization}
-{\scriptsize Accepting a recommendation does not authorize Trade or physical Release. Record either action separately here.}\par\vspace{0.35ex}
+\sectiontitle{3. Explicit Trade and Release authorization}
+{\small A recommendation does not authorize Trade or physical Release. Record those actions separately. Misdreavus must match the canonical copy's set symbol and finish in hand before Release is authorized.}\par\vspace{0.4ex}
 \tradeauth
 \tradeauth
 \tradeauth
@@ -226,25 +213,30 @@
 \tradeauth
 \releaseauth{HB-P09-05}{Eevee --- SVP 173}
 \releaseauth{HB-P09-09}{Piplup --- Manaphy \& Lucario}
-\releaseauth{HB-P10-02}{Misdreavus --- authorize only after set-symbol/finish match}
+\releaseauth{HB-P10-02}{Misdreavus --- only after set-symbol/finish match}
 \releaseauth{HB-P10-07}{Yveltal --- Celebrations}
 \releaseauth{HB-P10-08}{Emolga EX --- Japanese duplicate}
-\releaseauth{Additional: \blankline{15mm}}{Card: \blankline{45mm}}
-\releaseauth{Additional: \blankline{15mm}}{Card: \blankline{45mm}}
-\releaseauth{Additional: \blankline{15mm}}{Card: \blankline{45mm}}
-\releaseauth{Additional: \blankline{15mm}}{Card: \blankline{45mm}}
+\releaseauth{Additional}{Card: \blankline{55mm}}
+\releaseauth{Additional}{Card: \blankline{55mm}}
 \checkitem{Signed authorization continuation attached if additional Trade or Release rows are required.}
 
-\subsectiontitle{Final counts}
-\checkitem{Final Review count: \blankline{14mm}.}
-\checkitem{Final Keeper count: \blankline{14mm}.}
-\checkitem{Final Trade count: \blankline{14mm}.}
-\checkitem{Newly authorized Release count from this 100-card pool: \blankline{14mm}.}
-\checkitem{Grand total reconciled: Review + Keeper + Trade + newly authorized Release = \blankline{14mm} / \textbf{100}.}
+\sectiontitle{4. Adjusted totals and physical close-out}
+\begin{tabularx}{\textwidth}{@{}p{0.36\textwidth}p{0.16\textwidth}X@{}}
+\textbf{Destination} & \textbf{Recommended} & \textbf{Adjusted final}\\\hline
+Review & 32 & \blankline{28mm}\\
+Keeper & 63 & \blankline{28mm}\\
+Trade & 0 & \blankline{28mm}\\
+Newly authorized Release from this 100-card pool & 5 & \blankline{28mm}\\\hline
+Grand total & 100 & \blankline{28mm}\\
+\end{tabularx}
+\checkitem{Adjusted Review count recorded and Review sections photographed.}
+\checkitem{Adjusted Keeper count recorded and Keeper sections photographed.}
+\checkitem{Grand total reconciled: Review + Keeper + Trade + newly authorized Release = 100.}
 \checkitem{Section photographs complete: Review \checkbox\quad Keeper \checkbox\quad Trade, if used \checkbox\quad Release, if used \checkbox}
+\checkitem{Event Staging remains empty until an event is scheduled.}
 \checkitem{Only executed decisions appended to durable inventory and ledger records.}
 
-\vspace{0.8ex}
-Completed by: \blankline{55mm}\hfill Date: \blankline{35mm}
+\vspace{0.6ex}
+Completed by: \blankline{60mm}\hfill Date: \blankline{35mm}
 
 \end{document}
