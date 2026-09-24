@@ -1877,13 +1877,13 @@ def test_approve_doubleholo_confirm_identity_rejects_missing_image_before_downlo
 def test_approve_doubleholo_curator_confirmation_flags_are_documented_only_on_doubleholo_help():
     script = Path(__file__).with_name("manage-card-images.py")
     doubleholo_help = subprocess.run(
-        ["python3", str(script), "approve-doubleholo", "--help"],
+        [sys.executable, str(script), "approve-doubleholo", "--help"],
         capture_output=True,
         text=True,
         check=True,
     )
     approve_help = subprocess.run(
-        ["python3", str(script), "approve", "--help"],
+        [sys.executable, str(script), "approve", "--help"],
         capture_output=True,
         text=True,
         check=True,
@@ -2320,7 +2320,7 @@ def test_approve_local_cli_requires_http_source_url_and_usage_basis(tmp_path):
 
     missing_basis = subprocess.run(
         [
-            "python3", str(Path(__file__).with_name("manage-card-images.py")),
+            sys.executable, str(Path(__file__).with_name("manage-card-images.py")),
             "approve-local", "abra-01", "--file", str(image_file),
             "--source-url", "file:///tmp/abra.png", "--usage-basis", "curator-supplied",
             "--classification", "exact",
@@ -2798,7 +2798,7 @@ def test_approve_local_preserves_existing_asset_and_yaml_when_validation_rejects
 
     result = subprocess.run(
         [
-            "python3", str(Path(__file__).with_name("manage-card-images.py")),
+            sys.executable, str(Path(__file__).with_name("manage-card-images.py")),
             "approve-local", "abra-01", "--file", str(image_file),
             "--source-url", "https://example.invalid/abra.png",
             "--usage-basis", "Curator-supplied reference photograph.",
@@ -2853,7 +2853,7 @@ def test_approve_local_cli_writes_asset_and_reviewed_mapping(tmp_path):
 
     result = subprocess.run(
         [
-            "python3", str(Path(__file__).with_name("manage-card-images.py")),
+            sys.executable, str(Path(__file__).with_name("manage-card-images.py")),
             "approve-local", "abra-01", "--file", str(image_file),
             "--source-url", "https://example.invalid/abra.png",
             "--usage-basis", "Curator-supplied reference photograph.",
@@ -2882,7 +2882,7 @@ def test_crop_evidence_cli_restricts_sources_to_evidence_directory(tmp_path):
 
     result = subprocess.run(
         [
-            "python3", str(Path(__file__).with_name("manage-card-images.py")),
+            sys.executable, str(Path(__file__).with_name("manage-card-images.py")),
             "crop-evidence", "abra-01", "--source", str(source),
             "--box", "0,0,5,5", "--reviewed-on", "2026-09-22",
         ],
@@ -2904,7 +2904,7 @@ def test_crop_evidence_cli_writes_photo_crop_mapping(tmp_path):
 
     result = subprocess.run(
         [
-            "python3", str(Path(__file__).with_name("manage-card-images.py")),
+            sys.executable, str(Path(__file__).with_name("manage-card-images.py")),
             "crop-evidence", "abra-01", "--source", str(source),
             "--box", "1,1,8,9", "--reviewed-on", "2026-09-22",
         ],

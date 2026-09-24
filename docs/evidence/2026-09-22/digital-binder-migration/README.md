@@ -28,7 +28,7 @@ Incidental files such as `desktop.ini` are not present. These archived copies li
 
 **They do not prove a card is still in that pocket today.** A photograph records a page at the moment of the shoot. Movement lives in [`docs/ledger.md`](../../../ledger.md), which must be consulted alongside any page cited here.
 
-**Observation date.** All thirty pages are cited with `observed_on: 2026-08-01`. That is the observation date carried by every `first_seen` value in `docs/card-registry.md` for these pages, and the date `content/gallery/volume-2/_index.md` states for the Volume II shoot. The five 2026-08-01 swap-in cards recorded in `docs/ledger.md` carry the same date.
+**Observation date.** All thirty pages are cited with `observed_on: 2026-08-01`. That is the documented date of the original Volume II shoot and the observation date carried by every `first_seen` value in `docs/card-registry.md` for these pages. The five 2026-08-01 swap-in cards recorded in `docs/ledger.md` carry the same date.
 
 ## Known naming correction in Volume II
 
@@ -38,4 +38,4 @@ Incidental files such as `desktop.ini` are not present. These archived copies li
 
 ## Related evidence
 
-See [`docs/evidence/2026-09-20/README.md`](../../2026-09-20/README.md) for the September audit inputs, the owner's completed validation checklist, and the verification limits recorded there. That directory is the reference for what the owner has and has not confirmed; nothing in this archive supersedes it, and in particular the owner's "no moves" and "Review Holding First" rulings recorded there still stand.
+See [`docs/evidence/2026-09-20/README.md`](../../2026-09-20/README.md) for the September audit inputs, the owner's completed validation checklist, and the verification limits recorded there. Its "no moves" and "Review Holding First" rulings describe the collection at that point in the review; the seven later verified 2026-09-21 movements supersede them only for the swaps listed in [`docs/evidence/2026-09-21/README.md`](../../2026-09-21/README.md). Declined comparisons remain non-moves.
