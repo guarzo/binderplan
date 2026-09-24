@@ -53,7 +53,7 @@
                   <button class="binder-pocket" type="button" data-pocket
                           data-pocket-position="{{ .position }}" data-card-id="{{ $card.id }}"
                           data-card-name="{{ $card.name }}" data-card-english-name="{{ $card.name }}"
-                          data-card-language="{{ $card.language }}"
+                          data-card-language="{{ $card.language | default "Not catalogued" }}"
                           data-card-set="{{ $card.set }}" data-card-number="{{ $card.number }}"
                           data-leaf-theme="Photographed page {{ $page.id }}"
                           data-classification="{{ $image.classification }}"

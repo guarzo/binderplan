@@ -198,11 +198,11 @@
           printed.textContent = " · " + button.dataset.cardPrintedName;
           name.append(printed);
         }
-        setField("language", button.dataset.cardLanguage || "Not catalogued");
+        setField("language", button.dataset.cardLanguage);
         const setNumber = [button.dataset.cardSet, button.dataset.cardNumber]
           .filter((value) => value && value.trim())
           .join(" · ");
-        setField("set-number", setNumber || "Not catalogued");
+        setField("set-number", setNumber || "Unresolved");
         setField("theme-pocket", button.dataset.leafTheme + " · pocket " + button.dataset.pocketPosition);
         setField("image-classification", classificationText(button.dataset.classification));
         setField("image-source", button.dataset.imageProvenance
