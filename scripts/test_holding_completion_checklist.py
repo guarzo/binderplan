@@ -74,6 +74,22 @@ def test_checklist_is_walked_by_physical_page_without_visible_locator_instructio
     assert "page locator" not in text
     assert "HB-PNN" not in text
 
+    current_page = None
+    observed_counts = Counter()
+    for match in re.finditer(
+        r"^\\binderpage\{(\d+)\}\{(\d+)\}|^\\cardrow\{HB-P(\d{2})-(\d{2})\}",
+        text,
+        re.MULTILINE,
+    ):
+        if match.group(1):
+            current_page = int(match.group(1))
+        else:
+            row_page = int(match.group(3))
+            assert row_page == current_page
+            observed_counts[row_page] += 1
+
+    assert observed_counts == Counter({int(page): int(count) for page, count in page_headers})
+
 
 def test_every_pikachu_row_names_pikachu():
     rows = {observation: card for observation, _type, card, _recommendation, _reason in checklist_rows()}
@@ -113,6 +129,7 @@ def test_checklist_has_capacity_adjustment_and_closeout_sections():
 
     assert "Seven nine-pocket Review pages" in text
     assert "Sixteen four-pocket Keeper pages" in text
+    assert "prepare one additional four-pocket page for that affected section" in text
     assert "Override adjustment log" in text
     assert "Adjusted Review count" in text
     assert "Adjusted Keeper count" in text
