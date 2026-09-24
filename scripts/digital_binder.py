@@ -8,6 +8,7 @@ import os
 import re
 import subprocess
 import unicodedata
+from datetime import date
 from functools import lru_cache
 from http.client import IncompleteRead
 from html.parser import HTMLParser
@@ -100,6 +101,50 @@ def load_yaml(path: Path) -> dict:
     if not isinstance(data, dict):
         raise ValueError(f"{path} must contain a YAML mapping")
     return data
+
+
+def _is_int(value: object) -> bool:
+    return type(value) is int
+
+
+def _valid_date(value: object) -> bool:
+    if not isinstance(value, str):
+        return False
+    try:
+        date.fromisoformat(value)
+    except ValueError:
+        return False
+    return True
+
+
+def _validate_existing_relative_file(root: Path, value: object, label: str, errors: list[str],
+                                    *, required_prefix: str | None = None,
+                                    check_exists: bool = True) -> str | None:
+    if not isinstance(value, str) or not value.strip():
+        errors.append(f"{label} must be a nonempty string")
+        return None
+    raw = value.strip()
+    path = Path(raw)
+    normalized = path.as_posix()
+    if path.is_absolute() or ".." in path.parts or normalized != raw:
+        suffix = f" under {required_prefix.rstrip('/')}" if required_prefix else ""
+        errors.append(f"{label} must be a normalized relative path{suffix}")
+        return None
+    if required_prefix:
+        prefix = required_prefix.rstrip("/")
+        if normalized != prefix and not normalized.startswith(prefix + "/"):
+            errors.append(f"{label} must be under {prefix}")
+            return None
+    try:
+        candidate = (root / normalized).resolve()
+        candidate.relative_to(root.resolve())
+    except (OSError, ValueError):
+        errors.append(f"{label} must resolve under the repository")
+        return None
+    if check_exists and not candidate.is_file():
+        errors.append(f"{label} missing file {normalized}")
+        return None
+    return normalized
 
 
 def render_registry_json(rows: dict[str, dict]) -> str:
@@ -447,7 +492,7 @@ def _validate_images_against_project(
     for volume_id, manifest in manifests.items():
         publication_statuses[volume_id] = manifest.get("publication_status")
         occupied_by_volume[volume_id] = _validate_volume_manifest(
-            volume_id, manifest, registry, errors
+            root, volume_id, manifest, registry, errors
         )
     _validate_global_duplicates(manifests, errors)
     _validate_images(
@@ -486,24 +531,76 @@ def _load_project_manifests(root: Path, errors: list[str]) -> dict[str, dict]:
     return manifests
 
 
+def _git_error_context(exc: subprocess.CalledProcessError) -> str:
+    detail = (exc.stderr or exc.stdout or "").strip()
+    if detail:
+        return detail
+    return f"git exited {exc.returncode}"
+
+
 def _load_previous_manifests(root: Path, previous_ref: str, errors: list[str]) -> dict[str, dict] | None:
     if not SAFE_REF_RE.match(previous_ref):
         errors.append(f"invalid previous_ref: {previous_ref}")
         return None
 
-    manifests = {}
-    for volume_id in VOLUME_IDS:
+    try:
+        resolved = subprocess.run(
+            ["git", "rev-parse", "--verify", f"{previous_ref}^{{commit}}"],
+            check=True,
+            capture_output=True,
+            text=True,
+            cwd=root,
+        )
+    except subprocess.CalledProcessError as exc:
+        errors.append(
+            f"previous_ref {previous_ref!r} does not resolve to a commit: {_git_error_context(exc)}"
+        )
+        return None
+    commit = resolved.stdout.strip() or previous_ref
+
+    manifest_paths = {
+        volume_id: f"data/binders/{volume_id}.yaml"
+        for volume_id in VOLUME_IDS
+    }
+    for path in manifest_paths.values():
         try:
-            result = subprocess.run(
-                ["git", "show", f"{previous_ref}:data/binders/{volume_id}.yaml"],
+            listed = subprocess.run(
+                ["git", "ls-tree", "--name-only", commit, path],
                 check=True,
                 capture_output=True,
                 text=True,
                 cwd=root,
             )
-        except subprocess.CalledProcessError:
+        except subprocess.CalledProcessError as exc:
+            errors.append(
+                f"failed to inspect previous manifest path {path} at {previous_ref}: "
+                f"{_git_error_context(exc)}"
+            )
             return None
-        data = yaml.safe_load(result.stdout) or {}
+        if not listed.stdout.strip():
+            return None
+
+    manifests = {}
+    for volume_id, path in manifest_paths.items():
+        try:
+            result = subprocess.run(
+                ["git", "show", f"{commit}:{path}"],
+                check=True,
+                capture_output=True,
+                text=True,
+                cwd=root,
+            )
+        except subprocess.CalledProcessError as exc:
+            errors.append(
+                f"failed to load previous {volume_id} manifest from {previous_ref}: "
+                f"{_git_error_context(exc)}"
+            )
+            return None
+        try:
+            data = yaml.safe_load(result.stdout) or {}
+        except yaml.YAMLError as exc:
+            errors.append(f"previous {volume_id} manifest has malformed YAML: {exc}")
+            return None
         if not isinstance(data, dict):
             errors.append(f"previous {volume_id} manifest must contain a YAML mapping")
             return None
@@ -511,7 +608,7 @@ def _load_previous_manifests(root: Path, previous_ref: str, errors: list[str]) -
     return manifests
 
 
-def _validate_volume_manifest(volume_id: str, manifest: dict, registry: dict[str, dict],
+def _validate_volume_manifest(root: Path, volume_id: str, manifest: dict, registry: dict[str, dict],
                               errors: list[str]) -> set[str]:
     occupied_cards: set[str] = set()
     if manifest.get("version") != 1:
@@ -520,7 +617,7 @@ def _validate_volume_manifest(volume_id: str, manifest: dict, registry: dict[str
         errors.append(f"{volume_id}: volume_id must be {volume_id}")
 
     publication_status = manifest.get("publication_status")
-    if publication_status not in PUBLICATION_STATUSES:
+    if not isinstance(publication_status, str) or publication_status not in PUBLICATION_STATUSES:
         errors.append(
             f"{volume_id}: publication_status must be draft or published"
         )
@@ -538,13 +635,13 @@ def _validate_volume_manifest(volume_id: str, manifest: dict, registry: dict[str
             continue
         leaf_label = leaf.get("id", f"leaf {leaf_index}")
         physical_leaf = leaf.get("physical_leaf")
-        if isinstance(physical_leaf, int):
+        if _is_int(physical_leaf):
             physical_numbers.append(physical_leaf)
         else:
             errors.append(f"{volume_id} {leaf_label}: physical_leaf must be an integer")
 
         kind = leaf.get("kind")
-        if kind not in LEAF_KINDS:
+        if not isinstance(kind, str) or kind not in LEAF_KINDS:
             errors.append(f"{volume_id} {leaf_label}: unknown leaf kind {kind!r}")
             continue
 
@@ -554,10 +651,15 @@ def _validate_volume_manifest(volume_id: str, manifest: dict, registry: dict[str
                     f"{volume_id} {leaf_label}: transition leaf must not define pockets"
                 )
             role = leaf.get("role")
-            if role not in TRANSITION_ROLES:
+            if not isinstance(role, str) or role not in TRANSITION_ROLES:
                 errors.append(
                     f"{volume_id} {leaf_label}: transition role {role!r} is invalid"
                 )
+            heading = leaf.get("heading")
+            if not isinstance(heading, str) or not heading.strip():
+                errors.append(f"{volume_id} {leaf_label}: heading must be a nonempty string")
+            if "copy" in leaf and not isinstance(leaf.get("copy"), str):
+                errors.append(f"{volume_id} {leaf_label}: copy must be a string")
             continue
 
         _validate_card_leaf_metadata(volume_id, leaf_label, leaf, errors)
@@ -574,7 +676,7 @@ def _validate_volume_manifest(volume_id: str, manifest: dict, registry: dict[str
                 errors.append(f"{volume_id} {leaf_label}: pocket {pocket_index} must be a mapping")
                 continue
             position = pocket.get("position")
-            if not isinstance(position, int) or not 1 <= position <= 9:
+            if not _is_int(position) or not 1 <= position <= 9:
                 errors.append(
                     f"{volume_id} {leaf_label}: pocket position {position!r} must be 1-9"
                 )
@@ -600,12 +702,12 @@ def _validate_volume_manifest(volume_id: str, manifest: dict, registry: dict[str
                     f"{volume_id} {leaf_label} pocket {position}: duplicate occupied placement "
                     f"for {card_id} already at physical_leaf {prior_leaf} pocket {prior_position}"
                 )
-            elif isinstance(physical_leaf, int) and isinstance(position, int):
+            elif _is_int(physical_leaf) and _is_int(position):
                 volume_seen_cards[card_id] = (physical_leaf, position)
             occupied_cards.add(card_id)
 
             _validate_placement(
-                volume_id, leaf_label, position, pocket.get("placement"), registry, errors
+                root, volume_id, leaf_label, position, pocket.get("placement"), registry, errors
             )
 
     expected = list(range(1, len(physical_numbers) + 1))
@@ -622,11 +724,11 @@ def _validate_card_leaf_metadata(volume_id: str, leaf_label: str, leaf: dict,
         if not isinstance(leaf.get(field), str) or not leaf.get(field).strip():
             errors.append(f"{volume_id} {leaf_label}: {field} must be a nonempty string")
     chapter_order = leaf.get("chapter_order")
-    if not isinstance(chapter_order, int) or chapter_order < 1:
+    if not _is_int(chapter_order) or chapter_order < 1:
         errors.append(f"{volume_id} {leaf_label}: chapter_order must be a positive integer")
     if "theme_page" in leaf:
         theme_page = leaf.get("theme_page")
-        if not isinstance(theme_page, int) or theme_page < 1:
+        if not _is_int(theme_page) or theme_page < 1:
             errors.append(f"{volume_id} {leaf_label}: theme_page must be a positive integer")
 
 
@@ -644,7 +746,7 @@ def _validate_global_duplicates(manifests: dict[str, dict], errors: list[str]) -
                     continue
                 card_id = pocket.get("card_id")
                 position = pocket.get("position")
-                if card_id and isinstance(physical_leaf, int) and isinstance(position, int):
+                if card_id and _is_int(physical_leaf) and _is_int(position):
                     locations.setdefault(card_id, []).append((volume_id, physical_leaf, position))
     for card_id, card_locations in locations.items():
         if len({location[0] for location in card_locations}) < 2:
@@ -656,26 +758,33 @@ def _validate_global_duplicates(manifests: dict[str, dict], errors: list[str]) -
         errors.append(f"duplicate occupied placement for {card_id} across volumes: {rendered}")
 
 
-def _validate_placement(volume_id: str, leaf_label: str, position: int | None,
+def _validate_placement(root: Path, volume_id: str, leaf_label: str, position: int | None,
                         placement: object, registry: dict[str, dict], errors: list[str]) -> None:
+    label = f"{volume_id} {leaf_label} pocket {position}"
     if not isinstance(placement, dict):
-        errors.append(f"{volume_id} {leaf_label} pocket {position}: placement is required")
+        errors.append(f"{label}: placement is required")
         return
     status = placement.get("status")
-    if status not in PLACEMENT_STATUSES:
-        errors.append(
-            f"{volume_id} {leaf_label} pocket {position}: placement status {status!r} is invalid"
-        )
+    if not isinstance(status, str) or status not in PLACEMENT_STATUSES:
+        errors.append(f"{label}: placement status {status!r} is invalid")
     evidence = placement.get("evidence")
     if not isinstance(evidence, dict):
-        errors.append(f"{volume_id} {leaf_label} pocket {position}: placement evidence is required")
+        errors.append(f"{label}: placement evidence is required")
     else:
-        for field in ("type", "source", "observed_on"):
-            if not evidence.get(field):
-                errors.append(
-                    f"{volume_id} {leaf_label} pocket {position}: placement evidence needs {field}"
-                )
+        evidence_type = evidence.get("type")
+        if not isinstance(evidence_type, str) or not evidence_type.strip():
+            errors.append(f"{label}: placement evidence type must be a nonempty string")
+        source = evidence.get("source")
+        _validate_existing_relative_file(root, source, f"{label}: placement evidence source", errors)
+        observed_on = evidence.get("observed_on")
+        if not _valid_date(observed_on):
+            errors.append(f"{label}: placement evidence observed_on must be YYYY-MM-DD")
 
+    if status == "confirmed":
+        for key in ("observed_card_id", "physical_state_unknown"):
+            if key in placement:
+                errors.append(f"{label}: confirmed placement must not define {key}")
+        return
     if status != "pending":
         return
 
@@ -683,17 +792,13 @@ def _validate_placement(volume_id: str, leaf_label: str, position: int | None,
     unknown = placement.get("physical_state_unknown") is True
     if bool(observed) == unknown:
         errors.append(
-            f"{volume_id} {leaf_label} pocket {position}: pending placement requires exactly one "
+            f"{label}: pending placement requires exactly one "
             "of observed_card_id or physical_state_unknown"
         )
     if observed and observed not in registry:
-        errors.append(
-            f"{volume_id} {leaf_label} pocket {position}: unknown observed_card_id {observed}"
-        )
+        errors.append(f"{label}: unknown observed_card_id {observed}")
     if unknown and not placement.get("note"):
-        errors.append(
-            f"{volume_id} {leaf_label} pocket {position}: physical_state_unknown pending placement needs note"
-        )
+        errors.append(f"{label}: physical_state_unknown pending placement needs note")
 
 
 def _validate_images(root: Path, images: dict, registry: dict[str, dict],
@@ -715,7 +820,7 @@ def _validate_images(root: Path, images: dict, registry: dict[str, dict],
             errors.append(f"image record {card_id}: must be a mapping")
             continue
         classification = record.get("classification")
-        if classification not in IMAGE_CLASSIFICATIONS:
+        if not isinstance(classification, str) or classification not in IMAGE_CLASSIFICATIONS:
             errors.append(f"image record {card_id}: classification {classification!r} is invalid")
             continue
         asset_path = record.get("asset_path") or ""
@@ -723,24 +828,34 @@ def _validate_images(root: Path, images: dict, registry: dict[str, dict],
             if asset_path:
                 errors.append(f"image record {card_id}: missing classification requires empty asset_path")
         else:
-            if not asset_path:
+            if not isinstance(asset_path, str) or not asset_path.strip():
                 errors.append(f"image record {card_id}: {classification} image requires asset_path")
             else:
-                effective_asset = asset_overrides.get(asset_path) if asset_overrides else None
-                if effective_asset is None:
-                    effective_asset = root / asset_path
-                if not effective_asset.is_file():
-                    errors.append(f"image record {card_id}: missing asset {asset_path}")
+                normalized_asset = _validate_existing_relative_file(
+                    root,
+                    asset_path,
+                    f"image record {card_id}: asset_path",
+                    errors,
+                    required_prefix="assets/images/cards",
+                    check_exists=False,
+                )
+                effective_asset = None
+                if normalized_asset is not None:
+                    effective_asset = asset_overrides.get(normalized_asset) if asset_overrides else None
+                    if effective_asset is None:
+                        effective_asset = root / normalized_asset
+                    if not effective_asset.is_file():
+                        errors.append(f"image record {card_id}: missing asset {normalized_asset}")
         reviewed = record.get("reviewed")
         if not isinstance(reviewed, bool):
             errors.append(f"image record {card_id}: reviewed must be true or false")
         reviewed_on = record.get("reviewed_on")
-        if reviewed is True and not (isinstance(reviewed_on, str) and DATE_RE.match(reviewed_on)):
+        if reviewed is True and not _valid_date(reviewed_on):
             errors.append(f"image record {card_id}: reviewed image requires reviewed_on YYYY-MM-DD")
         if reviewed is False and reviewed_on not in ("", None):
             errors.append(f"image record {card_id}: unreviewed image requires empty reviewed_on")
         if classification != "missing":
-            _validate_non_missing_image_source(card_id, record, errors)
+            _validate_non_missing_image_source(root, card_id, record, errors)
         if classification == "proxy" and not record.get("note"):
             errors.append(f"image record {card_id}: proxy image requires note")
         if classification == "exact":
@@ -770,15 +885,20 @@ def _validate_crop_box(card_id: str, record: dict, errors: list[str]) -> None:
         )
 
 
-def _validate_non_missing_image_source(card_id: str, record: dict, errors: list[str]) -> None:
+def _validate_non_missing_image_source(root: Path, card_id: str, record: dict, errors: list[str]) -> None:
     provider = record.get("provider")
     if not isinstance(provider, str) or not provider.strip():
         errors.append(f"image record {card_id}: non-missing image requires provider")
         return
     if provider == "evidence-crop":
         source_path = record.get("source_path")
-        if not isinstance(source_path, str) or not source_path.startswith("docs/evidence/"):
-            errors.append(f"image record {card_id}: evidence crop requires source_path under docs/evidence")
+        _validate_existing_relative_file(
+            root,
+            source_path,
+            f"image record {card_id}: source_path",
+            errors,
+            required_prefix="docs/evidence",
+        )
         _validate_crop_box(card_id, record, errors)
         return
     source_url = record.get("source_url")
@@ -815,47 +935,64 @@ def _validate_exact_image(card_id: str, record: dict, registry_row: dict, errors
 
 def validate_transition(previous: dict, current: dict) -> list[str]:
     errors: list[str] = []
-    previous_pockets = _occupied_pockets(previous)
-    current_pockets = _occupied_pockets(current)
-    for pocket_key, previous_pocket in previous_pockets.items():
+    previous_pockets = _physical_pockets(previous)
+    current_pockets = _physical_pockets(current)
+    for pocket_key in sorted(set(previous_pockets) | set(current_pockets)):
+        previous_pocket = previous_pockets.get(pocket_key)
         current_pocket = current_pockets.get(pocket_key)
-        if not current_pocket:
-            continue
-        previous_status = previous_pocket.get("status")
-        current_status = current_pocket.get("status")
-        if previous_status == "confirmed" and current_status == "pending":
-            if current_pocket.get("observed_card_id") != previous_pocket.get("card_id"):
+        previous_status = previous_pocket.get("status") if previous_pocket else "missing"
+        current_status = current_pocket.get("status") if current_pocket else "missing"
+        current_occupied = _is_occupied_pocket_state(current_pocket)
+
+        if previous_status == "confirmed":
+            if not current_occupied:
                 errors.append(
-                    f"{_format_pocket_key(pocket_key)}: pending placement must carry last "
-                    f"observed_card_id {previous_pocket.get('card_id')}"
+                    f"{_format_pocket_key(pocket_key)}: confirmed card removed without pending state"
                 )
-        elif previous_status == "confirmed" and current_status == "confirmed":
-            if current_pocket.get("card_id") != previous_pocket.get("card_id"):
-                errors.append(
-                    f"{_format_pocket_key(pocket_key)}: confirmed card changed without pending state"
-                )
-        elif previous_status == "pending" and current_status == "confirmed":
-            allowed_cards = {
-                card_id for card_id in (
-                    previous_pocket.get("card_id"),
-                    previous_pocket.get("observed_card_id"),
-                ) if card_id
-            }
-            if current_pocket.get("card_id") not in allowed_cards:
-                errors.append(
-                    f"{_format_pocket_key(pocket_key)}: confirmed card does not match pending card "
-                    f"or observed card from previous state"
-                )
-        elif previous_status == "pending" and current_status == "pending":
-            if (previous_pocket.get("observed_card_id") and
-                    current_pocket.get("observed_card_id") != previous_pocket.get("observed_card_id")):
-                errors.append(
-                    f"{_format_pocket_key(pocket_key)}: pending observed_card_id changed"
-                )
+            elif current_status == "pending":
+                if current_pocket.get("observed_card_id") != previous_pocket.get("card_id"):
+                    errors.append(
+                        f"{_format_pocket_key(pocket_key)}: pending placement must carry last "
+                        f"observed_card_id {previous_pocket.get('card_id')}"
+                    )
+            elif current_status == "confirmed":
+                if current_pocket.get("card_id") != previous_pocket.get("card_id"):
+                    errors.append(
+                        f"{_format_pocket_key(pocket_key)}: confirmed card changed without pending state"
+                    )
+        elif previous_status == "pending":
+            if not current_occupied:
+                continue
+            if current_status == "confirmed":
+                allowed_cards = {
+                    card_id for card_id in (
+                        previous_pocket.get("card_id"),
+                        previous_pocket.get("observed_card_id"),
+                    ) if card_id
+                }
+                if current_pocket.get("card_id") not in allowed_cards:
+                    errors.append(
+                        f"{_format_pocket_key(pocket_key)}: confirmed card does not match pending card "
+                        f"or observed card from previous state"
+                    )
+            elif current_status == "pending":
+                if (previous_pocket.get("observed_card_id") and
+                        current_pocket.get("observed_card_id") != previous_pocket.get("observed_card_id")):
+                    errors.append(
+                        f"{_format_pocket_key(pocket_key)}: pending observed_card_id changed"
+                    )
+        elif current_status == "confirmed":
+            errors.append(
+                f"{_format_pocket_key(pocket_key)}: confirmed card appeared without pending state"
+            )
     return errors
 
 
-def _occupied_pockets(project: dict) -> dict[tuple[str, int, int], dict]:
+def _is_occupied_pocket_state(pocket: dict | None) -> bool:
+    return bool(pocket and pocket.get("card_id") and pocket.get("status") in PLACEMENT_STATUSES)
+
+
+def _physical_pockets(project: dict) -> dict[tuple[str, int, int], dict]:
     pockets = {}
     for volume_id, manifest in project.items():
         if not isinstance(manifest, dict):
@@ -865,16 +1002,21 @@ def _occupied_pockets(project: dict) -> dict[tuple[str, int, int], dict]:
                 continue
             physical_leaf = leaf.get("physical_leaf")
             for pocket in leaf.get("pockets", []):
-                if not isinstance(pocket, dict) or pocket.get("empty") is True:
+                if not isinstance(pocket, dict):
                     continue
                 position = pocket.get("position")
+                if not (_is_int(physical_leaf) and _is_int(position)):
+                    continue
+                key = (volume_id, physical_leaf, position)
+                if pocket.get("empty") is True:
+                    pockets[key] = {"status": "empty"}
+                    continue
                 placement = pocket.get("placement") if isinstance(pocket.get("placement"), dict) else {}
-                if isinstance(physical_leaf, int) and isinstance(position, int):
-                    pockets[(volume_id, physical_leaf, position)] = {
-                        "card_id": pocket.get("card_id"),
-                        "status": placement.get("status"),
-                        "observed_card_id": placement.get("observed_card_id"),
-                    }
+                pockets[key] = {
+                    "card_id": pocket.get("card_id"),
+                    "status": placement.get("status"),
+                    "observed_card_id": placement.get("observed_card_id"),
+                }
     return pockets
 
 
@@ -910,7 +1052,7 @@ def validate_project(root: Path, previous_ref: str | None = None) -> list[str]:
     for volume_id, manifest in manifests.items():
         publication_statuses[volume_id] = manifest.get("publication_status")
         occupied_by_volume[volume_id] = _validate_volume_manifest(
-            volume_id, manifest, registry, errors
+            root, volume_id, manifest, registry, errors
         )
     _validate_global_duplicates(manifests, errors)
 
@@ -946,8 +1088,10 @@ class _PublicBinderParser(HTMLParser):
         in_pocket = parent.get("in_pocket", False)
         stage_node = parent.get("stage_node")
         spreads_node = parent.get("spreads_node")
+        dialog_node = parent.get("dialog_node")
         ancestor_stage_node = stage_node
         ancestor_spreads_node = spreads_node
+        ancestor_dialog_node = dialog_node
 
         if "data-binder" in attributes:
             root = {
@@ -966,6 +1110,9 @@ class _PublicBinderParser(HTMLParser):
                 "dialog_close": [],
                 "dialog_previous": [],
                 "dialog_next": [],
+                "dialog_images": [],
+                "dialog_names": [],
+                "dialog_fields": [],
                 "initial_urls": set(),
                 "spread_count": 0,
             }
@@ -975,8 +1122,10 @@ class _PublicBinderParser(HTMLParser):
             in_pocket = False
             stage_node = None
             spreads_node = None
+            dialog_node = None
             ancestor_stage_node = None
             ancestor_spreads_node = None
+            ancestor_dialog_node = None
 
         if root is not None:
             element_id = attributes.get("id")
@@ -1024,13 +1173,26 @@ class _PublicBinderParser(HTMLParser):
             if "data-binder-position" in attributes:
                 root["positions"].append(attributes)
             if tag == "dialog" and "data-card-inspector" in attributes:
+                attributes["__node_id"] = node_id
                 root["dialogs"].append(attributes)
             if "data-card-inspector-close" in attributes:
+                attributes["__dialog_node"] = ancestor_dialog_node
                 root["dialog_close"].append(attributes)
             if "data-card-inspector-previous" in attributes:
+                attributes["__dialog_node"] = ancestor_dialog_node
                 root["dialog_previous"].append(attributes)
             if "data-card-inspector-next" in attributes:
+                attributes["__dialog_node"] = ancestor_dialog_node
                 root["dialog_next"].append(attributes)
+            if "data-card-inspector-image" in attributes:
+                attributes["__dialog_node"] = ancestor_dialog_node
+                root["dialog_images"].append(attributes)
+            if "data-card-inspector-name" in attributes:
+                attributes["__dialog_node"] = ancestor_dialog_node
+                root["dialog_names"].append(attributes)
+            if "data-card-inspector-field" in attributes:
+                attributes["__dialog_node"] = ancestor_dialog_node
+                root["dialog_fields"].append(attributes)
 
             inspector_src = attributes.get("data-inspector-src")
             if inspector_src:
@@ -1045,6 +1207,8 @@ class _PublicBinderParser(HTMLParser):
                 stage_node = node_id
             if "data-binder-spreads" in attributes:
                 spreads_node = node_id
+            if tag == "dialog" and "data-card-inspector" in attributes:
+                dialog_node = node_id
 
         if tag not in HTML_VOID_ELEMENTS:
             self.stack.append({
@@ -1055,6 +1219,7 @@ class _PublicBinderParser(HTMLParser):
                 "in_pocket": in_pocket,
                 "stage_node": stage_node,
                 "spreads_node": spreads_node,
+                "dialog_node": dialog_node,
             })
 
     def handle_startendtag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
@@ -1069,24 +1234,42 @@ class _PublicBinderParser(HTMLParser):
                 return
 
     @staticmethod
-    def _record_image_urls(root: dict, attributes: dict[str, str | None]) -> None:
+    def _srcset_candidates(srcset: str) -> list[tuple[str, int | None]]:
+        candidates = []
+        for candidate in srcset.split(","):
+            parts = candidate.strip().split()
+            if not parts:
+                continue
+            width = None
+            if len(parts) > 1 and parts[1].endswith("w"):
+                try:
+                    width = int(parts[1][:-1])
+                except ValueError:
+                    width = None
+            candidates.append((parts[0], width))
+        return candidates
+
+    @classmethod
+    def _record_image_urls(cls, root: dict, attributes: dict[str, str | None]) -> None:
         source = attributes.get("src") or ""
         if source:
             root.setdefault("card_urls", []).append(source)
-        srcset = attributes.get("srcset") or ""
         root.setdefault("card_urls", []).extend(
-            candidate.strip().split()[0]
-            for candidate in srcset.split(",")
-            if candidate.strip()
+            url for url, _width in cls._srcset_candidates(attributes.get("srcset") or "")
         )
 
-    @staticmethod
-    def _record_card_image(root: dict, leaf: dict | None, spread: int | None,
+    @classmethod
+    def _record_card_image(cls, root: dict, leaf: dict | None, spread: int | None,
                            attributes: dict[str, str | None]) -> None:
         source = attributes.get("src") or ""
         initial = "data-initial-binder-image" in attributes
-        if initial and source:
-            root["initial_urls"].add(source)
+        srcset_candidates = cls._srcset_candidates(attributes.get("srcset") or "")
+        if initial:
+            width_candidates = [(url, width) for url, width in srcset_candidates if width is not None]
+            if width_candidates:
+                root["initial_urls"].add(max(width_candidates, key=lambda item: item[1])[0])
+            elif source:
+                root["initial_urls"].add(source)
         root.setdefault("images", []).append({
             "source": source,
             "alt": attributes.get("alt"),
@@ -1193,8 +1376,11 @@ def _validate_public_binder(public_dir: Path, root: dict) -> list[str]:
     if len(root["positions"]) != 1:
         errors.append(f"{label}: must contain exactly one binder position control")
 
+    dialog_id = None
     if len(root["dialogs"]) != 1:
         errors.append(f"{label}: must contain exactly one card inspector dialog")
+    else:
+        dialog_id = root["dialogs"][0].get("__node_id")
     for control_name, key in (
         ("close", "dialog_close"),
         ("previous card", "dialog_previous"),
@@ -1202,10 +1388,43 @@ def _validate_public_binder(public_dir: Path, root: dict) -> list[str]:
     ):
         if len(root[key]) != 1:
             errors.append(f"{label}: card inspector dialog needs one {control_name} control")
+        elif dialog_id is not None and root[key][0].get("__dialog_node") != dialog_id:
+            errors.append(f"{label}: card inspector {control_name} control must be inside dialog")
 
-    for url in root.get("card_urls", []):
+    if len(root["dialog_images"]) != 1:
+        errors.append(f"{label}: card inspector needs one inspector image")
+    elif dialog_id is not None and root["dialog_images"][0].get("__dialog_node") != dialog_id:
+        errors.append(f"{label}: card inspector image must be inside dialog")
+    if len(root["dialog_names"]) != 1:
+        errors.append(f"{label}: card inspector needs one inspector name")
+    elif dialog_id is not None and root["dialog_names"][0].get("__dialog_node") != dialog_id:
+        errors.append(f"{label}: card inspector name must be inside dialog")
+    expected_fields = {
+        "language",
+        "set-number",
+        "theme-pocket",
+        "image-classification",
+        "image-source",
+        "image-note",
+        "placement",
+    }
+    fields_by_name = {}
+    for field in root["dialog_fields"]:
+        fields_by_name.setdefault(field.get("data-card-inspector-field"), []).append(field)
+    for field_name in sorted(expected_fields):
+        fields = fields_by_name.get(field_name, [])
+        if len(fields) != 1:
+            errors.append(f"{label}: card inspector field {field_name!r} is required")
+        elif dialog_id is not None and fields[0].get("__dialog_node") != dialog_id:
+            errors.append(f"{label}: card inspector field {field_name!r} must be inside dialog")
+
+    for url in sorted(set(root.get("card_urls", []))):
         if _is_remote_url(url):
             errors.append(f"{label}: remote card image URL is not allowed: {url}")
+            continue
+        asset_path = _public_asset_path(public_dir, root["page_path"], url)
+        if asset_path is None or not asset_path.is_file():
+            errors.append(f"{label}: binder image URL does not resolve under public output: {url}")
 
     for image in root.get("images", []):
         if not image["source"]:

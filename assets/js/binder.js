@@ -140,10 +140,27 @@
       const name = dialog.querySelector("[data-card-inspector-name]");
       const fields = new Map(Array.from(dialog.querySelectorAll("[data-card-inspector-field]"))
         .map((field) => [field.dataset.cardInspectorField, field]));
+      const expectedFields = [
+        "language",
+        "set-number",
+        "theme-pocket",
+        "image-classification",
+        "image-source",
+        "image-note",
+        "placement"
+      ];
+
+      function hasRequiredInspectorParts() {
+        return Boolean(close && priorCard && nextCard && image && name)
+          && expectedFields.every((field) => fields.has(field));
+      }
 
       function setField(field, value) {
-        fields.get(field).textContent = value;
+        const target = fields.get(field);
+        if (target) target.textContent = value;
       }
+
+      if (!hasRequiredInspectorParts()) return;
 
       function placementText(button) {
         if (button.dataset.placementStatus !== "pending") return "Confirmed placement";

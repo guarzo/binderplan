@@ -32,7 +32,7 @@ EVIDENCE_SOURCE = (
     "docs/evidence/2026-09-22/digital-binder-migration/"
     "published-gallery/volume-1/example.webp"
 )
-IMAGE_ASSET = "static/images/cards/abra-01.webp"
+IMAGE_ASSET = "assets/images/cards/abra-01.webp"
 
 
 def confirmed_pocket(card_id):
@@ -99,6 +99,10 @@ def project_fixture(tmp_path, pockets=None, transition_pockets=None,
     (tmp_path / "docs").mkdir()
     (tmp_path / "docs" / "card-registry.md").write_text(
         registry_doc(confidence=registry_confidence),
+        encoding="utf-8",
+    )
+    (tmp_path / "docs" / "ledger.md").write_text(
+        "# Fixture ledger\n",
         encoding="utf-8",
     )
     evidence_path = tmp_path / EVIDENCE_SOURCE
@@ -365,25 +369,30 @@ def approve_args(card_id="abra-01", candidate_index=0, classification="exact", n
     )
 
 
-def project_manifest(card_id="abra-01", status="confirmed", observed_card_id=None):
+def project_manifest(card_id="abra-01", status="confirmed", observed_card_id=None,
+                     pockets=None, leaves=None):
     pocket = confirmed_pocket(card_id)
     if status == "pending":
         pocket = pending_pocket(card_id, observed_card_id=observed_card_id)
+    if pockets is None:
+        pockets = [pocket] + [empty_pocket(position) for position in range(2, 10)]
+    if leaves is None:
+        leaves = [{
+            "id": "leaf-1",
+            "kind": "cards",
+            "physical_leaf": 1,
+            "chapter": "Fixture Chapter",
+            "chapter_order": 1,
+            "theme": "Fixture Theme",
+            "theme_page": 1,
+            "pockets": pockets,
+        }]
     return {
         "volume-1": {
             "version": 1,
             "volume_id": "volume-1",
             "publication_status": "draft",
-            "leaves": [{
-                "id": "leaf-1",
-                "kind": "cards",
-                "physical_leaf": 1,
-                "chapter": "Fixture Chapter",
-                "chapter_order": 1,
-                "theme": "Fixture Theme",
-                "theme_page": 1,
-                "pockets": [pocket] + [empty_pocket(position) for position in range(2, 10)],
-            }],
+            "leaves": leaves,
         },
         "volume-2": {
             "version": 1,
@@ -2624,6 +2633,87 @@ def test_pending_to_confirmed_rejects_unrelated_card(tmp_path):
     assert any("pending card" in error for error in errors)
 
 
+def test_confirmed_to_empty_requires_pending_state(tmp_path):
+    previous = confirmed_project(tmp_path, card_id="abra-01")
+    current = project_manifest(pockets=[empty_pocket(position) for position in range(1, 10)])
+
+    errors = digital_binder.validate_transition(previous, current)
+
+    assert any("removed without pending state" in error for error in errors)
+
+
+def test_confirmed_to_removed_pocket_requires_pending_state(tmp_path):
+    previous = confirmed_project(tmp_path, card_id="abra-01")
+    current = project_manifest(pockets=[empty_pocket(position) for position in range(2, 10)])
+
+    errors = digital_binder.validate_transition(previous, current)
+
+    assert any("removed without pending state" in error for error in errors)
+
+
+def test_confirmed_to_removed_leaf_requires_pending_state(tmp_path):
+    previous = confirmed_project(tmp_path, card_id="abra-01")
+    current = project_manifest(leaves=[])
+
+    errors = digital_binder.validate_transition(previous, current)
+
+    assert any("removed without pending state" in error for error in errors)
+
+
+def test_direct_confirmed_move_reports_removal_and_appearance(tmp_path):
+    previous = confirmed_project(tmp_path, card_id="abra-01")
+    moved = confirmed_pocket("abra-01")
+    moved["position"] = 2
+    current = project_manifest(
+        pockets=[empty_pocket(1), moved] + [empty_pocket(position) for position in range(3, 10)]
+    )
+
+    errors = digital_binder.validate_transition(previous, current)
+
+    assert any("physical_leaf 1 pocket 1" in error and "removed without pending" in error
+               for error in errors)
+    assert any("physical_leaf 1 pocket 2" in error and "appeared without pending" in error
+               for error in errors)
+
+
+def test_confirmed_card_appearing_in_empty_pocket_requires_pending_state(tmp_path):
+    previous = confirmed_project(tmp_path, card_id="abra-01")
+    new_card = confirmed_pocket("kadabra-01")
+    new_card["position"] = 2
+    current = project_manifest(
+        pockets=[confirmed_pocket("abra-01"), new_card]
+                + [empty_pocket(position) for position in range(3, 10)]
+    )
+
+    errors = digital_binder.validate_transition(previous, current)
+
+    assert any("physical_leaf 1 pocket 2" in error and "appeared without pending" in error
+               for error in errors)
+
+
+def test_pending_to_removed_pocket_is_allowed_final_removal(tmp_path):
+    previous = pending_project(tmp_path, card_id="kadabra-01", observed_card_id="abra-01")
+    current = project_manifest(pockets=[empty_pocket(position) for position in range(1, 10)])
+
+    assert digital_binder.validate_transition(previous, current) == []
+
+
+def test_empty_to_pending_is_allowed_staging(tmp_path):
+    previous = project_manifest(pockets=[empty_pocket(position) for position in range(1, 10)])
+    current = pending_project(tmp_path, card_id="kadabra-01", observed_card_id="abra-01")
+
+    assert digital_binder.validate_transition(previous, current) == []
+
+
+def test_pending_replacement_lifecycle_can_confirm_new_card(tmp_path):
+    previous = confirmed_project(tmp_path, card_id="abra-01")
+    pending = pending_project(tmp_path, card_id="kadabra-01", observed_card_id="abra-01")
+    confirmed = confirmed_project(tmp_path, card_id="kadabra-01")
+
+    assert digital_binder.validate_transition(previous, pending) == []
+    assert digital_binder.validate_transition(pending, confirmed) == []
+
+
 def test_check_reports_malformed_registry_without_traceback(tmp_path, capsys):
     root = project_fixture(tmp_path)
     (root / "docs" / "card-registry.md").write_text("not a registry\n", encoding="utf-8")
@@ -2694,18 +2784,147 @@ def test_single_page_card_leaf_may_omit_theme_page(tmp_path):
     assert digital_binder.validate_project(root) == []
 
 
-def test_load_previous_manifests_uses_git_show_for_each_volume(tmp_path, monkeypatch):
+def test_integer_schema_fields_reject_booleans(tmp_path):
+    root = project_fixture(tmp_path)
+    volume = load_volume(root)
+    leaf = volume["leaves"][0]
+    leaf["physical_leaf"] = True
+    leaf["chapter_order"] = True
+    leaf["theme_page"] = True
+    leaf["pockets"][0]["position"] = True
+    write_volume(root, volume)
+
+    errors = digital_binder.validate_project(root)
+
+    assert any("physical_leaf" in error and "integer" in error for error in errors)
+    assert any("chapter_order" in error and "positive integer" in error for error in errors)
+    assert any("theme_page" in error and "positive integer" in error for error in errors)
+    assert any("pocket position" in error and "1-9" in error for error in errors)
+
+
+def test_malformed_enum_values_report_errors_not_type_errors(tmp_path):
+    root = project_fixture(tmp_path, image_classification="exact", transition_pockets=[])
+    volume = load_volume(root)
+    volume["publication_status"] = ["published"]
+    volume["leaves"][0]["kind"] = {"cards": True}
+    volume["leaves"][1].pop("pockets")
+    volume["leaves"][1]["role"] = ["chapter"]
+    write_volume(root, volume)
+    images = load_images(root)
+    images["cards"]["abra-01"]["classification"] = {"exact": True}
+    write_images(root, images)
+
+    errors = digital_binder.validate_project(root)
+
+    assert any("publication_status" in error for error in errors)
+    assert any("leaf kind" in error for error in errors)
+    assert any("transition role" in error for error in errors)
+    assert any("classification" in error for error in errors)
+
+
+def test_transition_leaf_requires_heading_and_string_copy(tmp_path):
+    root = project_fixture(tmp_path, transition_pockets=[])
+    volume = load_volume(root)
+    transition = volume["leaves"][1]
+    transition.pop("pockets")
+    transition["heading"] = ""
+    transition["copy"] = ["not", "copy"]
+    write_volume(root, volume)
+
+    errors = digital_binder.validate_project(root)
+
+    assert any("heading" in error and "nonempty string" in error for error in errors)
+    assert any("copy" in error and "string" in error for error in errors)
+
+
+def test_placement_evidence_requires_strings_valid_date_and_existing_relative_source(tmp_path):
+    root = project_fixture(tmp_path)
+    volume = load_volume(root)
+    evidence = volume["leaves"][0]["pockets"][0]["placement"]["evidence"]
+    evidence["type"] = ["published-photo"]
+    evidence["source"] = "../outside.webp"
+    evidence["observed_on"] = "2026-02-30"
+    write_volume(root, volume)
+
+    errors = digital_binder.validate_project(root)
+
+    assert any("evidence" in error and "type" in error and "nonempty string" in error
+               for error in errors)
+    assert any("evidence" in error and "source" in error and "relative" in error
+               for error in errors)
+    assert any("observed_on" in error and "YYYY-MM-DD" in error for error in errors)
+
+
+def test_confirmed_placement_rejects_pending_only_keys(tmp_path):
+    root = project_fixture(tmp_path)
+    placement = load_volume(root)["leaves"][0]["pockets"][0]["placement"]
+    placement["observed_card_id"] = "abra-01"
+    placement["physical_state_unknown"] = True
+    placement["note"] = "General curatorial note remains allowed."
+    volume = load_volume(root)
+    volume["leaves"][0]["pockets"][0]["placement"] = placement
+    write_volume(root, volume)
+
+    errors = digital_binder.validate_project(root)
+
+    assert any("confirmed placement" in error and "observed_card_id" in error for error in errors)
+    assert any("confirmed placement" in error and "physical_state_unknown" in error
+               for error in errors)
+    assert not any("confirmed placement" in error and "note" in error for error in errors)
+
+
+def test_image_manifest_rejects_malicious_asset_and_evidence_paths(tmp_path):
+    root = project_fixture(tmp_path, image_classification="photo-crop")
+    images = load_images(root)
+    record = images["cards"]["abra-01"]
+    record.update({
+        "asset_path": "../assets/images/cards/abra-01.webp",
+        "provider": "evidence-crop",
+        "source_path": "/docs/evidence/source.webp",
+    })
+    write_images(root, images)
+
+    errors = digital_binder.validate_project(root)
+
+    assert any("asset_path" in error and "assets/images/cards" in error for error in errors)
+    assert any("source_path" in error and "docs/evidence" in error for error in errors)
+
+
+def test_image_manifest_requires_real_review_date_and_existing_crop_source(tmp_path):
+    root = project_fixture(tmp_path, image_classification="photo-crop")
+    images = load_images(root)
+    record = images["cards"]["abra-01"]
+    record.update({
+        "provider": "evidence-crop",
+        "source_path": "docs/evidence/2026-09-22/missing-source.webp",
+        "reviewed_on": "2026-02-30",
+    })
+    write_images(root, images)
+
+    errors = digital_binder.validate_project(root)
+
+    assert any("reviewed_on" in error and "YYYY-MM-DD" in error for error in errors)
+    assert any("source_path" in error and "missing" in error for error in errors)
+
+
+def test_load_previous_manifests_verifies_ref_and_uses_git_show_for_each_volume(tmp_path, monkeypatch):
     calls = []
 
     def fake_run(command, check, capture_output, text, cwd):
         calls.append((command, check, capture_output, text, cwd))
-        volume_id = command[2].split("/")[-1].removesuffix(".yaml")
-        return subprocess.CompletedProcess(
-            command,
-            0,
-            stdout=yaml.safe_dump(project_manifest()[volume_id]),
-            stderr="",
-        )
+        if command[:3] == ["git", "rev-parse", "--verify"]:
+            return subprocess.CompletedProcess(command, 0, stdout="abc123\n", stderr="")
+        if command[:3] == ["git", "ls-tree", "--name-only"]:
+            return subprocess.CompletedProcess(command, 0, stdout=command[4] + "\n", stderr="")
+        if command[:2] == ["git", "show"]:
+            volume_id = command[2].split("/")[-1].removesuffix(".yaml")
+            return subprocess.CompletedProcess(
+                command,
+                0,
+                stdout=yaml.safe_dump(project_manifest()[volume_id]),
+                stderr="",
+            )
+        raise AssertionError(f"unexpected git command: {command}")
 
     monkeypatch.setattr(digital_binder.subprocess, "run", fake_run)
     errors = []
@@ -2715,8 +2934,11 @@ def test_load_previous_manifests_uses_git_show_for_each_volume(tmp_path, monkeyp
     assert errors == []
     assert manifests["volume-1"]["volume_id"] == "volume-1"
     assert [call[0] for call in calls] == [
-        ["git", "show", "main:data/binders/volume-1.yaml"],
-        ["git", "show", "main:data/binders/volume-2.yaml"],
+        ["git", "rev-parse", "--verify", "main^{commit}"],
+        ["git", "ls-tree", "--name-only", "abc123", "data/binders/volume-1.yaml"],
+        ["git", "ls-tree", "--name-only", "abc123", "data/binders/volume-2.yaml"],
+        ["git", "show", "abc123:data/binders/volume-1.yaml"],
+        ["git", "show", "abc123:data/binders/volume-2.yaml"],
     ]
     assert all(call[4] == tmp_path for call in calls)
 
@@ -2734,11 +2956,33 @@ def test_validate_project_rejects_unsafe_previous_ref_without_git(tmp_path, monk
     assert any("invalid previous_ref" in error and "-bad" in error for error in errors)
 
 
-def test_validate_project_skips_absent_previous_manifest_but_keeps_current_validation(tmp_path, monkeypatch):
+def test_validate_project_rejects_unresolved_previous_ref_with_git_context(tmp_path, monkeypatch):
+    root = project_fixture(tmp_path)
+
+    def invalid_ref(command, check, capture_output, text, cwd):
+        assert command == ["git", "rev-parse", "--verify", "origin/missing^{commit}"]
+        raise subprocess.CalledProcessError(
+            128, command, stderr="fatal: Needed a single revision"
+        )
+
+    monkeypatch.setattr(digital_binder.subprocess, "run", invalid_ref)
+
+    errors = digital_binder.validate_project(root, previous_ref="origin/missing")
+
+    assert any("previous_ref" in error and "origin/missing" in error
+               and "Needed a single revision" in error for error in errors)
+
+
+def test_validate_project_skips_valid_previous_commit_with_absent_manifest_but_keeps_current_validation(
+        tmp_path, monkeypatch):
     root = project_fixture(tmp_path, pockets=[confirmed_pocket("abra-01")])
 
     def missing_manifest(command, check, capture_output, text, cwd):
-        raise subprocess.CalledProcessError(128, command, stderr="not found")
+        if command[:3] == ["git", "rev-parse", "--verify"]:
+            return subprocess.CompletedProcess(command, 0, stdout="abc123\n", stderr="")
+        if command[:3] == ["git", "ls-tree", "--name-only"]:
+            return subprocess.CompletedProcess(command, 0, stdout="", stderr="")
+        raise AssertionError(f"unexpected git command: {command}")
 
     monkeypatch.setattr(digital_binder.subprocess, "run", missing_manifest)
 
@@ -2748,6 +2992,64 @@ def test_validate_project_skips_absent_previous_manifest_but_keeps_current_valid
     assert not any("previous" in error for error in errors)
 
 
+def test_validate_project_fails_closed_when_previous_tree_inspection_fails(tmp_path, monkeypatch):
+    root = project_fixture(tmp_path)
+
+    def tree_failure(command, check, capture_output, text, cwd):
+        if command[:3] == ["git", "rev-parse", "--verify"]:
+            return subprocess.CompletedProcess(command, 0, stdout="abc123\n", stderr="")
+        if command[:3] == ["git", "ls-tree", "--name-only"]:
+            raise subprocess.CalledProcessError(128, command, stderr="fatal: bad tree")
+        raise AssertionError(f"unexpected git command: {command}")
+
+    monkeypatch.setattr(digital_binder.subprocess, "run", tree_failure)
+
+    errors = digital_binder.validate_project(root, previous_ref="main")
+
+    assert any("inspect previous manifest path" in error and "bad tree" in error
+               for error in errors)
+
+
+def test_validate_project_fails_closed_when_git_show_fails(tmp_path, monkeypatch):
+    root = project_fixture(tmp_path)
+
+    def show_failure(command, check, capture_output, text, cwd):
+        if command[:3] == ["git", "rev-parse", "--verify"]:
+            return subprocess.CompletedProcess(command, 0, stdout="abc123\n", stderr="")
+        if command[:3] == ["git", "ls-tree", "--name-only"]:
+            return subprocess.CompletedProcess(command, 0, stdout=command[4] + "\n", stderr="")
+        if command[:2] == ["git", "show"]:
+            raise subprocess.CalledProcessError(128, command, stderr="fatal: object corrupt")
+        raise AssertionError(f"unexpected git command: {command}")
+
+    monkeypatch.setattr(digital_binder.subprocess, "run", show_failure)
+
+    errors = digital_binder.validate_project(root, previous_ref="main")
+
+    assert any("previous volume-1 manifest" in error and "object corrupt" in error
+               for error in errors)
+
+
+def test_validate_project_reports_malformed_previous_yaml(tmp_path, monkeypatch):
+    root = project_fixture(tmp_path)
+
+    def malformed_previous(command, check, capture_output, text, cwd):
+        if command[:3] == ["git", "rev-parse", "--verify"]:
+            return subprocess.CompletedProcess(command, 0, stdout="abc123\n", stderr="")
+        if command[:3] == ["git", "ls-tree", "--name-only"]:
+            return subprocess.CompletedProcess(command, 0, stdout=command[4] + "\n", stderr="")
+        if command[:2] == ["git", "show"]:
+            return subprocess.CompletedProcess(command, 0, stdout="- not\n- a mapping\n", stderr="")
+        raise AssertionError(f"unexpected git command: {command}")
+
+    monkeypatch.setattr(digital_binder.subprocess, "run", malformed_previous)
+
+    errors = digital_binder.validate_project(root, previous_ref="main")
+
+    assert any("previous volume-1 manifest" in error and "YAML mapping" in error
+               for error in errors)
+
+
 def test_check_passes_previous_ref_to_git_loader(tmp_path, monkeypatch):
     root = project_fixture(tmp_path)
     write_current_generated(root)
@@ -2755,13 +3057,19 @@ def test_check_passes_previous_ref_to_git_loader(tmp_path, monkeypatch):
 
     def fake_run(command, check, capture_output, text, cwd):
         calls.append(command)
-        volume_id = command[2].split("/")[-1].removesuffix(".yaml")
-        return subprocess.CompletedProcess(
-            command,
-            0,
-            stdout=yaml.safe_dump(project_manifest()[volume_id]),
-            stderr="",
-        )
+        if command[:3] == ["git", "rev-parse", "--verify"]:
+            return subprocess.CompletedProcess(command, 0, stdout="abc123\n", stderr="")
+        if command[:3] == ["git", "ls-tree", "--name-only"]:
+            return subprocess.CompletedProcess(command, 0, stdout=command[4] + "\n", stderr="")
+        if command[:2] == ["git", "show"]:
+            volume_id = command[2].split("/")[-1].removesuffix(".yaml")
+            return subprocess.CompletedProcess(
+                command,
+                0,
+                stdout=yaml.safe_dump(project_manifest()[volume_id]),
+                stderr="",
+            )
+        raise AssertionError(f"unexpected git command: {command}")
 
     monkeypatch.setattr(digital_binder.subprocess, "run", fake_run)
 
@@ -2769,8 +3077,11 @@ def test_check_passes_previous_ref_to_git_loader(tmp_path, monkeypatch):
 
     assert rc == 0
     assert calls == [
-        ["git", "show", "main:data/binders/volume-1.yaml"],
-        ["git", "show", "main:data/binders/volume-2.yaml"],
+        ["git", "rev-parse", "--verify", "main^{commit}"],
+        ["git", "ls-tree", "--name-only", "abc123", "data/binders/volume-1.yaml"],
+        ["git", "ls-tree", "--name-only", "abc123", "data/binders/volume-2.yaml"],
+        ["git", "show", "abc123:data/binders/volume-1.yaml"],
+        ["git", "show", "abc123:data/binders/volume-2.yaml"],
     ]
 
 
@@ -3323,6 +3634,8 @@ def test_binder_interaction_assets_declare_accessible_contract():
     assert "data-binder-legend" not in javascript
     assert "updateLegend" not in javascript
     assert 'const dialog = root.querySelector("[data-card-inspector]")' in javascript
+    assert 'if (!hasRequiredInspectorParts()) return;' in javascript
+    assert 'fields.get(field).textContent = value;' not in javascript
     assert 'document.querySelector("[data-binder-controls]")' not in javascript
     assert 'document.querySelector("[data-card-inspector]")' not in javascript
     assert "focusedAdjacentControl.disabled" in javascript
@@ -3556,6 +3869,19 @@ def write_html(root: Path, body: str) -> None:
 
 
 def valid_public_binder_html(volume_id="volume-1", leaf_prefix="v1") -> str:
+    inspector_fields = "".join(
+        f'<dd data-card-inspector-field="{field}"></dd>'
+        for field in (
+            "language",
+            "set-number",
+            "theme-pocket",
+            "image-classification",
+            "image-source",
+            "image-note",
+            "placement",
+        )
+    )
+
     def card_leaf(leaf_id: str, image_name: str, *, initial: bool) -> str:
         loading = "eager" if initial else "lazy"
         initial_attribute = " data-initial-binder-image" if initial else ""
@@ -3566,7 +3892,8 @@ def valid_public_binder_html(volume_id="volume-1", leaf_prefix="v1") -> str:
         return (
             f'<section id="leaf-{leaf_id}" data-binder-leaf="{leaf_id}" data-kind="cards">'
             '<div class="binder-pockets">'
-            '<button data-pocket data-pocket-position="1" data-card-id="abra-01">'
+            '<button data-pocket data-pocket-position="1" data-card-id="abra-01" '
+            'data-inspector-src="/images/cards/inspector.webp">'
             f'<img src="/images/cards/{image_name}" alt="Abra, Base Set 43/102" '
             f'loading="{loading}"{initial_attribute}>'
             '</button>'
@@ -3601,6 +3928,9 @@ def valid_public_binder_html(volume_id="volume-1", leaf_prefix="v1") -> str:
         '<button data-card-inspector-close>Close</button>'
         '<button data-card-inspector-previous>Previous card</button>'
         '<button data-card-inspector-next>Next card</button>'
+        '<img data-card-inspector-image alt="" hidden>'
+        '<h2 data-card-inspector-name></h2>'
+        f'<dl>{inspector_fields}</dl>'
         '</dialog>'
         '</div>'
         '</body></html>'
@@ -3608,7 +3938,7 @@ def valid_public_binder_html(volume_id="volume-1", leaf_prefix="v1") -> str:
 
 
 def write_public_card_assets(root: Path) -> None:
-    for name in ("one.webp", "two.webp", "three.webp"):
+    for name in ("one.webp", "two.webp", "three.webp", "inspector.webp"):
         asset = root / "images/cards" / name
         asset.parent.mkdir(parents=True, exist_ok=True)
         asset.write_bytes(b"fixture image")
@@ -3706,6 +4036,25 @@ def test_public_check_requires_dialog_and_labelled_controls(tmp_path):
 
     assert any("dialog" in error for error in errors)
     assert any("controls" in error and "label" in error for error in errors)
+
+
+def test_public_check_requires_inspector_parts_inside_dialog(tmp_path):
+    html = valid_public_binder_html().replace(
+        '<img data-card-inspector-image alt="" hidden>'
+        '<h2 data-card-inspector-name></h2>'
+        '<dl>',
+        '</dialog><img data-card-inspector-image alt="" hidden>'
+        '<h2 data-card-inspector-name></h2><dl>',
+        1,
+    )
+    write_html(tmp_path, html)
+    write_public_card_assets(tmp_path)
+
+    errors = digital_binder.validate_public_output(tmp_path)
+
+    assert any("inspector image" in error and "inside" in error for error in errors)
+    assert any("inspector name" in error and "inside" in error for error in errors)
+    assert any("inspector field" in error and "inside" in error for error in errors)
 
 
 def test_public_check_requires_binder_stage_and_spreads_owner(tmp_path):
@@ -3855,6 +4204,46 @@ def test_public_check_requires_non_initial_card_images_to_be_lazy(tmp_path):
     assert any("loading=\"lazy\"" in error for error in errors)
 
 
+def test_public_check_requires_lazy_image_src_to_resolve(tmp_path):
+    html = valid_public_binder_html().replace("/images/cards/three.webp", "/images/cards/missing.webp")
+    write_html(tmp_path, html)
+    write_public_card_assets(tmp_path)
+
+    errors = digital_binder.validate_public_output(tmp_path)
+
+    assert any("binder image URL" in error and "missing.webp" in error for error in errors)
+
+
+def test_public_check_requires_each_srcset_candidate_to_resolve(tmp_path):
+    html = valid_public_binder_html().replace(
+        'src="/images/cards/one.webp"',
+        'src="/images/cards/one.webp" srcset="/images/cards/one.webp 360w, '
+        '/images/cards/one-large.webp 900w"',
+        1,
+    )
+    write_html(tmp_path, html)
+    write_public_card_assets(tmp_path)
+
+    errors = digital_binder.validate_public_output(tmp_path)
+
+    assert any("binder image URL" in error and "one-large.webp" in error for error in errors)
+
+
+def test_public_check_requires_inspector_source_to_resolve(tmp_path):
+    html = valid_public_binder_html().replace(
+        '/images/cards/inspector.webp',
+        '/images/cards/missing-inspector.webp',
+        1,
+    )
+    write_html(tmp_path, html)
+    write_public_card_assets(tmp_path)
+
+    errors = digital_binder.validate_public_output(tmp_path)
+
+    assert any("binder image URL" in error and "missing-inspector.webp" in error
+               for error in errors)
+
+
 def test_public_check_requires_initial_images_to_be_eager(tmp_path):
     html = valid_public_binder_html().replace(
         'loading="eager" data-initial-binder-image',
@@ -3875,13 +4264,30 @@ def test_public_check_enforces_unique_initial_image_file_budget(tmp_path):
         1,
     )
     write_html(tmp_path, html)
+    write_public_card_assets(tmp_path)
     image = tmp_path / "images/cards/one.webp"
-    image.parent.mkdir(parents=True)
     image.write_bytes(b"x" * 1_572_864)
 
     assert digital_binder.validate_public_output(tmp_path) == []
 
     image.write_bytes(b"x" * 1_572_865)
+    errors = digital_binder.validate_public_output(tmp_path)
+
+    assert any("initial image budget" in error and "1,572,864" in error for error in errors)
+
+
+def test_public_check_counts_largest_initial_srcset_candidate_for_budget(tmp_path):
+    html = valid_public_binder_html().replace(
+        'src="/images/cards/one.webp"',
+        'src="/images/cards/one.webp" srcset="/images/cards/one.webp 360w, '
+        '/images/cards/one-large.webp 900w"',
+        1,
+    )
+    write_html(tmp_path, html)
+    write_public_card_assets(tmp_path)
+    large = tmp_path / "images/cards/one-large.webp"
+    large.write_bytes(b"x" * 1_572_865)
+
     errors = digital_binder.validate_public_output(tmp_path)
 
     assert any("initial image budget" in error and "1,572,864" in error for error in errors)
@@ -4015,10 +4421,7 @@ def test_public_check_ignores_unrelated_images_outside_binder_root(tmp_path):
         '<img src="https://example.com/gallery-photo.webp" alt="Gallery photo">'
         + valid_public_binder_html(),
     )
-    for name in ("one.webp", "two.webp"):
-        asset = tmp_path / "images/cards" / name
-        asset.parent.mkdir(parents=True, exist_ok=True)
-        asset.write_bytes(b"fixture image")
+    write_public_card_assets(tmp_path)
 
     assert digital_binder.validate_public_output(tmp_path) == []
 
@@ -4086,18 +4489,27 @@ def test_check_passes_valid_previous_ref_environment(tmp_path, monkeypatch):
 
     def fake_run(command, check, capture_output, text, cwd):
         calls.append(command)
-        volume_id = command[2].split("/")[-1].removesuffix(".yaml")
-        return subprocess.CompletedProcess(
-            command,
-            0,
-            stdout=yaml.safe_dump(project_manifest()[volume_id]),
-            stderr="",
-        )
+        if command[:3] == ["git", "rev-parse", "--verify"]:
+            return subprocess.CompletedProcess(command, 0, stdout="abc123\n", stderr="")
+        if command[:3] == ["git", "ls-tree", "--name-only"]:
+            return subprocess.CompletedProcess(command, 0, stdout=command[4] + "\n", stderr="")
+        if command[:2] == ["git", "show"]:
+            volume_id = command[2].split("/")[-1].removesuffix(".yaml")
+            return subprocess.CompletedProcess(
+                command,
+                0,
+                stdout=yaml.safe_dump(project_manifest()[volume_id]),
+                stderr="",
+            )
+        raise AssertionError(f"unexpected git command: {command}")
 
     monkeypatch.setattr(digital_binder.subprocess, "run", fake_run)
 
     assert digital_binder.main(["--check", "--root", str(root)]) == 0
     assert calls == [
+        ["git", "rev-parse", "--verify", "abc123^{commit}"],
+        ["git", "ls-tree", "--name-only", "abc123", "data/binders/volume-1.yaml"],
+        ["git", "ls-tree", "--name-only", "abc123", "data/binders/volume-2.yaml"],
         ["git", "show", "abc123:data/binders/volume-1.yaml"],
         ["git", "show", "abc123:data/binders/volume-2.yaml"],
     ]

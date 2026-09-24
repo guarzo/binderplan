@@ -86,7 +86,7 @@ Allowed placement transitions are:
 3. **Revert an unexecuted move:** restore `observed_card_id` as `card_id`, set `status: confirmed`, and cite the observation that established the reversion.
 4. **Correct contradicted evidence:** make a new manifest change with a note and evidence reference. Never rewrite an evidence file to make the old state appear correct.
 
-The manifest is the current authority for the intended public composition and its pocket-level physical confirmation state. It is a mutable snapshot, not historical evidence, and does not replace the ledger.
+The manifest is the current authority for the intended public composition and its pocket-level physical confirmation state. It is a mutable snapshot, not historical evidence, and does not replace the ledger. CI transition validation compares the final working-tree/current manifest to the supplied previous Git commit; if a push contains multiple commits, intermediate pending states in those commits are not visible to the checker.
 
 ### Image mapping
 
