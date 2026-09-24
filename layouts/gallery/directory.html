@@ -1,0 +1,21 @@
+{{ define "main" }}
+<section class="gallery-directory" aria-labelledby="directory-title">
+  <header class="directory-intro">
+    <p class="eyebrow">The collection</p>
+    <h1 id="directory-title">Gallery</h1>
+    <p>Pages to turn, smaller collections to visit, and cards gathered by a particular feeling. Choose a way in.</p>
+  </header>
+  {{ range .Site.Data.exhibition.groups }}
+    <section class="directory-section" aria-labelledby="directory-{{ .title | urlize }}">
+      <div class="directory-section-intro">
+        <h2 id="directory-{{ .title | urlize }}">{{ .title }}</h2>
+        <p>{{ .note }}</p>
+      </div>
+      <div class="directory-entries">
+        {{ range .collections }}{{ partial "exhibition-entry.html" (dict "item" . "variant" "directory") }}{{ end }}
+      </div>
+    </section>
+  {{ end }}
+  <p class="directory-note">Volumes I and II are digitally reconstructed from reviewed card assets. Other published galleries retain their current presentation; in-progress collections are not yet open.</p>
+</section>
+{{ end }}

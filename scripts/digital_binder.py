@@ -648,6 +648,17 @@ def _validate_volume_manifest(root: Path, volume_id: str, manifest: dict, regist
             f"{volume_id}: publication_status must be draft or published"
         )
 
+    layout = manifest.get("pocket_layout", {"rows": 3, "columns": 3})
+    if not isinstance(layout, dict):
+        errors.append(f"{volume_id}: pocket_layout must be a mapping")
+        layout = {}
+    for dimension in ("rows", "columns"):
+        value = layout.get(dimension)
+        if not _is_int(value) or value < 1:
+            errors.append(f"{volume_id}: pocket_layout.{dimension} must be a positive integer")
+    rows, columns = layout.get("rows"), layout.get("columns")
+    capacity = rows * columns if _is_int(rows) and rows > 0 and _is_int(columns) and columns > 0 else 9
+
     leaves = manifest.get("leaves")
     if not isinstance(leaves, list):
         errors.append(f"{volume_id}: leaves must be a list")
@@ -693,8 +704,8 @@ def _validate_volume_manifest(root: Path, volume_id: str, manifest: dict, regist
         if not isinstance(pockets, list):
             errors.append(f"{volume_id} {leaf_label}: pockets must be a list")
             continue
-        if len(pockets) != 9:
-            errors.append(f"{volume_id} {leaf_label}: card leaf must define exactly 9 pockets")
+        if len(pockets) != capacity:
+            errors.append(f"{volume_id} {leaf_label}: card leaf must define exactly {capacity} pockets")
 
         seen_positions: set[int] = set()
         for pocket_index, pocket in enumerate(pockets, start=1):
@@ -702,9 +713,9 @@ def _validate_volume_manifest(root: Path, volume_id: str, manifest: dict, regist
                 errors.append(f"{volume_id} {leaf_label}: pocket {pocket_index} must be a mapping")
                 continue
             position = pocket.get("position")
-            if not _is_int(position) or not 1 <= position <= 9:
+            if not _is_int(position) or not 1 <= position <= capacity:
                 errors.append(
-                    f"{volume_id} {leaf_label}: pocket position {position!r} must be 1-9"
+                    f"{volume_id} {leaf_label}: pocket position {position!r} must be 1-{capacity}"
                 )
             elif position in seen_positions:
                 errors.append(f"{volume_id} {leaf_label}: duplicate pocket position {position}")
@@ -1122,6 +1133,8 @@ class _PublicBinderParser(HTMLParser):
         if "data-binder" in attributes:
             root = {
                 "name": attributes.get("data-binder") or "(unnamed)",
+                "rows": attributes.get("data-pocket-rows"),
+                "columns": attributes.get("data-pocket-columns"),
                 "page_path": self.page_path,
                 "leaves": [],
                 "ids": [],
@@ -1340,6 +1353,20 @@ def _validate_public_binder(public_dir: Path, root: dict) -> list[str]:
     for element_id in sorted({item for item in html_ids if html_ids.count(item) > 1}):
         errors.append(f"{label}: duplicate HTML id {element_id}")
 
+    dimensions = []
+    for attribute, value in (("data-pocket-rows", root["rows"]),
+                             ("data-pocket-columns", root["columns"])):
+        if value is None:
+            dimensions.append(3)
+        elif not value.isdecimal() or int(value) < 1:
+            errors.append(f"{label}: {attribute} must be a positive integer")
+            dimensions.append(3)
+        else:
+            dimensions.append(int(value))
+    if (root["rows"] is None) != (root["columns"] is None):
+        errors.append(f"{label}: data-pocket-rows and data-pocket-columns must be declared together")
+    capacity = dimensions[0] * dimensions[1]
+
     leaf_anchors = set()
     for leaf in root["leaves"]:
         expected_anchor = f"leaf-{leaf['name']}"
@@ -1349,9 +1376,9 @@ def _validate_public_binder(public_dir: Path, root: dict) -> list[str]:
             )
         else:
             leaf_anchors.add(expected_anchor)
-        if leaf["kind"] == "cards" and leaf["pockets"] != 9:
+        if leaf["kind"] == "cards" and leaf["pockets"] != capacity:
             errors.append(
-                f"{label}: card leaf {leaf['name']} must contain exactly 9 pockets "
+                f"{label}: card leaf {leaf['name']} must contain exactly {capacity} pockets "
                 f"(found {leaf['pockets']})"
             )
         if leaf["kind"] == "transition" and leaf["pockets"]:

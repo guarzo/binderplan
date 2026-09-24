@@ -1,0 +1,60 @@
+# Navigation objects describe published destinations, never physical inventory or availability.
+groups:
+  - title: Volumes
+    note: Reconstructed pages, arranged to be read in sequence.
+    collections:
+      - title: Volume I
+        slug: volume-1
+        kind: volume
+        description: "Lived Experience: how Pokémon exist in the world"
+      - title: Volume II
+        slug: volume-2
+        kind: volume
+        description: Memory, Presence, and Passage
+  - title: Side collections
+    note: Binders and ongoing interests, each with its own focus.
+    collections:
+      - title: Trainer Full Arts
+        slug: waifu
+        kind: binder
+        description: Japanese trainer cards chosen for illustration and composition
+      - title: Stamped Cards
+        slug: stamped-cards
+        kind: binder
+        description: Prerelease, league, and event-stamped cards
+      - title: Emolga Masterset
+        slug: emolga-masterset
+        kind: binder
+        description: One Pokémon across languages and eras
+      - title: Holding binder
+        kind: pending
+        description: In progress
+      - title: Trade binder
+        kind: pending
+        description: In progress
+  - title: Curated themes
+    note: Slab-based selections defined by judgment.
+    collections:
+      - title: Definitive Pokémon
+        slug: definitive-pokemon
+        kind: catalogue
+        description: The best versions, chosen with intent
+      - title: Touchstones
+        slug: touchstones
+        kind: catalogue
+        description: Moments in the hobby worth remembering
+      - title: Personal Significance
+        slug: personal-significance
+        kind: catalogue
+        description: Cards with irreplaceable personal meaning
+  - title: Runs
+    note: Collections with a defined outside, even when the pursuit is ongoing.
+    collections:
+      - title: Masaki
+        slug: masaki
+        kind: catalogue
+        description: Japanese Communication Evolution promos
+      - title: Chinese Exclusives
+        slug: chinese-exclusives
+        kind: catalogue
+        description: Releases without an international printing
