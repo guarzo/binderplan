@@ -1,6 +1,12 @@
 # Handoff — add a by-page view to the confirmation worklist
 
-**Run this after PR #12 merges.** Everything below assumes `main` contains the card
+> **Historical, completed handoff.** The by-page worklist and automatic preservation of
+> section 4 are implemented in `scripts/check-registry.py`. For current review, use
+> `docs/registry-confirmation.md` and `docs/card-validation-checklist.md`; regenerate
+> the worklist with `python3 scripts/check-registry.py docs/card-registry.md --worklist --write`.
+> The instructions and counts below document the older task and must not be rerun as-is.
+
+**Original timing:** run after PR #12 merged. Everything below assumed `main` contained the card
 registry work.
 
 > **Before your first commit:** stage explicit paths, never `git add -A`. The previous

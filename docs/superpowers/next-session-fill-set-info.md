@@ -1,8 +1,14 @@
 # Handoff — filling in set and number from the physical cards
 
-**Status, 2026-09-19: the confirmation pass is done.** The rest of this file is the procedure for
-the next time a row needs filling or correcting — a new card joining the binder, or a misread found
-later.
+> **Historical handoff, not current operating instructions.** Its 175-row snapshot and
+> manual document-splice procedure predate the expanded registry and automatic section 4
+> carry-forward. For current physical checks use `docs/card-validation-checklist.md`,
+> update `docs/card-registry.md` only after reviewing evidence, and regenerate the
+> confirmation worklist with `python3 scripts/check-registry.py docs/card-registry.md --worklist --write`.
+> Review its preserved section 4 rather than replacing it by hand.
+
+**Status, 2026-09-19: the confirmation pass was done.** The rest of this file records the older procedure for
+filling or correcting rows; it is not the current regeneration workflow.
 
 ## Where it stands
 

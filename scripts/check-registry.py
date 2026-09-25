@@ -426,9 +426,11 @@ def render_worklist(rows, previous=None):
     lines.append("## 6. Confirmation queue by page")
     lines.append("")
     lines.append(
-        "The same rows as section 3, regrouped for walking the binder. Open to a page, clear "
-        "every card listed under it, move on. Pages in binder order; a page with nothing "
-        "unresolved is omitted. The source image is dropped here — the page implies it."
+        "The same rows as section 3, grouped by historical `first_seen` source-image mapping "
+        "for the original Volume I/II walk. Known pages are in original binder order; a page "
+        "with nothing unresolved is omitted. Newer Stamped, Emolga, and Trainer sources may "
+        "appear as 'Unmapped source image', not their published page. For current published "
+        "placement and owner review use `docs/card-validation-checklist.md` instead."
     )
     lines.append("")
     lines.append(

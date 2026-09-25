@@ -5,7 +5,7 @@ layout: "gallery"
 slab: true
 ---
 
-These are the cards that currently represent their Pokemon best in my collection. The choices are personal rather than permanent; a new illustration can always change my mind.
+The choices are personal rather than permanent; a new illustration can always change my mind.
 
 <div class="gallery-grid">
   <figure class="gallery-item span-wide">

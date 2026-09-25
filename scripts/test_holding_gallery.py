@@ -80,6 +80,16 @@ def test_only_five_top_loaders_are_marked_actively_available(builds):
     assert "price" not in html.lower()
 
 
+def test_trade_cards_expose_their_existing_image_evidence(builds):
+    html = (builds["production"] / "gallery" / "holding" / "index.html").read_text()
+    piplup = re.search(r'<figure[^>]*data-holding-trade-card="holding-p09-09"[^>]*>.*?</figure>', html, re.S)
+    yveltal = re.search(r'<figure[^>]*data-holding-trade-card="holding-p10-07"[^>]*>.*?</figure>', html, re.S)
+    assert piplup is not None and yveltal is not None
+    assert "Red sparkle in the owned illustration" in piplup.group()
+    assert "IMG_7147.HEIC" in piplup.group()
+    assert "doubleholo 28073" in yveltal.group()
+
+
 def test_page_navigation_and_images_are_local(builds):
     html = (builds["production"] / "gallery" / "holding" / "index.html").read_text()
     parsed = PreviewElements()

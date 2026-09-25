@@ -30,7 +30,7 @@ GENERATED_FIELDS = (
 )
 
 VOLUME_IDS = ("volume-1", "volume-2")
-SIDE_BINDER_IDS = ("waifu",)
+SIDE_BINDER_IDS = ("waifu", "stamped-cards")
 PUBLICATION_STATUSES = {"draft", "published"}
 LEAF_KINDS = {"cards", "transition"}
 TRANSITION_ROLES = {"volume-opening", "chapter", "volume-closing"}
@@ -62,6 +62,7 @@ PUBLIC_BINDER_ROUTES = {
     "volume-2": Path("gallery/volume-2/index.html"),
     "emolga-masterset": Path("gallery/emolga-masterset/index.html"),
     "waifu": Path("gallery/waifu/index.html"),
+    "stamped-cards": Path("gallery/stamped-cards/index.html"),
 }
 DRAFT_ONLY_ROUTES = (
     Path("gallery/digital-binder-pilot/index.html"),
@@ -560,6 +561,8 @@ def _load_project_manifests(root: Path, errors: list[str]) -> dict[str, dict]:
                 manifests[binder_id] = load_yaml(path)
             except ValueError as exc:
                 errors.append(str(exc))
+        elif (root / "content" / "gallery" / binder_id / "_index.md").is_file():
+            errors.append(f"missing binder manifest: {path.relative_to(root)}")
     return manifests
 
 

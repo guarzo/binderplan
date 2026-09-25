@@ -63,7 +63,7 @@ The key word is **strengthen**, not match. If it only duplicates a feeling alrea
 
 > *Does this fill a known opening or clearly replace a current card?*
 
-For Volume I, I expect a clear replacement. Volume II can also accept a card that fills a deliberate opening in an active page plan.
+In any existing Volume I or II theme, I expect a clear replacement: every current page is full, so name the incumbent that would leave. A separately approved new Volume II theme can add pages without displacing an existing card.
 
 If the card does neither, I wait rather than inventing a need for it.
 

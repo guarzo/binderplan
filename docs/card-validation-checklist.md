@@ -1,0 +1,551 @@
+# Card validation checklist
+
+Owner review of **published, owned cards** whose image, printing, or placement still needs checking. Unchecked entries are questions, not evidence of a mistake. This checklist does not change the public collection or establish an in-hand confirmation.
+
+English names and recorded card numbers are provided to help locate the physical copy. A number taken only from a Holding display name is flagged for verification; vintage No.xxx can be a printed Pokédex number rather than a collector number. 'Not recorded' is not a new identification. For each card, compare the **physical copy** with its gallery image and recorded identity: printed name/language, set and number, edition/stamp/foil or finish, and actual page/pocket when noted. Record the corrected printing, a photo or source reference, the verification date, and whether the current local image is exact. Do not mark an item resolved from a catalogue image alone. Send your completed notes/photos for registry, image, and manifest updates; keep originals archived.
+
+**Priority** covers non-exact images, uncertain identities, medium/limited Holding readings, and unverified physical placement. **Follow-up** covers registry photo-confidence identities with exact images that have not been independently checked in hand. Holding 'high' alone does not assert whether an in-hand check has or has not occurred, so it is not queued. The two Emolga wanted reference prints are unowned and are not entries here. The provisional Stamped Snivy is queued without an invented page-eight pocket. The five Trade cards remain owned; only their separately recorded availability is authoritative. Use a separate sheet for notes if more room is needed; do not edit this generated checklist to record checks.
+
+## Priority review (171)
+
+### Volume I (8)
+
+- [ ] English: **Pikachu** · Printed: ピカチュウ · Number: 242 (`pikachu-06`) · Leaf 5, pocket 6 · photo-crop image.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Bulbasaur** · Printed: フシギダネ · Number: No.001 (`bulbasaur-02`) · Leaf 7, pocket 3 · photo-crop image, printing uncertain.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Latias** · Number: 30/30 (`latias-01`) · Leaf 7, pocket 9 · photo-crop image.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Jirachi** · Printed: 基拉祈V · Number: 36/66 (`jirachi-02`) · Leaf 9, pocket 8 · proxy image.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Gengar** · Printed: 耿鬼VMAX · Number: 072/172 (`gengar-01`) · Leaf 10, pocket 1 · photo-crop image.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Yveltal** · Printed: 伊裴尔塔尔 · Number: 135/129 (`yveltal-02`) · Leaf 11, pocket 3 · photo-crop image.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Blastoise** · Printed: 水箭龟VMAX · Number: not recorded (`blastoise-02`) · Leaf 12, pocket 2 · photo-crop image, printing uncertain.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Espeon** · Printed: 太阳伊布GX · Number: 195/151 (`espeon-02`) · Leaf 12, pocket 9 · photo-crop image.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+
+### Volume II (3)
+
+- [ ] English: **Mimikyu** · Printed: 谜拟丘 · Number: 151/150 (`mimikyu-01`) · Leaf 3, pocket 1 · photo-crop image.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Dawn's Stadium** · Printed: 夜明けのスタジアム · Number: not recorded (`dawns-stadium-01`) · Leaf 11, pocket 1 · photo-crop image.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Jirachi** · Printed: 七夜のジラーチ · Number: not recorded (`jirachi-04`) · Leaf 11, pocket 6 · photo-crop image.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+
+### Trainer Full Arts (29)
+
+- [ ] English: **Tate & Liza's Training** · Printed: フウとランの特訓 · Number: not recorded (`tate-lizas-training-01`) · Digital page 1, slot 1 (not a physical pocket claim) · proxy image, printing uncertain, physical placement.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Zinnia's Trust** · Printed: ヒガナの信頼 · Number: not recorded (`zinnias-trust-01`) · Digital page 1, slot 2 (not a physical pocket claim) · proxy image, printing uncertain, physical placement.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Misty's Spirit** · Printed: カスミのやる気 · Number: not recorded (`mistys-spirit-01`) · Digital page 1, slot 3 (not a physical pocket claim) · proxy image, printing uncertain, physical placement.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Mela** · Number: not recorded (`mela-01`) · Digital page 1, slot 4 (not a physical pocket claim) · proxy image, printing uncertain, physical placement.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Worker** · Number: not recorded (`worker-01`) · Digital page 1, slot 5 (not a physical pocket claim) · proxy image, printing uncertain, physical placement.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Peonia** · Number: not recorded (`peonia-01`) · Digital page 1, slot 6 (not a physical pocket claim) · proxy image, printing uncertain, physical placement.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Cynthia's Ambition** · Number: not recorded (`cynthias-ambition-01`) · Digital page 1, slot 7 (not a physical pocket claim) · proxy image, printing uncertain, physical placement.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Karen's Conviction** · Number: not recorded (`karens-conviction-01`) · Digital page 1, slot 8 (not a physical pocket claim) · proxy image, printing uncertain, physical placement.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Aroma Lady** · Number: not recorded (`aroma-lady-01`) · Digital page 1, slot 9 (not a physical pocket claim) · proxy image, printing uncertain, physical placement.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Bea** · Number: not recorded (`bea-01`) · Digital page 2, slot 1 (not a physical pocket claim) · proxy image, printing uncertain, physical placement.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Nemona** · Number: not recorded (`nemona-02`) · Digital page 2, slot 2 (not a physical pocket claim) · proxy image, printing uncertain, physical placement.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Jacinthe** · Number: not recorded (`jacinthe-02`) · Digital page 2, slot 3 (not a physical pocket claim) · proxy image, printing uncertain, physical placement.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Tate & Liza** · Number: not recorded (`tate-liza-01`) · Digital page 2, slot 4 (not a physical pocket claim) · proxy image, printing uncertain, physical placement.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Lance** · Number: not recorded (`lance-01`) · Digital page 2, slot 5 (not a physical pocket claim) · proxy image, printing uncertain, physical placement.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Arven** · Number: not recorded (`arven-01`) · Digital page 2, slot 6 (not a physical pocket claim) · proxy image, printing uncertain, physical placement.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Honey** · Number: not recorded (`honey-s-p-01`) · Digital page 2, slot 7 (not a physical pocket claim) · proxy image, printing uncertain, physical placement.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Candice** · Number: not recorded (`candice-01`) · Digital page 2, slot 8 (not a physical pocket claim) · proxy image, printing uncertain, physical placement.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Rosa's Encouragement** · Number: not recorded (`rosas-encouragement-01`) · Digital page 2, slot 9 (not a physical pocket claim) · proxy image, printing uncertain, physical placement.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Iris's Fighting Spirit** · Printed: アイリスの闘志 · Number: not recorded (`iris-fighting-spirit-02`) · Digital page 3, slot 1 (not a physical pocket claim) · proxy image, printing uncertain, physical placement.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Nemona** · Printed: ネモ · Number: not recorded (`nemona-01`) · Digital page 3, slot 2 (not a physical pocket claim) · proxy image, printing uncertain, physical placement.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Iris's Fighting Spirit** · Printed: アイリスの闘志 · Number: not recorded (`iris-fighting-spirit-01`) · Digital page 3, slot 3 (not a physical pocket claim) · proxy image, printing uncertain, physical placement.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Tulip** · Printed: リップ · Number: not recorded (`tulip-01`) · Digital page 3, slot 4 (not a physical pocket claim) · proxy image, printing uncertain, physical placement.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Jacinthe** · Printed: ユカリ · Number: not recorded (`jacinthe-01`) · Digital page 3, slot 5 (not a physical pocket claim) · proxy image, printing uncertain, physical placement.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Olivia** · Printed: ライチ · Number: not recorded (`olivia-01`) · Digital page 3, slot 6 (not a physical pocket claim) · photo-crop image, printing uncertain, physical placement.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Hilda** · Number: not recorded (`hilda-01`) · Digital page 3, slot 7 (not a physical pocket claim) · proxy image, printing uncertain, physical placement.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Furisode Girl** · Printed: ふりそで · Number: not recorded (`furisode-girl-01`) · Digital page 3, slot 8 (not a physical pocket claim) · proxy image, printing uncertain, physical placement.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Professor's Research** · Printed: 博士の研究 · Number: not recorded (`professors-research-02`) · Digital page 3, slot 9 (not a physical pocket claim) · proxy image, printing uncertain, physical placement.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Raifort** · Printed: レホール · Number: not recorded (`raifort-01`) · Digital page 4, slot 1 (not a physical pocket claim) · proxy image, printing uncertain, physical placement.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Erika's Invitation** · Printed: エリカの招待 · Number: not recorded (`erikas-invitation-01`) · Digital page 4, slot 2 (not a physical pocket claim) · proxy image, printing uncertain, physical placement.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+
+### Stamped Cards (19)
+
+- [ ] English: **Leafeon** · Number: not recorded (`leafeon-01`) · Leaf 1, pocket 1 · photo-crop image, printing uncertain.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Bulbasaur** · Printed: Bulbasaur? · Number: not recorded (`bulbasaur-04`) · Leaf 1, pocket 2 · photo-crop image, printing uncertain.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Ariados** · Number: not recorded (`ariados-01`) · Leaf 1, pocket 4 · photo-crop image, printing uncertain.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Professor Cozmo's Discovery** · Number: not recorded (`professor-cozmos-discovery-01`) · Leaf 1, pocket 5 · photo-crop image, printing uncertain.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Pikachu** · Number: not recorded (`pikachu-08`) · Leaf 1, pocket 7 · photo-crop image, printing uncertain.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Meganium** · Number: not recorded (`meganium-01`) · Leaf 1, pocket 8 · photo-crop image, printing uncertain.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Tyranitar** · Number: not recorded (`tyranitar-01`) · Leaf 1, pocket 9 · photo-crop image, printing uncertain.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Emolga** · Number: not recorded (`emolga-02`) · Leaf 2, pocket 4 · photo-crop image, printing uncertain.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Bidoof** · Printed: Bidoof [Ditto] · Number: not recorded (`bidoof-01`) · Leaf 2, pocket 7 · photo-crop image, printing uncertain.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Garbodor** · Number: not recorded (`garbodor-01`) · Leaf 2, pocket 8 · photo-crop image, printing uncertain.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Pokémon Ranger** · Number: not recorded (`pokemon-ranger-01`) · Leaf 3, pocket 2 · photo-crop image, printing uncertain.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Solgaleo** · Printed: Solgaleo GX? · Number: not recorded (`solgaleo-01`) · Leaf 3, pocket 3 · photo-crop image, printing uncertain.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Dratini** · Number: not recorded (`dratini-03`) · Leaf 3, pocket 5 · photo-crop image, printing uncertain.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Double Colorless Energy** · Number: not recorded (`double-colorless-energy-01`) · Leaf 3, pocket 9 · photo-crop image, printing uncertain.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Pansear** · Printed: バオップ · Number: not recorded (`pansear-01`) · Leaf 4, pocket 9 · photo-crop image, printing uncertain.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Lucario** · Printed: Lucario ex · Number: not recorded (`lucario-03`) · Leaf 5, pocket 5 · photo-crop image, printing uncertain.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Clawitzer** · Number: not recorded (`clawitzer-01`) · Leaf 5, pocket 6 · photo-crop image, printing uncertain.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Chimecho** · Number: not recorded (`chimecho-01`) · Leaf 5, pocket 9 · photo-crop image, printing uncertain.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Snivy** · Printed: ツタージャ · Number: 034/BW-P (`snivy-04`) · Provisional page 8 · pocket unverified · photo-crop image, stamp/edition verification, physical placement.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+
+### Emolga Masterset (42)
+
+- [ ] English: **Emolga** · Number: 32/98 (`emolga-44`) · Leaf 1, pocket 1 · proxy image.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Emolga** · Printed: エモンガ · Number: 021/053 (`emolga-03`) · Leaf 1, pocket 2 · proxy image.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Emolga** · Number: 6/12 (`emolga-04`) · Leaf 1, pocket 4 · proxy image.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Emolga** · Number: 37/101 (`emolga-05`) · Leaf 2, pocket 2 · proxy image.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Emolga** · Printed: エモンガ · Number: 006/021 (`emolga-06`) · Leaf 2, pocket 3 · proxy image.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Emolga** · Number: 49/99 (`emolga-07`) · Leaf 2, pocket 4 · proxy image.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Emolga** · Printed: エモンガ · Number: 007/018 (`emolga-08`) · Leaf 3, pocket 1 · proxy image.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Emolga** · Number: 45/124 (`emolga-09`) · Leaf 3, pocket 2 · proxy image.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Emolga** · Printed: エモンガ · Number: 017/050 (`emolga-10`) · Leaf 3, pocket 3 · proxy image.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Emolga** · Printed: エモンガ · Number: 010/046 (`emolga-11`) · Leaf 3, pocket 4 · photo-crop image.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Emolga** · Number: 49/113 (`emolga-12`) · Leaf 4, pocket 1 · proxy image.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Emolga** · Printed: エモンガ · Number: 041/093 (`emolga-13`) · Leaf 4, pocket 2 · proxy image.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Emolga** · Number: RC23/RC25 (`emolga-14`) · Leaf 4, pocket 3 · proxy image.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Emolga** · Printed: エモンガ · Number: 023/020 (`emolga-15`) · Leaf 4, pocket 4 · proxy image.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Emolga** · Printed: エモンガ · Number: 236/BW-P (`emolga-16`) · Leaf 5, pocket 1 · proxy image.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Emolga** · Number: 35/111 (`emolga-17`) · Leaf 5, pocket 2 · proxy image.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Emolga** · Printed: エモンガ · Number: 019/050 (`emolga-18`) · Leaf 5, pocket 3 · proxy image.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Emolga** · Printed: エモンガ · Number: 039/131 (`emolga-19`) · Leaf 5, pocket 4 · photo-crop image.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Emolga** · Number: 46/181 (`emolga-20`) · Leaf 6, pocket 1 · proxy image.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Emolga** · Printed: エモンガ · Number: 009/052 (`emolga-21`) · Leaf 6, pocket 2 · proxy image.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Emolga** · Number: 057/203 (`emolga-22`) · Leaf 6, pocket 3 · proxy image.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Emolga** · Printed: エモンガ · Number: 023/070 (`emolga-23`) · Leaf 6, pocket 4 · proxy image.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Emolga** · Number: 054/195 (`emolga-24`) · Leaf 7, pocket 1 · proxy image.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Emolga** · Printed: エモンガ · Number: 038/100 (`emolga-25`) · Leaf 7, pocket 2 · proxy image.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Emolga** · Number: 069/167 (`emolga-26`) · Leaf 7, pocket 3 · proxy image.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Emolga** · Printed: エモンガ · Number: 042/101 (`emolga-27`) · Leaf 7, pocket 4 · proxy image.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Emolga** · Number: 029/086 (`emolga-28`) · Leaf 8, pocket 1 · proxy image.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Emolga** · Printed: エモンガ · Number: 032/086 (`emolga-29`) · Leaf 8, pocket 2 · proxy image.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Emolga** · Number: 112/086 (`emolga-30`) · Leaf 8, pocket 3 · proxy image.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Emolga** · Printed: エモンガ · Number: 116/086 (`emolga-31`) · Leaf 8, pocket 4 · proxy image.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Emolga** · Printed: Emolga EX · Number: 46/146 (`emolga-32`) · Leaf 9, pocket 1 · proxy image.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Emolga** · Printed: エモンガEX · Number: 023/060 (`emolga-33`) · Leaf 9, pocket 2 · proxy image.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Emolga** · Printed: Emolga EX · Number: 143/146 (`emolga-34`) · Leaf 9, pocket 3 · proxy image.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Emolga** · Printed: エモンガEX · Number: 062/060 (`emolga-35`) · Leaf 9, pocket 4 · proxy image.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Emolga** · Printed: 电飞鼠 · Number: KD LEV-105 (`emolga-36`) · Leaf 10, pocket 1 · photo-crop image, printing uncertain.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Emolga** · Number: 46/181 (`emolga-37`) · Leaf 10, pocket 2 · proxy image.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Emolga** · Printed: 电飞鼠 · Number: 041/SM-P (`emolga-38`) · Leaf 10, pocket 3 · photo-crop image.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Emolga** · Number: 32/98 (`emolga-39`) · Leaf 10, pocket 4 · proxy image.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Emolga** · Number: 057/203 (`emolga-40`) · Leaf 11, pocket 1 · proxy image.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Emolga** · Printed: エモンガ · Number: 006/021 (`emolga-41`) · Leaf 11, pocket 2 · proxy image.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Emolga** · Printed: 电飞鼠 · Number: 066/131 (`emolga-42`) · Leaf 11, pocket 3 · photo-crop image, printing uncertain.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Emolga** · Printed: 电飞鼠 · Number: 041/SM-P (`emolga-43`) · Leaf 11, pocket 4 · photo-crop image.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+
+### Holding binder (70)
+
+- [ ] English: **Porygon-Z Lv.X** · Number: not recorded (`holding-p01-01`) · Photographed page 7133, pocket 1 · photo-crop image, identity needs in-hand review.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Dhelmise** · Recorded: Dhelmise — Japanese · Number: not recorded (`holding-p01-02`) · Photographed page 7133, pocket 2 · identity needs in-hand review.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Houndour** · Recorded: Houndour — Aquapolis · Number: not recorded (`holding-p01-03`) · Photographed page 7133, pocket 4 · photo-crop image.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Pelipper** · Recorded: Pelipper — Deoxys reverse holo · Number: not recorded (`holding-p01-06`) · Photographed page 7133, pocket 7 · photo-crop image.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Dedenne** · Recorded: Dedenne — Perfect Order 093/088 · Number: 093/088 (`holding-observed-dedenne-perfect-order`) · Photographed page 7134, pocket 1 · identity needs in-hand review.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Ampharos** · Recorded: Ampharos — Chaos Rising 090/086 · Number: 090/086 (`holding-observed-ampharos-chaos-rising`) · Photographed page 7134, pocket 2 · identity needs in-hand review.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Galarian Obstagoon** · Recorded: Galarian Obstagoon — Japanese · Number: not recorded (`holding-p03-03`) · Photographed page 7134, pocket 3 · identity needs in-hand review.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Pikachu** · Recorded: Pikachu — Japanese McDonald’s burger artwork · Number: not recorded (`holding-observed-pikachu-burger`) · Photographed page 7134, pocket 4 · identity needs in-hand review.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Pikachu** · Recorded: Pikachu — meadow / Play Rough · Number: not recorded (`holding-p13-03`) · Photographed page 7134, pocket 6 · photo-crop image, identity needs in-hand review.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Pikachu** · Recorded: Pikachu — field / Quick Attack · Number: not recorded (`holding-p12-08`) · Photographed page 7134, pocket 7 · photo-crop image, identity needs in-hand review.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Pikachu** · Recorded: Pikachu — desk / Gnaw · Number: not recorded (`holding-p12-09`) · Photographed page 7134, pocket 8 · photo-crop image, identity needs in-hand review.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Mareep** · Recorded: Mareep — Japanese e-Series · Number: not recorded (`holding-p02-01`) · Photographed page 7135, pocket 1 · photo-crop image, identity needs in-hand review.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Mudkip** · Recorded: Mudkip — Japanese Sky-Splitting Charisma · Number: not recorded (`holding-p02-03`) · Photographed page 7135, pocket 3 · identity needs in-hand review.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Electrode** · Recorded: Electrode — Japanese SM9 037/095 · Number: 037/095 (`holding-p02-04`) · Photographed page 7135, pocket 4 · identity needs in-hand review.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Genesect** · Recorded: Genesect — Japanese · Number: not recorded (`holding-p02-05`) · Photographed page 7135, pocket 5 · photo-crop image, identity needs in-hand review.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Suicune** · Recorded: Suicune — Pikachu Libre deck · Number: not recorded (`holding-p02-06`) · Photographed page 7135, pocket 6 · identity needs in-hand review.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Kyogre** · Recorded: Kyogre — Japanese Storm Emeralda · Number: not recorded (`holding-p02-07`) · Photographed page 7135, pocket 7 · photo-crop image, identity needs in-hand review.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Mightyena** · Recorded: Mightyena — Japanese HP70 (printing unresolved) · Number: not recorded (`holding-observed-mightyena-japanese-hp70`) · Photographed page 7136, pocket 3 · photo-crop image, identity needs in-hand review.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Victini** · Recorded: Victini — Japanese · Number: not recorded (`holding-p03-05`) · Photographed page 7136, pocket 5 · identity needs in-hand review.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Groudon ex** · Recorded: Groudon ex — Japanese, printing unresolved · Number: not recorded (`holding-p03-07`) · Photographed page 7136, pocket 6 · photo-crop image, identity needs in-hand review.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Pikachu** · Recorded: Pikachu — lightning / Volt Tackle · Number: not recorded (`holding-p12-07`) · Photographed page 7136, pocket 8 · photo-crop image, identity needs in-hand review.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Hoopa EX** · Number: 36/98 (`holding-p04-01`) · Photographed page 7137, pocket 1 · identity needs in-hand review.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Snorlax VMAX** · Recorded: Snorlax VMAX — Japanese · Number: 046/060 (`holding-p04-02`) · Photographed page 7137, pocket 2 · identity needs in-hand review.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Ursaring** · Recorded: Ursaring — Japanese No.217 · Number: not recorded (`holding-p04-03`) · Photographed page 7137, pocket 3 · identity needs in-hand review.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **N** · Recorded: N — Japanese non-full-art · Number: not recorded (`holding-p10-04`) · Photographed page 7137, pocket 4 · photo-crop image, identity needs in-hand review.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Typhlosion** · Recorded: Typhlosion — Japanese · Number: not recorded (`holding-p10-01`) · Photographed page 7137, pocket 5 · photo-crop image, identity needs in-hand review.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Yveltal ex** · Recorded: Yveltal ex — Japanese red full art · Number: not recorded (`holding-p10-06`) · Photographed page 7138, pocket 2 · identity needs in-hand review.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **N** · Recorded: N — English full art · Number: not recorded (`holding-p10-05`) · Photographed page 7138, pocket 3 · identity needs in-hand review.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Butler’s Kirlia** · Recorded: Butler’s Kirlia — Japanese · Number: not recorded (`holding-p07-07`) · Photographed page 7138, pocket 6 · photo-crop image, identity needs in-hand review.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Azurill** · Recorded: Azurill — Japanese · Number: not recorded (`holding-p09-04`) · Photographed page 7138, pocket 8 · photo-crop image, identity needs in-hand review.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Bulbasaur** · Recorded: Bulbasaur — Japanese Mega Brave 064/063 AR · Number: 064/063 (`holding-p09-06`) · Photographed page 7138, pocket 9 · identity needs in-hand review.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Ninetales** · Recorded: Ninetales — Japanese vintage (printing unresolved) · Number: not recorded (`holding-p06-01`) · Photographed page 7139, pocket 1 · photo-crop image, identity needs in-hand review.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Gardevoir EX** · Recorded: Gardevoir EX — Dragon Frontiers · Number: not recorded (`holding-p06-06`) · Photographed page 7139, pocket 6 · photo-crop image.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Dark Blastoise** · Recorded: Dark Blastoise — Japanese Rocket-era · Number: not recorded (`holding-p06-07`) · Photographed page 7139, pocket 7 · photo-crop image, identity needs in-hand review.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Suicune** · Recorded: Suicune — POP Series 2 · Number: not recorded (`holding-p06-08`) · Photographed page 7139, pocket 8 · photo-crop image.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Sandshrew** · Recorded: Sandshrew — Japanese McDonald’s · Number: not recorded (`holding-p07-01`) · Photographed page 7140, pocket 1 · identity needs in-hand review.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Rocket’s Zapdos ex** · Recorded: Rocket’s Zapdos ex — Japanese · Number: not recorded (`holding-p07-02`) · Photographed page 7140, pocket 2 · identity needs in-hand review.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Cyndaquil** · Recorded: Cyndaquil — Japanese SoulSilver Collection · Number: not recorded (`holding-p07-03`) · Photographed page 7140, pocket 3 · photo-crop image, identity needs in-hand review.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Erika’s Bulbasaur** · Number: not recorded (`holding-p07-04`) · Photographed page 7140, pocket 4 · photo-crop image.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Venusaur ex** · Recorded: Venusaur ex — older Japanese treatment · Number: not recorded (`holding-p07-05`) · Photographed page 7140, pocket 5 · photo-crop image, identity needs in-hand review.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Mewtwo** · Recorded: Mewtwo — Japanese promo artwork · Number: not recorded (`holding-p07-06`) · Photographed page 7140, pocket 6 · photo-crop image, identity needs in-hand review.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Torterra Lv.X** · Recorded: Torterra Lv.X — Japanese · Number: not recorded (`holding-p05-06`) · Photographed page 7140, pocket 7 · identity needs in-hand review.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Dark Primeape** · Recorded: Dark Primeape — Team Rocket · Number: not recorded (`holding-p07-08`) · Photographed page 7140, pocket 8 · photo-crop image, identity needs in-hand review.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Piplup** · Recorded: Piplup — Japanese Inferno X · Number: not recorded (`holding-p07-09`) · Photographed page 7140, pocket 9 · identity needs in-hand review.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **N’s Plan** · Number: 163/086 (`holding-p08-05`) · Photographed page 7141, pocket 5 · identity needs in-hand review.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Rayquaza** · Recorded: Rayquaza — English Dragon Pulse/Shred · Number: not recorded (`holding-p09-01`) · Photographed page 7141, pocket 6 · photo-crop image, identity needs in-hand review.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Kecleon** · Recorded: Kecleon — Japanese Lv.28/tongue artwork · Number: not recorded (`holding-p09-02`) · Photographed page 7141, pocket 7 · photo-crop image, identity needs in-hand review.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Aerodactyl** · Recorded: Aerodactyl — Japanese vintage · Number: not recorded (`holding-p09-08`) · Photographed page 7141, pocket 8 · identity needs in-hand review.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Kecleon** · Recorded: Kecleon — Japanese forest artwork · Number: not recorded (`holding-p05-01`) · Photographed page 7141, pocket 9 · photo-crop image, identity needs in-hand review.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Golem** · Recorded: Golem — Rising Rivals · Number: not recorded (`holding-p03-02`) · Photographed page 7142, pocket 1 · photo-crop image.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Houndour** · Recorded: Houndour — Japanese No.228 Lv.16 (frontal artwork) · Number: not recorded (`holding-p11-01`) · Photographed page 7143, pocket 1 · identity needs in-hand review.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Houndour** · Recorded: Houndour — Japanese No.228 Lv.15 (side-view artwork) · Number: not recorded (`holding-p11-04`) · Photographed page 7143, pocket 4 · photo-crop image, identity needs in-hand review.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Houndoom EX** · Recorded: Houndoom EX — Japanese full art XY8 060/059 · Number: 060/059 (`holding-p11-05`) · Photographed page 7143, pocket 5 · photo-crop image.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Houndour** · Recorded: Houndour — Great Encounters · Number: not recorded (`holding-p11-07`) · Photographed page 7143, pocket 7 · photo-crop image.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Dark Houndoom** · Recorded: Dark Houndoom — Team Rocket Returns · Number: not recorded (`holding-p11-08`) · Photographed page 7143, pocket 8 · photo-crop image.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Houndour** · Recorded: Houndour — Japanese BW9 Megalo Cannon 046/076 (urban artwork) · Number: 046/076 (`holding-p01-04`) · Photographed page 7143, pocket 9 · photo-crop image, identity needs in-hand review.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Gengar ex** · Recorded: Gengar ex — 30th Celebration 090/128 · Number: 090/128 (`holding-p12-01`) · Photographed page 7144, pocket 1 · identity needs in-hand review.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Gengar EX** · Recorded: Gengar EX — Night Attack / Dark Corridor · Number: not recorded (`holding-p12-03`) · Photographed page 7144, pocket 3 · identity needs in-hand review.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Pikachu** · Recorded: Pikachu — Pika Ball / Thundershock · Number: not recorded (`holding-p12-05`) · Photographed page 7144, pocket 5 · photo-crop image, identity needs in-hand review.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Pikachu** · Recorded: Pikachu — tree artwork · Number: not recorded (`holding-p12-06`) · Photographed page 7144, pocket 6 · photo-crop image, identity needs in-hand review.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Pikachu** · Recorded: Pikachu — multiple-Pikachu artwork · Number: not recorded (`holding-p12-04`) · Photographed page 7144, pocket 7 · photo-crop image, identity needs in-hand review.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Pikachu** · Recorded: Pikachu — floral / Overwriting Bolt · Number: not recorded (`holding-p13-02`) · Photographed page 7145, pocket 2 · photo-crop image, identity needs in-hand review.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Pikachu** · Recorded: Pikachu — umbrella / Pika Dash · Number: not recorded (`holding-p13-04`) · Photographed page 7145, pocket 4 · photo-crop image, identity needs in-hand review.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Pikachu** · Recorded: Pikachu — grass / Tail Slap · Number: not recorded (`holding-p13-05`) · Photographed page 7145, pocket 5 · photo-crop image, identity needs in-hand review.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Lt. Surge’s Pikachu** · Recorded: Lt. Surge’s Pikachu — Japanese · Number: not recorded (`holding-p13-06`) · Photographed page 7145, pocket 6 · photo-crop image, identity needs in-hand review.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Ditto** · Recorded: Ditto — Japanese multiple-Ditto artwork · Number: not recorded (`holding-p05-03`) · Photographed page 7146, pocket 1 · photo-crop image, identity needs in-hand review.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Ditto** · Recorded: Ditto — Japanese SV151-style · Number: not recorded (`holding-p09-03`) · Photographed page 7146, pocket 3 · identity needs in-hand review.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Emolga EX** · Recorded: Emolga EX — Japanese · Number: 062/060 (`holding-p10-08`) · Trade top loader (upper-right; no physical pocket) · identity needs in-hand review.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Piplup** · Recorded: Piplup — Diamond & Pearl symbol 93/130 · Number: 93/130 (recorded label; verify) (`holding-p09-09`) · Trade top loader (middle-left; no physical pocket) · photo-crop image, identity needs in-hand review.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Misdreavus** · Recorded: Misdreavus — Japanese · Number: not recorded (`holding-p10-02`) · Trade top loader (middle-right; no physical pocket) · identity needs in-hand review.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+
+## In-hand follow-up (76)
+
+### Volume I (18)
+
+- [ ] English: **Mew** · Printed: Mew ex · Number: 053 (`mew-01`) · Leaf 4, pocket 1 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Mew** · Printed: ミュウ · Number: 183/172 (`mew-02`) · Leaf 5, pocket 1 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Shaymin** · Printed: Shaymin EX · Number: XY148 (`shaymin-01`) · Leaf 5, pocket 3 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Spheal** · Printed: タマザラシ · Number: 111/106 (`spheal-01`) · Leaf 7, pocket 6 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Lugia** · Printed: ルギア · Number: No.249 (`lugia-01`) · Leaf 9, pocket 3 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Scyther** · Printed: ストライク · Number: No.123 (`scyther-01`) · Leaf 10, pocket 4 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Mewtwo** · Number: 29/110 (`mewtwo-01`) · Leaf 10, pocket 6 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Zapdos** · Printed: サンダー · Number: No.145 (`zapdos-01`) · Leaf 11, pocket 9 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Ninetales** · Printed: キュウコン · Number: No.038 (`ninetales-01`) · Leaf 12, pocket 8 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Typhlosion** · Printed: バクフーン · Number: No.157 (`typhlosion-01`) · Leaf 14, pocket 3 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Misdreavus** · Printed: ムウマ · Number: No.200 (`misdreavus-01`) · Leaf 14, pocket 4 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Gengar** · Printed: ゲンガー · Number: No.094 (`gengar-02`) · Leaf 14, pocket 9 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Kingdra** · Printed: キングドラ · Number: No.230 (`kingdra-01`) · Leaf 15, pocket 4 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Charizard** · Printed: Charizard VSTAR · Number: SWSH262 (`charizard-03`) · Leaf 15, pocket 5 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Lucario** · Printed: Lucario LV.X · Number: 122/123 (`lucario-02`) · Leaf 15, pocket 8 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Espeon** · Printed: わるいエーフィ · Number: No.196 (`espeon-01`) · Leaf 17, pocket 2 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Dragonite** · Printed: カイリュー · Number: No.149 (`dragonite-01`) · Leaf 18, pocket 1 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Umbreon** · Printed: ブラッキー · Number: No.197 (`umbreon-02`) · Leaf 18, pocket 6 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+
+### Volume II (14)
+
+- [ ] English: **Pikachu** · Number: 027/078 (`pikachu-04`) · Leaf 4, pocket 2 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Kangaskhan** · Printed: ガルーラ · Number: No.115 (`kangaskhan-01`) · Leaf 4, pocket 5 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Ursaring** · Number: RC16/RC25 (`ursaring-01`) · Leaf 4, pocket 7 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Dragonite** · Number: 5 (`dragonite-03`) · Leaf 5, pocket 6 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Dragonair** · Printed: エリカのハクリュー · Number: No.148 (`dragonair-01`) · Leaf 6, pocket 5 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Muk** · Printed: ベトベトン · Number: No.089 (`muk-01`) · Leaf 8, pocket 1 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Groudon** · Number: 84/160 (`groudon-03`) · Leaf 8, pocket 3 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Steelix** · Printed: ハガネール · Number: No.208 (`steelix-01`) · Leaf 8, pocket 4 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Blastoise** · Printed: カメックス · Number: No.009 (`blastoise-01`) · Leaf 8, pocket 5 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Gengar** · Printed: わるいゲンガー · Number: No.094 (`gengar-05`) · Leaf 8, pocket 8 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Machop** · Number: 086/196 (`machop-01`) · Leaf 9, pocket 1 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Mew** · Printed: ミュウ · Number: No.151 (`mew-05`) · Leaf 9, pocket 2 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Mudkip** · Printed: ミズゴロウ · Number: 012/070 (`mudkip-02`) · Leaf 11, pocket 7 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Litleo** · Number: 139/132 (`litleo-01`) · Leaf 11, pocket 9 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+
+### Stamped Cards (44)
+
+- [ ] English: **Pichu** · Number: 21/108 (`pichu-01`) · Leaf 1, pocket 3 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Horsea** · Number: 66/110 (`horsea-02`) · Leaf 1, pocket 6 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Houndoom** · Number: 34/198 (`houndoom-05`) · Leaf 2, pocket 1 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Glass Trumpet** · Number: 135/142 (`glass-trumpet-01`) · Leaf 2, pocket 2 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Dudunsparce** · Number: 129/162 (`dudunsparce-01`) · Leaf 2, pocket 3 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Torterra** · Number: 9/156 (`torterra-03`) · Leaf 2, pocket 5 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Mudkip** · Number: 57/100 (`mudkip-03`) · Leaf 2, pocket 6 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Dusclops** · Number: 17/100 (`dusclops-01`) · Leaf 2, pocket 9 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Comfey** · Number: SWSH242 (`comfey-01`) · Leaf 3, pocket 1 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Oricorio** · Number: SM19 (`oricorio-01`) · Leaf 3, pocket 4 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Oranguru** · Number: SM13 (`oranguru-01`) · Leaf 3, pocket 6 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Delcatty** · Number: SM132 (`delcatty-01`) · Leaf 3, pocket 7 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Tyranitar** · Printed: Tyranitar ex · Number: 064/131 (`tyranitar-02`) · Leaf 3, pocket 8 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Bulbasaur** · Number: SWSH231 (`bulbasaur-05`) · Leaf 4, pocket 1 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Yanmega** · Number: XY144 (`yanmega-01`) · Leaf 4, pocket 2 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Venusaur** · Printed: Venusaur ex · Number: 001/142 (`venusaur-01`) · Leaf 4, pocket 3 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Shroomish** · Number: 63/106 (`shroomish-01`) · Leaf 4, pocket 4 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Treecko** · Number: 8/168 (`treecko-01`) · Leaf 4, pocket 5 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Ivysaur** · Number: 35/100 (`ivysaur-01`) · Leaf 4, pocket 6 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Grotle** · Number: 49/130 (`grotle-02`) · Leaf 4, pocket 7 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Charmeleon** · Number: 29/100 (`charmeleon-01`) · Leaf 4, pocket 8 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Mudsdale** · Number: SM20 (`mudsdale-01`) · Leaf 5, pocket 1 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Passimian** · Number: SM12 (`passimian-01`) · Leaf 5, pocket 2 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Machamp** · Number: 59/108 (`machamp-01`) · Leaf 5, pocket 3 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Passimian** · Number: SWSH115 (`passimian-02`) · Leaf 5, pocket 4 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Squirtle** · Number: 63/100 (`squirtle-04`) · Leaf 5, pocket 7 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Pikachu** · Number: 70/100 (`pikachu-09`) · Leaf 5, pocket 8 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Ditto** · Printed: Ditto (Pikachu) · Number: 39/113 (`ditto-02`) · Leaf 6, pocket 1 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Piplup** · Number: 71/100 (`piplup-02`) · Leaf 6, pocket 2 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Luvdisc** · Number: 7/100 (`luvdisc-01`) · Leaf 6, pocket 3 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Ekans** · Number: 47/101 (`ekans-01`) · Leaf 6, pocket 4 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Ditto** · Printed: Ditto (Squirtle) · Number: 40/113 (`ditto-03`) · Leaf 6, pocket 5 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Shroomish** · Number: 72/107 (`shroomish-02`) · Leaf 6, pocket 6 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Reshiram** · Printed: Reshiram ex · Number: 030/159 (`reshiram-03`) · Leaf 6, pocket 7 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Shellder** · Number: 63/101 (`shellder-01`) · Leaf 6, pocket 8 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Vibrava** · Number: 24/101 (`vibrava-01`) · Leaf 6, pocket 9 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Dialga** · Number: 16/106 (`dialga-02`) · Leaf 7, pocket 1 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Squirtle** · Number: 63/100 (`squirtle-05`) · Leaf 7, pocket 2 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Combusken** · Number: 39/110 (`combusken-01`) · Leaf 7, pocket 3 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Latios** · Number: 10/20 (`latios-04`) · Leaf 7, pocket 4 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Combusken** · Number: 25/106 (`combusken-02`) · Leaf 7, pocket 5 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Pikachu** · Number: 051/162 (`pikachu-10`) · Leaf 7, pocket 6 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Togepi** · Number: 41/101 (`togepi-02`) · Leaf 7, pocket 8 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+- [ ] English: **Slowking** · Number: 28/113 (`slowking-01`) · Leaf 7, pocket 9 · photo-based identity.
+  - Verified print / variant, image, location, evidence and date: ______________________________
+
+## Possible duplicate-printing pairs (7)
+
+These share recorded species, set, number and language, but can be distinct owned copies or bad catalogue matches. Check the physical cards and current placement before merging IDs or claiming a violation.
+
+- [ ] English: **Emolga** · Number: 116/086 · `emolga-01` / `emolga-31` · Compare both physical copies, printing and ownership.
+  - Observed copies / correction, evidence and date: ______________________________
+- [ ] English: **Emolga** · Number: 006/021 · `emolga-06` / `emolga-41` · Compare both physical copies, printing and ownership.
+  - Observed copies / correction, evidence and date: ______________________________
+- [ ] English: **Emolga** · Number: 46/181 · `emolga-20` / `emolga-37` · Compare both physical copies, printing and ownership.
+  - Observed copies / correction, evidence and date: ______________________________
+- [ ] English: **Emolga** · Number: 057/203 · `emolga-22` / `emolga-40` · Compare both physical copies, printing and ownership.
+  - Observed copies / correction, evidence and date: ______________________________
+- [ ] English: **Emolga** · Number: 041/SM-P · `emolga-38` / `emolga-43` · Compare both physical copies, printing and ownership.
+  - Observed copies / correction, evidence and date: ______________________________
+- [ ] English: **Emolga** · Number: 32/98 · `emolga-39` / `emolga-44` · Compare both physical copies, printing and ownership.
+  - Observed copies / correction, evidence and date: ______________________________
+- [ ] English: **Squirtle** · Number: 63/100 · `squirtle-04` / `squirtle-05` · Compare both physical copies, printing and ownership.
+  - Observed copies / correction, evidence and date: ______________________________

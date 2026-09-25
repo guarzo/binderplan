@@ -15,4 +15,4 @@ The practical side of collecting: how I decide what enters the collection, what 
 ## Current Collection Work
 
 - **[Current Watchlist](shopping/)** — The images and page needs I am actively watching for
-- **[Volume II Notes — July 2026](volume-2-refinement/)** — A dated audit of pages currently being revised
+- **[Volume II Notes — July 2026](volume-2-refinement/)** — A historical page audit; see the current watchlist for later decisions

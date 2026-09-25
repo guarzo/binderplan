@@ -55,7 +55,7 @@ Your responsibility is to **audit all volumes**, evaluate reserve cards for plac
 
 ### Evidence & Card Identity
 - Use [`docs/card-registry.md`](docs/card-registry.md) for recorded identity and printing information. Cite specific registered cards as **`Umbreon (umbreon-02)`**, adding printed name, language, set, or number where known and useful. IDs identify physical cards, not themes; keep them when cards move or leave the collection.
-- **The registry is not a current inventory.** Its row count is not the binder's occupancy, and absence from it does not establish absence from the collection. Its current scope is Volumes 1 and 2, not comprehensive coverage of reserves or other collections.
+- **The registry is not a current inventory.** Its row count is not the binder's occupancy, and absence from it does not establish absence from the collection. It also records Stamped Cards, Emolga, Trainer Full Arts and some Holding identities, but does not cover every reserve card.
 - **`first_seen` is historical provenance**, not a current image path, theme, or pocket. Resolve source-page references through `PAGE_ORDER` and `SWAP_INS` in `scripts/check-registry.py`, with the explanations in [`docs/registry-confirmation.md`](docs/registry-confirmation.md) §4. In particular, old Volume 2 filenames do not reliably name today's themes. Do not rewrite provenance to match the current gallery.
 - Establish placement from dated spread images or explicit physical confirmation, reconciled with later verified movements in [`docs/ledger.md`](docs/ledger.md). Distinguish **last observed placement** from **verified current placement**; mark unresolved conflicts or destinations unknown. The ledger is selective, so no entry is not proof that a card has not moved. A proposed or accepted swap is not evidence of execution.
 - Respect registry confidence: **`confirmed`** means read in hand; **`photo`**, legible in a photograph; **`uncertain`**, inferred or obscured. Do not invent missing metadata or silently upgrade it. Keep printing uncertainty separate from confidence in the card's visual signal; request a crop or physical check when a conclusion depends on unresolved identity.
@@ -165,8 +165,8 @@ Every Emolga card ever printed. No themes, no narrative arcs — completionist b
 ### Stamped Cards
 Prerelease, league, and event-stamped cards. Organized by the stamp/event itself, not by Pokémon or theme. These cards are collected as **proof of participation** — the stamp is the point.
 
-### Waifu
-Full-art Japanese trainer supporter cards, collected purely for illustration quality. No thematic sorting — curated by **art merit and visual composition**. Collection in progress.
+### Trainer Full Arts
+Japanese Trainer cards, collected for illustration quality; not all are Supporters. No thematic sorting — curated by **art merit and visual composition**. Collection in progress.
 
 **Audit scope for other collections:**
 - Completeness (are there known gaps?)
@@ -202,7 +202,7 @@ For each spread:
   - Page pacing
 
 ### C. Other Collections Audit
-For each non-thematic binder section (Emolga Masterset, Stamped Cards, Waifu):
+For each non-thematic binder section (Emolga Masterset, Stamped Cards, Trainer Full Arts):
 - Assess completeness and known gaps
 - Evaluate spread organization within the section's own logic
 - Flag any presentation or balance issues
@@ -265,7 +265,7 @@ Your response must be structured as below. Mark sections **not assessed** when e
 ### 4. Other Collections Assessment
 - Emolga Masterset: coverage and gaps
 - Stamped Cards: organization and completeness
-- Waifu: art quality and collection progress
+- Trainer Full Arts: art quality and collection progress
 
 ### 5. Reserve Card Pool Analysis
 - Cards fitting existing themes (with placement recommendations)
