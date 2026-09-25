@@ -1,5 +1,5 @@
 {{ define "main" }}
-<article class="gallery-page">
+<article class="gallery-page{{ if .Params.slab }} gallery-page--slab{{ end }}">
   <header class="single-header">
     <h1>{{ .Title }}</h1>
     {{ with .Description }}<p class="description">{{ . }}</p>{{ end }}
@@ -16,6 +16,26 @@
     <div class="gallery-content">
       {{ .Content }}
     </div>
+  {{ end }}
+  {{ if .Params.slab }}
+    <dialog id="slab-inspector" class="slab-inspector" aria-label="Slab photograph inspector">
+      <div class="slab-inspector-toolbar">
+        <span class="slab-inspector-position" data-slab-inspector-position></span>
+        <button type="button" data-slab-inspector-close>Close</button>
+      </div>
+      <div class="slab-inspector-stage" data-slab-inspector-stage tabindex="0" aria-label="Photograph; scroll to explore when enlarged">
+        <img data-slab-inspector-image alt="">
+        <p class="slab-inspector-error" data-slab-inspector-error hidden>Photograph unavailable. The description remains below.</p>
+      </div>
+      <div class="slab-inspector-bottom">
+        <div class="slab-inspector-description" data-slab-inspector-description></div>
+        <div class="slab-inspector-actions">
+          <button type="button" data-slab-inspector-previous>Previous</button>
+          <button type="button" data-slab-inspector-zoom aria-pressed="false">Enlarge photograph</button>
+          <button type="button" data-slab-inspector-next>Next</button>
+        </div>
+      </div>
+    </dialog>
   {{ end }}
 </article>
 {{ end }}

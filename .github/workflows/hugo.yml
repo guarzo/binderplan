@@ -53,7 +53,8 @@ jobs:
             DIGITAL_BINDER_PREVIOUS_REF="$(git rev-parse HEAD^)"
             export DIGITAL_BINDER_PREVIOUS_REF
           fi
-          python -m pytest scripts/test_check_registry.py scripts/test_digital_binder.py -q
+          python -m pytest scripts/test_check_registry.py scripts/test_digital_binder.py scripts/test_site_foundation.py scripts/test_slab_exhibition.py -q
+          python scripts/check-gallery.py
           python scripts/check-registry.py docs/card-registry.md
           python scripts/check-digital-binder.py --check
 

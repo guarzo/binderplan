@@ -7,6 +7,7 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
+  if (document.querySelector('.gallery-page--slab')) return;
   const items = Array.from(document.querySelectorAll('.gallery-item'));
   const lightbox = document.getElementById('lightbox');
   if (!lightbox || !items.length) return;
@@ -66,6 +67,12 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 </script>
 
+{{ if .Params.slab }}
+  {{ with resources.Get "js/slab-inspector.js" }}
+    {{ $slabScript := . | minify | fingerprint }}
+    <script src="{{ $slabScript.RelPermalink }}" defer></script>
+  {{ end }}
+{{ end }}
 {{ if or .Params.binder .IsHome }}
   {{ $binderScript := resources.Get "js/binder.js" | fingerprint }}
   <script data-binder-script src="{{ $binderScript.RelPermalink }}" defer></script>
