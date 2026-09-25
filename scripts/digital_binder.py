@@ -61,6 +61,7 @@ PUBLIC_BINDER_ROUTES = {
     "volume-1": Path("gallery/volume-1/index.html"),
     "volume-2": Path("gallery/volume-2/index.html"),
     "emolga-masterset": Path("gallery/emolga-masterset/index.html"),
+    "waifu": Path("gallery/waifu/index.html"),
 }
 DRAFT_ONLY_ROUTES = (
     Path("gallery/digital-binder-pilot/index.html"),

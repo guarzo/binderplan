@@ -112,7 +112,7 @@
     window.addEventListener("hashchange", renderHashDestination);
     window.addEventListener("popstate", renderHashDestination);
     const onMediaChange = () => {
-      if (leaves.length) render(!window.location.hash || ownsCurrentHash());
+      if (leaves.length) render((root.dataset.binder !== "waifu" && !window.location.hash) || ownsCurrentHash());
     };
     if (mobile.addEventListener) {
       mobile.addEventListener("change", onMediaChange);

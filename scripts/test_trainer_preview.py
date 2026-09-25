@@ -67,6 +67,11 @@ def test_public_manifest_validates_against_main():
     assert digital_binder.validate_project(ROOT, previous_ref="8cd8919") == []
 
 
+def test_strict_public_validation_requires_trainer_route(tmp_path):
+    errors = digital_binder._validate_public_cutover_routes(tmp_path, {})
+    assert "gallery/waifu/index.html: missing public waifu binder route" in errors
+
+
 @pytest.fixture(scope="module")
 def site(tmp_path_factory):
     scratch = tmp_path_factory.mktemp("trainer-public")

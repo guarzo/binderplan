@@ -176,13 +176,14 @@ function buildBinder(binderId = "volume-1") {
   return { document, root, previous, position, next };
 }
 
-function runScenario({ mobile, directHash, directEvent, binderId, initialHash = "" }) {
+function runScenario({ mobile, directHash, directEvent, binderId, initialHash = "", breakpointChange = false }) {
   const { document, root, previous, position, next } = buildBinder(binderId);
   const location = { hash: initialHash };
+  let onMediaChange;
   const mediaQuery = {
     matches: mobile,
-    addEventListener() {},
-    addListener() {},
+    addEventListener(type, listener) { if (type === "change") onMediaChange = listener; },
+    addListener(listener) { onMediaChange = listener; },
   };
   const windowListeners = new Map();
   const window = {
@@ -219,6 +220,14 @@ function runScenario({ mobile, directHash, directEvent, binderId, initialHash = 
   });
 
   const initial = snapshot();
+  let afterBreakpoint;
+  if (breakpointChange) {
+    mediaQuery.matches = !mobile;
+    onMediaChange();
+    afterBreakpoint = snapshot();
+    mediaQuery.matches = mobile;
+    onMediaChange();
+  }
   const right = keyboardEvent("ArrowRight", root);
   document.dispatchEvent(right);
   const afterRight = snapshot();
@@ -235,7 +244,7 @@ function runScenario({ mobile, directHash, directEvent, binderId, initialHash = 
   assert.notEqual(afterRight.status, "", "navigated live status should be nonempty");
   assert.notEqual(afterLocationEvent.status, "", "location event status should be nonempty");
 
-  return { initial, afterRight, afterLeft, afterLocationEvent };
+  return { initial, afterBreakpoint, afterRight, afterLeft, afterLocationEvent };
 }
 
 const desktop = runScenario({ mobile: false, directHash: "#leaf-v1-03", directEvent: "hashchange" });
@@ -281,8 +290,9 @@ assert.deepEqual(mobile.afterLocationEvent, {
   nextHref: "#leaf-v1-04",
 });
 
-const trainer = runScenario({ mobile: true, binderId: "waifu", directHash: "#leaf-v1-04", directEvent: "hashchange" });
-assert.equal(trainer.initial.hash, "", "Trainer draft opens at its introduction, not below the sticky header");
+const trainer = runScenario({ mobile: true, binderId: "waifu", directHash: "#leaf-v1-04", directEvent: "hashchange", breakpointChange: true });
+assert.equal(trainer.initial.hash, "", "Trainer gallery opens at its introduction, not below the sticky header");
+assert.equal(trainer.afterBreakpoint.hash, "", "Breakpoint changes must not add a hash to the Trainer gallery");
 assert.equal(trainer.afterRight.hash, "#leaf-v1-02", "Trainer page navigation still updates the leaf hash");
 assert.equal(trainer.afterLocationEvent.hash, "#leaf-v1-04", "Trainer deep links remain navigable");
 
