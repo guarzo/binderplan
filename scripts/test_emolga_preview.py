@@ -92,6 +92,9 @@ def test_draft_preview_preserves_page_order_ownership_and_public_photo_gallery(t
     assert re.findall(r'data-binder-leaf="em-(\d+)"', html) == [f"{n:02d}" for n in range(1, 12)]
     assert len(re.findall(r'\bdata-pocket-position="[1-4]"', html)) == 44
     assert len(re.findall(r'\bdata-card-id="emolga-\d{2}"', html)) == 42
+    assert len(re.findall(r'data-card-confidence="photo"', html)) == 40
+    assert len(re.findall(r'data-card-confidence="uncertain"', html)) == 2
+    assert html.count('Printing uncertain</span>') == 2
     assert len(re.findall(r'data-placeholder-wanted="(?:025|081)/BW-P"', html)) == 2
     assert 'data-binder-prev' in html and 'data-binder-next' in html
     assert 'data-wanted-section' in html
@@ -155,7 +158,10 @@ def test_catalog_matches_visible_card_numbers_without_certifying_variants():
     for card_id, (set_name, number) in expected.items():
         assert (rows[card_id]["set"], rows[card_id]["number"]) == (set_name, number), card_id
     assert len(expected) == 38
+    assert all(rows[card_id]["confidence"] == "photo" for card_id in expected)
+    assert rows["emolga-38"]["confidence"] == rows["emolga-43"]["confidence"] == "photo"
     assert rows["emolga-36"]["confidence"] == "uncertain"  # Chinese stat-style object, not catalogued TCG printing.
+    assert rows["emolga-42"]["confidence"] == "uncertain"  # Chinese set unresolved.
 
 
 def test_crops_are_traced_to_unchanged_archived_photographs():
