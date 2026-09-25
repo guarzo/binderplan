@@ -434,6 +434,14 @@ hr {
   {{ $siteCSS := . | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $siteCSS.RelPermalink }}" integrity="{{ $siteCSS.Data.Integrity }}">
 {{ end }}
+{{ if eq .Layout "holding" }}
+  {{ with resources.Get "css/holding.css" }}
+    {{ $holdingCSS := . | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $holdingCSS.RelPermalink }}" integrity="{{ $holdingCSS.Data.Integrity }}">
+  {{ else }}
+    {{ errorf "missing Holding stylesheet" }}
+  {{ end }}
+{{ end }}
 {{ if .Params.slab }}
   {{ with resources.Get "css/slab-exhibition.css" }}
     {{ $slabCSS := . | minify | fingerprint }}

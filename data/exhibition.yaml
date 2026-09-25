@@ -27,11 +27,14 @@ groups:
         kind: binder
         description: One Pokémon across languages and eras
       - title: Holding binder
-        kind: pending
-        description: In progress
-      - title: Trade binder
-        kind: pending
-        description: In progress
+        slug: holding
+        kind: binder
+        description: One hundred photographed pockets and five still-owned Trade cards
+      - title: Trade · actively available
+        slug: holding
+        fragment: leaf-trade
+        kind: binder
+        description: A digital page of five still-owned, top-loaded cards
   - title: Curated themes
     note: Slab-based selections defined by judgment.
     collections:

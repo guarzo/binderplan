@@ -1,0 +1,128 @@
+{{ define "main" }}
+{{ $holding := index .Site.Data "holding-binder" }}
+{{ if not $holding }}{{ errorf "missing holding binder data" }}{{ end }}
+<article class="gallery-page holding-gallery">
+  <header class="single-header">
+    <p class="eyebrow">Still in the collection</p>
+    <h1>Holding binder</h1>
+    <p class="description">105 cards still in the collection. Fourteen photographed nine-pocket pages and five separately top-loaded cards.</p>
+  </header>
+  <div class="gallery-content binder-intro">{{ .Content }}</div>
+
+  <nav class="holding-wayfinding" aria-label="Holding binder sections and pages">
+    <div class="holding-wayfinding-primary">
+      <a href="#leaf-7133">Review <span>36 cards, pages 7133–7137</span></a>
+      <a href="#leaf-7137">Keeper <span>64 cards, pages 7137–7146</span></a>
+      <a href="#leaf-trade">Trade <span>5 actively available top loaders</span></a>
+    </div>
+    <p>Page 7137 is mixed. These links navigate to the first relevant photograph, not a physical divider.</p>
+    <div class="holding-page-links" aria-label="Jump to photographed page">
+      {{ range $holding.pages }}<a href="#leaf-{{ .id }}" aria-label="Go to photographed page {{ .id }}">{{ .id }}</a>{{ end }}
+      <a href="#leaf-trade" aria-label="Go to the digital Trade page">Trade</a>
+    </div>
+  </nav>
+
+  <div class="binder" data-binder="holding" data-publication-status="published"
+       data-pocket-rows="3" data-pocket-columns="3"
+       style="--binder-pocket-columns: 3; --binder-pocket-rows: 3">
+    <div class="binder-stage" data-binder-stage>
+      <nav class="binder-controls" data-binder-controls aria-label="Holding pages">
+        <a data-binder-prev href="#leaf-7133" aria-label="Previous page"><span aria-hidden="true">&#8249;</span></a>
+        <p data-binder-position aria-live="polite"></p>
+        <a data-binder-next href="#leaf-7135" aria-label="Next page"><span aria-hidden="true">&#8250;</span></a>
+      </nav>
+      <div class="binder-spreads" data-binder-spreads>
+        {{ range $index, $page := $holding.pages }}
+          {{ if eq (mod $index 2) 0 }}<div class="binder-spread" data-binder-spread="{{ add (div $index 2) 1 }}">{{ end }}
+          <section id="leaf-{{ $page.id }}" class="binder-leaf binder-card-leaf" data-binder-leaf="{{ $page.id }}" data-kind="cards" aria-label="Photographed page {{ $page.id }}">
+            <header class="binder-leaf-label">
+              <p>Photographed page {{ $page.id }} · 24 September 2026</p>
+              <h2>Holding</h2>
+              <p class="binder-leaf-caption">Placement follows the photograph; sorting follows the confirmed decisions.</p>
+            </header>
+            <div class="binder-pockets">
+              {{ range $page.pockets }}
+                {{ if .empty }}
+                  <div class="binder-pocket is-empty" data-pocket data-pocket-position="{{ .position }}"><span>Empty pocket</span></div>
+                {{ else }}
+                  {{ $card := .card }}
+                  {{ $image := $card.image }}
+                  {{ $source := resources.Get (strings.TrimPrefix "assets/" $image.asset_path) }}
+                  {{ if not $source }}{{ errorf "missing Holding image for %q" $card.id }}{{ end }}
+                  {{ $language := $card.language | default "Not catalogued" }}
+                  {{ if eq $language "Not catalogued" }}
+                    {{ if in $card.name "Japanese" }}{{ $language = "JP" }}
+                    {{ else if in $card.name "English" }}{{ $language = "EN" }}{{ end }}
+                  {{ end }}
+                  {{ $thumb := $source }}{{ if gt $source.Width 360 }}{{ $thumb = $source.Resize "360x webp q80" }}{{ end }}
+                  {{ $large := $source }}{{ if gt $source.Width 900 }}{{ $large = $source.Resize "900x webp q84" }}{{ end }}
+                  <button class="binder-pocket" type="button" data-pocket
+                          data-pocket-position="{{ .position }}" data-card-id="{{ $card.id }}"
+                          data-card-name="{{ $card.name }}" data-card-english-name="{{ $card.name }}"
+                          data-card-language="{{ $language }}"
+                          data-card-set="{{ $card.set }}" data-card-number="{{ $card.number }}"
+                          data-leaf-theme="Photographed page {{ $page.id }}"
+                          data-classification="{{ $image.classification }}"
+                          data-image-provenance="{{ $image.provider | default "Archived owner photograph" }}"
+                          data-image-source="{{ $image.source_url | default $image.source_path }}"
+                          data-image-note="{{ $image.note | default (cond (eq $image.classification "exact") "Visually reviewed against the owned printing." "Crop of the owned card in the final photograph. Not a verified catalogue scan.") }}"
+                          data-placement-status="confirmed"
+                          data-sort-status="{{ $card.status }}" data-sort-subsection="{{ $card.subsection }}"
+                          data-identity-confidence="{{ $card.identity_confidence }}"
+                          data-available="false"
+                          data-inspector-src="{{ $large.RelPermalink }}"
+                          aria-label="Inspect {{ $card.name }}, {{ $card.status }} · {{ $card.subsection }}, page {{ $page.id }} pocket {{ .position }}; photographed placement, {{ $image.classification }} image; identity {{ $card.identity_confidence }}">
+                    <img src="{{ $thumb.RelPermalink }}" width="{{ $thumb.Width }}" height="{{ $thumb.Height }}"
+                         alt="{{ $card.name }}{{ if eq $image.classification "exact" }}, reviewed catalogue image{{ else }}, photographed in page {{ $page.id }} pocket {{ .position }}{{ end }}"
+                         loading="{{ if lt $index 2 }}eager{{ else }}lazy{{ end }}"
+                         {{ if lt $index 2 }}data-initial-binder-image{{ end }}>
+                  </button>
+                {{ end }}
+              {{ end }}
+            </div>
+            <details class="holding-page-key">
+              <summary>Cards and sort decisions on page {{ $page.id }}</summary>
+              <ol>
+                {{ range $page.pockets }}{{ if not .empty }}
+                  <li>Pocket {{ .position }}: {{ .card.name }} · {{ .card.status }} / {{ .card.subsection }} · identity {{ .card.identity_confidence }} · {{ .card.image.classification }} image</li>
+                {{ end }}{{ end }}
+              </ol>
+            </details>
+          </section>
+          {{ if eq (mod $index 2) 1 }}</div>{{ end }}
+        {{ end }}
+        <div class="binder-spread" data-binder-spread="8">
+          <section id="leaf-trade" class="binder-leaf binder-transition holding-trade" data-binder-leaf="trade" data-kind="transition" aria-labelledby="trade-cards">
+            <p class="eyebrow">A digital page · no photographed pocket positions</p>
+            <h2 id="trade-cards">Available for trade</h2>
+            <p>Five cards, still owned and photographed separately in top loaders. This is a digital grouping, not a physical binder page. No other Holding card is available.</p>
+            <div class="holding-trade-items">
+              {{ range $holding.top_loaders }}
+                {{ $card := .card }}
+                {{ $image := $card.image }}
+                {{ $source := resources.Get (strings.TrimPrefix "assets/" $image.asset_path) }}
+                {{ if not $source }}{{ errorf "missing Trade image for %q" $card.id }}{{ end }}
+                {{ $thumb := $source }}{{ if gt $source.Width 360 }}{{ $thumb = $source.Resize "360x webp q80" }}{{ end }}
+                <figure data-holding-trade-card="{{ $card.id }}" data-available="true" data-placement="top-loader"
+                        data-identity-confidence="{{ $card.identity_confidence }}" data-classification="{{ $image.classification }}">
+                  <a href="{{ $source.RelPermalink }}" aria-label="View {{ $image.classification }} image of {{ $card.name }}">
+                    <img src="{{ $thumb.RelPermalink }}" width="{{ $thumb.Width }}" height="{{ $thumb.Height }}"
+                         alt="{{ $card.name }}{{ if eq $image.classification "photo-crop" }}, photographed in a top loader{{ end }}" loading="lazy">
+                  </a>
+                  <figcaption>
+                    <strong>{{ $card.name }}</strong>
+                    <span>Trade · actively available</span>
+                    <small>Still owned · top loader · {{ $image.classification }} image · identity {{ $card.identity_confidence }}</small>
+                    <small>Image source: {{ $image.provider | default "owner photograph" }}</small>
+                  </figcaption>
+                </figure>
+              {{ end }}
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+    {{ partial "card-inspector.html" (dict "id" "holding") }}
+  </div>
+</article>
+{{ end }}

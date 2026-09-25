@@ -64,26 +64,28 @@ def test_navigation_marks_only_the_exact_page_current(site):
     assert "aria-current" not in shopping_guides
 
 
-def test_home_shelf_links_existing_collections_but_not_unpublished_binders(site):
+def test_home_shelf_links_holding_and_digital_trade_page(site):
     html = (site / "index.html").read_text()
     links = Links()
     links.feed(html)
-    for route in ("volume-1", "volume-2", "stamped-cards", "waifu", "emolga-masterset", "masaki", "chinese-exclusives", "definitive-pokemon", "personal-significance", "touchstones"):
+    for route in ("volume-1", "volume-2", "stamped-cards", "holding", "waifu", "emolga-masterset", "masaki", "chinese-exclusives", "definitive-pokemon", "personal-significance", "touchstones"):
         assert any(urlparse(urljoin("https://collection.dpao.la/", href)).path == f"/gallery/{route}/" for href in links.hrefs if href), route
-    assert "Holding binder" in html and "Trade binder" in html
-    assert not any("Holding binder" in text or "Trade binder" in text for text in links.link_text)
+    assert "Holding binder" in links.link_text
+    assert "Trade · actively available" in links.link_text
+    assert "/gallery/holding/#leaf-trade" in links.hrefs
     assert any("/guides/shopping/" in href for href in links.hrefs if href)
     assert any("/philosophy/" in href for href in links.hrefs if href)
 
 
-def test_gallery_directory_shares_published_routes_and_marks_future_binders(site):
+def test_gallery_directory_links_holding_and_digital_trade_page(site):
     html = (site / "gallery" / "index.html").read_text()
     links = Links()
     links.feed(html)
-    for route in ("volume-1", "volume-2", "stamped-cards", "waifu", "emolga-masterset", "masaki", "chinese-exclusives", "definitive-pokemon", "personal-significance", "touchstones"):
+    for route in ("volume-1", "volume-2", "stamped-cards", "holding", "waifu", "emolga-masterset", "masaki", "chinese-exclusives", "definitive-pokemon", "personal-significance", "touchstones"):
         assert any(urlparse(urljoin("https://collection.dpao.la/gallery/", href)).path == f"/gallery/{route}/" for href in links.hrefs if href), route
-    assert "Holding binder" in html and "Trade binder" in html
-    assert not any("Holding binder" in text or "Trade binder" in text for text in links.link_text)
+    assert "Holding binder" in links.link_text
+    assert "Trade · actively available" in links.link_text
+    assert "/gallery/holding/#leaf-trade" in links.hrefs
     assert "Each spread is photographed" not in html
 
 

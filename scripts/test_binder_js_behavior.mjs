@@ -176,9 +176,9 @@ function buildBinder() {
   return { document, root, previous, position, next };
 }
 
-function runScenario({ mobile, directHash, directEvent }) {
+function runScenario({ mobile, directHash, directEvent, initialHash = "" }) {
   const { document, root, previous, position, next } = buildBinder();
-  const location = { hash: "" };
+  const location = { hash: initialHash };
   const mediaQuery = {
     matches: mobile,
     addEventListener() {},
@@ -254,6 +254,12 @@ assert.deepEqual(desktop.afterRight, {
 assert.deepEqual(desktop.afterLeft, desktop.initial);
 assert.deepEqual(desktop.afterLocationEvent, desktop.afterRight);
 
+// A non-leaf anchor on the same page (such as Holding's Trade section) must survive
+// binder initialization; otherwise direct links to that section are unusable.
+const section = runScenario({ mobile: false, initialHash: "#trade-cards", directHash: "#leaf-v1-03", directEvent: "hashchange" });
+assert.equal(section.initial.hash, "#trade-cards");
+assert.equal(section.afterLocationEvent.hash, "#leaf-v1-03");
+
 const mobile = runScenario({ mobile: true, directHash: "#leaf-v1-04", directEvent: "popstate" });
 assert.deepEqual(mobile.initial, {
   status: "Leaf 1 of 4 · spread 1 of 2",
@@ -292,6 +298,8 @@ assert.deepEqual(mobile.afterLocationEvent, {
     "data-classification": "exact",
     "data-image-provenance": "Reviewed image",
     "data-placement-status": "confirmed",
+    "data-sort-status": "Keeper", "data-sort-subsection": "Heritage",
+    "data-identity-confidence": "medium",
     "data-inspector-src": "/images/test.webp",
   }));
   const dialog = new FakeElement("dialog", { "data-card-inspector": "" });
@@ -300,7 +308,7 @@ assert.deepEqual(mobile.afterLocationEvent, {
   const next = new FakeElement("button", { "data-card-inspector-next": "" });
   const image = new FakeElement("img", { "data-card-inspector-image": "" });
   const name = new FakeElement("h2", { "data-card-inspector-name": "" });
-  const fields = ["language", "set-number", "theme-pocket", "image-classification", "image-source", "image-note", "placement"]
+  const fields = ["language", "set-number", "theme-pocket", "image-classification", "image-source", "image-note", "placement", "sort-status", "identity-confidence"]
     .map((field) => new FakeElement("dd", { "data-card-inspector-field": field }));
   dialog.showModal = () => { dialog.open = true; };
   dialog.close = () => { dialog.open = false; dialog.dispatchEvent({ type: "close" }); };
@@ -319,6 +327,8 @@ assert.deepEqual(mobile.afterLocationEvent, {
   cards[0].dispatchEvent({ type: "click" });
   assert.equal(dialog.open, true, "a frame opens the shared inspector");
   assert.equal(name.textContent, "Sandshrew");
+  assert.equal(fields.find((field) => field.dataset.cardInspectorField === "sort-status").textContent, "Keeper · Heritage");
+  assert.equal(fields.find((field) => field.dataset.cardInspectorField === "identity-confidence").textContent, "medium");
   assert.equal(document.activeElement, close);
   next.dispatchEvent({ type: "click" });
   assert.equal(name.textContent, "Audino · タブンネ");
