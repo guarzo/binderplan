@@ -395,86 +395,105 @@ cards:
     note: Curator visually confirmed Black Bolt is the sv11B set-name alias and the
       116/086 AR printing matches the archived leaf.
   emolga-02:
-    classification: photo-crop
-    asset_path: assets/images/cards/emolga-masterset-01-1.webp
-    provider: evidence-crop
-    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_1.webp
-    crop_box: [15, 170, 540, 910]
+    provider: tcgdex
+    upstream_id: bw2-32
+    classification: proxy
+    asset_path: assets/images/cards/emolga-02.webp
     reviewed: true
     reviewed_on: '2026-09-24'
-    note: Published page photo, not a camera original; sleeve and printing details remain photo-limited.
+    source_url: https://assets.tcgdex.net/en/bw/bw2/32/high.webp
+    note: English Emerging Powers 32/98 art and number match; foil or other variant
+      cannot be confirmed from the archived photo.
   emolga-03:
-    classification: photo-crop
-    asset_path: assets/images/cards/emolga-masterset-01-2.webp
-    provider: evidence-crop
-    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_1.webp
-    crop_box: [580, 170, 1115, 910]
+    provider: doubleholo
+    upstream_id: '74826'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: proxy
+    asset_path: assets/images/cards/emolga-03.webp
     reviewed: true
     reviewed_on: '2026-09-24'
-    note: Published page photo; exact variant not verified in hand.
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/74826/primary.webp
+    note: Japanese BW1 021/053 artwork and number match; provider labels this 1st
+      Edition but edition and foil cannot be confirmed from the archived photo.
   emolga-04:
-    classification: photo-crop
-    asset_path: assets/images/cards/emolga-masterset-01-4.webp
-    provider: evidence-crop
-    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_1.webp
-    crop_box: [580, 940, 1115, 1730]
+    provider: doubleholo
+    upstream_id: '66193'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: proxy
+    asset_path: assets/images/cards/emolga-04.webp
     reviewed: true
     reviewed_on: '2026-09-24'
-    note: Published page photo; sleeve reflections limit printing assessment.
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/66193/primary.webp
+    note: 'Low-resolution 200×281 DoubleHolo McDonald’s Collection 2012 6/12: pictured
+      6/12 footer, M logo, patterned cloud artwork and English attacks match the archived
+      photo; holo pattern and exact finish remain unverified.'
   emolga-05:
-    classification: photo-crop
-    asset_path: assets/images/cards/emolga-masterset-02-2.webp
-    provider: evidence-crop
-    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_2.webp
-    crop_box: [580, 235, 1115, 950]
+    provider: tcgdex
+    upstream_id: bw3-37
+    classification: proxy
+    asset_path: assets/images/cards/emolga-05.webp
     reviewed: true
     reviewed_on: '2026-09-24'
-    note: Published page photo; no in-hand printing verification.
+    source_url: https://assets.tcgdex.net/en/bw/bw3/37/high.webp
+    note: EN Noble Victories 37/101 catalog artwork, language and printed number match
+      archived photo; foil/edition or other finish variant cannot be confirmed from
+      the photo.
   emolga-06:
-    classification: photo-crop
-    asset_path: assets/images/cards/emolga-masterset-02-3.webp
-    provider: evidence-crop
-    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_2.webp
-    crop_box: [15, 970, 540, 1710]
+    provider: doubleholo
+    upstream_id: '80641'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: proxy
+    asset_path: assets/images/cards/emolga-06.webp
     reviewed: true
     reviewed_on: '2026-09-24'
-    note: Published page photo; set and pink mark not independently verified.
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/80641/primary.webp
+    note: Japanese Victini Formation Deck 006/021 art and pink lower-right mark match;
+      photographed finish and mark variation cannot be confirmed.
   emolga-07:
-    classification: photo-crop
-    asset_path: assets/images/cards/emolga-masterset-02-4.webp
-    provider: evidence-crop
-    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_2.webp
-    crop_box: [580, 970, 1115, 1710]
+    provider: doubleholo
+    upstream_id: '11522'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: proxy
+    asset_path: assets/images/cards/emolga-07.webp
     reviewed: true
     reviewed_on: '2026-09-24'
-    note: Published page photo; finish not verified in hand.
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/11522/primary.webp
+    note: English Next Destinies 49/99 reverse-holo catalog image matches art, number
+      and patterned face; actual reverse treatment cannot be authenticated from archived
+      photo.
   emolga-08:
-    classification: photo-crop
-    asset_path: assets/images/cards/emolga-masterset-03-1.webp
-    provider: evidence-crop
-    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_3.webp
-    crop_box: [15, 220, 540, 950]
+    provider: doubleholo
+    upstream_id: '76599'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: proxy
+    asset_path: assets/images/cards/emolga-08.webp
     reviewed: true
     reviewed_on: '2026-09-24'
-    note: Published page photo; printing not verified in hand.
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/76599/primary.webp
+    note: Japanese BKZ 007/018 art and printed BKZ footer match; finish and other
+      variants unverified.
   emolga-09:
-    classification: photo-crop
-    asset_path: assets/images/cards/emolga-masterset-03-2.webp
-    provider: evidence-crop
-    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_3.webp
-    crop_box: [580, 220, 1115, 950]
+    provider: tcgdex
+    upstream_id: bw6-45
+    classification: proxy
+    asset_path: assets/images/cards/emolga-09.webp
     reviewed: true
     reviewed_on: '2026-09-24'
-    note: Published page photo; printing not verified in hand.
+    source_url: https://assets.tcgdex.net/en/bw/bw6/45/high.webp
+    note: EN Dragons Exalted 45/124 catalog artwork, language and printed number match
+      archived photo; foil/edition or other finish variant cannot be confirmed from
+      the photo.
   emolga-10:
-    classification: photo-crop
-    asset_path: assets/images/cards/emolga-masterset-03-3.webp
-    provider: evidence-crop
-    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_3.webp
-    crop_box: [15, 975, 540, 1750]
+    provider: doubleholo
+    upstream_id: '75142'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: proxy
+    asset_path: assets/images/cards/emolga-10.webp
     reviewed: true
     reviewed_on: '2026-09-24'
-    note: Published page photo; set uncertain.
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/75142/primary.webp
+    note: Japanese Dragon Blade 017/050 art matches; provider labels 1st Edition,
+      but edition and foil unverified in archived photo.
   emolga-11:
     classification: photo-crop
     asset_path: assets/images/cards/emolga-masterset-03-4.webp
@@ -485,68 +504,82 @@ cards:
     reviewed_on: '2026-09-24'
     note: Published page photo; set uncertain.
   emolga-12:
-    classification: photo-crop
-    asset_path: assets/images/cards/emolga-masterset-04-1.webp
-    provider: evidence-crop
-    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_4.webp
-    crop_box: [15, 240, 540, 965]
+    provider: tcgdex
+    upstream_id: bw11-49
+    classification: proxy
+    asset_path: assets/images/cards/emolga-12.webp
     reviewed: true
     reviewed_on: '2026-09-24'
-    note: Published page photo; printing not verified in hand.
+    source_url: https://assets.tcgdex.net/en/bw/bw11/49/high.webp
+    note: EN Legendary Treasures 49/113 catalog artwork, language and printed number
+      match archived photo; foil/edition or other finish variant cannot be confirmed
+      from the photo.
   emolga-13:
-    classification: photo-crop
-    asset_path: assets/images/cards/emolga-masterset-04-2.webp
-    provider: evidence-crop
-    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_4.webp
-    crop_box: [580, 240, 1115, 965]
+    provider: doubleholo
+    upstream_id: '75756'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: proxy
+    asset_path: assets/images/cards/emolga-13.webp
     reviewed: true
     reviewed_on: '2026-09-24'
-    note: Published page photo; printing not verified in hand.
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/75756/primary.webp
+    note: Japanese EBB 041/093 art and number match; provider labels 1st Edition,
+      but edition and foil unverified.
   emolga-14:
-    classification: photo-crop
-    asset_path: assets/images/cards/emolga-masterset-04-3.webp
-    provider: evidence-crop
-    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_4.webp
-    crop_box: [15, 980, 540, 1705]
+    provider: tcgdex
+    upstream_id: bw11-RC23
+    classification: proxy
+    asset_path: assets/images/cards/emolga-14.webp
     reviewed: true
     reviewed_on: '2026-09-24'
-    note: Published page photo; text overlaid on illustration, footer unreadable.
+    source_url: https://assets.tcgdex.net/en/bw/bw11/RC23/high.webp
+    note: English Legendary Treasures RC23/RC25 pink-heart artwork and number match;
+      Radiant Collection foil treatment unverified.
   emolga-15:
-    classification: photo-crop
-    asset_path: assets/images/cards/emolga-masterset-04-4.webp
-    provider: evidence-crop
-    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_4.webp
-    crop_box: [580, 980, 1115, 1705]
+    provider: doubleholo
+    upstream_id: '36656'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: proxy
+    asset_path: assets/images/cards/emolga-15.webp
     reviewed: true
     reviewed_on: '2026-09-24'
-    note: Published page photo; exact finish not verified.
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/36656/primary.webp
+    note: Japanese Shiny Collection 023/020 SR pink-heart art matches; provider labels
+      1st Edition, but edition and SR finish unverified.
   emolga-16:
-    classification: photo-crop
-    asset_path: assets/images/cards/emolga-masterset-05-1.webp
-    provider: evidence-crop
-    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_5.webp
-    crop_box: [15, 205, 540, 945]
+    provider: doubleholo
+    upstream_id: '79860'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: proxy
+    asset_path: assets/images/cards/emolga-16.webp
     reviewed: true
     reviewed_on: '2026-09-24'
-    note: Published page photo; visible championship stamp, not an authenticity check.
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/79860/primary.webp
+    note: Japanese 236/BW-P forest artwork and WCS 2013 stamp match; stamp authenticity
+      and finish unverified.
   emolga-17:
-    classification: photo-crop
-    asset_path: assets/images/cards/emolga-masterset-05-2.webp
-    provider: evidence-crop
-    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_5.webp
-    crop_box: [580, 205, 1115, 945]
+    provider: tcgdex
+    upstream_id: sm4-35
+    classification: proxy
+    asset_path: assets/images/cards/emolga-17.webp
     reviewed: true
     reviewed_on: '2026-09-24'
-    note: Published page photo; printing not verified in hand.
+    source_url: https://assets.tcgdex.net/en/sm/sm4/35/high.webp
+    note: EN Crimson Invasion 35/111 catalog artwork, language and printed number
+      match archived photo; foil/edition or other finish variant cannot be confirmed
+      from the photo.
   emolga-18:
-    classification: photo-crop
-    asset_path: assets/images/cards/emolga-masterset-05-3.webp
-    provider: evidence-crop
-    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_5.webp
-    crop_box: [15, 960, 540, 1755]
+    provider: doubleholo
+    upstream_id: '80582'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: proxy
+    asset_path: assets/images/cards/emolga-18.webp
     reviewed: true
     reviewed_on: '2026-09-24'
-    note: Published page photo; footer and set require in-hand check.
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/80582/primary.webp
+    note: JP Awakened Heroes 019/050 catalog artwork, language and printed number
+      match archived photo; foil/edition or other finish variant cannot be confirmed
+      from the photo.
   emolga-19:
     classification: photo-crop
     asset_path: assets/images/cards/emolga-masterset-05-4.webp
@@ -557,149 +590,180 @@ cards:
     reviewed_on: '2026-09-24'
     note: Published page photo; footer and set require in-hand check.
   emolga-20:
-    classification: photo-crop
-    asset_path: assets/images/cards/emolga-masterset-06-1.webp
-    provider: evidence-crop
-    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_6.webp
-    crop_box: [15, 205, 540, 945]
+    provider: tcgdex
+    upstream_id: sm9-46
+    classification: proxy
+    asset_path: assets/images/cards/emolga-20.webp
     reviewed: true
     reviewed_on: '2026-09-24'
-    note: Published page photo; printing not verified in hand.
+    source_url: https://assets.tcgdex.net/en/sm/sm9/46/high.webp
+    note: EN Team Up 46/181 catalog artwork, language and printed number match archived
+      photo; foil/edition or other finish variant cannot be confirmed from the photo.
   emolga-21:
-    classification: photo-crop
-    asset_path: assets/images/cards/emolga-masterset-06-2.webp
-    provider: evidence-crop
-    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_6.webp
-    crop_box: [580, 205, 1115, 945]
+    provider: doubleholo
+    upstream_id: '71868'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: proxy
+    asset_path: assets/images/cards/emolga-21.webp
     reviewed: true
     reviewed_on: '2026-09-24'
-    note: Published page photo; set code not confirmed.
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/71868/primary.webp
+    note: JP Dark Order 009/052 catalog artwork, language and printed number match
+      archived photo; foil/edition or other finish variant cannot be confirmed from
+      the photo.
   emolga-22:
-    classification: photo-crop
-    asset_path: assets/images/cards/emolga-masterset-06-3.webp
-    provider: evidence-crop
-    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_6.webp
-    crop_box: [15, 965, 540, 1750]
+    provider: tcgdex
+    upstream_id: swsh7-57
+    classification: proxy
+    asset_path: assets/images/cards/emolga-22.webp
     reviewed: true
     reviewed_on: '2026-09-24'
-    note: Published page photo; printing not verified in hand.
+    source_url: https://assets.tcgdex.net/en/swsh/swsh7/57/high.webp
+    note: EN Evolving Skies 057/203 catalog artwork, language and printed number match
+      archived photo; foil/edition or other finish variant cannot be confirmed from
+      the photo.
   emolga-23:
-    classification: photo-crop
-    asset_path: assets/images/cards/emolga-masterset-06-4.webp
-    provider: evidence-crop
-    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_6.webp
-    crop_box: [580, 965, 1115, 1750]
+    provider: doubleholo
+    upstream_id: '69293'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: proxy
+    asset_path: assets/images/cards/emolga-23.webp
     reviewed: true
     reviewed_on: '2026-09-24'
-    note: Published page photo; set code not confirmed.
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/69293/primary.webp
+    note: JP Jet-Black Spirit 023/070 catalog artwork, language and printed number
+      match archived photo; foil/edition or other finish variant cannot be confirmed
+      from the photo.
   emolga-24:
-    classification: photo-crop
-    asset_path: assets/images/cards/emolga-masterset-07-1.webp
-    provider: evidence-crop
-    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_7.webp
-    crop_box: [15, 220, 540, 950]
+    provider: tcgdex
+    upstream_id: swsh12-054
+    classification: proxy
+    asset_path: assets/images/cards/emolga-24.webp
     reviewed: true
     reviewed_on: '2026-09-24'
-    note: Published page photo; printing not verified in hand.
+    source_url: https://assets.tcgdex.net/en/swsh/swsh12/054/high.webp
+    note: EN Silver Tempest 054/195 catalog artwork, language and printed number match
+      archived photo; foil/edition or other finish variant cannot be confirmed from
+      the photo.
   emolga-25:
-    classification: photo-crop
-    asset_path: assets/images/cards/emolga-masterset-07-2.webp
-    provider: evidence-crop
-    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_7.webp
-    crop_box: [580, 220, 1115, 950]
+    provider: tcgdex
+    upstream_id: S11-038
+    classification: proxy
+    asset_path: assets/images/cards/emolga-25.webp
     reviewed: true
     reviewed_on: '2026-09-24'
-    note: Published page photo; printing not verified in hand.
+    source_url: https://assets.tcgdex.net/ja/S/S11/038/high.webp
+    note: JP Lost Abyss 038/100 catalog artwork, language and printed number match
+      archived photo; foil/edition or other finish variant cannot be confirmed from
+      the photo.
   emolga-26:
-    classification: photo-crop
-    asset_path: assets/images/cards/emolga-masterset-07-3.webp
-    provider: evidence-crop
-    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_7.webp
-    crop_box: [15, 965, 540, 1760]
+    provider: tcgdex
+    upstream_id: sv06-069
+    classification: proxy
+    asset_path: assets/images/cards/emolga-26.webp
     reviewed: true
     reviewed_on: '2026-09-24'
-    note: Published page photo; printing not verified in hand.
+    source_url: https://assets.tcgdex.net/en/sv/sv06/069/high.webp
+    note: EN Twilight Masquerade 069/167 catalog artwork, language and printed number
+      match archived photo; foil/edition or other finish variant cannot be confirmed
+      from the photo.
   emolga-27:
-    classification: photo-crop
-    asset_path: assets/images/cards/emolga-masterset-07-4.webp
-    provider: evidence-crop
-    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_7.webp
-    crop_box: [580, 965, 1115, 1760]
+    provider: tcgdex
+    upstream_id: SV6-042
+    classification: proxy
+    asset_path: assets/images/cards/emolga-27.webp
     reviewed: true
     reviewed_on: '2026-09-24'
-    note: Published page photo; printing not verified in hand.
+    source_url: https://assets.tcgdex.net/ja/SV/SV6/042/high.webp
+    note: JP Transformation Mask 042/101 catalog artwork, language and printed number
+      match archived photo; foil/edition or other finish variant cannot be confirmed
+      from the photo.
   emolga-28:
-    classification: photo-crop
-    asset_path: assets/images/cards/emolga-masterset-08-1.webp
-    provider: evidence-crop
-    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_8.webp
-    crop_box: [15, 55, 540, 790]
+    provider: tcgdex
+    upstream_id: sv10.5b-029
+    classification: proxy
+    asset_path: assets/images/cards/emolga-28.webp
     reviewed: true
     reviewed_on: '2026-09-24'
-    note: Published page photo; printing not verified in hand.
+    source_url: https://assets.tcgdex.net/en/sv/sv10.5b/029/high.webp
+    note: EN Black Bolt 029/086 catalog artwork, language and printed number match
+      archived photo; foil/edition or other finish variant cannot be confirmed from
+      the photo.
   emolga-29:
-    classification: photo-crop
-    asset_path: assets/images/cards/emolga-masterset-08-2.webp
-    provider: evidence-crop
-    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_8.webp
-    crop_box: [580, 55, 1115, 790]
+    provider: doubleholo
+    upstream_id: '44928'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: proxy
+    asset_path: assets/images/cards/emolga-29.webp
     reviewed: true
     reviewed_on: '2026-09-24'
-    note: Published page photo; printing not verified in hand.
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/44928/primary.webp
+    note: Japanese Black Bolt 032/086 ordinary-print catalog image matches photographed
+      tree artwork and number; do not substitute Master Ball or Poké Ball parallel;
+      finish unverified.
   emolga-30:
-    classification: photo-crop
-    asset_path: assets/images/cards/emolga-masterset-08-3.webp
-    provider: evidence-crop
-    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_8.webp
-    crop_box: [15, 795, 540, 1585]
+    provider: tcgdex
+    upstream_id: sv10.5b-112
+    classification: proxy
+    asset_path: assets/images/cards/emolga-30.webp
     reviewed: true
     reviewed_on: '2026-09-24'
-    note: Published page photo; glare limits finish and footer assessment.
+    source_url: https://assets.tcgdex.net/en/sv/sv10.5b/112/high.webp
+    note: English Black Bolt 112/086 illustration rare art and number match; foil
+      finish obscured by glare in archived photo.
   emolga-31:
-    classification: photo-crop
-    asset_path: assets/images/cards/emolga-masterset-08-4.webp
-    provider: evidence-crop
-    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_8.webp
-    crop_box: [580, 795, 1115, 1585]
+    provider: doubleholo
+    upstream_id: '31409'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: proxy
+    asset_path: assets/images/cards/emolga-31.webp
     reviewed: true
     reviewed_on: '2026-09-24'
-    note: Published page photo; distinct pocket from Volume I copy; printing not checked in hand.
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/31409/primary.webp
+    note: Japanese sv11B 116/086 AR matches this photographed Emolga copy; provider
+      image also used for separate Volume I copy; foil finish unverified.
   emolga-32:
-    classification: photo-crop
-    asset_path: assets/images/cards/emolga-masterset-09-1.webp
-    provider: evidence-crop
-    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_9.webp
-    crop_box: [15, 220, 540, 955]
+    provider: tcgdex
+    upstream_id: xy1-46
+    classification: proxy
+    asset_path: assets/images/cards/emolga-32.webp
     reviewed: true
     reviewed_on: '2026-09-24'
-    note: Published page photo; printing not verified in hand.
+    source_url: https://assets.tcgdex.net/en/xy/xy1/46/high.webp
+    note: EN XY 46/146 catalog artwork, language and printed number match archived
+      photo; foil/edition or other finish variant cannot be confirmed from the photo.
   emolga-33:
-    classification: photo-crop
-    asset_path: assets/images/cards/emolga-masterset-09-2.webp
-    provider: evidence-crop
-    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_9.webp
-    crop_box: [580, 220, 1115, 955]
+    provider: doubleholo
+    upstream_id: '75876'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: proxy
+    asset_path: assets/images/cards/emolga-33.webp
     reviewed: true
     reviewed_on: '2026-09-24'
-    note: Published page photo; printing not verified in hand.
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/75876/primary.webp
+    note: Japanese Collection Y 023/060 RR EX art and number match; provider labels
+      1st Edition, but edition and foil finish unverified.
   emolga-34:
-    classification: photo-crop
-    asset_path: assets/images/cards/emolga-masterset-09-3.webp
-    provider: evidence-crop
-    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_9.webp
-    crop_box: [15, 970, 540, 1740]
+    provider: tcgdex
+    upstream_id: xy1-143
+    classification: proxy
+    asset_path: assets/images/cards/emolga-34.webp
     reviewed: true
     reviewed_on: '2026-09-24'
-    note: Published page photo; full-art finish not verified in hand.
+    source_url: https://assets.tcgdex.net/en/xy/xy1/143/high.webp
+    note: EN XY 143/146 catalog artwork, language and printed number match archived
+      photo; foil/edition or other finish variant cannot be confirmed from the photo.
   emolga-35:
-    classification: photo-crop
-    asset_path: assets/images/cards/emolga-masterset-09-4.webp
-    provider: evidence-crop
-    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_9.webp
-    crop_box: [580, 970, 1115, 1740]
+    provider: doubleholo
+    upstream_id: '75877'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: proxy
+    asset_path: assets/images/cards/emolga-35.webp
     reviewed: true
     reviewed_on: '2026-09-24'
-    note: Published page photo; full-art finish not verified in hand.
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/75877/primary.webp
+    note: Japanese Collection Y 062/060 SR full-art EX matches; provider labels 1st
+      Edition, but edition and finish unverified.
   emolga-36:
     classification: photo-crop
     asset_path: assets/images/cards/emolga-masterset-10-1.webp
@@ -710,14 +774,16 @@ cards:
     reviewed_on: '2026-09-24'
     note: Published page photo; Chinese stat-style card is not established as an official TCG printing.
   emolga-37:
-    classification: photo-crop
-    asset_path: assets/images/cards/emolga-masterset-10-2.webp
-    provider: evidence-crop
-    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_10.webp
-    crop_box: [580, 195, 1115, 965]
+    provider: doubleholo
+    upstream_id: '18830'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: proxy
+    asset_path: assets/images/cards/emolga-37.webp
     reviewed: true
     reviewed_on: '2026-09-24'
-    note: Published page photo; glare and sleeves limit variant identification.
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/18830/primary.webp
+    note: English Team Up 46/181 reverse-holo provider matches reflective pictured
+      face, art and number; exact reverse treatment unverified.
   emolga-38:
     classification: photo-crop
     asset_path: assets/images/cards/emolga-masterset-10-3.webp
@@ -728,32 +794,39 @@ cards:
     reviewed_on: '2026-09-24'
     note: Published page photo; language and printed number visible, authenticity unverified.
   emolga-39:
-    classification: photo-crop
-    asset_path: assets/images/cards/emolga-masterset-10-4.webp
-    provider: evidence-crop
-    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_10.webp
-    crop_box: [580, 975, 1115, 1755]
+    provider: tcgdex
+    upstream_id: bw2-32
+    classification: proxy
+    asset_path: assets/images/cards/emolga-39.webp
     reviewed: true
     reviewed_on: '2026-09-24'
-    note: Published page photo; separate copy from page 1.
+    source_url: https://assets.tcgdex.net/en/bw/bw2/32/high.webp
+    note: English Emerging Powers 32/98 artwork and number match second physical copy;
+      foil/printing variant unverified.
   emolga-40:
-    classification: photo-crop
-    asset_path: assets/images/cards/emolga-masterset-11-1.webp
-    provider: evidence-crop
-    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_11.webp
-    crop_box: [15, 190, 540, 955]
+    provider: doubleholo
+    upstream_id: '26970'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: proxy
+    asset_path: assets/images/cards/emolga-40.webp
     reviewed: true
     reviewed_on: '2026-09-24'
-    note: Published page photo; glare limits finish assessment.
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/26970/primary.webp
+    note: English Evolving Skies 057/203 reverse-holo provider matches reflective
+      pictured face, art and number; exact reverse treatment unverified.
   emolga-41:
-    classification: photo-crop
-    asset_path: assets/images/cards/emolga-masterset-11-2.webp
-    provider: evidence-crop
-    source_path: docs/evidence/2026-09-24/emolga-masterset/emolga_11.webp
-    crop_box: [580, 190, 1115, 955]
+    provider: doubleholo
+    upstream_id: '80641'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: proxy
+    asset_path: assets/images/cards/emolga-41.webp
     reviewed: true
     reviewed_on: '2026-09-24'
-    note: Published page photo; sleeve and reflective card face limit variant assessment.
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/80641/primary.webp
+    note: Japanese Victini Formation Deck 006/021 artwork, number and pink lower-right
+      mark match; photographed copy has silver-toned face unlike provider ordinary
+      yellow face, so finish/color variant differs and is not represented by this
+      catalog proxy.
   emolga-42:
     classification: photo-crop
     asset_path: assets/images/cards/emolga-masterset-11-3.webp

@@ -82,7 +82,7 @@ The column is left as recorded rather than rewritten: `first_seen` is provenance
 | emolga-05 | Emolga | Emolga | EN | Noble Victories | 37/101 | photo | emolga_2.webp 2026-09-24 | Open-winged woodland artwork; printed number visible. |
 | emolga-06 | Emolga | エモンガ | JP | Victini Formation Deck | 006/021 | photo | emolga_2.webp 2026-09-24 | Open-winged woodland artwork, pink mark at lower right; set associated via catalog, not checked in hand. |
 | emolga-07 | Emolga | Emolga | EN | Next Destinies | 49/99 | photo | emolga_2.webp 2026-09-24 | Branch-and-lightning artwork, patterned card face; finish not verified. |
-| emolga-08 | Emolga | エモンガ | JP | BK2 | 007/018 | photo | emolga_3.webp 2026-09-24 | Branch-and-lightning artwork; visible BK2 code. |
+| emolga-08 | Emolga | エモンガ | JP | BKZ | 007/018 | photo | emolga_3.webp 2026-09-24 | Branch-and-lightning artwork; magnified photographed footer reads BKZ, matching Zekrom-EX Battle Strength Deck. |
 | emolga-09 | Emolga | Emolga | EN | Dragons Exalted | 45/124 | photo | emolga_3.webp 2026-09-24 | Dashing past tree trunks; printed number visible. |
 | emolga-10 | Emolga | エモンガ | JP | Dragon Blade | 017/050 | photo | emolga_3.webp 2026-09-24 | Dashing past tree trunks; set associated via catalog, code too small to trust. |
 | emolga-11 | Emolga | エモンガ | JP | Master Deck Build Box EX | 010/046 | photo | emolga_3.webp 2026-09-24 | Same running artwork, separately photographed pocket and different printed number. |

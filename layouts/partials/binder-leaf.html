@@ -79,7 +79,7 @@
                   data-placement-observed-card-id="{{ .placement.observed_card_id }}"
                   data-placement-physical-state="{{ if .placement.physical_state_unknown }}unknown{{ end }}"
                   data-inspector-src="{{ $inspectorSrc }}"
-                  aria-label="Inspect {{ $displayName }}, {{ $leaf.theme }} pocket {{ .position }}{{ if eq $classification "proxy" }}, reference image{{ end }}{{ if eq $classification "missing" }}, image unavailable{{ end }}{{ if eq .placement.status "pending" }}, placement pending{{ end }}">
+                  aria-label="Inspect {{ $displayName }}, {{ $leaf.theme }} pocket {{ .position }}{{ if eq $classification "proxy" }}{{ if eq $.binderID "emolga-masterset" }}, catalog image, finish unverified{{ else }}, reference image{{ end }}{{ end }}{{ if eq $classification "missing" }}, image unavailable{{ end }}{{ if eq .placement.status "pending" }}, placement pending{{ end }}">
             {{ if eq $classification "missing" }}
               <span class="binder-missing">{{ $displayName }}<small>Image unavailable</small></span>
             {{ else }}
@@ -110,7 +110,7 @@
             {{ end }}
             {{ if or (eq $classification "proxy") (eq .placement.status "pending") (eq $card.confidence "uncertain") }}
               <span class="pocket-states">
-                {{ if eq $classification "proxy" }}<span class="pocket-state">Reference image</span>{{ end }}
+                {{ if eq $classification "proxy" }}<span class="pocket-state">{{ if eq $.binderID "emolga-masterset" }}Catalog scan{{ else }}Reference image{{ end }}</span>{{ end }}
                 {{ if eq .placement.status "pending" }}<span class="pocket-state">Placement pending</span>{{ end }}
                 {{ if eq $card.confidence "uncertain" }}<span class="pocket-state">Printing uncertain</span>{{ end }}
               </span>

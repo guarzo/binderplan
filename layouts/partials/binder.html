@@ -45,10 +45,10 @@
         {{ if eq (mod $index 2) 0 }}
           {{ $nextIndex := add $index 1 }}
           <div class="binder-spread" data-binder-spread="{{ add (div $index 2) 1 }}">
-            {{ partial "binder-leaf.html" (dict "leaf" $leaf "cards" $cards "images" $images "eager" (lt $index 2)) }}
+            {{ partial "binder-leaf.html" (dict "leaf" $leaf "cards" $cards "images" $images "eager" (lt $index 2) "binderID" $binderID) }}
             {{ if lt $nextIndex (len $leaves) }}
               {{ $nextLeaf := index $leaves $nextIndex }}
-              {{ partial "binder-leaf.html" (dict "leaf" $nextLeaf "cards" $cards "images" $images "eager" (lt $nextIndex 2)) }}
+              {{ partial "binder-leaf.html" (dict "leaf" $nextLeaf "cards" $cards "images" $images "eager" (lt $nextIndex 2) "binderID" $binderID) }}
             {{ end }}
           </div>
         {{ end }}
