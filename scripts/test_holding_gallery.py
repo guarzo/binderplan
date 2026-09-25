@@ -1,4 +1,4 @@
-"""The Holding preview must remain draft-only and truthful in rendered HTML."""
+"""The published Holding gallery must remain truthful in rendered HTML."""
 
 from html.parser import HTMLParser
 from pathlib import Path
@@ -35,7 +35,7 @@ class PreviewElements(HTMLParser):
 
 @pytest.fixture(scope="module")
 def builds(tmp_path_factory):
-    scratch = tmp_path_factory.mktemp("holding-preview")
+    scratch = tmp_path_factory.mktemp("holding-gallery")
     config = scratch / "hugo.toml"
     config.write_text(f'resourceDir = "{scratch / "resources"}"\n')
     results = {}
@@ -50,8 +50,8 @@ def builds(tmp_path_factory):
     return results
 
 
-def test_draft_displays_every_photographed_pocket_and_five_top_loaders(builds):
-    page = builds["draft"] / "gallery" / "holding-preview" / "index.html"
+def test_public_gallery_displays_every_photographed_pocket_and_five_top_loaders(builds):
+    page = builds["production"] / "gallery" / "holding" / "index.html"
     html = page.read_text()
     parsed = PreviewElements()
     parsed.feed(html)
@@ -69,7 +69,7 @@ def test_draft_displays_every_photographed_pocket_and_five_top_loaders(builds):
 
 
 def test_only_five_top_loaders_are_marked_actively_available(builds):
-    html = (builds["draft"] / "gallery" / "holding-preview" / "index.html").read_text()
+    html = (builds["production"] / "gallery" / "holding" / "index.html").read_text()
     parsed = PreviewElements()
     parsed.feed(html)
     assert all(button.get("data-available") != "true" for button in parsed.buttons)
@@ -81,7 +81,7 @@ def test_only_five_top_loaders_are_marked_actively_available(builds):
 
 
 def test_page_navigation_and_images_are_local(builds):
-    html = (builds["draft"] / "gallery" / "holding-preview" / "index.html").read_text()
+    html = (builds["production"] / "gallery" / "holding" / "index.html").read_text()
     parsed = PreviewElements()
     parsed.feed(html)
     assert {f"#leaf-{n}" for n in range(7133, 7147)} <= {
@@ -95,7 +95,7 @@ def test_page_navigation_and_images_are_local(builds):
                for button in parsed.buttons if button.get("data-classification") == "exact")
     assert all(button.get("data-card-set") or button.get("data-card-number")
                for button in parsed.buttons if button.get("data-classification") == "exact")
-    assert 'data-binder="holding-preview"' in html
+    assert 'data-binder="holding"' in html
     assert 'data-card-inspector' in html
     assert 'data-card-inspector-field="sort-status"' in html
     assert 'data-card-inspector-field="identity-confidence"' in html
@@ -104,8 +104,15 @@ def test_page_navigation_and_images_are_local(builds):
     assert re.search(r'data-card-name="Dhelmise — Japanese"[^>]*data-card-language="JP"', html)
 
 
-def test_production_does_not_publish_or_link_draft(builds):
+def test_production_publishes_holding_and_links_to_the_digital_trade_page(builds):
+    page = builds["production"] / "gallery" / "holding" / "index.html"
+    html = page.read_text()
+    assert '<meta name="robots" content="noindex' not in html
+    assert 'data-publication-status="published"' in html
+    assert "unpublished draft" not in html.lower()
     assert not (builds["production"] / "gallery" / "holding-preview" / "index.html").exists()
     for route in ("index.html", "gallery/index.html"):
-        html = (builds["production"] / route).read_text()
-        assert "/gallery/holding-preview/" not in html
+        listing = (builds["production"] / route).read_text()
+        assert 'href="/gallery/holding/"' in listing
+        assert 'href="/gallery/holding/#leaf-trade"' in listing
+        assert "/gallery/holding-preview/" not in listing

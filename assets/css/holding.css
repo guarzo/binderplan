@@ -1,7 +1,7 @@
-.holding-preview .single-header { max-width: 48rem; margin-bottom: 1.4rem; }
-.holding-preview [data-binder-leaf], .holding-trade { scroll-margin-top: 8rem; }
-.holding-preview .binder-intro { margin-bottom: clamp(2rem, 5vw, 3.5rem); color: var(--text-muted); }
-.holding-preview .binder-intro p { max-width: 65ch; }
+.holding-gallery .single-header { max-width: 48rem; margin-bottom: 1.4rem; }
+.holding-gallery [data-binder-leaf], .holding-trade { scroll-margin-top: 8rem; }
+.holding-gallery .binder-intro { margin-bottom: clamp(2rem, 5vw, 3.5rem); color: var(--text-muted); }
+.holding-gallery .binder-intro p { max-width: 65ch; }
 
 .holding-wayfinding {
   max-width: var(--gallery-width);
@@ -22,18 +22,18 @@
 .holding-page-links a { display: inline-flex; align-items: center; justify-content: center; min-width: 3.3rem; min-height: 2.75rem; border: 1px solid var(--border); border-radius: 0.3rem; color: var(--text-primary); font-size: 0.82rem; }
 .holding-page-links a:hover, .holding-page-links a:focus-visible { border-color: var(--foil-cyan); color: var(--foil-cyan); }
 
-.holding-preview .binder:not([data-binder-ready="true"]) .binder-controls { display: none; }
-.holding-preview .binder-leaf-label h2 { font-size: clamp(1.25rem, 2vw, 1.7rem); }
-.holding-preview .binder-leaf { align-self: start; }
-.holding-preview [data-card-inspector] dt { color: var(--text-muted); }
+.holding-gallery .binder:not([data-binder-ready="true"]) .binder-controls { display: none; }
+.holding-gallery .binder-leaf-label h2 { font-size: clamp(1.25rem, 2vw, 1.7rem); }
+.holding-gallery .binder-leaf { align-self: start; }
+.holding-gallery [data-card-inspector] dt { color: var(--text-muted); }
 .holding-page-key { margin-top: 1rem; color: var(--text-muted); font-size: 0.82rem; }
 .holding-page-key summary { cursor: pointer; width: fit-content; min-height: 2rem; color: var(--text-primary); }
 .holding-page-key summary:focus-visible, .holding-trade a:focus-visible { outline: 3px solid var(--foil-cyan); outline-offset: 4px; }
 .holding-page-key ol { padding: 0.75rem 0 0 1.2rem; line-height: 1.5; }
 .holding-page-key li { margin-bottom: 0.45rem; }
 
-.holding-preview .binder-spread:last-child { grid-template-columns: minmax(0, 1fr); }
-.holding-preview .binder-spread:last-child::after { display: none; }
+.holding-gallery .binder-spread:last-child { grid-template-columns: minmax(0, 1fr); }
+.holding-gallery .binder-spread:last-child::after { display: none; }
 .holding-trade { width: 100%; max-width: 46rem; min-height: 0; margin: 0 auto; padding: var(--binder-leaf-pad); border-top: 1px solid var(--border-faint); }
 .holding-trade h2 { max-width: none; margin: 0.25rem 0 0.7rem; font-size: clamp(1.7rem, 3vw, 2.3rem); }
 .holding-trade > p:not(.eyebrow) { max-width: 65ch; color: var(--text-muted); }

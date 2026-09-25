@@ -1,9 +1,9 @@
 {{ define "main" }}
 {{ $holding := index .Site.Data "holding-binder" }}
 {{ if not $holding }}{{ errorf "missing holding binder data" }}{{ end }}
-<article class="gallery-page holding-preview">
+<article class="gallery-page holding-gallery">
   <header class="single-header">
-    <p class="eyebrow">Curator review · unpublished draft</p>
+    <p class="eyebrow">Still in the collection</p>
     <h1>Holding binder</h1>
     <p class="description">105 cards still in the collection. Fourteen photographed nine-pocket pages and five separately top-loaded cards.</p>
   </header>
@@ -22,11 +22,11 @@
     </div>
   </nav>
 
-  <div class="binder" data-binder="holding-preview" data-publication-status="draft"
+  <div class="binder" data-binder="holding" data-publication-status="published"
        data-pocket-rows="3" data-pocket-columns="3"
        style="--binder-pocket-columns: 3; --binder-pocket-rows: 3">
     <div class="binder-stage" data-binder-stage>
-      <nav class="binder-controls" data-binder-controls aria-label="Photographed pages">
+      <nav class="binder-controls" data-binder-controls aria-label="Holding pages">
         <a data-binder-prev href="#leaf-7133" aria-label="Previous page"><span aria-hidden="true">&#8249;</span></a>
         <p data-binder-position aria-live="polite"></p>
         <a data-binder-next href="#leaf-7135" aria-label="Next page"><span aria-hidden="true">&#8250;</span></a>
@@ -122,7 +122,7 @@
         </div>
       </div>
     </div>
-    {{ partial "card-inspector.html" (dict "id" "holding-preview") }}
+    {{ partial "card-inspector.html" (dict "id" "holding") }}
   </div>
 </article>
 {{ end }}
