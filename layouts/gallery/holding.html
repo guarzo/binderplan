@@ -113,7 +113,13 @@
                     <strong>{{ $card.name }}</strong>
                     <span>Trade · actively available</span>
                     <small>Still owned · top loader · {{ $image.classification }} image · identity {{ $card.identity_confidence }}</small>
-                    <small>Image source: {{ $image.provider | default "owner photograph" }}</small>
+                    <details class="holding-trade-evidence">
+                      <summary>Image evidence</summary>
+                      <small>Owner photograph: {{ $image.source_path }}</small>
+                      {{ with $image.provider }}<small>Catalogue source: {{ . }} {{ $image.upstream_id }}</small>{{ end }}
+                      {{ with $image.source_url }}<small>Source URL: {{ . }}</small>{{ end }}
+                      {{ with $image.note }}<small>Review note: {{ . }}</small>{{ end }}
+                    </details>
                   </figcaption>
                 </figure>
               {{ end }}

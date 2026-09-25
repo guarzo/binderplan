@@ -1,6 +1,6 @@
 # Card registry
 
-Stable identifiers for cards in Volumes 1 and 2, Stamped Cards, Holding, and Trainer Full Arts.
+Stable identifiers for cards in Volumes I and II, Stamped Cards, Emolga Masterset, Trainer Full Arts, and some Holding cards. The Holding manifest also contains locally observed cards not yet assigned registry IDs.
 
 This is not an inventory. It records what a card **is**, never where it sits. A card's ID is unchanged when it moves from one theme to another, unchanged when it goes to the holding box, and unchanged after release. The binder manifests answer intended current pocket placement and whether that placement has been physically confirmed. `first_seen` remains immutable provenance, and the ledger remains the history and reasoning for contested moves, corrections, and releases.
 

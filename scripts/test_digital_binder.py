@@ -3484,7 +3484,7 @@ def test_load_previous_manifests_verifies_ref_and_uses_git_show_for_each_volume(
         if command[:3] == ["git", "rev-parse", "--verify"]:
             return subprocess.CompletedProcess(command, 0, stdout="abc123\n", stderr="")
         if command[:3] == ["git", "ls-tree", "--name-only"]:
-            source = "" if command[4].endswith("/waifu.yaml") else command[4] + "\n"
+            source = "" if command[4].endswith(("/waifu.yaml", "/stamped-cards.yaml")) else command[4] + "\n"
             return subprocess.CompletedProcess(command, 0, stdout=source, stderr="")
         if command[:2] == ["git", "show"]:
             volume_id = command[2].split("/")[-1].removesuffix(".yaml")
@@ -3508,6 +3508,7 @@ def test_load_previous_manifests_verifies_ref_and_uses_git_show_for_each_volume(
         ["git", "ls-tree", "--name-only", "abc123", "data/binders/volume-1.yaml"],
         ["git", "ls-tree", "--name-only", "abc123", "data/binders/volume-2.yaml"],
         ["git", "ls-tree", "--name-only", "abc123", "data/binders/waifu.yaml"],
+        ["git", "ls-tree", "--name-only", "abc123", "data/binders/stamped-cards.yaml"],
         ["git", "show", "abc123:data/binders/volume-1.yaml"],
         ["git", "show", "abc123:data/binders/volume-2.yaml"],
     ]
@@ -3650,7 +3651,7 @@ def test_check_passes_previous_ref_to_git_loader(tmp_path, monkeypatch):
         if command[:3] == ["git", "rev-parse", "--verify"]:
             return subprocess.CompletedProcess(command, 0, stdout="abc123\n", stderr="")
         if command[:3] == ["git", "ls-tree", "--name-only"]:
-            source = "" if command[4].endswith("/waifu.yaml") else command[4] + "\n"
+            source = "" if command[4].endswith(("/waifu.yaml", "/stamped-cards.yaml")) else command[4] + "\n"
             return subprocess.CompletedProcess(command, 0, stdout=source, stderr="")
         if command[:2] == ["git", "show"]:
             volume_id = command[2].split("/")[-1].removesuffix(".yaml")
@@ -3672,6 +3673,7 @@ def test_check_passes_previous_ref_to_git_loader(tmp_path, monkeypatch):
         ["git", "ls-tree", "--name-only", "abc123", "data/binders/volume-1.yaml"],
         ["git", "ls-tree", "--name-only", "abc123", "data/binders/volume-2.yaml"],
         ["git", "ls-tree", "--name-only", "abc123", "data/binders/waifu.yaml"],
+        ["git", "ls-tree", "--name-only", "abc123", "data/binders/stamped-cards.yaml"],
         ["git", "show", "abc123:data/binders/volume-1.yaml"],
         ["git", "show", "abc123:data/binders/volume-2.yaml"],
     ]
@@ -4647,6 +4649,11 @@ def write_valid_strict_public_binders(root: Path) -> None:
         "gallery/waifu/index.html",
         valid_public_binder_html("waifu", "trainer"),
     )
+    write_html_at(
+        root,
+        "gallery/stamped-cards/index.html",
+        valid_public_binder_html("stamped-cards", "stamp"),
+    )
     write_public_card_assets(root)
 
 
@@ -5046,6 +5053,26 @@ def test_strict_public_check_accepts_cutover_volume_routes(tmp_path):
     ) == []
 
 
+def test_stamped_manifest_uses_shared_cross_binder_validation():
+    root = Path(__file__).parents[1]
+    errors = []
+    manifests = digital_binder._load_project_manifests(root, errors)
+
+    assert errors == []
+    assert "stamped-cards" in manifests
+    assert sum(leaf["kind"] == "cards" for leaf in manifests["stamped-cards"]["leaves"]) == 7
+
+
+def test_strict_public_check_rejects_missing_stamped_route(tmp_path):
+    write_valid_strict_public_binders(tmp_path)
+    (tmp_path / "gallery/stamped-cards/index.html").unlink()
+
+    errors = digital_binder.validate_public_output(tmp_path, require_public_volumes=True)
+
+    assert any("gallery/stamped-cards/index.html" in error and "missing" in error
+               for error in errors)
+
+
 def test_strict_public_check_rejects_missing_public_volume_route(tmp_path):
     write_valid_public_binder(tmp_path)
 
@@ -5214,7 +5241,7 @@ def test_check_passes_valid_previous_ref_environment(tmp_path, monkeypatch):
         if command[:3] == ["git", "rev-parse", "--verify"]:
             return subprocess.CompletedProcess(command, 0, stdout="abc123\n", stderr="")
         if command[:3] == ["git", "ls-tree", "--name-only"]:
-            source = "" if command[4].endswith("/waifu.yaml") else command[4] + "\n"
+            source = "" if command[4].endswith(("/waifu.yaml", "/stamped-cards.yaml")) else command[4] + "\n"
             return subprocess.CompletedProcess(command, 0, stdout=source, stderr="")
         if command[:2] == ["git", "show"]:
             volume_id = command[2].split("/")[-1].removesuffix(".yaml")
@@ -5234,6 +5261,7 @@ def test_check_passes_valid_previous_ref_environment(tmp_path, monkeypatch):
         ["git", "ls-tree", "--name-only", "abc123", "data/binders/volume-1.yaml"],
         ["git", "ls-tree", "--name-only", "abc123", "data/binders/volume-2.yaml"],
         ["git", "ls-tree", "--name-only", "abc123", "data/binders/waifu.yaml"],
+        ["git", "ls-tree", "--name-only", "abc123", "data/binders/stamped-cards.yaml"],
         ["git", "show", "abc123:data/binders/volume-1.yaml"],
         ["git", "show", "abc123:data/binders/volume-2.yaml"],
     ]

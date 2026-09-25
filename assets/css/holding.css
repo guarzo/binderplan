@@ -46,6 +46,10 @@
 .holding-trade-items figcaption strong { font-size: 0.96rem; }
 .holding-trade-items figcaption span { color: var(--text-primary); font-size: 0.85rem; }
 .holding-trade-items figcaption small { color: var(--text-muted); font-size: 0.78rem; }
+.holding-trade-evidence { margin-top: 0.35rem; color: var(--text-muted); font-size: 0.8rem; }
+.holding-trade-evidence summary { cursor: pointer; width: fit-content; }
+.holding-trade-evidence summary:focus-visible { outline: 3px solid var(--foil-cyan); outline-offset: 3px; }
+.holding-trade-evidence small { display: block; margin-top: 0.35rem; overflow-wrap: anywhere; }
 
 @media (max-width: 640px) {
   .holding-wayfinding-primary { grid-template-columns: 1fr; gap: 1.25rem; }

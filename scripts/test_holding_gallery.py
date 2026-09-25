@@ -80,6 +80,14 @@ def test_only_five_top_loaders_are_marked_actively_available(builds):
     assert "price" not in html.lower()
 
 
+def test_trade_cards_expose_their_existing_image_evidence(builds):
+    html = (builds["production"] / "gallery" / "holding" / "index.html").read_text()
+    assert 'data-holding-trade-card="holding-p09-09"' in html
+    assert "Red sparkle in the owned illustration" in html
+    assert "IMG_7147.HEIC" in html
+    assert "doubleholo 28073" in html
+
+
 def test_page_navigation_and_images_are_local(builds):
     html = (builds["production"] / "gallery" / "holding" / "index.html").read_text()
     parsed = PreviewElements()
