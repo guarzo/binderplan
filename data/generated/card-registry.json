@@ -35,6 +35,24 @@
     "number": "",
     "confidence": "uncertain"
   },
+  "aroma-lady-01": {
+    "id": "aroma-lady-01",
+    "species": "Aroma Lady",
+    "card_name": "",
+    "language": "JP",
+    "set": "",
+    "number": "",
+    "confidence": "uncertain"
+  },
+  "arven-01": {
+    "id": "arven-01",
+    "species": "Arven",
+    "card_name": "",
+    "language": "JP",
+    "set": "",
+    "number": "",
+    "confidence": "uncertain"
+  },
   "audino-01": {
     "id": "audino-01",
     "species": "Audino",
@@ -43,6 +61,15 @@
     "set": "sv11B",
     "number": "156/086",
     "confidence": "confirmed"
+  },
+  "bea-01": {
+    "id": "bea-01",
+    "species": "Bea",
+    "card_name": "",
+    "language": "JP",
+    "set": "",
+    "number": "",
+    "confidence": "uncertain"
   },
   "beldum-01": {
     "id": "beldum-01",
@@ -133,6 +160,15 @@
     "set": "SWSH Promos",
     "number": "SWSH231",
     "confidence": "photo"
+  },
+  "candice-01": {
+    "id": "candice-01",
+    "species": "Candice",
+    "card_name": "",
+    "language": "JP",
+    "set": "",
+    "number": "",
+    "confidence": "uncertain"
   },
   "celebi-01": {
     "id": "celebi-01",
@@ -304,6 +340,15 @@
     "set": "Unseen Forces",
     "number": "54/115",
     "confidence": "confirmed"
+  },
+  "cynthias-ambition-01": {
+    "id": "cynthias-ambition-01",
+    "species": "Cynthia's Ambition",
+    "card_name": "",
+    "language": "JP",
+    "set": "",
+    "number": "",
+    "confidence": "uncertain"
   },
   "darkrai-01": {
     "id": "darkrai-01",
@@ -926,6 +971,15 @@
     "number": "",
     "confidence": "confirmed"
   },
+  "erikas-invitation-01": {
+    "id": "erikas-invitation-01",
+    "species": "Erika's Invitation",
+    "card_name": "エリカの招待",
+    "language": "JP",
+    "set": "",
+    "number": "",
+    "confidence": "uncertain"
+  },
   "espeon-01": {
     "id": "espeon-01",
     "species": "Espeon",
@@ -952,6 +1006,15 @@
     "set": "Radiant Collection",
     "number": "RC28/RC32",
     "confidence": "confirmed"
+  },
+  "furisode-girl-01": {
+    "id": "furisode-girl-01",
+    "species": "Furisode Girl",
+    "card_name": "ふりそで",
+    "language": "JP",
+    "set": "",
+    "number": "",
+    "confidence": "uncertain"
   },
   "garbodor-01": {
     "id": "garbodor-01",
@@ -1133,6 +1196,24 @@
     "number": "25",
     "confidence": "confirmed"
   },
+  "hilda-01": {
+    "id": "hilda-01",
+    "species": "Hilda",
+    "card_name": "",
+    "language": "JP",
+    "set": "",
+    "number": "",
+    "confidence": "uncertain"
+  },
+  "honey-s-p-01": {
+    "id": "honey-s-p-01",
+    "species": "Honey",
+    "card_name": "",
+    "language": "JP",
+    "set": "",
+    "number": "",
+    "confidence": "uncertain"
+  },
   "hoopa-01": {
     "id": "hoopa-01",
     "species": "Hoopa",
@@ -1241,6 +1322,24 @@
     "number": "",
     "confidence": "confirmed"
   },
+  "iris-fighting-spirit-01": {
+    "id": "iris-fighting-spirit-01",
+    "species": "Iris's Fighting Spirit",
+    "card_name": "アイリスの闘志",
+    "language": "JP",
+    "set": "",
+    "number": "",
+    "confidence": "uncertain"
+  },
+  "iris-fighting-spirit-02": {
+    "id": "iris-fighting-spirit-02",
+    "species": "Iris's Fighting Spirit",
+    "card_name": "アイリスの闘志",
+    "language": "JP",
+    "set": "",
+    "number": "",
+    "confidence": "uncertain"
+  },
   "ivysaur-01": {
     "id": "ivysaur-01",
     "species": "Ivysaur",
@@ -1249,6 +1348,24 @@
     "set": "Crystal Guardians",
     "number": "35/100",
     "confidence": "photo"
+  },
+  "jacinthe-01": {
+    "id": "jacinthe-01",
+    "species": "Jacinthe",
+    "card_name": "ユカリ",
+    "language": "JP",
+    "set": "",
+    "number": "",
+    "confidence": "uncertain"
+  },
+  "jacinthe-02": {
+    "id": "jacinthe-02",
+    "species": "Jacinthe",
+    "card_name": "",
+    "language": "JP",
+    "set": "",
+    "number": "",
+    "confidence": "uncertain"
   },
   "jirachi-01": {
     "id": "jirachi-01",
@@ -1331,6 +1448,15 @@
     "number": "No.115",
     "confidence": "photo"
   },
+  "karens-conviction-01": {
+    "id": "karens-conviction-01",
+    "species": "Karen's Conviction",
+    "card_name": "",
+    "language": "JP",
+    "set": "",
+    "number": "",
+    "confidence": "uncertain"
+  },
   "kasumis-tears-01": {
     "id": "kasumis-tears-01",
     "species": "Kasumi's Tears",
@@ -1366,6 +1492,15 @@
     "set": "Crystal Guardians",
     "number": "95",
     "confidence": "confirmed"
+  },
+  "lance-01": {
+    "id": "lance-01",
+    "species": "Lance",
+    "card_name": "",
+    "language": "JP",
+    "set": "",
+    "number": "",
+    "confidence": "uncertain"
   },
   "latias-01": {
     "id": "latias-01",
@@ -1547,6 +1682,15 @@
     "number": "",
     "confidence": "uncertain"
   },
+  "mela-01": {
+    "id": "mela-01",
+    "species": "Mela",
+    "card_name": "",
+    "language": "JP",
+    "set": "",
+    "number": "",
+    "confidence": "uncertain"
+  },
   "mew-01": {
     "id": "mew-01",
     "species": "Mew",
@@ -1655,6 +1799,15 @@
     "number": "No.200",
     "confidence": "photo"
   },
+  "mistys-spirit-01": {
+    "id": "mistys-spirit-01",
+    "species": "Misty's Spirit",
+    "card_name": "カスミのやる気",
+    "language": "JP",
+    "set": "",
+    "number": "",
+    "confidence": "uncertain"
+  },
   "mudkip-01": {
     "id": "mudkip-01",
     "species": "Mudkip",
@@ -1700,6 +1853,24 @@
     "number": "No.089",
     "confidence": "photo"
   },
+  "nemona-01": {
+    "id": "nemona-01",
+    "species": "Nemona",
+    "card_name": "ネモ",
+    "language": "JP",
+    "set": "",
+    "number": "",
+    "confidence": "uncertain"
+  },
+  "nemona-02": {
+    "id": "nemona-02",
+    "species": "Nemona",
+    "card_name": "",
+    "language": "JP",
+    "set": "",
+    "number": "",
+    "confidence": "uncertain"
+  },
   "ninetales-01": {
     "id": "ninetales-01",
     "species": "Ninetales",
@@ -1735,6 +1906,15 @@
     "set": "EX Dragon",
     "number": "69/97",
     "confidence": "confirmed"
+  },
+  "olivia-01": {
+    "id": "olivia-01",
+    "species": "Olivia",
+    "card_name": "ライチ",
+    "language": "JP",
+    "set": "",
+    "number": "",
+    "confidence": "uncertain"
   },
   "oranguru-01": {
     "id": "oranguru-01",
@@ -1798,6 +1978,15 @@
     "set": "SWSH Promos",
     "number": "SWSH115",
     "confidence": "photo"
+  },
+  "peonia-01": {
+    "id": "peonia-01",
+    "species": "Peonia",
+    "card_name": "",
+    "language": "JP",
+    "set": "",
+    "number": "",
+    "confidence": "uncertain"
   },
   "pichu-01": {
     "id": "pichu-01",
@@ -1961,6 +2150,15 @@
     "number": "224/S-P",
     "confidence": "confirmed"
   },
+  "professors-research-02": {
+    "id": "professors-research-02",
+    "species": "Professor's Research",
+    "card_name": "博士の研究",
+    "language": "JP",
+    "set": "",
+    "number": "",
+    "confidence": "uncertain"
+  },
   "quaxly-01": {
     "id": "quaxly-01",
     "species": "Quaxly",
@@ -1969,6 +2167,15 @@
     "set": "Paldea Evolved",
     "number": "206",
     "confidence": "confirmed"
+  },
+  "raifort-01": {
+    "id": "raifort-01",
+    "species": "Raifort",
+    "card_name": "レホール",
+    "language": "JP",
+    "set": "",
+    "number": "",
+    "confidence": "uncertain"
   },
   "ralts-01": {
     "id": "ralts-01",
@@ -2032,6 +2239,15 @@
     "set": "Leaders' Stadium",
     "number": "",
     "confidence": "confirmed"
+  },
+  "rosas-encouragement-01": {
+    "id": "rosas-encouragement-01",
+    "species": "Rosa's Encouragement",
+    "card_name": "",
+    "language": "JP",
+    "set": "",
+    "number": "",
+    "confidence": "uncertain"
   },
   "sabrinas-gaze-01": {
     "id": "sabrinas-gaze-01",
@@ -2330,6 +2546,24 @@
     "number": "075/063",
     "confidence": "confirmed"
   },
+  "tate-liza-01": {
+    "id": "tate-liza-01",
+    "species": "Tate & Liza",
+    "card_name": "",
+    "language": "JP",
+    "set": "",
+    "number": "",
+    "confidence": "uncertain"
+  },
+  "tate-lizas-training-01": {
+    "id": "tate-lizas-training-01",
+    "species": "Tate & Liza's Training",
+    "card_name": "フウとランの特訓",
+    "language": "JP",
+    "set": "",
+    "number": "",
+    "confidence": "uncertain"
+  },
   "togedemaru-01": {
     "id": "togedemaru-01",
     "species": "Togedemaru",
@@ -2392,6 +2626,15 @@
     "set": "Celestial Storm",
     "number": "8/168",
     "confidence": "photo"
+  },
+  "tulip-01": {
+    "id": "tulip-01",
+    "species": "Tulip",
+    "card_name": "リップ",
+    "language": "JP",
+    "set": "",
+    "number": "",
+    "confidence": "uncertain"
   },
   "typhlosion-01": {
     "id": "typhlosion-01",
@@ -2546,6 +2789,15 @@
     "number": "29",
     "confidence": "confirmed"
   },
+  "worker-01": {
+    "id": "worker-01",
+    "species": "Worker",
+    "card_name": "",
+    "language": "JP",
+    "set": "",
+    "number": "",
+    "confidence": "uncertain"
+  },
   "yanmega-01": {
     "id": "yanmega-01",
     "species": "Yanmega",
@@ -2599,6 +2851,15 @@
     "set": "Black Bolt",
     "number": "158/086",
     "confidence": "confirmed"
+  },
+  "zinnias-trust-01": {
+    "id": "zinnias-trust-01",
+    "species": "Zinnia's Trust",
+    "card_name": "ヒガナの信頼",
+    "language": "JP",
+    "set": "",
+    "number": "",
+    "confidence": "uncertain"
   },
   "zygarde-01": {
     "id": "zygarde-01",

@@ -2954,3 +2954,325 @@ cards:
     note: Steam Siege artwork logo and shiny field match page 4 pocket 2; STAFF wording not observed on this page.
       Reviewed against archived page photo; exact visible printing only, not current placement or in-hand confirmation.
     usage_basis: Owner-authorized DoubleHolo card catalog image.
+  erikas-invitation-01:
+    provider: doubleholo
+    upstream_id: '22801'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: proxy
+    asset_path: assets/images/cards/erikas-invitation-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/22801/primary.webp
+    note: Artwork visually matches photographed pocket; exact printing and variant
+      remain unverified.
+  raifort-01:
+    provider: doubleholo
+    upstream_id: '46882'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: proxy
+    asset_path: assets/images/cards/raifort-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/46882/primary.webp
+    note: Artwork visually matches photographed pocket; exact printing and variant
+      remain unverified.
+  professors-research-02:
+    provider: doubleholo
+    upstream_id: '73297'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: proxy
+    asset_path: assets/images/cards/professors-research-02.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/73297/primary.webp
+    note: Artwork visually matches photographed pocket; exact printing and variant
+      remain unverified.
+  jacinthe-01:
+    provider: doubleholo
+    upstream_id: '52641'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: proxy
+    asset_path: assets/images/cards/jacinthe-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/52641/primary.webp
+    note: Artwork visually matches photographed pocket; exact printing and variant
+      remain unverified.
+  olivia-01:
+    classification: photo-crop
+    usage_basis: Owner-published photographed page; Japanese printing unverified.
+    note: The DoubleHolo export lists an English Olivia; it is not the pictured printing.
+    asset_path: assets/images/cards/olivia-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-24/trainer-full-arts-public-gallery/waifu_1.jpg
+    crop_box:
+    - 390
+    - 506
+    - 683
+    - 901
+  furisode-girl-01:
+    provider: doubleholo
+    upstream_id: '34996'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: proxy
+    asset_path: assets/images/cards/furisode-girl-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/34996/primary.webp
+    note: Artwork visually matches photographed pocket; exact printing and variant
+      remain unverified.
+  tulip-01:
+    classification: proxy
+    asset_path: assets/images/cards/tulip-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-25'
+    provider: doubleholo
+    upstream_id: '34512'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/34512/large.webp
+    note: Image selected from owner-supplied 31-card PDF lot; exact physical printing
+      remains unverified.
+  iris-fighting-spirit-01:
+    classification: proxy
+    asset_path: assets/images/cards/iris-fighting-spirit-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-25'
+    provider: doubleholo
+    upstream_id: '33366'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/33366/large.webp
+    note: Image selected from owner-supplied 31-card PDF lot; exact physical printing
+      remains unverified.
+  nemona-01:
+    provider: doubleholo
+    upstream_id: '73302'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: proxy
+    asset_path: assets/images/cards/nemona-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/73302/primary.webp
+    note: Artwork visually matches photographed pocket; exact printing and variant
+      remain unverified.
+  iris-fighting-spirit-02:
+    classification: proxy
+    asset_path: assets/images/cards/iris-fighting-spirit-02.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    provider: doubleholo
+    upstream_id: '52710'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/52710/large.webp
+    note: Object ID verified in owner-supplied DoubleHolo lot; artwork matches photograph;
+      exact physical printing and variant remain unverified.
+  mistys-spirit-01:
+    provider: doubleholo
+    upstream_id: '85089'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    classification: proxy
+    asset_path: assets/images/cards/mistys-spirit-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/85089/primary.webp
+    note: Artwork visually matches photographed pocket; exact printing and variant
+      remain unverified.
+  zinnias-trust-01:
+    classification: proxy
+    asset_path: assets/images/cards/zinnias-trust-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    provider: doubleholo
+    upstream_id: '86661'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/86661/large.webp
+    note: Object ID verified in owner-supplied DoubleHolo lot; artwork matches photograph;
+      exact physical printing and variant remain unverified.
+  tate-lizas-training-01:
+    classification: proxy
+    asset_path: assets/images/cards/tate-lizas-training-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    provider: doubleholo
+    upstream_id: '86651'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/86651/large.webp
+    note: Object ID verified in owner-supplied DoubleHolo lot; artwork matches photograph;
+      exact physical printing and variant remain unverified.
+  mela-01:
+    classification: proxy
+    asset_path: assets/images/cards/mela-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-25'
+    provider: doubleholo
+    upstream_id: '33184'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/33184/large.webp
+    note: Image selected from owner-supplied 31-card PDF lot; exact physical printing
+      remains unverified.
+  worker-01:
+    classification: proxy
+    asset_path: assets/images/cards/worker-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-25'
+    provider: doubleholo
+    upstream_id: '35795'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/35795/large.webp
+    note: Image selected from owner-supplied 31-card PDF lot; exact physical printing
+      remains unverified.
+  peonia-01:
+    classification: proxy
+    asset_path: assets/images/cards/peonia-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-25'
+    provider: doubleholo
+    upstream_id: '35095'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/35095/large.webp
+    note: Image selected from owner-supplied 31-card PDF lot; exact physical printing
+      remains unverified.
+  cynthias-ambition-01:
+    classification: proxy
+    asset_path: assets/images/cards/cynthias-ambition-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-25'
+    provider: doubleholo
+    upstream_id: '37050'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/37050/large.webp
+    note: Image selected from owner-supplied 31-card PDF lot; exact physical printing
+      remains unverified.
+  karens-conviction-01:
+    classification: proxy
+    asset_path: assets/images/cards/karens-conviction-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-25'
+    provider: doubleholo
+    upstream_id: '35293'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/35293/large.webp
+    note: Image selected from owner-supplied 31-card PDF lot; exact physical printing
+      remains unverified.
+  aroma-lady-01:
+    classification: proxy
+    asset_path: assets/images/cards/aroma-lady-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-25'
+    provider: doubleholo
+    upstream_id: '34300'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/34300/large.webp
+    note: Image selected from owner-supplied 31-card PDF lot; exact physical printing
+      remains unverified.
+  bea-01:
+    classification: proxy
+    asset_path: assets/images/cards/bea-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-25'
+    provider: doubleholo
+    upstream_id: '70694'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/70694/large.webp
+    note: Image selected from owner-supplied 31-card PDF lot; exact physical printing
+      remains unverified.
+  nemona-02:
+    classification: proxy
+    asset_path: assets/images/cards/nemona-02.webp
+    reviewed: true
+    reviewed_on: '2026-09-25'
+    provider: doubleholo
+    upstream_id: '36764'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/36764/large.webp
+    note: Image selected from owner-supplied 31-card PDF lot; exact physical printing
+      remains unverified.
+  jacinthe-02:
+    classification: proxy
+    asset_path: assets/images/cards/jacinthe-02.webp
+    reviewed: true
+    reviewed_on: '2026-09-25'
+    provider: doubleholo
+    upstream_id: '52633'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/52633/large.webp
+    note: Image selected from owner-supplied 31-card PDF lot; exact physical printing
+      remains unverified.
+  tate-liza-01:
+    classification: proxy
+    asset_path: assets/images/cards/tate-liza-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-25'
+    provider: doubleholo
+    upstream_id: '71855'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/71855/large.webp
+    note: Image selected from owner-supplied 31-card PDF lot; exact physical printing
+      remains unverified.
+  lance-01:
+    classification: proxy
+    asset_path: assets/images/cards/lance-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-25'
+    provider: doubleholo
+    upstream_id: '35797'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/35797/large.webp
+    note: Image selected from owner-supplied 31-card PDF lot; exact physical printing
+      remains unverified.
+  arven-01:
+    classification: proxy
+    asset_path: assets/images/cards/arven-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-25'
+    provider: doubleholo
+    upstream_id: '36753'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/36753/large.webp
+    note: Image selected from owner-supplied 31-card PDF lot; exact physical printing
+      remains unverified.
+  honey-s-p-01:
+    classification: proxy
+    asset_path: assets/images/cards/honey-s-p-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-25'
+    provider: doubleholo
+    upstream_id: '79894'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/79894/large.webp
+    note: Image selected from owner-supplied 31-card PDF lot; exact physical printing
+      remains unverified.
+  candice-01:
+    classification: proxy
+    asset_path: assets/images/cards/candice-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-25'
+    provider: doubleholo
+    upstream_id: '35780'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/35780/large.webp
+    note: Image selected from owner-supplied 31-card PDF lot; exact physical printing
+      remains unverified.
+  rosas-encouragement-01:
+    classification: proxy
+    asset_path: assets/images/cards/rosas-encouragement-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-25'
+    provider: doubleholo
+    upstream_id: '52640'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/52640/large.webp
+    note: Image selected from owner-supplied 31-card PDF lot; exact physical printing
+      remains unverified.
+  hilda-01:
+    classification: proxy
+    asset_path: assets/images/cards/hilda-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-25'
+    provider: doubleholo
+    upstream_id: '37948'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/37948/large.webp
+    note: Image selected from owner-supplied 31-card PDF lot; exact physical printing
+      remains unverified.

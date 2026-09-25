@@ -11,6 +11,7 @@
     <dl>
       <div><dt>Language</dt><dd data-card-inspector-field="language"></dd></div>
       <div><dt>Set / number</dt><dd data-card-inspector-field="set-number"></dd></div>
+      {{ if eq .id "waifu" }}<div><dt>Identity</dt><dd data-card-inspector-field="identity-confidence"></dd></div>{{ end }}
       <div><dt>Binder location</dt><dd data-card-inspector-field="theme-pocket"></dd></div>
       <div><dt>Image fidelity</dt><dd data-card-inspector-field="image-classification"></dd></div>
       <div><dt>Image source</dt><dd data-card-inspector-field="image-source"></dd></div>

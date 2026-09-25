@@ -137,9 +137,11 @@ def test_draft_volume_is_not_a_link_on_home_or_directory(tmp_path):
         assert 'exhibition-entry--volume exhibition-entry--pending' in path.read_text()
 
 
-def test_photo_gallery_viewer_is_a_native_modal(site):
+def test_trainer_gallery_is_the_public_digital_binder(site):
     html = (site / "gallery" / "waifu" / "index.html").read_text()
-    assert '<dialog id="lightbox"' in html
+    assert 'data-binder="waifu"' in html
+    assert 'data-card-inspector' in html
+    assert '<figure class="gallery-item"' not in html
 
 
 def test_volume_inspector_names_are_english_first_with_printed_script(site):

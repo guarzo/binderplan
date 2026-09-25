@@ -29,8 +29,8 @@
           {{ if not $card }}
             {{ errorf "missing card registry data for %q on binder leaf %q" .card_id $leaf.id }}
           {{ end }}
-          {{ $displayName := $card.card_name }}
-          {{ if ne $card.language "EN" }}{{ $displayName = printf "%s · %s" $card.species $card.card_name }}{{ end }}
+          {{ $displayName := $card.species }}
+          {{ if and $card.card_name (ne $card.language "EN") }}{{ $displayName = printf "%s · %s" $card.species $card.card_name }}{{ else if $card.card_name }}{{ $displayName = $card.card_name }}{{ end }}
           {{ $mapping := index (index $.images "cards") .card_id }}
           {{ if not $mapping }}
             {{ errorf "missing card image mapping for %q on binder leaf %q" .card_id $leaf.id }}
@@ -68,6 +68,8 @@
                   data-card-name="{{ $displayName }}"
                   data-card-english-name="{{ $card.species }}" data-card-printed-name="{{ if ne $card.language "EN" }}{{ $card.card_name }}{{ end }}"
                   data-card-language="{{ $card.language }}"
+                  {{ if eq $.binderID "waifu" }}data-card-identity-confidence="{{ $card.confidence }}"
+                  data-card-identity-note="Name from the owner-supplied list; exact physical printing unverified"{{ end }}
                   data-card-set="{{ $card.set }}"
                   data-card-number="{{ $card.number }}"
                   data-leaf-theme="{{ $leaf.theme }}"
@@ -79,7 +81,7 @@
                   data-placement-observed-card-id="{{ .placement.observed_card_id }}"
                   data-placement-physical-state="{{ if .placement.physical_state_unknown }}unknown{{ end }}"
                   data-inspector-src="{{ $inspectorSrc }}"
-                  aria-label="Inspect {{ $displayName }}, {{ $leaf.theme }} pocket {{ .position }}{{ if eq $classification "proxy" }}{{ if eq $.binderID "emolga-masterset" }}, catalog image, finish unverified{{ else }}, reference image{{ end }}{{ end }}{{ if eq $classification "missing" }}, image unavailable{{ end }}{{ if eq .placement.status "pending" }}, placement pending{{ end }}">
+                  aria-label="Inspect {{ $displayName }}, {{ $leaf.theme }} pocket {{ .position }}{{ if and (ne $.binderID "waifu") (eq $classification "proxy") }}{{ if eq $.binderID "emolga-masterset" }}, catalog image, finish unverified{{ else }}, reference image{{ end }}{{ end }}{{ if eq $classification "missing" }}, image unavailable{{ end }}{{ if and (ne $.binderID "waifu") (eq .placement.status "pending") }}, placement pending{{ end }}">
             {{ if eq $classification "missing" }}
               <span class="binder-missing">{{ $displayName }}<small>Image unavailable</small></span>
             {{ else }}
@@ -97,18 +99,20 @@
                 {{ $thumb = $source.Resize "360x webp q80" }}
               {{ end }}
               {{ $large := $source }}
-              {{ if gt $source.Width 900 }}
+              {{ if eq $.binderID "waifu" }}
+                {{ if gt $source.Width 420 }}{{ $large = $source.Resize "420x webp q74" }}{{ end }}
+              {{ else if gt $source.Width 900 }}
                 {{ $large = $source.Resize "900x webp q84" }}
               {{ end }}
               <img src="{{ $thumb.RelPermalink }}"
                    srcset="{{ $thumb.RelPermalink }} {{ $thumb.Width }}w{{ if ne $large.Width $thumb.Width }}, {{ $large.RelPermalink }} {{ $large.Width }}w{{ end }}"
                    sizes="(max-width: 860px) 30vw, 180px"
                    width="{{ $thumb.Width }}" height="{{ $thumb.Height }}"
-                   alt="{{ $displayName }}, {{ $card.set }} {{ $card.number }}"
+                   alt="{{ if eq $.binderID "waifu" }}{{ $displayName }}{{ with $card.set }}, {{ . }}{{ end }}{{ with $card.number }} {{ . }}{{ end }}{{ else }}{{ $displayName }}, {{ $card.set }} {{ $card.number }}{{ end }}"
                    loading="{{ if $.eager }}eager{{ else }}lazy{{ end }}"
                    {{ if $.eager }}data-initial-binder-image{{ end }}>
             {{ end }}
-            {{ if or (and (eq $classification "proxy") (ne $.binderID "emolga-masterset")) (eq .placement.status "pending") (eq $card.confidence "uncertain") }}
+            {{ if and (ne $.binderID "waifu") (or (and (eq $classification "proxy") (ne $.binderID "emolga-masterset")) (eq .placement.status "pending") (eq $card.confidence "uncertain")) }}
               <span class="pocket-states">
                 {{ if and (eq $classification "proxy") (ne $.binderID "emolga-masterset") }}<span class="pocket-state">Reference image</span>{{ end }}
                 {{ if eq .placement.status "pending" }}<span class="pocket-state">Placement pending</span>{{ end }}

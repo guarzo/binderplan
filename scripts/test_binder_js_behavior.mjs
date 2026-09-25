@@ -149,9 +149,9 @@ function keyboardEvent(key, target) {
   };
 }
 
-function buildBinder() {
+function buildBinder(binderId = "volume-1") {
   const document = new FakeDocument();
-  const root = new FakeElement("div", { "data-binder": "volume-1" });
+  const root = new FakeElement("div", { "data-binder": binderId });
   const controls = new FakeElement("nav", { "data-binder-controls": "" });
   const previous = new FakeElement("a", { "data-binder-prev": "", href: "#leaf-v1-01" });
   const position = new FakeElement("p", { "data-binder-position": "", "aria-live": "polite" });
@@ -176,13 +176,14 @@ function buildBinder() {
   return { document, root, previous, position, next };
 }
 
-function runScenario({ mobile, directHash, directEvent, initialHash = "" }) {
-  const { document, root, previous, position, next } = buildBinder();
+function runScenario({ mobile, directHash, directEvent, binderId, initialHash = "", breakpointChange = false }) {
+  const { document, root, previous, position, next } = buildBinder(binderId);
   const location = { hash: initialHash };
+  let onMediaChange;
   const mediaQuery = {
     matches: mobile,
-    addEventListener() {},
-    addListener() {},
+    addEventListener(type, listener) { if (type === "change") onMediaChange = listener; },
+    addListener(listener) { onMediaChange = listener; },
   };
   const windowListeners = new Map();
   const window = {
@@ -219,6 +220,14 @@ function runScenario({ mobile, directHash, directEvent, initialHash = "" }) {
   });
 
   const initial = snapshot();
+  let afterBreakpoint;
+  if (breakpointChange) {
+    mediaQuery.matches = !mobile;
+    onMediaChange();
+    afterBreakpoint = snapshot();
+    mediaQuery.matches = mobile;
+    onMediaChange();
+  }
   const right = keyboardEvent("ArrowRight", root);
   document.dispatchEvent(right);
   const afterRight = snapshot();
@@ -235,7 +244,7 @@ function runScenario({ mobile, directHash, directEvent, initialHash = "" }) {
   assert.notEqual(afterRight.status, "", "navigated live status should be nonempty");
   assert.notEqual(afterLocationEvent.status, "", "location event status should be nonempty");
 
-  return { initial, afterRight, afterLeft, afterLocationEvent };
+  return { initial, afterBreakpoint, afterRight, afterLeft, afterLocationEvent };
 }
 
 const desktop = runScenario({ mobile: false, directHash: "#leaf-v1-03", directEvent: "hashchange" });
@@ -280,6 +289,12 @@ assert.deepEqual(mobile.afterLocationEvent, {
   previousHref: "#leaf-v1-03",
   nextHref: "#leaf-v1-04",
 });
+
+const trainer = runScenario({ mobile: true, binderId: "waifu", directHash: "#leaf-v1-04", directEvent: "hashchange", breakpointChange: true });
+assert.equal(trainer.initial.hash, "", "Trainer gallery opens at its introduction, not below the sticky header");
+assert.equal(trainer.afterBreakpoint.hash, "", "Breakpoint changes must not add a hash to the Trainer gallery");
+assert.equal(trainer.afterRight.hash, "#leaf-v1-02", "Trainer page navigation still updates the leaf hash");
+assert.equal(trainer.afterLocationEvent.hash, "#leaf-v1-04", "Trainer deep links remain navigable");
 
 // The homepage wall uses the same inspector details without adding binder leaves.
 {

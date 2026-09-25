@@ -30,6 +30,7 @@ GENERATED_FIELDS = (
 )
 
 VOLUME_IDS = ("volume-1", "volume-2")
+SIDE_BINDER_IDS = ("waifu",)
 PUBLICATION_STATUSES = {"draft", "published"}
 LEAF_KINDS = {"cards", "transition"}
 TRANSITION_ROLES = {"volume-opening", "chapter", "volume-closing"}
@@ -60,6 +61,7 @@ PUBLIC_BINDER_ROUTES = {
     "volume-1": Path("gallery/volume-1/index.html"),
     "volume-2": Path("gallery/volume-2/index.html"),
     "emolga-masterset": Path("gallery/emolga-masterset/index.html"),
+    "waifu": Path("gallery/waifu/index.html"),
 }
 DRAFT_ONLY_ROUTES = (
     Path("gallery/digital-binder-pilot/index.html"),
@@ -551,6 +553,13 @@ def _load_project_manifests(root: Path, errors: list[str]) -> dict[str, dict]:
             errors.append(str(exc))
             continue
         manifests[volume_id] = manifest
+    for binder_id in SIDE_BINDER_IDS:
+        path = root / "data" / "binders" / f"{binder_id}.yaml"
+        if path.is_file():
+            try:
+                manifests[binder_id] = load_yaml(path)
+            except ValueError as exc:
+                errors.append(str(exc))
     return manifests
 
 
@@ -582,8 +591,8 @@ def _load_previous_manifests(root: Path, previous_ref: str, errors: list[str]) -
     commit = resolved.stdout.strip() or previous_ref
 
     manifest_paths = {
-        volume_id: f"data/binders/{volume_id}.yaml"
-        for volume_id in VOLUME_IDS
+        binder_id: f"data/binders/{binder_id}.yaml"
+        for binder_id in (*VOLUME_IDS, *SIDE_BINDER_IDS)
     }
     optional = "emolga-masterset"
     if (root / "data" / "binders" / f"{optional}.yaml").is_file():
@@ -930,6 +939,12 @@ def _validate_images(root: Path, images: dict, registry: dict[str, dict],
         if classification == "exact":
             _validate_exact_image(card_id, record, registry[card_id], errors)
 
+    for card_id in occupied_by_volume.get("waifu", set()):
+        record = cards.get(card_id)
+        if (isinstance(record, dict) and record.get("provider") == "evidence-crop"
+                and not str(record.get("usage_basis") or "").strip()):
+            errors.append(f"image record {card_id}: Trainer photo crop requires usage_basis")
+
     published_cards = set()
     for volume_id, card_ids in occupied_by_volume.items():
         if publication_statuses.get(volume_id) == "published":
@@ -1133,7 +1148,10 @@ def validate_project(root: Path, previous_ref: str | None = None) -> list[str]:
     if previous_ref:
         previous_manifests = _load_previous_manifests(root, previous_ref, errors)
         if previous_manifests is not None:
-            errors.extend(validate_transition(previous_manifests, manifests))
+            # A newly introduced photographed side binder has no manifest in the
+            # previous commit; compare only binders with an earlier placement record.
+            comparable = {key: manifests[key] for key in previous_manifests if key in manifests}
+            errors.extend(validate_transition(previous_manifests, comparable))
 
     return errors
 
