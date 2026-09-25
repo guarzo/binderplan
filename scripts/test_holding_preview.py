@@ -61,8 +61,11 @@ def test_draft_displays_every_photographed_pocket_and_five_top_loaders(builds):
     assert len(parsed.trade_cards) == 5
     assert len({card["data-holding-trade-card"] for card in parsed.trade_cards}) == 5
     assert len({section["data-binder-leaf"] for section in parsed.sections
-                if "data-binder-leaf" in section}) == 14
+                if "data-binder-leaf" in section}) == 15
+    assert any(section.get("data-binder-leaf") == "trade" and section.get("data-kind") == "transition"
+               for section in parsed.sections)
     assert sum('class="binder-pocket is-empty"' in part for part in html.splitlines()) == 26
+    assert 'id="trade-cards"' in html
 
 
 def test_only_five_top_loaders_are_marked_actively_available(builds):
@@ -84,10 +87,14 @@ def test_page_navigation_and_images_are_local(builds):
     assert {f"#leaf-{n}" for n in range(7133, 7147)} <= {
         link.get("href") for link in parsed.links
     }
-    assert "#trade-cards" in {link.get("href") for link in parsed.links}
-    assert len([img for img in parsed.images if "holding/" in img.get("src", "")]) == 105
+    assert "#leaf-trade" in {link.get("href") for link in parsed.links}
+    assert len([img for img in parsed.images if img.get("src", "").startswith("/images/")]) == 105
     assert all(not re.match(r"https?://", img.get("src", "")) for img in parsed.images)
-    assert html.count('data-classification="photo-crop"') == 105
+    assert html.count('data-classification="photo-crop"') + html.count('data-classification="exact"') == 105
+    assert all(button.get("data-card-language") in {"EN", "JP", "CN"}
+               for button in parsed.buttons if button.get("data-classification") == "exact")
+    assert all(button.get("data-card-set") or button.get("data-card-number")
+               for button in parsed.buttons if button.get("data-classification") == "exact")
     assert 'data-binder="holding-preview"' in html
     assert 'data-card-inspector' in html
     assert 'data-card-inspector-field="sort-status"' in html

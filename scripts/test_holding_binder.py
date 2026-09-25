@@ -1,6 +1,7 @@
 """Independent guardrails for the photographed, still-owned holding inventory."""
 
 import copy
+import hashlib
 import importlib.util
 import re
 from collections import Counter
@@ -57,9 +58,15 @@ def test_manifest_matches_approved_physical_inventory():
         for row in range(1, count + 1)
     }
     assert len([card for card in rows if card["observation_ref"].startswith("observed-")]) == 5
-    assert all(card["image"]["classification"] == "photo-crop" and card["image"]["reviewed"] is True for card in rows)
+    assert {card["image"]["classification"] for card in rows} == {"exact", "photo-crop"}
+    assert Counter(card["image"]["classification"] for card in rows) == {"exact": 62, "photo-crop": 43}
+    assert all(card["image"]["reviewed"] is True for card in rows)
+    assert all(card["image"].get("crop_asset_path", card["image"]["asset_path"]) == f"assets/images/holding/{card['id']}.webp" for card in rows)
+    assert all(card.get("language") in ("EN", "JP", "CN") and card.get("set") for card in rows if card["image"]["classification"] == "exact")
+    assert all(not str(card.get("number", "")).startswith("No.") for card in rows if card["image"]["classification"] == "exact")
     by_ref = {card["observation_ref"]: card for card in rows}
-    assert "glare" in by_ref["HB-P13-01"]["image"]["note"].lower()
+    assert "glare" in by_ref["HB-P13-01"]["image"]["fallback_crop"]["photo_note"].lower()
+    assert "glare" not in by_ref["HB-P13-01"]["image"].get("note", "").lower()
     assert "clips" in by_ref["HB-P06-01"]["image"]["note"].lower()
     assert by_ref["HB-P05-04"]["subsection"] == "Species Studies"
     assert by_ref["HB-P12-06"]["subsection"] == "Species Studies"
@@ -67,6 +74,28 @@ def test_manifest_matches_approved_physical_inventory():
     assert "Manaphy" not in by_ref["HB-P09-09"]["name"]
     assert "139/128" in by_ref["observed-alolan-meowth-139-128"]["name"]
     assert by_ref["HB-P07-07"]["subsection"] == "Beautiful Misfits"
+    assert by_ref["HB-P09-09"]["image"]["classification"] == "photo-crop"
+    assert by_ref["HB-P01-06"]["image"]["classification"] == "photo-crop"
+    assert "DEOXYS stamp" in by_ref["HB-P01-06"]["image"]["note"]
+    assert "1st Edition" not in by_ref["HB-P07-08"]["name"]
+    assert "Japanese" in by_ref["HB-P02-01"]["name"]
+    assert "Japanese" in by_ref["HB-P06-07"]["name"]
+    assert by_ref["HB-P11-05"]["image"]["classification"] == "photo-crop"
+    assert by_ref["HB-P11-05"]["language"] == "JP"
+    assert by_ref["HB-P11-05"]["set"] == "XY8"
+    assert "Bulbasaur" in by_ref["HB-P09-06"]["name"] and "Venusaur" not in by_ref["HB-P09-06"]["name"]
+    assert by_ref["HB-P03-07"]["name"] == "Groudon ex — Japanese, printing unresolved"
+    assert "Butler" in by_ref["HB-P07-07"]["name"]
+    assert "Lv.28" in by_ref["HB-P09-02"]["name"]
+    for ref, collector_number in (("observed-dedenne-perfect-order", "093/088"),
+                                  ("observed-ampharos-chaos-rising", "090/086"),
+                                  ("HB-P12-01", "090/128")):
+        assert by_ref[ref]["number"] == collector_number
+        assert by_ref[ref]["identity_confidence"] == "medium"
+        assert "photo" in by_ref[ref]["identity_note"].lower()
+    assert "Megalo Cannon" in by_ref["HB-P01-04"]["name"]
+    assert "Lv.15" in by_ref["HB-P11-04"]["name"]
+    assert by_ref["HB-P11-04"]["image"]["classification"] == "photo-crop"
 
 
 def test_photograph_order_and_written_owner_decisions_are_independent():
@@ -121,6 +150,79 @@ def test_validator_rejects_asset_path_escape_from_holding_directory():
     card["id"] = "holding-x/../../../../../tmp/escape"
     card["image"]["asset_path"] = f"assets/images/holding/{card['id']}.webp"
     with pytest.raises(ValueError, match="card key|asset path"):
+        load_validator().validate(data, ROOT, check_assets=False)
+
+
+def test_validator_accepts_only_reviewed_matching_canonical_exact_image():
+    data = yaml.safe_load(MANIFEST.read_text())
+    card = data["pages"][4]["pockets"][0]["card"]  # photographed Hoopa EX
+    original_crop = card["image"].get("crop_asset_path", card["image"]["asset_path"])
+    canonical = yaml.safe_load((ROOT / "data/card-images.yaml").read_text())["cards"]["hoopa-02"]
+    card["image"].update({
+        "classification": "exact", "asset_path": canonical["asset_path"],
+        "crop_asset_path": original_crop, "provider": canonical["provider"],
+        "upstream_id": canonical["upstream_id"], "source_url": canonical["source_url"],
+        "canonical_id": "hoopa-02",
+    })
+    assert load_validator().validate(data, ROOT, check_assets=False) == 105
+    card["image"]["canonical_id"] = "dratini-02"  # reviewed, but a different printing
+    with pytest.raises(ValueError, match="canonical|printing"):
+        load_validator().validate(data, ROOT, check_assets=False)
+
+
+def test_catalog_checksum_list_covers_every_archived_original(tmp_path):
+    validator = load_validator()
+    archive = tmp_path / validator.CATALOG_ARCHIVE
+    archive.mkdir(parents=True)
+    name = "holding-p01-02.webp"
+    original = ROOT / validator.CATALOG_ARCHIVE / name
+    archived = archive / name
+    archived.write_bytes(original.read_bytes())
+    (archive / "SHA256SUMS").write_text(
+        f"{hashlib.sha256(archived.read_bytes()).hexdigest()}  {validator.CATALOG_ARCHIVE}/{name}\n"
+    )
+    (archive / "README.md").write_text("Intake record\n")
+    (archive / "unlisted.webp").write_bytes(b"unlisted source")
+    with pytest.raises(ValueError, match="catalog archive"):
+        validator.verified_catalog(tmp_path, {f"{validator.CATALOG_ARCHIVE}/{name}"})
+
+
+def test_validator_rejects_photo_crop_with_catalog_provenance():
+    data = yaml.safe_load(MANIFEST.read_text())
+    image = data["pages"][0]["pockets"][0]["card"]["image"]
+    assert image["classification"] == "photo-crop"
+    image["provider"] = "doubleholo"
+    image["upstream_id"] = "1234"
+    with pytest.raises(ValueError, match="photo crop"):
+        load_validator().validate(data, ROOT, check_assets=False)
+
+
+def test_validator_rejects_unsourced_or_unarchived_new_exact():
+    data = yaml.safe_load(MANIFEST.read_text())
+    card = data["pages"][0]["pockets"][1]["card"]  # Dhelmise
+    image = card["image"]
+    image.update({"classification": "exact", "crop_asset_path": f"assets/images/holding/{card['id']}.webp",
+                  "asset_path": f"assets/images/holding/catalog/{card['id']}.webp",
+                  "provider": "doubleholo", "upstream_id": "85053",
+                  "source_url": "https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/85053/primary.webp",
+                  "original_path": "docs/evidence/2026-09-24/holding-catalog-images/not-archived.webp"})
+    with pytest.raises(ValueError, match="archive|original"):
+        load_validator().validate(data, ROOT, check_assets=False)
+    del image["source_url"]
+    with pytest.raises(ValueError, match="source_url"):
+        load_validator().validate(data, ROOT, check_assets=False)
+
+
+def test_validator_rejects_catalog_image_with_inconsistent_source_or_photo_quality_note():
+    data = yaml.safe_load(MANIFEST.read_text())
+    image = data["pages"][0]["pockets"][1]["card"]["image"]
+    assert image["classification"] == "exact"
+    image["source_url"] = "https://example.test/wrong-upstream.webp"
+    with pytest.raises(ValueError, match="source_url|provenance"):
+        load_validator().validate(data, ROOT, check_assets=False)
+    image["source_url"] = "https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/85053/primary.webp"
+    image["note"] = "Photo glare hides the footer."
+    with pytest.raises(ValueError, match="photo|glare"):
         load_validator().validate(data, ROOT, check_assets=False)
 
 

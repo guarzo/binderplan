@@ -32,10 +32,12 @@
 .holding-page-key ol { padding: 0.75rem 0 0 1.2rem; line-height: 1.5; }
 .holding-page-key li { margin-bottom: 0.45rem; }
 
-.holding-trade { max-width: var(--gallery-width); margin: clamp(4rem, 8vw, 7rem) auto 0; padding-top: 2rem; border-top: 1px solid var(--border); }
-.holding-trade h2 { margin: 0.25rem 0 0.7rem; }
+.holding-preview .binder-spread:last-child { grid-template-columns: minmax(0, 1fr); }
+.holding-preview .binder-spread:last-child::after { display: none; }
+.holding-trade { width: 100%; max-width: 46rem; min-height: 0; margin: 0 auto; padding: var(--binder-leaf-pad); border-top: 1px solid var(--border-faint); }
+.holding-trade h2 { max-width: none; margin: 0.25rem 0 0.7rem; font-size: clamp(1.7rem, 3vw, 2.3rem); }
 .holding-trade > p:not(.eyebrow) { max-width: 65ch; color: var(--text-muted); }
-.holding-trade-items { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr)); gap: clamp(1rem, 2vw, 1.8rem); margin: 2.5rem 0; align-items: start; }
+.holding-trade-items { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1rem, 2vw, 1.8rem); margin: 1.5rem 0 0; align-items: start; }
 .holding-trade-items figure { min-width: 0; }
 .holding-trade-items a { display: block; border: 1px solid var(--border); border-radius: 0.4rem; overflow: hidden; }
 .holding-trade-items a:hover { border-color: var(--foil-cyan); }
@@ -47,5 +49,6 @@
 
 @media (max-width: 640px) {
   .holding-wayfinding-primary { grid-template-columns: 1fr; gap: 1.25rem; }
-  .holding-trade-items { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .holding-trade-items { grid-template-columns: minmax(0, 1fr); }
+  .holding-trade { padding: 0.8rem; }
 }

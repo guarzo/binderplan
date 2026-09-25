@@ -13,11 +13,12 @@
     <div class="holding-wayfinding-primary">
       <a href="#leaf-7133">Review <span>36 cards, pages 7133–7137</span></a>
       <a href="#leaf-7137">Keeper <span>64 cards, pages 7137–7146</span></a>
-      <a href="#trade-cards">Trade <span>5 actively available top loaders</span></a>
+      <a href="#leaf-trade">Trade <span>5 actively available top loaders</span></a>
     </div>
     <p>Page 7137 is mixed. These links navigate to the first relevant photograph, not a physical divider.</p>
     <div class="holding-page-links" aria-label="Jump to photographed page">
       {{ range $holding.pages }}<a href="#leaf-{{ .id }}" aria-label="Go to photographed page {{ .id }}">{{ .id }}</a>{{ end }}
+      <a href="#leaf-trade" aria-label="Go to the digital Trade page">Trade</a>
     </div>
   </nav>
 
@@ -62,17 +63,17 @@
                           data-card-set="{{ $card.set }}" data-card-number="{{ $card.number }}"
                           data-leaf-theme="Photographed page {{ $page.id }}"
                           data-classification="{{ $image.classification }}"
-                          data-image-provenance="Archived owner photograph"
-                          data-image-source="{{ $image.source_path }}"
-                          data-image-note="{{ $image.note | default "Crop of the owned card in the final photograph. Not a verified catalogue scan." }}"
+                          data-image-provenance="{{ $image.provider | default "Archived owner photograph" }}"
+                          data-image-source="{{ $image.source_url | default $image.source_path }}"
+                          data-image-note="{{ $image.note | default (cond (eq $image.classification "exact") "Visually reviewed against the owned printing." "Crop of the owned card in the final photograph. Not a verified catalogue scan.") }}"
                           data-placement-status="confirmed"
                           data-sort-status="{{ $card.status }}" data-sort-subsection="{{ $card.subsection }}"
                           data-identity-confidence="{{ $card.identity_confidence }}"
                           data-available="false"
                           data-inspector-src="{{ $large.RelPermalink }}"
-                          aria-label="Inspect {{ $card.name }}, {{ $card.status }} · {{ $card.subsection }}, page {{ $page.id }} pocket {{ .position }}; photographed placement, photo crop; identity {{ $card.identity_confidence }}">
+                          aria-label="Inspect {{ $card.name }}, {{ $card.status }} · {{ $card.subsection }}, page {{ $page.id }} pocket {{ .position }}; photographed placement, {{ $image.classification }} image; identity {{ $card.identity_confidence }}">
                     <img src="{{ $thumb.RelPermalink }}" width="{{ $thumb.Width }}" height="{{ $thumb.Height }}"
-                         alt="{{ $card.name }} in photographed page {{ $page.id }} pocket {{ .position }}"
+                         alt="{{ $card.name }}{{ if eq $image.classification "exact" }}, reviewed catalogue image{{ else }}, photographed in page {{ $page.id }} pocket {{ .position }}{{ end }}"
                          loading="{{ if lt $index 2 }}eager{{ else }}lazy{{ end }}"
                          {{ if lt $index 2 }}data-initial-binder-image{{ end }}>
                   </button>
@@ -83,58 +84,45 @@
               <summary>Cards and sort decisions on page {{ $page.id }}</summary>
               <ol>
                 {{ range $page.pockets }}{{ if not .empty }}
-                  <li>Pocket {{ .position }}: {{ .card.name }} · {{ .card.status }} / {{ .card.subsection }} · identity {{ .card.identity_confidence }} · photograph crop</li>
+                  <li>Pocket {{ .position }}: {{ .card.name }} · {{ .card.status }} / {{ .card.subsection }} · identity {{ .card.identity_confidence }} · {{ .card.image.classification }} image</li>
                 {{ end }}{{ end }}
               </ol>
             </details>
           </section>
           {{ if eq (mod $index 2) 1 }}</div>{{ end }}
         {{ end }}
+        <div class="binder-spread" data-binder-spread="8">
+          <section id="leaf-trade" class="binder-leaf binder-transition holding-trade" data-binder-leaf="trade" data-kind="transition" aria-labelledby="trade-cards">
+            <p class="eyebrow">A digital page · no photographed pocket positions</p>
+            <h2 id="trade-cards">Available for trade</h2>
+            <p>Five cards, still owned and photographed separately in top loaders. This is a digital grouping, not a physical binder page. No other Holding card is available.</p>
+            <div class="holding-trade-items">
+              {{ range $holding.top_loaders }}
+                {{ $card := .card }}
+                {{ $image := $card.image }}
+                {{ $source := resources.Get (strings.TrimPrefix "assets/" $image.asset_path) }}
+                {{ if not $source }}{{ errorf "missing Trade image for %q" $card.id }}{{ end }}
+                {{ $thumb := $source }}{{ if gt $source.Width 360 }}{{ $thumb = $source.Resize "360x webp q80" }}{{ end }}
+                <figure data-holding-trade-card="{{ $card.id }}" data-available="true" data-placement="top-loader"
+                        data-identity-confidence="{{ $card.identity_confidence }}" data-classification="{{ $image.classification }}">
+                  <a href="{{ $source.RelPermalink }}" aria-label="View {{ $image.classification }} image of {{ $card.name }}">
+                    <img src="{{ $thumb.RelPermalink }}" width="{{ $thumb.Width }}" height="{{ $thumb.Height }}"
+                         alt="{{ $card.name }}{{ if eq $image.classification "photo-crop" }}, photographed in a top loader{{ end }}" loading="lazy">
+                  </a>
+                  <figcaption>
+                    <strong>{{ $card.name }}</strong>
+                    <span>Trade · actively available</span>
+                    <small>Still owned · top loader · {{ $image.classification }} image · identity {{ $card.identity_confidence }}</small>
+                    <small>Image source: {{ $image.provider | default "owner photograph" }}</small>
+                  </figcaption>
+                </figure>
+              {{ end }}
+            </div>
+          </section>
+        </div>
       </div>
     </div>
     {{ partial "card-inspector.html" (dict "id" "holding-preview") }}
   </div>
-
-  <section id="trade-cards" class="holding-trade" aria-labelledby="holding-trade-heading">
-    <p class="eyebrow">Separate from the photographed pages</p>
-    <h2 id="holding-trade-heading">Available for trade</h2>
-    <p>These five cards are still owned and photographed in top loaders. Trade · actively available is an explicit current decision, not an indication that a trade has occurred. No other Holding card is available.</p>
-    <div class="holding-trade-items">
-      {{ range $holding.top_loaders }}
-        {{ $card := .card }}
-        {{ $image := $card.image }}
-        {{ $source := resources.Get (strings.TrimPrefix "assets/" $image.asset_path) }}
-        {{ if not $source }}{{ errorf "missing Trade image for %q" $card.id }}{{ end }}
-        {{ $thumb := $source }}{{ if gt $source.Width 360 }}{{ $thumb = $source.Resize "360x webp q80" }}{{ end }}
-        <figure data-holding-trade-card="{{ $card.id }}" data-available="true" data-placement="top-loader"
-                data-identity-confidence="{{ $card.identity_confidence }}" data-classification="{{ $image.classification }}">
-          <a href="{{ $source.RelPermalink }}" aria-label="View photograph crop of {{ $card.name }}">
-            <img src="{{ $thumb.RelPermalink }}" width="{{ $thumb.Width }}" height="{{ $thumb.Height }}"
-                 alt="{{ $card.name }} in a top loader" loading="lazy">
-          </a>
-          <figcaption>
-            <strong>{{ $card.name }}</strong>
-            <span>Trade · actively available</span>
-            <small>Still owned · top loader · photo crop · identity {{ $card.identity_confidence }}</small>
-          </figcaption>
-        </figure>
-      {{ end }}
-    </div>
-    <p><a href="#leaf-7133">Return to the first photographed page</a></p>
-  </section>
 </article>
-<script>
-// The binder hides inactive spreads after load, so restore direct links to the
-// separate top-loader section after its page geometry settles.
-window.addEventListener('load', function () {
-  if (window.location.hash === '#trade-cards') {
-    window.setTimeout(function () {
-      const section = document.getElementById('trade-cards');
-      const header = document.querySelector('.site-header');
-      const top = section.getBoundingClientRect().top + window.scrollY - (header?.offsetHeight || 0) - 16;
-      window.scrollTo({ top: top, behavior: 'instant' });
-    }, 150);
-  }
-});
-</script>
 {{ end }}
