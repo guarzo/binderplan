@@ -1,0 +1,13 @@
+# Stamped Cards draft evidence — received 2026-09-24
+
+These are immutable copies for the eight-page draft, not gallery assets. Run `sha256sum -c SHA256SUMS` here to check all nine files. Byte comparison (`cmp`) against each source succeeded on intake.
+
+| Archived input | Source at intake | Meaning / limits |
+|---|---|---|
+| `uploads/stamped.pdf` | `tmp/stamped/stamped.pdf` in the primary checkout | Owner-supplied DoubleHolo export dated 2026-09-24. Owner says its 70 rows were constructed by scanning physical cards in order. The PDF contains text, not embedded card scans; catalogue identity, stamp, finish, language, condition and order are leads, not in-hand confirmation or verified pocket assignments. Some rows disagree with older page photographs. |
+| `uploads/IMG_7148.HEIC` | `tmp/stamped/IMG_7148.HEIC` in the primary checkout | Owner-supplied iPhone photo of Japanese Snivy 034/BW-P, with a visible event logo. EXIF DateTime is `2026:09:24 16:06:42` (camera clock unverified). Owner includes it on provisional new page 8; it is absent from the 70-row PDF, and its exact pocket is unknown. The unchanged original includes GPS EXIF; the owner explicitly accepted retaining it, while public WebP derivatives omit EXIF. |
+| `published-pages/stamp_1.jpg` … `stamp_7.jpg` | `static/images/binder/stamped-cards/stamp_1.jpg` … `stamp_7.jpg` at `8cd8919` | Byte-for-byte published JPEG derivatives; **not** camera originals. Their archive date is not a photo capture or observation date. They show the order and contents of seven previously published leaves, not necessarily today's placement or exact stamped printing. |
+
+The higher-resolution owner-supplied original for page 7 was separately archived as `docs/evidence/2026-09-20/validation/stamped.jpeg` (SHA-256 `942ad7e73e977274a0fb92c5111e221cda35dd8792f109c88f2922942e8d7335`). Its earlier evidence README documents that it replaced, rather than added to, the last published page. The gallery remains photographic during this draft; this archive does not authorize cutover or confirm an eighth page's pocket positions.
+
+The 70 export rows versus 62 occupied photographed pockets yield eight *net* additional rows. There are 11 export rows without an unambiguous photographed counterpart and three photographed identities absent from the export under those names (Charmeleon, Lucario ex, Vibrava). The duplicate Horsea row and the photographed page-7 Pikachu 051/162 versus export Promo #51 also require resolution. Do not turn this arithmetic into invented placement evidence; the eight extra PDF rows and Snivy have unknown page-eight pockets until a current spread or owner-confirmed placement is available.
