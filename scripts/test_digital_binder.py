@@ -4631,6 +4631,11 @@ def write_valid_strict_public_binders(root: Path) -> None:
         "gallery/volume-2/index.html",
         valid_public_binder_html("volume-2", "v2"),
     )
+    write_html_at(
+        root,
+        "gallery/emolga-masterset/index.html",
+        valid_public_binder_html("emolga-masterset", "em"),
+    )
     write_public_card_assets(root)
 
 

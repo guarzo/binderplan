@@ -83,11 +83,11 @@ def test_new_binder_does_not_require_prior_pending_placements():
     assert digital_binder.validate_transition(previous, current) == []
 
 
-def test_draft_preview_preserves_page_order_ownership_and_public_photo_gallery(tmp_path):
+def test_public_binder_preserves_pockets_and_wanted_separation_in_both_builds(tmp_path):
     subprocess.run(["hugo", "--buildDrafts", "--destination", str(tmp_path / "draft")],
                    cwd=ROOT, check=True, capture_output=True, text=True)
-    preview = tmp_path / "draft/gallery/emolga-masterset-preview/index.html"
-    html = preview.read_text()
+    assert not (tmp_path / "draft/gallery/emolga-masterset-preview/index.html").exists()
+    html = (tmp_path / "draft/gallery/emolga-masterset/index.html").read_text()
     assert 'data-binder="emolga-masterset"' in html
     assert 'data-pocket-rows="2" data-pocket-columns="2"' in html
     assert re.findall(r'data-binder-leaf="em-(\d+)"', html) == [f"{n:02d}" for n in range(1, 12)]
@@ -112,10 +112,32 @@ def test_draft_preview_preserves_page_order_ownership_and_public_photo_gallery(t
     subprocess.run(["hugo", "--destination", str(tmp_path / "public")],
                    cwd=ROOT, check=True, capture_output=True, text=True)
     assert not (tmp_path / "public/gallery/emolga-masterset-preview/index.html").exists()
-    gallery = (tmp_path / "public/gallery/emolga-masterset/index.html").read_text()
-    assert "emolga_1.webp" in gallery and "emolga_11.webp" in gallery
-    assert 'data-binder="emolga-masterset"' not in gallery
+    public_route = tmp_path / "public/gallery/emolga-masterset/index.html"
+    gallery = public_route.read_text()
+    assert 'data-binder="emolga-masterset"' in gallery
+    assert 'data-publication-status="published"' in gallery
+    assert 'data-pocket-rows="2" data-pocket-columns="2"' in gallery
+    assert len(re.findall(r'\bdata-card-id="emolga-\d{2}"', gallery)) == 42
+    assert len(re.findall(r'data-placeholder-wanted="(?:025|081)/BW-P"', gallery)) == 2
+    assert 'data-wanted-section' in gallery
+    assert 'Draft preview · not published' not in gallery
+    assert '<figure class="gallery-item"' not in gallery
+    assert not re.search(r'<img[^>]+src="[^"]*/images/binder/emolga-masterset/emolga_\d+\.webp', gallery)
+    assert 'href="/gallery/emolga-masterset/"' in (tmp_path / "public/gallery/index.html").read_text()
     assert not digital_binder.validate_public_output(tmp_path / "public", require_public_volumes=True)
+    leaked_preview = tmp_path / "public/gallery/emolga-masterset-preview/index.html"
+    leaked_preview.parent.mkdir(parents=True)
+    leaked_preview.write_text("<h1>Draft leak</h1>")
+    assert any("emolga-masterset-preview" in error and "must not be present" in error
+               for error in digital_binder.validate_public_output(tmp_path / "public", require_public_volumes=True))
+    leaked_preview.unlink()
+    public_route.write_text(gallery.replace('</body>', '<img src="/images/binder/emolga-masterset/emolga_1.webp"></body>'))
+    assert any("legacy photographed binder image reference" in error and "emolga-masterset/emolga_" in error
+               for error in digital_binder.validate_public_output(tmp_path / "public", require_public_volumes=True))
+    public_route.write_text(gallery)
+    public_route.unlink()
+    assert any("emolga-masterset" in error and "missing public" in error
+               for error in digital_binder.validate_public_output(tmp_path / "public", require_public_volumes=True))
 
 
 def test_catalog_matches_visible_card_numbers_without_certifying_variants():

@@ -56,14 +56,19 @@ DOUBLEHOLO_NAME_SYMBOLS = {"♀", "♂"}
 SAFE_REF_RE = re.compile(r"^(?!-)[A-Za-z0-9._/@+-]+$")
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 INITIAL_BINDER_IMAGE_BUDGET = 1_572_864
-PUBLIC_VOLUME_ROUTES = {
+PUBLIC_BINDER_ROUTES = {
     "volume-1": Path("gallery/volume-1/index.html"),
     "volume-2": Path("gallery/volume-2/index.html"),
+    "emolga-masterset": Path("gallery/emolga-masterset/index.html"),
 }
-PILOT_ROUTE = Path("gallery/digital-binder-pilot/index.html")
-LEGACY_PHOTOGRAPHED_VOLUME_PATHS = (
+DRAFT_ONLY_ROUTES = (
+    Path("gallery/digital-binder-pilot/index.html"),
+    Path("gallery/emolga-masterset-preview/index.html"),
+)
+LEGACY_PHOTOGRAPHED_BINDER_PATHS = (
     "images/binder/volume-1/",
     "images/binder/volume-2/",
+    "images/binder/emolga-masterset/emolga_",
 )
 HTML_VOID_ELEMENTS = {
     "area", "base", "br", "col", "embed", "hr", "img", "input",
@@ -1548,11 +1553,11 @@ def _validate_public_binder(public_dir: Path, root: dict) -> list[str]:
 
 def _validate_public_cutover_routes(public_dir: Path, binders_by_page: dict[Path, list[dict]]) -> list[str]:
     errors: list[str] = []
-    pilot_path = public_dir / PILOT_ROUTE
-    if pilot_path.exists():
-        errors.append(f"{PILOT_ROUTE}: draft pilot output must not be present")
+    for draft_route in DRAFT_ONLY_ROUTES:
+        if (public_dir / draft_route).exists():
+            errors.append(f"{draft_route}: draft output must not be present")
 
-    for volume_id, route in PUBLIC_VOLUME_ROUTES.items():
+    for volume_id, route in PUBLIC_BINDER_ROUTES.items():
         page_path = public_dir / route
         if not page_path.is_file():
             errors.append(f"{route}: missing public {volume_id} binder route")
@@ -1578,7 +1583,7 @@ def validate_public_output(public_dir: Path, require_public_volumes: bool = Fals
 
     By default this is component-oriented and validates only roots that opt into
     the binder contract. In strict cutover mode it also verifies the public
-    Volume I/II routes and absence of removed photographed-gallery artifacts.
+    binder routes and absence of removed photographed-gallery references.
     """
     public_dir = Path(public_dir)
     if not public_dir.is_dir():
@@ -1598,7 +1603,7 @@ def validate_public_output(public_dir: Path, require_public_volumes: bool = Fals
             continue
         binders_by_page[relative_page] = parser.binders
         if require_public_volumes:
-            for legacy_path in LEGACY_PHOTOGRAPHED_VOLUME_PATHS:
+            for legacy_path in LEGACY_PHOTOGRAPHED_BINDER_PATHS:
                 if legacy_path in html:
                     errors.append(
                         f"{relative_page}: legacy photographed binder image reference "

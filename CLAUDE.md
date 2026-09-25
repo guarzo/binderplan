@@ -23,9 +23,9 @@ Production builds use `hugo --gc --minify --baseURL <url>` via GitHub Actions.
 **Hugo Static Site Generator** with:
 - `content/` - Markdown content organized into philosophy, gallery, and guides sections
 - `layouts/` - Go HTML templates (`_default/`, `partials/`, `gallery/`)
-- `assets/images/cards/` - Reviewed per-card assets for the reconstructed Volume I/II binders
-- `static/images/` - Photo-based side-binder and slab gallery images
-- `data/binders/` - Volume leaf order, pocket placement, and placement evidence
+- `assets/images/cards/` - Reviewed per-card assets for the reconstructed Volume I/II and Emolga binders
+- `static/images/` - Photo-based side-binder and slab gallery images; Emolga's published page photographs remain as archival source inputs
+- `data/binders/` - Volume and Emolga leaf order, pocket placement, and placement evidence
 - `data/card-images.yaml` - Card-image fidelity and provenance metadata
 - `hugo.toml` - Site configuration with menu structure
 
@@ -57,7 +57,7 @@ For the reconstructed thematic binders:
 - Keep identity-only metadata in `docs/card-registry.md`; do not add pocket location there.
 - Do not add photographed Volume I/II spreads back to `static/images/binder/` or inline gallery markup in the volume `_index.md` files.
 
-Photo-based side binders remain under their existing `static/images/binder/<gallery>/` directories and use inline gallery markup. Slabs remain under `static/images/slabs/`.
+Other photo-based side binders remain under `static/images/binder/<gallery>/` and use inline gallery markup. The Emolga Masterset instead renders `data/binders/emolga-masterset.yaml` as a four-pocket binder; its unchanged page photographs and reviewed provider responses are archived under `docs/evidence/`. Slabs remain under `static/images/slabs/`.
 
 Photo-gallery markup pattern:
 ```html

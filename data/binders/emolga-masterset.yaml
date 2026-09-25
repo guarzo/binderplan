@@ -1,6 +1,6 @@
 version: 1
 volume_id: emolga-masterset
-publication_status: draft
+publication_status: published
 pocket_layout:
   rows: 2
   columns: 2
