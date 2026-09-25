@@ -434,6 +434,12 @@ hr {
   {{ $siteCSS := . | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $siteCSS.RelPermalink }}" integrity="{{ $siteCSS.Data.Integrity }}">
 {{ end }}
+{{ if .Params.slab }}
+  {{ with resources.Get "css/slab-exhibition.css" }}
+    {{ $slabCSS := . | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $slabCSS.RelPermalink }}" integrity="{{ $slabCSS.Data.Integrity }}">
+  {{ end }}
+{{ end }}
 {{ if or .Params.binder .IsHome }}
   {{ with resources.Get "css/binder.css" }}
     {{ $binderCSS := . | minify | fingerprint }}
