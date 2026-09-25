@@ -149,9 +149,9 @@ function keyboardEvent(key, target) {
   };
 }
 
-function buildBinder() {
+function buildBinder(binderId = "volume-1") {
   const document = new FakeDocument();
-  const root = new FakeElement("div", { "data-binder": "volume-1" });
+  const root = new FakeElement("div", { "data-binder": binderId });
   const controls = new FakeElement("nav", { "data-binder-controls": "" });
   const previous = new FakeElement("a", { "data-binder-prev": "", href: "#leaf-v1-01" });
   const position = new FakeElement("p", { "data-binder-position": "", "aria-live": "polite" });
@@ -176,8 +176,8 @@ function buildBinder() {
   return { document, root, previous, position, next };
 }
 
-function runScenario({ mobile, directHash, directEvent, initialHash = "" }) {
-  const { document, root, previous, position, next } = buildBinder();
+function runScenario({ mobile, directHash, directEvent, binderId, initialHash = "" }) {
+  const { document, root, previous, position, next } = buildBinder(binderId);
   const location = { hash: initialHash };
   const mediaQuery = {
     matches: mobile,
@@ -280,6 +280,11 @@ assert.deepEqual(mobile.afterLocationEvent, {
   previousHref: "#leaf-v1-03",
   nextHref: "#leaf-v1-04",
 });
+
+const trainer = runScenario({ mobile: true, binderId: "waifu", directHash: "#leaf-v1-04", directEvent: "hashchange" });
+assert.equal(trainer.initial.hash, "", "Trainer draft opens at its introduction, not below the sticky header");
+assert.equal(trainer.afterRight.hash, "#leaf-v1-02", "Trainer page navigation still updates the leaf hash");
+assert.equal(trainer.afterLocationEvent.hash, "#leaf-v1-04", "Trainer deep links remain navigable");
 
 // The homepage wall uses the same inspector details without adding binder leaves.
 {

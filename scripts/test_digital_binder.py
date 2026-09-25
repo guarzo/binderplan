@@ -3484,7 +3484,8 @@ def test_load_previous_manifests_verifies_ref_and_uses_git_show_for_each_volume(
         if command[:3] == ["git", "rev-parse", "--verify"]:
             return subprocess.CompletedProcess(command, 0, stdout="abc123\n", stderr="")
         if command[:3] == ["git", "ls-tree", "--name-only"]:
-            return subprocess.CompletedProcess(command, 0, stdout=command[4] + "\n", stderr="")
+            source = "" if command[4].endswith("/waifu.yaml") else command[4] + "\n"
+            return subprocess.CompletedProcess(command, 0, stdout=source, stderr="")
         if command[:2] == ["git", "show"]:
             volume_id = command[2].split("/")[-1].removesuffix(".yaml")
             return subprocess.CompletedProcess(
@@ -3506,6 +3507,7 @@ def test_load_previous_manifests_verifies_ref_and_uses_git_show_for_each_volume(
         ["git", "rev-parse", "--verify", "main^{commit}"],
         ["git", "ls-tree", "--name-only", "abc123", "data/binders/volume-1.yaml"],
         ["git", "ls-tree", "--name-only", "abc123", "data/binders/volume-2.yaml"],
+        ["git", "ls-tree", "--name-only", "abc123", "data/binders/waifu.yaml"],
         ["git", "show", "abc123:data/binders/volume-1.yaml"],
         ["git", "show", "abc123:data/binders/volume-2.yaml"],
     ]
@@ -3648,7 +3650,8 @@ def test_check_passes_previous_ref_to_git_loader(tmp_path, monkeypatch):
         if command[:3] == ["git", "rev-parse", "--verify"]:
             return subprocess.CompletedProcess(command, 0, stdout="abc123\n", stderr="")
         if command[:3] == ["git", "ls-tree", "--name-only"]:
-            return subprocess.CompletedProcess(command, 0, stdout=command[4] + "\n", stderr="")
+            source = "" if command[4].endswith("/waifu.yaml") else command[4] + "\n"
+            return subprocess.CompletedProcess(command, 0, stdout=source, stderr="")
         if command[:2] == ["git", "show"]:
             volume_id = command[2].split("/")[-1].removesuffix(".yaml")
             return subprocess.CompletedProcess(
@@ -3668,6 +3671,7 @@ def test_check_passes_previous_ref_to_git_loader(tmp_path, monkeypatch):
         ["git", "rev-parse", "--verify", "main^{commit}"],
         ["git", "ls-tree", "--name-only", "abc123", "data/binders/volume-1.yaml"],
         ["git", "ls-tree", "--name-only", "abc123", "data/binders/volume-2.yaml"],
+        ["git", "ls-tree", "--name-only", "abc123", "data/binders/waifu.yaml"],
         ["git", "show", "abc123:data/binders/volume-1.yaml"],
         ["git", "show", "abc123:data/binders/volume-2.yaml"],
     ]
@@ -3956,9 +3960,10 @@ def test_public_cutover_removes_reconstructed_binder_photo_sources():
     assert not (photographed / "volume-1").exists()
     assert not (photographed / "volume-2").exists()
     assert not (photographed / "stamped-cards").exists()
-    assert {"emolga-masterset", "waifu"} <= {
+    assert "emolga-masterset" in {
         path.name for path in photographed.iterdir() if path.is_dir()
     }
+    assert not (photographed / "waifu").exists()
     assert (root / "static/images/slabs").is_dir()
 
     assert_archive_hashes(evidence_root, IMMUTABLE_MIGRATION_SHA256SUMS)
@@ -4254,11 +4259,11 @@ def test_rendered_public_volume_routes_use_binder_markup_without_remote_card_ima
                    for tag, attrs in elements)
 
     side_html = (destination / "gallery/waifu/index.html").read_text(encoding="utf-8")
-    assert 'data-binder="' not in side_html
-    assert 'data-binder-script' not in side_html
-    assert 'unofficial fan project' not in side_html
-    assert 'id="lightbox"' in side_html
-    assert '../../images/binder/waifu/waifu_1.jpg' in side_html
+    assert 'data-binder="waifu"' in side_html
+    assert side_html.count('data-card-id="') == 29
+    assert side_html.count('class="binder-pocket is-empty"') == 7
+    assert 'data-binder-script' in side_html
+    assert 'images/binder/waifu/' not in side_html
 
     slab_html = (destination / "gallery/touchstones/index.html").read_text(encoding="utf-8")
     assert 'data-binder="' not in slab_html
@@ -5204,7 +5209,8 @@ def test_check_passes_valid_previous_ref_environment(tmp_path, monkeypatch):
         if command[:3] == ["git", "rev-parse", "--verify"]:
             return subprocess.CompletedProcess(command, 0, stdout="abc123\n", stderr="")
         if command[:3] == ["git", "ls-tree", "--name-only"]:
-            return subprocess.CompletedProcess(command, 0, stdout=command[4] + "\n", stderr="")
+            source = "" if command[4].endswith("/waifu.yaml") else command[4] + "\n"
+            return subprocess.CompletedProcess(command, 0, stdout=source, stderr="")
         if command[:2] == ["git", "show"]:
             volume_id = command[2].split("/")[-1].removesuffix(".yaml")
             return subprocess.CompletedProcess(
@@ -5222,6 +5228,7 @@ def test_check_passes_valid_previous_ref_environment(tmp_path, monkeypatch):
         ["git", "rev-parse", "--verify", "abc123^{commit}"],
         ["git", "ls-tree", "--name-only", "abc123", "data/binders/volume-1.yaml"],
         ["git", "ls-tree", "--name-only", "abc123", "data/binders/volume-2.yaml"],
+        ["git", "ls-tree", "--name-only", "abc123", "data/binders/waifu.yaml"],
         ["git", "show", "abc123:data/binders/volume-1.yaml"],
         ["git", "show", "abc123:data/binders/volume-2.yaml"],
     ]

@@ -1,6 +1,6 @@
 # Card registry
 
-Stable identifiers for cards in Volumes 1 and 2 and Stamped Cards.
+Stable identifiers for cards in Volumes 1 and 2, Stamped Cards, Holding, and Trainer Full Arts.
 
 This is not an inventory. It records what a card **is**, never where it sits. A card's ID is unchanged when it moves from one theme to another, unchanged when it goes to the holding box, and unchanged after release. The binder manifests answer intended current pocket placement and whether that placement has been physically confirmed. `first_seen` remains immutable provenance, and the ledger remains the history and reasoning for contested moves, corrections, and releases.
 
@@ -328,3 +328,39 @@ The column is left as recorded rather than rewritten: `first_seen` is provenance
 | zapdos-01 | Zapdos | サンダー | JP | Mystery of the Fossils | No.145 | photo | IMG_6847.HEIC 2026-08-01 | vintage Pokedex-number print, number corrected from No.143 (misread): Zapdos is Pokédex #145, matching owner's doubleholo export 2026-09-18; 2026-09-22 image review compared DoubleHolo 22202 with the archived leaf; identity remains photo-based, not in-hand confirmed. |
 | zekrom-01 | Zekrom | Zekrom EX | EN | Black Bolt | 158/086 | confirmed | legendary_bearing_2.webp 2026-08-01 | Slash/Voltage Burst, checked in hand 2026-09-19 |
 | zygarde-01 | Zygarde | ジガルデ | JP | Awakening Psychic King | 040/078 | confirmed | threshold_1.webp 2026-08-01 | Aura Break attack, U rarity mark |
+
+## Trainer Full Arts digital sequence
+
+These are the 29 Trainer entries in the owner-supplied 31-card DoubleHolo PDF; Larvitar and Pyroar ex are Pokémon and are excluded. The owner directed a four-page, nine-pocket digital sequence in PDF order; it does not assert that the photographed pages already held these placements. All physical cards are Japanese per the owner, including Olivia, whose PDF language is erroneous. `uncertain` means the exact physical printing is not independently verified. Pocket order belongs only in `data/binders/waifu.yaml`.
+
+| id | species | card_name | language | set | number | confidence | first_seen | notes |
+|---|---|---|---|---|---|---|---|---|
+| erikas-invitation-01 | Erika's Invitation | エリカの招待 | JP |  |  | uncertain | waifu_1.jpg 2026-09-24 | Cherry-blossom artwork matches export Erika's Invitation, not Erika's Hospitality; printing unverified |
+| raifort-01 | Raifort | レホール | JP |  |  | uncertain | waifu_1.jpg 2026-09-24 | No exact printing confirmed |
+| professors-research-02 | Professor's Research | 博士の研究 | JP |  |  | uncertain | waifu_1.jpg 2026-09-24 | Photographed artwork matches the export's VMAX Climax Professor's Research; separate card from volume-2 Professor Willow promo |
+| jacinthe-01 | Jacinthe | ユカリ | JP |  |  | uncertain | waifu_1.jpg 2026-09-24 | Feast artwork matches export Nihil Zero Jacinthe 116; printing unverified |
+| olivia-01 | Olivia | ライチ | JP |  |  | uncertain | waifu_1.jpg 2026-09-24 | Owner confirms Japanese card; export Olivia 111 incorrectly lists English; exact printing unverified |
+| furisode-girl-01 | Furisode Girl | ふりそで | JP |  |  | uncertain | waifu_1.jpg 2026-09-24 | Autumn kimono artwork matches export Incandescent Arcana Furisode Girl 82; printing unverified |
+| tulip-01 | Tulip | リップ | JP |  |  | uncertain | waifu_1.jpg 2026-09-24 | Photographed artwork differs from the PDF entry; printing unresolved |
+| iris-fighting-spirit-01 | Iris's Fighting Spirit | アイリスの闘志 | JP |  |  | uncertain | waifu_1.jpg 2026-09-24 | Photographed artwork differs from the PDF entry; separate from the second Iris card |
+| nemona-01 | Nemona | ネモ | JP |  |  | uncertain | waifu_1.jpg 2026-09-24 | Two Nemona entries in export; exact physical printing unverified |
+| iris-fighting-spirit-02 | Iris's Fighting Spirit | アイリスの闘志 | JP |  |  | uncertain | waifu_2.jpg 2026-09-24 | Separate photographed artwork from the first Iris card; printing unresolved |
+| mistys-spirit-01 | Misty's Spirit | カスミのやる気 | JP |  |  | uncertain | trainer.jpeg 2026-09-20 | Photo supports artwork, not exact printing |
+| zinnias-trust-01 | Zinnia's Trust | ヒガナの信頼 | JP |  |  | uncertain | trainer.jpeg 2026-09-20 | Supplemental HEIC 112/076 is reference only; export 102 unverified |
+| tate-lizas-training-01 | Tate & Liza's Training | フウとランの特訓 | JP |  |  | uncertain | trainer.jpeg 2026-09-20 | Different artwork from the older Tate & Liza entry in the PDF |
+| mela-01 | Mela |  | JP |  |  | uncertain | trainers.pdf 2026-09-24 | PDF candidate Ancient Roar 87 |
+| worker-01 | Worker |  | JP |  |  | uncertain | trainers.pdf 2026-09-24 | PDF candidate Paradigm Trigger 111 |
+| peonia-01 | Peonia |  | JP |  |  | uncertain | trainers.pdf 2026-09-24 | PDF candidate Jet-Black Spirit 82 |
+| cynthias-ambition-01 | Cynthia's Ambition |  | JP |  |  | uncertain | trainers.pdf 2026-09-24 | PDF candidate Star Birth 114 |
+| karens-conviction-01 | Karen's Conviction |  | JP |  |  | uncertain | trainers.pdf 2026-09-24 | PDF candidate Matchless Fighter 81 |
+| aroma-lady-01 | Aroma Lady |  | JP |  |  | uncertain | trainers.pdf 2026-09-24 | PDF candidate Eevee Heroes 86 |
+| bea-01 | Bea |  | JP |  |  | uncertain | trainers.pdf 2026-09-24 | PDF candidate VMAX Climax 261 |
+| nemona-02 | Nemona |  | JP |  |  | uncertain | trainers.pdf 2026-09-24 | PDF candidate Shiny Treasure ex 343; separate from Nemona 351 |
+| jacinthe-02 | Jacinthe |  | JP |  |  | uncertain | trainers.pdf 2026-09-24 | PDF candidate Nihil Zero 108; separate from Jacinthe 116 |
+| tate-liza-01 | Tate & Liza |  | JP |  |  | uncertain | trainers.pdf 2026-09-24 | PDF candidate Sky-Splitting Charisma 103; not Tate & Liza's Training |
+| lance-01 | Lance |  | JP |  |  | uncertain | trainers.pdf 2026-09-24 | PDF candidate Paradigm Trigger 114 |
+| arven-01 | Arven |  | JP |  |  | uncertain | trainers.pdf 2026-09-24 | PDF candidate Shiny Treasure ex 353 |
+| honey-s-p-01 | Honey |  | JP |  |  | uncertain | trainers.pdf 2026-09-24 | PDF candidate Sword & Shield promo 157 |
+| candice-01 | Candice |  | JP |  |  | uncertain | trainers.pdf 2026-09-24 | PDF candidate Paradigm Trigger 113 |
+| rosas-encouragement-01 | Rosa's Encouragement |  | JP |  |  | uncertain | trainers.pdf 2026-09-24 | PDF candidate Nihil Zero 115 |
+| hilda-01 | Hilda |  | JP |  |  | uncertain | trainers.pdf 2026-09-24 | PDF candidate White Flare 173 |

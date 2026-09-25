@@ -166,7 +166,14 @@
       if (!hasRequiredInspectorParts()) return;
 
       function placementText(button) {
-        if (button.dataset.placementStatus !== "pending") return "Confirmed placement";
+        if (button.dataset.cardIdentityConfidence && button.dataset.placementStatus === "pending") {
+          return "PDF-order digital page";
+        }
+        if (button.dataset.placementStatus !== "pending") {
+          return button.dataset.cardIdentityConfidence
+            ? "Photographed pocket (placement observed)"
+            : "Confirmed placement";
+        }
         const detail = button.dataset.placementObservedCardId
           ? "observed " + button.dataset.placementObservedCardId
           : button.dataset.placementPhysicalState === "unknown"
@@ -205,6 +212,9 @@
           .filter((value) => value && value.trim())
           .join(" · ");
         setField("set-number", setNumber || "Unresolved");
+        if (button.dataset.cardIdentityConfidence) {
+          setField("identity-confidence", button.dataset.cardIdentityNote);
+        }
         setField("theme-pocket", button.dataset.leafTheme + " · pocket " + button.dataset.pocketPosition);
         setField("image-classification", classificationText(button.dataset.classification));
         setField("image-source", button.dataset.imageProvenance
@@ -294,7 +304,11 @@
       });
     }
 
-    if (leaves.length) render(!window.location.hash || ownsCurrentHash());
+    if (leaves.length) {
+      const syncInitialHash = (root.dataset.binder !== "waifu" && !window.location.hash)
+        || ownsCurrentHash();
+      render(syncInitialHash);
+    }
   }
 
   window.initBinder = initBinder;

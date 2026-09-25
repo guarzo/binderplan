@@ -1,0 +1,73 @@
+version: 1
+volume_id: waifu
+publication_status: published
+pocket_layout: {rows: 3, columns: 3}
+leaves:
+- id: trainer-01
+  kind: cards
+  physical_leaf: 1
+  chapter: Trainer Full Arts
+  chapter_order: 1
+  theme: Page 1
+  theme_page: 1
+  pockets:
+  - {position: 1, card_id: tate-lizas-training-01, placement: &pdf_order {status: pending, physical_state_unknown: true, note: Digital page order requested by owner; physical pocket placement not asserted., evidence: {type: owner-directed-pdf-order, source: docs/evidence/2026-09-24/trainer-full-arts-intake/trainers.pdf, observed_on: '2026-09-24'}}}
+  - {position: 2, card_id: zinnias-trust-01, placement: *pdf_order}
+  - {position: 3, card_id: mistys-spirit-01, placement: *pdf_order}
+  - {position: 4, card_id: mela-01, placement: *pdf_order}
+  - {position: 5, card_id: worker-01, placement: *pdf_order}
+  - {position: 6, card_id: peonia-01, placement: *pdf_order}
+  - {position: 7, card_id: cynthias-ambition-01, placement: *pdf_order}
+  - {position: 8, card_id: karens-conviction-01, placement: *pdf_order}
+  - {position: 9, card_id: aroma-lady-01, placement: *pdf_order}
+- id: trainer-02
+  kind: cards
+  physical_leaf: 2
+  chapter: Trainer Full Arts
+  chapter_order: 1
+  theme: Page 2
+  theme_page: 2
+  pockets:
+  - {position: 1, card_id: bea-01, placement: *pdf_order}
+  - {position: 2, card_id: nemona-02, placement: *pdf_order}
+  - {position: 3, card_id: jacinthe-02, placement: *pdf_order}
+  - {position: 4, card_id: tate-liza-01, placement: *pdf_order}
+  - {position: 5, card_id: lance-01, placement: *pdf_order}
+  - {position: 6, card_id: arven-01, placement: *pdf_order}
+  - {position: 7, card_id: honey-s-p-01, placement: *pdf_order}
+  - {position: 8, card_id: candice-01, placement: *pdf_order}
+  - {position: 9, card_id: rosas-encouragement-01, placement: *pdf_order}
+- id: trainer-03
+  kind: cards
+  physical_leaf: 3
+  chapter: Trainer Full Arts
+  chapter_order: 1
+  theme: Page 3
+  theme_page: 3
+  pockets:
+  - {position: 1, card_id: iris-fighting-spirit-02, placement: *pdf_order}
+  - {position: 2, card_id: nemona-01, placement: *pdf_order}
+  - {position: 3, card_id: iris-fighting-spirit-01, placement: *pdf_order}
+  - {position: 4, card_id: tulip-01, placement: *pdf_order}
+  - {position: 5, card_id: jacinthe-01, placement: *pdf_order}
+  - {position: 6, card_id: olivia-01, placement: *pdf_order}
+  - {position: 7, card_id: hilda-01, placement: *pdf_order}
+  - {position: 8, card_id: furisode-girl-01, placement: *pdf_order}
+  - {position: 9, card_id: professors-research-02, placement: *pdf_order}
+- id: trainer-04
+  kind: cards
+  physical_leaf: 4
+  chapter: Trainer Full Arts
+  chapter_order: 1
+  theme: Page 4
+  theme_page: 4
+  pockets:
+  - {position: 1, card_id: raifort-01, placement: *pdf_order}
+  - {position: 2, card_id: erikas-invitation-01, placement: *pdf_order}
+  - {position: 3, empty: true}
+  - {position: 4, empty: true}
+  - {position: 5, empty: true}
+  - {position: 6, empty: true}
+  - {position: 7, empty: true}
+  - {position: 8, empty: true}
+  - {position: 9, empty: true}
