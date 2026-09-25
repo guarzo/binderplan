@@ -1,10 +1,10 @@
 version: 1
 volume_id: stamped-cards
-publication_status: draft
+publication_status: published
 note: Pages 1–6 use derivatives published by 2026-03-18; page 7 uses the owner's replacement received
-  2026-09-20. Photograph capture dates and current placements are unknown. PDF is an identity lead,
-  not pocket or variant evidence. Owner states the scan followed the photographed seven-page order;
-  unresolved PDF rows concern identity and the provisional eighth page, not proposed moves.
+  2026-09-20. The photos establish observed pocket positions, but capture dates are unknown. The owner
+  states the scan followed the photographed seven-page order. The PDF is an identity lead, not pocket
+  or variant evidence; unresolved rows concern printing identity and the provisional eighth page.
 leaves:
 - id: stamped-01
   kind: cards

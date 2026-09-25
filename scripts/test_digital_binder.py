@@ -3947,7 +3947,7 @@ def assert_archive_hashes(root, expected_text):
         assert hashlib.sha256(archived.read_bytes()).hexdigest() == digest
 
 
-def test_public_cutover_removes_only_photographed_volume_sources():
+def test_public_cutover_removes_reconstructed_binder_photo_sources():
     root = Path(__file__).parents[1]
     photographed = root / "static/images/binder"
     evidence_root = root / "docs/evidence/2026-09-22/digital-binder-migration"
@@ -3955,7 +3955,8 @@ def test_public_cutover_removes_only_photographed_volume_sources():
 
     assert not (photographed / "volume-1").exists()
     assert not (photographed / "volume-2").exists()
-    assert {"emolga-masterset", "stamped-cards", "waifu"} <= {
+    assert not (photographed / "stamped-cards").exists()
+    assert {"emolga-masterset", "waifu"} <= {
         path.name for path in photographed.iterdir() if path.is_dir()
     }
     assert (root / "static/images/slabs").is_dir()

@@ -1,6 +1,6 @@
 # Card registry
 
-Stable identifiers for cards in Volumes 1 and 2 and the Stamped Cards reconstruction draft.
+Stable identifiers for cards in Volumes 1 and 2 and Stamped Cards.
 
 This is not an inventory. It records what a card **is**, never where it sits. A card's ID is unchanged when it moves from one theme to another, unchanged when it goes to the holding box, and unchanged after release. The binder manifests answer intended current pocket placement and whether that placement has been physically confirmed. `first_seen` remains immutable provenance, and the ledger remains the history and reasoning for contested moves, corrections, and releases.
 
@@ -30,7 +30,7 @@ The column is left as recorded rather than rewritten: `first_seen` is provenance
 
 **2026-09-20 verification scope.** The owner checked the character and printed number for the 20 in-binder entries on the [completed checklist](evidence/2026-09-20/validation/completed-checklist.pdf), not their set names. Those ticks do not upgrade printing confidence. Bulbasaur's `Corocoro Promo` set was supplied separately; the explicit Umbreon, Latios and Dratini corrections are recorded below. See the [evidence notes](evidence/2026-09-20/README.md) for the checked IDs and limitations.
 
-**Stamped-photo draft provenance.** For pages 1–6, `stamp_N.jpg 2026-03-18` means the derivative was published by that date, not that the camera exposure occurred then. Page 7 cites the owner's replacement `stamped.jpeg 2026-09-20`, received that day, not the earlier published page. `IMG_7148.HEIC 2026-09-24` is an owner upload received that day; its EXIF camera clock has not been verified. PDF catalogue rows are identity leads only and do not verify editions, stamps, finishes or currently occupied pockets.
+**Stamped Cards photo provenance.** For pages 1–6, `stamp_N.jpg 2026-03-18` means the derivative was published by that date, not that the camera exposure occurred then. Page 7 cites the owner's replacement `stamped.jpeg 2026-09-20`, received that day, not the earlier published page. `IMG_7148.HEIC 2026-09-24` is an owner upload received that day; its EXIF camera clock has not been verified. PDF catalogue rows are identity leads only and do not verify editions, stamps, finishes or currently occupied pockets.
 
 ## Registry
 

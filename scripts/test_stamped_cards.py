@@ -19,14 +19,13 @@ def test_evidence_archive_has_verifiable_immutable_inputs():
     for line in lines:
         digest, path = line.split("  ", 1)
         assert hashlib.sha256((ARCHIVE / path).read_bytes()).hexdigest() == digest
-    assert (ARCHIVE / "published-pages/stamp_7.jpg").read_bytes() == (
-        ROOT / "static/images/binder/stamped-cards/stamp_7.jpg"
-    ).read_bytes()
+    assert not (ROOT / "static/images/binder/stamped-cards").exists()
+    assert (ARCHIVE / "published-pages/stamp_7.jpg").is_file()
 
 
 def test_manifest_preserves_observed_pockets_and_does_not_guess_page_eight():
     manifest = yaml.safe_load((ROOT / "data/binders/stamped-cards.yaml").read_text())
-    assert manifest["publication_status"] == "draft"
+    assert manifest["publication_status"] == "published"
     leaves = manifest["leaves"]
     assert [leaf["physical_leaf"] for leaf in leaves] == list(range(1, 9))
     for page, leaf in enumerate(leaves[:7], start=1):
@@ -139,48 +138,35 @@ def test_selected_stamp_variants_use_verified_local_scans_and_unresolved_ones_ke
     errors = []
     digital_binder._validate_images(
         ROOT, {"version": 1, "cards": images}, registry,
-        {"stamped-cards": set(cards)}, {"stamped-cards": "draft"}, errors,
+        {"stamped-cards": set(cards)}, {"stamped-cards": "published"}, errors,
     )
     assert errors == []
 
 
-def test_draft_route_uses_shared_binder_without_replacing_public_gallery(tmp_path):
+def test_public_route_uses_local_binder_images_and_keeps_page_eight_provisional(tmp_path):
     result = subprocess.run(
-        ["hugo", "--buildDrafts", "--destination", str(tmp_path)],
-        cwd=ROOT, capture_output=True, text=True,
+        ["hugo", "--destination", str(tmp_path)], cwd=ROOT,
+        capture_output=True, text=True,
     )
     assert result.returncode == 0, result.stderr
-    draft = (tmp_path / "gallery/stamped-cards-draft/index.html").read_text()
-    public = (tmp_path / "gallery/stamped-cards/index.html").read_text()
-    assert 'data-binder="stamped-cards"' in draft
-    assert '<details class="stamped-reconciliation">' in draft
-    assert 'data-binder-leaf="stamped-08"' in draft
-    assert 'data-pocket-position="7"' in draft
-    assert 'data-inspector-src=' in draft
-    assert 'data-placement-status="pending"' not in draft
-    assert 'data-placement-status="confirmed"' in draft
-    assert 'data-image-provenance="evidence-crop"' in draft
-    assert 'data-image-provenance="doubleholo"' in draft
-    assert 'data-image-provenance="tcgdex"' in draft
-    assert "Snivy" in draft
-    assert "Houndour" in draft and "Mudsdale" not in draft.split("<details", 1)[1].split("</details>", 1)[0]
-    assert re.search(r'<img[^>]+src="/images/cards/snivy-04_[^\"]+\.webp"', draft)
-    for page in range(1, 8):
-        assert f"stamp_{page}.jpg" in public
-        assert (tmp_path / f"images/binder/stamped-cards/stamp_{page}.jpg").is_file()
-    assert 'data-binder="stamped-cards"' not in public
-    binder_markup = draft.split('data-binder="stamped-cards"', 1)[1]
-    assert all(src.startswith("/") for src in re.findall(r'<img[^>]+src="([^"]+)"', binder_markup))
-
-
-def test_production_route_keeps_photographs_and_excludes_draft(tmp_path):
-    result = subprocess.run(["hugo", "--destination", str(tmp_path)], cwd=ROOT,
-                            capture_output=True, text=True)
-    assert result.returncode == 0, result.stderr
     assert not (tmp_path / "gallery/stamped-cards-draft/index.html").exists()
-    assert not (tmp_path / "images/binder/stamped-cards-draft/snivy.webp").exists()
     public = (tmp_path / "gallery/stamped-cards/index.html").read_text()
-    for page in range(1, 8):
-        assert f"stamp_{page}.jpg" in public
-        assert (tmp_path / f"images/binder/stamped-cards/stamp_{page}.jpg").is_file()
-    assert 'data-binder="stamped-cards"' not in public
+    assert 'data-binder="stamped-cards"' in public
+    assert 'data-publication-status="published"' in public
+    assert '<details class="stamped-reconciliation">' in public
+    assert 'data-binder-leaf="stamped-08"' in public
+    assert 'data-pocket-position="7"' in public
+    assert 'data-inspector-src=' in public
+    assert 'data-placement-status="pending"' not in public
+    assert public.count('data-placement-status="confirmed"') == 62
+    for provider in ("evidence-crop", "doubleholo", "tcgdex"):
+        assert f'data-image-provenance="{provider}"' in public
+    assert "Snivy" in public
+    assert "Houndour" in public and "Mudsdale" not in public.split("<details", 1)[1].split("</details>", 1)[0]
+    assert re.search(r'<img[^>]+src="/images/cards/snivy-04_[^\"]+\.webp"', public)
+    assert all(f"/images/binder/stamped-cards/stamp_{page}.jpg" not in public for page in range(1, 8))
+    assert not (tmp_path / "images/binder/stamped-cards").exists()
+    binder_markup = public.split('data-binder="stamped-cards"', 1)[1]
+    image_urls = re.findall(r'<img[^>]+src="([^"]+)"', binder_markup)
+    assert len(image_urls) >= 62
+    assert all(src.startswith("/") for src in image_urls)
