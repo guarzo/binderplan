@@ -1,0 +1,576 @@
+version: 1
+volume_id: stamped-cards
+publication_status: published
+note: Pages 1–6 use derivatives published by 2026-03-18; page 7 uses the owner's replacement received
+  2026-09-20. The photos establish observed pocket positions, but capture dates are unknown. The owner
+  states the scan followed the photographed seven-page order. The PDF is an identity lead, not pocket
+  or variant evidence; unresolved rows concern printing identity and the provisional eighth page.
+leaves:
+- id: stamped-01
+  kind: cards
+  physical_leaf: 1
+  chapter: Stamped cards
+  chapter_order: 1
+  theme: Page 1
+  theme_page: 1
+  caption: Photographed pocket order, page 1; printing discrepancies remain under review.
+  pockets:
+  - position: 1
+    card_id: leafeon-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_1.jpg
+        observed_on: '2026-03-18'
+  - position: 2
+    card_id: bulbasaur-04
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_1.jpg
+        observed_on: '2026-03-18'
+  - position: 3
+    card_id: pichu-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_1.jpg
+        observed_on: '2026-03-18'
+  - position: 4
+    card_id: ariados-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_1.jpg
+        observed_on: '2026-03-18'
+  - position: 5
+    card_id: professor-cozmos-discovery-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_1.jpg
+        observed_on: '2026-03-18'
+  - position: 6
+    card_id: horsea-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_1.jpg
+        observed_on: '2026-03-18'
+  - position: 7
+    card_id: pikachu-08
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_1.jpg
+        observed_on: '2026-03-18'
+  - position: 8
+    card_id: meganium-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_1.jpg
+        observed_on: '2026-03-18'
+  - position: 9
+    card_id: tyranitar-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_1.jpg
+        observed_on: '2026-03-18'
+- id: stamped-02
+  kind: cards
+  physical_leaf: 2
+  chapter: Stamped cards
+  chapter_order: 1
+  theme: Page 2
+  theme_page: 2
+  caption: Photographed pocket order, page 2; printing discrepancies remain under review.
+  pockets:
+  - position: 1
+    card_id: houndoom-05
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_2.jpg
+        observed_on: '2026-03-18'
+  - position: 2
+    card_id: glass-trumpet-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_2.jpg
+        observed_on: '2026-03-18'
+  - position: 3
+    card_id: dudunsparce-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_2.jpg
+        observed_on: '2026-03-18'
+  - position: 4
+    card_id: emolga-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_2.jpg
+        observed_on: '2026-03-18'
+  - position: 5
+    card_id: torterra-03
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_2.jpg
+        observed_on: '2026-03-18'
+  - position: 6
+    card_id: mudkip-03
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_2.jpg
+        observed_on: '2026-03-18'
+  - position: 7
+    card_id: bidoof-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_2.jpg
+        observed_on: '2026-03-18'
+  - position: 8
+    card_id: garbodor-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_2.jpg
+        observed_on: '2026-03-18'
+  - position: 9
+    card_id: dusclops-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_2.jpg
+        observed_on: '2026-03-18'
+- id: stamped-03
+  kind: cards
+  physical_leaf: 3
+  chapter: Stamped cards
+  chapter_order: 1
+  theme: Page 3
+  theme_page: 3
+  caption: Photographed pocket order, page 3; printing discrepancies remain under review.
+  pockets:
+  - position: 1
+    card_id: comfey-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_3.jpg
+        observed_on: '2026-03-18'
+  - position: 2
+    card_id: pokemon-ranger-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_3.jpg
+        observed_on: '2026-03-18'
+  - position: 3
+    card_id: solgaleo-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_3.jpg
+        observed_on: '2026-03-18'
+  - position: 4
+    card_id: oricorio-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_3.jpg
+        observed_on: '2026-03-18'
+  - position: 5
+    card_id: dratini-03
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_3.jpg
+        observed_on: '2026-03-18'
+  - position: 6
+    card_id: oranguru-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_3.jpg
+        observed_on: '2026-03-18'
+  - position: 7
+    card_id: delcatty-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_3.jpg
+        observed_on: '2026-03-18'
+  - position: 8
+    card_id: tyranitar-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_3.jpg
+        observed_on: '2026-03-18'
+  - position: 9
+    card_id: double-colorless-energy-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_3.jpg
+        observed_on: '2026-03-18'
+- id: stamped-04
+  kind: cards
+  physical_leaf: 4
+  chapter: Stamped cards
+  chapter_order: 1
+  theme: Page 4
+  theme_page: 4
+  caption: Photographed pocket order, page 4; printing discrepancies remain under review.
+  pockets:
+  - position: 1
+    card_id: bulbasaur-05
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_4.jpg
+        observed_on: '2026-03-18'
+  - position: 2
+    card_id: yanmega-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_4.jpg
+        observed_on: '2026-03-18'
+  - position: 3
+    card_id: venusaur-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_4.jpg
+        observed_on: '2026-03-18'
+  - position: 4
+    card_id: shroomish-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_4.jpg
+        observed_on: '2026-03-18'
+  - position: 5
+    card_id: treecko-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_4.jpg
+        observed_on: '2026-03-18'
+  - position: 6
+    card_id: ivysaur-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_4.jpg
+        observed_on: '2026-03-18'
+  - position: 7
+    card_id: grotle-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_4.jpg
+        observed_on: '2026-03-18'
+  - position: 8
+    card_id: charmeleon-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_4.jpg
+        observed_on: '2026-03-18'
+  - position: 9
+    card_id: pansear-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_4.jpg
+        observed_on: '2026-03-18'
+- id: stamped-05
+  kind: cards
+  physical_leaf: 5
+  chapter: Stamped cards
+  chapter_order: 1
+  theme: Page 5
+  theme_page: 5
+  caption: Photographed pocket order, page 5; printing discrepancies remain under review.
+  pockets:
+  - position: 1
+    card_id: mudsdale-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_5.jpg
+        observed_on: '2026-03-18'
+  - position: 2
+    card_id: passimian-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_5.jpg
+        observed_on: '2026-03-18'
+  - position: 3
+    card_id: machamp-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_5.jpg
+        observed_on: '2026-03-18'
+  - position: 4
+    card_id: passimian-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_5.jpg
+        observed_on: '2026-03-18'
+  - position: 5
+    card_id: lucario-03
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_5.jpg
+        observed_on: '2026-03-18'
+  - position: 6
+    card_id: clawitzer-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_5.jpg
+        observed_on: '2026-03-18'
+  - position: 7
+    card_id: squirtle-04
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_5.jpg
+        observed_on: '2026-03-18'
+  - position: 8
+    card_id: pikachu-09
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_5.jpg
+        observed_on: '2026-03-18'
+  - position: 9
+    card_id: chimecho-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_5.jpg
+        observed_on: '2026-03-18'
+- id: stamped-06
+  kind: cards
+  physical_leaf: 6
+  chapter: Stamped cards
+  chapter_order: 1
+  theme: Page 6
+  theme_page: 6
+  caption: Photographed pocket order, page 6; printing discrepancies remain under review.
+  pockets:
+  - position: 1
+    card_id: ditto-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_6.jpg
+        observed_on: '2026-03-18'
+  - position: 2
+    card_id: piplup-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_6.jpg
+        observed_on: '2026-03-18'
+  - position: 3
+    card_id: luvdisc-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_6.jpg
+        observed_on: '2026-03-18'
+  - position: 4
+    card_id: ekans-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_6.jpg
+        observed_on: '2026-03-18'
+  - position: 5
+    card_id: ditto-03
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_6.jpg
+        observed_on: '2026-03-18'
+  - position: 6
+    card_id: shroomish-02
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_6.jpg
+        observed_on: '2026-03-18'
+  - position: 7
+    card_id: reshiram-03
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_6.jpg
+        observed_on: '2026-03-18'
+  - position: 8
+    card_id: shellder-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_6.jpg
+        observed_on: '2026-03-18'
+  - position: 9
+    card_id: vibrava-01
+    placement:
+      status: confirmed
+      evidence:
+        type: published-photo
+        source: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_6.jpg
+        observed_on: '2026-03-18'
+- id: stamped-07
+  kind: cards
+  physical_leaf: 7
+  chapter: Stamped cards
+  chapter_order: 1
+  theme: Page 7
+  theme_page: 7
+  caption: Photographed pocket order, page 7; printing discrepancies remain under review.
+  pockets:
+  - position: 1
+    card_id: dialga-02
+    placement:
+      status: confirmed
+      evidence:
+        type: owner-supplied-photo
+        source: docs/evidence/2026-09-20/validation/stamped.jpeg
+        observed_on: '2026-09-20'
+  - position: 2
+    card_id: squirtle-05
+    placement:
+      status: confirmed
+      evidence:
+        type: owner-supplied-photo
+        source: docs/evidence/2026-09-20/validation/stamped.jpeg
+        observed_on: '2026-09-20'
+  - position: 3
+    card_id: combusken-01
+    placement:
+      status: confirmed
+      evidence:
+        type: owner-supplied-photo
+        source: docs/evidence/2026-09-20/validation/stamped.jpeg
+        observed_on: '2026-09-20'
+  - position: 4
+    card_id: latios-04
+    placement:
+      status: confirmed
+      evidence:
+        type: owner-supplied-photo
+        source: docs/evidence/2026-09-20/validation/stamped.jpeg
+        observed_on: '2026-09-20'
+  - position: 5
+    card_id: combusken-02
+    placement:
+      status: confirmed
+      evidence:
+        type: owner-supplied-photo
+        source: docs/evidence/2026-09-20/validation/stamped.jpeg
+        observed_on: '2026-09-20'
+  - position: 6
+    card_id: pikachu-10
+    placement:
+      status: confirmed
+      evidence:
+        type: owner-supplied-photo
+        source: docs/evidence/2026-09-20/validation/stamped.jpeg
+        observed_on: '2026-09-20'
+  - position: 7
+    empty: true
+  - position: 8
+    card_id: togepi-02
+    placement:
+      status: confirmed
+      evidence:
+        type: owner-supplied-photo
+        source: docs/evidence/2026-09-20/validation/stamped.jpeg
+        observed_on: '2026-09-20'
+  - position: 9
+    card_id: slowking-01
+    placement:
+      status: confirmed
+      evidence:
+        type: owner-supplied-photo
+        source: docs/evidence/2026-09-20/validation/stamped.jpeg
+        observed_on: '2026-09-20'
+- id: stamped-08
+  kind: transition
+  physical_leaf: 8
+  role: chapter
+  heading: Page 8 — provisional
+  copy: Owner provisionally includes Japanese Snivy 034/BW-P (IMG_7148.HEIC). No page-8 spread or pocket positions
+    are known; no cards are placed on this leaf.

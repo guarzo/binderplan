@@ -394,16 +394,6 @@ cards:
     source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/31409/primary.webp
     note: Curator visually confirmed Black Bolt is the sv11B set-name alias and the
       116/086 AR printing matches the archived leaf.
-  emolga-02:
-    provider: tcgdex
-    upstream_id: bw2-32
-    classification: proxy
-    asset_path: assets/images/cards/emolga-02.webp
-    reviewed: true
-    reviewed_on: '2026-09-24'
-    source_url: https://assets.tcgdex.net/en/bw/bw2/32/high.webp
-    note: English Emerging Powers 32/98 art and number match; foil or other variant
-      cannot be confirmed from the archived photo.
   emolga-03:
     provider: doubleholo
     upstream_id: '74826'
@@ -845,6 +835,16 @@ cards:
     reviewed: true
     reviewed_on: '2026-09-24'
     note: Published page photo; distinct pocket from page 10; authenticity unverified.
+  emolga-44:
+    provider: tcgdex
+    upstream_id: bw2-32
+    classification: proxy
+    asset_path: assets/images/cards/emolga-44.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    source_url: https://assets.tcgdex.net/en/bw/bw2/32/high.webp
+    note: English Emerging Powers 32/98 art and number match separate Masterset copy;
+      foil or other variant cannot be confirmed from the archived photo.
   entei-01:
     provider: doubleholo
     upstream_id: '32699'
@@ -2180,3 +2180,775 @@ cards:
     reviewed: true
     reviewed_on: '2026-09-23'
     source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/75724/primary.webp
+  ariados-01:
+    classification: photo-crop
+    asset_path: assets/images/cards/ariados-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_1.jpg
+    crop_box:
+    - 28
+    - 378
+    - 262
+    - 714
+    note: Crop from archived photographed page, not proof of exact stamped variant or current position.
+      Published derivative, camera original/capture date unknown.
+  bidoof-01:
+    classification: photo-crop
+    asset_path: assets/images/cards/bidoof-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_2.jpg
+    crop_box:
+    - 40
+    - 850
+    - 300
+    - 1180
+    note: Crop from archived photographed page, not proof of exact stamped variant or current position.
+      Published derivative, camera original/capture date unknown.
+  bulbasaur-04:
+    classification: photo-crop
+    asset_path: assets/images/cards/bulbasaur-04.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_1.jpg
+    crop_box:
+    - 328
+    - 3
+    - 555
+    - 315
+    note: Crop from archived photographed page, not proof of exact stamped variant or current position.
+      Published derivative, camera original/capture date unknown.
+  bulbasaur-05:
+    classification: exact
+    asset_path: assets/images/cards/bulbasaur-05.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    provider: doubleholo
+    upstream_id: '29664'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/29664/primary.webp
+    note: Pokémon GO artwork logo and flower-garden art match page 4 pocket 1; GO set 001 is different art. PDF
+      SWSH231 candidate was correct, contrary to the preliminary draft note. Reviewed against archived page photo;
+      exact visible printing only, not current placement or in-hand confirmation.
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+  charmeleon-01:
+    classification: exact
+    asset_path: assets/images/cards/charmeleon-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    provider: doubleholo
+    upstream_id: '6526'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/6526/primary.webp
+    note: Red Fire-type 29/100 with CRYSTAL GUARDIANS artwork stamp matches page 4 pocket 8; yellow Lightning-type
+      30/100 is not this card. Reviewed against archived page photo; exact visible printing only, not current placement
+      or in-hand confirmation.
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+  chimecho-01:
+    classification: photo-crop
+    asset_path: assets/images/cards/chimecho-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_5.jpg
+    crop_box:
+    - 733
+    - 965
+    - 1035
+    - 1348
+    note: Crop from archived photographed page, not proof of exact stamped variant or current position.
+      Published derivative, camera original/capture date unknown.
+  clawitzer-01:
+    classification: photo-crop
+    asset_path: assets/images/cards/clawitzer-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_5.jpg
+    crop_box:
+    - 733
+    - 502
+    - 1035
+    - 885
+    note: Crop from archived photographed page, not proof of exact stamped variant or current position.
+      Published derivative, camera original/capture date unknown.
+  combusken-01:
+    classification: exact
+    asset_path: assets/images/cards/combusken-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    provider: doubleholo
+    upstream_id: '6398'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/6398/primary.webp
+    note: HOLON PHANTOMS artwork stamp and reverse field match owner page-7 original pocket 3; distinct from Emerald
+      Combusken. Match reviewed against archived page crop and provider image; no in-hand confirmation of edition
+      or finish beyond visible evidence.
+  combusken-02:
+    classification: exact
+    asset_path: assets/images/cards/combusken-02.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    provider: doubleholo
+    upstream_id: '5560'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/5560/primary.webp
+    note: EMERALD artwork stamp and reverse treatment match owner page-7 original pocket 5; distinct from Holon
+      Phantoms Combusken. Match reviewed against archived page crop and provider image; no in-hand confirmation
+      of edition or finish beyond visible evidence.
+  comfey-01:
+    classification: exact
+    asset_path: assets/images/cards/comfey-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    provider: doubleholo
+    upstream_id: '29910'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/29910/primary.webp
+    note: LOST ORIGIN artwork logo and EN promo illustration match page 3 pocket 1; STAFF candidate differs. Reviewed
+      against archived page photo; exact visible printing only, not current placement or in-hand confirmation.
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+  delcatty-01:
+    classification: exact
+    asset_path: assets/images/cards/delcatty-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    provider: tcgdex
+    upstream_id: smp-SM132
+    source_url: https://assets.tcgdex.net/en/sm/smp/SM132/high.webp
+    note: CELESTIAL STORM artwork logo, 90 HP and illustration match page 3 pocket 7; DoubleHolo STAFF-marked scan
+      is not the photo. Reviewed against archived page photo; exact visible printing only, not current placement
+      or in-hand confirmation.
+  dialga-02:
+    classification: exact
+    asset_path: assets/images/cards/dialga-02.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    provider: doubleholo
+    upstream_id: '7866'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/7866/primary.webp
+    note: PLATINUM stamp and reflective field match owner page-7 original pocket 1; plain and non-stamped reverse
+      scans differ. Match reviewed against archived page crop and provider image; no in-hand confirmation of edition
+      or finish beyond visible evidence.
+  ditto-02:
+    classification: exact
+    asset_path: assets/images/cards/ditto-02.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    provider: doubleholo
+    upstream_id: '5888'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/5888/primary.webp
+    note: EX DELTA SPECIES artwork logo on Ditto disguised as Pikachu and Duplicate/Thunderbolt match page 6 pocket
+      1. Reviewed against archived page photo; exact visible printing only, not current placement or in-hand confirmation.
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+  ditto-03:
+    classification: exact
+    asset_path: assets/images/cards/ditto-03.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    provider: doubleholo
+    upstream_id: '5889'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/5889/primary.webp
+    note: EX DELTA SPECIES artwork stamp on Ditto disguised as Squirtle and Duplicate/Smash Turn match page 6 pocket
+      5. Reviewed against archived page photo; exact visible printing only, not current placement or in-hand confirmation.
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+  double-colorless-energy-01:
+    classification: photo-crop
+    asset_path: assets/images/cards/double-colorless-energy-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_3.jpg
+    crop_box:
+    - 716
+    - 953
+    - 984
+    - 1350
+    note: Crop from archived photographed page, not proof of exact stamped variant or current position.
+      Published derivative, camera original/capture date unknown.
+  dratini-03:
+    classification: photo-crop
+    asset_path: assets/images/cards/dratini-03.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_3.jpg
+    crop_box:
+    - 370
+    - 495
+    - 635
+    - 886
+    note: Crop from archived photographed page, not proof of exact stamped variant or current position.
+      Published derivative, camera original/capture date unknown.
+  dudunsparce-01:
+    classification: exact
+    asset_path: assets/images/cards/dudunsparce-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    provider: doubleholo
+    upstream_id: '54192'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/54192/primary.webp
+    note: Prize Pack logo matches page 2 pocket 3; printed footer too small in photograph to independently read
+      full number. Match reviewed against archived page crop and provider image; no in-hand confirmation of edition
+      or finish beyond visible evidence.
+  dusclops-01:
+    classification: exact
+    asset_path: assets/images/cards/dusclops-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    provider: doubleholo
+    upstream_id: '6548'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/6548/primary.webp
+    note: CRYSTAL GUARDIANS artwork stamp and reverse field match page 2 pocket 9. Match reviewed against archived
+      page crop and provider image; no in-hand confirmation of edition or finish beyond visible evidence.
+  ekans-01:
+    classification: exact
+    asset_path: assets/images/cards/ekans-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    provider: doubleholo
+    upstream_id: '6777'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/6777/primary.webp
+    note: DRAGON FRONTIERS artwork logo, delta Fire-type, Bite/Tail Snap match page 6 pocket 4. Reviewed against
+      archived page photo; exact visible printing only, not current placement or in-hand confirmation.
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+  emolga-02:
+    classification: photo-crop
+    asset_path: assets/images/cards/emolga-02.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_2.jpg
+    crop_box:
+    - 40
+    - 465
+    - 300
+    - 798
+    note: Crop from archived photographed page, not proof of exact stamped variant or current position.
+      Published derivative, camera original/capture date unknown.
+  garbodor-01:
+    classification: photo-crop
+    asset_path: assets/images/cards/garbodor-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_2.jpg
+    crop_box:
+    - 357
+    - 850
+    - 610
+    - 1180
+    note: Crop from archived photographed page, not proof of exact stamped variant or current position.
+      Published derivative, camera original/capture date unknown.
+  glass-trumpet-01:
+    classification: exact
+    asset_path: assets/images/cards/glass-trumpet-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    provider: doubleholo
+    upstream_id: '78387'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/78387/primary.webp
+    note: Prize Pack logo matches page 2 pocket 2; printed footer too small in photograph to independently read
+      full number. Match reviewed against archived page crop and provider image; no in-hand confirmation of edition
+      or finish beyond visible evidence.
+  grotle-02:
+    classification: exact
+    asset_path: assets/images/cards/grotle-02.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    provider: doubleholo
+    upstream_id: '7203'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/7203/primary.webp
+    note: Diamond & Pearl artwork stamp and pale green reflective field match page 4 pocket 7. Reviewed against
+      archived page photo; exact visible printing only, not current placement or in-hand confirmation.
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+  horsea-02:
+    classification: exact
+    asset_path: assets/images/cards/horsea-02.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    provider: doubleholo
+    upstream_id: '6381'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/6381/primary.webp
+    note: HOLON PHANTOMS artwork stamp and reverse treatment match page 1 pocket 6; second PDF Horsea has no observed
+      pocket. Match reviewed against archived page crop and provider image; no in-hand confirmation of edition or
+      finish beyond visible evidence.
+  houndoom-05:
+    classification: exact
+    asset_path: assets/images/cards/houndoom-05.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    provider: doubleholo
+    upstream_id: '39116'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/39116/primary.webp
+    note: Halloween pumpkin event stamp matches page 2 pocket 1; PDF incorrectly buckets this as Scarlet & Violet
+      34 reverse holo. Match reviewed against archived page crop and provider image; no in-hand confirmation of
+      edition or finish beyond visible evidence.
+  mudsdale-01:
+    classification: exact
+    asset_path: assets/images/cards/mudsdale-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    provider: doubleholo
+    upstream_id: '30561'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/30561/primary.webp
+    note: Mudsdale name, Sun & Moon Guardians Rising artwork logo and attacks match page 5 pocket 1; preliminary
+      inventory incorrectly called it Houndour. Reviewed against archived page photo; exact visible printing only,
+      not current placement or in-hand confirmation.
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+  ivysaur-01:
+    classification: exact
+    asset_path: assets/images/cards/ivysaur-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    provider: doubleholo
+    upstream_id: '6518'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/6518/primary.webp
+    note: CRYSTAL GUARDIANS artwork logo and reverse treatment match page 4 pocket 6; PDF Prerelease candidate has
+      a different conspicuous mark. Reviewed against archived page photo; exact visible printing only, not current
+      placement or in-hand confirmation.
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+  latios-04:
+    classification: exact
+    asset_path: assets/images/cards/latios-04.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    provider: doubleholo
+    upstream_id: '32495'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/32495/primary.webp
+    note: DRAGON VAULT artwork stamp matches owner page-7 original pocket 4; base scan lacks mark. Match reviewed
+      against archived page crop and provider image; no in-hand confirmation of edition or finish beyond visible
+      evidence.
+  leafeon-01:
+    classification: photo-crop
+    asset_path: assets/images/cards/leafeon-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_1.jpg
+    crop_box:
+    - 28
+    - 3
+    - 262
+    - 315
+    note: Crop from archived photographed page, not proof of exact stamped variant or current position.
+      Published derivative, camera original/capture date unknown.
+  lucario-03:
+    classification: photo-crop
+    asset_path: assets/images/cards/lucario-03.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_5.jpg
+    crop_box:
+    - 380
+    - 502
+    - 686
+    - 885
+    note: Crop from archived photographed page, not proof of exact stamped variant or current position.
+      Published derivative, camera original/capture date unknown.
+  luvdisc-01:
+    classification: exact
+    asset_path: assets/images/cards/luvdisc-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    provider: doubleholo
+    upstream_id: '6606'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/6606/primary.webp
+    note: CRYSTAL GUARDIANS artwork logo and reverse field match page 6 pocket 3. Reviewed against archived page
+      photo; exact visible printing only, not current placement or in-hand confirmation.
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+  machamp-01:
+    classification: exact
+    asset_path: assets/images/cards/machamp-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    provider: doubleholo
+    upstream_id: '51478'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/51478/primary.webp
+    note: Evolutions PRERELEASE artwork stamp matches page 5 pocket 3; STAFF alternative differs. Reviewed against
+      archived page photo; exact visible printing only, not current placement or in-hand confirmation.
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+  meganium-01:
+    classification: photo-crop
+    asset_path: assets/images/cards/meganium-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_1.jpg
+    crop_box:
+    - 328
+    - 774
+    - 555
+    - 1095
+    note: Crop from archived photographed page, not proof of exact stamped variant or current position.
+      Published derivative, camera original/capture date unknown.
+  mudkip-03:
+    classification: exact
+    asset_path: assets/images/cards/mudkip-03.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    provider: doubleholo
+    upstream_id: '6496'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/6496/primary.webp
+    note: CRYSTAL GUARDIANS artwork stamp and reverse field match page 2 pocket 6. Match reviewed against archived
+      page crop and provider image; no in-hand confirmation of edition or finish beyond visible evidence.
+  oranguru-01:
+    classification: exact
+    asset_path: assets/images/cards/oranguru-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    provider: doubleholo
+    upstream_id: '30433'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/30433/primary.webp
+    note: Sun & Moon artwork logo, 120 HP and attacks match page 3 pocket 6. Reviewed against archived page photo;
+      exact visible printing only, not current placement or in-hand confirmation.
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+  oricorio-01:
+    classification: exact
+    asset_path: assets/images/cards/oricorio-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    provider: tcgdex
+    upstream_id: smp-SM19
+    source_url: https://assets.tcgdex.net/en/sm/smp/SM19/high.webp
+    note: Sun & Moon Guardians Rising artwork logo, 120 HP, English attacks match page 3 pocket 4; DoubleHolo STAFF
+      scan is not the photo. Reviewed against archived page photo; exact visible printing only, not current placement
+      or in-hand confirmation.
+  pansear-01:
+    classification: photo-crop
+    asset_path: assets/images/cards/pansear-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_4.jpg
+    crop_box:
+    - 711
+    - 920
+    - 995
+    - 1284
+    note: Crop from archived photographed page, not proof of exact stamped variant or current position.
+      Published derivative, camera original/capture date unknown.
+  passimian-01:
+    classification: exact
+    asset_path: assets/images/cards/passimian-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    provider: doubleholo
+    upstream_id: '30647'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/30647/primary.webp
+    note: Sun & Moon logo and Fling/Team Play art match page 5 pocket 2; STAFF alternative differs. Reviewed against
+      archived page photo; exact visible printing only, not current placement or in-hand confirmation.
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+  passimian-02:
+    classification: exact
+    asset_path: assets/images/cards/passimian-02.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    provider: doubleholo
+    upstream_id: '30288'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/30288/primary.webp
+    note: Rapid Strike and Chilling Reign artwork logos, Throwing Coach/Fling art match page 5 pocket 4. Reviewed
+      against archived page photo; exact visible printing only, not current placement or in-hand confirmation.
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+  pichu-01:
+    classification: exact
+    asset_path: assets/images/cards/pichu-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    provider: doubleholo
+    upstream_id: '6895'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/6895/primary.webp
+    note: POWER KEEPERS artwork stamp and reverse treatment match page 1 pocket 3; price label partly covers footer.
+      Match reviewed against archived page crop and provider image; no in-hand confirmation of edition or finish
+      beyond visible evidence.
+  pikachu-08:
+    classification: photo-crop
+    asset_path: assets/images/cards/pikachu-08.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_1.jpg
+    crop_box:
+    - 0
+    - 758
+    - 264
+    - 1098
+    note: Pokémon GO artwork logo matches, but photographed finish cannot distinguish DoubleHolo 32602 holo from
+      other variants; PDF Holo label is not physical verification. Photograph capture date and current pocket placement
+      unknown.
+  pikachu-09:
+    classification: exact
+    asset_path: assets/images/cards/pikachu-09.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    provider: doubleholo
+    upstream_id: '8078'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/8078/primary.webp
+    note: PLATINUM artwork stamp and Quick Attack/Volt Tackle art match page 5 pocket 8. Reviewed against archived
+      page photo; exact visible printing only, not current placement or in-hand confirmation.
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+  pikachu-10:
+    classification: exact
+    asset_path: assets/images/cards/pikachu-10.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    provider: doubleholo
+    upstream_id: '54229'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/54229/primary.webp
+    note: Pikachu-shaped 2026 Pokémon Day mark and 051/162 printed footer match owner page-7 original pocket 6.
+      DoubleHolo files scan under Promo 51, not the photographed TEF set; catalogue bucket is not physical printing
+      proof. Match reviewed against archived page crop and provider image; no in-hand confirmation of edition or
+      finish beyond visible evidence.
+  piplup-02:
+    classification: exact
+    asset_path: assets/images/cards/piplup-02.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    provider: doubleholo
+    upstream_id: '8133'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/8133/primary.webp
+    note: PLATINUM artwork stamp, beach art and Water Splash/Headbutt match page 6 pocket 2. Reviewed against archived
+      page photo; exact visible printing only, not current placement or in-hand confirmation.
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+  pokemon-ranger-01:
+    classification: photo-crop
+    asset_path: assets/images/cards/pokemon-ranger-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_3.jpg
+    crop_box:
+    - 370
+    - 9
+    - 635
+    - 400
+    note: Crop from archived photographed page, not proof of exact stamped variant or current position.
+      Published derivative, camera original/capture date unknown.
+  professor-cozmos-discovery-01:
+    classification: photo-crop
+    asset_path: assets/images/cards/professor-cozmos-discovery-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_1.jpg
+    crop_box:
+    - 328
+    - 378
+    - 555
+    - 714
+    note: Crop from archived photographed page, not proof of exact stamped variant or current position.
+      Published derivative, camera original/capture date unknown.
+  reshiram-03:
+    classification: exact
+    asset_path: assets/images/cards/reshiram-03.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    provider: doubleholo
+    upstream_id: '78654'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/78654/primary.webp
+    note: 'JOURNEY TOGETHER artwork stamp, 220 HP, Fire Wing/Scorching Fire and printed JTG EN 030/159 match page
+      6 pocket 7; PDF Promo #30 is a catalogue bucket, not printed set. Reviewed against archived page photo; exact
+      visible printing only, not current placement or in-hand confirmation.'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+  shellder-01:
+    classification: exact
+    asset_path: assets/images/cards/shellder-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    provider: doubleholo
+    upstream_id: '6762'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/6762/primary.webp
+    note: DRAGON FRONTIERS artwork logo, delta Fighting-type and Shell Grab match page 6 pocket 8. Reviewed against
+      archived page photo; exact visible printing only, not current placement or in-hand confirmation.
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+  shroomish-01:
+    classification: exact
+    asset_path: assets/images/cards/shroomish-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    provider: doubleholo
+    upstream_id: '5559'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/5559/primary.webp
+    note: Emerald artwork logo and reflective green reverse field match page 4 pocket 4. Reviewed against archived
+      page photo; exact visible printing only, not current placement or in-hand confirmation.
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+  shroomish-02:
+    classification: exact
+    asset_path: assets/images/cards/shroomish-02.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    provider: doubleholo
+    upstream_id: '5326'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/5326/primary.webp
+    note: DEOXYS artwork stamp and Stun Spore/Trip Over match page 6 pocket 6. Reviewed against archived page photo;
+      exact visible printing only, not current placement or in-hand confirmation.
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+  slowking-01:
+    classification: exact
+    asset_path: assets/images/cards/slowking-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    provider: doubleholo
+    upstream_id: '5907'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/5907/primary.webp
+    note: DELTA SPECIES artwork stamp and reverse treatment match owner page-7 original pocket 9. Match reviewed
+      against archived page crop and provider image; no in-hand confirmation of edition or finish beyond visible
+      evidence.
+  snivy-04:
+    classification: photo-crop
+    asset_path: assets/images/cards/snivy-04.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-24/stamped-cards/uploads/IMG_7148.HEIC
+    crop_box:
+    - 520
+    - 490
+    - 2660
+    - 3595
+    note: Owner-supplied HEIC photo crop, event logo and printed number visible; not a pocket photo or
+      in-hand variant confirmation.
+  solgaleo-01:
+    classification: photo-crop
+    asset_path: assets/images/cards/solgaleo-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_3.jpg
+    crop_box:
+    - 715
+    - 51
+    - 995
+    - 420
+    note: No event stamp can be established on photographed GX; ordinary DoubleHolo 456 is not proof of a specific
+      stamped printing. Photograph capture date and current pocket placement unknown.
+  squirtle-04:
+    classification: exact
+    asset_path: assets/images/cards/squirtle-04.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    provider: doubleholo
+    upstream_id: '6481'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/6481/primary.webp
+    note: CRYSTAL GUARDIANS artwork stamp and reverse field match page 5 pocket 7; distinct physical copy from page
+      7. Reviewed against archived page photo; exact visible printing only, not current placement or in-hand confirmation.
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+  squirtle-05:
+    classification: exact
+    asset_path: assets/images/cards/squirtle-05.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    provider: doubleholo
+    upstream_id: '6481'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/6481/primary.webp
+    note: CRYSTAL GUARDIANS artwork stamp and reverse field match owner page-7 original pocket 2; City Championships
+      stamp does not match. Match reviewed against archived page crop and provider image; no in-hand confirmation
+      of edition or finish beyond visible evidence.
+  togepi-02:
+    classification: exact
+    asset_path: assets/images/cards/togepi-02.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    provider: doubleholo
+    upstream_id: '6757'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/6757/primary.webp
+    note: DRAGON FRONTIERS artwork stamp and reverse field match owner page-7 original pocket 8. Match reviewed
+      against archived page crop and provider image; no in-hand confirmation of edition or finish beyond visible
+      evidence.
+  torterra-03:
+    classification: exact
+    asset_path: assets/images/cards/torterra-03.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    provider: doubleholo
+    upstream_id: '17322'
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/17322/primary.webp
+    note: Pokémon League artwork logo matches page 2 pocket 5; base and reverse scans have no League logo. Match
+      reviewed against archived page crop and provider image; no in-hand confirmation of edition or finish beyond
+      visible evidence.
+  treecko-01:
+    classification: exact
+    asset_path: assets/images/cards/treecko-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    provider: doubleholo
+    upstream_id: '17857'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/17857/primary.webp
+    note: Celestial Storm artwork logo and patterned reverse green field match page 4 pocket 5. Reviewed against
+      archived page photo; exact visible printing only, not current placement or in-hand confirmation.
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+  tyranitar-01:
+    classification: photo-crop
+    asset_path: assets/images/cards/tyranitar-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    provider: evidence-crop
+    source_path: docs/evidence/2026-09-24/stamped-cards/published-pages/stamp_1.jpg
+    crop_box:
+    - 627
+    - 774
+    - 860
+    - 1095
+    note: Crop from archived photographed page, not proof of exact stamped variant or current position.
+      Published derivative, camera original/capture date unknown.
+  tyranitar-02:
+    classification: exact
+    asset_path: assets/images/cards/tyranitar-02.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    provider: doubleholo
+    upstream_id: '26207'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/26207/primary.webp
+    note: PRISMATIC EVOLUTIONS artwork mark and glitter treatment match page 3 pocket 8; unstamped base lacks mark.
+      Reviewed against archived page photo; exact visible printing only, not current placement or in-hand confirmation.
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+  venusaur-01:
+    classification: exact
+    asset_path: assets/images/cards/venusaur-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    provider: doubleholo
+    upstream_id: '43178'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/43178/primary.webp
+    note: Stellar Crown artwork logo and 340 HP ex holo art match page 4 pocket 3. Reviewed against archived page
+      photo; exact visible printing only, not current placement or in-hand confirmation.
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+  vibrava-01:
+    classification: exact
+    asset_path: assets/images/cards/vibrava-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    provider: doubleholo
+    upstream_id: '6842'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/6842/primary.webp
+    note: DRAGON FRONTIERS artwork logo, green-wing art and Psychic Wing/Quick Blow match page 6 pocket 9; PDF omitted
+      Vibrava. Reviewed against archived page photo; exact visible printing only, not current placement or in-hand
+      confirmation.
+    usage_basis: Owner-authorized DoubleHolo card catalog image.
+  yanmega-01:
+    classification: exact
+    asset_path: assets/images/cards/yanmega-01.webp
+    reviewed: true
+    reviewed_on: '2026-09-24'
+    provider: doubleholo
+    upstream_id: '30554'
+    source_url: https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/30554/primary.webp
+    note: Steam Siege artwork logo and shiny field match page 4 pocket 2; STAFF wording not observed on this page.
+      Reviewed against archived page photo; exact visible printing only, not current placement or in-hand confirmation.
+    usage_basis: Owner-authorized DoubleHolo card catalog image.

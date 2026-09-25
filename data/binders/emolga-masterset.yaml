@@ -13,7 +13,7 @@ leaves:
   theme: Page 1
   pockets:
   - position: 1
-    card_id: emolga-02
+    card_id: emolga-44
     placement: {status: confirmed, evidence: {type: published-photo, source: 'docs/evidence/2026-09-24/emolga-masterset/emolga_1.webp', observed_on: '2026-09-24'}}
   - position: 2
     card_id: emolga-03

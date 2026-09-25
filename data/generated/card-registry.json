@@ -26,6 +26,15 @@
     "number": "12/105",
     "confidence": "confirmed"
   },
+  "ariados-01": {
+    "id": "ariados-01",
+    "species": "Ariados",
+    "card_name": "Ariados",
+    "language": "EN",
+    "set": "",
+    "number": "",
+    "confidence": "uncertain"
+  },
   "audino-01": {
     "id": "audino-01",
     "species": "Audino",
@@ -52,6 +61,15 @@
     "set": "sv6a",
     "number": "076",
     "confidence": "confirmed"
+  },
+  "bidoof-01": {
+    "id": "bidoof-01",
+    "species": "Bidoof",
+    "card_name": "Bidoof [Ditto]",
+    "language": "EN",
+    "set": "",
+    "number": "",
+    "confidence": "uncertain"
   },
   "blastoise-01": {
     "id": "blastoise-01",
@@ -97,6 +115,24 @@
     "set": "Expedition",
     "number": "95",
     "confidence": "confirmed"
+  },
+  "bulbasaur-04": {
+    "id": "bulbasaur-04",
+    "species": "Bulbasaur",
+    "card_name": "Bulbasaur?",
+    "language": "EN",
+    "set": "",
+    "number": "",
+    "confidence": "uncertain"
+  },
+  "bulbasaur-05": {
+    "id": "bulbasaur-05",
+    "species": "Bulbasaur",
+    "card_name": "Bulbasaur",
+    "language": "EN",
+    "set": "SWSH Promos",
+    "number": "SWSH231",
+    "confidence": "photo"
   },
   "celebi-01": {
     "id": "celebi-01",
@@ -170,6 +206,24 @@
     "number": "98",
     "confidence": "confirmed"
   },
+  "charmeleon-01": {
+    "id": "charmeleon-01",
+    "species": "Charmeleon",
+    "card_name": "Charmeleon",
+    "language": "EN",
+    "set": "Crystal Guardians",
+    "number": "29/100",
+    "confidence": "photo"
+  },
+  "chimecho-01": {
+    "id": "chimecho-01",
+    "species": "Chimecho",
+    "card_name": "Chimecho",
+    "language": "EN",
+    "set": "",
+    "number": "",
+    "confidence": "uncertain"
+  },
   "cinccino-01": {
     "id": "cinccino-01",
     "species": "Cinccino",
@@ -178,6 +232,42 @@
     "set": "sv5K",
     "number": "083/071",
     "confidence": "confirmed"
+  },
+  "clawitzer-01": {
+    "id": "clawitzer-01",
+    "species": "Clawitzer",
+    "card_name": "Clawitzer",
+    "language": "EN",
+    "set": "",
+    "number": "",
+    "confidence": "uncertain"
+  },
+  "combusken-01": {
+    "id": "combusken-01",
+    "species": "Combusken",
+    "card_name": "Combusken",
+    "language": "EN",
+    "set": "Holon Phantoms",
+    "number": "39/110",
+    "confidence": "photo"
+  },
+  "combusken-02": {
+    "id": "combusken-02",
+    "species": "Combusken",
+    "card_name": "Combusken",
+    "language": "EN",
+    "set": "Emerald",
+    "number": "25/106",
+    "confidence": "photo"
+  },
+  "comfey-01": {
+    "id": "comfey-01",
+    "species": "Comfey",
+    "card_name": "Comfey",
+    "language": "EN",
+    "set": "SWSH Promos",
+    "number": "SWSH242",
+    "confidence": "photo"
   },
   "cubone-01": {
     "id": "cubone-01",
@@ -251,6 +341,15 @@
     "number": "",
     "confidence": "confirmed"
   },
+  "delcatty-01": {
+    "id": "delcatty-01",
+    "species": "Delcatty",
+    "card_name": "Delcatty",
+    "language": "EN",
+    "set": "SM Promos",
+    "number": "SM132",
+    "confidence": "photo"
+  },
   "deoxys-01": {
     "id": "deoxys-01",
     "species": "Deoxys",
@@ -269,6 +368,15 @@
     "number": "8",
     "confidence": "confirmed"
   },
+  "dialga-02": {
+    "id": "dialga-02",
+    "species": "Dialga",
+    "card_name": "Dialga",
+    "language": "EN",
+    "set": "Great Encounters",
+    "number": "16/106",
+    "confidence": "photo"
+  },
   "ditto-01": {
     "id": "ditto-01",
     "species": "Ditto",
@@ -277,6 +385,33 @@
     "set": "XY",
     "number": "XY40",
     "confidence": "confirmed"
+  },
+  "ditto-02": {
+    "id": "ditto-02",
+    "species": "Ditto",
+    "card_name": "Ditto (Pikachu)",
+    "language": "EN",
+    "set": "Delta Species",
+    "number": "39/113",
+    "confidence": "photo"
+  },
+  "ditto-03": {
+    "id": "ditto-03",
+    "species": "Ditto",
+    "card_name": "Ditto (Squirtle)",
+    "language": "EN",
+    "set": "Delta Species",
+    "number": "40/113",
+    "confidence": "photo"
+  },
+  "double-colorless-energy-01": {
+    "id": "double-colorless-energy-01",
+    "species": "Double Colorless Energy",
+    "card_name": "Double Colorless Energy",
+    "language": "EN",
+    "set": "",
+    "number": "",
+    "confidence": "uncertain"
   },
   "dragonair-01": {
     "id": "dragonair-01",
@@ -332,6 +467,33 @@
     "number": "26/102",
     "confidence": "confirmed"
   },
+  "dratini-03": {
+    "id": "dratini-03",
+    "species": "Dratini",
+    "card_name": "Dratini",
+    "language": "EN",
+    "set": "",
+    "number": "",
+    "confidence": "uncertain"
+  },
+  "dudunsparce-01": {
+    "id": "dudunsparce-01",
+    "species": "Dudunsparce",
+    "card_name": "Dudunsparce",
+    "language": "EN",
+    "set": "Prize Pack Series",
+    "number": "129/162",
+    "confidence": "photo"
+  },
+  "dusclops-01": {
+    "id": "dusclops-01",
+    "species": "Dusclops",
+    "card_name": "Dusclops",
+    "language": "EN",
+    "set": "Crystal Guardians",
+    "number": "17/100",
+    "confidence": "photo"
+  },
   "eevee-01": {
     "id": "eevee-01",
     "species": "Eevee",
@@ -340,6 +502,15 @@
     "set": "SVP",
     "number": "173",
     "confidence": "confirmed"
+  },
+  "ekans-01": {
+    "id": "ekans-01",
+    "species": "Ekans",
+    "card_name": "Ekans",
+    "language": "EN",
+    "set": "Dragon Frontiers",
+    "number": "47/101",
+    "confidence": "photo"
   },
   "electrode-01": {
     "id": "electrode-01",
@@ -364,9 +535,9 @@
     "species": "Emolga",
     "card_name": "Emolga",
     "language": "EN",
-    "set": "Emerging Powers",
-    "number": "32/98",
-    "confidence": "photo"
+    "set": "",
+    "number": "",
+    "confidence": "uncertain"
   },
   "emolga-03": {
     "id": "emolga-03",
@@ -737,6 +908,15 @@
     "number": "041/SM-P",
     "confidence": "photo"
   },
+  "emolga-44": {
+    "id": "emolga-44",
+    "species": "Emolga",
+    "card_name": "Emolga",
+    "language": "EN",
+    "set": "Emerging Powers",
+    "number": "32/98",
+    "confidence": "photo"
+  },
   "entei-01": {
     "id": "entei-01",
     "species": "Entei",
@@ -772,6 +952,15 @@
     "set": "Radiant Collection",
     "number": "RC28/RC32",
     "confidence": "confirmed"
+  },
+  "garbodor-01": {
+    "id": "garbodor-01",
+    "species": "Garbodor",
+    "card_name": "Garbodor",
+    "language": "EN",
+    "set": "",
+    "number": "",
+    "confidence": "uncertain"
   },
   "gardevoir-01": {
     "id": "gardevoir-01",
@@ -854,6 +1043,15 @@
     "number": "20",
     "confidence": "confirmed"
   },
+  "glass-trumpet-01": {
+    "id": "glass-trumpet-01",
+    "species": "Glass Trumpet",
+    "card_name": "Glass Trumpet",
+    "language": "EN",
+    "set": "Prize Pack Series",
+    "number": "135/142",
+    "confidence": "photo"
+  },
   "golem-01": {
     "id": "golem-01",
     "species": "Golem",
@@ -889,6 +1087,15 @@
     "set": "sv5K",
     "number": "072/071",
     "confidence": "confirmed"
+  },
+  "grotle-02": {
+    "id": "grotle-02",
+    "species": "Grotle",
+    "card_name": "Grotle",
+    "language": "EN",
+    "set": "Diamond & Pearl",
+    "number": "49/130",
+    "confidence": "photo"
   },
   "groudon-01": {
     "id": "groudon-01",
@@ -953,6 +1160,15 @@
     "number": "84",
     "confidence": "confirmed"
   },
+  "horsea-02": {
+    "id": "horsea-02",
+    "species": "Horsea",
+    "card_name": "Horsea",
+    "language": "EN",
+    "set": "Holon Phantoms",
+    "number": "66/110",
+    "confidence": "photo"
+  },
   "houndoom-01": {
     "id": "houndoom-01",
     "species": "Houndoom",
@@ -989,6 +1205,15 @@
     "number": "23/75",
     "confidence": "confirmed"
   },
+  "houndoom-05": {
+    "id": "houndoom-05",
+    "species": "Houndoom",
+    "card_name": "Houndoom",
+    "language": "EN",
+    "set": "Trick or Trade 2023",
+    "number": "34/198",
+    "confidence": "photo"
+  },
   "houndour-01": {
     "id": "houndour-01",
     "species": "Houndour",
@@ -1015,6 +1240,15 @@
     "set": "Rocket Gang",
     "number": "",
     "confidence": "confirmed"
+  },
+  "ivysaur-01": {
+    "id": "ivysaur-01",
+    "species": "Ivysaur",
+    "card_name": "Ivysaur",
+    "language": "EN",
+    "set": "Crystal Guardians",
+    "number": "35/100",
+    "confidence": "photo"
   },
   "jirachi-01": {
     "id": "jirachi-01",
@@ -1169,6 +1403,24 @@
     "number": "30/30",
     "confidence": "confirmed"
   },
+  "latios-04": {
+    "id": "latios-04",
+    "species": "Latios",
+    "card_name": "Latios",
+    "language": "EN",
+    "set": "Dragon Vault",
+    "number": "10/20",
+    "confidence": "photo"
+  },
+  "leafeon-01": {
+    "id": "leafeon-01",
+    "species": "Leafeon",
+    "card_name": "Leafeon",
+    "language": "EN",
+    "set": "",
+    "number": "",
+    "confidence": "uncertain"
+  },
   "litleo-01": {
     "id": "litleo-01",
     "species": "Litleo",
@@ -1196,6 +1448,15 @@
     "number": "122/123",
     "confidence": "photo"
   },
+  "lucario-03": {
+    "id": "lucario-03",
+    "species": "Lucario",
+    "card_name": "Lucario ex",
+    "language": "EN",
+    "set": "",
+    "number": "",
+    "confidence": "uncertain"
+  },
   "lugia-01": {
     "id": "lugia-01",
     "species": "Lugia",
@@ -1222,6 +1483,24 @@
     "set": "Neo Revelation",
     "number": "20/64",
     "confidence": "confirmed"
+  },
+  "luvdisc-01": {
+    "id": "luvdisc-01",
+    "species": "Luvdisc",
+    "card_name": "Luvdisc",
+    "language": "EN",
+    "set": "Crystal Guardians",
+    "number": "7/100",
+    "confidence": "photo"
+  },
+  "machamp-01": {
+    "id": "machamp-01",
+    "species": "Machamp",
+    "card_name": "Machamp",
+    "language": "EN",
+    "set": "Evolutions",
+    "number": "59/108",
+    "confidence": "photo"
   },
   "machop-01": {
     "id": "machop-01",
@@ -1258,6 +1537,15 @@
     "set": "City Gym Decks",
     "number": "",
     "confidence": "confirmed"
+  },
+  "meganium-01": {
+    "id": "meganium-01",
+    "species": "Meganium",
+    "card_name": "Meganium",
+    "language": "EN",
+    "set": "",
+    "number": "",
+    "confidence": "uncertain"
   },
   "mew-01": {
     "id": "mew-01",
@@ -1385,6 +1673,24 @@
     "number": "012/070",
     "confidence": "photo"
   },
+  "mudkip-03": {
+    "id": "mudkip-03",
+    "species": "Mudkip",
+    "card_name": "Mudkip",
+    "language": "EN",
+    "set": "Crystal Guardians",
+    "number": "57/100",
+    "confidence": "photo"
+  },
+  "mudsdale-01": {
+    "id": "mudsdale-01",
+    "species": "Mudsdale",
+    "card_name": "Mudsdale",
+    "language": "EN",
+    "set": "SM Promos",
+    "number": "SM20",
+    "confidence": "photo"
+  },
   "muk-01": {
     "id": "muk-01",
     "species": "Muk",
@@ -1430,6 +1736,24 @@
     "number": "69/97",
     "confidence": "confirmed"
   },
+  "oranguru-01": {
+    "id": "oranguru-01",
+    "species": "Oranguru",
+    "card_name": "Oranguru",
+    "language": "EN",
+    "set": "SM Promos",
+    "number": "SM13",
+    "confidence": "photo"
+  },
+  "oricorio-01": {
+    "id": "oricorio-01",
+    "species": "Oricorio",
+    "card_name": "Oricorio",
+    "language": "EN",
+    "set": "SM Promos",
+    "number": "SM19",
+    "confidence": "photo"
+  },
   "oshawott-01": {
     "id": "oshawott-01",
     "species": "Oshawott",
@@ -1447,6 +1771,42 @@
     "set": "Great Encounters",
     "number": "26/106",
     "confidence": "confirmed"
+  },
+  "pansear-01": {
+    "id": "pansear-01",
+    "species": "Pansear",
+    "card_name": "バオップ",
+    "language": "JP",
+    "set": "",
+    "number": "",
+    "confidence": "uncertain"
+  },
+  "passimian-01": {
+    "id": "passimian-01",
+    "species": "Passimian",
+    "card_name": "Passimian",
+    "language": "EN",
+    "set": "SM Promos",
+    "number": "SM12",
+    "confidence": "photo"
+  },
+  "passimian-02": {
+    "id": "passimian-02",
+    "species": "Passimian",
+    "card_name": "Passimian",
+    "language": "EN",
+    "set": "SWSH Promos",
+    "number": "SWSH115",
+    "confidence": "photo"
+  },
+  "pichu-01": {
+    "id": "pichu-01",
+    "species": "Pichu",
+    "card_name": "Pichu",
+    "language": "EN",
+    "set": "Power Keepers",
+    "number": "21/108",
+    "confidence": "photo"
   },
   "pikachu-01": {
     "id": "pikachu-01",
@@ -1511,6 +1871,33 @@
     "number": "12/17",
     "confidence": "confirmed"
   },
+  "pikachu-08": {
+    "id": "pikachu-08",
+    "species": "Pikachu",
+    "card_name": "Pikachu",
+    "language": "EN",
+    "set": "",
+    "number": "",
+    "confidence": "uncertain"
+  },
+  "pikachu-09": {
+    "id": "pikachu-09",
+    "species": "Pikachu",
+    "card_name": "Pikachu",
+    "language": "EN",
+    "set": "Majestic Dawn",
+    "number": "70/100",
+    "confidence": "photo"
+  },
+  "pikachu-10": {
+    "id": "pikachu-10",
+    "species": "Pikachu",
+    "card_name": "Pikachu",
+    "language": "EN",
+    "set": "Temporal Forces",
+    "number": "051/162",
+    "confidence": "photo"
+  },
   "piplup-01": {
     "id": "piplup-01",
     "species": "Piplup",
@@ -1520,6 +1907,15 @@
     "number": "15",
     "confidence": "confirmed"
   },
+  "piplup-02": {
+    "id": "piplup-02",
+    "species": "Piplup",
+    "card_name": "Piplup",
+    "language": "EN",
+    "set": "Majestic Dawn",
+    "number": "71/100",
+    "confidence": "photo"
+  },
   "plusle-01": {
     "id": "plusle-01",
     "species": "Plusle",
@@ -1528,6 +1924,24 @@
     "set": "Rulers of the Heavens",
     "number": "26",
     "confidence": "confirmed"
+  },
+  "pokemon-ranger-01": {
+    "id": "pokemon-ranger-01",
+    "species": "Pokémon Ranger",
+    "card_name": "Pokémon Ranger",
+    "language": "EN",
+    "set": "",
+    "number": "",
+    "confidence": "uncertain"
+  },
+  "professor-cozmos-discovery-01": {
+    "id": "professor-cozmos-discovery-01",
+    "species": "Professor Cozmo's Discovery",
+    "card_name": "Professor Cozmo's Discovery",
+    "language": "EN",
+    "set": "",
+    "number": "",
+    "confidence": "uncertain"
   },
   "professor-elm-01": {
     "id": "professor-elm-01",
@@ -1600,6 +2014,15 @@
     "set": "Black & White",
     "number": "113/114",
     "confidence": "confirmed"
+  },
+  "reshiram-03": {
+    "id": "reshiram-03",
+    "species": "Reshiram",
+    "card_name": "Reshiram ex",
+    "language": "EN",
+    "set": "Journey Together",
+    "number": "030/159",
+    "confidence": "photo"
   },
   "rockets-trap-01": {
     "id": "rockets-trap-01",
@@ -1691,6 +2114,42 @@
     "number": "8",
     "confidence": "confirmed"
   },
+  "shellder-01": {
+    "id": "shellder-01",
+    "species": "Shellder",
+    "card_name": "Shellder",
+    "language": "EN",
+    "set": "Dragon Frontiers",
+    "number": "63/101",
+    "confidence": "photo"
+  },
+  "shroomish-01": {
+    "id": "shroomish-01",
+    "species": "Shroomish",
+    "card_name": "Shroomish",
+    "language": "EN",
+    "set": "Emerald",
+    "number": "63/106",
+    "confidence": "photo"
+  },
+  "shroomish-02": {
+    "id": "shroomish-02",
+    "species": "Shroomish",
+    "card_name": "Shroomish",
+    "language": "EN",
+    "set": "Deoxys",
+    "number": "72/107",
+    "confidence": "photo"
+  },
+  "slowking-01": {
+    "id": "slowking-01",
+    "species": "Slowking",
+    "card_name": "Slowking",
+    "language": "EN",
+    "set": "Delta Species",
+    "number": "28/113",
+    "confidence": "photo"
+  },
   "slowpoke-01": {
     "id": "slowpoke-01",
     "species": "Slowpoke",
@@ -1727,6 +2186,15 @@
     "number": "6/113",
     "confidence": "confirmed"
   },
+  "snivy-04": {
+    "id": "snivy-04",
+    "species": "Snivy",
+    "card_name": "ツタージャ",
+    "language": "JP",
+    "set": "BW-P Promos",
+    "number": "034/BW-P",
+    "confidence": "photo"
+  },
   "snorlax-01": {
     "id": "snorlax-01",
     "species": "Snorlax",
@@ -1753,6 +2221,15 @@
     "set": "Fire Red & Leaf Green",
     "number": "15",
     "confidence": "confirmed"
+  },
+  "solgaleo-01": {
+    "id": "solgaleo-01",
+    "species": "Solgaleo",
+    "card_name": "Solgaleo GX?",
+    "language": "EN",
+    "set": "",
+    "number": "",
+    "confidence": "uncertain"
   },
   "spheal-01": {
     "id": "spheal-01",
@@ -1817,6 +2294,24 @@
     "number": "170/165",
     "confidence": "confirmed"
   },
+  "squirtle-04": {
+    "id": "squirtle-04",
+    "species": "Squirtle",
+    "card_name": "Squirtle",
+    "language": "EN",
+    "set": "Crystal Guardians",
+    "number": "63/100",
+    "confidence": "photo"
+  },
+  "squirtle-05": {
+    "id": "squirtle-05",
+    "species": "Squirtle",
+    "card_name": "Squirtle",
+    "language": "EN",
+    "set": "Crystal Guardians",
+    "number": "63/100",
+    "confidence": "photo"
+  },
   "steelix-01": {
     "id": "steelix-01",
     "species": "Steelix",
@@ -1853,6 +2348,15 @@
     "number": "56",
     "confidence": "confirmed"
   },
+  "togepi-02": {
+    "id": "togepi-02",
+    "species": "Togepi",
+    "card_name": "Togepi",
+    "language": "EN",
+    "set": "Dragon Frontiers",
+    "number": "41/101",
+    "confidence": "photo"
+  },
   "torterra-01": {
     "id": "torterra-01",
     "species": "Torterra",
@@ -1871,6 +2375,24 @@
     "number": "076/DP-P",
     "confidence": "confirmed"
   },
+  "torterra-03": {
+    "id": "torterra-03",
+    "species": "Torterra",
+    "card_name": "Torterra",
+    "language": "EN",
+    "set": "Ultra Prism",
+    "number": "9/156",
+    "confidence": "photo"
+  },
+  "treecko-01": {
+    "id": "treecko-01",
+    "species": "Treecko",
+    "card_name": "Treecko",
+    "language": "EN",
+    "set": "Celestial Storm",
+    "number": "8/168",
+    "confidence": "photo"
+  },
   "typhlosion-01": {
     "id": "typhlosion-01",
     "species": "Typhlosion",
@@ -1888,6 +2410,24 @@
     "set": "",
     "number": "No.157",
     "confidence": "uncertain"
+  },
+  "tyranitar-01": {
+    "id": "tyranitar-01",
+    "species": "Tyranitar",
+    "card_name": "Tyranitar",
+    "language": "EN",
+    "set": "",
+    "number": "",
+    "confidence": "uncertain"
+  },
+  "tyranitar-02": {
+    "id": "tyranitar-02",
+    "species": "Tyranitar",
+    "card_name": "Tyranitar ex",
+    "language": "EN",
+    "set": "Prismatic Evolutions",
+    "number": "064/131",
+    "confidence": "photo"
   },
   "umbreon-01": {
     "id": "umbreon-01",
@@ -1952,6 +2492,24 @@
     "number": "No.217",
     "confidence": "photo"
   },
+  "venusaur-01": {
+    "id": "venusaur-01",
+    "species": "Venusaur",
+    "card_name": "Venusaur ex",
+    "language": "EN",
+    "set": "Stellar Crown",
+    "number": "001/142",
+    "confidence": "photo"
+  },
+  "vibrava-01": {
+    "id": "vibrava-01",
+    "species": "Vibrava",
+    "card_name": "Vibrava",
+    "language": "EN",
+    "set": "Dragon Frontiers",
+    "number": "24/101",
+    "confidence": "photo"
+  },
   "victini-01": {
     "id": "victini-01",
     "species": "Victini",
@@ -1987,6 +2545,15 @@
     "set": "Mirage Forest",
     "number": "29",
     "confidence": "confirmed"
+  },
+  "yanmega-01": {
+    "id": "yanmega-01",
+    "species": "Yanmega",
+    "card_name": "Yanmega",
+    "language": "EN",
+    "set": "XY Promos",
+    "number": "XY144",
+    "confidence": "photo"
   },
   "yveltal-01": {
     "id": "yveltal-01",

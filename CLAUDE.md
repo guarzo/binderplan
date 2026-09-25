@@ -23,9 +23,9 @@ Production builds use `hugo --gc --minify --baseURL <url>` via GitHub Actions.
 **Hugo Static Site Generator** with:
 - `content/` - Markdown content organized into philosophy, gallery, and guides sections
 - `layouts/` - Go HTML templates (`_default/`, `partials/`, `gallery/`)
-- `assets/images/cards/` - Reviewed per-card assets for the reconstructed Volume I/II and Emolga binders
-- `static/images/` - Photo-based side-binder and slab gallery images; Emolga's published page photographs remain as archival source inputs
-- `data/binders/` - Volume and Emolga leaf order, pocket placement, and placement evidence
+- `assets/images/cards/` - Reviewed per-card assets for the reconstructed Volume I/II, Stamped Cards, and Emolga binders
+- `static/images/` - Photo-based side-binder and slab gallery source images
+- `data/binders/` - Volume, Stamped Cards, and Emolga leaf order, pocket placement, and placement evidence
 - `data/card-images.yaml` - Card-image fidelity and provenance metadata
 - `hugo.toml` - Site configuration with menu structure
 
@@ -53,11 +53,11 @@ For the reconstructed thematic binders:
 
 - Put reviewed card assets at `assets/images/cards/<card_id>.webp` using `scripts/manage-card-images.py`.
 - Record image fidelity and provenance in `data/card-images.yaml`.
-- Record Volume I/II leaf and pocket placement in `data/binders/volume-1.yaml` or `data/binders/volume-2.yaml`.
+- Record Volume I/II leaf and pocket placement in `data/binders/volume-1.yaml` or `data/binders/volume-2.yaml`; Stamped Cards and Emolga use their respective manifests in `data/binders/`.
 - Keep identity-only metadata in `docs/card-registry.md`; do not add pocket location there.
-- Do not add photographed Volume I/II spreads back to `static/images/binder/` or inline gallery markup in the volume `_index.md` files.
+- Do not add photographed Volume I/II, Stamped Cards, or Emolga spreads back to inline gallery markup in their `_index.md` files.
 
-Other photo-based side binders remain under `static/images/binder/<gallery>/` and use inline gallery markup. The Emolga Masterset instead renders `data/binders/emolga-masterset.yaml` as a four-pocket binder; its unchanged page photographs and reviewed provider responses are archived under `docs/evidence/`. Slabs remain under `static/images/slabs/`.
+The remaining photo-based side binders use `static/images/binder/<gallery>/` and inline gallery markup. Stamped Cards and the four-pocket Emolga Masterset use reviewed local card assets and archived page-photo evidence, not public page photos. Emolga's reviewed provider responses are also archived under `docs/evidence/`. Slabs remain under `static/images/slabs/`.
 
 Photo-gallery markup pattern:
 ```html

@@ -1,4 +1,4 @@
-"""The Emolga draft must never turn pictured placeholders into owned cards."""
+"""The Emolga binder must never turn pictured placeholders into owned cards."""
 
 import hashlib
 import importlib.util
@@ -77,10 +77,20 @@ def test_new_binder_does_not_require_prior_pending_placements():
     current = {
         "volume-1": {"leaves": []},
         "emolga-masterset": {"leaves": [{"kind": "cards", "physical_leaf": 1,
-                                       "pockets": [{"position": 1, "card_id": "emolga-02",
+                                       "pockets": [{"position": 1, "card_id": "emolga-44",
                                                     "placement": {"status": "confirmed"}}]}]},
     }
     assert digital_binder.validate_transition(previous, current) == []
+
+
+def test_stamped_emolga_and_masterset_copy_have_distinct_card_ids():
+    stamped = yaml.safe_load((ROOT / "data/binders/stamped-cards.yaml").read_text())
+    masterset = yaml.safe_load((ROOT / "data/binders/emolga-masterset.yaml").read_text())
+    stamped_ids = {p["card_id"] for leaf in stamped["leaves"] for p in leaf.get("pockets", []) if "card_id" in p}
+    masterset_ids = {p["card_id"] for leaf in masterset["leaves"] for p in leaf.get("pockets", []) if "card_id" in p}
+    assert "emolga-02" in stamped_ids
+    assert "emolga-44" in masterset_ids
+    assert stamped_ids.isdisjoint(masterset_ids)
 
 
 def test_public_binder_preserves_pockets_and_wanted_separation_in_both_builds(tmp_path):
@@ -143,7 +153,7 @@ def test_public_binder_preserves_pockets_and_wanted_separation_in_both_builds(tm
 def test_catalog_matches_visible_card_numbers_without_certifying_variants():
     # Cross-checked against the photographed footers and Bulbapedia's Emolga (TCG) list.
     expected = {
-        "emolga-02": ("Emerging Powers", "32/98"),
+        "emolga-44": ("Emerging Powers", "32/98"),
         "emolga-03": ("BW1", "021/053"),
         "emolga-04": ("McDonald's Collection 2012", "6/12"),
         "emolga-05": ("Noble Victories", "37/101"),
@@ -194,7 +204,7 @@ def test_catalog_matches_visible_card_numbers_without_certifying_variants():
 
 def test_reviewed_provider_scan_is_local_and_distinct_from_photo_evidence():
     images = yaml.safe_load((ROOT / "data/card-images.yaml").read_text())["cards"]
-    card = images["emolga-02"]
+    card = images["emolga-44"]
     assert card["provider"] in {"tcgdex", "doubleholo"}
     assert card["classification"] in {"exact", "proxy"}
     assert card["source_url"].startswith("https://")
