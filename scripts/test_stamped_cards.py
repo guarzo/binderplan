@@ -50,6 +50,15 @@ def test_manifest_preserves_observed_pockets_and_does_not_guess_page_eight():
                for leaf in leaves[:7] for p in leaf["pockets"] if "card_id" in p)
     assert all("physical_state_unknown" not in p["placement"]
                for leaf in leaves[:7] for p in leaf["pockets"] if "card_id" in p)
+    volume_manifests = {
+        volume_id: yaml.safe_load((ROOT / f"data/binders/{volume_id}.yaml").read_text())
+        for volume_id in ("volume-1", "volume-2")
+    }
+    duplicate_errors = []
+    digital_binder._validate_global_duplicates(
+        {**volume_manifests, "stamped-cards": manifest}, duplicate_errors,
+    )
+    assert duplicate_errors == []
 
 
 def test_page_seven_cites_the_actual_september_replacement_not_march_derivative():
@@ -156,7 +165,9 @@ def test_draft_route_uses_shared_binder_without_replacing_public_gallery(tmp_pat
     assert "Snivy" in draft
     assert "Houndour" in draft and "Mudsdale" not in draft.split("<details", 1)[1].split("</details>", 1)[0]
     assert re.search(r'<img[^>]+src="/images/cards/snivy-04_[^\"]+\.webp"', draft)
-    assert "stamp_1.jpg" in public and "stamp_7.jpg" in public
+    for page in range(1, 8):
+        assert f"stamp_{page}.jpg" in public
+        assert (tmp_path / f"images/binder/stamped-cards/stamp_{page}.jpg").is_file()
     assert 'data-binder="stamped-cards"' not in public
     binder_markup = draft.split('data-binder="stamped-cards"', 1)[1]
     assert all(src.startswith("/") for src in re.findall(r'<img[^>]+src="([^"]+)"', binder_markup))
@@ -169,5 +180,7 @@ def test_production_route_keeps_photographs_and_excludes_draft(tmp_path):
     assert not (tmp_path / "gallery/stamped-cards-draft/index.html").exists()
     assert not (tmp_path / "images/binder/stamped-cards-draft/snivy.webp").exists()
     public = (tmp_path / "gallery/stamped-cards/index.html").read_text()
-    assert "stamp_1.jpg" in public and "stamp_7.jpg" in public
+    for page in range(1, 8):
+        assert f"stamp_{page}.jpg" in public
+        assert (tmp_path / f"images/binder/stamped-cards/stamp_{page}.jpg").is_file()
     assert 'data-binder="stamped-cards"' not in public

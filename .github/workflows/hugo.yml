@@ -57,6 +57,7 @@ jobs:
           python scripts/check-gallery.py
           python scripts/make-slab-previews.py --check
           node scripts/test_slab_js_behavior.mjs
+          node --test scripts/test_binder_js_behavior.mjs
           python scripts/check-registry.py docs/card-registry.md
           python scripts/check-digital-binder.py --check
 
