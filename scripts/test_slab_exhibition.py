@@ -95,7 +95,7 @@ def test_slab_routes_keep_local_objects_and_have_an_independent_inspector(site, 
     assert "data-slab-inspector-zoom" in html
     assert "data-slab-inspector-previous" in html
     assert "data-slab-inspector-next" in html
-    assert "Still Hunting" in html if wanted else "Still Hunting" not in html
+    assert ("Still Hunting" in html) == bool(wanted)
     if wanted:
         assert "data-slab-wanted" in html
         assert [len(group) for group in page.groups] == [owned, wanted]

@@ -28,11 +28,12 @@ def main(check=False):
             options = {"format": "WEBP", "quality": 83, "method": 6}
             if original.info.get("icc_profile"):
                 options["icc_profile"] = original.info["icc_profile"]
+            rgb = original.convert("RGB")
             for width in (720, 1080):
                 if original.width < width:
                     continue
                 height = round(original.height * width / original.width)
-                preview = original.convert("RGB").resize((width, height), Image.Resampling.LANCZOS)
+                preview = rgb.resize((width, height), Image.Resampling.LANCZOS)
                 suffix = "" if width == 720 else "-1080"
                 target = DESTINATION / f"{source.stem}{suffix}.webp"
                 expected.add(target.name)
