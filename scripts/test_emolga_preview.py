@@ -96,7 +96,11 @@ def test_draft_preview_preserves_page_order_ownership_and_public_photo_gallery(t
     assert len(re.findall(r'data-card-confidence="photo"', html)) == 40
     assert len(re.findall(r'data-card-confidence="uncertain"', html)) == 2
     assert html.count('Printing uncertain</span>') == 2
-    assert html.count('Catalog scan</span>') == 36
+    assert 'class="emolga-image-note"' in html
+    assert html.index('class="emolga-image-note"') < html.index('data-binder="emolga-masterset"')
+    assert 'TCGdex or DoubleHolo' in html and 'Select a card for its image source' in html
+    assert 'Catalog scan</span>' not in html
+    assert html.count('class="pocket-states"') == 2  # Only unresolved identities, never proxy pills.
     assert len(re.findall(r'data-placeholder-wanted="(?:025|081)/BW-P"', html)) == 2
     assert 'data-binder-prev' in html and 'data-binder-next' in html
     assert 'data-wanted-section' in html

@@ -6,6 +6,7 @@
     {{ with .Description }}<p class="description">{{ . }}</p>{{ end }}
   </header>
   <div class="gallery-content binder-intro">{{ .Content }}</div>
+  <p class="emolga-image-note"><strong>About the images.</strong> Local TCGdex or DoubleHolo images show the catalogued card where available; foil and edition may differ. Six cards retain photo crops where no trustworthy provider image was found. Select a card for its image source and review notes.</p>
   {{ partial "binder.html" . }}
   <section class="emolga-wanted" data-wanted-section aria-labelledby="emolga-wanted-heading">
     <p class="emolga-preview-status">Separate from the owned binder</p>

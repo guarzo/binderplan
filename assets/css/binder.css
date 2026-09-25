@@ -276,6 +276,20 @@ button.binder-pocket:focus-visible {
   text-transform: uppercase;
 }
 
+.emolga-image-note {
+  max-width: 68ch;
+  margin: clamp(1.5rem, 3vw, 2.5rem) auto 0;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--border-faint);
+  color: var(--text-muted);
+  font-size: 0.86rem;
+  line-height: 1.6;
+}
+
+.emolga-image-note strong {
+  color: var(--text-primary);
+}
+
 .emolga-wanted {
   max-width: 54rem;
   margin: clamp(4rem, 8vw, 7rem) auto 2rem;

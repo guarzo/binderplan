@@ -108,9 +108,9 @@
                    loading="{{ if $.eager }}eager{{ else }}lazy{{ end }}"
                    {{ if $.eager }}data-initial-binder-image{{ end }}>
             {{ end }}
-            {{ if or (eq $classification "proxy") (eq .placement.status "pending") (eq $card.confidence "uncertain") }}
+            {{ if or (and (eq $classification "proxy") (ne $.binderID "emolga-masterset")) (eq .placement.status "pending") (eq $card.confidence "uncertain") }}
               <span class="pocket-states">
-                {{ if eq $classification "proxy" }}<span class="pocket-state">{{ if eq $.binderID "emolga-masterset" }}Catalog scan{{ else }}Reference image{{ end }}</span>{{ end }}
+                {{ if and (eq $classification "proxy") (ne $.binderID "emolga-masterset") }}<span class="pocket-state">Reference image</span>{{ end }}
                 {{ if eq .placement.status "pending" }}<span class="pocket-state">Placement pending</span>{{ end }}
                 {{ if eq $card.confidence "uncertain" }}<span class="pocket-state">Printing uncertain</span>{{ end }}
               </span>
