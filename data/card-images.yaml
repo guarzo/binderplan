@@ -492,7 +492,8 @@ cards:
     crop_box: [580, 975, 1115, 1750]
     reviewed: true
     reviewed_on: '2026-09-24'
-    note: Published page photo; set uncertain.
+    note: Published page photo and catalog support Master Deck Build Box EX 010/046;
+      not checked in hand.
   emolga-12:
     provider: tcgdex
     upstream_id: bw11-49
@@ -578,7 +579,8 @@ cards:
     crop_box: [580, 960, 1115, 1755]
     reviewed: true
     reviewed_on: '2026-09-24'
-    note: Published page photo; footer and set require in-hand check.
+    note: Published page photo and catalog support GX Starter Decks 039/131;
+      small footer not checked in hand.
   emolga-20:
     provider: tcgdex
     upstream_id: sm9-46

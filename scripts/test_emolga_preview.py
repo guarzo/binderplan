@@ -83,6 +83,15 @@ def test_new_binder_does_not_require_prior_pending_placements():
     assert digital_binder.validate_transition(previous, current) == []
 
 
+def test_photo_supported_fallbacks_do_not_call_the_set_uncertain():
+    registry = digital_binder.load_registry(ROOT / "docs/card-registry.md")
+    images = yaml.safe_load((ROOT / "data/card-images.yaml").read_text())["cards"]
+    for card_id in ("emolga-11", "emolga-19"):
+        assert registry[card_id]["confidence"] == "photo"
+        assert "set uncertain" not in images[card_id]["note"].lower()
+        assert "not checked in hand" in images[card_id]["note"]
+
+
 def test_stamped_emolga_and_masterset_copy_have_distinct_card_ids():
     stamped = yaml.safe_load((ROOT / "data/binders/stamped-cards.yaml").read_text())
     masterset = yaml.safe_load((ROOT / "data/binders/emolga-masterset.yaml").read_text())
@@ -218,7 +227,7 @@ def test_crops_are_traced_to_unchanged_archived_photographs():
     images = yaml.safe_load((ROOT / "data/card-images.yaml").read_text())["cards"]
     archive = ROOT / "docs/evidence/2026-09-24/emolga-masterset"
     assert len(manifest["leaves"]) == 11
-    provider_count = 0
+    provider_ids = set()
     for leaf in manifest["leaves"]:
         assert len(leaf["pockets"]) == 4
         for pocket in leaf["pockets"]:
@@ -236,24 +245,27 @@ def test_crops_are_traced_to_unchanged_archived_photographs():
                     assert 0 <= top < bottom <= source.height
                     assert crop.size == (right - left, bottom - top)
             else:
-                provider_count += 1
+                provider_ids.add(pocket["card_id"])
                 assert record["provider"] in {"tcgdex", "doubleholo"}
                 assert record["classification"] in {"proxy", "exact"}
                 assert record["source_url"].startswith("https://")
                 assert record["reviewed"] is True
                 if record["classification"] == "proxy":
                     assert record["note"]
-    assert provider_count == 36
+    assert len(provider_ids) == 36
     for fallback in ("emolga-11", "emolga-19", "emolga-36", "emolga-38", "emolga-42", "emolga-43"):
         assert images[fallback]["provider"] == "evidence-crop"
     receipts = json.loads((ROOT / "docs/evidence/2026-09-25/emolga-provider-sources/receipts.json").read_text())
     provider_archive = ROOT / "docs/evidence/2026-09-25/emolga-provider-sources"
     assert len(receipts) == 34
+    receipt_ids = set()
     for receipt in receipts:
         source = provider_archive / receipt["filename"]
         assert hashlib.sha256(source.read_bytes()).hexdigest() == receipt["sha256"]
         for card_id in receipt["card_ids"]:
+            receipt_ids.add(card_id)
             assert images[card_id]["source_url"] == receipt["url"]
+    assert receipt_ids == provider_ids
     for source in (ROOT / "static/images/binder/emolga-masterset").iterdir():
         if source.is_file():
             assert hashlib.sha256(source.read_bytes()).digest() == hashlib.sha256((archive / source.name).read_bytes()).digest()
