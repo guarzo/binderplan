@@ -2,7 +2,9 @@
 
 from html.parser import HTMLParser
 from pathlib import Path
+import shutil
 import subprocess
+import sys
 
 from PIL import Image
 
@@ -76,6 +78,12 @@ def test_slab_routes_keep_local_objects_and_have_an_independent_inspector(site, 
         with Image.open(preview) as asset:
             assert asset.width == 720
         assert f"../../images/slab-previews/{filename}.webp 720w" in photo.get("srcset", "")
+        if int(photo["width"]) >= 1080:
+            larger = ROOT / "static/images/slab-previews" / f"{filename}-1080.webp"
+            assert larger.exists(), larger
+            with Image.open(larger) as asset:
+                assert asset.width == 1080
+            assert f"../../images/slab-previews/{filename}-1080.webp 1080w" in photo["srcset"]
         assert photo.get("sizes")
     for scan in page.images[owned:]:
         assert "srcset" not in scan
@@ -83,6 +91,7 @@ def test_slab_routes_keep_local_objects_and_have_an_independent_inspector(site, 
     assert len([dialog for dialog in page.dialogs if dialog.get("id") == "slab-inspector"]) == 1
     assert len([dialog for dialog in page.dialogs if dialog.get("id") == "lightbox"]) == 1
     assert any("/js/slab-inspector" in script for script in page.scripts)
+    assert 'data-slab-inspector-error hidden role="status"' in html
     assert "data-slab-inspector-zoom" in html
     assert "data-slab-inspector-previous" in html
     assert "data-slab-inspector-next" in html
@@ -90,6 +99,21 @@ def test_slab_routes_keep_local_objects_and_have_an_independent_inspector(site, 
     if wanted:
         assert "data-slab-wanted" in html
         assert [len(group) for group in page.groups] == [owned, wanted]
+
+
+def test_preview_check_rejects_a_stale_wall_image(tmp_path):
+    script = tmp_path / "scripts/make-slab-previews.py"
+    script.parent.mkdir()
+    shutil.copy2(ROOT / "scripts/make-slab-previews.py", script)
+    originals = tmp_path / "static/images/slabs"
+    originals.mkdir(parents=True)
+    Image.new("RGB", (1200, 2000), "red").save(originals / "sample.jpg")
+    subprocess.run([sys.executable, str(script)], check=True)
+    preview = tmp_path / "static/images/slab-previews/sample.webp"
+    preview.write_bytes(b"a stale derivative")
+    result = subprocess.run([sys.executable, str(script), "--check"], capture_output=True, text=True)
+    assert result.returncode != 0
+    assert "sample.webp" in result.stdout + result.stderr
 
 
 def test_side_gallery_keeps_its_existing_viewer_without_slab_script(site):

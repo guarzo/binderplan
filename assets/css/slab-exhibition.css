@@ -142,6 +142,7 @@
   .gallery-page--slab .gallery-item { min-height: calc(70dvh + 5rem); }
   .gallery-page--slab [data-slab-wanted] .gallery-item { min-height: calc(min(46vh, 24rem) + 3rem); }
   .gallery-page--slab .gallery-item img { max-height: 70dvh; }
+  .gallery-page--slab [data-slab-wanted] img { max-height: 24rem; }
   .slab-inspector { width: 100vw; height: 100dvh; padding: 0.75rem; border: 0; }
   .slab-inspector-position { min-width: 0; line-height: 1.3; }
   .slab-inspector-toolbar button { flex: none; }

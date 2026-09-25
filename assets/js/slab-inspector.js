@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let group = [];
   let index = 0;
   let opener = null;
+  let fallbackSrc = '';
 
   function fit() {
     dialog.classList.remove('is-enlarged');
@@ -35,7 +36,9 @@ document.addEventListener('DOMContentLoaded', () => {
       : `Slab ${index + 1} of ${group.length}`;
     description.replaceChildren(...Array.from(caption.childNodes, (node) => node.cloneNode(true)));
     image.alt = photo.alt;
+    fallbackSrc = photo.currentSrc && photo.currentSrc !== photo.src ? photo.currentSrc : '';
     error.hidden = true;
+    error.textContent = 'Photograph unavailable. The description remains below.';
     image.hidden = false;
     image.src = photo.src;
     previous.disabled = index === 0;
@@ -45,6 +48,14 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   image.addEventListener('error', () => {
+    if (fallbackSrc) {
+      image.src = fallbackSrc;
+      fallbackSrc = '';
+      zoom.disabled = true;
+      error.textContent = 'Full-size photograph unavailable. Showing the gallery preview.';
+      error.hidden = false;
+      return;
+    }
     image.hidden = true;
     error.hidden = false;
     zoom.disabled = true;

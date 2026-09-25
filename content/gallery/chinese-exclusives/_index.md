@@ -29,7 +29,7 @@ Chinese-market releases have their own sets, their own numbering, and their own 
     <figcaption><strong>Maushold ex.</strong> A special art from the Chinese Scarlet &amp; Violet line.</figcaption>
   </figure>
   <figure class="gallery-item span-narrow">
-    <img src="../../images/slabs/chinese_carmine_sar.jpg" width="1450" height="2400" srcset="../../images/slab-previews/chinese_carmine_sar.webp 720w, ../../images/slabs/chinese_carmine_sar.jpg 1450w" sizes="(max-width: 700px) 82vw, 360px" alt="Graded Chinese Carmine special art rare trainer card" loading="lazy">
+    <img src="../../images/slabs/chinese_carmine_sar.jpg" width="1450" height="2400" srcset="../../images/slab-previews/chinese_carmine_sar.webp 720w, ../../images/slab-previews/chinese_carmine_sar-1080.webp 1080w, ../../images/slabs/chinese_carmine_sar.jpg 1450w" sizes="(max-width: 700px) 82vw, 360px" alt="Graded Chinese Carmine special art rare trainer card" loading="lazy">
     <figcaption><strong>Carmine.</strong> A Chinese-exclusive trainer special art.</figcaption>
   </figure>
 </div>
