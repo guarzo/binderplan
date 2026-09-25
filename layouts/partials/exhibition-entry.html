@@ -16,7 +16,9 @@
 {{ if $available }}
   {{ $path := printf "/gallery/%s" $item.slug }}
   {{ if not (site.GetPage $path) }}{{ errorf "exhibition destination %q does not exist" $path }}{{ end }}
-  <a class="{{ $class }}" href="{{ printf "gallery/%s/" $item.slug | relURL }}">
+  {{ $href := printf "gallery/%s/" $item.slug | relURL }}
+  {{ with $item.fragment }}{{ $href = printf "%s#%s" $href . }}{{ end }}
+  <a class="{{ $class }}" href="{{ $href }}">
     <span class="exhibition-entry-title">{{ $item.title }}</span>
     {{ if eq $variant "directory" }}<span class="exhibition-entry-description">{{ $item.description }}</span>{{ end }}
   </a>

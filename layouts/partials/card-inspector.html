@@ -16,6 +16,10 @@
       <div><dt>Image source</dt><dd data-card-inspector-field="image-source"></dd></div>
       <div><dt>Image notes</dt><dd data-card-inspector-field="image-note"></dd></div>
       <div><dt>Placement</dt><dd data-card-inspector-field="placement"></dd></div>
+      {{ if eq .id "holding" }}
+        <div><dt>Sort decision</dt><dd data-card-inspector-field="sort-status"></dd></div>
+        <div><dt>Identity confidence</dt><dd data-card-inspector-field="identity-confidence"></dd></div>
+      {{ end }}
     </dl>
   </div>
 </dialog>

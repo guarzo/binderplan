@@ -53,13 +53,17 @@ jobs:
             DIGITAL_BINDER_PREVIOUS_REF="$(git rev-parse HEAD^)"
             export DIGITAL_BINDER_PREVIOUS_REF
           fi
-          python -m pytest scripts/test_check_registry.py scripts/test_digital_binder.py scripts/test_emolga_preview.py scripts/test_stamped_cards.py scripts/test_site_foundation.py scripts/test_slab_exhibition.py -q
+          python -m pytest \
+            scripts/test_check_registry.py scripts/test_digital_binder.py scripts/test_emolga_preview.py \
+            scripts/test_stamped_cards.py scripts/test_site_foundation.py scripts/test_slab_exhibition.py \
+            scripts/test_holding_binder.py scripts/test_holding_gallery.py -q
           python scripts/check-gallery.py
           python scripts/make-slab-previews.py --check
           node scripts/test_slab_js_behavior.mjs
           node --test scripts/test_binder_js_behavior.mjs
           python scripts/check-registry.py docs/card-registry.md
           python scripts/check-digital-binder.py --check
+          python scripts/holding_binder.py --check
 
       - name: Setup Pages
         id: pages

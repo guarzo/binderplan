@@ -24,8 +24,10 @@ Production builds use `hugo --gc --minify --baseURL <url>` via GitHub Actions.
 - `content/` - Markdown content organized into philosophy, gallery, and guides sections
 - `layouts/` - Go HTML templates (`_default/`, `partials/`, `gallery/`)
 - `assets/images/cards/` - Reviewed per-card assets for the reconstructed Volume I/II, Stamped Cards, and Emolga binders
+- `assets/images/holding/` - Holding photo-crop fallbacks and reviewed catalogue derivatives
 - `static/images/` - Photo-based side-binder and slab gallery source images
 - `data/binders/` - Volume, Stamped Cards, and Emolga leaf order, pocket placement, and placement evidence
+- `data/holding-binder.yaml` - Holding photographed pocket order and five separately top-loaded Trade cards
 - `data/card-images.yaml` - Card-image fidelity and provenance metadata
 - `hugo.toml` - Site configuration with menu structure
 
@@ -55,9 +57,9 @@ For the reconstructed thematic binders:
 - Record image fidelity and provenance in `data/card-images.yaml`.
 - Record Volume I/II leaf and pocket placement in `data/binders/volume-1.yaml` or `data/binders/volume-2.yaml`; Stamped Cards and Emolga use their respective manifests in `data/binders/`.
 - Keep identity-only metadata in `docs/card-registry.md`; do not add pocket location there.
-- Do not add photographed Volume I/II, Stamped Cards, or Emolga spreads back to inline gallery markup in their `_index.md` files.
+- Do not add photographed Volume I/II, Stamped Cards, Holding, or Emolga spreads back to inline gallery markup in their `_index.md` files.
 
-The remaining photo-based side binders use `static/images/binder/<gallery>/` and inline gallery markup. Stamped Cards and the four-pocket Emolga Masterset use reviewed local card assets and archived page-photo evidence, not public page photos. Emolga's reviewed provider responses are also archived under `docs/evidence/`. Slabs remain under `static/images/slabs/`.
+Holding uses `data/holding-binder.yaml` and reviewed local images, with its photo crops retained as reproducible fallbacks. Run `python scripts/holding_binder.py --check` after changes; only the five top-loaded Trade cards are actively available, and their digital page does not establish physical pockets. Stamped Cards and the four-pocket Emolga Masterset use reviewed local card assets and archived page-photo evidence, not public page photos. Emolga's reviewed provider responses are also archived under `docs/evidence/`. The remaining photo-based side binders use `static/images/binder/<gallery>/` and inline gallery markup. Slabs remain under `static/images/slabs/`.
 
 Photo-gallery markup pattern:
 ```html
