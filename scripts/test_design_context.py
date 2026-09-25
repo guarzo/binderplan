@@ -31,7 +31,7 @@ def test_design_frontmatter_and_sidecar_match_shipped_colors():
 def test_repository_has_one_canonical_agent_guide_and_current_product_context():
     assert (ROOT / "AGENTS.md").is_file()
     assert "AGENTS.md" in (ROOT / "CLAUDE.md").read_text()
-    product = (ROOT / "PRODUCT.md").read_text()
+    product = (ROOT / "PRODUCT.md").read_text(encoding="utf-8")
     assert "\nbrand\n" in product
     assert "five still-owned Holding cards" in product
     assert "Trainer Full Arts is a four-page digital sequence" in product
