@@ -1,0 +1,7 @@
+{{ $source := resources.Get "images/cards/snivy-04.webp" }}
+{{ if not $source }}{{ errorf "missing Snivy evidence photo" }}{{ end }}
+{{ $photo := $source.Resize "900x webp q86" }}
+<figure>
+  <img src="{{ $photo.RelPermalink }}" width="{{ $photo.Width }}" height="{{ $photo.Height }}" loading="lazy" alt="Japanese Snivy 034/BW-P photographed in hand, with event mark visible; page-eight pocket unknown">
+  <figcaption>Snivy 034/BW-P, owner-supplied original photo. Not in the PDF; approved for provisional page 8. Its pocket, edition, and finish have not been independently established.</figcaption>
+</figure>
