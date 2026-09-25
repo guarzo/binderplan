@@ -5063,6 +5063,18 @@ def test_stamped_manifest_uses_shared_cross_binder_validation():
     assert sum(leaf["kind"] == "cards" for leaf in manifests["stamped-cards"]["leaves"]) == 7
 
 
+def test_missing_published_stamped_manifest_cannot_silently_pass(tmp_path):
+    root = project_fixture(tmp_path)
+    route = root / "content/gallery/stamped-cards/_index.md"
+    route.parent.mkdir(parents=True)
+    route.write_text('---\ntitle: Stamped Cards\nbinder: stamped-cards\n---\n')
+
+    errors = []
+    digital_binder._load_project_manifests(root, errors)
+
+    assert "missing binder manifest: data/binders/stamped-cards.yaml" in errors
+
+
 def test_strict_public_check_rejects_missing_stamped_route(tmp_path):
     write_valid_strict_public_binders(tmp_path)
     (tmp_path / "gallery/stamped-cards/index.html").unlink()

@@ -454,6 +454,16 @@ def test_worklist_renders_the_by_page_section():
     assert "ledger.md" in doc.split("## 6.")[1]
 
 
+def test_by_page_worklist_discloses_its_historical_mapping_limit():
+    doc = render_worklist(parse_registry(table(
+        unc("ditto-01", "Ditto", "enduring_presence_1.webp 2026-08-01"),
+    )))
+    section = doc.split("## 6. Confirmation queue by page", 1)[1]
+    assert "first_seen" in section
+    assert "card-validation-checklist.md" in section
+    assert "Unmapped source image" in section
+
+
 def test_by_page_section_follows_the_species_view():
     doc = render_worklist(parse_registry(table(
         unc("ditto-01", "Ditto", "enduring_presence_1.webp 2026-08-01"),

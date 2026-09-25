@@ -561,6 +561,8 @@ def _load_project_manifests(root: Path, errors: list[str]) -> dict[str, dict]:
                 manifests[binder_id] = load_yaml(path)
             except ValueError as exc:
                 errors.append(str(exc))
+        elif (root / "content" / "gallery" / binder_id / "_index.md").is_file():
+            errors.append(f"missing binder manifest: {path.relative_to(root)}")
     return manifests
 
 
