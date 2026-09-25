@@ -1,0 +1,378 @@
+[
+  {
+    "filename": "doubleholo-11522.webp",
+    "provider": "doubleholo",
+    "upstream_id": "11522",
+    "url": "https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/11522/primary.webp",
+    "card_ids": [
+      "emolga-07"
+    ],
+    "sha256": "fa2a96c354e8a8ebc5224811dbd0b29fcba4ab252cf595c457170a313ea3f5dc",
+    "bytes": 44440
+  },
+  {
+    "filename": "doubleholo-18830.webp",
+    "provider": "doubleholo",
+    "upstream_id": "18830",
+    "url": "https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/18830/primary.webp",
+    "card_ids": [
+      "emolga-37"
+    ],
+    "sha256": "6872d33c11c331a36678e63dde54fcf2bb92e465d0b63e16ec40fca7e976c103",
+    "bytes": 41178
+  },
+  {
+    "filename": "doubleholo-26970.webp",
+    "provider": "doubleholo",
+    "upstream_id": "26970",
+    "url": "https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/26970/primary.webp",
+    "card_ids": [
+      "emolga-40"
+    ],
+    "sha256": "0d3109b2a4170b2ddfea1a877fd8101889ad37029d3ca7590af94061a1a89b28",
+    "bytes": 36014
+  },
+  {
+    "filename": "doubleholo-31409.webp",
+    "provider": "doubleholo",
+    "upstream_id": "31409",
+    "url": "https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/31409/primary.webp",
+    "card_ids": [
+      "emolga-31"
+    ],
+    "sha256": "db2853cd17cdd903641cb1416b5d9ad99299470ee24eca89b3c9475b1bd92b6d",
+    "bytes": 126992
+  },
+  {
+    "filename": "doubleholo-36656.webp",
+    "provider": "doubleholo",
+    "upstream_id": "36656",
+    "url": "https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/36656/primary.webp",
+    "card_ids": [
+      "emolga-15"
+    ],
+    "sha256": "70abc18fb57db9877eedc404eb34c7b021b924b34b4a4b3fd36a0c8a96cf5aae",
+    "bytes": 22722
+  },
+  {
+    "filename": "doubleholo-44928.webp",
+    "provider": "doubleholo",
+    "upstream_id": "44928",
+    "url": "https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/44928/primary.webp",
+    "card_ids": [
+      "emolga-29"
+    ],
+    "sha256": "97f5c6bf807ef636b535b8c77d3a7fe35cc698747836a096926122072d533c59",
+    "bytes": 103668
+  },
+  {
+    "filename": "doubleholo-66193.webp",
+    "provider": "doubleholo",
+    "upstream_id": "66193",
+    "url": "https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/66193/primary.webp",
+    "card_ids": [
+      "emolga-04"
+    ],
+    "sha256": "da04ab828e358d270c95d138ff409f2d80fd93efbb5aae55a433afcb3b223ca4",
+    "bytes": 10914
+  },
+  {
+    "filename": "doubleholo-69293.webp",
+    "provider": "doubleholo",
+    "upstream_id": "69293",
+    "url": "https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/69293/primary.webp",
+    "card_ids": [
+      "emolga-23"
+    ],
+    "sha256": "8260cd1dfa9c903bb840003241f1d9cc2ccdc2a9ebbdc0a1c26f55d24a81d580",
+    "bytes": 74764
+  },
+  {
+    "filename": "doubleholo-71868.webp",
+    "provider": "doubleholo",
+    "upstream_id": "71868",
+    "url": "https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/71868/primary.webp",
+    "card_ids": [
+      "emolga-21"
+    ],
+    "sha256": "4b40451aad4893dde0ced1401bcb7e420d9b3d4e918085a008a4989e304fd831",
+    "bytes": 79128
+  },
+  {
+    "filename": "doubleholo-74826.webp",
+    "provider": "doubleholo",
+    "upstream_id": "74826",
+    "url": "https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/74826/primary.webp",
+    "card_ids": [
+      "emolga-03"
+    ],
+    "sha256": "281067b9f9fde2ba2b1789293a96a43cf86bb264393dd029f6aaa5ec1045022c",
+    "bytes": 76358
+  },
+  {
+    "filename": "doubleholo-75142.webp",
+    "provider": "doubleholo",
+    "upstream_id": "75142",
+    "url": "https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/75142/primary.webp",
+    "card_ids": [
+      "emolga-10"
+    ],
+    "sha256": "965230be441eab9ad5d613509a40901093cae71e14aeb9ff0dbceafe7612429e",
+    "bytes": 83260
+  },
+  {
+    "filename": "doubleholo-75756.webp",
+    "provider": "doubleholo",
+    "upstream_id": "75756",
+    "url": "https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/75756/primary.webp",
+    "card_ids": [
+      "emolga-13"
+    ],
+    "sha256": "adbc219ac7b890c79bce8ef070cef10d7b65a4698838639b90846bff3b9f54b4",
+    "bytes": 108422
+  },
+  {
+    "filename": "doubleholo-75876.webp",
+    "provider": "doubleholo",
+    "upstream_id": "75876",
+    "url": "https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/75876/primary.webp",
+    "card_ids": [
+      "emolga-33"
+    ],
+    "sha256": "c04c08f7ffa455c826e640d51e2690526f451e13410275787359190d2bc707b7",
+    "bytes": 74766
+  },
+  {
+    "filename": "doubleholo-75877.webp",
+    "provider": "doubleholo",
+    "upstream_id": "75877",
+    "url": "https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/75877/primary.webp",
+    "card_ids": [
+      "emolga-35"
+    ],
+    "sha256": "c9812ccf06af8da171eeab8de790b31c4017d290d02ece046c5958e2d2d48908",
+    "bytes": 65820
+  },
+  {
+    "filename": "doubleholo-76599.webp",
+    "provider": "doubleholo",
+    "upstream_id": "76599",
+    "url": "https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/76599/primary.webp",
+    "card_ids": [
+      "emolga-08"
+    ],
+    "sha256": "eda824d8bca1f2e9df4d71a9bc9e09d8ed27dd7d28511248683ace2a5cac0e47",
+    "bytes": 78390
+  },
+  {
+    "filename": "doubleholo-79860.webp",
+    "provider": "doubleholo",
+    "upstream_id": "79860",
+    "url": "https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/79860/primary.webp",
+    "card_ids": [
+      "emolga-16"
+    ],
+    "sha256": "dc32a8c910c657250902579f2fc3b12084c5ebf96d133f2a81c54922cefa32f1",
+    "bytes": 49958
+  },
+  {
+    "filename": "doubleholo-80582.webp",
+    "provider": "doubleholo",
+    "upstream_id": "80582",
+    "url": "https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/80582/primary.webp",
+    "card_ids": [
+      "emolga-18"
+    ],
+    "sha256": "3fd29660e48a11c02a54dc99a1e67e99c4e7a037d629190860ecb85b5f05f8b2",
+    "bytes": 77920
+  },
+  {
+    "filename": "doubleholo-80641.webp",
+    "provider": "doubleholo",
+    "upstream_id": "80641",
+    "url": "https://navythaxplgdibyahpqb.supabase.co/storage/v1/object/public/card-images/card_images/80641/primary.webp",
+    "card_ids": [
+      "emolga-06",
+      "emolga-41"
+    ],
+    "sha256": "74ebbf9cdbd5750c509f14558c94f5c77590e94d01f0e4465e1fd78036e3be56",
+    "bytes": 82494
+  },
+  {
+    "filename": "tcgdex-S11-038.webp",
+    "provider": "tcgdex",
+    "upstream_id": "S11-038",
+    "url": "https://assets.tcgdex.net/ja/S/S11/038/high.webp",
+    "card_ids": [
+      "emolga-25"
+    ],
+    "sha256": "9bdbdc1ae388d84661eb3cc353b2ef3b644d7af15f693e232d0f6ed8d840344b",
+    "bytes": 79804
+  },
+  {
+    "filename": "tcgdex-SV6-042.webp",
+    "provider": "tcgdex",
+    "upstream_id": "SV6-042",
+    "url": "https://assets.tcgdex.net/ja/SV/SV6/042/high.webp",
+    "card_ids": [
+      "emolga-27"
+    ],
+    "sha256": "9968730449210f856d65bf536500accff526a9d0ff8495469e53c27a310e2f38",
+    "bytes": 66090
+  },
+  {
+    "filename": "tcgdex-bw11-49.webp",
+    "provider": "tcgdex",
+    "upstream_id": "bw11-49",
+    "url": "https://assets.tcgdex.net/en/bw/bw11/49/high.webp",
+    "card_ids": [
+      "emolga-12"
+    ],
+    "sha256": "1dc285b8926907ce52bf1c0119cf2fe5fb8626ff48c1ea6f764fa7d71803b4bb",
+    "bytes": 85804
+  },
+  {
+    "filename": "tcgdex-bw11-RC23.webp",
+    "provider": "tcgdex",
+    "upstream_id": "bw11-RC23",
+    "url": "https://assets.tcgdex.net/en/bw/bw11/RC23/high.webp",
+    "card_ids": [
+      "emolga-14"
+    ],
+    "sha256": "aa7423a029bbc2cadbe455f4c5d9486db3cd1e58be4fd0834ab97330d25c36ca",
+    "bytes": 48382
+  },
+  {
+    "filename": "tcgdex-bw2-32.webp",
+    "provider": "tcgdex",
+    "upstream_id": "bw2-32",
+    "url": "https://assets.tcgdex.net/en/bw/bw2/32/high.webp",
+    "card_ids": [
+      "emolga-44",
+      "emolga-39"
+    ],
+    "sha256": "93275813d7005578532c2b147a0e3e2bbc149a7a8ac4c1bcb1661d54343cabc2",
+    "bytes": 67758
+  },
+  {
+    "filename": "tcgdex-bw3-37.webp",
+    "provider": "tcgdex",
+    "upstream_id": "bw3-37",
+    "url": "https://assets.tcgdex.net/en/bw/bw3/37/high.webp",
+    "card_ids": [
+      "emolga-05"
+    ],
+    "sha256": "35057751351396439181b2d81a72e9aa2886d63d053359db842061248eefbd6b",
+    "bytes": 70594
+  },
+  {
+    "filename": "tcgdex-bw6-45.webp",
+    "provider": "tcgdex",
+    "upstream_id": "bw6-45",
+    "url": "https://assets.tcgdex.net/en/bw/bw6/45/high.webp",
+    "card_ids": [
+      "emolga-09"
+    ],
+    "sha256": "6ed12948eaf4679c4754bd2f745a00cda5e7273d47ca23c874b720d7574e9dfe",
+    "bytes": 72472
+  },
+  {
+    "filename": "tcgdex-sm4-35.webp",
+    "provider": "tcgdex",
+    "upstream_id": "sm4-35",
+    "url": "https://assets.tcgdex.net/en/sm/sm4/35/high.webp",
+    "card_ids": [
+      "emolga-17"
+    ],
+    "sha256": "c416ab692ac9cfcff6bb16ea9c81e45cd256fb62edd1a9622b6b68af56aa9b57",
+    "bytes": 67848
+  },
+  {
+    "filename": "tcgdex-sm9-46.webp",
+    "provider": "tcgdex",
+    "upstream_id": "sm9-46",
+    "url": "https://assets.tcgdex.net/en/sm/sm9/46/high.webp",
+    "card_ids": [
+      "emolga-20"
+    ],
+    "sha256": "2c2c28c77e4d2a264cd52ebfb3fd41ad25d4cf261d62996c919e6139699559fb",
+    "bytes": 72926
+  },
+  {
+    "filename": "tcgdex-sv06-069.webp",
+    "provider": "tcgdex",
+    "upstream_id": "sv06-069",
+    "url": "https://assets.tcgdex.net/en/sv/sv06/069/high.webp",
+    "card_ids": [
+      "emolga-26"
+    ],
+    "sha256": "3dfa5f178a891969eed7ee2be90fe89ecf20965cdd48f59aa52a2e15c0a51da3",
+    "bytes": 61920
+  },
+  {
+    "filename": "tcgdex-sv10.5b-029.webp",
+    "provider": "tcgdex",
+    "upstream_id": "sv10.5b-029",
+    "url": "https://assets.tcgdex.net/en/sv/sv10.5b/029/high.webp",
+    "card_ids": [
+      "emolga-28"
+    ],
+    "sha256": "0df7611cde829f4dbfc450f7e72c0ce697b724998c78bc999e1a8ab3a6a1ea2e",
+    "bytes": 70464
+  },
+  {
+    "filename": "tcgdex-sv10.5b-112.webp",
+    "provider": "tcgdex",
+    "upstream_id": "sv10.5b-112",
+    "url": "https://assets.tcgdex.net/en/sv/sv10.5b/112/high.webp",
+    "card_ids": [
+      "emolga-30"
+    ],
+    "sha256": "c974396bef723bb70c4310e4ee90194a6d7885dfb9b6f87c7f47e993c43eda09",
+    "bytes": 75384
+  },
+  {
+    "filename": "tcgdex-swsh12-054.webp",
+    "provider": "tcgdex",
+    "upstream_id": "swsh12-054",
+    "url": "https://assets.tcgdex.net/en/swsh/swsh12/054/high.webp",
+    "card_ids": [
+      "emolga-24"
+    ],
+    "sha256": "620dac2fe23e20e637f6bf17d74cfdc819b198ce45d5dd2ac77c26d5c95f6931",
+    "bytes": 68644
+  },
+  {
+    "filename": "tcgdex-swsh7-57.webp",
+    "provider": "tcgdex",
+    "upstream_id": "swsh7-57",
+    "url": "https://assets.tcgdex.net/en/swsh/swsh7/57/high.webp",
+    "card_ids": [
+      "emolga-22"
+    ],
+    "sha256": "70015e219e9a1f2953a3279bd45a66b212c7ffd739c64b5e7ae2201d3ec3ca28",
+    "bytes": 69528
+  },
+  {
+    "filename": "tcgdex-xy1-143.webp",
+    "provider": "tcgdex",
+    "upstream_id": "xy1-143",
+    "url": "https://assets.tcgdex.net/en/xy/xy1/143/high.webp",
+    "card_ids": [
+      "emolga-34"
+    ],
+    "sha256": "c6bdfc0df3537d7946d9e0c2b4b22b08b90e0fa13eaff2ae42e00c704e9b7973",
+    "bytes": 76618
+  },
+  {
+    "filename": "tcgdex-xy1-46.webp",
+    "provider": "tcgdex",
+    "upstream_id": "xy1-46",
+    "url": "https://assets.tcgdex.net/en/xy/xy1/46/high.webp",
+    "card_ids": [
+      "emolga-32"
+    ],
+    "sha256": "04c7d17c30ef9bebcfec0745db92a4d26ebcf0ea6962b2dc5b07cac3139c8f27",
+    "bytes": 94920
+  }
+]

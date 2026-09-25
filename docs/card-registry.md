@@ -28,6 +28,8 @@ The column is left as recorded rather than rewritten: `first_seen` is provenance
 
 **Validate with:** `python scripts/check-registry.py docs/card-registry.md`
 
+**Confidence scope for Emolga masterset:** `photo` means the published photo and catalogue comparison support the recorded set/number identity; it does not mean the card was checked in hand, authenticated, or identified to a particular holographic variant or finish. `uncertain` remains for entries whose product or set identity is unresolved. No exact scans have been approved.
+
 **2026-09-20 verification scope.** The owner checked the character and printed number for the 20 in-binder entries on the [completed checklist](evidence/2026-09-20/validation/completed-checklist.pdf), not their set names. Those ticks do not upgrade printing confidence. Bulbasaur's `Corocoro Promo` set was supplied separately; the explicit Umbreon, Latios and Dratini corrections are recorded below. See the [evidence notes](evidence/2026-09-20/README.md) for the checked IDs and limitations.
 
 **Stamped Cards photo provenance.** For pages 1–6, `stamp_N.jpg 2026-03-18` means the derivative was published by that date, not that the camera exposure occurred then. Page 7 cites the owner's replacement `stamped.jpeg 2026-09-20`, received that day, not the earlier published page. `IMG_7148.HEIC 2026-09-24` is an owner upload received that day; its EXIF camera clock has not been verified. PDF catalogue rows are identity leads only and do not verify editions, stamps, finishes or currently occupied pockets.
@@ -96,6 +98,48 @@ The column is left as recorded rather than rewritten: `first_seen` is provenance
 | electrode-01 | Electrode | マルマイン | JP | sm1 | 037/095 | photo | companions_2.webp 2026-08-01 |  |
 | emolga-01 | Emolga | エモンガ | JP | sv11B | 116/086 | confirmed | joyful_action_1.webp 2026-08-01 | checked in hand 2026-09-19 |
 | emolga-02 | Emolga | Emolga | EN |  |  | uncertain | stamp_2.jpg 2026-03-18 | Published by 2026-03-18; actual capture date unknown. PDF candidate Emerging Powers 32; distinguish from separately wanted 025/BW-P and 081/BW-P, not ownership evidence for those. |
+| emolga-03 | Emolga | エモンガ | JP | BW1 | 021/053 | photo | emolga_1.webp 2026-09-24 | Same cloud artwork; set code and number visible, variant unverified. |
+| emolga-04 | Emolga | Emolga | EN | McDonald's Collection 2012 | 6/12 | photo | emolga_1.webp 2026-09-24 | Cloud artwork with McDonald's logo and reflective field; catalog-matched identity, finish and authenticity unverified. |
+| emolga-05 | Emolga | Emolga | EN | Noble Victories | 37/101 | photo | emolga_2.webp 2026-09-24 | Open-winged woodland artwork; printed number visible. |
+| emolga-06 | Emolga | エモンガ | JP | Victini Formation Deck | 006/021 | photo | emolga_2.webp 2026-09-24 | Open-winged woodland artwork, pink mark at lower right; set associated via catalog, not checked in hand. |
+| emolga-07 | Emolga | Emolga | EN | Next Destinies | 49/99 | photo | emolga_2.webp 2026-09-24 | Branch-and-lightning artwork, patterned card face; finish not verified. |
+| emolga-08 | Emolga | エモンガ | JP | BKZ | 007/018 | photo | emolga_3.webp 2026-09-24 | Branch-and-lightning artwork; magnified photographed footer reads BKZ, matching Zekrom-EX Battle Strength Deck. |
+| emolga-09 | Emolga | Emolga | EN | Dragons Exalted | 45/124 | photo | emolga_3.webp 2026-09-24 | Dashing past tree trunks; printed number visible. |
+| emolga-10 | Emolga | エモンガ | JP | Dragon Blade | 017/050 | photo | emolga_3.webp 2026-09-24 | Dashing past tree trunks; set associated via catalog, code too small to trust. |
+| emolga-11 | Emolga | エモンガ | JP | Master Deck Build Box EX | 010/046 | photo | emolga_3.webp 2026-09-24 | Same running artwork, separately photographed pocket and different printed number. |
+| emolga-12 | Emolga | Emolga | EN | Legendary Treasures | 49/113 | photo | emolga_4.webp 2026-09-24 | Posing at a star-shaped opening. |
+| emolga-13 | Emolga | エモンガ | JP | EBB | 041/093 | photo | emolga_4.webp 2026-09-24 | Star-shaped opening; EBB set code visible. |
+| emolga-14 | Emolga | Emolga | EN | Legendary Treasures | RC23/RC25 | photo | emolga_4.webp 2026-09-24 | Pink heart full-art-style face; number associated via catalog, finish not reliably read. |
+| emolga-15 | Emolga | エモンガ | JP | Shiny Collection | 023/020 | photo | emolga_4.webp 2026-09-24 | Pink heart full-art-style face; SR mark visible, exact finish not verified. |
+| emolga-16 | Emolga | エモンガ | JP | BW-P | 236/BW-P | photo | emolga_5.webp 2026-09-24 | Blue Pokémon World Championships logo visible on forest artwork; distinct from missing 081/BW-P. |
+| emolga-17 | Emolga | Emolga | EN | Crimson Invasion | 35/111 | photo | emolga_5.webp 2026-09-24 | Flying through a storm, Energy Catch/Volt Switch text. |
+| emolga-18 | Emolga | エモンガ | JP | Awakened Heroes | 019/050 | photo | emolga_5.webp 2026-09-24 | Storm artwork; footer magnified from published photo, exact variant unverified. |
+| emolga-19 | Emolga | エモンガ | JP | GX Starter Decks | 039/131 | photo | emolga_5.webp 2026-09-24 | Storm artwork; footer appears 039/131, set associated via catalog, not checked in hand. |
+| emolga-20 | Emolga | Emolga | EN | Team Up | 46/181 | photo | emolga_6.webp 2026-09-24 | Blue-lit woodland scene; Nuzzly Gathering ability. |
+| emolga-21 | Emolga | エモンガ | JP | Dark Order | 009/052 | photo | emolga_6.webp 2026-09-24 | Blue-lit woodland scene; set associated via catalog, footer code not confidently read. |
+| emolga-22 | Emolga | Emolga | EN | Evolving Skies | 057/203 | photo | emolga_6.webp 2026-09-24 | Flying over a town; Thunder Shock attack. |
+| emolga-23 | Emolga | エモンガ | JP | Jet-Black Spirit | 023/070 | photo | emolga_6.webp 2026-09-24 | Flying over a town; Japanese counterpart artwork. |
+| emolga-24 | Emolga | Emolga | EN | Silver Tempest | 054/195 | photo | emolga_7.webp 2026-09-24 | Flying above flower-lined water; Lucky Find text. |
+| emolga-25 | Emolga | エモンガ | JP | Lost Abyss | 038/100 | photo | emolga_7.webp 2026-09-24 | Flying above flower-lined water; matching scene with Japanese text. |
+| emolga-26 | Emolga | Emolga | EN | Twilight Masquerade | 069/167 | photo | emolga_7.webp 2026-09-24 | Flying above coastal lighthouse; Sky Wave text. |
+| emolga-27 | Emolga | エモンガ | JP | Transformation Mask | 042/101 | photo | emolga_7.webp 2026-09-24 | Coastal lighthouse artwork; footer number visible. |
+| emolga-28 | Emolga | Emolga | EN | Black Bolt | 029/086 | photo | emolga_8.webp 2026-09-24 | Perched in a tree holding leaves; Call for Family. |
+| emolga-29 | Emolga | エモンガ | JP | Black Bolt | 032/086 | photo | emolga_8.webp 2026-09-24 | Tree-perch artwork; similar to English counterpart, distinct card. |
+| emolga-30 | Emolga | Emolga | EN | Black Bolt | 112/086 | photo | emolga_8.webp 2026-09-24 | Leafy illustration across card face; glare limits finish assessment. |
+| emolga-31 | Emolga | エモンガ | JP | sv11B | 116/086 | photo | emolga_8.webp 2026-09-24 | Leafy illustration rare artwork, AR on photographed footer; another physical copy, not Volume I emolga-01. |
+| emolga-32 | Emolga | Emolga EX | EN | XY | 46/146 | photo | emolga_9.webp 2026-09-24 | EX card flying toward viewer; energy glide artwork. |
+| emolga-33 | Emolga | エモンガEX | JP | Collection Y | 023/060 | photo | emolga_9.webp 2026-09-24 | Matching EX artwork with Japanese text; 023/060 RR mark visible in photo, exact finish not verified. |
+| emolga-34 | Emolga | Emolga EX | EN | XY | 143/146 | photo | emolga_9.webp 2026-09-24 | Close-up full-art EX; exact finish unverified. |
+| emolga-35 | Emolga | エモンガEX | JP | Collection Y | 062/060 | photo | emolga_9.webp 2026-09-24 | Close-up full-art EX with Japanese text and SR mark. |
+| emolga-36 | Emolga | 电飞鼠 | ZH |  | KD LEV-105 | uncertain | emolga_10.webp 2026-09-24 | Chinese-language stat-style Emolga print, SR; not established as a standard Pokémon TCG card. |
+| emolga-37 | Emolga | Emolga | EN | Team Up | 46/181 | photo | emolga_10.webp 2026-09-24 | Blue-lit woodland art with patterned reflective card face; separate copy from 06-1. |
+| emolga-38 | Emolga | 电飞鼠 | ZH | SM-P | 041/SM-P | photo | emolga_10.webp 2026-09-24 | Chinese-language storm artwork with ID.3 logo; no authenticity check. |
+| emolga-39 | Emolga | Emolga | EN | Emerging Powers | 32/98 | photo | emolga_10.webp 2026-09-24 | Cloud artwork; second physical copy from 01-1. |
+| emolga-40 | Emolga | Emolga | EN | Evolving Skies | 057/203 | photo | emolga_11.webp 2026-09-24 | Town flight artwork with reflective card face; separate copy from 06-3. |
+| emolga-41 | Emolga | エモンガ | JP | Victini Formation Deck | 006/021 | photo | emolga_11.webp 2026-09-24 | Woodland artwork with silver-toned card face; separate copy from 02-3. |
+| emolga-42 | Emolga | 电飞鼠 | ZH |  | 066/131 | uncertain | emolga_11.webp 2026-09-24 | Chinese-language flower-lined water artwork; set code not confidently legible. |
+| emolga-43 | Emolga | 电飞鼠 | ZH | SM-P | 041/SM-P | photo | emolga_11.webp 2026-09-24 | Chinese-language storm artwork with ID.3 logo; distinct copy from 10-3. |
+| emolga-44 | Emolga | Emolga | EN | Emerging Powers | 32/98 | photo | emolga_1.webp 2026-09-24 | Gliding against clouds; separate physical copy from Stamped Cards emolga-02; published photo and catalog match, not checked in hand. |
 | entei-01 | Entei | 結晶塔のエンテイ | JP | 10th Movie Commemoration Promo |  | confirmed | legendary_bearing_1.webp 2026-08-01 | No.244 dex entry, holo, no card number recorded, no number printed, checked in hand 2026-09-19 |
 | espeon-01 | Espeon | わるいエーフィ | JP | Darkness, and to Light | No.196 | photo | elemental_solitude_1.webp 2026-08-01 | Dark Espeon, vintage-style print, Pokédex-number print, set per owner's DoubleHolo export 2026-09-18; 2026-09-22 visual review matched authorized DoubleHolo 30801 identity from archived photo, not checked in hand |
 | espeon-02 | Espeon | 太阳伊布GX | ZH | CSM1AC | 195/151 | confirmed | legendary_bearing_2.webp 2026-08-01 | GX card, SSR rarity mark, distinct from espeon-01, 太阳伊布 is Espeon's Chinese localized name, checked in hand 2026-09-19 |

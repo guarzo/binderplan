@@ -54,7 +54,7 @@ jobs:
             export DIGITAL_BINDER_PREVIOUS_REF
           fi
           python -m pytest \
-            scripts/test_check_registry.py scripts/test_digital_binder.py \
+            scripts/test_check_registry.py scripts/test_digital_binder.py scripts/test_emolga_preview.py \
             scripts/test_stamped_cards.py scripts/test_site_foundation.py scripts/test_slab_exhibition.py \
             scripts/test_holding_binder.py scripts/test_holding_gallery.py -q
           python scripts/check-gallery.py

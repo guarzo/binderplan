@@ -56,14 +56,19 @@ DOUBLEHOLO_NAME_SYMBOLS = {"♀", "♂"}
 SAFE_REF_RE = re.compile(r"^(?!-)[A-Za-z0-9._/@+-]+$")
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 INITIAL_BINDER_IMAGE_BUDGET = 1_572_864
-PUBLIC_VOLUME_ROUTES = {
+PUBLIC_BINDER_ROUTES = {
     "volume-1": Path("gallery/volume-1/index.html"),
     "volume-2": Path("gallery/volume-2/index.html"),
+    "emolga-masterset": Path("gallery/emolga-masterset/index.html"),
 }
-PILOT_ROUTE = Path("gallery/digital-binder-pilot/index.html")
-LEGACY_PHOTOGRAPHED_VOLUME_PATHS = (
+DRAFT_ONLY_ROUTES = (
+    Path("gallery/digital-binder-pilot/index.html"),
+    Path("gallery/emolga-masterset-preview/index.html"),
+)
+LEGACY_PHOTOGRAPHED_BINDER_PATHS = (
     "images/binder/volume-1/",
     "images/binder/volume-2/",
+    "images/binder/emolga-masterset/emolga_",
 )
 HTML_VOID_ELEMENTS = {
     "area", "base", "br", "col", "embed", "hr", "img", "input",
@@ -108,7 +113,7 @@ def _is_int(value: object) -> bool:
 
 
 def _valid_date(value: object) -> bool:
-    if not isinstance(value, str):
+    if not isinstance(value, str) or not DATE_RE.fullmatch(value):
         return False
     try:
         date.fromisoformat(value)
@@ -533,7 +538,9 @@ def write_image_manifest_atomically(root: Path, images: dict) -> None:
 
 def _load_project_manifests(root: Path, errors: list[str]) -> dict[str, dict]:
     manifests = {}
-    for volume_id in VOLUME_IDS:
+    optional = "emolga-masterset"
+    ids = (*VOLUME_IDS, optional) if (root / "data" / "binders" / f"{optional}.yaml").is_file() else VOLUME_IDS
+    for volume_id in ids:
         path = root / "data" / "binders" / f"{volume_id}.yaml"
         try:
             manifest = load_yaml(path)
@@ -578,6 +585,9 @@ def _load_previous_manifests(root: Path, previous_ref: str, errors: list[str]) -
         volume_id: f"data/binders/{volume_id}.yaml"
         for volume_id in VOLUME_IDS
     }
+    optional = "emolga-masterset"
+    if (root / "data" / "binders" / f"{optional}.yaml").is_file():
+        manifest_paths[optional] = f"data/binders/{optional}.yaml"
     present_paths = {}
     for volume_id, path in manifest_paths.items():
         try:
@@ -598,7 +608,7 @@ def _load_previous_manifests(root: Path, previous_ref: str, errors: list[str]) -
 
     if not any(present_paths.values()):
         return None
-    missing = [volume_id for volume_id, present in present_paths.items() if not present]
+    missing = [volume_id for volume_id in VOLUME_IDS if not present_paths[volume_id]]
     if missing:
         errors.append(
             f"previous_ref {previous_ref!r} has incomplete binder manifests; missing: "
@@ -608,6 +618,8 @@ def _load_previous_manifests(root: Path, previous_ref: str, errors: list[str]) -
 
     manifests = {}
     for volume_id, path in manifest_paths.items():
+        if not present_paths[volume_id]:
+            continue
         try:
             result = subprocess.run(
                 ["git", "show", f"{commit}:{path}"],
@@ -722,9 +734,29 @@ def _validate_volume_manifest(root: Path, volume_id: str, manifest: dict, regist
             else:
                 seen_positions.add(position)
 
+            if "placeholder" in pocket and pocket["placeholder"] is not True:
+                errors.append(f"{volume_id} {leaf_label} pocket {position}: placeholder must be true")
             if pocket.get("empty") is True:
+                if "card_id" in pocket or "placeholder" in pocket:
+                    errors.append(f"{volume_id} {leaf_label} pocket {position}: empty pocket has card_id or placeholder")
+                continue
+
+            if pocket.get("placeholder") is True:
+                label = f"{volume_id} {leaf_label} pocket {position}: placeholder"
                 if "card_id" in pocket:
-                    errors.append(f"{volume_id} {leaf_label} pocket {position}: empty pocket has card_id")
+                    errors.append(f"{label} must not have card_id")
+                if not isinstance(pocket.get("wanted_id"), str) or not pocket["wanted_id"].strip():
+                    errors.append(f"{label} needs wanted_id")
+                evidence = pocket.get("evidence")
+                if not isinstance(evidence, dict):
+                    errors.append(f"{label} needs evidence")
+                else:
+                    if not isinstance(evidence.get("type"), str) or not evidence["type"].strip():
+                        errors.append(f"{label} evidence needs type")
+                    _validate_existing_relative_file(root, evidence.get("source"), f"{label} evidence source", errors,
+                                                     required_prefix="docs/evidence")
+                    if not _valid_date(evidence.get("observed_on")):
+                        errors.append(f"{label} evidence observed_on must be YYYY-MM-DD")
                 continue
 
             card_id = pocket.get("card_id")
@@ -973,7 +1005,9 @@ def _validate_exact_image(card_id: str, record: dict, registry_row: dict, errors
 def validate_transition(previous: dict, current: dict) -> list[str]:
     errors: list[str] = []
     previous_pockets = _physical_pockets(previous)
-    current_pockets = _physical_pockets(current)
+    # A newly introduced binder has no earlier physical state to transition from.
+    current_pockets = _physical_pockets({binder_id: manifest for binder_id, manifest in current.items()
+                                         if binder_id in previous})
     for pocket_key in sorted(set(previous_pockets) | set(current_pockets)):
         previous_pocket = previous_pockets.get(pocket_key)
         current_pocket = current_pockets.get(pocket_key)
@@ -1519,11 +1553,11 @@ def _validate_public_binder(public_dir: Path, root: dict) -> list[str]:
 
 def _validate_public_cutover_routes(public_dir: Path, binders_by_page: dict[Path, list[dict]]) -> list[str]:
     errors: list[str] = []
-    pilot_path = public_dir / PILOT_ROUTE
-    if pilot_path.exists():
-        errors.append(f"{PILOT_ROUTE}: draft pilot output must not be present")
+    for draft_route in DRAFT_ONLY_ROUTES:
+        if (public_dir / draft_route).exists():
+            errors.append(f"{draft_route}: draft output must not be present")
 
-    for volume_id, route in PUBLIC_VOLUME_ROUTES.items():
+    for volume_id, route in PUBLIC_BINDER_ROUTES.items():
         page_path = public_dir / route
         if not page_path.is_file():
             errors.append(f"{route}: missing public {volume_id} binder route")
@@ -1549,7 +1583,7 @@ def validate_public_output(public_dir: Path, require_public_volumes: bool = Fals
 
     By default this is component-oriented and validates only roots that opt into
     the binder contract. In strict cutover mode it also verifies the public
-    Volume I/II routes and absence of removed photographed-gallery artifacts.
+    binder routes and absence of removed photographed-gallery references.
     """
     public_dir = Path(public_dir)
     if not public_dir.is_dir():
@@ -1569,7 +1603,7 @@ def validate_public_output(public_dir: Path, require_public_volumes: bool = Fals
             continue
         binders_by_page[relative_page] = parser.binders
         if require_public_volumes:
-            for legacy_path in LEGACY_PHOTOGRAPHED_VOLUME_PATHS:
+            for legacy_path in LEGACY_PHOTOGRAPHED_BINDER_PATHS:
                 if legacy_path in html:
                     errors.append(
                         f"{relative_page}: legacy photographed binder image reference "

@@ -1,0 +1,26 @@
+{{ define "main" }}
+<article class="gallery-page emolga-preview">
+  <header class="single-header">
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p class="description">{{ . }}</p>{{ end }}
+  </header>
+  <div class="gallery-content binder-intro">{{ .Content }}</div>
+  <p class="emolga-image-note"><strong>About the images.</strong> Local TCGdex or DoubleHolo images show the catalogued card where available; foil and edition may differ. Six cards retain photo crops where no trustworthy provider image was found. Select a card for its image source and review notes.</p>
+  {{ partial "binder.html" . }}
+  <section class="emolga-wanted" data-wanted-section aria-labelledby="emolga-wanted-heading">
+    <p class="emolga-preview-status">Separate from the owned binder</p>
+    <h2 id="emolga-wanted-heading">Still hunting</h2>
+    <p>These are wanted reference images, not owned cards. The corresponding photographed pockets hold reference prints only. If you've got a lead, I'm listening.</p>
+    <div class="emolga-wanted-pair">
+      <figure>
+        <img src="{{ "images/binder/emolga-masterset/Missing Emolga 025 BW-P.jpg" | relURL }}" alt="Reference image for wanted Japanese Emolga 025/BW-P" loading="lazy">
+        <figcaption>025/BW-P · wanted, not owned</figcaption>
+      </figure>
+      <figure>
+        <img src="{{ "images/binder/emolga-masterset/Missing Emolga BW-9 81.jpg" | relURL }}" alt="Reference image for wanted Japanese Emolga 081/BW-P" loading="lazy">
+        <figcaption>081/BW-P · wanted, not owned</figcaption>
+      </figure>
+    </div>
+  </section>
+</article>
+{{ end }}

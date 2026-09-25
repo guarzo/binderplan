@@ -179,7 +179,9 @@
         return {
           exact: "Exact image",
           "photo-crop": "Photo crop",
-          proxy: "Reference image",
+          proxy: root.dataset.binder === "emolga-masterset"
+            ? "Catalog image (finish not verified)"
+            : "Reference image",
           missing: "Image unavailable"
         }[classification] || classification;
       }
